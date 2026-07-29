@@ -2,17 +2,7 @@
   <img src="assets/readme-hero.svg" alt="High-Stakes Analytics & Decision Lab routes a question to an Evidence Intelligence Report and adds a Decision Intelligence Brief only when justified" width="100%">
 </p>
 
-<p align="center">
-  <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml"><img src="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml/badge.svg" alt="Verification status"></a>
-  <a href="LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-263449.svg" alt="MIT license"></a>
-</p>
 
-<p align="center">
-  <strong>10 real-data projects</strong> ·
-  <strong>10 Evidence Intelligence Reports</strong> ·
-  <strong>10 Decision Intelligence Briefs</strong> ·
-  <strong>100+ accessible figures</strong>
-</p>
 
 # High-Stakes Analytics & Decision Lab
 
