@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+<title id="title">Two intelligence products, one evidence contract</title>
+<desc id="desc">A large primary Evidence Intelligence Report panel feeds a smaller conditional Decision Intelligence Brief panel. Both share machine-readable evidence and source lineage.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="600" fill="#EEF3F8"/>
+<circle cx="1180" cy="570" r="120" fill="#008C82" opacity=".035"/>
+<circle cx="36" cy="595" r="86" fill="#008C82" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#008C82"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#008C82"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#008C82">REPORT ARCHITECTURE</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Two intelligence products, one evidence contract</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">The Evidence Intelligence Report is primary; the Decision Intelligence Brief is conditional.</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#008C82"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="40.0" y="148.0" width="714.0" height="318.0" rx="20" fill="#07152A" opacity=".055"/><rect x="38.0" y="142.0" width="714.0" height="318.0" rx="20" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="38" y="142" width="8" height="318" rx="4" fill="#008C82"/>
+<text x="68.0" y="177.0" class="kicker" text-anchor="start" style="fill:#008C82">PRIMARY EVIDENCE LAYER</text>
+<text x="68.0" y="216.0" class="big" text-anchor="start" style="fill:#0B1324">Evidence Intelligence Report</text>
+<text x="68.0" y="247.0" class="label" text-anchor="start" style="fill:#263449">The primary evidence product readers use to inspect the question, source, data</text>
+<text x="68.0" y="266.0" class="label" text-anchor="start" style="fill:#263449">quality, method, validation, material figures, uncertainty, limitations, and</text>
+<text x="68.0" y="285.0" class="label" text-anchor="start" style="fill:#263449">reproducibility.</text>
+<circle cx="80" cy="314" r="13" fill="#DDF5F2"/>
+<text x="80.0" y="318.0" class="micro" text-anchor="middle" style="fill:#008C82">01</text>
+<text x="106.0" y="318.0" class="section" text-anchor="start" style="fill:#0B1324">Source + data quality</text>
+<text x="332.0" y="318.0" class="small" text-anchor="start" style="fill:#617084">Manifest, hashes, grain, missingness</text>
+<circle cx="80" cy="348" r="13" fill="#DDF5F2"/>
+<text x="80.0" y="352.0" class="micro" text-anchor="middle" style="fill:#008C82">02</text>
+<text x="106.0" y="352.0" class="section" text-anchor="start" style="fill:#0B1324">Method + validation</text>
+<text x="332.0" y="352.0" class="small" text-anchor="start" style="fill:#617084">Estimand, split, baseline, sensitivity</text>
+<circle cx="80" cy="382" r="13" fill="#DDF5F2"/>
+<text x="80.0" y="386.0" class="micro" text-anchor="middle" style="fill:#008C82">03</text>
+<text x="106.0" y="386.0" class="section" text-anchor="start" style="fill:#0B1324">Material visual evidence</text>
+<text x="332.0" y="386.0" class="small" text-anchor="start" style="fill:#617084">Every analytical figure with interpretation</text>
+<circle cx="80" cy="416" r="13" fill="#DDF5F2"/>
+<text x="80.0" y="420.0" class="micro" text-anchor="middle" style="fill:#008C82">04</text>
+<text x="106.0" y="420.0" class="section" text-anchor="start" style="fill:#0B1324">Claim boundary</text>
+<text x="332.0" y="420.0" class="small" text-anchor="start" style="fill:#617084">What the evidence can and cannot establish</text>
+<rect x="786.0" y="148.0" width="378.0" height="318.0" rx="20" fill="#07152A" opacity=".055"/><rect x="784.0" y="142.0" width="378.0" height="318.0" rx="20" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="784" y="142" width="8" height="318" rx="4" fill="#C69214"/>
+<text x="814.0" y="177.0" class="kicker" text-anchor="start" style="fill:#C69214">CONDITIONAL DECISION LAYER</text>
+<text x="814.0" y="207.0" class="section" text-anchor="start" style="fill:#0B1324">Decision Intelligence</text>
+<text x="814.0" y="234.0" class="big" text-anchor="start" style="fill:#0B1324">Brief</text>
+<text x="814.0" y="265.0" class="label" text-anchor="start" style="fill:#263449">Added only when a real decision, feasible</text>
+<text x="814.0" y="284.0" class="label" text-anchor="start" style="fill:#263449">alternatives, and sufficient evidence</text>
+<text x="814.0" y="303.0" class="label" text-anchor="start" style="fill:#263449">exist.</text>
+<rect x="814.0" y="305.0" width="316.0" height="30.0" rx="15" fill="#FFF2C7" stroke="none" stroke-width="1"/>
+<text x="830.0" y="325.0" class="micro" text-anchor="start" style="fill:#C69214">GATES</text>
+<text x="895.0" y="325.0" class="small" text-anchor="start" style="fill:#263449">What passes, blocks, or is missing</text>
+<rect x="814.0" y="343.0" width="316.0" height="30.0" rx="15" fill="#FFF2C7" stroke="none" stroke-width="1"/>
+<text x="830.0" y="363.0" class="micro" text-anchor="start" style="fill:#C69214">RISK</text>
+<text x="895.0" y="363.0" class="small" text-anchor="start" style="fill:#263449">Constraints, tails, shared shocks</text>
+<rect x="814.0" y="381.0" width="316.0" height="30.0" rx="15" fill="#EEEAFE" stroke="none" stroke-width="1"/>
+<text x="830.0" y="401.0" class="micro" text-anchor="start" style="fill:#7257D9">STATUS</text>
+<text x="895.0" y="401.0" class="small" text-anchor="start" style="fill:#263449">Act, pilot, request evidence, or stop</text>
+<rect x="814.0" y="419.0" width="316.0" height="30.0" rx="15" fill="#EEEAFE" stroke="none" stroke-width="1"/>
+<text x="830.0" y="439.0" class="micro" text-anchor="start" style="fill:#7257D9">REVERSAL</text>
+<text x="895.0" y="439.0" class="small" text-anchor="start" style="fill:#263449">What new evidence would change the result</text>
+<path d="M 752 299 C 770 299, 770 299, 784 299" fill="none" stroke="#008C82" stroke-width="3"/>
+<path d="M 776 293 L 784 299 L 776 305" fill="none" stroke="#008C82" stroke-width="3"/>
+<rect x="38.0" y="486.0" width="1124.0" height="60.0" rx="16" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="62.0" y="511.0" class="kicker" text-anchor="start" style="fill:#008C82">SHARED EVIDENCE SPINE</text>
+<text x="62.0" y="535.0" class="label" text-anchor="start" style="fill:#D4DFEC">Markdown narrative  ·  JSON results  ·  CSV evidence  ·  accessible SVG figures  ·  source lineage</text>
+<line x1="36" y1="560.0" x2="1164" y2="560.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="582.0" class="footnote" text-anchor="start">Source: reporting contract</text>
+<text x="1158.0" y="582.0" class="footnote" text-anchor="end">Evidence first · decision second · no forced recommendation</text>
+<text x="600.0" y="582.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

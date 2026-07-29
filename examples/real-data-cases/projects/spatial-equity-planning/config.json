@@ -1,0 +1,18 @@
+{
+  "project_id": "spatial-equity-planning",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "composite_need_weights": {"poverty": 0.5, "transit": 0.3, "rent_to_income_proxy": 0.2},
+    "morans_i_neighbors": 5,
+    "hub_count": 5,
+    "coverage_radius_km": 10.0,
+    "bootstrap_repetitions": 300
+  },
+  "parameter_register": [
+    {"parameter": "composite_need_weights", "source_id": "analyst-planning-priorities", "status": "exploratory value judgment", "approved_by": "repository author self-review", "boundary": "Requires stakeholder elicitation before planning use."},
+    {"parameter": "morans_i_neighbors", "source_id": "spatial-analysis-protocol", "status": "analytical choice", "approved_by": "repository author self-review", "boundary": "Five nearest tract centroids; no contiguity weights."},
+    {"parameter": "hub_count", "source_id": "analyst-capacity-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Common constraint for strategy comparison."},
+    {"parameter": "coverage_radius_km", "source_id": "analyst-access-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Straight-line centroid distance, not travel time."},
+    {"parameter": "bootstrap_repetitions", "source_id": "analysis-protocol", "status": "reproducibility choice", "approved_by": "repository author self-review", "boundary": "Tract resampling does not model ACS margins of error."}
+  ]
+}

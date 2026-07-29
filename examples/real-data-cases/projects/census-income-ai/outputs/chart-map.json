@@ -1,0 +1,29 @@
+{
+  "project_id": "census-income-ai",
+  "charts": [
+    {
+      "path": "figures/calibration.svg",
+      "question": "Probability quality is evaluated separately from ranking",
+      "supported_finding": "Calibration shows whether predicted probabilities align with observed frequencies across the historical test sample.",
+      "interpretation_boundary": "Calibration in this archive cannot validate a future population, target, threshold, or workflow.",
+      "source_id": "uci-adult-2",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/model-comparison.svg",
+      "question": "The independent test supports benchmarking, not deployment",
+      "supported_finding": "Sparse logistic performance is compared with majority and mixed-naive-Bayes baselines on the untouched source test.",
+      "interpretation_boundary": "Historical test performance does not establish contemporary validity or institutional benefit.",
+      "source_id": "uci-adult-2",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/subgroup-fpr.svg",
+      "question": "Aggregate discrimination does not describe subgroup error",
+      "supported_finding": "Sex- and race-stratified false-positive rates expose heterogeneity hidden by a single AUC.",
+      "interpretation_boundary": "These are descriptive error diagnostics; they are not a complete fairness or impact assessment.",
+      "source_id": "uci-adult-2",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

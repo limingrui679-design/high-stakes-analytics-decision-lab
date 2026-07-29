@@ -1,0 +1,539 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "behavioral-policy-nudge",
+  "title": "Benefits-Renewal Service Design",
+  "domain": "Behavioral and decision science, causal inference, and public policy",
+  "decision_owner": "State benefits administration",
+  "decision_question": "Choose a renewal intervention that improves eligible-household completion while limiting cost, autonomy intrusion, access gaps, and implementation risk.",
+  "time_horizon": "18 months",
+  "risk_aversion": 0.3,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.6,
+  "evidence": {
+    "type": "Synthetic randomized-pilot estimates and implementation scenarios",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative renewal reminder experiment",
+      "Synthetic administrative burden survey",
+      "Hypothetical operations estimates"
+    ],
+    "causal_claim_status": "Intervention effects are framed as hypothetical randomized-pilot estimates; no real program effect is claimed.",
+    "limitations": [
+      "Welfare effects are not equivalent to observed completion behavior.",
+      "Digital access and language needs are represented with coarse groups.",
+      "Long-run administrative learning is not modeled.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "renewal_gain",
+      "label": "Eligible-household renewal gain",
+      "direction": "maximize",
+      "weight": 0.28,
+      "unit": "percentage points",
+      "scale": {
+        "worst": 0,
+        "best": 25
+      }
+    },
+    {
+      "id": "annual_cost",
+      "label": "Annual program cost",
+      "direction": "minimize",
+      "weight": 0.12,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 6,
+        "best": 0.2
+      }
+    },
+    {
+      "id": "autonomy_intrusion",
+      "label": "Autonomy intrusion",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "index points",
+      "scale": {
+        "worst": 90,
+        "best": 5
+      }
+    },
+    {
+      "id": "access_gap",
+      "label": "Renewal access gap",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "percentage points",
+      "scale": {
+        "worst": 25,
+        "best": 1
+      }
+    },
+    {
+      "id": "implementation_risk",
+      "label": "Implementation risk",
+      "direction": "minimize",
+      "weight": 0.12,
+      "unit": "index points",
+      "scale": {
+        "worst": 80,
+        "best": 5
+      }
+    },
+    {
+      "id": "evidence_quality",
+      "label": "Evidence quality",
+      "direction": "maximize",
+      "weight": 0.1,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.95
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "annual_cost",
+      "operator": "<=",
+      "threshold": 4.5,
+      "label": "Administrative budget"
+    },
+    {
+      "criterion": "autonomy_intrusion",
+      "operator": "<=",
+      "threshold": 55,
+      "label": "Ethics-board autonomy threshold"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base operations",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "digital-exclusion",
+      "label": "Higher digital exclusion",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "renewal_gain": {
+            "multiply": 0.85
+          },
+          "access_gap": {
+            "multiply": 1.2
+          }
+        },
+        "simplified-assistance": {
+          "renewal_gain": {
+            "multiply": 1.12
+          },
+          "access_gap": {
+            "multiply": 0.75
+          }
+        }
+      }
+    },
+    {
+      "id": "staff-capacity",
+      "label": "Frontline staff constraint",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "implementation_risk": {
+            "add": 9
+          },
+          "annual_cost": {
+            "multiply": 1.08
+          }
+        },
+        "automatic-renewal": {
+          "implementation_risk": {
+            "add": 8
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "current-renewal",
+      "label": "Current renewal process",
+      "description": "Retain the existing form, notices, and in-person support.",
+      "metrics": {
+        "renewal_gain": {
+          "distribution": "triangular",
+          "low": 0,
+          "mode": 1,
+          "high": 3
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 1.4,
+          "mode": 1.8,
+          "high": 2.3
+        },
+        "autonomy_intrusion": {
+          "distribution": "triangular",
+          "low": 10,
+          "mode": 16,
+          "high": 24
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 14,
+          "mode": 18,
+          "high": 23
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 10,
+          "mode": 17,
+          "high": 27
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.83
+        }
+      },
+      "groups": [
+        {
+          "id": "digital-ready",
+          "label": "Digitally ready households",
+          "metrics": {
+            "renewal_rate": 0.82,
+            "administrative_burden": 0.34
+          }
+        },
+        {
+          "id": "limited-digital",
+          "label": "Limited-digital-access households",
+          "metrics": {
+            "renewal_rate": 0.64,
+            "administrative_burden": 0.61
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language households",
+          "metrics": {
+            "renewal_rate": 0.59,
+            "administrative_burden": 0.67
+          }
+        }
+      ]
+    },
+    {
+      "id": "smart-reminders",
+      "label": "Behaviorally informed reminders",
+      "description": "Use simplified, timed, multilingual reminders with implementation intentions.",
+      "metrics": {
+        "renewal_gain": {
+          "distribution": "normal",
+          "mean": 7.5,
+          "sd": 2,
+          "min": 0,
+          "max": 16
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 0.7,
+          "mode": 1,
+          "high": 1.5
+        },
+        "autonomy_intrusion": {
+          "distribution": "triangular",
+          "low": 18,
+          "mode": 27,
+          "high": 40
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 9,
+          "mode": 13,
+          "high": 18
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 22,
+          "high": 35
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.9
+        }
+      },
+      "groups": [
+        {
+          "id": "digital-ready",
+          "label": "Digitally ready households",
+          "metrics": {
+            "renewal_rate": 0.9,
+            "administrative_burden": 0.25
+          }
+        },
+        {
+          "id": "limited-digital",
+          "label": "Limited-digital-access households",
+          "metrics": {
+            "renewal_rate": 0.74,
+            "administrative_burden": 0.48
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language households",
+          "metrics": {
+            "renewal_rate": 0.72,
+            "administrative_burden": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "automatic-renewal",
+      "label": "Automatic renewal with opt-out",
+      "description": "Renew administratively eligible households by default with notice and an opt-out.",
+      "metrics": {
+        "renewal_gain": {
+          "distribution": "normal",
+          "mean": 19,
+          "sd": 3,
+          "min": 5,
+          "max": 27
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 2.2,
+          "mode": 3,
+          "high": 4.2
+        },
+        "autonomy_intrusion": {
+          "distribution": "triangular",
+          "low": 40,
+          "mode": 54,
+          "high": 72
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 3,
+          "mode": 6,
+          "high": 11
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 32,
+          "mode": 47,
+          "high": 66
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.78
+        }
+      },
+      "groups": [
+        {
+          "id": "digital-ready",
+          "label": "Digitally ready households",
+          "metrics": {
+            "renewal_rate": 0.96,
+            "administrative_burden": 0.14
+          }
+        },
+        {
+          "id": "limited-digital",
+          "label": "Limited-digital-access households",
+          "metrics": {
+            "renewal_rate": 0.91,
+            "administrative_burden": 0.2
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language households",
+          "metrics": {
+            "renewal_rate": 0.89,
+            "administrative_burden": 0.23
+          }
+        }
+      ]
+    },
+    {
+      "id": "simplified-assistance",
+      "label": "Simplified form plus assisted renewal",
+      "description": "Pre-fill verified fields, shorten the form, and add multilingual phone and community assistance.",
+      "metrics": {
+        "renewal_gain": {
+          "distribution": "normal",
+          "mean": 15,
+          "sd": 2.5,
+          "min": 4,
+          "max": 24
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 2.8,
+          "mode": 3.6,
+          "high": 4.6
+        },
+        "autonomy_intrusion": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 20,
+          "high": 31
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 2,
+          "mode": 4.5,
+          "high": 8
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 24,
+          "mode": 35,
+          "high": 50
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.86
+        }
+      },
+      "groups": [
+        {
+          "id": "digital-ready",
+          "label": "Digitally ready households",
+          "metrics": {
+            "renewal_rate": 0.93,
+            "administrative_burden": 0.18
+          }
+        },
+        {
+          "id": "limited-digital",
+          "label": "Limited-digital-access households",
+          "metrics": {
+            "renewal_rate": 0.9,
+            "administrative_burden": 0.24
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language households",
+          "metrics": {
+            "renewal_rate": 0.89,
+            "administrative_burden": 0.26
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real evaluation should pre-specify the eligible population, estimand, primary outcome, subgroup analysis, and spillover checks.",
+    "Completion is not automatically welfare-improving; eligibility accuracy, consent, and appeal rights remain central."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "renewal_gain": -0.48,
+          "annual_cost": 0.48,
+          "autonomy_intrusion": 0.48,
+          "access_gap": 0.48,
+          "implementation_risk": 0.48,
+          "evidence_quality": -0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "behavioral-policy-nudge-synthetic-parameter-register",
+        "citation": "Benefits-Renewal Service Design — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "behavioral-policy-nudge-synthetic-parameter-register"
+      }
+    ]
+  }
+}

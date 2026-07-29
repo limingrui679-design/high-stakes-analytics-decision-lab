@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "project_id": "population-health-survival",
+  "source_id": "uci-heart-failure-519",
+  "title": "Heart Failure Clinical Records",
+  "publisher": "UCI Machine Learning Repository",
+  "landing_page": "https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records",
+  "doi": "10.24432/C5Z89R",
+  "download_url": "https://archive.ics.uci.edu/static/public/519/heart+failure+clinical+records.zip",
+  "version": "UCI static archive snapshot; source file timestamp 2023-05-22",
+  "accessed_at": "2026-07-27",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribution": "Permitted with attribution",
+  "expected_rows": 299,
+  "grain": "one de-identified patient follow-up record",
+  "raw_files": [
+    {
+      "path": "data/raw/uci-heart-failure.zip",
+      "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Use only aggregate results; do not attempt re-identification.",
+    "status": "approved_for_public_aggregate_analysis"
+  },
+  "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R"
+}

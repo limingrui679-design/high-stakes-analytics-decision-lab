@@ -1,0 +1,598 @@
+{
+  "project_id": "census-income-ai",
+  "data": {
+    "source_train_rows": 32561,
+    "development_rows": 26048,
+    "validation_rows": 6513,
+    "independent_test_rows": 16281
+  },
+  "models": {
+    "majority_baseline_accuracy": 0.7637737239727289,
+    "naive_bayes_baseline": {
+      "n": 16281,
+      "prevalence": 0.23622627602727106,
+      "auc": 0.8907219569844314,
+      "brier": 0.14054175782314077,
+      "accuracy": 0.8310914562987531,
+      "true_positive_rate": 0.5135205408216329,
+      "false_positive_rate": 0.0706875753920386,
+      "confusion": {
+        "tp": 1975,
+        "fp": 879,
+        "tn": 11556,
+        "fn": 1871
+      }
+    },
+    "advanced_model": "sparse one-hot logistic regression",
+    "hyperparameter_validation": {
+      "0.0": {
+        "validation_auc": 0.9032301999088324,
+        "validation_brier": 0.10487434871202883
+      },
+      "0.0005": {
+        "validation_auc": 0.9032069954684306,
+        "validation_brier": 0.10438493942540923
+      },
+      "0.005": {
+        "validation_auc": 0.9028756876249172,
+        "validation_brier": 0.10452916174753964
+      }
+    },
+    "selected_l2": 0.0
+  },
+  "threshold": 0.21235824662698868,
+  "threshold_governance": "Selected only on validation under an illustrative 3:1 error-cost ratio; it has no real decision-owner approval.",
+  "overall": {
+    "n": 16281,
+    "prevalence": 0.23622627602727106,
+    "auc": 0.904533517086562,
+    "brier": 0.10203091823598345,
+    "accuracy": 0.7934402063755298,
+    "true_positive_rate": 0.8684347373894956,
+    "false_positive_rate": 0.2297547245677523,
+    "confusion": {
+      "tp": 3340,
+      "fp": 2857,
+      "tn": 9578,
+      "fn": 506
+    }
+  },
+  "subgroup_metrics": {
+    "sex": {
+      "Female": {
+        "n": 5421,
+        "prevalence": 0.10883600811658366,
+        "auc": 0.9302065754712678,
+        "brier": 0.05458296648598012,
+        "accuracy": 0.9088729016786571,
+        "true_positive_rate": 0.6915254237288135,
+        "false_positive_rate": 0.06458290209066446,
+        "confusion": {
+          "tp": 408,
+          "fp": 312,
+          "tn": 4519,
+          "fn": 182
+        }
+      },
+      "Male": {
+        "n": 10860,
+        "prevalence": 0.2998158379373849,
+        "auc": 0.8808398237317228,
+        "brier": 0.1257155726040102,
+        "accuracy": 0.7358195211786372,
+        "true_positive_rate": 0.9004914004914005,
+        "false_positive_rate": 0.33469226722777484,
+        "confusion": {
+          "tp": 2932,
+          "fp": 2545,
+          "tn": 5059,
+          "fn": 324
+        }
+      }
+    },
+    "race": {
+      "Amer-Indian-Eskimo": {
+        "n": 159,
+        "prevalence": 0.11949685534591195,
+        "auc": 0.9518796992481203,
+        "brier": 0.06062741152835154,
+        "accuracy": 0.9056603773584906,
+        "true_positive_rate": 0.8421052631578947,
+        "false_positive_rate": 0.08571428571428572,
+        "confusion": {
+          "tp": 16,
+          "fp": 12,
+          "tn": 128,
+          "fn": 3
+        }
+      },
+      "Asian-Pac-Islander": {
+        "n": 480,
+        "prevalence": 0.27708333333333335,
+        "auc": 0.8952352061710472,
+        "brier": 0.11254511954106165,
+        "accuracy": 0.8,
+        "true_positive_rate": 0.849624060150376,
+        "false_positive_rate": 0.21902017291066284,
+        "confusion": {
+          "tp": 113,
+          "fp": 76,
+          "tn": 271,
+          "fn": 20
+        }
+      },
+      "Black": {
+        "n": 1561,
+        "prevalence": 0.11467008327994875,
+        "auc": 0.9270044223819418,
+        "brier": 0.060750143683461516,
+        "accuracy": 0.8705957719410634,
+        "true_positive_rate": 0.8268156424581006,
+        "false_positive_rate": 0.12373371924746744,
+        "confusion": {
+          "tp": 148,
+          "fp": 171,
+          "tn": 1211,
+          "fn": 31
+        }
+      },
+      "Other": {
+        "n": 135,
+        "prevalence": 0.18518518518518517,
+        "auc": 0.9530909090909091,
+        "brier": 0.08275430535510682,
+        "accuracy": 0.9185185185185185,
+        "true_positive_rate": 0.76,
+        "false_positive_rate": 0.045454545454545456,
+        "confusion": {
+          "tp": 19,
+          "fp": 5,
+          "tn": 105,
+          "fn": 6
+        }
+      },
+      "White": {
+        "n": 13946,
+        "prevalence": 0.2502509680195038,
+        "auc": 0.9001260295565207,
+        "brier": 0.10694831195142025,
+        "accuracy": 0.7820880539222717,
+        "true_positive_rate": 0.8722063037249284,
+        "false_positive_rate": 0.24799158377964806,
+        "confusion": {
+          "tp": 3044,
+          "fp": 2593,
+          "tn": 7863,
+          "fn": 446
+        }
+      }
+    }
+  },
+  "calibration": [
+    {
+      "bin": 1,
+      "n": 1628,
+      "mean_score": 0.0018452449731011162,
+      "observed_rate": 0.0012285012285012285,
+      "score_min": 6.280215379767147e-05,
+      "score_max": 0.0035679264998717502
+    },
+    {
+      "bin": 2,
+      "n": 1628,
+      "mean_score": 0.006366988072827344,
+      "observed_rate": 0.003071253071253071,
+      "score_min": 0.0035690749364865226,
+      "score_max": 0.009668123364716025
+    },
+    {
+      "bin": 3,
+      "n": 1628,
+      "mean_score": 0.014586593346179073,
+      "observed_rate": 0.01167076167076167,
+      "score_min": 0.009668411095675093,
+      "score_max": 0.021012426400417786
+    },
+    {
+      "bin": 4,
+      "n": 1628,
+      "mean_score": 0.03144007868227962,
+      "observed_rate": 0.03931203931203931,
+      "score_min": 0.02101623394198897,
+      "score_max": 0.04550795624359663
+    },
+    {
+      "bin": 5,
+      "n": 1628,
+      "mean_score": 0.06851904404352771,
+      "observed_rate": 0.06142506142506143,
+      "score_min": 0.04551641681882977,
+      "score_max": 0.09856788691078996
+    },
+    {
+      "bin": 6,
+      "n": 1628,
+      "mean_score": 0.14098631649137813,
+      "observed_rate": 0.15663390663390664,
+      "score_min": 0.09857577284820085,
+      "score_max": 0.18893474221354106
+    },
+    {
+      "bin": 7,
+      "n": 1628,
+      "mean_score": 0.24715670410160948,
+      "observed_rate": 0.2573710073710074,
+      "score_min": 0.18903890525353828,
+      "score_max": 0.3063936326210679
+    },
+    {
+      "bin": 8,
+      "n": 1628,
+      "mean_score": 0.3883948655142453,
+      "observed_rate": 0.38759213759213756,
+      "score_min": 0.3063936326210679,
+      "score_max": 0.4877555641295061
+    },
+    {
+      "bin": 9,
+      "n": 1628,
+      "mean_score": 0.608107876239783,
+      "observed_rate": 0.5872235872235873,
+      "score_min": 0.48801464000626704,
+      "score_max": 0.7269471966277354
+    },
+    {
+      "bin": 10,
+      "n": 1629,
+      "mean_score": 0.8680623093567612,
+      "observed_rate": 0.856353591160221,
+      "score_min": 0.7272421369740816,
+      "score_max": 0.9999999998434943
+    }
+  ],
+  "drift_diagnostics": {
+    "numeric": {
+      "age": {
+        "standardized_mean_shift": 0.013622166690035208,
+        "train_mean": 38.58164675532078,
+        "test_mean": 38.76745900128985
+      },
+      "education_num": {
+        "standardized_mean_shift": -0.003021032106717499,
+        "train_mean": 10.0806793403151,
+        "test_mean": 10.07290706959032
+      },
+      "capital_gain": {
+        "standardized_mean_shift": 0.0005763157843262335,
+        "train_mean": 1077.6488437087312,
+        "test_mean": 1081.9051041090843
+      },
+      "capital_loss": {
+        "standardized_mean_shift": 0.0014776628663314931,
+        "train_mean": 87.303829734959,
+        "test_mean": 87.89926908666544
+      },
+      "hours_per_week": {
+        "standardized_mean_shift": -0.003662260713543803,
+        "train_mean": 40.437455852092995,
+        "test_mean": 40.392236349118605
+      }
+    },
+    "categorical": {
+      "workclass": {
+        "total_variation_distance": 0.009237498851710914,
+        "unseen_test_categories": []
+      },
+      "marital_status": {
+        "total_variation_distance": 0.0076355220101492986,
+        "unseen_test_categories": []
+      },
+      "occupation": {
+        "total_variation_distance": 0.011844311073419659,
+        "unseen_test_categories": []
+      },
+      "relationship": {
+        "total_variation_distance": 0.00981864787785281,
+        "unseen_test_categories": []
+      },
+      "race": {
+        "total_variation_distance": 0.0025224548608468473,
+        "unseen_test_categories": []
+      },
+      "sex": {
+        "total_variation_distance": 0.0021702968334633144,
+        "unseen_test_categories": []
+      },
+      "native_country": {
+        "total_variation_distance": 0.008570745590477886,
+        "unseen_test_categories": []
+      }
+    }
+  },
+  "robustness": {
+    "abnormal_input_rows": 250,
+    "finite_scores": true,
+    "numeric_values_clipped": 251,
+    "mean_score_shift_vs_same_clean_rows": -0.05008202442899157,
+    "failure_behavior": "Unseen categories map to explicit fallback features; numeric inputs are clipped at eight training standard deviations. Production use would reject rather than silently repair impossible values."
+  },
+  "explainability": {
+    "top_absolute_coefficients": [
+      {
+        "feature": "numeric:capital_gain",
+        "coefficient": 2.368644002102079
+      },
+      {
+        "feature": "marital_status=Married-civ-spouse",
+        "coefficient": 1.2302288844302147
+      },
+      {
+        "feature": "relationship=Wife",
+        "coefficient": 1.2120359540673127
+      },
+      {
+        "feature": "relationship=Own-child",
+        "coefficient": -1.1238888826186588
+      },
+      {
+        "feature": "occupation=Farming-fishing",
+        "coefficient": -1.0307572215837344
+      },
+      {
+        "feature": "marital_status=Never-married",
+        "coefficient": -0.9722007236863802
+      },
+      {
+        "feature": "sex=Female",
+        "coefficient": -0.9698057521845214
+      },
+      {
+        "feature": "occupation=Exec-managerial",
+        "coefficient": 0.8669408473760498
+      },
+      {
+        "feature": "occupation=Other-service",
+        "coefficient": -0.8269465450721287
+      },
+      {
+        "feature": "relationship=Other-relative",
+        "coefficient": -0.7850516998314536
+      },
+      {
+        "feature": "numeric:education_num",
+        "coefficient": 0.7489665589345708
+      },
+      {
+        "feature": "marital_status=Married-AF-spouse",
+        "coefficient": 0.7285681661912558
+      },
+      {
+        "feature": "occupation=Priv-house-serv",
+        "coefficient": -0.7133507261025549
+      },
+      {
+        "feature": "native_country=Italy",
+        "coefficient": 0.703876243611457
+      },
+      {
+        "feature": "occupation=Tech-support",
+        "coefficient": 0.6838916846803972
+      },
+      {
+        "feature": "occupation=Handlers-cleaners",
+        "coefficient": -0.6782299219865086
+      },
+      {
+        "feature": "occupation=Prof-specialty",
+        "coefficient": 0.6769187397741744
+      },
+      {
+        "feature": "native_country=Columbia",
+        "coefficient": -0.6486944514489874
+      },
+      {
+        "feature": "native_country=South",
+        "coefficient": -0.6165996347378851
+      },
+      {
+        "feature": "marital_status=Separated",
+        "coefficient": -0.6125459387830551
+      }
+    ],
+    "boundary": "Associational model coefficients are not causal effects."
+  },
+  "model_artifacts": [
+    "outputs/model.json",
+    "outputs/model-card.md",
+    "outputs/deployment-checklist.md"
+  ],
+  "decision_boundary": "Benchmark classification only; not validated for eligibility, credit, employment, or other consequential decisions.",
+  "provenance": {
+    "source_id": "uci-adult-2",
+    "citation": "Becker, B. & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20",
+    "version": "UCI static archive snapshot; files timestamped 2023-05-22",
+    "license": "CC BY 4.0",
+    "accessed_at": "2026-07-27",
+    "raw_sha256": {
+      "uci-adult.zip": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+    },
+    "config_sha256": "1c67593fe91fd90d730cd1d21bc31c8e02a959ea34e8e9d3803d2185996c9f83"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260727,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is uci-adult-2.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.decision_threshold",
+      "label": "decision threshold",
+      "value_or_distribution": 0.5,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for decision_threshold; source dataset is uci-adult-2.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Not optimized for or authorized in any real decision."
+    },
+    {
+      "parameter_path": "config.parameters.calibration_bins",
+      "label": "calibration bins",
+      "value_or_distribution": 10,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for calibration_bins; source dataset is uci-adult-2.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Bins with no observations are omitted."
+    },
+    {
+      "parameter_path": "config.parameters.train_split",
+      "label": "train split",
+      "value_or_distribution": "adult.data",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "uci-source-split",
+      "source_fact": "Registered project configuration for train_split; source dataset is uci-adult-2.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author verification",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "observed",
+      "notes": "Final metrics use only the held-out test split."
+    },
+    {
+      "parameter_path": "config.parameters.test_split",
+      "label": "test split",
+      "value_or_distribution": "adult.test",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "uci-source-split",
+      "source_fact": "Registered project configuration for test_split; source dataset is uci-adult-2.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author verification",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "observed",
+      "notes": "Final metrics use only the held-out test split."
+    }
+  ]
+}

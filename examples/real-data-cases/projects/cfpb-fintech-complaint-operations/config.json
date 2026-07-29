@@ -1,0 +1,59 @@
+{
+  "project_id": "cfpb-fintech-complaint-operations",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "train_end": "2022-08-31",
+    "validation_end": "2022-10-31",
+    "test_end": "2022-12-31",
+    "triage_capacity_shares": [0.05, 0.1, 0.2],
+    "bootstrap_samples": 500,
+    "bootstrap_block_days": 7,
+    "permutation_samples": 500,
+    "minimum_deployment_auc": 0.65,
+    "minimum_deployment_lift": 1.2
+  },
+  "parameter_register": [
+    {
+      "parameter": "train_end/validation_end/test_end",
+      "source_id": "closed-period-time-split",
+      "status": "pre-specified validation design",
+      "approved_by": "repository author self-review",
+      "boundary": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter": "triage_capacity_shares",
+      "source_id": "analyst-capacity-scenarios",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Illustrative review capacity, not a CFPB or company service-level target."
+    },
+    {
+      "parameter": "bootstrap_block_days",
+      "source_id": "dependence-preserving-resampling-rule",
+      "status": "robustness design",
+      "approved_by": "repository author self-review",
+      "boundary": "Week blocks preserve shared calendar shocks better than independent complaint resampling; block length is sensitivity-tested."
+    },
+    {
+      "parameter": "permutation_samples",
+      "source_id": "negative-validation-protocol",
+      "status": "pre-specified computational design",
+      "approved_by": "repository author self-review",
+      "boundary": "Permutation inference benchmarks ranking signal against label exchangeability; it does not establish transport."
+    },
+    {
+      "parameter": "minimum_deployment_auc/minimum_deployment_lift",
+      "source_id": "analyst-deployment-gate",
+      "status": "conservative demonstration threshold",
+      "approved_by": "repository author self-review",
+      "boundary": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter": "timely",
+      "source_id": "cfpb-field-definition",
+      "status": "observed operational outcome",
+      "approved_by": "repository author self-review",
+      "boundary": "A timely-response flag is not a measure of complaint merit, consumer harm, resolution quality, or regulatory compliance."
+    }
+  ]
+}

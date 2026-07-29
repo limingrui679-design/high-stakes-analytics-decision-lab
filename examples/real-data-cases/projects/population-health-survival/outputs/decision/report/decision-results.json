@@ -1,0 +1,1797 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-07-28T10:05:24.971534+00:00",
+    "case_id": "real-population-health-survival",
+    "case_hash_sha256": "9c2215f0017eefaaaf248aa7b58ff385d44dd640cfe3bcdf442257520633ba90",
+    "samples": 10000,
+    "seed": 20260727,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which follow-up triage rule should advance to prospective clinical validation",
+    "domain": "Population health and biostatistics",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which follow-up triage rule should advance to prospective clinical validation?",
+    "time_horizon": "Prospective pilot design; no clinical deployment",
+    "recommendation": "dual-marker-triage",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "dual-marker-triage",
+      "ejection-triage",
+      "current-age-rule"
+    ],
+    "pareto_frontier": [
+      "dual-marker-triage",
+      "ejection-triage",
+      "current-age-rule"
+    ],
+    "pareto_frontier_unconstrained": [
+      "current-age-rule",
+      "ejection-triage",
+      "dual-marker-triage"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.05607591135899992,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 95.725,
+    "robustness_components": {
+      "probability_best": {
+        "value": 0.8575,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "high_risk_capture",
+      "label": "Observed event capture",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "workload_share",
+      "label": "Follow-up workload",
+      "direction": "minimize",
+      "weight": 0.3,
+      "unit": "share",
+      "scale": {
+        "worst": 1,
+        "best": 0
+      },
+      "normalized_weight": 0.3
+    },
+    {
+      "id": "sex_selection_gap",
+      "label": "Recorded-sex selection gap",
+      "direction": "minimize",
+      "weight": 0.25,
+      "unit": "absolute share",
+      "scale": {
+        "worst": 0.5,
+        "best": 0
+      },
+      "normalized_weight": 0.25
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "high_risk_capture": {
+            "multiply": 0.92
+          },
+          "workload_share": {
+            "multiply": 1.08
+          },
+          "sex_selection_gap": {
+            "multiply": 1.08
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "dual-marker-triage"
+      ],
+      "winner": "dual-marker-triage",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "dual-marker-triage"
+      ],
+      "winner": "dual-marker-triage",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "current-age-rule": {
+      "alternative_id": "current-age-rule",
+      "label": "Current Age Rule",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.6362658782177999,
+      "utility_p05": 0.5715059425,
+      "utility_p95": 0.6923634125,
+      "cvar10": 0.5667164319599995,
+      "risk_adjusted_utility": 0.6188785166533498,
+      "value_score": 61.88785166533498,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Observed event capture",
+          "unit": "share",
+          "mean": 0.507863825652002,
+          "normalized_score": 0.507863825652002,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.411765,
+          "p95": 0.598214
+        },
+        "workload_share": {
+          "label": "Follow-up workload",
+          "unit": "share",
+          "mean": 0.3934820993320015,
+          "normalized_score": 0.6065179006679987,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.337793,
+          "p95": 0.448161
+        },
+        "sex_selection_gap": {
+          "label": "Recorded-sex selection gap",
+          "unit": "absolute share",
+          "mean": 0.04845642705199942,
+          "normalized_score": 0.9030871458959991,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.003663,
+          "p95": 0.12210669399999934
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.6438184645066679,
+          "p05": 0.583398225,
+          "p95": 0.6957052949999999,
+          "cvar10": 0.5787667655333335,
+          "risk_adjusted_utility": 0.6275555397633343,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6136081193511996,
+          "p05": 0.5533348473999999,
+          "p95": 0.6644119878999999,
+          "cvar10": 0.5487500697759997,
+          "risk_adjusted_utility": 0.5973936069573996,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0438,
+      "probability_best_unconstrained": 0.0438,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "ejection-triage": {
+      "alternative_id": "ejection-triage",
+      "label": "Ejection Triage",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.6488952244578005,
+      "utility_p05": 0.5844652732000001,
+      "utility_p95": 0.7092769099999999,
+      "cvar10": 0.578239756734,
+      "risk_adjusted_utility": 0.6312313575268503,
+      "value_score": 63.12313575268503,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Observed event capture",
+          "unit": "share",
+          "mean": 0.5179949960439961,
+          "normalized_score": 0.5179949960439961,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.431579,
+          "p95": 0.602151
+        },
+        "workload_share": {
+          "label": "Follow-up workload",
+          "unit": "share",
+          "mean": 0.3177471123999996,
+          "normalized_score": 0.6822528876000087,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.270903,
+          "p95": 0.36481644
+        },
+        "sex_selection_gap": {
+          "label": "Recorded-sex selection gap",
+          "unit": "absolute share",
+          "mean": 0.07775678008399965,
+          "normalized_score": 0.8444864398320026,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.006474,
+          "p95": 0.157843
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.6563147913866697,
+          "p05": 0.5952635675,
+          "p95": 0.71322659,
+          "cvar10": 0.5898926057333335,
+          "risk_adjusted_utility": 0.6397092449733357,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6266365236711996,
+          "p05": 0.5641747201,
+          "p95": 0.6842935863999999,
+          "cvar10": 0.5592258819999997,
+          "risk_adjusted_utility": 0.6097838632533996,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0987,
+      "probability_best_unconstrained": 0.0987,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "dual-marker-triage": {
+      "alternative_id": "dual-marker-triage",
+      "label": "Dual Marker Triage",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7059722924278,
+      "utility_p05": 0.636187023,
+      "utility_p95": 0.76655367,
+      "cvar10": 0.6313121982600011,
+      "risk_adjusted_utility": 0.6873072688858503,
+      "value_score": 68.73072688858502,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Observed event capture",
+          "unit": "share",
+          "mean": 0.7259785514680015,
+          "normalized_score": 0.7259785514680015,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6461905200000001,
+          "p95": 0.808081
+        },
+        "workload_share": {
+          "label": "Follow-up workload",
+          "unit": "share",
+          "mean": 0.4342854083960017,
+          "normalized_score": 0.5657145916039897,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.381271,
+          "p95": 0.488294
+        },
+        "sex_selection_gap": {
+          "label": "Recorded-sex selection gap",
+          "unit": "absolute share",
+          "mean": 0.08086486642799935,
+          "normalized_score": 0.838270267143996,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.008939,
+          "p95": 0.182513
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7156277850399985,
+          "p05": 0.65354391,
+          "p95": 0.7697392525,
+          "cvar10": 0.6487770368666669,
+          "risk_adjusted_utility": 0.6989150979966656,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6770058145912007,
+          "p05": 0.6111940276,
+          "p95": 0.7323887385999999,
+          "cvar10": 0.6071102629119998,
+          "risk_adjusted_utility": 0.6595319266714005,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.8575,
+      "probability_best_unconstrained": 0.8575,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "high_risk_capture",
+      "label": "↓ Observed event capture",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.6828734277855293,
+        "ejection-triage": 0.6538571632828217,
+        "current-age-rule": 0.6416237573547046
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.7024417761265879,
+          "cvar10": 0.6241683827623535,
+          "risk_adjusted_utility": 0.6828734277855293
+        },
+        "ejection-triage": {
+          "expected_utility": 0.671995264766115,
+          "cvar10": 0.5994428588329417,
+          "risk_adjusted_utility": 0.6538571632828217
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6589250639647042,
+          "cvar10": 0.5897198375247058,
+          "risk_adjusted_utility": 0.6416237573547046
+        }
+      }
+    },
+    {
+      "criterion": "high_risk_capture",
+      "label": "↑ Observed event capture",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.6913217478902666,
+        "ejection-triage": 0.6071486894351228,
+        "current-age-rule": 0.5946547376778553
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.7096469114351853,
+          "cvar10": 0.6363462572555104,
+          "risk_adjusted_utility": 0.6913217478902666
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6248523253613881,
+          "cvar10": 0.5540377816563269,
+          "risk_adjusted_utility": 0.6071486894351228
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6126818277465281,
+          "cvar10": 0.5405734674718368,
+          "risk_adjusted_utility": 0.5946547376778553
+        }
+      }
+    },
+    {
+      "criterion": "workload_share",
+      "label": "↓ Follow-up workload",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.7015257276050575,
+        "ejection-triage": 0.6261195324648359,
+        "current-age-rule": 0.6209226249374997
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.7215564814082246,
+          "cvar10": 0.6414334661955562,
+          "risk_adjusted_utility": 0.7015257276050575
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6451888174420035,
+          "cvar10": 0.5689116775333332,
+          "risk_adjusted_utility": 0.6261195324648359
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6395712090566663,
+          "cvar10": 0.5649768725800001,
+          "risk_adjusted_utility": 0.6209226249374997
+        }
+      }
+    },
+    {
+      "criterion": "workload_share",
+      "label": "↑ Follow-up workload",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.6704648892915643,
+        "ejection-triage": 0.6370956500659533,
+        "current-age-rule": 0.6163167494934798
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.6876778097116512,
+          "cvar10": 0.618826128031304,
+          "risk_adjusted_utility": 0.6704648892915643
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6532462239980829,
+          "cvar10": 0.5886439282695647,
+          "risk_adjusted_utility": 0.6370956500659533
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6323857072330453,
+          "cvar10": 0.5681098762747833,
+          "risk_adjusted_utility": 0.6163167494934798
+        }
+      }
+    },
+    {
+      "criterion": "sex_selection_gap",
+      "label": "↓ Recorded-sex selection gap",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.6768069127421987,
+        "ejection-triage": 0.6147368615269272,
+        "current-age-rule": 0.5952278479078376
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.6939452038172347,
+          "cvar10": 0.6253920395170907,
+          "risk_adjusted_utility": 0.6768069127421987
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6311142048783273,
+          "cvar10": 0.5656048314727271,
+          "risk_adjusted_utility": 0.6147368615269272
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6120093993379653,
+          "cvar10": 0.5448831936174543,
+          "risk_adjusted_utility": 0.5952278479078376
+        }
+      }
+    },
+    {
+      "criterion": "sex_selection_gap",
+      "label": "↑ Recorded-sex selection gap",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "dual-marker-triage",
+      "scores": {
+        "dual-marker-triage": 0.6992891167178663,
+        "ejection-triage": 0.6507433612032009,
+        "current-age-rule": 0.6471308851752009
+      },
+      "score_details": {
+        "dual-marker-triage": {
+          "expected_utility": 0.7206720673962662,
+          "cvar10": 0.6351402646826665,
+          "risk_adjusted_utility": 0.6992891167178663
+        },
+        "ejection-triage": {
+          "expected_utility": 0.670627581721601,
+          "cvar10": 0.5910906996480007,
+          "risk_adjusted_utility": 0.6507433612032009
+        },
+        "current-age-rule": {
+          "expected_utility": 0.6659126857376011,
+          "cvar10": 0.5907854834880005,
+          "risk_adjusted_utility": 0.6471308851752009
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "high_risk_capture": -0.28,
+          "workload_share": 0.28,
+          "sex_selection_gap": 0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "dual-marker-triage",
+      "ranking": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "feasible_alternatives": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "alternatives": {
+        "current-age-rule": {
+          "expected_utility": 0.6361177972272002,
+          "cvar10": 0.570276303452,
+          "risk_adjusted_utility": 0.6196574237834002,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0493
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6487889628281992,
+          "cvar10": 0.5819046888320009,
+          "risk_adjusted_utility": 0.6320678943291496,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1067
+        },
+        "dual-marker-triage": {
+          "expected_utility": 0.705876647997398,
+          "cvar10": 0.6342361408240003,
+          "risk_adjusted_utility": 0.6879665212040486,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.844
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "dual-marker-triage",
+      "ranking": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "feasible_alternatives": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "alternatives": {
+        "current-age-rule": {
+          "expected_utility": 0.6362658782177999,
+          "cvar10": 0.5667164319599995,
+          "risk_adjusted_utility": 0.6188785166533498,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0438
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6488952244578005,
+          "cvar10": 0.578239756734,
+          "risk_adjusted_utility": 0.6312313575268503,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0987
+        },
+        "dual-marker-triage": {
+          "expected_utility": 0.7059722924278,
+          "cvar10": 0.6313121982600011,
+          "risk_adjusted_utility": 0.6873072688858503,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.8575
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "dual-marker-triage",
+      "ranking": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "feasible_alternatives": [
+        "dual-marker-triage",
+        "ejection-triage",
+        "current-age-rule"
+      ],
+      "alternatives": {
+        "current-age-rule": {
+          "expected_utility": 0.6363290200636038,
+          "cvar10": 0.5638016515219993,
+          "risk_adjusted_utility": 0.6181971779282027,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0417
+        },
+        "ejection-triage": {
+          "expected_utility": 0.6489107137719998,
+          "cvar10": 0.5753581017659996,
+          "risk_adjusted_utility": 0.6305225607704997,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0908
+        },
+        "dual-marker-triage": {
+          "expected_utility": 0.7060194584414013,
+          "cvar10": 0.6287011181019999,
+          "risk_adjusted_utility": 0.686689873356551,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.8675
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "current-age-rule",
+        "right_alternative": "ejection-triage",
+        "correlation": 0.2658933159184464
+      },
+      {
+        "left_alternative": "current-age-rule",
+        "right_alternative": "dual-marker-triage",
+        "correlation": 0.2991085193302271
+      },
+      {
+        "left_alternative": "ejection-triage",
+        "right_alternative": "dual-marker-triage",
+        "correlation": 0.285935391014255
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 48,
+      "parameters_with_resolved_source": 48,
+      "parameters_approved_for_declared_use": 48,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-27",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.workload_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.workload_share.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.workload_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.sex_selection_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.sex_selection_gap.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.sex_selection_gap.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.workload_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.workload_share.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.workload_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.sex_selection_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.sex_selection_gap.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.sex_selection_gap.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.workload_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.workload_share.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.workload_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.sex_selection_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.sex_selection_gap.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.sex_selection_gap.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "population-health-survival-analysis-output",
+        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.high_risk_capture.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.workload_share.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.sex_selection_gap.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.high_risk_capture",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.workload_share",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.sex_selection_gap",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 0,
+      "parameter": 9,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.high_risk_capture",
+        "alternative_id": "current-age-rule",
+        "criterion_id": "high_risk_capture",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.workload_share",
+        "alternative_id": "current-age-rule",
+        "criterion_id": "workload_share",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.sex_selection_gap",
+        "alternative_id": "current-age-rule",
+        "criterion_id": "sex_selection_gap",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture",
+        "alternative_id": "ejection-triage",
+        "criterion_id": "high_risk_capture",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.workload_share",
+        "alternative_id": "ejection-triage",
+        "criterion_id": "workload_share",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.sex_selection_gap",
+        "alternative_id": "ejection-triage",
+        "criterion_id": "sex_selection_gap",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture",
+        "alternative_id": "dual-marker-triage",
+        "criterion_id": "high_risk_capture",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.workload_share",
+        "alternative_id": "dual-marker-triage",
+        "criterion_id": "workload_share",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.sex_selection_gap",
+        "alternative_id": "dual-marker-triage",
+        "criterion_id": "sex_selection_gap",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-27",
+    "sources": [
+      "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R",
+      "projects/population-health-survival/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "Small observational cohort; selection and treatment information are incomplete; thresholds were not prospectively registered.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

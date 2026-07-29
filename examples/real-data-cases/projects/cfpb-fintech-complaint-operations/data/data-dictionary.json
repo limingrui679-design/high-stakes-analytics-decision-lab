@@ -1,0 +1,18 @@
+{
+  "grain": "one published digital-payment complaint received in 2022",
+  "primary_key": "complaint_id",
+  "target": "timely",
+  "fields": {
+    "complaint_id": "CFPB public complaint identifier",
+    "date_received": "timestamp when CFPB received the complaint",
+    "date_sent_to_company": "timestamp when CFPB sent the complaint",
+    "sub_product": "consumer-identified sub-product",
+    "issue": "consumer-identified issue category",
+    "sub_issue": "consumer-identified sub-issue category",
+    "state": "two-letter state code when reported",
+    "submitted_via": "complaint submission channel",
+    "company_response": "company response disposition",
+    "timely": "CFPB timely-response indicator"
+  },
+  "interpretation_boundary": "The timely flag does not measure complaint merit, consumer harm, resolution quality, or regulatory compliance."
+}

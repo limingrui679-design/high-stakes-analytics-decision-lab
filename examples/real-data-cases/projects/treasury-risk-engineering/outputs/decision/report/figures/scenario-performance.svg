@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="488" viewBox="0 0 1200 488" role="img" aria-labelledby="title desc">
+<title id="title">Scenario resilience</title>
+<desc id="desc">Small-multiple panels compare all alternatives on a common zero-to-one scale within each scenario and directly label the winner and scenario probability.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="488" fill="#EEF3F8"/>
+<circle cx="1180" cy="458" r="120" fill="#7257D9" opacity=".035"/>
+<circle cx="36" cy="483" r="86" fill="#7257D9" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#7257D9"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#7257D9"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#7257D9">DECISION INTELLIGENCE</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Scenario resilience</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Small multiples reveal which external conditions preserve—or overturn—the preferred option</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#7257D9" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#7257D9"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="38.0" y="142.0" width="555.0" height="288.0" rx="16" fill="#07152A" opacity=".055"/><rect x="36.0" y="136.0" width="555.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="54.0" y="164.0" class="section" text-anchor="start">Observed evidence base</text>
+<rect x="489.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="531.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 75%</text>
+<text x="54.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="54.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Short Baseline</text>
+<rect x="54.0" y="229.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="229.0" width="379.3" height="8.0" rx="4.0" fill="#7257D9"/>
+<text x="573.0" y="237.0" class="mono" text-anchor="end">0.802</text>
+<text x="573.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#7257D9">WINNER</text>
+<text x="54.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Intermediate</text>
+<rect x="54.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="273.0" width="365.4" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="573.0" y="281.0" class="mono" text-anchor="end">0.773</text>
+<text x="54.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Barbell</text>
+<rect x="54.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="317.0" width="363.2" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="573.0" y="325.0" class="mono" text-anchor="end">0.768</text>
+<text x="54.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Long Duration</text>
+<rect x="54.0" y="361.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="361.0" width="346.4" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="573.0" y="369.0" class="mono" text-anchor="end">0.732</text>
+<rect x="611.0" y="142.0" width="555.0" height="288.0" rx="16" fill="#07152A" opacity=".055"/><rect x="609.0" y="136.0" width="555.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="627.0" y="164.0" class="section" text-anchor="start">Adverse transfer to a new setting</text>
+<rect x="1062.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="1104.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 25%</text>
+<text x="627.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="627.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Short Baseline</text>
+<rect x="627.0" y="229.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="627.0" y="229.0" width="376.8" height="8.0" rx="4.0" fill="#7257D9"/>
+<text x="1146.0" y="237.0" class="mono" text-anchor="end">0.797</text>
+<text x="1146.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#7257D9">WINNER</text>
+<text x="627.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Intermediate</text>
+<rect x="627.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="627.0" y="273.0" width="362.8" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="1146.0" y="281.0" class="mono" text-anchor="end">0.767</text>
+<text x="627.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Barbell</text>
+<rect x="627.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="627.0" y="317.0" width="360.8" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="1146.0" y="325.0" class="mono" text-anchor="end">0.763</text>
+<text x="627.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Long Duration</text>
+<rect x="627.0" y="361.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="627.0" y="361.0" width="343.0" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="1146.0" y="369.0" class="mono" text-anchor="end">0.725</text>
+<line x1="36" y1="448.0" x2="1164" y2="448.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="470.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="470.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+<text x="600.0" y="470.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

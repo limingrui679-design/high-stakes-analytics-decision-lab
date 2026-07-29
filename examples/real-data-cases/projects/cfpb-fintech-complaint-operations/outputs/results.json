@@ -1,0 +1,835 @@
+{
+  "project_id": "cfpb-fintech-complaint-operations",
+  "data": {
+    "rows": 13534,
+    "train_rows": 8837,
+    "validation_rows": 2301,
+    "test_rows": 2396,
+    "period": [
+      "2022-01-01",
+      "2022-12-31"
+    ]
+  },
+  "model_selection": {
+    "selected": "issue-and-product",
+    "candidate_validation_results": {
+      "issue-and-product": {
+        "validation_auc": 0.5899033679124627,
+        "validation_brier": 0.013488725811131277,
+        "features": {
+          "numeric": [],
+          "categorical": [
+            "sub_product",
+            "issue",
+            "sub_issue"
+          ]
+        }
+      },
+      "intake-context": {
+        "validation_auc": 0.5757211880062527,
+        "validation_brier": 0.19460873066526319,
+        "features": {
+          "numeric": [],
+          "categorical": [
+            "sub_product",
+            "issue",
+            "sub_issue",
+            "state",
+            "submitted_via",
+            "received_month",
+            "received_weekday"
+          ]
+        }
+      }
+    },
+    "selection_rule": "highest validation AUC, then lowest validation Brier",
+    "probability_calibration": {
+      "method": "validation-set Platt calibration",
+      "center": -4.44195998724346,
+      "spread": 0.7483737418824479,
+      "intercept": -4.297709336785308,
+      "slope": 0.1944491028948795,
+      "iterations": 2500,
+      "l2": 0.001
+    },
+    "selected_validation_brier_after_calibration": 0.013279152580675106
+  },
+  "test": {
+    "n": 2396,
+    "prevalence": 0.025041736227045076,
+    "auc": 0.6107876712328767,
+    "brier": 0.024503971964416792,
+    "accuracy": 0.9749582637729549,
+    "true_positive_rate": 0.0,
+    "false_positive_rate": 0.0,
+    "confusion": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 2336,
+      "fn": 60
+    }
+  },
+  "test_calibration": [
+    {
+      "bin": 1,
+      "n": 299,
+      "mean_score": 0.010310324005333537,
+      "observed_rate": 0.0,
+      "score_min": 0.009904549142778116,
+      "score_max": 0.011402409437890377
+    },
+    {
+      "bin": 2,
+      "n": 300,
+      "mean_score": 0.011405921452409581,
+      "observed_rate": 0.016666666666666666,
+      "score_min": 0.011402409437890377,
+      "score_max": 0.01141913331655333
+    },
+    {
+      "bin": 3,
+      "n": 299,
+      "mean_score": 0.012012423647592214,
+      "observed_rate": 0.006688963210702341,
+      "score_min": 0.01141913331655333,
+      "score_max": 0.012563609503525182
+    },
+    {
+      "bin": 4,
+      "n": 300,
+      "mean_score": 0.012862228864349776,
+      "observed_rate": 0.02666666666666667,
+      "score_min": 0.012563609503525182,
+      "score_max": 0.01366960713620911
+    },
+    {
+      "bin": 5,
+      "n": 299,
+      "mean_score": 0.013823646300104239,
+      "observed_rate": 0.04013377926421405,
+      "score_min": 0.01366960713620911,
+      "score_max": 0.013964490209810401
+    },
+    {
+      "bin": 6,
+      "n": 300,
+      "mean_score": 0.015144451410439326,
+      "observed_rate": 0.02666666666666667,
+      "score_min": 0.013964490209810401,
+      "score_max": 0.015409610827349624
+    },
+    {
+      "bin": 7,
+      "n": 299,
+      "mean_score": 0.016753289559971626,
+      "observed_rate": 0.05016722408026756,
+      "score_min": 0.015409610827349624,
+      "score_max": 0.017116439320192463
+    },
+    {
+      "bin": 8,
+      "n": 300,
+      "mean_score": 0.019273350006226778,
+      "observed_rate": 0.03333333333333333,
+      "score_min": 0.017116439320192463,
+      "score_max": 0.027496138029450504
+    }
+  ],
+  "auc_validation": {
+    "observed_auc": 0.6107876712328767,
+    "block_bootstrap_95_interval": [
+      0.5386500770096976,
+      0.6966899099655705
+    ],
+    "permutation_null": {
+      "samples": 500,
+      "mean_auc": 0.5006276969178084,
+      "95_interval": [
+        0.4333720390981735,
+        0.569574236586758
+      ],
+      "one_sided_p_value": 0.001996007984031936
+    }
+  },
+  "capacity_validation": {
+    "5%": {
+      "capacity_share": 0.05008347245409015,
+      "selected_count": 120,
+      "positive_capture": 0.05,
+      "precision": 0.025,
+      "lift_vs_random": 0.9983333333333334,
+      "random_capture_benchmark": 0.05008347245409015,
+      "excess_capture_over_random": -8.347245409014853e-05,
+      "lift_block_bootstrap_95_interval": [
+        0.33259269558769,
+        2.457085235920852
+      ]
+    },
+    "10%": {
+      "capacity_share": 0.1001669449081803,
+      "selected_count": 240,
+      "positive_capture": 0.11666666666666667,
+      "precision": 0.029166666666666667,
+      "lift_vs_random": 1.1647222222222222,
+      "random_capture_benchmark": 0.1001669449081803,
+      "excess_capture_over_random": 0.016499721758486366,
+      "lift_block_bootstrap_95_interval": [
+        0.40320442176870747,
+        1.85653024691358
+      ]
+    },
+    "20%": {
+      "capacity_share": 0.2003338898163606,
+      "selected_count": 480,
+      "positive_capture": 0.2,
+      "precision": 0.025,
+      "lift_vs_random": 0.9983333333333334,
+      "random_capture_benchmark": 0.2003338898163606,
+      "excess_capture_over_random": -0.0003338898163605941,
+      "lift_block_bootstrap_95_interval": [
+        0.5653135691593353,
+        1.7540162037037035
+      ]
+    }
+  },
+  "deployment_gate": {
+    "status": "do_not_deploy_ranking_model",
+    "passes": false,
+    "auc_gate": {
+      "threshold": 0.65,
+      "observed": 0.6107876712328767,
+      "passes": false
+    },
+    "capacity_lift_gate": {
+      "threshold": 1.2,
+      "passes_any_review_capacity": false
+    },
+    "reason": "Later-period discrimination is weak and no tested capacity has both the required point lift and a block-bootstrap lower bound above random review.",
+    "permitted_use": "Retain the privacy-minimized data contract, calendar split, aggregate monitoring, and negative-validation evidence; do not operationalize individual complaint ranking.",
+    "reversal_conditions": [
+      "A pre-registered future-period evaluation exceeds the AUC gate and reproduces material lift above random review.",
+      "Operationally available features add stable signal without violating the privacy and use boundary.",
+      "A prospective workflow study demonstrates benefit and checks distributional burden before any ranking use."
+    ]
+  },
+  "block_length_sensitivity": {
+    "3": {
+      "5%": {
+        "lift_95_interval": [
+          0.28213768115942045,
+          2.5886735104669887
+        ]
+      },
+      "10%": {
+        "lift_95_interval": [
+          0.4065397455278408,
+          1.8028614267676768
+        ]
+      },
+      "20%": {
+        "lift_95_interval": [
+          0.543841300940439,
+          1.7280179398148148
+        ]
+      }
+    },
+    "7": {
+      "5%": {
+        "lift_95_interval": [
+          0.0,
+          2.3490196078431373
+        ]
+      },
+      "10%": {
+        "lift_95_interval": [
+          0.18487654320987654,
+          1.844091194968554
+        ]
+      },
+      "20%": {
+        "lift_95_interval": [
+          0.5539993686868688,
+          1.6638888888888888
+        ]
+      }
+    },
+    "14": {
+      "5%": {
+        "lift_95_interval": [
+          0.3356465517241381,
+          2.22329980842912
+        ]
+      },
+      "10%": {
+        "lift_95_interval": [
+          0.5857094943240455,
+          1.721264367816092
+        ]
+      },
+      "20%": {
+        "lift_95_interval": [
+          0.6707552083333335,
+          1.572275958994709
+        ]
+      }
+    }
+  },
+  "monthly_operations": {
+    "2022-01": {
+      "complaints": 1019,
+      "late_response_rate": 0.004906771344455349
+    },
+    "2022-02": {
+      "complaints": 883,
+      "late_response_rate": 0.01245753114382786
+    },
+    "2022-03": {
+      "complaints": 1110,
+      "late_response_rate": 0.015315315315315315
+    },
+    "2022-04": {
+      "complaints": 1178,
+      "late_response_rate": 0.02801358234295416
+    },
+    "2022-05": {
+      "complaints": 1152,
+      "late_response_rate": 0.013020833333333334
+    },
+    "2022-06": {
+      "complaints": 1003,
+      "late_response_rate": 0.020937188434695914
+    },
+    "2022-07": {
+      "complaints": 1192,
+      "late_response_rate": 0.01174496644295302
+    },
+    "2022-08": {
+      "complaints": 1300,
+      "late_response_rate": 0.008461538461538461
+    },
+    "2022-09": {
+      "complaints": 1202,
+      "late_response_rate": 0.009983361064891847
+    },
+    "2022-10": {
+      "complaints": 1099,
+      "late_response_rate": 0.017288444040036398
+    },
+    "2022-11": {
+      "complaints": 1221,
+      "late_response_rate": 0.02702702702702703
+    },
+    "2022-12": {
+      "complaints": 1175,
+      "late_response_rate": 0.02297872340425532
+    }
+  },
+  "sub_product_operations": {
+    "Check cashing service": {
+      "complaints": 215,
+      "late_response_rate": 0.03255813953488372
+    },
+    "Debt settlement": {
+      "complaints": 164,
+      "late_response_rate": 0.042682926829268296
+    },
+    "Domestic (US) money transfer": {
+      "complaints": 3878,
+      "late_response_rate": 0.01701908200103146
+    },
+    "Foreign currency exchange": {
+      "complaints": 151,
+      "late_response_rate": 0.019867549668874173
+    },
+    "International money transfer": {
+      "complaints": 1567,
+      "late_response_rate": 0.02169751116783663
+    },
+    "Mobile or digital wallet": {
+      "complaints": 5041,
+      "late_response_rate": 0.00813330688355485
+    },
+    "Money order": {
+      "complaints": 161,
+      "late_response_rate": 0.012422360248447204
+    },
+    "Refund anticipation check": {
+      "complaints": 152,
+      "late_response_rate": 0.039473684210526314
+    },
+    "Traveler's check or cashier's check": {
+      "complaints": 224,
+      "late_response_rate": 0.022321428571428572
+    },
+    "Virtual currency": {
+      "complaints": 1981,
+      "late_response_rate": 0.023725391216557295
+    }
+  },
+  "subgroup_metrics": {
+    "Check cashing service": {
+      "n": 55,
+      "late_response_rate": 0.01818181818181818,
+      "auc": 0.3055555555555556,
+      "top_10_percent": {
+        "capacity_share": 0.10909090909090909,
+        "selected_count": 6,
+        "positive_capture": 0.0,
+        "precision": 0.0,
+        "lift_vs_random": 0.0
+      }
+    },
+    "Domestic (US) money transfer": {
+      "n": 631,
+      "late_response_rate": 0.03169572107765452,
+      "auc": 0.660556464811784,
+      "top_10_percent": {
+        "capacity_share": 0.10142630744849446,
+        "selected_count": 64,
+        "positive_capture": 0.5,
+        "precision": 0.15625,
+        "lift_vs_random": 4.9296875
+      }
+    },
+    "International money transfer": {
+      "n": 308,
+      "late_response_rate": 0.022727272727272728,
+      "auc": 0.43474133839582346,
+      "top_10_percent": {
+        "capacity_share": 0.10064935064935066,
+        "selected_count": 31,
+        "positive_capture": 0.0,
+        "precision": 0.0,
+        "lift_vs_random": 0.0
+      }
+    },
+    "Mobile or digital wallet": {
+      "n": 794,
+      "late_response_rate": 0.008816120906801008,
+      "auc": 0.5698856416772554,
+      "top_10_percent": {
+        "capacity_share": 0.10075566750629723,
+        "selected_count": 80,
+        "positive_capture": 0.0,
+        "precision": 0.0,
+        "lift_vs_random": 0.0
+      }
+    },
+    "Virtual currency": {
+      "n": 453,
+      "late_response_rate": 0.04194260485651214,
+      "auc": 0.424812030075188,
+      "top_10_percent": {
+        "capacity_share": 0.10154525386313466,
+        "selected_count": 46,
+        "positive_capture": 0.10526315789473684,
+        "precision": 0.043478260869565216,
+        "lift_vs_random": 1.036613272311213
+      }
+    }
+  },
+  "privacy_design": "Narratives, company names, ZIP codes, tags, and public-response text were excluded before repository storage.",
+  "claim_boundary": "The timely indicator is not complaint merit, consumer harm, resolution quality, company quality, or regulatory compliance. Weak ranking performance cannot be rescued by privacy or validation discipline; those are separate contributions.",
+  "provenance": {
+    "source_id": "cfpb-ccdb-digital-payments-2022",
+    "citation": "Consumer Financial Protection Bureau. Consumer Complaint Database, money transfer, virtual currency, or money service complaints received in 2022. Privacy-minimized API extract accessed 2026-07-27.",
+    "version": "Closed 2022 UTC date window; privacy-minimized extract created 2026-07-27",
+    "license": "CC0",
+    "accessed_at": "2026-07-27",
+    "raw_sha256": {
+      "cfpb-digital-payments-2022-sanitized.csv": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
+    },
+    "config_sha256": "316482e52251ff05ac1f2eb2fb96e98ca0d2672fc117a9dc0416090446145003"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260727,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.train_end",
+      "label": "train end",
+      "value_or_distribution": "2022-08-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for train_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.validation_end",
+      "label": "validation end",
+      "value_or_distribution": "2022-10-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for validation_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.test_end",
+      "label": "test end",
+      "value_or_distribution": "2022-12-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for test_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.triage_capacity_shares",
+      "label": "triage capacity shares",
+      "value_or_distribution": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-capacity-scenarios",
+      "source_fact": "Registered project configuration for triage_capacity_shares; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative review capacity, not a CFPB or company service-level target."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_block_days",
+      "label": "bootstrap block days",
+      "value_or_distribution": 7,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "dependence-preserving-resampling-rule",
+      "source_fact": "Registered project configuration for bootstrap_block_days; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Week blocks preserve shared calendar shocks better than independent complaint resampling; block length is sensitivity-tested."
+    },
+    {
+      "parameter_path": "config.parameters.permutation_samples",
+      "label": "permutation samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "negative-validation-protocol",
+      "source_fact": "Registered project configuration for permutation_samples; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Permutation inference benchmarks ranking signal against label exchangeability; it does not establish transport."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_deployment_auc",
+      "label": "minimum deployment auc",
+      "value_or_distribution": 0.65,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-deployment-gate",
+      "source_fact": "Registered project configuration for minimum_deployment_auc; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_deployment_lift",
+      "label": "minimum deployment lift",
+      "value_or_distribution": 1.2,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-deployment-gate",
+      "source_fact": "Registered project configuration for minimum_deployment_lift; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter_path": "derived.timely",
+      "label": "timely",
+      "value_or_distribution": "derived or source-defined field",
+      "unit": "project-specific",
+      "uncertainty_type": "none",
+      "source_id": "cfpb-field-definition",
+      "source_fact": "observed operational outcome",
+      "transformation": "Defined or derived in prepare_data.py or analyze.py.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "observed_or_assumed_as_labeled",
+      "notes": "A timely-response flag is not a measure of complaint merit, consumer harm, resolution quality, or regulatory compliance."
+    }
+  ]
+}

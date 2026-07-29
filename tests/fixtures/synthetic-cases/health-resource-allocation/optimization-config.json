@@ -1,0 +1,47 @@
+{
+  "title": "Community Screening Capacity Optimization",
+  "budget": 120,
+  "risk_aversion": 0.45,
+  "top_k": 8,
+  "resources": [
+    {"id": "fixed_clinic", "min": 10, "max": 70, "step": 10, "unit_cost": 1.2},
+    {"id": "mobile_unit", "min": 0, "max": 50, "step": 10, "unit_cost": 1.5},
+    {"id": "digital_navigation", "min": 0, "max": 60, "step": 10, "unit_cost": 0.6}
+  ],
+  "constraints": [
+    {
+      "id": "minimum_physical_capacity",
+      "label": "Minimum physical screening capacity",
+      "coefficients": {"fixed_clinic": 1, "mobile_unit": 1},
+      "operator": ">=",
+      "threshold": 40
+    },
+    {
+      "id": "rural_access",
+      "label": "Minimum rural-access capacity",
+      "coefficients": {"mobile_unit": 1, "digital_navigation": 0.35},
+      "operator": ">=",
+      "threshold": 28
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base demand",
+      "probability": 0.5,
+      "benefit_coefficients": {"fixed_clinic": 1.8, "mobile_unit": 2.2, "digital_navigation": 0.8}
+    },
+    {
+      "id": "winter_surge",
+      "label": "Winter surge",
+      "probability": 0.3,
+      "benefit_coefficients": {"fixed_clinic": 1.5, "mobile_unit": 2.5, "digital_navigation": 1.0}
+    },
+    {
+      "id": "staff_shortage",
+      "label": "Clinical staff shortage",
+      "probability": 0.2,
+      "benefit_coefficients": {"fixed_clinic": 1.2, "mobile_unit": 1.7, "digital_navigation": 1.4}
+    }
+  ]
+}

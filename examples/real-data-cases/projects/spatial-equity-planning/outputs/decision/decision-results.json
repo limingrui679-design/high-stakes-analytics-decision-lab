@@ -1,0 +1,1793 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-07-28T10:06:12.258912+00:00",
+    "case_id": "real-spatial-equity-planning",
+    "case_hash_sha256": "b415e08e6d44ff656cac03f2e454798d876b19bb6a6cecb5578623dfd60ab6e9",
+    "samples": 10000,
+    "seed": 20260727,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which five-hub prioritization rule should advance to local network and stakeholder review",
+    "domain": "Urban planning and spatial policy",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which five-hub prioritization rule should advance to local network and stakeholder review?",
+    "time_horizon": "Pre-feasibility planning",
+    "recommendation": "baseline-poverty-priority",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "baseline-poverty-priority",
+      "composite-equity",
+      "transit-priority"
+    ],
+    "pareto_frontier": [
+      "baseline-poverty-priority"
+    ],
+    "pareto_frontier_unconstrained": [
+      "baseline-poverty-priority"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.019216336972752823,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 95.35,
+    "robustness_components": {
+      "probability_best": {
+        "value": 0.845,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "need_coverage",
+      "label": "Need-weighted coverage",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "high_poverty_coverage",
+      "label": "High-poverty population coverage",
+      "direction": "maximize",
+      "weight": 0.35,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.35
+    },
+    {
+      "id": "population_weighted_distance_km",
+      "label": "Population-weighted distance",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "km",
+      "scale": {
+        "worst": 50,
+        "best": 0
+      },
+      "normalized_weight": 0.2
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "need_coverage": {
+            "multiply": 0.92
+          },
+          "high_poverty_coverage": {
+            "multiply": 0.92
+          },
+          "population_weighted_distance_km": {
+            "multiply": 1.08
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "baseline-poverty-priority"
+      ],
+      "winner": "baseline-poverty-priority",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "baseline-poverty-priority"
+      ],
+      "winner": "baseline-poverty-priority",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "baseline-poverty-priority": {
+      "alternative_id": "baseline-poverty-priority",
+      "label": "Baseline: Poverty Priority",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7008679889214849,
+      "utility_p05": 0.649332923294,
+      "utility_p95": 0.7352737974700001,
+      "cvar10": 0.6475584709291029,
+      "risk_adjusted_utility": 0.6875406094233895,
+      "value_score": 68.75406094233895,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "need_coverage": {
+          "label": "Need-weighted coverage",
+          "unit": "share",
+          "mean": 0.7678413482880019,
+          "normalized_score": 0.7678413482880019,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.70630838,
+          "p95": 0.8102524
+        },
+        "high_poverty_coverage": {
+          "label": "High-poverty population coverage",
+          "unit": "share",
+          "mean": 0.6701945004463968,
+          "normalized_score": 0.6701945004463968,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6031809800000001,
+          "p95": 0.7257916
+        },
+        "population_weighted_distance_km": {
+          "label": "Population-weighted distance",
+          "unit": "km",
+          "mean": 19.80717324108828,
+          "normalized_score": 0.6038565351782308,
+          "scale_clipping_rate": 0.0,
+          "p05": 18.9386495,
+          "p95": 21.306821050799993
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7144027985401076,
+          "p05": 0.69029614076,
+          "p95": 0.73742036359,
+          "cvar10": 0.6886435701597333,
+          "risk_adjusted_utility": 0.7079629914450141,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6602635600656271,
+          "p05": 0.6379186966975999,
+          "p95": 0.6806209198040001,
+          "cvar10": 0.6361937081499517,
+          "risk_adjusted_utility": 0.6542460970867083,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.845,
+      "probability_best_unconstrained": 0.845,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "transit-priority": {
+      "alternative_id": "transit-priority",
+      "label": "Transit Priority",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5074087015103809,
+      "utility_p05": 0.4614225700364,
+      "utility_p95": 0.5439997228800001,
+      "cvar10": 0.4595764174021197,
+      "risk_adjusted_utility": 0.49545063048331556,
+      "value_score": 49.545063048331556,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "need_coverage": {
+          "label": "Need-weighted coverage",
+          "unit": "share",
+          "mean": 0.6195988335680006,
+          "normalized_score": 0.6195988335680006,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.561474436,
+          "p95": 0.6703391999999999
+        },
+        "high_poverty_coverage": {
+          "label": "High-poverty population coverage",
+          "unit": "share",
+          "mean": 0.4082525444291996,
+          "normalized_score": 0.4082525444291996,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.352954688,
+          "p95": 0.4632886
+        },
+        "population_weighted_distance_km": {
+          "label": "Population-weighted distance",
+          "unit": "km",
+          "mean": 28.57479103635968,
+          "normalized_score": 0.4285041792728114,
+          "scale_clipping_rate": 0.0,
+          "p05": 27.2698152,
+          "p95": 30.706639812000002
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.5182322728757068,
+          "p05": 0.49038799035999997,
+          "p95": 0.54650279149,
+          "cvar10": 0.4885084548376005,
+          "risk_adjusted_utility": 0.5108013183661803,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.47493798741440557,
+          "p05": 0.44986664558239997,
+          "p95": 0.50128599943,
+          "cvar10": 0.44801487251372785,
+          "risk_adjusted_utility": 0.46820720868923615,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    },
+    "composite-equity": {
+      "alternative_id": "composite-equity",
+      "label": "Composite Equity",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.6817126106462301,
+      "utility_p05": 0.6300300146787999,
+      "utility_p95": 0.71816604684,
+      "cvar10": 0.6281592578638561,
+      "risk_adjusted_utility": 0.6683242724506366,
+      "value_score": 66.83242724506367,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "need_coverage": {
+          "label": "Need-weighted coverage",
+          "unit": "share",
+          "mean": 0.7646620787048,
+          "normalized_score": 0.7646620787048,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.702406108,
+          "p95": 0.8105911
+        },
+        "high_poverty_coverage": {
+          "label": "High-poverty population coverage",
+          "unit": "share",
+          "mean": 0.6430529608612028,
+          "normalized_score": 0.6430529608612028,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.5762655704000001,
+          "p95": 0.7035618
+        },
+        "population_weighted_distance_km": {
+          "label": "Population-weighted distance",
+          "unit": "km",
+          "mean": 21.863465268087232,
+          "normalized_score": 0.5627306946382621,
+          "scale_clipping_rate": 0.0,
+          "p05": 20.7590938,
+          "p95": 23.540078844
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.6949423883646891,
+          "p05": 0.67035851345,
+          "p95": 0.7201429688400001,
+          "cvar10": 0.6687966963106672,
+          "risk_adjusted_utility": 0.6884059653511836,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6420232774908508,
+          "p05": 0.6183612583376001,
+          "p95": 0.6655302205160001,
+          "cvar10": 0.616964280871584,
+          "risk_adjusted_utility": 0.6357585283360341,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.155,
+      "probability_best_unconstrained": 0.155,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "need_coverage",
+      "label": "↓ Need-weighted coverage",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.6758890712947992,
+        "composite-equity": 0.6538362999090243,
+        "transit-priority": 0.4758930780616179
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.6890491607979848,
+          "cvar10": 0.6364088027852425,
+          "risk_adjusted_utility": 0.6758890712947992
+        },
+        "composite-equity": {
+          "expected_utility": 0.6670744692241326,
+          "cvar10": 0.6141217919636991,
+          "risk_adjusted_utility": 0.6538362999090243
+        },
+        "transit-priority": {
+          "expected_utility": 0.48761044291198,
+          "cvar10": 0.4407409835105316,
+          "risk_adjusted_utility": 0.4758930780616179
+        }
+      }
+    },
+    {
+      "criterion": "need_coverage",
+      "label": "↑ Need-weighted coverage",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.6995580322155206,
+        "composite-equity": 0.6832864791330269,
+        "transit-priority": 0.5156812518093562
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7131692181928879,
+          "cvar10": 0.6587244742834185,
+          "risk_adjusted_utility": 0.6995580322155206
+        },
+        "composite-equity": {
+          "expected_utility": 0.6969482272284169,
+          "cvar10": 0.6423012348468571,
+          "risk_adjusted_utility": 0.6832864791330269
+        },
+        "transit-priority": {
+          "expected_utility": 0.5280150522964745,
+          "cvar10": 0.4786798503480014,
+          "risk_adjusted_utility": 0.5156812518093562
+        }
+      }
+    },
+    {
+      "criterion": "high_poverty_coverage",
+      "label": "↓ High-poverty population coverage",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.6918615782389674,
+        "composite-equity": 0.6736662246177223,
+        "transit-priority": 0.5084219541461767
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7049192043804579,
+          "cvar10": 0.6526886998144962,
+          "risk_adjusted_utility": 0.6918615782389674
+        },
+        "composite-equity": {
+          "expected_utility": 0.6868186021272732,
+          "cvar10": 0.6342090920890698,
+          "risk_adjusted_utility": 0.6736662246177223
+        },
+        "transit-priority": {
+          "expected_utility": 0.5205047977286523,
+          "cvar10": 0.47217342339875024,
+          "risk_adjusted_utility": 0.5084219541461767
+        }
+      }
+    },
+    {
+      "criterion": "high_poverty_coverage",
+      "label": "↑ High-poverty population coverage",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.6825471295710811,
+        "composite-equity": 0.6621729304844212,
+        "transit-priority": 0.48067008110091136
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.6962995970209431,
+          "cvar10": 0.641289727221495,
+          "risk_adjusted_utility": 0.6825471295710811
+        },
+        "composite-equity": {
+          "expected_utility": 0.6759547904654839,
+          "cvar10": 0.6208273505412328,
+          "risk_adjusted_utility": 0.6621729304844212
+        },
+        "transit-priority": {
+          "expected_utility": 0.4926407632216963,
+          "cvar10": 0.44475803473855663,
+          "risk_adjusted_utility": 0.48067008110091136
+        }
+      }
+    },
+    {
+      "criterion": "population_weighted_distance_km",
+      "label": "↓ Population-weighted distance",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.6939619460008303,
+        "composite-equity": 0.6763560691970175,
+        "transit-priority": 0.5008662688405793
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7077973784745746,
+          "cvar10": 0.6524556485795975,
+          "risk_adjusted_utility": 0.6939619460008303
+        },
+        "composite-equity": {
+          "expected_utility": 0.6902113189325142,
+          "cvar10": 0.6347903199905276,
+          "risk_adjusted_utility": 0.6763560691970175
+        },
+        "transit-priority": {
+          "expected_utility": 0.5130447388130654,
+          "cvar10": 0.4643308589231207,
+          "risk_adjusted_utility": 0.5008662688405793
+        }
+      }
+    },
+    {
+      "criterion": "population_weighted_distance_km",
+      "label": "↑ Population-weighted distance",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "baseline-poverty-priority",
+      "scores": {
+        "baseline-poverty-priority": 0.679361488200315,
+        "composite-equity": 0.6580926448359588,
+        "transit-priority": 0.4885343129640694
+      },
+      "score_details": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.6920487658539204,
+          "cvar10": 0.6412996552394984,
+          "risk_adjusted_utility": 0.679361488200315
+        },
+        "composite-equity": {
+          "expected_utility": 0.670896072827327,
+          "cvar10": 0.619682360861854,
+          "risk_adjusted_utility": 0.6580926448359588
+        },
+        "transit-priority": {
+          "expected_utility": 0.5002355631251496,
+          "cvar10": 0.45343056248082875,
+          "risk_adjusted_utility": 0.4885343129640694
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "need_coverage": -0.28,
+          "high_poverty_coverage": -0.28,
+          "population_weighted_distance_km": 0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "baseline-poverty-priority",
+      "ranking": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "feasible_alternatives": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "alternatives": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7008072313493791,
+          "cvar10": 0.6480177095254884,
+          "risk_adjusted_utility": 0.6876098508934064,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.8376
+        },
+        "transit-priority": {
+          "expected_utility": 0.5073445723763511,
+          "cvar10": 0.46047693540804036,
+          "risk_adjusted_utility": 0.4956276631342734,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "composite-equity": {
+          "expected_utility": 0.6816820945573947,
+          "cvar10": 0.6285688156207846,
+          "risk_adjusted_utility": 0.6684037748232422,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1624
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "baseline-poverty-priority",
+      "ranking": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "feasible_alternatives": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "alternatives": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7008679889214849,
+          "cvar10": 0.6475584709291029,
+          "risk_adjusted_utility": 0.6875406094233895,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.845
+        },
+        "transit-priority": {
+          "expected_utility": 0.5074087015103809,
+          "cvar10": 0.4595764174021197,
+          "risk_adjusted_utility": 0.49545063048331556,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "composite-equity": {
+          "expected_utility": 0.6817126106462301,
+          "cvar10": 0.6281592578638561,
+          "risk_adjusted_utility": 0.6683242724506366,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.155
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "baseline-poverty-priority",
+      "ranking": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "feasible_alternatives": [
+        "baseline-poverty-priority",
+        "composite-equity",
+        "transit-priority"
+      ],
+      "alternatives": {
+        "baseline-poverty-priority": {
+          "expected_utility": 0.7008849487161634,
+          "cvar10": 0.6471322435312158,
+          "risk_adjusted_utility": 0.6874467724199265,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.8537
+        },
+        "transit-priority": {
+          "expected_utility": 0.507426184597742,
+          "cvar10": 0.45890799033216045,
+          "risk_adjusted_utility": 0.49529663603134666,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "composite-equity": {
+          "expected_utility": 0.681718170299374,
+          "cvar10": 0.6276786576104332,
+          "risk_adjusted_utility": 0.6682082921271388,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1463
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "baseline-poverty-priority",
+        "right_alternative": "transit-priority",
+        "correlation": 0.6891017794776978
+      },
+      {
+        "left_alternative": "baseline-poverty-priority",
+        "right_alternative": "composite-equity",
+        "correlation": 0.7701129701900852
+      },
+      {
+        "left_alternative": "transit-priority",
+        "right_alternative": "composite-equity",
+        "correlation": 0.6846589593966492
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 48,
+      "parameters_with_resolved_source": 48,
+      "parameters_approved_for_declared_use": 48,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-27",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.need_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.need_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.need_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_poverty_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_poverty_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_poverty_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.population_weighted_distance_km.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.population_weighted_distance_km.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.population_weighted_distance_km.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.need_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.need_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.need_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_poverty_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_poverty_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_poverty_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.population_weighted_distance_km.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.population_weighted_distance_km.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.population_weighted_distance_km.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.need_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.need_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.need_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_poverty_coverage.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_poverty_coverage.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_poverty_coverage.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.population_weighted_distance_km.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.population_weighted_distance_km.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.population_weighted_distance_km.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "spatial-equity-planning-analysis-output",
+        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.need_coverage.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.high_poverty_coverage.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.population_weighted_distance_km.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.need_coverage",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.high_poverty_coverage",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.population_weighted_distance_km",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 0,
+      "parameter": 9,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.need_coverage",
+        "alternative_id": "baseline-poverty-priority",
+        "criterion_id": "need_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.high_poverty_coverage",
+        "alternative_id": "baseline-poverty-priority",
+        "criterion_id": "high_poverty_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.population_weighted_distance_km",
+        "alternative_id": "baseline-poverty-priority",
+        "criterion_id": "population_weighted_distance_km",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.need_coverage",
+        "alternative_id": "transit-priority",
+        "criterion_id": "need_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.high_poverty_coverage",
+        "alternative_id": "transit-priority",
+        "criterion_id": "high_poverty_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.population_weighted_distance_km",
+        "alternative_id": "transit-priority",
+        "criterion_id": "population_weighted_distance_km",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.need_coverage",
+        "alternative_id": "composite-equity",
+        "criterion_id": "need_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.high_poverty_coverage",
+        "alternative_id": "composite-equity",
+        "criterion_id": "high_poverty_coverage",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.population_weighted_distance_km",
+        "alternative_id": "composite-equity",
+        "criterion_id": "population_weighted_distance_km",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-27",
+    "sources": [
+      "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.",
+      "projects/spatial-equity-planning/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "Straight-line distance and tract centroids are planning-screen approximations; ACS margins of error and service capacity require local review.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "project_id": "spatial-equity-planning",
+  "source_id": "census-acs-2023-ma-tracts",
+  "verified_at": "2026-07-28T10:14:00.853243+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/acs-b01003-ma.dat",
+      "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f",
+      "bytes": 48495
+    },
+    {
+      "path": "data/raw/acs-b17001-ma.dat",
+      "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0",
+      "bytes": 634935
+    },
+    {
+      "path": "data/raw/acs-b19013-ma.dat",
+      "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce",
+      "bytes": 54612
+    },
+    {
+      "path": "data/raw/acs-b08301-ma.dat",
+      "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2",
+      "bytes": 244252
+    },
+    {
+      "path": "data/raw/acs-b25064-ma.dat",
+      "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4",
+      "bytes": 50154
+    },
+    {
+      "path": "data/raw/2023_Gaz_tracts_national.zip",
+      "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c",
+      "bytes": 2420572
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "schema_version": "1.3",
+  "case_id": "replace-with-case-id",
+  "title": "Replace with a reader-facing title",
+  "domain": "Replace with domain",
+  "decision_owner": "Replace with authorized decision owner",
+  "decision_question": "Choose among clearly defined alternatives over a stated horizon.",
+  "time_horizon": "12 months",
+  "risk_aversion": 0.25,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "synthetic demonstration assumption",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Replace with source or elicitation record"
+    ],
+    "causal_claim_status": "No causal claim; inputs are scenario assumptions.",
+    "limitations": [
+      "Replace with the most decision-relevant limitation.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "readiness_thresholds": {
+    "minimum_probability_best": 0.5,
+    "minimum_weight_stability": 0.75,
+    "minimum_scenario_stability": 0.75,
+    "maximum_scale_clipping_rate": 0.05
+  },
+  "criteria": [
+    {
+      "id": "benefit",
+      "label": "Benefit",
+      "direction": "maximize",
+      "weight": 0.5,
+      "unit": "index points",
+      "scale": {
+        "worst": 0,
+        "best": 100
+      }
+    },
+    {
+      "id": "cost",
+      "label": "Cost",
+      "direction": "minimize",
+      "weight": 0.3,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 20,
+        "best": 0
+      }
+    },
+    {
+      "id": "risk",
+      "label": "Implementation risk",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "index points",
+      "scale": {
+        "worst": 100,
+        "best": 0
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "cost",
+      "operator": "<=",
+      "threshold": 12,
+      "label": "Budget ceiling"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base case",
+      "probability": 0.7,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse",
+      "label": "Adverse case",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "cost": {
+            "multiply": 1.1
+          },
+          "benefit": {
+            "multiply": 0.9
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "status-quo",
+      "label": "Status quo",
+      "description": "Continue the current approach.",
+      "metrics": {
+        "benefit": {
+          "distribution": "triangular",
+          "low": 30,
+          "mode": 40,
+          "high": 50,
+          "uncertainty_type": "parameter"
+        },
+        "cost": {
+          "distribution": "fixed",
+          "value": 5,
+          "uncertainty_type": "none"
+        },
+        "risk": {
+          "distribution": "triangular",
+          "low": 20,
+          "mode": 30,
+          "high": 45,
+          "uncertainty_type": "parameter"
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "access_probability": 0.6,
+            "expected_benefit": 40
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "access_probability": 0.4,
+            "expected_benefit": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": "intervention",
+      "label": "Intervention",
+      "description": "Implement the proposed intervention.",
+      "metrics": {
+        "benefit": {
+          "distribution": "normal",
+          "mean": 65,
+          "sd": 8,
+          "min": 0,
+          "max": 100,
+          "uncertainty_type": "parameter"
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 8,
+          "mode": 10,
+          "high": 14,
+          "uncertainty_type": "parameter"
+        },
+        "risk": {
+          "distribution": "triangular",
+          "low": 25,
+          "mode": 40,
+          "high": 60,
+          "uncertainty_type": "parameter"
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "access_probability": 0.72,
+            "expected_benefit": 62
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "access_probability": 0.68,
+            "expected_benefit": 59
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "Replace the synthetic inputs before using the result for a real decision."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "benefit": -0.48,
+          "cost": 0.48,
+          "risk": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "replace-with-case-id-synthetic-parameter-register",
+        "citation": "Test-only synthetic parameter register for schema and numerical validation; replace every input and source before empirical use.",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative skill demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "replace-with-case-id-synthetic-parameter-register"
+      }
+    ]
+  }
+}

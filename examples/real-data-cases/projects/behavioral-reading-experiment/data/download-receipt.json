@@ -1,0 +1,14 @@
+{
+  "project_id": "behavioral-reading-experiment",
+  "source_id": "harvard-dataverse-3ycb56",
+  "verified_at": "2026-07-28T10:13:00.191544+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/pseudoword-passage-reading.tsv",
+      "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8",
+      "bytes": 14457
+    }
+  ]
+}

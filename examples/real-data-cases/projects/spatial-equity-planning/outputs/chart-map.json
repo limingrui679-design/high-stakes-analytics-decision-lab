@@ -1,0 +1,29 @@
+{
+  "project_id": "spatial-equity-planning",
+  "charts": [
+    {
+      "path": "figures/need-map.svg",
+      "question": "Need is spatially clustered rather than randomly scattered",
+      "supported_finding": "The tract map and Moran’s I place candidate hubs inside the observed geography of composite need.",
+      "interpretation_boundary": "Tract centroids and straight-line distance are planning-screen approximations.",
+      "source_id": "census-acs-2023-ma-tracts",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/radius-sensitivity.svg",
+      "question": "Service assumptions can reverse the apparent advantage",
+      "supported_finding": "Radius, need-weight, and coarse-grid sensitivity reveal dependence on spatial scale and access assumptions.",
+      "interpretation_boundary": "Travel networks, capacity, ACS margins of error, and local site feasibility remain outside the screen.",
+      "source_id": "census-acs-2023-ma-tracts",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/strategy-coverage.svg",
+      "question": "Composite allocation balances multiple dimensions of need",
+      "supported_finding": "Every strategy uses the same hub count and radius before population and need coverage are compared.",
+      "interpretation_boundary": "Weights encode a planning priority and require local stakeholder review.",
+      "source_id": "census-acs-2023-ma-tracts",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

@@ -1,0 +1,542 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "fintech-credit-stress",
+  "title": "FinTech Credit Strategy Under Stress",
+  "domain": "Financial analytics, FinTech, risk management, and responsible AI",
+  "decision_owner": "Retail lender model-risk committee",
+  "decision_question": "Select a credit-underwriting strategy that balances risk-adjusted return, loss, capital, inclusion, explainability, and operating cost across macroeconomic stress scenarios.",
+  "time_horizon": "24 months",
+  "risk_aversion": 0.45,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.6,
+  "evidence": {
+    "type": "Synthetic portfolio estimates and expert stress assumptions",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative historical portfolio summary",
+      "Synthetic macroeconomic stress scenarios",
+      "Hypothetical model-validation estimates"
+    ],
+    "causal_claim_status": "No causal claim; approval and loss estimates are predictive scenario inputs.",
+    "limitations": [
+      "Group metrics are illustrative and do not establish legal compliance.",
+      "Profit estimates omit strategic competitor response.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "risk_adjusted_return",
+      "label": "Risk-adjusted portfolio return",
+      "direction": "maximize",
+      "weight": 0.25,
+      "unit": "percent",
+      "scale": {
+        "worst": -5,
+        "best": 15
+      }
+    },
+    {
+      "id": "credit_loss",
+      "label": "Expected credit loss",
+      "direction": "minimize",
+      "weight": 0.23,
+      "unit": "percent",
+      "scale": {
+        "worst": 12,
+        "best": 2
+      }
+    },
+    {
+      "id": "capital_requirement",
+      "label": "Capital requirement",
+      "direction": "minimize",
+      "weight": 0.14,
+      "unit": "percent of exposure",
+      "scale": {
+        "worst": 18,
+        "best": 6
+      }
+    },
+    {
+      "id": "inclusion_gap",
+      "label": "Approval-rate inclusion gap",
+      "direction": "minimize",
+      "weight": 0.16,
+      "unit": "probability points",
+      "scale": {
+        "worst": 0.35,
+        "best": 0.02
+      }
+    },
+    {
+      "id": "explainability",
+      "label": "Decision explainability",
+      "direction": "maximize",
+      "weight": 0.12,
+      "unit": "score",
+      "scale": {
+        "worst": 0.4,
+        "best": 1
+      }
+    },
+    {
+      "id": "operating_cost",
+      "label": "Annual operating cost",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 10,
+        "best": 2
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "credit_loss",
+      "operator": "<=",
+      "threshold": 10,
+      "label": "Board loss tolerance"
+    },
+    {
+      "criterion": "capital_requirement",
+      "operator": "<=",
+      "threshold": 15,
+      "label": "Capital capacity"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base macro outlook",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "recession",
+      "label": "Consumer recession",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "risk_adjusted_return": {
+            "add": -4
+          },
+          "credit_loss": {
+            "multiply": 1.55
+          },
+          "capital_requirement": {
+            "multiply": 1.15
+          }
+        },
+        "machine-learning": {
+          "credit_loss": {
+            "multiply": 1.08
+          }
+        },
+        "hybrid-review": {
+          "operating_cost": {
+            "multiply": 1.08
+          }
+        }
+      }
+    },
+    {
+      "id": "funding-shock",
+      "label": "Funding and liquidity shock",
+      "probability": 0.15,
+      "adjustments": {
+        "*": {
+          "risk_adjusted_return": {
+            "add": -2.5
+          },
+          "capital_requirement": {
+            "multiply": 1.22
+          },
+          "operating_cost": {
+            "multiply": 1.08
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "current-rules",
+      "label": "Current scorecard",
+      "description": "Retain the existing rules-based underwriting scorecard.",
+      "metrics": {
+        "risk_adjusted_return": {
+          "distribution": "normal",
+          "mean": 6.2,
+          "sd": 1.4,
+          "min": -5,
+          "max": 15
+        },
+        "credit_loss": {
+          "distribution": "triangular",
+          "low": 4.5,
+          "mode": 5.5,
+          "high": 7.5
+        },
+        "capital_requirement": {
+          "distribution": "triangular",
+          "low": 9.5,
+          "mode": 11,
+          "high": 13
+        },
+        "inclusion_gap": {
+          "distribution": "triangular",
+          "low": 0.17,
+          "mode": 0.22,
+          "high": 0.29
+        },
+        "explainability": {
+          "distribution": "fixed",
+          "value": 0.92
+        },
+        "operating_cost": {
+          "distribution": "triangular",
+          "low": 3.8,
+          "mode": 4.5,
+          "high": 5.4
+        }
+      },
+      "groups": [
+        {
+          "id": "established-credit",
+          "label": "Established-credit applicants",
+          "metrics": {
+            "approval_rate": 0.71,
+            "false_negative_rate": 0.18
+          }
+        },
+        {
+          "id": "thin-file",
+          "label": "Thin-file applicants",
+          "metrics": {
+            "approval_rate": 0.46,
+            "false_negative_rate": 0.31
+          }
+        },
+        {
+          "id": "small-business",
+          "label": "Small-business applicants",
+          "metrics": {
+            "approval_rate": 0.52,
+            "false_negative_rate": 0.27
+          }
+        }
+      ]
+    },
+    {
+      "id": "machine-learning",
+      "label": "Automated ML underwriting",
+      "description": "Use a high-performing nonlinear model with automated approvals.",
+      "metrics": {
+        "risk_adjusted_return": {
+          "distribution": "normal",
+          "mean": 9.8,
+          "sd": 2,
+          "min": -5,
+          "max": 15
+        },
+        "credit_loss": {
+          "distribution": "triangular",
+          "low": 3.7,
+          "mode": 4.8,
+          "high": 7.2
+        },
+        "capital_requirement": {
+          "distribution": "triangular",
+          "low": 8.5,
+          "mode": 10,
+          "high": 12.8
+        },
+        "inclusion_gap": {
+          "distribution": "triangular",
+          "low": 0.12,
+          "mode": 0.2,
+          "high": 0.32
+        },
+        "explainability": {
+          "distribution": "fixed",
+          "value": 0.54
+        },
+        "operating_cost": {
+          "distribution": "triangular",
+          "low": 4.8,
+          "mode": 5.8,
+          "high": 7.2
+        }
+      },
+      "groups": [
+        {
+          "id": "established-credit",
+          "label": "Established-credit applicants",
+          "metrics": {
+            "approval_rate": 0.78,
+            "false_negative_rate": 0.13
+          }
+        },
+        {
+          "id": "thin-file",
+          "label": "Thin-file applicants",
+          "metrics": {
+            "approval_rate": 0.5,
+            "false_negative_rate": 0.28
+          }
+        },
+        {
+          "id": "small-business",
+          "label": "Small-business applicants",
+          "metrics": {
+            "approval_rate": 0.61,
+            "false_negative_rate": 0.22
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid-review",
+      "label": "Explainable model with human review",
+      "description": "Use a constrained model and route uncertain or high-impact cases to trained reviewers.",
+      "metrics": {
+        "risk_adjusted_return": {
+          "distribution": "normal",
+          "mean": 8.8,
+          "sd": 1.5,
+          "min": -5,
+          "max": 15
+        },
+        "credit_loss": {
+          "distribution": "triangular",
+          "low": 3.6,
+          "mode": 4.6,
+          "high": 7.3
+        },
+        "capital_requirement": {
+          "distribution": "triangular",
+          "low": 8.2,
+          "mode": 9.6,
+          "high": 11.8
+        },
+        "inclusion_gap": {
+          "distribution": "triangular",
+          "low": 0.06,
+          "mode": 0.1,
+          "high": 0.17
+        },
+        "explainability": {
+          "distribution": "fixed",
+          "value": 0.82
+        },
+        "operating_cost": {
+          "distribution": "triangular",
+          "low": 6,
+          "mode": 7.2,
+          "high": 8.8
+        }
+      },
+      "groups": [
+        {
+          "id": "established-credit",
+          "label": "Established-credit applicants",
+          "metrics": {
+            "approval_rate": 0.75,
+            "false_negative_rate": 0.15
+          }
+        },
+        {
+          "id": "thin-file",
+          "label": "Thin-file applicants",
+          "metrics": {
+            "approval_rate": 0.65,
+            "false_negative_rate": 0.2
+          }
+        },
+        {
+          "id": "small-business",
+          "label": "Small-business applicants",
+          "metrics": {
+            "approval_rate": 0.68,
+            "false_negative_rate": 0.19
+          }
+        }
+      ]
+    },
+    {
+      "id": "secured-growth",
+      "label": "Secured-product growth",
+      "description": "Shift marginal applicants toward secured products while retaining the scorecard.",
+      "metrics": {
+        "risk_adjusted_return": {
+          "distribution": "normal",
+          "mean": 7.4,
+          "sd": 1.2,
+          "min": -5,
+          "max": 15
+        },
+        "credit_loss": {
+          "distribution": "triangular",
+          "low": 3.1,
+          "mode": 4,
+          "high": 7.5
+        },
+        "capital_requirement": {
+          "distribution": "triangular",
+          "low": 7.5,
+          "mode": 8.8,
+          "high": 10.5
+        },
+        "inclusion_gap": {
+          "distribution": "triangular",
+          "low": 0.14,
+          "mode": 0.19,
+          "high": 0.25
+        },
+        "explainability": {
+          "distribution": "fixed",
+          "value": 0.9
+        },
+        "operating_cost": {
+          "distribution": "triangular",
+          "low": 4.5,
+          "mode": 5.1,
+          "high": 6.2
+        }
+      },
+      "groups": [
+        {
+          "id": "established-credit",
+          "label": "Established-credit applicants",
+          "metrics": {
+            "approval_rate": 0.73,
+            "false_negative_rate": 0.17
+          }
+        },
+        {
+          "id": "thin-file",
+          "label": "Thin-file applicants",
+          "metrics": {
+            "approval_rate": 0.54,
+            "false_negative_rate": 0.27
+          }
+        },
+        {
+          "id": "small-business",
+          "label": "Small-business applicants",
+          "metrics": {
+            "approval_rate": 0.57,
+            "false_negative_rate": 0.25
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A production stress test should model correlated defaults, funding costs, and capital dynamics.",
+    "Legal, compliance, and adverse-action review remain mandatory."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "risk_adjusted_return": -0.48,
+          "credit_loss": 0.48,
+          "capital_requirement": 0.48,
+          "inclusion_gap": 0.48,
+          "explainability": -0.48,
+          "operating_cost": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "fintech-credit-stress-synthetic-parameter-register",
+        "citation": "FinTech Credit Strategy Under Stress — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "fintech-credit-stress-synthetic-parameter-register"
+      }
+    ]
+  }
+}

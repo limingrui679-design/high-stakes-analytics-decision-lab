@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0",
+  "portfolio_visibility": "test_only",
+  "evidence_type": "synthetic_test_fixture",
+  "fixture_count": 10,
+  "purpose": [
+    "backward-compatibility regression",
+    "schema boundary testing",
+    "numerical benchmark testing",
+    "edge-case and failure-mode testing"
+  ],
+  "prohibited_uses": [
+    "public real-project count",
+    "external credential claims",
+    "real-world empirical finding",
+    "operational decision authorization"
+  ],
+  "fixtures": [
+    {"id": "ai-model-validation", "schema_version": "1.2"},
+    {"id": "ai-procurement-governance", "schema_version": "1.2"},
+    {"id": "behavioral-policy-nudge", "schema_version": "1.2"},
+    {"id": "clinical-evidence-design", "schema_version": "1.2"},
+    {"id": "corporate-finance-capital-allocation", "schema_version": "1.2"},
+    {"id": "fintech-credit-stress", "schema_version": "1.2"},
+    {"id": "health-resource-allocation", "schema_version": "1.2"},
+    {"id": "marketing-budget-allocation", "schema_version": "1.2"},
+    {"id": "supply-chain-resilience", "schema_version": "1.2"},
+    {"id": "urban-regeneration", "schema_version": "1.2"}
+  ]
+}

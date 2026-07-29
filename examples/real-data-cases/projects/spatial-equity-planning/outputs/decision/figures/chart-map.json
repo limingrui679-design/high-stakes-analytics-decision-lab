@@ -1,0 +1,110 @@
+[
+  {
+    "id": "decision_scorecard",
+    "section": "Executive Summary",
+    "analytical_question": "What is the headline decision result?",
+    "supported_takeaway": "The preferred option, decision status, and risk boundary are visible together.",
+    "family": "executive scorecard",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/decision-scorecard.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "robustness_profile",
+    "section": "Decision status and robustness",
+    "analytical_question": "Why is the decision status what it is?",
+    "supported_takeaway": "Robustness is decomposed into four transparent diagnostics.",
+    "family": "donut and bullet profile",
+    "benchmark": "Explicit tolerance/target is drawn where it determines interpretation.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/robustness-profile.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "alternative_ranking",
+    "section": "Alternative ranking",
+    "analytical_question": "Which feasible alternative leads on risk-adjusted value?",
+    "supported_takeaway": "The ordering combines decision value with explicit feasibility status.",
+    "family": "ranked horizontal bar",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/alternative-ranking.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "constraint_risk",
+    "section": "Constraint risk boundary",
+    "analytical_question": "Which alternatives pass the modeled risk boundary?",
+    "supported_takeaway": "Feasibility depends on the one-sided U95 relative to the risk tolerance.",
+    "family": "dot, interval, and threshold",
+    "benchmark": "Explicit tolerance/target is drawn where it determines interpretation.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/constraint-risk.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "criterion_scorecard",
+    "section": "Criterion trade-offs",
+    "analytical_question": "Where are the material criterion trade-offs?",
+    "supported_takeaway": "The visual shows where each alternative earns and gives up value.",
+    "family": "direct-labeled scorecard",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/criterion-scorecard.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "utility_uncertainty",
+    "section": "Downside and uncertainty",
+    "analytical_question": "How much uncertainty, overlap, and downside remain?",
+    "supported_takeaway": "Expected utility is interpreted alongside overlap and worst-decile outcomes.",
+    "family": "dot and interval",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/utility-uncertainty.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "correlation_stress",
+    "section": "Correlation and tail-risk stress",
+    "analytical_question": "How do shared shocks change P(best), tail value, and feasibility?",
+    "supported_takeaway": "P(best), CVaR10, and breach risk are recomputed under independent, declared, and stressed dependence.",
+    "family": "three-state diagnostic scorecard",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/correlation-stress.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "scenario_performance",
+    "section": "Scenario resilience",
+    "analytical_question": "Which modeled conditions preserve or overturn the preference?",
+    "supported_takeaway": "Scenario panels reveal when the baseline preference is preserved or overturned.",
+    "family": "small-multiple bullet bars",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/scenario-performance.svg",
+    "source": "decision-results.json"
+  },
+  {
+    "id": "weight_sensitivity",
+    "section": "Weight sensitivity",
+    "analytical_question": "Which stakeholder priorities can change the winner?",
+    "supported_takeaway": "Winner outlines identify which value-weight changes can change the decision.",
+    "family": "direct-labeled heatmap",
+    "benchmark": "Shared scale and direct labels support the primary comparison.",
+    "palette_policy": "One domain accent for the preferred result; additional categorical roots only preserve alternative identity in scenario panels.",
+    "accessibility": "Title and description, direct numeric labels, and non-color status encoding through ranks, shapes, outlines, text, or line style.",
+    "file": "figures/weight-sensitivity.svg",
+    "source": "decision-results.json"
+  }
+]

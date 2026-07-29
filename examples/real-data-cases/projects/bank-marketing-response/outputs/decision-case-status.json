@@ -1,0 +1,6 @@
+{
+  "project_id": "bank-marketing-response",
+  "decision_case_created": true,
+  "public_layer": "embedded_within_real_project",
+  "reason": "A decision analysis is already embedded in this real-data project."
+}

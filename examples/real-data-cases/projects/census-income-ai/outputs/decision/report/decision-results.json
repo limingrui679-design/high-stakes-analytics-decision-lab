@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-28",
+  "project_id": "census-income-ai",
+  "decision_status": "not_authorized_for_consequential_use",
+  "decision": "Do not deploy this model for eligibility, credit, employment, or another consequential decision; retain it as a historical benchmark.",
+  "adaptive_route": [
+    "descriptive",
+    "predictive",
+    "deployment decision"
+  ],
+  "evidence_basis": [
+    {
+      "label": "Independent-test AUC",
+      "value": "0.905",
+      "context": "Sparse logistic model; historical source test."
+    },
+    {
+      "label": "Brier score",
+      "value": "0.102",
+      "context": "Probability error on the same independent test."
+    },
+    {
+      "label": "Male-group FPR",
+      "value": "33.5%",
+      "context": "Compared with 6.5% for the female group."
+    }
+  ],
+  "evidence_gates": [
+    {
+      "label": "Independent benchmark evaluation",
+      "status": "PASS",
+      "detail": "The held-out source test was not used for model selection."
+    },
+    {
+      "label": "Contemporary target and population match",
+      "status": "BLOCK",
+      "detail": "The 1994 Census-derived benchmark does not represent a current local decision population."
+    },
+    {
+      "label": "Acceptable error and subgroup burden",
+      "status": "BLOCK",
+      "detail": "Observed group error rates differ materially and no decision owner supplied an acceptable-error contract."
+    },
+    {
+      "label": "Workflow benefit, recourse, and harm controls",
+      "status": "REQUIRED",
+      "detail": "No prospective workflow evaluation, recourse design, or harm-benefit study is present."
+    },
+    {
+      "label": "Operational authorization",
+      "status": "BLOCK",
+      "detail": "No domain owner approved a target, threshold, use case, or deployment boundary."
+    }
+  ],
+  "methods": [
+    "Select model and threshold without using the independent source test.",
+    "Compare majority, mixed naive-Bayes, and sparse logistic benchmarks.",
+    "Review discrimination, Brier score, calibration, subgroup errors, drift, and abnormal-input behavior separately.",
+    "Apply contemporary-use, impact, recourse, and authorization gates after predictive validation."
+  ],
+  "supported_uses": [
+    "Reproduce the historical benchmark and compare transparent methods.",
+    "Study calibration, subgroup errors, drift checks, and abnormal-input behavior.",
+    "Use the project as a template for a newly scoped validation study."
+  ],
+  "unsupported_uses": [
+    "Use scores for eligibility, credit, employment, or resource access.",
+    "Treat historical income labels as a causal or normative target.",
+    "Represent AUC or accuracy as evidence of institutional benefit or fairness."
+  ],
+  "claim_boundary": "Benchmark classification only; not validated for eligibility, credit, employment, or other consequential decisions.",
+  "reversal_conditions": [
+    "A newly scoped, contemporary and representative dataset supports the exact decision target.",
+    "A locked prospective evaluation meets owner-approved performance and subgroup-error gates.",
+    "A reviewed workflow supplies recourse, monitoring, human authority, and incident controls."
+  ],
+  "recommended_next_steps": [
+    "Define the proposed decision, affected population, target, exclusions, and non-model baseline.",
+    "Pre-register discrimination, calibration, subgroup-error, and abstention gates before fitting.",
+    "Validate on a dated external or prospective cohort and document recourse and monitoring."
+  ],
+  "case_specific": {
+    "deployment_gates": {
+      "benchmark_evaluation": "pass",
+      "contemporary_population_match": "block",
+      "acceptable_group_error": "block",
+      "workflow_and_recourse": "required",
+      "operational_authorization": "block"
+    },
+    "subgroup_false_positive_rates": {
+      "Female": 0.06458290209066446,
+      "Male": 0.33469226722777484
+    }
+  },
+  "source": {
+    "title": "Adult / Census Income",
+    "publisher": "UCI Machine Learning Repository",
+    "version": "UCI static archive snapshot; files timestamped 2023-05-22",
+    "accessed_at": "2026-07-27",
+    "grain": "one Census-derived person record meeting the dataset extraction rules",
+    "expected_rows": 48842,
+    "source_manifest_sha256": "20a55ad2475c9297b244c3d0ee3e4f42ad2dfbf2ae1ef77606288d7271449a53",
+    "analytical_results_sha256": "a171a55231988fb6d5d2a518c093168e7fed4fea28603c2db39de870f2f4f23f"
+  }
+}

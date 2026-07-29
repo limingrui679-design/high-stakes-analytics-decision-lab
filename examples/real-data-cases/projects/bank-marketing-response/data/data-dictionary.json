@@ -1,0 +1,20 @@
+{
+  "grain": "one direct-marketing contact outcome",
+  "primary_key": "source_order",
+  "target": "y",
+  "temporal_contract": "The source states bank-additional-full.csv is ordered by date. Source order is retained as an imperfect time proxy because a full calendar date is not supplied.",
+  "leakage_exclusion": {
+    "duration": "Last contact duration is known only after contact and is excluded from every pre-contact prediction and targeting calculation."
+  },
+  "fields": {
+    "source_order": "1-based source row order",
+    "age": "client age in years",
+    "job": "job category",
+    "contact": "contact communication type",
+    "campaign": "contacts in the current campaign",
+    "pdays": "days since prior contact; 999 means not previously contacted",
+    "previous": "contacts before the current campaign",
+    "poutcome": "previous campaign outcome",
+    "y": "whether the client subscribed to a term deposit"
+  }
+}

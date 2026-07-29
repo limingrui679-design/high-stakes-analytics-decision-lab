@@ -1,0 +1,389 @@
+{
+  "project_id": "federal-ai-governance",
+  "data": {
+    "use_cases": 70,
+    "as_of": "dataset modified 2026-02-01"
+  },
+  "development_stage": {
+    "Deployed": 16,
+    "Pre-deployment": 53,
+    "Pilot": 1
+  },
+  "high_impact_indicator": {
+    "Not high-impact": 70
+  },
+  "public_fields_analyzed": 34,
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "empty string",
+      "?",
+      "N/A",
+      "NA"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
+  "information_families": {
+    "identity and ownership": [
+      "Use Case Identifier",
+      "Use Case Name",
+      "Agency",
+      "Bureau"
+    ],
+    "lifecycle and operations": [
+      "Development Stage",
+      "Operation Date",
+      "Contractor Indicator",
+      "ATO Indicator"
+    ],
+    "purpose and outputs": [
+      "Use Case Topic Area",
+      "AI Classification",
+      "Problem Description",
+      "Benefit Description",
+      "Output Description"
+    ],
+    "data and privacy": [
+      "Training Data Description",
+      "Enterprise Data Inventory URL",
+      "PII Indicator",
+      "PIA URL",
+      "Demographic Variable Description"
+    ],
+    "code and transparency": [
+      "Public Reporting Indicator",
+      "Custom Code Indicator",
+      "Open Source Code URL",
+      "Vendor Name",
+      "System Name"
+    ],
+    "assurance and recourse": [
+      "High Impact Indicator",
+      "High Impact Justification",
+      "Predeployment Testing Indicator",
+      "AI Impact Assessment Indicator",
+      "Potential Impact Description",
+      "Independent Review Indicator",
+      "Ongoing Monitoring Indicator",
+      "Operator Training Indicator",
+      "Fail Safe Indicator",
+      "Appeal Process Indicator",
+      "End User Feedback Description"
+    ]
+  },
+  "field_reporting_completeness": {
+    "Use Case Identifier": 1.0,
+    "Use Case Name": 1.0,
+    "Agency": 1.0,
+    "Bureau": 1.0,
+    "Public Reporting Indicator": 1.0,
+    "Development Stage": 1.0,
+    "High Impact Indicator": 1.0,
+    "High Impact Justification": 0.0,
+    "Use Case Topic Area": 1.0,
+    "AI Classification": 1.0,
+    "Problem Description": 1.0,
+    "Benefit Description": 0.05714285714285714,
+    "Output Description": 0.8714285714285714,
+    "Operation Date": 0.6571428571428571,
+    "Contractor Indicator": 0.6,
+    "Vendor Name": 0.04285714285714286,
+    "ATO Indicator": 0.9428571428571428,
+    "System Name": 0.0,
+    "Training Data Description": 0.44285714285714284,
+    "Enterprise Data Inventory URL": 0.0,
+    "PII Indicator": 0.0,
+    "PIA URL": 0.9428571428571428,
+    "Demographic Variable Description": 0.9571428571428572,
+    "Custom Code Indicator": 0.9571428571428572,
+    "Open Source Code URL": 0.0,
+    "Predeployment Testing Indicator": 0.0,
+    "AI Impact Assessment Indicator": 0.0,
+    "Potential Impact Description": 0.0,
+    "Independent Review Indicator": 0.0,
+    "Ongoing Monitoring Indicator": 0.0,
+    "Operator Training Indicator": 0.0,
+    "Fail Safe Indicator": 0.0,
+    "Appeal Process Indicator": 0.0,
+    "End User Feedback Description": 0.0
+  },
+  "family_reporting_completeness": {
+    "identity and ownership": 1.0,
+    "lifecycle and operations": 0.8,
+    "purpose and outputs": 0.7857142857142857,
+    "data and privacy": 0.4685714285714286,
+    "code and transparency": 0.4,
+    "assurance and recourse": 0.09090909090909091
+  },
+  "field_availability_status_counts": {
+    "fully populated (95–100%)": 12,
+    "partially populated (>0–<95%)": 8,
+    "unavailable in snapshot (0%)": 14
+  },
+  "family_completeness_by_stage": {
+    "Deployed": {
+      "identity and ownership": 1.0,
+      "lifecycle and operations": 0.890625,
+      "purpose and outputs": 0.8125,
+      "data and privacy": 0.45,
+      "code and transparency": 0.4,
+      "assurance and recourse": 0.09090909090909091
+    },
+    "Pre-deployment": {
+      "identity and ownership": 1.0,
+      "lifecycle and operations": 0.7735849056603774,
+      "purpose and outputs": 0.7773584905660378,
+      "data and privacy": 0.4830188679245283,
+      "code and transparency": 0.4,
+      "assurance and recourse": 0.09090909090909091
+    },
+    "Pilot": {
+      "identity and ownership": 1.0,
+      "lifecycle and operations": 0.75,
+      "purpose and outputs": 0.8,
+      "data and privacy": 0.0,
+      "code and transparency": 0.4,
+      "assurance and recourse": 0.09090909090909091
+    }
+  },
+  "disclosure_readiness": {
+    "definition": "share of non-identity review-relevant public fields populated",
+    "mean": 0.4157142857142853,
+    "median": 0.4166666666666667,
+    "minimum": 0.3333333333333333,
+    "maximum": 0.4666666666666667,
+    "interpretation": "external measurement readiness only; not governance maturity or control quality"
+  },
+  "evidence_request_schema": [
+    {
+      "information_request": "system purpose, owner, users, and decision role",
+      "why_needed": "defines the unit and responsibility boundary",
+      "inventory_support": "partially observable"
+    },
+    {
+      "information_request": "training and evaluation data lineage",
+      "why_needed": "supports validity, privacy, and representativeness review",
+      "inventory_support": "partially observable"
+    },
+    {
+      "information_request": "predeployment test design and results",
+      "why_needed": "supports performance and failure-mode evaluation",
+      "inventory_support": "not observable in reviewed fields"
+    },
+    {
+      "information_request": "impact assessment, monitoring, and incident triggers",
+      "why_needed": "supports lifecycle assurance and escalation review",
+      "inventory_support": "not observable in reviewed fields"
+    },
+    {
+      "information_request": "notice, appeal, fallback, and remedy process",
+      "why_needed": "supports contestability and recourse review",
+      "inventory_support": "not observable in reviewed fields"
+    }
+  ],
+  "decision_support": {
+    "question": "What additional evidence is required before evaluating actual governance capability?",
+    "recommended_next_diligence": "request the evidence schema before any capability assessment",
+    "reversal_conditions": [
+      "Publisher documentation establishes that missing-coded fields are not part of the public reporting contract.",
+      "A revised inventory materially changes field availability or definitions.",
+      "Reviewed internal evidence supports a separately scoped capability evaluation."
+    ]
+  },
+  "evidence_artifacts": [
+    "outputs/evidence-table.csv",
+    "outputs/measurement-brief.md"
+  ],
+  "interpretation_boundary": "A blank or missing-coded public-inventory field is a disclosure signal, not proof that a control is absent, ineffective, unethical, unsafe, or noncompliant.",
+  "provenance": {
+    "source_id": "usdot-ai-use-cases-anj8-k6f5",
+    "citation": "U.S. Department of Transportation. Department of Transportation Inventory of Artificial Intelligence Use Cases. Dataset anj8-k6f5.",
+    "version": "Dataset modified 2026-02-01; temporal coverage 2022-03-18/2026-01-28",
+    "license": "U.S. Government work",
+    "accessed_at": "2026-07-27",
+    "raw_sha256": {
+      "dot-ai-use-cases.csv": "fbbd292ddd62d016b6a4128597c1144e9474180173507b9a5f1d83088ac85de4"
+    },
+    "config_sha256": "22afeba0a955c66c850ef458573abe96f746ea0bd301092e14da28b881754ded"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260727,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is usdot-ai-use-cases-anj8-k6f5.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.missing_value_interpretation",
+      "label": "missing value interpretation",
+      "value_or_distribution": "null, empty, ?, N/A, and NA are unreported; Not Applicable remains a substantive response",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "responsible-reporting-rule",
+      "source_fact": "Registered project configuration for missing_value_interpretation; source dataset is usdot-ai-use-cases-anj8-k6f5.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Blank or missing-coded reporting does not mean absent or noncompliant."
+    },
+    {
+      "parameter_path": "config.parameters.field_family_scheme",
+      "label": "field family scheme",
+      "value_or_distribution": "six analyst-defined information families covering all public inventory columns",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-disclosure-taxonomy",
+      "source_fact": "Registered project configuration for field_family_scheme; source dataset is usdot-ai-use-cases-anj8-k6f5.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Families organize public columns for measurement; they are not a governance maturity model."
+    },
+    {
+      "parameter_path": "config.parameters.disclosure_readiness_interpretation",
+      "label": "disclosure readiness interpretation",
+      "value_or_distribution": "share of review-relevant public fields populated; measurement readiness only",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "responsible-reporting-rule",
+      "source_fact": "Registered project configuration for disclosure_readiness_interpretation; source dataset is usdot-ai-use-cases-anj8-k6f5.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "A completeness score measures external observability only and must never be interpreted as control presence, quality, ethics, safety, or compliance."
+    },
+    {
+      "parameter_path": "config.parameters.contact_field_suppression",
+      "label": "contact field suppression",
+      "value_or_distribution": "Email Address",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "privacy-minimization-rule",
+      "source_fact": "Registered project configuration for contact_field_suppression; source dataset is usdot-ai-use-cases-anj8-k6f5.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Official contact address excluded from processed data and outputs."
+    }
+  ]
+}

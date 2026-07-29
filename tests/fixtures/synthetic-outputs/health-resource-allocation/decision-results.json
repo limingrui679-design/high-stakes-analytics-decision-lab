@@ -1,0 +1,4772 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "5.0.0",
+    "generated_at": "2026-07-27T08:04:01.868488+00:00",
+    "case_id": "health-resource-allocation",
+    "case_hash_sha256": "7c04a08608fe9a60863ad6684f25e4caa1d4fc7f4d3e8f6b72c07a4e6cd75905",
+    "samples": 10000,
+    "seed": 20260726,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Community Screening Resource Allocation",
+    "domain": "Biostatistics, population health, public policy, and operations",
+    "owner": "Regional public health authority",
+    "question": "Choose a 12-month screening-delivery strategy under a USD 10 million budget while improving access and limiting implementation risk.",
+    "time_horizon": "12 months",
+    "recommendation": "hybrid-targeted",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "illustrative_preference",
+    "decision_status_label": "Illustrative preference",
+    "decision_use": "illustrative",
+    "ranking": [
+      "hybrid-targeted",
+      "fixed-site-expansion",
+      "status-quo",
+      "mobile-first"
+    ],
+    "pareto_frontier": [
+      "hybrid-targeted",
+      "fixed-site-expansion",
+      "status-quo"
+    ],
+    "pareto_frontier_unconstrained": [
+      "status-quo",
+      "fixed-site-expansion",
+      "mobile-first",
+      "hybrid-targeted"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.0859686486027143,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 90.64270918457457,
+    "robustness_components": {
+      "probability_best": {
+        "value": 0.9459,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 0.6132854592287286,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.3
+  },
+  "criteria": [
+    {
+      "id": "health_gain",
+      "label": "Expected health gain",
+      "direction": "maximize",
+      "weight": 0.32,
+      "unit": "QALY-equivalent points",
+      "scale": {
+        "worst": 150,
+        "best": 900
+      },
+      "normalized_weight": 0.32
+    },
+    {
+      "id": "cost",
+      "label": "Annual program cost",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 12,
+        "best": 4
+      },
+      "normalized_weight": 0.18
+    },
+    {
+      "id": "access_gap",
+      "label": "High- versus low-access gap",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "probability points",
+      "scale": {
+        "worst": 0.35,
+        "best": 0
+      },
+      "normalized_weight": 0.2
+    },
+    {
+      "id": "implementation_risk",
+      "label": "Implementation risk",
+      "direction": "minimize",
+      "weight": 0.15,
+      "unit": "index points",
+      "scale": {
+        "worst": 80,
+        "best": 10
+      },
+      "normalized_weight": 0.15
+    },
+    {
+      "id": "evidence_quality",
+      "label": "Evidence quality",
+      "direction": "maximize",
+      "weight": 0.15,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.95
+      },
+      "normalized_weight": 0.15
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "cost",
+      "operator": "<=",
+      "threshold": 10,
+      "label": "Annual budget ceiling"
+    },
+    {
+      "criterion": "implementation_risk",
+      "operator": "<=",
+      "threshold": 65,
+      "label": "Operational risk tolerance"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base-demand",
+      "label": "Base demand",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "winter-surge",
+      "label": "Winter demand surge",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "health_gain": {
+            "multiply": 1.08
+          },
+          "cost": {
+            "multiply": 1.06
+          },
+          "implementation_risk": {
+            "add": 5
+          }
+        },
+        "mobile-first": {
+          "health_gain": {
+            "multiply": 1.1
+          },
+          "implementation_risk": {
+            "add": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "staff-shortage",
+      "label": "Clinical staff shortage",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "health_gain": {
+            "multiply": 0.88
+          },
+          "cost": {
+            "multiply": 1.08
+          },
+          "implementation_risk": {
+            "add": 9
+          }
+        },
+        "fixed-site-expansion": {
+          "health_gain": {
+            "multiply": 0.9
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "base-demand",
+      "label": "Base demand",
+      "probability": 0.55,
+      "winners": [
+        "hybrid-targeted"
+      ],
+      "winner": "hybrid-targeted",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "winter-surge",
+      "label": "Winter demand surge",
+      "probability": 0.25,
+      "winners": [
+        "hybrid-targeted"
+      ],
+      "winner": "hybrid-targeted",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "staff-shortage",
+      "label": "Clinical staff shortage",
+      "probability": 0.2,
+      "winners": [
+        "hybrid-targeted"
+      ],
+      "winner": "hybrid-targeted",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "status-quo": {
+      "alternative_id": "status-quo",
+      "label": "Status quo",
+      "description": "Maintain current hospital-centered screening capacity.",
+      "expected_utility": 0.5056741009706514,
+      "utility_p05": 0.44887904365432835,
+      "utility_p95": 0.5567500641134893,
+      "cvar10": 0.4457578231074815,
+      "risk_adjusted_utility": 0.48769921761170043,
+      "value_score": 48.769921761170046,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.00029952835977664627,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [
+        {
+          "constraint_id": "constraint-1",
+          "label": "Annual budget ceiling",
+          "criterion": "cost",
+          "operator": "<=",
+          "threshold": 10.0,
+          "violation_count": 0,
+          "sample_count": 10000,
+          "violation_rate": 0.0,
+          "violation_rate_upper_95": 0.00029952835977664627,
+          "mean_margin": 4.4699889146380425,
+          "margin_p05": 3.907329113606291,
+          "margin_p95": 4.969747364378956,
+          "support_min": 4.8,
+          "support_max": 6.48,
+          "support_status": "declared_support_excludes_breach",
+          "structural_breach_possible": false,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 4.8,
+              "support_max": 6.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 5.088,
+              "support_max": 6.36,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 5.184,
+              "support_max": 6.48,
+              "breach_possible": false
+            }
+          ]
+        },
+        {
+          "constraint_id": "constraint-2",
+          "label": "Operational risk tolerance",
+          "criterion": "implementation_risk",
+          "operator": "<=",
+          "threshold": 65.0,
+          "violation_count": 0,
+          "sample_count": 10000,
+          "violation_rate": 0.0,
+          "violation_rate_upper_95": 0.00029952835977664627,
+          "mean_margin": 37.65087366525338,
+          "margin_p05": 28.600358865465093,
+          "margin_p95": 45.56093306617223,
+          "support_min": 16.0,
+          "support_max": 43.0,
+          "support_status": "declared_support_excludes_breach",
+          "structural_breach_possible": false,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 16.0,
+              "support_max": 34.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 21.0,
+              "support_max": 39.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 25.0,
+              "support_max": 43.0,
+              "breach_possible": false
+            }
+          ]
+        }
+      ],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "health_gain": {
+          "label": "Expected health gain",
+          "unit": "QALY-equivalent points",
+          "mean": 345.53434317121787,
+          "normalized_score": 0.26071245756162376,
+          "scale_clipping_rate": 0.0,
+          "p05": 281.62728012403153,
+          "p95": 411.8169549780295
+        },
+        "cost": {
+          "label": "Annual program cost",
+          "unit": "USD millions",
+          "mean": 5.530011085361962,
+          "normalized_score": 0.8087486143297538,
+          "scale_clipping_rate": 0.0,
+          "p05": 5.030252635621044,
+          "p95": 6.09267088639371
+        },
+        "access_gap": {
+          "label": "High- versus low-access gap",
+          "unit": "probability points",
+          "mean": 0.27326588929444245,
+          "normalized_score": 0.21924031630159097,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.23614709883218374,
+          "p95": 0.3121952599776389
+        },
+        "implementation_risk": {
+          "label": "Implementation risk",
+          "unit": "index points",
+          "mean": 27.34912633474656,
+          "normalized_score": 0.7521553380750493,
+          "scale_clipping_rate": 0.0,
+          "p05": 19.439066933827768,
+          "p95": 36.3996411345349
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "unit": "score",
+          "mean": 0.8199999999998902,
+          "normalized_score": 0.800000000000127,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.82,
+          "p95": 0.82
+        }
+      },
+      "scenario_utility": {
+        "base-demand": {
+          "label": "Base demand",
+          "mean": 0.5168965636333902,
+          "p05": 0.47285473792776517,
+          "p95": 0.5608056159181155,
+          "cvar10": 0.46995924399969774,
+          "risk_adjusted_utility": 0.5028153677432825,
+          "sample_count": 5500
+        },
+        "winter-surge": {
+          "label": "Winter demand surge",
+          "mean": 0.5098129454844635,
+          "p05": 0.4639923133884628,
+          "p95": 0.5558975703288553,
+          "cvar10": 0.46176844208077206,
+          "risk_adjusted_utility": 0.4953995944633561,
+          "sample_count": 2500
+        },
+        "staff-shortage": {
+          "label": "Clinical staff shortage",
+          "mean": 0.46963877300584433,
+          "p05": 0.4254051740737306,
+          "p95": 0.5124873726336957,
+          "cvar10": 0.4233514787173791,
+          "risk_adjusted_utility": 0.45575258471930474,
+          "sample_count": 2000
+        }
+      },
+      "group_impacts": {
+        "access_probability": {
+          "absolute_gap": 0.35000000000000003,
+          "parity_ratio": 0.5512820512820512,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 0.78
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 0.58
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 0.43
+            }
+          }
+        },
+        "expected_health_gain": {
+          "absolute_gap": 1.3999999999999995,
+          "parity_ratio": 0.7254901960784315,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 5.1
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 4.3
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 3.7
+            }
+          }
+        }
+      },
+      "probability_best": 0.0042,
+      "probability_best_unconstrained": 0.0009,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "fixed-site-expansion": {
+      "alternative_id": "fixed-site-expansion",
+      "label": "Expand fixed clinics",
+      "description": "Add evening capacity and two permanent community screening sites.",
+      "expected_utility": 0.5265786831599002,
+      "utility_p05": 0.41986365076223686,
+      "utility_p95": 0.6227652402206681,
+      "cvar10": 0.4139272949885403,
+      "risk_adjusted_utility": 0.4927832667084922,
+      "value_score": 49.27832667084922,
+      "constraint_violation_count": 916,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0916,
+      "constraint_violation_rate_upper_95": 0.09645586109037499,
+      "constraint_support_status": "modeled_tail_crosses_threshold",
+      "structural_breach_possible": true,
+      "constraint_diagnostics": [
+        {
+          "constraint_id": "constraint-1",
+          "label": "Annual budget ceiling",
+          "criterion": "cost",
+          "operator": "<=",
+          "threshold": 10.0,
+          "violation_count": 831,
+          "sample_count": 10000,
+          "violation_rate": 0.0831,
+          "violation_rate_upper_95": 0.08775389374854933,
+          "mean_margin": 1.1117219535936342,
+          "margin_p05": -0.2012828451778644,
+          "margin_p95": 2.2477043904488436,
+          "support_min": 7.2,
+          "support_max": 11.232000000000001,
+          "support_status": "modeled_tail_crosses_threshold",
+          "structural_breach_possible": true,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 7.2,
+              "support_max": 10.4,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 7.632000000000001,
+              "support_max": 11.024000000000001,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 7.776000000000001,
+              "support_max": 11.232000000000001,
+              "breach_possible": true
+            }
+          ]
+        },
+        {
+          "constraint_id": "constraint-2",
+          "label": "Operational risk tolerance",
+          "criterion": "implementation_risk",
+          "operator": "<=",
+          "threshold": 65.0,
+          "violation_count": 135,
+          "sample_count": 10000,
+          "violation_rate": 0.0135,
+          "violation_rate_upper_95": 0.015534091710009548,
+          "mean_margin": 17.22176002625529,
+          "margin_p05": 4.210547872438456,
+          "margin_p95": 28.959522427153175,
+          "support_min": 30.0,
+          "support_max": 71.0,
+          "support_status": "modeled_tail_crosses_threshold",
+          "structural_breach_possible": true,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 30.0,
+              "support_max": 62.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 35.0,
+              "support_max": 67.0,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 39.0,
+              "support_max": 71.0,
+              "breach_possible": true
+            }
+          ]
+        }
+      ],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "health_gain": {
+          "label": "Expected health gain",
+          "unit": "QALY-equivalent points",
+          "mean": 577.8241411212529,
+          "normalized_score": 0.5704321881616692,
+          "scale_clipping_rate": 0.0,
+          "p05": 419.49976751366756,
+          "p95": 730.9528972481008
+        },
+        "cost": {
+          "label": "Annual program cost",
+          "unit": "USD millions",
+          "mean": 8.888278046406409,
+          "normalized_score": 0.38896524419920436,
+          "scale_clipping_rate": 0.0,
+          "p05": 7.7522956095511555,
+          "p95": 10.201282845177865
+        },
+        "access_gap": {
+          "label": "High- versus low-access gap",
+          "unit": "probability points",
+          "mean": 0.17705421263114773,
+          "normalized_score": 0.49413082105386547,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.13743199779795,
+          "p95": 0.21996586525047235
+        },
+        "implementation_risk": {
+          "label": "Implementation risk",
+          "unit": "index points",
+          "mean": 47.77823997374484,
+          "normalized_score": 0.4603108575179299,
+          "scale_clipping_rate": 0.0,
+          "p05": 36.04047757284682,
+          "p95": 60.78945212756154
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "unit": "score",
+          "mean": 0.7600000000001571,
+          "normalized_score": 0.7076923076922238,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.76,
+          "p95": 0.76
+        }
+      },
+      "scenario_utility": {
+        "base-demand": {
+          "label": "Base demand",
+          "mean": 0.5447107426443264,
+          "p05": 0.4597278526557552,
+          "p95": 0.6284588665326595,
+          "cvar10": 0.4551882686437821,
+          "risk_adjusted_utility": 0.5178540004441631,
+          "sample_count": 5500
+        },
+        "winter-surge": {
+          "label": "Winter demand surge",
+          "mean": 0.5419817742578974,
+          "p05": 0.4494658401059031,
+          "p95": 0.6288439278251489,
+          "cvar10": 0.4434874794357019,
+          "risk_adjusted_utility": 0.5124334858112387,
+          "sample_count": 2500
+        },
+        "staff-shortage": {
+          "label": "Clinical staff shortage",
+          "mean": 0.4574616557052218,
+          "p05": 0.3805644709732575,
+          "p95": 0.5324877393908701,
+          "cvar10": 0.3752394164667894,
+          "risk_adjusted_utility": 0.4327949839336921,
+          "sample_count": 2000
+        }
+      },
+      "group_impacts": {
+        "access_probability": {
+          "absolute_gap": 0.25,
+          "parity_ratio": 0.7093023255813954,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 0.86
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 0.73
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 0.61
+            }
+          }
+        },
+        "expected_health_gain": {
+          "absolute_gap": 1.9000000000000004,
+          "parity_ratio": 0.7432432432432432,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 7.4
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 6.6
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 5.5
+            }
+          }
+        }
+      },
+      "probability_best": 0.0499,
+      "probability_best_unconstrained": 0.0153,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "mobile-first": {
+      "alternative_id": "mobile-first",
+      "label": "Mobile-first network",
+      "description": "Deploy mobile units using rotating rural and underserved-neighborhood schedules.",
+      "expected_utility": 0.6007536509355131,
+      "utility_p05": 0.5005404569783279,
+      "utility_p95": 0.6929488288587378,
+      "cvar10": 0.4950041616341838,
+      "risk_adjusted_utility": 0.5690288041451144,
+      "value_score": 56.902880414511436,
+      "constraint_violation_count": 1564,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.1564,
+      "constraint_violation_rate_upper_95": 0.16246752205618026,
+      "constraint_support_status": "modeled_tail_crosses_threshold",
+      "structural_breach_possible": true,
+      "constraint_diagnostics": [
+        {
+          "constraint_id": "constraint-1",
+          "label": "Annual budget ceiling",
+          "criterion": "cost",
+          "operator": "<=",
+          "threshold": 10.0,
+          "violation_count": 750,
+          "sample_count": 10000,
+          "violation_rate": 0.075,
+          "violation_rate_upper_95": 0.07944829563083253,
+          "mean_margin": 0.9291551793062733,
+          "margin_p05": -0.1585395226038985,
+          "margin_p95": 1.9632018701743192,
+          "support_min": 7.5,
+          "support_max": 10.908,
+          "support_status": "modeled_tail_crosses_threshold",
+          "structural_breach_possible": true,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 7.5,
+              "support_max": 10.1,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 7.95,
+              "support_max": 10.706,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 8.100000000000001,
+              "support_max": 10.908,
+              "breach_possible": true
+            }
+          ]
+        },
+        {
+          "constraint_id": "constraint-2",
+          "label": "Operational risk tolerance",
+          "criterion": "implementation_risk",
+          "operator": "<=",
+          "threshold": 65.0,
+          "violation_count": 1057,
+          "sample_count": 10000,
+          "violation_rate": 0.1057,
+          "violation_rate_upper_95": 0.11086424753022839,
+          "mean_margin": 10.222004128439789,
+          "margin_p05": -3.1848722832410217,
+          "margin_p95": 22.807822152508596,
+          "support_min": 36.0,
+          "support_max": 77.0,
+          "support_status": "modeled_tail_crosses_threshold",
+          "structural_breach_possible": true,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 36.0,
+              "support_max": 68.0,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 44.0,
+              "support_max": 76.0,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 45.0,
+              "support_max": 77.0,
+              "breach_possible": true
+            }
+          ]
+        }
+      ],
+      "feasible": false,
+      "overall_scale_clipping_rate": 0.00956,
+      "criteria": {
+        "health_gain": {
+          "label": "Expected health gain",
+          "unit": "QALY-equivalent points",
+          "mean": 701.1630088160524,
+          "normalized_score": 0.7322163913722289,
+          "scale_clipping_rate": 0.0478,
+          "p05": 542.8628934449285,
+          "p95": 895.7531718813214
+        },
+        "cost": {
+          "label": "Annual program cost",
+          "unit": "USD millions",
+          "mean": 9.07084482069367,
+          "normalized_score": 0.3661443974132836,
+          "scale_clipping_rate": 0.0,
+          "p05": 8.03679812982568,
+          "p95": 10.158539522603899
+        },
+        "access_gap": {
+          "label": "High- versus low-access gap",
+          "unit": "probability points",
+          "mean": 0.08017875223659711,
+          "normalized_score": 0.7709178507525783,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.04506687259936624,
+          "p95": 0.12069206351788243
+        },
+        "implementation_risk": {
+          "label": "Implementation risk",
+          "unit": "index points",
+          "mean": 54.77799587155996,
+          "normalized_score": 0.36031434469199747,
+          "scale_clipping_rate": 0.0,
+          "p05": 42.1921778474914,
+          "p95": 68.18487228324102
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "unit": "score",
+          "mean": 0.6999999999998807,
+          "normalized_score": 0.6153846153846974,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.7,
+          "p95": 0.7
+        }
+      },
+      "scenario_utility": {
+        "base-demand": {
+          "label": "Base demand",
+          "mean": 0.6095959567613961,
+          "p05": 0.5304799645312349,
+          "p95": 0.6883653609166808,
+          "cvar10": 0.5265193509709059,
+          "risk_adjusted_utility": 0.584672975024249,
+          "sample_count": 5500
+        },
+        "winter-surge": {
+          "label": "Winter demand surge",
+          "mean": 0.6319344721665808,
+          "p05": 0.5474552272372695,
+          "p95": 0.7078806969620635,
+          "cvar10": 0.5430363809010536,
+          "risk_adjusted_utility": 0.6052650447869227,
+          "sample_count": 2500
+        },
+        "staff-shortage": {
+          "label": "Clinical staff shortage",
+          "mean": 0.5374612833754929,
+          "p05": 0.46162959515068236,
+          "p95": 0.6115188475835387,
+          "cvar10": 0.45652758842469787,
+          "risk_adjusted_utility": 0.5131811748902544,
+          "sample_count": 2000
+        }
+      },
+      "group_impacts": {
+        "access_probability": {
+          "absolute_gap": 0.05999999999999994,
+          "parity_ratio": 0.926829268292683,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 0.82
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 0.8
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 0.76
+            }
+          }
+        },
+        "expected_health_gain": {
+          "absolute_gap": 0.5999999999999996,
+          "parity_ratio": 0.9230769230769231,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 7.8
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 7.7
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 7.2
+            }
+          }
+        }
+      },
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.4365,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": true
+    },
+    "hybrid-targeted": {
+      "alternative_id": "hybrid-targeted",
+      "label": "Targeted hybrid",
+      "description": "Combine extended fixed-site hours with one risk-targeted mobile unit.",
+      "expected_utility": 0.6074818552779913,
+      "utility_p05": 0.5183292239721791,
+      "utility_p95": 0.6893285700395406,
+      "cvar10": 0.5117153887220421,
+      "risk_adjusted_utility": 0.5787519153112065,
+      "value_score": 57.87519153112065,
+      "constraint_violation_count": 355,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0355,
+      "constraint_violation_rate_upper_95": 0.038671454077127146,
+      "constraint_support_status": "modeled_tail_crosses_threshold",
+      "structural_breach_possible": true,
+      "constraint_diagnostics": [
+        {
+          "constraint_id": "constraint-1",
+          "label": "Annual budget ceiling",
+          "criterion": "cost",
+          "operator": "<=",
+          "threshold": 10.0,
+          "violation_count": 355,
+          "sample_count": 10000,
+          "violation_rate": 0.0355,
+          "violation_rate_upper_95": 0.038671454077127146,
+          "mean_margin": 0.9948065641685494,
+          "margin_p05": 0.08755926455709244,
+          "margin_p95": 1.8206901432925493,
+          "support_min": 7.8,
+          "support_max": 10.584000000000001,
+          "support_status": "modeled_tail_crosses_threshold",
+          "structural_breach_possible": true,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 7.8,
+              "support_max": 9.8,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 8.268,
+              "support_max": 10.388000000000002,
+              "breach_possible": true
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 8.424,
+              "support_max": 10.584000000000001,
+              "breach_possible": true
+            }
+          ]
+        },
+        {
+          "constraint_id": "constraint-2",
+          "label": "Operational risk tolerance",
+          "criterion": "implementation_risk",
+          "operator": "<=",
+          "threshold": 65.0,
+          "violation_count": 0,
+          "sample_count": 10000,
+          "violation_rate": 0.0,
+          "violation_rate_upper_95": 0.00029952835977664627,
+          "mean_margin": 20.92838701705923,
+          "margin_p05": 9.030211169014434,
+          "margin_p95": 31.814722741220965,
+          "support_min": 28.0,
+          "support_max": 65.0,
+          "support_status": "declared_support_excludes_breach",
+          "structural_breach_possible": false,
+          "scenario_supports": [
+            {
+              "scenario_id": "base-demand",
+              "label": "Base demand",
+              "probability": 0.55,
+              "support_min": 28.0,
+              "support_max": 56.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "winter-surge",
+              "label": "Winter demand surge",
+              "probability": 0.25,
+              "support_min": 33.0,
+              "support_max": 61.0,
+              "breach_possible": false
+            },
+            {
+              "scenario_id": "staff-shortage",
+              "label": "Clinical staff shortage",
+              "probability": 0.2,
+              "support_min": 37.0,
+              "support_max": 65.0,
+              "breach_possible": false
+            }
+          ]
+        }
+      ],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.00032,
+      "criteria": {
+        "health_gain": {
+          "label": "Expected health gain",
+          "unit": "QALY-equivalent points",
+          "mean": 648.6738609806091,
+          "normalized_score": 0.6648652087809602,
+          "scale_clipping_rate": 0.0016,
+          "p05": 512.3014896688578,
+          "p95": 788.1360186388956
+        },
+        "cost": {
+          "label": "Annual program cost",
+          "unit": "USD millions",
+          "mean": 9.005193435831453,
+          "normalized_score": 0.37435082052106905,
+          "scale_clipping_rate": 0.0,
+          "p05": 8.17930985670745,
+          "p95": 9.912440735442907
+        },
+        "access_gap": {
+          "label": "High- versus low-access gap",
+          "unit": "probability points",
+          "mean": 0.10976784534357843,
+          "normalized_score": 0.6863775847326309,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.07477516027078498,
+          "p95": 0.15001520260427256
+        },
+        "implementation_risk": {
+          "label": "Implementation risk",
+          "unit": "index points",
+          "mean": 44.07161298294076,
+          "normalized_score": 0.513262671672273,
+          "scale_clipping_rate": 0.0,
+          "p05": 33.18527725877904,
+          "p95": 55.969788830985564
+        },
+        "evidence_quality": {
+          "label": "Evidence quality",
+          "unit": "score",
+          "mean": 0.7899999999999666,
+          "normalized_score": 0.7538461538461018,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.79,
+          "p95": 0.79
+        }
+      },
+      "scenario_utility": {
+        "base-demand": {
+          "label": "Base demand",
+          "mean": 0.6217587036437807,
+          "p05": 0.5487918722412576,
+          "p95": 0.6945684939759806,
+          "cvar10": 0.5437922390369532,
+          "risk_adjusted_utility": 0.5983687642617325,
+          "sample_count": 5500
+        },
+        "winter-surge": {
+          "label": "Winter demand surge",
+          "mean": 0.6202030041893809,
+          "p05": 0.5418028713236844,
+          "p95": 0.6991370853534941,
+          "cvar10": 0.5359193649734071,
+          "risk_adjusted_utility": 0.5949179124245888,
+          "sample_count": 2500
+        },
+        "staff-shortage": {
+          "label": "Clinical staff shortage",
+          "mean": 0.5523190861328233,
+          "p05": 0.48039096659819625,
+          "p95": 0.6195173211667114,
+          "cvar10": 0.47553673131511537,
+          "risk_adjusted_utility": 0.529284379687511,
+          "sample_count": 2000
+        }
+      },
+      "group_impacts": {
+        "access_probability": {
+          "absolute_gap": 0.12,
+          "parity_ratio": 0.8571428571428571,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 0.84
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 0.78
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 0.72
+            }
+          }
+        },
+        "expected_health_gain": {
+          "absolute_gap": 0.9000000000000004,
+          "parity_ratio": 0.8831168831168831,
+          "parity_ratio_supported": true,
+          "lowest_group": "Rural residents",
+          "highest_group": "Urban higher-income residents",
+          "values": {
+            "urban-high-income": {
+              "label": "Urban higher-income residents",
+              "value": 7.7
+            },
+            "urban-low-income": {
+              "label": "Urban lower-income residents",
+              "value": 7.3
+            },
+            "rural": {
+              "label": "Rural residents",
+              "value": 6.8
+            }
+          }
+        }
+      },
+      "probability_best": 0.9459,
+      "probability_best_unconstrained": 0.5473,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "health_gain",
+      "label": "↓ Expected health gain",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5742887359807921,
+        "fixed-site-expansion": 0.49027455833599953,
+        "status-quo": 0.5172854562625162
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6006301115761447,
+          "cvar10": 0.5128255262583029,
+          "risk_adjusted_utility": 0.5742887359807921
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5213424437567054,
+          "cvar10": 0.4177828256876859,
+          "risk_adjusted_utility": 0.49027455833599953
+        },
+        "status-quo": {
+          "expected_utility": 0.5349232524224753,
+          "cvar10": 0.47613059855594503,
+          "risk_adjusted_utility": 0.5172854562625162
+        }
+      }
+    },
+    {
+      "criterion": "health_gain",
+      "label": "↑ Expected health gain",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5834468256978277,
+        "fixed-site-expansion": 0.4950930323186317,
+        "status-quo": 0.453242502643609
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6153968005887414,
+          "cvar10": 0.5088968842856959,
+          "risk_adjusted_utility": 0.5834468256978277
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5326274424704894,
+          "cvar10": 0.40751274196429704,
+          "risk_adjusted_utility": 0.4950930323186317
+        },
+        "status-quo": {
+          "expected_utility": 0.4718862880866469,
+          "cvar10": 0.40974033660985393,
+          "risk_adjusted_utility": 0.453242502643609
+        }
+      }
+    },
+    {
+      "criterion": "cost",
+      "label": "↓ Annual program cost",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5931578589206338,
+        "fixed-site-expansion": 0.5013325125300335,
+        "status-quo": 0.4680927703105173
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.622362559624174,
+          "cvar10": 0.52501355727904,
+          "risk_adjusted_utility": 0.5931578589206338
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5353625196893068,
+          "cvar10": 0.4219291624917293,
+          "risk_adjusted_utility": 0.5013325125300335
+        },
+        "status-quo": {
+          "expected_utility": 0.486328919266877,
+          "cvar10": 0.42554175607901135,
+          "risk_adjusted_utility": 0.4680927703105173
+        }
+      }
+    },
+    {
+      "criterion": "cost",
+      "label": "↑ Annual program cost",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5599560025800221,
+        "fixed-site-expansion": 0.4814479541369416,
+        "status-quo": 0.5129735062718185
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.5882325037842994,
+          "cvar10": 0.49397749977004196,
+          "risk_adjusted_utility": 0.5599560025800221
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5152161056310343,
+          "cvar10": 0.4026556006507253,
+          "risk_adjusted_utility": 0.4814479541369416
+        },
+        "status-quo": {
+          "expected_utility": 0.5306986020736973,
+          "cvar10": 0.47161494940076765,
+          "risk_adjusted_utility": 0.5129735062718185
+        }
+      }
+    },
+    {
+      "criterion": "access_gap",
+      "label": "↓ High- versus low-access gap",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5720575825633986,
+        "fixed-site-expansion": 0.4937733271113696,
+        "status-quo": 0.5080761556042684
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6018464460312292,
+          "cvar10": 0.5025502344717939,
+          "risk_adjusted_utility": 0.5720575825633986
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5288963875960436,
+          "cvar10": 0.4118195193137969,
+          "risk_adjusted_utility": 0.4937733271113696
+        },
+        "status-quo": {
+          "expected_utility": 0.526133657018441,
+          "cvar10": 0.4659419856378658,
+          "risk_adjusted_utility": 0.5080761556042684
+        }
+      }
+    },
+    {
+      "criterion": "access_gap",
+      "label": "↑ High- versus low-access gap",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5869923004983999,
+        "fixed-site-expansion": 0.49124803877187445,
+        "status-quo": 0.46139174622509377
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6146541943193219,
+          "cvar10": 0.5224478815829152,
+          "risk_adjusted_utility": 0.5869923004983999
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5236288775138985,
+          "cvar10": 0.4156927483738183,
+          "risk_adjusted_utility": 0.49124803877187445
+        },
+        "status-quo": {
+          "expected_utility": 0.4796346660007355,
+          "cvar10": 0.41882493341526306,
+          "risk_adjusted_utility": 0.46139174622509377
+        }
+      }
+    },
+    {
+      "criterion": "implementation_risk",
+      "label": "↓ Implementation risk",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5840735046775034,
+        "fixed-site-expansion": 0.49650479218035315,
+        "status-quo": 0.4753754351008686
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6124407596782907,
+          "cvar10": 0.5178832430089996,
+          "risk_adjusted_utility": 0.5840735046775034
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5300664634568455,
+          "cvar10": 0.4181942258685377,
+          "risk_adjusted_utility": 0.49650479218035315
+        },
+        "status-quo": {
+          "expected_utility": 0.4927014042809461,
+          "cvar10": 0.4349481736806877,
+          "risk_adjusted_utility": 0.4753754351008686
+        }
+      }
+    },
+    {
+      "criterion": "implementation_risk",
+      "label": "↑ Implementation risk",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5714555152287356,
+        "fixed-site-expansion": 0.48760199864719567,
+        "status-quo": 0.5038813292166935
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6009084238636391,
+          "cvar10": 0.5027320617472942,
+          "risk_adjusted_utility": 0.5714555152287356
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5219553464872043,
+          "cvar10": 0.40744418702050883,
+          "risk_adjusted_utility": 0.48760199864719567
+        },
+        "status-quo": {
+          "expected_utility": 0.5228704663500278,
+          "cvar10": 0.45957334257224686,
+          "risk_adjusted_utility": 0.5038813292166935
+        }
+      }
+    },
+    {
+      "criterion": "evidence_quality",
+      "label": "↓ Evidence quality",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5695364290725222,
+        "fixed-site-expansion": 0.4814722645514498,
+        "status-quo": 0.47126233432810644
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.5997784711428205,
+          "cvar10": 0.4989716642418262,
+          "risk_adjusted_utility": 0.5695364290725222
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5170463871318791,
+          "cvar10": 0.39846597853044813,
+          "risk_adjusted_utility": 0.4814722645514498
+        },
+        "status-quo": {
+          "expected_utility": 0.49018326417963415,
+          "cvar10": 0.4271134980078752,
+          "risk_adjusted_utility": 0.47126233432810644
+        }
+      }
+    },
+    {
+      "criterion": "evidence_quality",
+      "label": "↑ Evidence quality",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "hybrid-targeted",
+      "scores": {
+        "hybrid-targeted": 0.5909677924182942,
+        "fixed-site-expansion": 0.5077769207306188,
+        "status-quo": 0.5094876442899533
+      },
+      "score_details": {
+        "hybrid-targeted": {
+          "expected_utility": 0.6176933179687908,
+          "cvar10": 0.5286082328004689,
+          "risk_adjusted_utility": 0.5909677924182942
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5392145174296029,
+          "cvar10": 0.434422528432989,
+          "risk_adjusted_utility": 0.5077769207306188
+        },
+        "status-quo": {
+          "expected_utility": 0.52620846601921,
+          "cvar10": 0.4704723935883543,
+          "risk_adjusted_utility": 0.5094876442899533
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "health_gain": -0.48,
+          "cost": 0.48,
+          "access_gap": 0.48,
+          "implementation_risk": 0.48,
+          "evidence_quality": -0.48
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "hybrid-targeted",
+      "ranking": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo",
+        "mobile-first"
+      ],
+      "feasible_alternatives": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo"
+      ],
+      "alternatives": {
+        "status-quo": {
+          "expected_utility": 0.5056762914117077,
+          "cvar10": 0.45259953403306985,
+          "risk_adjusted_utility": 0.4897532641981163,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.00029952835977664627,
+          "feasible": true,
+          "probability_best": 0.0062
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5265057157188808,
+          "cvar10": 0.42794179814102384,
+          "risk_adjusted_utility": 0.4969365404455237,
+          "constraint_violation_rate": 0.092,
+          "constraint_violation_rate_upper_95": 0.0968650480155592,
+          "feasible": true,
+          "probability_best": 0.0712
+        },
+        "mobile-first": {
+          "expected_utility": 0.6004965694064486,
+          "cvar10": 0.5065394787761185,
+          "risk_adjusted_utility": 0.5723094422173496,
+          "constraint_violation_rate": 0.164,
+          "constraint_violation_rate_upper_95": 0.17018122724478316,
+          "feasible": false,
+          "probability_best": 0.0
+        },
+        "hybrid-targeted": {
+          "expected_utility": 0.607463628917293,
+          "cvar10": 0.5228422952328693,
+          "risk_adjusted_utility": 0.5820772288119659,
+          "constraint_violation_rate": 0.036,
+          "constraint_violation_rate_upper_95": 0.03919185768225853,
+          "feasible": true,
+          "probability_best": 0.9226
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "hybrid-targeted",
+      "ranking": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo",
+        "mobile-first"
+      ],
+      "feasible_alternatives": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo"
+      ],
+      "alternatives": {
+        "status-quo": {
+          "expected_utility": 0.5056741009706514,
+          "cvar10": 0.4457578231074815,
+          "risk_adjusted_utility": 0.48769921761170043,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.00029952835977664627,
+          "feasible": true,
+          "probability_best": 0.0042
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5265786831599002,
+          "cvar10": 0.4139272949885403,
+          "risk_adjusted_utility": 0.4927832667084922,
+          "constraint_violation_rate": 0.0916,
+          "constraint_violation_rate_upper_95": 0.09645586109037499,
+          "feasible": true,
+          "probability_best": 0.0499
+        },
+        "mobile-first": {
+          "expected_utility": 0.6007536509355131,
+          "cvar10": 0.4950041616341838,
+          "risk_adjusted_utility": 0.5690288041451144,
+          "constraint_violation_rate": 0.1564,
+          "constraint_violation_rate_upper_95": 0.16246752205618026,
+          "feasible": false,
+          "probability_best": 0.0
+        },
+        "hybrid-targeted": {
+          "expected_utility": 0.6074818552779913,
+          "cvar10": 0.5117153887220421,
+          "risk_adjusted_utility": 0.5787519153112065,
+          "constraint_violation_rate": 0.0355,
+          "constraint_violation_rate_upper_95": 0.038671454077127146,
+          "feasible": true,
+          "probability_best": 0.9459
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "hybrid-targeted",
+      "ranking": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo",
+        "mobile-first"
+      ],
+      "feasible_alternatives": [
+        "hybrid-targeted",
+        "fixed-site-expansion",
+        "status-quo"
+      ],
+      "alternatives": {
+        "status-quo": {
+          "expected_utility": 0.505651262903473,
+          "cvar10": 0.44065424514777374,
+          "risk_adjusted_utility": 0.48615215757676317,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.00029952835977664627,
+          "feasible": true,
+          "probability_best": 0.0025
+        },
+        "fixed-site-expansion": {
+          "expected_utility": 0.5265992343371767,
+          "cvar10": 0.4039070860160262,
+          "risk_adjusted_utility": 0.48979158984083154,
+          "constraint_violation_rate": 0.0892,
+          "constraint_violation_rate_upper_95": 0.09400015886972095,
+          "feasible": true,
+          "probability_best": 0.0291
+        },
+        "mobile-first": {
+          "expected_utility": 0.6008539086318415,
+          "cvar10": 0.4864451652404213,
+          "risk_adjusted_utility": 0.5665312856144155,
+          "constraint_violation_rate": 0.1512,
+          "constraint_violation_rate_upper_95": 0.15718688691929703,
+          "feasible": false,
+          "probability_best": 0.0
+        },
+        "hybrid-targeted": {
+          "expected_utility": 0.6074405209613171,
+          "cvar10": 0.5035481851835205,
+          "risk_adjusted_utility": 0.5762728202279781,
+          "constraint_violation_rate": 0.0378,
+          "constraint_violation_rate_upper_95": 0.04106401987485937,
+          "feasible": true,
+          "probability_best": 0.9684
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "status-quo",
+        "right_alternative": "fixed-site-expansion",
+        "correlation": 0.6654356580862794
+      },
+      {
+        "left_alternative": "status-quo",
+        "right_alternative": "mobile-first",
+        "correlation": 0.625615281856699
+      },
+      {
+        "left_alternative": "status-quo",
+        "right_alternative": "hybrid-targeted",
+        "correlation": 0.6486867644831068
+      },
+      {
+        "left_alternative": "fixed-site-expansion",
+        "right_alternative": "mobile-first",
+        "correlation": 0.6513663550176182
+      },
+      {
+        "left_alternative": "fixed-site-expansion",
+        "right_alternative": "hybrid-targeted",
+        "correlation": 0.646360389717287
+      },
+      {
+        "left_alternative": "mobile-first",
+        "right_alternative": "hybrid-targeted",
+        "correlation": 0.630221906453732
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 112,
+      "parameters_with_resolved_source": 112,
+      "parameters_approved_for_declared_use": 112,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[3].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[3].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[3].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[4].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[4].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[4].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.health_gain.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.health_gain.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.health_gain.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.health_gain.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.cost.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.cost.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.cost.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.cost.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.access_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.access_gap.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.access_gap.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.access_gap.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.implementation_risk.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.implementation_risk.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.implementation_risk.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.implementation_risk.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.evidence_quality.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.evidence_quality.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.health_gain.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.health_gain.mean",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.health_gain.sd",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.health_gain.min",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.health_gain.max",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.cost.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.cost.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.cost.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.cost.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.access_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.access_gap.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.access_gap.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.access_gap.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.implementation_risk.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.implementation_risk.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.implementation_risk.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.implementation_risk.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.evidence_quality.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.evidence_quality.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.health_gain.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.health_gain.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.health_gain.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.health_gain.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.cost.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.cost.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.cost.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.cost.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.access_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.access_gap.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.access_gap.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.access_gap.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.implementation_risk.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.implementation_risk.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.implementation_risk.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.implementation_risk.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.evidence_quality.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.evidence_quality.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.health_gain.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.health_gain.mean",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.health_gain.sd",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.health_gain.min",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.health_gain.max",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.cost.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.cost.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.cost.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.cost.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.access_gap.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.access_gap.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.access_gap.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.access_gap.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.implementation_risk.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.implementation_risk.low",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.implementation_risk.mode",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.implementation_risk.high",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.evidence_quality.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.evidence_quality.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.health_gain.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.cost.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.implementation_risk.add",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.mobile-first.health_gain.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.mobile-first.implementation_risk.add",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[2].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[2].adjustments.*.health_gain.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[2].adjustments.*.cost.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[2].adjustments.*.implementation_risk.add",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[2].adjustments.fixed-site-expansion.health_gain.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "constraints[0].threshold",
+        "parameter_type": "constraint_threshold",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "constraints[1].threshold",
+        "parameter_type": "constraint_threshold",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.health_gain",
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.cost",
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.access_gap",
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.implementation_risk",
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.evidence_quality",
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "owner": "Repository maintainer (synthetic example)",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "evidence": {
+    "type": "Synthetic demonstration assumptions informed by a hypothetical needs assessment",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Synthetic demand forecast by district",
+      "Illustrative expert elicitation on capacity and implementation risk"
+    ],
+    "causal_claim_status": "No causal claim; health gains are scenario inputs that would require trial or quasi-experimental evidence in a real deployment.",
+    "limitations": [
+      "Health gains are aggregate and do not model disease-specific survival outcomes.",
+      "Geographic travel times are summarized rather than optimized on a road network.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "decision_notes": [
+    "A real analysis should estimate health outcomes by condition and validate transportability across districts.",
+    "The authority should pre-register an evaluation plan before rollout."
+  ]
+}

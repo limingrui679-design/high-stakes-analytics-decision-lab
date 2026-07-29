@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.1",
+  "project_id": "cfpb-fintech-complaint-operations",
+  "source_id": "cfpb-ccdb-digital-payments-2022",
+  "title": "Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service",
+  "publisher": "Consumer Financial Protection Bureau",
+  "landing_page": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+  "api_documentation": "https://cfpb.github.io/ccdb5-api/documentation/",
+  "download_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?date_received_min=2022-01-01&date_received_max=2023-01-01&product=Money%20transfer%2C%20virtual%20currency%2C%20or%20money%20service&format=csv&sort=created_date_asc",
+  "version": "Closed 2022 UTC date window; privacy-minimized extract created 2026-07-27",
+  "accessed_at": "2026-07-27",
+  "license": "CC0",
+  "license_url": "https://github.com/cfpb/ccdb5-api/blob/main/LICENSE",
+  "redistribution": "Permitted; repository stores only a privacy-minimized field subset",
+  "expected_rows": 13534,
+  "grain": "one CFPB complaint received in 2022 for a money-transfer, virtual-currency, or money-service product",
+  "raw_files": [
+    {
+      "path": "data/raw/cfpb-digital-payments-2022-sanitized.csv",
+      "sha256": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
+    }
+  ],
+  "derivation": {
+    "date_filter": "2022-01-01 <= UTC date_received < 2023-01-01",
+    "sort": ["date_received", "complaint_id"],
+    "retained_fields": [
+      "complaint_id",
+      "date_received",
+      "date_sent_to_company",
+      "sub_product",
+      "issue",
+      "sub_issue",
+      "state",
+      "submitted_via",
+      "company_response",
+      "timely"
+    ],
+    "excluded_before_storage": [
+      "consumer complaint narrative",
+      "company",
+      "ZIP code",
+      "tags",
+      "company public response"
+    ]
+  },
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Narratives, company names, ZIP codes, tags, and public-response text are excluded before repository storage; outputs are aggregate.",
+    "status": "approved_for_public_aggregate_analysis"
+  },
+  "citation": "Consumer Financial Protection Bureau. Consumer Complaint Database, money transfer, virtual currency, or money service complaints received in 2022. Privacy-minimized API extract accessed 2026-07-27."
+}

@@ -1,0 +1,2397 @@
+evaluation_row,date_received,sub_product,late_label,late_score
+1,2022-11-01,Domestic (US) money transfer,0,0.01528563
+2,2022-11-01,Mobile or digital wallet,0,0.01140241
+3,2022-11-01,Domestic (US) money transfer,1,0.01540961
+4,2022-11-01,Domestic (US) money transfer,0,0.01256361
+5,2022-11-01,Virtual currency,0,0.01519191
+6,2022-11-01,Domestic (US) money transfer,0,0.01256361
+7,2022-11-01,Check cashing service,0,0.01835839
+8,2022-11-01,Domestic (US) money transfer,0,0.01256361
+9,2022-11-01,Domestic (US) money transfer,0,0.01396449
+10,2022-11-01,Domestic (US) money transfer,0,0.01256361
+11,2022-11-01,Domestic (US) money transfer,0,0.01256361
+12,2022-11-01,Mobile or digital wallet,0,0.01374495
+13,2022-11-01,Traveler's check or cashier's check,0,0.01418468
+14,2022-11-01,Domestic (US) money transfer,0,0.01256361
+15,2022-11-01,Mobile or digital wallet,0,0.01141913
+16,2022-11-01,Mobile or digital wallet,0,0.01140241
+17,2022-11-01,International money transfer,0,0.0154043
+18,2022-11-01,Domestic (US) money transfer,0,0.01256361
+19,2022-11-01,Debt settlement,0,0.02099618
+20,2022-11-01,Domestic (US) money transfer,0,0.01256361
+21,2022-11-01,Domestic (US) money transfer,0,0.01256361
+22,2022-11-01,International money transfer,0,0.01711644
+23,2022-11-01,Virtual currency,0,0.01366961
+24,2022-11-01,Mobile or digital wallet,0,0.01141913
+25,2022-11-01,Virtual currency,0,0.01366961
+26,2022-11-01,Traveler's check or cashier's check,0,0.02058611
+27,2022-11-01,Mobile or digital wallet,0,0.01140241
+28,2022-11-01,Mobile or digital wallet,0,0.01141913
+29,2022-11-01,Mobile or digital wallet,0,0.00990455
+30,2022-11-01,Foreign currency exchange,0,0.01450431
+31,2022-11-01,Refund anticipation check,0,0.01898763
+32,2022-11-01,Domestic (US) money transfer,0,0.01540961
+33,2022-11-01,Domestic (US) money transfer,0,0.01256361
+34,2022-11-01,Mobile or digital wallet,0,0.01140241
+35,2022-11-01,International money transfer,0,0.0154043
+36,2022-11-01,Virtual currency,0,0.01366961
+37,2022-11-01,Mobile or digital wallet,0,0.01141913
+38,2022-11-01,Domestic (US) money transfer,0,0.01256361
+39,2022-11-01,International money transfer,0,0.01888149
+40,2022-11-01,Domestic (US) money transfer,0,0.01256361
+41,2022-11-01,Domestic (US) money transfer,0,0.01396449
+42,2022-11-01,Mobile or digital wallet,0,0.01140241
+43,2022-11-02,Mobile or digital wallet,0,0.00990455
+44,2022-11-02,Domestic (US) money transfer,0,0.01396449
+45,2022-11-02,Mobile or digital wallet,0,0.01387638
+46,2022-11-02,Mobile or digital wallet,0,0.01141913
+47,2022-11-02,Virtual currency,0,0.01516741
+48,2022-11-02,Virtual currency,0,0.01516741
+49,2022-11-02,Domestic (US) money transfer,0,0.01256361
+50,2022-11-02,Mobile or digital wallet,0,0.00990455
+51,2022-11-02,International money transfer,0,0.01888149
+52,2022-11-02,Domestic (US) money transfer,0,0.01396449
+53,2022-11-02,Debt settlement,0,0.02119546
+54,2022-11-02,Domestic (US) money transfer,0,0.01540961
+55,2022-11-02,International money transfer,0,0.01708888
+56,2022-11-02,Virtual currency,0,0.01662722
+57,2022-11-02,Virtual currency,1,0.01366961
+58,2022-11-02,Domestic (US) money transfer,0,0.01256361
+59,2022-11-02,International money transfer,0,0.0154043
+60,2022-11-02,Mobile or digital wallet,0,0.01141913
+61,2022-11-02,Mobile or digital wallet,0,0.01141913
+62,2022-11-02,Mobile or digital wallet,0,0.01141913
+63,2022-11-02,Virtual currency,0,0.01519191
+64,2022-11-02,Mobile or digital wallet,0,0.01440215
+65,2022-11-02,Domestic (US) money transfer,0,0.01256361
+66,2022-11-02,Domestic (US) money transfer,0,0.01396449
+67,2022-11-02,International money transfer,0,0.01711644
+68,2022-11-02,International money transfer,0,0.01711644
+69,2022-11-02,International money transfer,0,0.0154043
+70,2022-11-02,Mobile or digital wallet,0,0.01141913
+71,2022-11-02,Domestic (US) money transfer,0,0.01256361
+72,2022-11-02,Domestic (US) money transfer,0,0.01394194
+73,2022-11-02,International money transfer,0,0.0154043
+74,2022-11-02,Foreign currency exchange,0,0.02349346
+75,2022-11-02,Mobile or digital wallet,0,0.01140241
+76,2022-11-02,Mobile or digital wallet,0,0.01141913
+77,2022-11-02,Mobile or digital wallet,0,0.01140241
+78,2022-11-02,Mobile or digital wallet,0,0.01141913
+79,2022-11-03,Mobile or digital wallet,0,0.01140241
+80,2022-11-03,Domestic (US) money transfer,0,0.01256361
+81,2022-11-03,Domestic (US) money transfer,0,0.01256361
+82,2022-11-03,Domestic (US) money transfer,0,0.01256361
+83,2022-11-03,Virtual currency,0,0.01366961
+84,2022-11-03,Domestic (US) money transfer,0,0.01396449
+85,2022-11-03,Mobile or digital wallet,0,0.01140241
+86,2022-11-03,Mobile or digital wallet,0,0.00990455
+87,2022-11-03,Mobile or digital wallet,0,0.01140241
+88,2022-11-03,Mobile or digital wallet,0,0.01440215
+89,2022-11-03,Domestic (US) money transfer,0,0.01256361
+90,2022-11-03,Domestic (US) money transfer,0,0.01256361
+91,2022-11-03,Mobile or digital wallet,0,0.01140241
+92,2022-11-03,Domestic (US) money transfer,0,0.01256361
+93,2022-11-03,Virtual currency,0,0.01366961
+94,2022-11-03,Domestic (US) money transfer,0,0.01256361
+95,2022-11-03,Domestic (US) money transfer,0,0.01396449
+96,2022-11-03,International money transfer,0,0.01711644
+97,2022-11-03,Mobile or digital wallet,0,0.00990455
+98,2022-11-03,Mobile or digital wallet,0,0.01140241
+99,2022-11-03,Mobile or digital wallet,0,0.01140241
+100,2022-11-03,Virtual currency,0,0.01519191
+101,2022-11-03,Domestic (US) money transfer,0,0.01467983
+102,2022-11-03,Mobile or digital wallet,0,0.00990455
+103,2022-11-03,Mobile or digital wallet,0,0.01140241
+104,2022-11-03,Mobile or digital wallet,0,0.01141913
+105,2022-11-03,Refund anticipation check,0,0.02749614
+106,2022-11-03,Domestic (US) money transfer,0,0.01540961
+107,2022-11-03,Mobile or digital wallet,0,0.01141913
+108,2022-11-03,Mobile or digital wallet,0,0.01141913
+109,2022-11-03,Mobile or digital wallet,0,0.00990455
+110,2022-11-03,Mobile or digital wallet,0,0.01141913
+111,2022-11-03,Mobile or digital wallet,0,0.01141913
+112,2022-11-03,International money transfer,0,0.0154043
+113,2022-11-03,Domestic (US) money transfer,0,0.01256361
+114,2022-11-03,Virtual currency,0,0.01676189
+115,2022-11-04,Check cashing service,0,0.02221657
+116,2022-11-04,International money transfer,0,0.01711644
+117,2022-11-04,Domestic (US) money transfer,0,0.01256361
+118,2022-11-04,Mobile or digital wallet,0,0.01141913
+119,2022-11-04,Virtual currency,0,0.01519191
+120,2022-11-04,International money transfer,0,0.01711644
+121,2022-11-04,International money transfer,0,0.01711644
+122,2022-11-04,Mobile or digital wallet,0,0.00990455
+123,2022-11-04,Mobile or digital wallet,0,0.00990455
+124,2022-11-04,Mobile or digital wallet,0,0.00990455
+125,2022-11-04,Mobile or digital wallet,0,0.01140241
+126,2022-11-04,Mobile or digital wallet,0,0.00990455
+127,2022-11-04,Mobile or digital wallet,0,0.00990455
+128,2022-11-04,Domestic (US) money transfer,0,0.01256361
+129,2022-11-04,Virtual currency,1,0.01366961
+130,2022-11-04,Domestic (US) money transfer,0,0.01467983
+131,2022-11-04,Domestic (US) money transfer,0,0.01256361
+132,2022-11-04,Check cashing service,0,0.01835839
+133,2022-11-04,Check cashing service,0,0.02221657
+134,2022-11-04,Mobile or digital wallet,0,0.01140241
+135,2022-11-04,Virtual currency,0,0.01366961
+136,2022-11-04,Domestic (US) money transfer,0,0.01256361
+137,2022-11-04,International money transfer,0,0.01711644
+138,2022-11-04,Virtual currency,0,0.01366961
+139,2022-11-04,Domestic (US) money transfer,0,0.01256361
+140,2022-11-04,Mobile or digital wallet,0,0.01141913
+141,2022-11-04,Domestic (US) money transfer,0,0.01256361
+142,2022-11-04,Domestic (US) money transfer,0,0.01256361
+143,2022-11-04,International money transfer,0,0.01888149
+144,2022-11-04,Domestic (US) money transfer,0,0.01396449
+145,2022-11-04,International money transfer,0,0.0154043
+146,2022-11-04,Mobile or digital wallet,0,0.01141913
+147,2022-11-04,Mobile or digital wallet,0,0.01140241
+148,2022-11-04,Foreign currency exchange,0,0.02349346
+149,2022-11-04,Domestic (US) money transfer,0,0.01256361
+150,2022-11-04,Mobile or digital wallet,0,0.01141913
+151,2022-11-04,Domestic (US) money transfer,0,0.01256361
+152,2022-11-04,Domestic (US) money transfer,0,0.01256361
+153,2022-11-04,Mobile or digital wallet,0,0.01141913
+154,2022-11-04,Domestic (US) money transfer,0,0.01256361
+155,2022-11-04,Mobile or digital wallet,0,0.00990455
+156,2022-11-04,Domestic (US) money transfer,0,0.01256361
+157,2022-11-04,Virtual currency,0,0.01519191
+158,2022-11-04,International money transfer,0,0.01888149
+159,2022-11-04,Check cashing service,0,0.01835839
+160,2022-11-04,International money transfer,0,0.01708888
+161,2022-11-04,Mobile or digital wallet,0,0.00990455
+162,2022-11-04,Mobile or digital wallet,0,0.01140241
+163,2022-11-05,International money transfer,0,0.01708888
+164,2022-11-05,Money order,0,0.01752141
+165,2022-11-05,Domestic (US) money transfer,0,0.01396449
+166,2022-11-05,Domestic (US) money transfer,0,0.01540961
+167,2022-11-05,Mobile or digital wallet,0,0.01140241
+168,2022-11-05,Mobile or digital wallet,0,0.01140241
+169,2022-11-05,Mobile or digital wallet,0,0.01140241
+170,2022-11-05,Mobile or digital wallet,0,0.01140241
+171,2022-11-05,Mobile or digital wallet,0,0.00990455
+172,2022-11-05,Virtual currency,0,0.01366961
+173,2022-11-05,Check cashing service,0,0.01835839
+174,2022-11-05,Mobile or digital wallet,0,0.00990455
+175,2022-11-05,Mobile or digital wallet,0,0.00990455
+176,2022-11-05,Mobile or digital wallet,0,0.00990455
+177,2022-11-05,Virtual currency,0,0.01676189
+178,2022-11-05,Refund anticipation check,0,0.01898763
+179,2022-11-05,Domestic (US) money transfer,1,0.01540961
+180,2022-11-05,International money transfer,0,0.0154043
+181,2022-11-05,Mobile or digital wallet,0,0.00990455
+182,2022-11-05,Mobile or digital wallet,0,0.00990455
+183,2022-11-05,Domestic (US) money transfer,0,0.01256361
+184,2022-11-05,Domestic (US) money transfer,0,0.01396449
+185,2022-11-05,Mobile or digital wallet,0,0.00990455
+186,2022-11-05,Domestic (US) money transfer,0,0.01396449
+187,2022-11-05,Mobile or digital wallet,0,0.01140241
+188,2022-11-05,Foreign currency exchange,0,0.01450431
+189,2022-11-05,Mobile or digital wallet,0,0.01140241
+190,2022-11-05,International money transfer,0,0.01888149
+191,2022-11-05,International money transfer,0,0.01888149
+192,2022-11-05,Domestic (US) money transfer,0,0.01396449
+193,2022-11-05,Mobile or digital wallet,0,0.01140241
+194,2022-11-05,Domestic (US) money transfer,0,0.01528563
+195,2022-11-05,Mobile or digital wallet,0,0.01392484
+196,2022-11-06,Debt settlement,0,0.02110892
+197,2022-11-06,Mobile or digital wallet,0,0.01140241
+198,2022-11-06,International money transfer,0,0.01711644
+199,2022-11-06,Mobile or digital wallet,0,0.00990455
+200,2022-11-06,Mobile or digital wallet,0,0.01387638
+201,2022-11-06,Mobile or digital wallet,0,0.01140241
+202,2022-11-06,Mobile or digital wallet,0,0.00990455
+203,2022-11-06,Mobile or digital wallet,0,0.00990455
+204,2022-11-06,Domestic (US) money transfer,0,0.01540961
+205,2022-11-06,Mobile or digital wallet,0,0.00990455
+206,2022-11-06,Money order,0,0.01844646
+207,2022-11-06,Mobile or digital wallet,0,0.01140241
+208,2022-11-06,Domestic (US) money transfer,0,0.01256361
+209,2022-11-06,Mobile or digital wallet,0,0.01141913
+210,2022-11-06,Domestic (US) money transfer,0,0.01256361
+211,2022-11-06,Virtual currency,0,0.01519191
+212,2022-11-06,Mobile or digital wallet,0,0.01140241
+213,2022-11-06,Mobile or digital wallet,0,0.00990455
+214,2022-11-06,Domestic (US) money transfer,0,0.01396449
+215,2022-11-06,Mobile or digital wallet,0,0.01140241
+216,2022-11-06,Mobile or digital wallet,0,0.01140241
+217,2022-11-06,Mobile or digital wallet,0,0.01141913
+218,2022-11-06,Virtual currency,0,0.01366961
+219,2022-11-07,Virtual currency,0,0.01366961
+220,2022-11-07,Mobile or digital wallet,0,0.01141913
+221,2022-11-07,Mobile or digital wallet,0,0.01140241
+222,2022-11-07,Mobile or digital wallet,0,0.01140241
+223,2022-11-07,Mobile or digital wallet,0,0.01140241
+224,2022-11-07,Check cashing service,0,0.01835839
+225,2022-11-07,Mobile or digital wallet,0,0.01140241
+226,2022-11-07,International money transfer,0,0.01888149
+227,2022-11-07,Mobile or digital wallet,0,0.00990455
+228,2022-11-07,International money transfer,0,0.01888149
+229,2022-11-07,International money transfer,0,0.01711644
+230,2022-11-07,Virtual currency,0,0.01366961
+231,2022-11-07,Mobile or digital wallet,0,0.01392484
+232,2022-11-07,Traveler's check or cashier's check,0,0.01418468
+233,2022-11-07,Mobile or digital wallet,0,0.01140241
+234,2022-11-07,Money order,0,0.01523281
+235,2022-11-07,Domestic (US) money transfer,0,0.01256361
+236,2022-11-07,Virtual currency,0,0.01366961
+237,2022-11-07,International money transfer,0,0.01888149
+238,2022-11-07,Domestic (US) money transfer,0,0.01540961
+239,2022-11-07,Virtual currency,0,0.01366961
+240,2022-11-07,Virtual currency,0,0.01366961
+241,2022-11-07,Mobile or digital wallet,0,0.00990455
+242,2022-11-07,Mobile or digital wallet,0,0.01374495
+243,2022-11-07,International money transfer,0,0.01799029
+244,2022-11-07,Virtual currency,0,0.01676189
+245,2022-11-07,Virtual currency,0,0.01366961
+246,2022-11-07,Mobile or digital wallet,0,0.01140241
+247,2022-11-07,Foreign currency exchange,0,0.02349346
+248,2022-11-07,Mobile or digital wallet,0,0.01140241
+249,2022-11-07,Traveler's check or cashier's check,0,0.01418468
+250,2022-11-07,Domestic (US) money transfer,0,0.01467983
+251,2022-11-07,Check cashing service,0,0.01835839
+252,2022-11-07,Domestic (US) money transfer,0,0.01256361
+253,2022-11-07,Mobile or digital wallet,0,0.01140241
+254,2022-11-07,Virtual currency,0,0.01647017
+255,2022-11-07,International money transfer,0,0.0154043
+256,2022-11-07,Domestic (US) money transfer,0,0.01256361
+257,2022-11-07,Domestic (US) money transfer,0,0.01256361
+258,2022-11-07,Mobile or digital wallet,0,0.01140241
+259,2022-11-07,Mobile or digital wallet,0,0.01140241
+260,2022-11-07,International money transfer,0,0.01711644
+261,2022-11-07,Mobile or digital wallet,0,0.01140241
+262,2022-11-07,International money transfer,0,0.0154043
+263,2022-11-07,Mobile or digital wallet,0,0.01141913
+264,2022-11-07,International money transfer,0,0.01888149
+265,2022-11-07,Mobile or digital wallet,0,0.01141913
+266,2022-11-07,Domestic (US) money transfer,0,0.01256361
+267,2022-11-07,International money transfer,0,0.01799029
+268,2022-11-07,International money transfer,0,0.0154043
+269,2022-11-07,Check cashing service,0,0.02221657
+270,2022-11-07,Mobile or digital wallet,0,0.01140241
+271,2022-11-07,International money transfer,0,0.0154043
+272,2022-11-07,International money transfer,0,0.0154043
+273,2022-11-07,Domestic (US) money transfer,0,0.01256361
+274,2022-11-08,Mobile or digital wallet,0,0.01140241
+275,2022-11-08,International money transfer,0,0.01711644
+276,2022-11-08,Virtual currency,0,0.01366961
+277,2022-11-08,International money transfer,0,0.01711644
+278,2022-11-08,Domestic (US) money transfer,0,0.01256361
+279,2022-11-08,Domestic (US) money transfer,0,0.01256361
+280,2022-11-08,Refund anticipation check,0,0.02749614
+281,2022-11-08,Domestic (US) money transfer,0,0.01256361
+282,2022-11-08,Domestic (US) money transfer,0,0.01256361
+283,2022-11-08,Domestic (US) money transfer,0,0.01256361
+284,2022-11-08,Virtual currency,0,0.01519191
+285,2022-11-08,International money transfer,1,0.01711644
+286,2022-11-08,Virtual currency,0,0.01676189
+287,2022-11-08,Virtual currency,0,0.01366961
+288,2022-11-08,Virtual currency,0,0.01366961
+289,2022-11-08,International money transfer,0,0.01711644
+290,2022-11-08,Mobile or digital wallet,0,0.01140241
+291,2022-11-08,Mobile or digital wallet,0,0.01141913
+292,2022-11-08,Domestic (US) money transfer,0,0.01256361
+293,2022-11-08,Mobile or digital wallet,0,0.01141913
+294,2022-11-08,Check cashing service,0,0.02221657
+295,2022-11-08,International money transfer,0,0.01888149
+296,2022-11-08,Traveler's check or cashier's check,0,0.01718106
+297,2022-11-08,Debt settlement,0,0.01743967
+298,2022-11-08,Domestic (US) money transfer,0,0.01540961
+299,2022-11-08,Debt settlement,0,0.01743967
+300,2022-11-08,Domestic (US) money transfer,0,0.01396449
+301,2022-11-08,Mobile or digital wallet,0,0.01140241
+302,2022-11-08,Mobile or digital wallet,0,0.01140241
+303,2022-11-08,Domestic (US) money transfer,0,0.01396449
+304,2022-11-08,International money transfer,0,0.0154043
+305,2022-11-08,Virtual currency,0,0.01596911
+306,2022-11-08,International money transfer,0,0.0154043
+307,2022-11-08,International money transfer,0,0.01888149
+308,2022-11-08,Mobile or digital wallet,0,0.00990455
+309,2022-11-08,International money transfer,0,0.0154043
+310,2022-11-08,International money transfer,0,0.01708888
+311,2022-11-08,Domestic (US) money transfer,0,0.01396449
+312,2022-11-08,Mobile or digital wallet,0,0.01141913
+313,2022-11-08,Domestic (US) money transfer,0,0.01396449
+314,2022-11-08,International money transfer,0,0.01888149
+315,2022-11-08,Mobile or digital wallet,0,0.01140241
+316,2022-11-08,Domestic (US) money transfer,0,0.01256361
+317,2022-11-08,Virtual currency,0,0.01366961
+318,2022-11-08,Mobile or digital wallet,0,0.01140241
+319,2022-11-08,International money transfer,0,0.0154043
+320,2022-11-08,Domestic (US) money transfer,0,0.01256361
+321,2022-11-08,Mobile or digital wallet,0,0.01140241
+322,2022-11-08,Mobile or digital wallet,0,0.01141913
+323,2022-11-09,International money transfer,0,0.01799029
+324,2022-11-09,Virtual currency,0,0.01519191
+325,2022-11-09,Mobile or digital wallet,0,0.01141913
+326,2022-11-09,Traveler's check or cashier's check,0,0.02058611
+327,2022-11-09,Mobile or digital wallet,0,0.00990455
+328,2022-11-09,Mobile or digital wallet,0,0.00990455
+329,2022-11-09,Check cashing service,0,0.01835839
+330,2022-11-09,Domestic (US) money transfer,1,0.01256361
+331,2022-11-09,International money transfer,0,0.0154043
+332,2022-11-09,Domestic (US) money transfer,0,0.01256361
+333,2022-11-09,Mobile or digital wallet,0,0.01140241
+334,2022-11-09,Mobile or digital wallet,0,0.00990455
+335,2022-11-09,Traveler's check or cashier's check,0,0.01725178
+336,2022-11-09,International money transfer,0,0.01711644
+337,2022-11-09,International money transfer,0,0.01711644
+338,2022-11-09,International money transfer,0,0.01711644
+339,2022-11-09,Mobile or digital wallet,0,0.01140241
+340,2022-11-09,International money transfer,0,0.01708888
+341,2022-11-09,Virtual currency,0,0.01366961
+342,2022-11-09,Mobile or digital wallet,0,0.01141913
+343,2022-11-09,Virtual currency,0,0.01366961
+344,2022-11-09,Domestic (US) money transfer,0,0.01540961
+345,2022-11-09,Mobile or digital wallet,0,0.01140241
+346,2022-11-09,Virtual currency,0,0.01366961
+347,2022-11-09,Mobile or digital wallet,0,0.01140241
+348,2022-11-09,Virtual currency,0,0.01596911
+349,2022-11-09,Domestic (US) money transfer,0,0.01256361
+350,2022-11-09,Domestic (US) money transfer,0,0.01256361
+351,2022-11-09,Mobile or digital wallet,0,0.01140241
+352,2022-11-09,Domestic (US) money transfer,0,0.01256361
+353,2022-11-09,Mobile or digital wallet,0,0.00990455
+354,2022-11-09,Domestic (US) money transfer,0,0.01256361
+355,2022-11-09,Domestic (US) money transfer,0,0.01256361
+356,2022-11-09,International money transfer,0,0.01711644
+357,2022-11-09,International money transfer,0,0.01888149
+358,2022-11-09,Virtual currency,0,0.01519191
+359,2022-11-09,Traveler's check or cashier's check,0,0.01731182
+360,2022-11-09,Mobile or digital wallet,0,0.00990455
+361,2022-11-09,Domestic (US) money transfer,0,0.01256361
+362,2022-11-09,Domestic (US) money transfer,0,0.01467983
+363,2022-11-09,Virtual currency,0,0.01519191
+364,2022-11-09,Domestic (US) money transfer,0,0.01256361
+365,2022-11-09,Domestic (US) money transfer,0,0.01256361
+366,2022-11-09,Domestic (US) money transfer,0,0.01396449
+367,2022-11-09,Domestic (US) money transfer,0,0.01540961
+368,2022-11-09,Domestic (US) money transfer,0,0.01256361
+369,2022-11-09,Mobile or digital wallet,0,0.01140241
+370,2022-11-09,International money transfer,0,0.01888149
+371,2022-11-09,Mobile or digital wallet,0,0.01141913
+372,2022-11-10,Mobile or digital wallet,0,0.01141913
+373,2022-11-10,Domestic (US) money transfer,0,0.01256361
+374,2022-11-10,International money transfer,0,0.0154043
+375,2022-11-10,Domestic (US) money transfer,0,0.01256361
+376,2022-11-10,International money transfer,0,0.01799029
+377,2022-11-10,Mobile or digital wallet,0,0.01140241
+378,2022-11-10,Domestic (US) money transfer,0,0.01256361
+379,2022-11-10,Domestic (US) money transfer,0,0.01256361
+380,2022-11-10,Domestic (US) money transfer,0,0.01256361
+381,2022-11-10,Domestic (US) money transfer,0,0.01256361
+382,2022-11-10,International money transfer,0,0.01888149
+383,2022-11-10,Mobile or digital wallet,0,0.01140241
+384,2022-11-10,Foreign currency exchange,1,0.01756702
+385,2022-11-10,International money transfer,0,0.0154043
+386,2022-11-10,International money transfer,0,0.0154043
+387,2022-11-10,Mobile or digital wallet,0,0.00990455
+388,2022-11-10,Domestic (US) money transfer,0,0.01540961
+389,2022-11-10,Domestic (US) money transfer,0,0.01540961
+390,2022-11-10,Mobile or digital wallet,0,0.01141913
+391,2022-11-10,Virtual currency,0,0.01519191
+392,2022-11-10,Virtual currency,0,0.01366961
+393,2022-11-10,Mobile or digital wallet,0,0.01141913
+394,2022-11-10,Domestic (US) money transfer,0,0.01396449
+395,2022-11-10,Virtual currency,0,0.01366961
+396,2022-11-10,Domestic (US) money transfer,0,0.01540961
+397,2022-11-10,Virtual currency,0,0.01366961
+398,2022-11-10,Mobile or digital wallet,0,0.01140241
+399,2022-11-10,International money transfer,0,0.01888149
+400,2022-11-10,Mobile or digital wallet,0,0.00990455
+401,2022-11-10,Virtual currency,0,0.01676189
+402,2022-11-10,International money transfer,0,0.01888149
+403,2022-11-10,Domestic (US) money transfer,0,0.01396449
+404,2022-11-10,Debt settlement,0,0.02110892
+405,2022-11-10,International money transfer,0,0.01711644
+406,2022-11-11,Virtual currency,0,0.01366961
+407,2022-11-11,Virtual currency,0,0.01366961
+408,2022-11-11,Mobile or digital wallet,0,0.01140241
+409,2022-11-11,Refund anticipation check,0,0.02314876
+410,2022-11-11,Domestic (US) money transfer,0,0.01256361
+411,2022-11-11,Domestic (US) money transfer,0,0.01540961
+412,2022-11-11,Mobile or digital wallet,0,0.01140241
+413,2022-11-11,Mobile or digital wallet,0,0.00990455
+414,2022-11-11,Mobile or digital wallet,0,0.01141913
+415,2022-11-11,Domestic (US) money transfer,0,0.01256361
+416,2022-11-11,Debt settlement,0,0.02110892
+417,2022-11-11,Mobile or digital wallet,0,0.01140241
+418,2022-11-11,Mobile or digital wallet,0,0.01140241
+419,2022-11-11,Domestic (US) money transfer,0,0.01256361
+420,2022-11-11,Virtual currency,0,0.01676189
+421,2022-11-11,Mobile or digital wallet,0,0.01140241
+422,2022-11-11,International money transfer,0,0.0154043
+423,2022-11-11,Domestic (US) money transfer,0,0.01256361
+424,2022-11-11,Domestic (US) money transfer,0,0.01540961
+425,2022-11-11,Mobile or digital wallet,0,0.01140241
+426,2022-11-11,Domestic (US) money transfer,0,0.01256361
+427,2022-11-11,Mobile or digital wallet,0,0.01374495
+428,2022-11-11,Mobile or digital wallet,0,0.01387638
+429,2022-11-11,Domestic (US) money transfer,0,0.01540961
+430,2022-11-11,Mobile or digital wallet,0,0.01140241
+431,2022-11-11,International money transfer,0,0.01711644
+432,2022-11-11,Mobile or digital wallet,0,0.01140241
+433,2022-11-11,Mobile or digital wallet,0,0.01140241
+434,2022-11-11,Domestic (US) money transfer,1,0.01256361
+435,2022-11-11,Mobile or digital wallet,0,0.01140241
+436,2022-11-12,Domestic (US) money transfer,0,0.01256361
+437,2022-11-12,Virtual currency,0,0.01676189
+438,2022-11-12,Domestic (US) money transfer,0,0.01256361
+439,2022-11-12,Mobile or digital wallet,0,0.01140241
+440,2022-11-12,Domestic (US) money transfer,0,0.01256361
+441,2022-11-12,Domestic (US) money transfer,0,0.01256361
+442,2022-11-12,Domestic (US) money transfer,0,0.01256361
+443,2022-11-12,Mobile or digital wallet,0,0.01141913
+444,2022-11-12,Mobile or digital wallet,0,0.01140241
+445,2022-11-12,Domestic (US) money transfer,1,0.01256361
+446,2022-11-12,Virtual currency,0,0.01519191
+447,2022-11-12,Mobile or digital wallet,0,0.01141913
+448,2022-11-12,Mobile or digital wallet,0,0.01140241
+449,2022-11-12,Mobile or digital wallet,0,0.01140241
+450,2022-11-12,International money transfer,0,0.01711644
+451,2022-11-12,Domestic (US) money transfer,0,0.01396449
+452,2022-11-12,Mobile or digital wallet,0,0.01141913
+453,2022-11-12,Mobile or digital wallet,0,0.00990455
+454,2022-11-12,Domestic (US) money transfer,0,0.01256361
+455,2022-11-12,Money order,0,0.01858667
+456,2022-11-13,Virtual currency,0,0.01519191
+457,2022-11-13,Mobile or digital wallet,0,0.01140241
+458,2022-11-13,Check cashing service,0,0.01835839
+459,2022-11-13,Mobile or digital wallet,0,0.01140241
+460,2022-11-13,Domestic (US) money transfer,0,0.01396449
+461,2022-11-13,Mobile or digital wallet,0,0.00990455
+462,2022-11-13,International money transfer,0,0.01711644
+463,2022-11-13,Mobile or digital wallet,0,0.01141913
+464,2022-11-13,Virtual currency,0,0.01519191
+465,2022-11-13,Traveler's check or cashier's check,0,0.02058611
+466,2022-11-13,Virtual currency,0,0.01519191
+467,2022-11-14,Virtual currency,0,0.01366961
+468,2022-11-14,Domestic (US) money transfer,0,0.01396449
+469,2022-11-14,Mobile or digital wallet,0,0.01141913
+470,2022-11-14,Domestic (US) money transfer,0,0.01467983
+471,2022-11-14,Check cashing service,0,0.01835839
+472,2022-11-14,Domestic (US) money transfer,0,0.01467983
+473,2022-11-14,International money transfer,0,0.01711644
+474,2022-11-14,International money transfer,0,0.01888149
+475,2022-11-14,Mobile or digital wallet,0,0.01141913
+476,2022-11-14,Virtual currency,0,0.01519191
+477,2022-11-14,Domestic (US) money transfer,0,0.01256361
+478,2022-11-14,Virtual currency,0,0.01676189
+479,2022-11-14,International money transfer,0,0.01711644
+480,2022-11-14,Check cashing service,0,0.02230755
+481,2022-11-14,Domestic (US) money transfer,0,0.01256361
+482,2022-11-14,Domestic (US) money transfer,0,0.01528563
+483,2022-11-14,Traveler's check or cashier's check,0,0.01708893
+484,2022-11-14,Mobile or digital wallet,0,0.01140241
+485,2022-11-14,Mobile or digital wallet,0,0.01140241
+486,2022-11-14,Mobile or digital wallet,0,0.01141913
+487,2022-11-14,Virtual currency,0,0.01519191
+488,2022-11-14,Mobile or digital wallet,0,0.01141913
+489,2022-11-14,Mobile or digital wallet,0,0.01140241
+490,2022-11-14,Virtual currency,0,0.01519191
+491,2022-11-14,International money transfer,0,0.01711644
+492,2022-11-14,Debt settlement,1,0.02126892
+493,2022-11-14,Mobile or digital wallet,0,0.00990455
+494,2022-11-14,Mobile or digital wallet,0,0.01141913
+495,2022-11-14,Virtual currency,0,0.01519191
+496,2022-11-14,Mobile or digital wallet,0,0.01141913
+497,2022-11-14,Domestic (US) money transfer,0,0.01256361
+498,2022-11-15,Mobile or digital wallet,0,0.01140241
+499,2022-11-15,Domestic (US) money transfer,0,0.01256361
+500,2022-11-15,Domestic (US) money transfer,0,0.01256361
+501,2022-11-15,Domestic (US) money transfer,0,0.01256361
+502,2022-11-15,Mobile or digital wallet,0,0.00990455
+503,2022-11-15,Domestic (US) money transfer,0,0.01467983
+504,2022-11-15,Mobile or digital wallet,1,0.01140241
+505,2022-11-15,Mobile or digital wallet,0,0.00990455
+506,2022-11-15,Mobile or digital wallet,0,0.00990455
+507,2022-11-15,Mobile or digital wallet,0,0.00990455
+508,2022-11-15,Virtual currency,0,0.01676189
+509,2022-11-15,Mobile or digital wallet,0,0.01140241
+510,2022-11-15,Mobile or digital wallet,0,0.00990455
+511,2022-11-15,International money transfer,0,0.01711644
+512,2022-11-15,International money transfer,0,0.01711644
+513,2022-11-15,International money transfer,0,0.01711644
+514,2022-11-15,Virtual currency,0,0.01366961
+515,2022-11-15,Foreign currency exchange,0,0.01747286
+516,2022-11-15,Domestic (US) money transfer,1,0.01256361
+517,2022-11-15,Mobile or digital wallet,0,0.01140241
+518,2022-11-15,Domestic (US) money transfer,0,0.01256361
+519,2022-11-15,Mobile or digital wallet,0,0.01141913
+520,2022-11-15,Mobile or digital wallet,0,0.00990455
+521,2022-11-15,Virtual currency,0,0.01366961
+522,2022-11-15,Virtual currency,0,0.01366961
+523,2022-11-15,Virtual currency,0,0.01366961
+524,2022-11-15,Virtual currency,0,0.01366961
+525,2022-11-15,Mobile or digital wallet,0,0.00990455
+526,2022-11-15,Domestic (US) money transfer,0,0.01396449
+527,2022-11-15,Mobile or digital wallet,0,0.01140241
+528,2022-11-15,Domestic (US) money transfer,1,0.01256361
+529,2022-11-15,International money transfer,0,0.0154043
+530,2022-11-15,Money order,0,0.01852229
+531,2022-11-15,Virtual currency,0,0.01662722
+532,2022-11-15,Money order,0,0.01523281
+533,2022-11-15,Virtual currency,0,0.01662722
+534,2022-11-15,International money transfer,0,0.0154043
+535,2022-11-15,Debt settlement,0,0.01743967
+536,2022-11-15,Mobile or digital wallet,0,0.01141913
+537,2022-11-15,Mobile or digital wallet,0,0.01141913
+538,2022-11-15,Virtual currency,0,0.01366961
+539,2022-11-15,Mobile or digital wallet,0,0.01141913
+540,2022-11-15,Virtual currency,0,0.01366961
+541,2022-11-15,Mobile or digital wallet,0,0.01440215
+542,2022-11-15,Mobile or digital wallet,0,0.00990455
+543,2022-11-15,Check cashing service,0,0.01835839
+544,2022-11-15,Check cashing service,0,0.01835839
+545,2022-11-15,International money transfer,0,0.01888149
+546,2022-11-15,Domestic (US) money transfer,0,0.01396449
+547,2022-11-15,Mobile or digital wallet,0,0.01374495
+548,2022-11-16,Virtual currency,0,0.01366961
+549,2022-11-16,Mobile or digital wallet,0,0.01140241
+550,2022-11-16,Domestic (US) money transfer,0,0.01256361
+551,2022-11-16,Mobile or digital wallet,0,0.01140241
+552,2022-11-16,Domestic (US) money transfer,0,0.01467983
+553,2022-11-16,Money order,0,0.01852229
+554,2022-11-16,Money order,0,0.01852229
+555,2022-11-16,Domestic (US) money transfer,0,0.01540961
+556,2022-11-16,International money transfer,0,0.01888149
+557,2022-11-16,Mobile or digital wallet,0,0.01141913
+558,2022-11-16,Mobile or digital wallet,0,0.00990455
+559,2022-11-16,Mobile or digital wallet,0,0.01141913
+560,2022-11-16,Mobile or digital wallet,0,0.01140241
+561,2022-11-16,Virtual currency,0,0.01676189
+562,2022-11-16,Mobile or digital wallet,0,0.00990455
+563,2022-11-16,Virtual currency,0,0.01366961
+564,2022-11-16,Mobile or digital wallet,0,0.01140241
+565,2022-11-16,Domestic (US) money transfer,0,0.01256361
+566,2022-11-16,Mobile or digital wallet,0,0.00990455
+567,2022-11-16,Mobile or digital wallet,0,0.00990455
+568,2022-11-16,International money transfer,0,0.01711644
+569,2022-11-16,Mobile or digital wallet,0,0.00990455
+570,2022-11-16,Virtual currency,0,0.01366961
+571,2022-11-16,Mobile or digital wallet,0,0.00990455
+572,2022-11-16,Mobile or digital wallet,0,0.01141913
+573,2022-11-16,Mobile or digital wallet,0,0.00990455
+574,2022-11-16,Mobile or digital wallet,0,0.00990455
+575,2022-11-16,Domestic (US) money transfer,0,0.01256361
+576,2022-11-16,Mobile or digital wallet,0,0.01140241
+577,2022-11-16,Domestic (US) money transfer,0,0.01256361
+578,2022-11-16,Domestic (US) money transfer,0,0.01256361
+579,2022-11-16,Domestic (US) money transfer,0,0.01256361
+580,2022-11-16,Domestic (US) money transfer,0,0.01256361
+581,2022-11-16,Mobile or digital wallet,0,0.00990455
+582,2022-11-16,Domestic (US) money transfer,0,0.01256361
+583,2022-11-16,International money transfer,0,0.0154043
+584,2022-11-16,Traveler's check or cashier's check,0,0.01418468
+585,2022-11-16,Foreign currency exchange,0,0.01450431
+586,2022-11-16,Domestic (US) money transfer,0,0.01396449
+587,2022-11-16,Mobile or digital wallet,0,0.01141913
+588,2022-11-16,Mobile or digital wallet,0,0.00990455
+589,2022-11-16,Mobile or digital wallet,0,0.01140241
+590,2022-11-16,Mobile or digital wallet,0,0.01141913
+591,2022-11-16,Mobile or digital wallet,0,0.01141913
+592,2022-11-16,Domestic (US) money transfer,0,0.01256361
+593,2022-11-16,International money transfer,0,0.01711644
+594,2022-11-16,Traveler's check or cashier's check,0,0.01718106
+595,2022-11-16,Mobile or digital wallet,0,0.01140241
+596,2022-11-16,Foreign currency exchange,0,0.01450431
+597,2022-11-16,Virtual currency,0,0.01676189
+598,2022-11-16,International money transfer,0,0.0154043
+599,2022-11-16,Virtual currency,0,0.01366961
+600,2022-11-16,Domestic (US) money transfer,0,0.01396449
+601,2022-11-16,Domestic (US) money transfer,0,0.01540961
+602,2022-11-16,Domestic (US) money transfer,0,0.01540961
+603,2022-11-16,Mobile or digital wallet,0,0.01140241
+604,2022-11-16,Domestic (US) money transfer,0,0.01256361
+605,2022-11-16,Foreign currency exchange,0,0.01756702
+606,2022-11-16,Virtual currency,0,0.01596911
+607,2022-11-16,Mobile or digital wallet,0,0.00990455
+608,2022-11-17,Domestic (US) money transfer,0,0.01256361
+609,2022-11-17,Domestic (US) money transfer,0,0.01256361
+610,2022-11-17,Domestic (US) money transfer,0,0.01256361
+611,2022-11-17,Mobile or digital wallet,0,0.01141913
+612,2022-11-17,Mobile or digital wallet,0,0.01140241
+613,2022-11-17,Domestic (US) money transfer,0,0.01396449
+614,2022-11-17,Domestic (US) money transfer,0,0.01256361
+615,2022-11-17,Domestic (US) money transfer,0,0.01256361
+616,2022-11-17,Traveler's check or cashier's check,0,0.02058611
+617,2022-11-17,Mobile or digital wallet,0,0.00990455
+618,2022-11-17,Mobile or digital wallet,0,0.00990455
+619,2022-11-17,Domestic (US) money transfer,0,0.01394194
+620,2022-11-17,Domestic (US) money transfer,0,0.01540961
+621,2022-11-17,International money transfer,0,0.01711644
+622,2022-11-17,Virtual currency,0,0.01366961
+623,2022-11-17,International money transfer,0,0.0154043
+624,2022-11-17,Traveler's check or cashier's check,0,0.02058611
+625,2022-11-17,Domestic (US) money transfer,0,0.01256361
+626,2022-11-17,Domestic (US) money transfer,0,0.01540961
+627,2022-11-17,Foreign currency exchange,0,0.01450431
+628,2022-11-17,Mobile or digital wallet,0,0.01141913
+629,2022-11-17,International money transfer,0,0.0154043
+630,2022-11-17,Virtual currency,0,0.01519191
+631,2022-11-17,Mobile or digital wallet,0,0.01141913
+632,2022-11-17,Domestic (US) money transfer,0,0.01256361
+633,2022-11-17,Domestic (US) money transfer,0,0.01396449
+634,2022-11-17,Mobile or digital wallet,0,0.00990455
+635,2022-11-17,Domestic (US) money transfer,0,0.01256361
+636,2022-11-17,Foreign currency exchange,0,0.01450431
+637,2022-11-17,Virtual currency,0,0.01519191
+638,2022-11-17,International money transfer,0,0.01711644
+639,2022-11-17,Mobile or digital wallet,0,0.01140241
+640,2022-11-17,Mobile or digital wallet,0,0.01141913
+641,2022-11-17,Mobile or digital wallet,0,0.01140241
+642,2022-11-17,International money transfer,0,0.01711644
+643,2022-11-17,Mobile or digital wallet,0,0.01140241
+644,2022-11-17,Domestic (US) money transfer,0,0.01256361
+645,2022-11-17,Mobile or digital wallet,0,0.01140241
+646,2022-11-17,Virtual currency,0,0.01596911
+647,2022-11-18,Virtual currency,0,0.01366961
+648,2022-11-18,International money transfer,0,0.01711644
+649,2022-11-18,Virtual currency,0,0.01366961
+650,2022-11-18,Domestic (US) money transfer,0,0.01256361
+651,2022-11-18,Mobile or digital wallet,0,0.01140241
+652,2022-11-18,Domestic (US) money transfer,0,0.01256361
+653,2022-11-18,Mobile or digital wallet,0,0.01140241
+654,2022-11-18,Mobile or digital wallet,0,0.01140241
+655,2022-11-18,Mobile or digital wallet,0,0.01140241
+656,2022-11-18,International money transfer,1,0.0154043
+657,2022-11-18,International money transfer,0,0.0154043
+658,2022-11-18,Virtual currency,0,0.01366961
+659,2022-11-18,International money transfer,0,0.01888149
+660,2022-11-18,International money transfer,0,0.01711644
+661,2022-11-18,Domestic (US) money transfer,0,0.01256361
+662,2022-11-18,Mobile or digital wallet,0,0.01387638
+663,2022-11-18,Mobile or digital wallet,0,0.01140241
+664,2022-11-18,Mobile or digital wallet,0,0.01141913
+665,2022-11-18,International money transfer,0,0.01711644
+666,2022-11-18,Refund anticipation check,1,0.01898763
+667,2022-11-18,Domestic (US) money transfer,0,0.01256361
+668,2022-11-18,Virtual currency,1,0.01516741
+669,2022-11-18,Virtual currency,0,0.01676189
+670,2022-11-18,Domestic (US) money transfer,0,0.01256361
+671,2022-11-18,Virtual currency,1,0.01366961
+672,2022-11-18,Check cashing service,0,0.01835839
+673,2022-11-18,Domestic (US) money transfer,0,0.01396449
+674,2022-11-18,Domestic (US) money transfer,0,0.01256361
+675,2022-11-18,International money transfer,0,0.01711644
+676,2022-11-18,Virtual currency,1,0.01676189
+677,2022-11-18,Check cashing service,0,0.01835839
+678,2022-11-18,Domestic (US) money transfer,0,0.01396449
+679,2022-11-18,Domestic (US) money transfer,0,0.01256361
+680,2022-11-18,Domestic (US) money transfer,0,0.01540961
+681,2022-11-18,International money transfer,0,0.01711644
+682,2022-11-18,International money transfer,0,0.01888149
+683,2022-11-18,Domestic (US) money transfer,0,0.01256361
+684,2022-11-18,Domestic (US) money transfer,0,0.01256361
+685,2022-11-19,Domestic (US) money transfer,0,0.01256361
+686,2022-11-19,Mobile or digital wallet,0,0.01140241
+687,2022-11-19,Domestic (US) money transfer,0,0.01396449
+688,2022-11-19,Domestic (US) money transfer,0,0.01256361
+689,2022-11-19,Mobile or digital wallet,0,0.00990455
+690,2022-11-19,Mobile or digital wallet,0,0.00990455
+691,2022-11-19,Domestic (US) money transfer,0,0.01256361
+692,2022-11-19,Domestic (US) money transfer,0,0.01256361
+693,2022-11-19,Virtual currency,0,0.01366961
+694,2022-11-19,Virtual currency,0,0.01366961
+695,2022-11-19,Mobile or digital wallet,0,0.00990455
+696,2022-11-19,Domestic (US) money transfer,0,0.01396449
+697,2022-11-19,Virtual currency,0,0.01676189
+698,2022-11-19,Domestic (US) money transfer,0,0.01540961
+699,2022-11-19,Domestic (US) money transfer,0,0.01256361
+700,2022-11-19,Mobile or digital wallet,0,0.01140241
+701,2022-11-19,Virtual currency,0,0.01676189
+702,2022-11-19,Virtual currency,0,0.01676189
+703,2022-11-19,Mobile or digital wallet,0,0.00990455
+704,2022-11-19,International money transfer,0,0.01888149
+705,2022-11-19,Virtual currency,0,0.01366961
+706,2022-11-19,Mobile or digital wallet,0,0.01387638
+707,2022-11-19,Virtual currency,0,0.01676189
+708,2022-11-19,Virtual currency,0,0.01676189
+709,2022-11-19,Virtual currency,0,0.01662722
+710,2022-11-19,Virtual currency,0,0.01366961
+711,2022-11-19,Virtual currency,0,0.01662722
+712,2022-11-19,Mobile or digital wallet,0,0.01141913
+713,2022-11-19,Mobile or digital wallet,0,0.01141913
+714,2022-11-19,Virtual currency,0,0.01676189
+715,2022-11-19,Mobile or digital wallet,0,0.01387638
+716,2022-11-19,Virtual currency,0,0.01662722
+717,2022-11-19,Virtual currency,0,0.01662722
+718,2022-11-19,Mobile or digital wallet,0,0.01141913
+719,2022-11-19,Virtual currency,0,0.01662722
+720,2022-11-19,Virtual currency,0,0.01366961
+721,2022-11-19,Mobile or digital wallet,0,0.00990455
+722,2022-11-19,Domestic (US) money transfer,0,0.01256361
+723,2022-11-19,Virtual currency,0,0.01662722
+724,2022-11-19,Mobile or digital wallet,0,0.01140241
+725,2022-11-19,Mobile or digital wallet,0,0.00990455
+726,2022-11-19,Virtual currency,0,0.01676189
+727,2022-11-19,Mobile or digital wallet,0,0.01387638
+728,2022-11-19,Mobile or digital wallet,0,0.01392484
+729,2022-11-19,Mobile or digital wallet,0,0.01141913
+730,2022-11-19,Mobile or digital wallet,0,0.00990455
+731,2022-11-19,Virtual currency,0,0.01662722
+732,2022-11-19,Mobile or digital wallet,0,0.01140241
+733,2022-11-19,Virtual currency,1,0.01519191
+734,2022-11-19,Virtual currency,0,0.01676189
+735,2022-11-19,Virtual currency,0,0.01662722
+736,2022-11-19,Virtual currency,0,0.01676189
+737,2022-11-19,Virtual currency,0,0.01662722
+738,2022-11-19,Virtual currency,0,0.01676189
+739,2022-11-19,Virtual currency,0,0.01676189
+740,2022-11-19,Virtual currency,0,0.01676189
+741,2022-11-19,Virtual currency,0,0.01519191
+742,2022-11-19,Virtual currency,0,0.01676189
+743,2022-11-19,Virtual currency,0,0.01662722
+744,2022-11-19,Virtual currency,0,0.01366961
+745,2022-11-19,Virtual currency,1,0.01676189
+746,2022-11-19,Virtual currency,0,0.01662722
+747,2022-11-19,Virtual currency,0,0.01676189
+748,2022-11-19,Mobile or digital wallet,0,0.01141913
+749,2022-11-19,Virtual currency,0,0.01662722
+750,2022-11-19,Mobile or digital wallet,0,0.01141913
+751,2022-11-19,Mobile or digital wallet,0,0.01387638
+752,2022-11-19,Mobile or digital wallet,0,0.01140241
+753,2022-11-19,Mobile or digital wallet,0,0.00990455
+754,2022-11-20,Virtual currency,0,0.01676189
+755,2022-11-20,Virtual currency,0,0.01676189
+756,2022-11-20,Mobile or digital wallet,0,0.01140241
+757,2022-11-20,Mobile or digital wallet,0,0.01387638
+758,2022-11-20,Virtual currency,0,0.01662722
+759,2022-11-20,Mobile or digital wallet,0,0.00990455
+760,2022-11-20,Virtual currency,0,0.01662722
+761,2022-11-20,Virtual currency,0,0.01676189
+762,2022-11-20,Virtual currency,0,0.01676189
+763,2022-11-20,Virtual currency,0,0.01662722
+764,2022-11-20,Virtual currency,0,0.01662722
+765,2022-11-20,Virtual currency,0,0.01676189
+766,2022-11-20,Virtual currency,0,0.01676189
+767,2022-11-20,Virtual currency,0,0.01662722
+768,2022-11-20,Virtual currency,0,0.01662722
+769,2022-11-20,Virtual currency,0,0.01676189
+770,2022-11-20,Virtual currency,1,0.01366961
+771,2022-11-20,Mobile or digital wallet,0,0.01141913
+772,2022-11-20,Mobile or digital wallet,0,0.00990455
+773,2022-11-20,Traveler's check or cashier's check,0,0.02058611
+774,2022-11-20,Virtual currency,0,0.01519191
+775,2022-11-20,Virtual currency,0,0.01662722
+776,2022-11-20,Virtual currency,0,0.01662722
+777,2022-11-20,Mobile or digital wallet,0,0.01140241
+778,2022-11-20,Virtual currency,0,0.01366961
+779,2022-11-20,Virtual currency,0,0.01366961
+780,2022-11-20,Virtual currency,0,0.01676189
+781,2022-11-20,Mobile or digital wallet,0,0.01392484
+782,2022-11-20,Virtual currency,0,0.01676189
+783,2022-11-20,Virtual currency,0,0.01676189
+784,2022-11-20,Virtual currency,0,0.01676189
+785,2022-11-20,Virtual currency,0,0.01676189
+786,2022-11-20,Mobile or digital wallet,0,0.00990455
+787,2022-11-20,Virtual currency,0,0.01519191
+788,2022-11-20,Virtual currency,0,0.01366961
+789,2022-11-20,Mobile or digital wallet,0,0.00990455
+790,2022-11-20,Virtual currency,1,0.01366961
+791,2022-11-20,Virtual currency,0,0.01519191
+792,2022-11-20,Virtual currency,0,0.01676189
+793,2022-11-20,Virtual currency,0,0.01676189
+794,2022-11-20,Mobile or digital wallet,0,0.01141913
+795,2022-11-20,Virtual currency,0,0.01676189
+796,2022-11-20,Foreign currency exchange,0,0.01450431
+797,2022-11-20,Virtual currency,0,0.01676189
+798,2022-11-20,Domestic (US) money transfer,0,0.01396449
+799,2022-11-20,Virtual currency,0,0.01676189
+800,2022-11-20,Virtual currency,0,0.01676189
+801,2022-11-20,Mobile or digital wallet,0,0.00990455
+802,2022-11-20,Mobile or digital wallet,0,0.01140241
+803,2022-11-20,Mobile or digital wallet,0,0.01141913
+804,2022-11-20,Virtual currency,0,0.01676189
+805,2022-11-20,Mobile or digital wallet,0,0.01140241
+806,2022-11-20,Virtual currency,0,0.01662722
+807,2022-11-20,Mobile or digital wallet,0,0.00990455
+808,2022-11-20,Virtual currency,0,0.01662722
+809,2022-11-20,Virtual currency,0,0.01662722
+810,2022-11-20,Virtual currency,0,0.01676189
+811,2022-11-20,Virtual currency,0,0.01676189
+812,2022-11-20,Mobile or digital wallet,0,0.01387638
+813,2022-11-20,Domestic (US) money transfer,0,0.01467983
+814,2022-11-20,Domestic (US) money transfer,0,0.01396449
+815,2022-11-20,Virtual currency,0,0.01662722
+816,2022-11-20,Virtual currency,0,0.01662722
+817,2022-11-20,Mobile or digital wallet,0,0.01140241
+818,2022-11-20,Mobile or digital wallet,0,0.00990455
+819,2022-11-20,Virtual currency,0,0.01676189
+820,2022-11-20,Virtual currency,0,0.01662722
+821,2022-11-20,Virtual currency,0,0.01676189
+822,2022-11-20,Virtual currency,0,0.01662722
+823,2022-11-20,Mobile or digital wallet,0,0.01141913
+824,2022-11-20,Foreign currency exchange,0,0.01450431
+825,2022-11-20,Domestic (US) money transfer,0,0.01256361
+826,2022-11-20,Mobile or digital wallet,0,0.01387638
+827,2022-11-20,Refund anticipation check,0,0.01898763
+828,2022-11-20,Domestic (US) money transfer,0,0.01540961
+829,2022-11-20,Mobile or digital wallet,0,0.01140241
+830,2022-11-21,International money transfer,0,0.01888149
+831,2022-11-21,Virtual currency,0,0.01676189
+832,2022-11-21,Virtual currency,0,0.01676189
+833,2022-11-21,Mobile or digital wallet,0,0.01140241
+834,2022-11-21,Mobile or digital wallet,0,0.01387638
+835,2022-11-21,Mobile or digital wallet,0,0.00990455
+836,2022-11-21,International money transfer,0,0.01711644
+837,2022-11-21,Mobile or digital wallet,0,0.01392484
+838,2022-11-21,Mobile or digital wallet,0,0.00990455
+839,2022-11-21,Domestic (US) money transfer,0,0.01256361
+840,2022-11-21,Mobile or digital wallet,0,0.00990455
+841,2022-11-21,Mobile or digital wallet,0,0.00990455
+842,2022-11-21,International money transfer,0,0.0154043
+843,2022-11-21,Mobile or digital wallet,0,0.01140241
+844,2022-11-21,Virtual currency,0,0.01662722
+845,2022-11-21,Virtual currency,0,0.01662722
+846,2022-11-21,Virtual currency,0,0.01676189
+847,2022-11-21,Virtual currency,0,0.01366961
+848,2022-11-21,Mobile or digital wallet,0,0.01141913
+849,2022-11-21,Virtual currency,0,0.01366961
+850,2022-11-21,Mobile or digital wallet,0,0.01140241
+851,2022-11-21,Virtual currency,0,0.01366961
+852,2022-11-21,Mobile or digital wallet,0,0.01140241
+853,2022-11-21,Domestic (US) money transfer,0,0.01256361
+854,2022-11-21,Mobile or digital wallet,0,0.00990455
+855,2022-11-21,International money transfer,0,0.01711644
+856,2022-11-21,International money transfer,0,0.01711644
+857,2022-11-21,Mobile or digital wallet,0,0.01141913
+858,2022-11-21,Virtual currency,0,0.01366961
+859,2022-11-21,Mobile or digital wallet,0,0.01141913
+860,2022-11-21,Virtual currency,0,0.01662722
+861,2022-11-21,Traveler's check or cashier's check,0,0.01718106
+862,2022-11-21,Mobile or digital wallet,0,0.01140241
+863,2022-11-21,Domestic (US) money transfer,0,0.01256361
+864,2022-11-21,Domestic (US) money transfer,0,0.01396449
+865,2022-11-21,International money transfer,0,0.01711644
+866,2022-11-21,Domestic (US) money transfer,0,0.01467983
+867,2022-11-21,International money transfer,0,0.01711644
+868,2022-11-21,Virtual currency,0,0.01366961
+869,2022-11-21,Debt settlement,0,0.02099618
+870,2022-11-21,Domestic (US) money transfer,0,0.01256361
+871,2022-11-21,Mobile or digital wallet,0,0.01140241
+872,2022-11-21,Debt settlement,0,0.01743967
+873,2022-11-21,Mobile or digital wallet,0,0.01140241
+874,2022-11-21,Domestic (US) money transfer,0,0.01540961
+875,2022-11-21,Mobile or digital wallet,1,0.01140241
+876,2022-11-21,Mobile or digital wallet,0,0.01140241
+877,2022-11-21,Mobile or digital wallet,0,0.01140241
+878,2022-11-21,Mobile or digital wallet,0,0.01141913
+879,2022-11-21,Mobile or digital wallet,0,0.01141913
+880,2022-11-21,Domestic (US) money transfer,0,0.01256361
+881,2022-11-21,Domestic (US) money transfer,0,0.01256361
+882,2022-11-21,Mobile or digital wallet,0,0.01387638
+883,2022-11-21,Domestic (US) money transfer,0,0.01396449
+884,2022-11-21,Domestic (US) money transfer,0,0.01396449
+885,2022-11-21,Virtual currency,0,0.01676189
+886,2022-11-21,Domestic (US) money transfer,1,0.01540961
+887,2022-11-22,Mobile or digital wallet,0,0.01140241
+888,2022-11-22,International money transfer,0,0.0154043
+889,2022-11-22,Domestic (US) money transfer,0,0.01256361
+890,2022-11-22,Mobile or digital wallet,0,0.01141913
+891,2022-11-22,Virtual currency,0,0.01662722
+892,2022-11-22,Domestic (US) money transfer,0,0.01256361
+893,2022-11-22,Mobile or digital wallet,1,0.01140241
+894,2022-11-22,Mobile or digital wallet,0,0.01140241
+895,2022-11-22,Mobile or digital wallet,0,0.00990455
+896,2022-11-22,Debt settlement,0,0.02119546
+897,2022-11-22,Money order,0,0.01523281
+898,2022-11-22,Mobile or digital wallet,0,0.01140241
+899,2022-11-22,International money transfer,0,0.01888149
+900,2022-11-22,Mobile or digital wallet,0,0.01141913
+901,2022-11-22,Virtual currency,0,0.01676189
+902,2022-11-22,Virtual currency,1,0.01366961
+903,2022-11-22,Foreign currency exchange,0,0.01450431
+904,2022-11-22,Virtual currency,0,0.01366961
+905,2022-11-22,Virtual currency,0,0.01366961
+906,2022-11-22,Foreign currency exchange,0,0.01450431
+907,2022-11-22,International money transfer,0,0.01888149
+908,2022-11-22,Debt settlement,0,0.01743967
+909,2022-11-22,Virtual currency,0,0.01519191
+910,2022-11-22,Mobile or digital wallet,0,0.01141913
+911,2022-11-22,Virtual currency,0,0.01676189
+912,2022-11-22,Mobile or digital wallet,0,0.00990455
+913,2022-11-22,Mobile or digital wallet,1,0.01140241
+914,2022-11-22,Mobile or digital wallet,0,0.01140241
+915,2022-11-22,International money transfer,0,0.01711644
+916,2022-11-22,Virtual currency,0,0.01366961
+917,2022-11-22,Check cashing service,0,0.01835839
+918,2022-11-22,Mobile or digital wallet,0,0.01141913
+919,2022-11-22,Domestic (US) money transfer,0,0.01256361
+920,2022-11-22,Virtual currency,0,0.01676189
+921,2022-11-22,Mobile or digital wallet,0,0.00990455
+922,2022-11-22,Mobile or digital wallet,0,0.01141913
+923,2022-11-22,Mobile or digital wallet,0,0.01140241
+924,2022-11-22,Virtual currency,0,0.01676189
+925,2022-11-22,Foreign currency exchange,0,0.01756702
+926,2022-11-22,Virtual currency,0,0.01676189
+927,2022-11-22,Virtual currency,0,0.01366961
+928,2022-11-22,Domestic (US) money transfer,0,0.01256361
+929,2022-11-22,Mobile or digital wallet,0,0.01140241
+930,2022-11-22,Domestic (US) money transfer,0,0.01256361
+931,2022-11-22,Domestic (US) money transfer,0,0.01256361
+932,2022-11-22,Domestic (US) money transfer,0,0.01256361
+933,2022-11-22,Mobile or digital wallet,0,0.01140241
+934,2022-11-22,International money transfer,0,0.0154043
+935,2022-11-22,Money order,0,0.01752141
+936,2022-11-22,Mobile or digital wallet,0,0.01374495
+937,2022-11-22,Domestic (US) money transfer,0,0.01540961
+938,2022-11-22,Mobile or digital wallet,0,0.01140241
+939,2022-11-22,Mobile or digital wallet,0,0.01140241
+940,2022-11-22,International money transfer,0,0.01711644
+941,2022-11-22,Virtual currency,0,0.01366961
+942,2022-11-22,Mobile or digital wallet,0,0.01140241
+943,2022-11-22,Foreign currency exchange,0,0.01450431
+944,2022-11-23,Mobile or digital wallet,0,0.01141913
+945,2022-11-23,Mobile or digital wallet,0,0.01141913
+946,2022-11-23,Foreign currency exchange,0,0.01450431
+947,2022-11-23,Virtual currency,0,0.01519191
+948,2022-11-23,Domestic (US) money transfer,0,0.01256361
+949,2022-11-23,Mobile or digital wallet,0,0.01140241
+950,2022-11-23,Mobile or digital wallet,0,0.00990455
+951,2022-11-23,Virtual currency,0,0.01366961
+952,2022-11-23,International money transfer,0,0.01711644
+953,2022-11-23,Mobile or digital wallet,0,0.01141913
+954,2022-11-23,Virtual currency,0,0.01596911
+955,2022-11-23,Virtual currency,0,0.01366961
+956,2022-11-23,International money transfer,0,0.0154043
+957,2022-11-23,Domestic (US) money transfer,1,0.01256361
+958,2022-11-23,International money transfer,0,0.01711644
+959,2022-11-23,Virtual currency,0,0.01519191
+960,2022-11-23,Domestic (US) money transfer,0,0.01256361
+961,2022-11-23,Domestic (US) money transfer,0,0.01256361
+962,2022-11-23,Mobile or digital wallet,0,0.01140241
+963,2022-11-23,Virtual currency,0,0.01519191
+964,2022-11-23,Virtual currency,0,0.01676189
+965,2022-11-23,International money transfer,0,0.01711644
+966,2022-11-23,Domestic (US) money transfer,0,0.01540961
+967,2022-11-23,Check cashing service,0,0.01835839
+968,2022-11-23,Domestic (US) money transfer,0,0.01256361
+969,2022-11-23,Virtual currency,0,0.01676189
+970,2022-11-23,Mobile or digital wallet,0,0.00990455
+971,2022-11-23,Domestic (US) money transfer,0,0.01396449
+972,2022-11-23,Check cashing service,0,0.02209805
+973,2022-11-23,Check cashing service,0,0.02230755
+974,2022-11-23,Domestic (US) money transfer,0,0.01256361
+975,2022-11-23,Mobile or digital wallet,0,0.01141913
+976,2022-11-23,International money transfer,0,0.01711644
+977,2022-11-23,Domestic (US) money transfer,0,0.01256361
+978,2022-11-23,International money transfer,0,0.0154043
+979,2022-11-23,Mobile or digital wallet,0,0.01140241
+980,2022-11-23,International money transfer,0,0.01711644
+981,2022-11-24,Virtual currency,0,0.01366961
+982,2022-11-24,Mobile or digital wallet,0,0.01141913
+983,2022-11-24,Domestic (US) money transfer,0,0.01256361
+984,2022-11-24,International money transfer,0,0.01888149
+985,2022-11-24,Mobile or digital wallet,0,0.01141913
+986,2022-11-24,Mobile or digital wallet,0,0.01140241
+987,2022-11-24,Mobile or digital wallet,0,0.01387638
+988,2022-11-24,Domestic (US) money transfer,0,0.01396449
+989,2022-11-24,Virtual currency,0,0.01366961
+990,2022-11-24,International money transfer,0,0.01711644
+991,2022-11-24,Mobile or digital wallet,0,0.01140241
+992,2022-11-24,Domestic (US) money transfer,0,0.01467983
+993,2022-11-24,Mobile or digital wallet,0,0.00990455
+994,2022-11-24,Mobile or digital wallet,0,0.01140241
+995,2022-11-24,Domestic (US) money transfer,0,0.01256361
+996,2022-11-24,Mobile or digital wallet,0,0.00990455
+997,2022-11-24,Mobile or digital wallet,0,0.00990455
+998,2022-11-24,Mobile or digital wallet,0,0.00990455
+999,2022-11-24,Domestic (US) money transfer,0,0.01256361
+1000,2022-11-24,Mobile or digital wallet,0,0.01141913
+1001,2022-11-24,International money transfer,0,0.01711644
+1002,2022-11-24,Domestic (US) money transfer,0,0.01396449
+1003,2022-11-25,Mobile or digital wallet,0,0.01141913
+1004,2022-11-25,Virtual currency,0,0.01519191
+1005,2022-11-25,Domestic (US) money transfer,0,0.01256361
+1006,2022-11-25,Domestic (US) money transfer,0,0.01396449
+1007,2022-11-25,Mobile or digital wallet,0,0.00990455
+1008,2022-11-25,Virtual currency,0,0.01676189
+1009,2022-11-25,International money transfer,1,0.0154043
+1010,2022-11-25,Refund anticipation check,0,0.01898763
+1011,2022-11-25,Domestic (US) money transfer,0,0.01540961
+1012,2022-11-25,Virtual currency,0,0.01596911
+1013,2022-11-25,Mobile or digital wallet,0,0.00990455
+1014,2022-11-25,Mobile or digital wallet,0,0.01140241
+1015,2022-11-25,Mobile or digital wallet,0,0.01140241
+1016,2022-11-25,Mobile or digital wallet,0,0.00990455
+1017,2022-11-25,Mobile or digital wallet,0,0.01140241
+1018,2022-11-25,Check cashing service,0,0.02209805
+1019,2022-11-25,Check cashing service,0,0.01835839
+1020,2022-11-25,Domestic (US) money transfer,0,0.01256361
+1021,2022-11-25,Mobile or digital wallet,0,0.01141913
+1022,2022-11-25,Domestic (US) money transfer,0,0.01467983
+1023,2022-11-25,Mobile or digital wallet,0,0.00990455
+1024,2022-11-25,Virtual currency,0,0.01519191
+1025,2022-11-25,International money transfer,0,0.01888149
+1026,2022-11-25,Domestic (US) money transfer,0,0.01256361
+1027,2022-11-25,Mobile or digital wallet,1,0.01140241
+1028,2022-11-25,Mobile or digital wallet,0,0.01140241
+1029,2022-11-25,Mobile or digital wallet,0,0.01140241
+1030,2022-11-25,Mobile or digital wallet,0,0.01140241
+1031,2022-11-26,Domestic (US) money transfer,0,0.01396449
+1032,2022-11-26,Foreign currency exchange,0,0.02349346
+1033,2022-11-26,Mobile or digital wallet,0,0.01140241
+1034,2022-11-26,Virtual currency,0,0.01366961
+1035,2022-11-26,Domestic (US) money transfer,0,0.01256361
+1036,2022-11-26,Virtual currency,0,0.01366961
+1037,2022-11-26,Mobile or digital wallet,0,0.01719535
+1038,2022-11-26,Mobile or digital wallet,0,0.01387638
+1039,2022-11-26,Virtual currency,0,0.01366961
+1040,2022-11-26,Mobile or digital wallet,0,0.01140241
+1041,2022-11-26,Virtual currency,0,0.01676189
+1042,2022-11-26,International money transfer,0,0.01711644
+1043,2022-11-26,Money order,0,0.01752141
+1044,2022-11-26,Virtual currency,0,0.01366961
+1045,2022-11-26,Mobile or digital wallet,0,0.01140241
+1046,2022-11-26,International money transfer,0,0.01888149
+1047,2022-11-26,Domestic (US) money transfer,0,0.01540961
+1048,2022-11-26,Debt settlement,0,0.01743967
+1049,2022-11-26,Virtual currency,0,0.01366961
+1050,2022-11-26,International money transfer,0,0.01711644
+1051,2022-11-26,Mobile or digital wallet,0,0.01141913
+1052,2022-11-26,International money transfer,0,0.01711644
+1053,2022-11-26,Mobile or digital wallet,0,0.01141913
+1054,2022-11-26,International money transfer,0,0.01888149
+1055,2022-11-26,Virtual currency,0,0.01366961
+1056,2022-11-27,Mobile or digital wallet,0,0.01140241
+1057,2022-11-27,Mobile or digital wallet,0,0.01140241
+1058,2022-11-27,Mobile or digital wallet,0,0.01141913
+1059,2022-11-27,Foreign currency exchange,0,0.02349346
+1060,2022-11-27,Domestic (US) money transfer,0,0.01467983
+1061,2022-11-27,Domestic (US) money transfer,0,0.01256361
+1062,2022-11-27,Domestic (US) money transfer,0,0.01396449
+1063,2022-11-27,Mobile or digital wallet,0,0.01392484
+1064,2022-11-27,Domestic (US) money transfer,0,0.01467983
+1065,2022-11-27,Virtual currency,0,0.01676189
+1066,2022-11-27,Mobile or digital wallet,0,0.01140241
+1067,2022-11-27,Domestic (US) money transfer,0,0.01396449
+1068,2022-11-27,Domestic (US) money transfer,0,0.01256361
+1069,2022-11-27,Domestic (US) money transfer,0,0.01256361
+1070,2022-11-27,Mobile or digital wallet,0,0.00990455
+1071,2022-11-27,Domestic (US) money transfer,0,0.01256361
+1072,2022-11-27,Mobile or digital wallet,0,0.01392484
+1073,2022-11-27,International money transfer,0,0.01711644
+1074,2022-11-27,Domestic (US) money transfer,0,0.01396449
+1075,2022-11-27,Virtual currency,0,0.01519191
+1076,2022-11-27,Mobile or digital wallet,0,0.00990455
+1077,2022-11-27,Domestic (US) money transfer,0,0.01394194
+1078,2022-11-27,Domestic (US) money transfer,0,0.01396449
+1079,2022-11-28,Virtual currency,0,0.01366961
+1080,2022-11-28,Mobile or digital wallet,0,0.00990455
+1081,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1082,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1083,2022-11-28,Mobile or digital wallet,0,0.00990455
+1084,2022-11-28,Mobile or digital wallet,0,0.01141913
+1085,2022-11-28,Mobile or digital wallet,0,0.01141913
+1086,2022-11-28,Mobile or digital wallet,0,0.01141913
+1087,2022-11-28,Mobile or digital wallet,0,0.01140241
+1088,2022-11-28,Mobile or digital wallet,0,0.01140241
+1089,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1090,2022-11-28,Mobile or digital wallet,0,0.00990455
+1091,2022-11-28,Virtual currency,0,0.01366961
+1092,2022-11-28,Virtual currency,0,0.01366961
+1093,2022-11-28,Virtual currency,0,0.01366961
+1094,2022-11-28,International money transfer,0,0.01711644
+1095,2022-11-28,Mobile or digital wallet,0,0.00990455
+1096,2022-11-28,International money transfer,0,0.01888149
+1097,2022-11-28,International money transfer,0,0.01711644
+1098,2022-11-28,Mobile or digital wallet,0,0.01141913
+1099,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1100,2022-11-28,Mobile or digital wallet,0,0.00990455
+1101,2022-11-28,Mobile or digital wallet,0,0.01140241
+1102,2022-11-28,Virtual currency,0,0.01676189
+1103,2022-11-28,International money transfer,0,0.01855358
+1104,2022-11-28,Refund anticipation check,0,0.02749614
+1105,2022-11-28,International money transfer,0,0.01711644
+1106,2022-11-28,Mobile or digital wallet,0,0.00990455
+1107,2022-11-28,Domestic (US) money transfer,0,0.01396449
+1108,2022-11-28,Domestic (US) money transfer,0,0.01540961
+1109,2022-11-28,Virtual currency,0,0.01366961
+1110,2022-11-28,International money transfer,0,0.01711644
+1111,2022-11-28,International money transfer,0,0.0154043
+1112,2022-11-28,Mobile or digital wallet,0,0.01140241
+1113,2022-11-28,Mobile or digital wallet,0,0.01140241
+1114,2022-11-28,Domestic (US) money transfer,0,0.01467983
+1115,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1116,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1117,2022-11-28,Domestic (US) money transfer,0,0.01396449
+1118,2022-11-28,Mobile or digital wallet,0,0.01140241
+1119,2022-11-28,Mobile or digital wallet,0,0.01140241
+1120,2022-11-28,Domestic (US) money transfer,1,0.01396449
+1121,2022-11-28,Mobile or digital wallet,0,0.01392484
+1122,2022-11-28,Traveler's check or cashier's check,0,0.02058611
+1123,2022-11-28,Mobile or digital wallet,0,0.01141913
+1124,2022-11-28,Mobile or digital wallet,0,0.00990455
+1125,2022-11-28,Virtual currency,0,0.01519191
+1126,2022-11-28,International money transfer,0,0.01888149
+1127,2022-11-28,Money order,0,0.01523281
+1128,2022-11-28,International money transfer,0,0.01711644
+1129,2022-11-28,International money transfer,0,0.01711644
+1130,2022-11-28,Domestic (US) money transfer,0,0.01396449
+1131,2022-11-28,Refund anticipation check,0,0.02297495
+1132,2022-11-28,Mobile or digital wallet,0,0.00990455
+1133,2022-11-28,Mobile or digital wallet,0,0.01140241
+1134,2022-11-28,Domestic (US) money transfer,0,0.01256361
+1135,2022-11-29,Domestic (US) money transfer,0,0.01396449
+1136,2022-11-29,Mobile or digital wallet,0,0.01374495
+1137,2022-11-29,Domestic (US) money transfer,0,0.01540961
+1138,2022-11-29,Mobile or digital wallet,0,0.01387638
+1139,2022-11-29,Mobile or digital wallet,0,0.01140241
+1140,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1141,2022-11-29,Foreign currency exchange,0,0.01756702
+1142,2022-11-29,Mobile or digital wallet,0,0.01140241
+1143,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1144,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1145,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1146,2022-11-29,Virtual currency,0,0.01366961
+1147,2022-11-29,International money transfer,0,0.01888149
+1148,2022-11-29,Mobile or digital wallet,0,0.01141913
+1149,2022-11-29,International money transfer,0,0.01888149
+1150,2022-11-29,Mobile or digital wallet,0,0.00990455
+1151,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1152,2022-11-29,Mobile or digital wallet,0,0.00990455
+1153,2022-11-29,Virtual currency,0,0.01519191
+1154,2022-11-29,Virtual currency,0,0.01366961
+1155,2022-11-29,Mobile or digital wallet,0,0.01140241
+1156,2022-11-29,Mobile or digital wallet,0,0.01140241
+1157,2022-11-29,Virtual currency,0,0.01676189
+1158,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1159,2022-11-29,Mobile or digital wallet,0,0.01141913
+1160,2022-11-29,Virtual currency,0,0.01676189
+1161,2022-11-29,International money transfer,0,0.01711644
+1162,2022-11-29,International money transfer,0,0.01888149
+1163,2022-11-29,Mobile or digital wallet,0,0.00990455
+1164,2022-11-29,Virtual currency,0,0.01676189
+1165,2022-11-29,International money transfer,0,0.01711644
+1166,2022-11-29,Virtual currency,0,0.01676189
+1167,2022-11-29,Mobile or digital wallet,0,0.01140241
+1168,2022-11-29,Check cashing service,0,0.02238478
+1169,2022-11-29,Check cashing service,0,0.01835839
+1170,2022-11-29,Domestic (US) money transfer,0,0.01396449
+1171,2022-11-29,Mobile or digital wallet,0,0.01141913
+1172,2022-11-29,International money transfer,0,0.01888149
+1173,2022-11-29,Mobile or digital wallet,0,0.01141913
+1174,2022-11-29,Domestic (US) money transfer,0,0.01396449
+1175,2022-11-29,Virtual currency,0,0.01366961
+1176,2022-11-29,Check cashing service,0,0.01835839
+1177,2022-11-29,Domestic (US) money transfer,0,0.01394194
+1178,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1179,2022-11-29,Domestic (US) money transfer,0,0.01396449
+1180,2022-11-29,Mobile or digital wallet,0,0.01141913
+1181,2022-11-29,Domestic (US) money transfer,0,0.01256361
+1182,2022-11-30,Mobile or digital wallet,0,0.01140241
+1183,2022-11-30,Virtual currency,0,0.01676189
+1184,2022-11-30,Traveler's check or cashier's check,1,0.01718106
+1185,2022-11-30,Virtual currency,0,0.01676189
+1186,2022-11-30,Virtual currency,0,0.01662722
+1187,2022-11-30,Virtual currency,0,0.01676189
+1188,2022-11-30,Mobile or digital wallet,0,0.01141913
+1189,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1190,2022-11-30,Domestic (US) money transfer,0,0.01467983
+1191,2022-11-30,Mobile or digital wallet,0,0.01141913
+1192,2022-11-30,Virtual currency,0,0.01366961
+1193,2022-11-30,Mobile or digital wallet,0,0.01374495
+1194,2022-11-30,Mobile or digital wallet,0,0.01140241
+1195,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1196,2022-11-30,Domestic (US) money transfer,0,0.01540961
+1197,2022-11-30,Traveler's check or cashier's check,0,0.01718106
+1198,2022-11-30,Virtual currency,0,0.01519191
+1199,2022-11-30,International money transfer,0,0.01888149
+1200,2022-11-30,Mobile or digital wallet,0,0.01141913
+1201,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1202,2022-11-30,Foreign currency exchange,0,0.01450431
+1203,2022-11-30,Check cashing service,0,0.02221657
+1204,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1205,2022-11-30,Mobile or digital wallet,0,0.00990455
+1206,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1207,2022-11-30,Mobile or digital wallet,0,0.01387638
+1208,2022-11-30,Refund anticipation check,0,0.02749614
+1209,2022-11-30,Mobile or digital wallet,0,0.01140241
+1210,2022-11-30,Domestic (US) money transfer,0,0.01396449
+1211,2022-11-30,International money transfer,0,0.0154043
+1212,2022-11-30,Mobile or digital wallet,0,0.00990455
+1213,2022-11-30,Domestic (US) money transfer,0,0.01256361
+1214,2022-11-30,Mobile or digital wallet,0,0.00990455
+1215,2022-11-30,Check cashing service,0,0.02209805
+1216,2022-11-30,Money order,0,0.01852229
+1217,2022-11-30,Domestic (US) money transfer,1,0.01540961
+1218,2022-11-30,Mobile or digital wallet,0,0.01141913
+1219,2022-11-30,International money transfer,0,0.01711644
+1220,2022-11-30,Virtual currency,0,0.01519191
+1221,2022-11-30,Mobile or digital wallet,0,0.01140241
+1222,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1223,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1224,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1225,2022-12-01,Virtual currency,0,0.01366961
+1226,2022-12-01,Mobile or digital wallet,0,0.01140241
+1227,2022-12-01,Virtual currency,0,0.01519191
+1228,2022-12-01,Mobile or digital wallet,0,0.01141913
+1229,2022-12-01,Virtual currency,0,0.01676189
+1230,2022-12-01,Refund anticipation check,0,0.01898763
+1231,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1232,2022-12-01,Mobile or digital wallet,0,0.01141913
+1233,2022-12-01,Mobile or digital wallet,0,0.01141913
+1234,2022-12-01,Virtual currency,0,0.01366961
+1235,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1236,2022-12-01,Mobile or digital wallet,0,0.01141913
+1237,2022-12-01,Virtual currency,0,0.01366961
+1238,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1239,2022-12-01,Mobile or digital wallet,0,0.01141913
+1240,2022-12-01,Domestic (US) money transfer,0,0.01540961
+1241,2022-12-01,Virtual currency,0,0.01366961
+1242,2022-12-01,Virtual currency,0,0.01366961
+1243,2022-12-01,International money transfer,0,0.01888149
+1244,2022-12-01,Mobile or digital wallet,0,0.01141913
+1245,2022-12-01,Mobile or digital wallet,0,0.01141913
+1246,2022-12-01,International money transfer,0,0.0154043
+1247,2022-12-01,Mobile or digital wallet,0,0.00990455
+1248,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1249,2022-12-01,Mobile or digital wallet,0,0.00990455
+1250,2022-12-01,Check cashing service,0,0.01835839
+1251,2022-12-01,Mobile or digital wallet,0,0.01140241
+1252,2022-12-01,Virtual currency,0,0.01519191
+1253,2022-12-01,Foreign currency exchange,0,0.01450431
+1254,2022-12-01,Domestic (US) money transfer,0,0.01396449
+1255,2022-12-01,Virtual currency,0,0.01676189
+1256,2022-12-01,International money transfer,0,0.01711644
+1257,2022-12-01,Domestic (US) money transfer,0,0.01256361
+1258,2022-12-01,Domestic (US) money transfer,1,0.01540961
+1259,2022-12-01,Mobile or digital wallet,0,0.01141913
+1260,2022-12-01,Domestic (US) money transfer,1,0.01540961
+1261,2022-12-01,Virtual currency,0,0.01676189
+1262,2022-12-01,Mobile or digital wallet,0,0.01140241
+1263,2022-12-01,Money order,0,0.01523281
+1264,2022-12-01,Mobile or digital wallet,0,0.01440215
+1265,2022-12-01,Virtual currency,0,0.01676189
+1266,2022-12-01,Virtual currency,0,0.01366961
+1267,2022-12-01,Virtual currency,0,0.01676189
+1268,2022-12-01,Traveler's check or cashier's check,0,0.01418468
+1269,2022-12-01,Domestic (US) money transfer,0,0.01396449
+1270,2022-12-01,Mobile or digital wallet,0,0.01140241
+1271,2022-12-01,Debt settlement,0,0.02126892
+1272,2022-12-01,Virtual currency,0,0.01676189
+1273,2022-12-02,Refund anticipation check,0,0.02297495
+1274,2022-12-02,Mobile or digital wallet,0,0.01140241
+1275,2022-12-02,Virtual currency,0,0.01676189
+1276,2022-12-02,Mobile or digital wallet,0,0.01141913
+1277,2022-12-02,Mobile or digital wallet,0,0.01140241
+1278,2022-12-02,Virtual currency,0,0.01676189
+1279,2022-12-02,Domestic (US) money transfer,0,0.01396449
+1280,2022-12-02,Mobile or digital wallet,0,0.00990455
+1281,2022-12-02,Domestic (US) money transfer,0,0.01396449
+1282,2022-12-02,Virtual currency,0,0.01676189
+1283,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1284,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1285,2022-12-02,Check cashing service,0,0.01835839
+1286,2022-12-02,Virtual currency,0,0.01366961
+1287,2022-12-02,International money transfer,0,0.01711644
+1288,2022-12-02,International money transfer,0,0.0154043
+1289,2022-12-02,Mobile or digital wallet,0,0.00990455
+1290,2022-12-02,Domestic (US) money transfer,0,0.01528563
+1291,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1292,2022-12-02,Money order,0,0.01834768
+1293,2022-12-02,Virtual currency,0,0.01366961
+1294,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1295,2022-12-02,International money transfer,0,0.01711644
+1296,2022-12-02,Traveler's check or cashier's check,0,0.01731182
+1297,2022-12-02,Virtual currency,0,0.01676189
+1298,2022-12-02,Mobile or digital wallet,0,0.00990455
+1299,2022-12-02,Domestic (US) money transfer,0,0.01396449
+1300,2022-12-02,Virtual currency,0,0.01366961
+1301,2022-12-02,Mobile or digital wallet,0,0.01140241
+1302,2022-12-02,Check cashing service,0,0.01835839
+1303,2022-12-02,Domestic (US) money transfer,0,0.01540961
+1304,2022-12-02,International money transfer,0,0.0154043
+1305,2022-12-02,Refund anticipation check,0,0.01898763
+1306,2022-12-02,Check cashing service,0,0.01835839
+1307,2022-12-02,Virtual currency,0,0.01676189
+1308,2022-12-02,Virtual currency,0,0.01366961
+1309,2022-12-02,Foreign currency exchange,0,0.01756702
+1310,2022-12-02,Virtual currency,0,0.01366961
+1311,2022-12-02,Mobile or digital wallet,0,0.01140241
+1312,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1313,2022-12-02,Domestic (US) money transfer,0,0.01540961
+1314,2022-12-02,Domestic (US) money transfer,0,0.01256361
+1315,2022-12-02,Mobile or digital wallet,0,0.01140241
+1316,2022-12-02,Mobile or digital wallet,0,0.01140241
+1317,2022-12-02,International money transfer,0,0.01711644
+1318,2022-12-02,Virtual currency,0,0.01676189
+1319,2022-12-02,Domestic (US) money transfer,0,0.01528563
+1320,2022-12-02,Mobile or digital wallet,0,0.01141913
+1321,2022-12-03,Virtual currency,0,0.01519191
+1322,2022-12-03,Domestic (US) money transfer,0,0.01396449
+1323,2022-12-03,Virtual currency,0,0.01366961
+1324,2022-12-03,Virtual currency,0,0.01366961
+1325,2022-12-03,Refund anticipation check,0,0.01898763
+1326,2022-12-03,Virtual currency,0,0.01596911
+1327,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1328,2022-12-03,International money transfer,0,0.01888149
+1329,2022-12-03,Domestic (US) money transfer,0,0.01396449
+1330,2022-12-03,Traveler's check or cashier's check,0,0.01718106
+1331,2022-12-03,Mobile or digital wallet,0,0.00990455
+1332,2022-12-03,Mobile or digital wallet,0,0.00990455
+1333,2022-12-03,Mobile or digital wallet,0,0.00990455
+1334,2022-12-03,Mobile or digital wallet,0,0.00990455
+1335,2022-12-03,Mobile or digital wallet,0,0.00990455
+1336,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1337,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1338,2022-12-03,Mobile or digital wallet,0,0.01140241
+1339,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1340,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1341,2022-12-03,Virtual currency,0,0.01366961
+1342,2022-12-03,Domestic (US) money transfer,0,0.01256361
+1343,2022-12-03,Virtual currency,0,0.01676189
+1344,2022-12-03,Mobile or digital wallet,0,0.01141913
+1345,2022-12-03,Traveler's check or cashier's check,0,0.02058611
+1346,2022-12-03,Virtual currency,0,0.01596911
+1347,2022-12-03,Virtual currency,0,0.01366961
+1348,2022-12-03,Virtual currency,0,0.01596911
+1349,2022-12-04,Mobile or digital wallet,0,0.01140241
+1350,2022-12-04,Virtual currency,0,0.01516741
+1351,2022-12-04,Domestic (US) money transfer,0,0.01256361
+1352,2022-12-04,Domestic (US) money transfer,0,0.01256361
+1353,2022-12-04,Mobile or digital wallet,0,0.01140241
+1354,2022-12-04,Mobile or digital wallet,0,0.01141913
+1355,2022-12-04,International money transfer,0,0.0154043
+1356,2022-12-04,Virtual currency,0,0.01519191
+1357,2022-12-04,Virtual currency,0,0.01366961
+1358,2022-12-04,Virtual currency,0,0.01366961
+1359,2022-12-04,Mobile or digital wallet,0,0.01140241
+1360,2022-12-04,Virtual currency,0,0.01676189
+1361,2022-12-04,Mobile or digital wallet,0,0.01374495
+1362,2022-12-04,International money transfer,0,0.01711644
+1363,2022-12-05,Mobile or digital wallet,0,0.01392484
+1364,2022-12-05,Mobile or digital wallet,0,0.01141913
+1365,2022-12-05,Mobile or digital wallet,0,0.01387638
+1366,2022-12-05,International money transfer,0,0.01711644
+1367,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1368,2022-12-05,International money transfer,0,0.01888149
+1369,2022-12-05,Mobile or digital wallet,0,0.01141913
+1370,2022-12-05,Mobile or digital wallet,0,0.00990455
+1371,2022-12-05,Virtual currency,0,0.01519191
+1372,2022-12-05,Virtual currency,0,0.01519191
+1373,2022-12-05,Domestic (US) money transfer,0,0.01540961
+1374,2022-12-05,International money transfer,0,0.0154043
+1375,2022-12-05,Domestic (US) money transfer,0,0.01540961
+1376,2022-12-05,Mobile or digital wallet,0,0.01392484
+1377,2022-12-05,Virtual currency,0,0.01366961
+1378,2022-12-05,Domestic (US) money transfer,0,0.01396449
+1379,2022-12-05,Mobile or digital wallet,0,0.01141913
+1380,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1381,2022-12-05,Virtual currency,0,0.01366961
+1382,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1383,2022-12-05,Mobile or digital wallet,0,0.01140241
+1384,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1385,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1386,2022-12-05,Mobile or digital wallet,0,0.01140241
+1387,2022-12-05,Virtual currency,0,0.01366961
+1388,2022-12-05,Mobile or digital wallet,0,0.01140241
+1389,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1390,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1391,2022-12-05,International money transfer,0,0.01888149
+1392,2022-12-05,Mobile or digital wallet,0,0.01141913
+1393,2022-12-05,Domestic (US) money transfer,0,0.01256361
+1394,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1395,2022-12-06,Mobile or digital wallet,0,0.01141913
+1396,2022-12-06,International money transfer,0,0.0154043
+1397,2022-12-06,International money transfer,0,0.01888149
+1398,2022-12-06,Mobile or digital wallet,0,0.01140241
+1399,2022-12-06,Mobile or digital wallet,0,0.01140241
+1400,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1401,2022-12-06,Mobile or digital wallet,0,0.01140241
+1402,2022-12-06,Mobile or digital wallet,0,0.01140241
+1403,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1404,2022-12-06,Virtual currency,1,0.01676189
+1405,2022-12-06,Mobile or digital wallet,0,0.00990455
+1406,2022-12-06,Virtual currency,1,0.01366961
+1407,2022-12-06,Virtual currency,0,0.01676189
+1408,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1409,2022-12-06,Virtual currency,0,0.01676189
+1410,2022-12-06,International money transfer,1,0.01888149
+1411,2022-12-06,International money transfer,0,0.01711644
+1412,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1413,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1414,2022-12-06,Mobile or digital wallet,0,0.01140241
+1415,2022-12-06,Virtual currency,0,0.01366961
+1416,2022-12-06,International money transfer,0,0.0154043
+1417,2022-12-06,International money transfer,1,0.01711644
+1418,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1419,2022-12-06,Mobile or digital wallet,0,0.01140241
+1420,2022-12-06,International money transfer,0,0.0154043
+1421,2022-12-06,Mobile or digital wallet,0,0.01140241
+1422,2022-12-06,Virtual currency,0,0.01366961
+1423,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1424,2022-12-06,Mobile or digital wallet,0,0.01141913
+1425,2022-12-06,Virtual currency,0,0.01366961
+1426,2022-12-06,Virtual currency,0,0.01519191
+1427,2022-12-06,Mobile or digital wallet,0,0.01140241
+1428,2022-12-06,Domestic (US) money transfer,1,0.01540961
+1429,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1430,2022-12-06,International money transfer,0,0.01708888
+1431,2022-12-06,Domestic (US) money transfer,0,0.01540961
+1432,2022-12-06,Virtual currency,0,0.01519191
+1433,2022-12-06,Virtual currency,0,0.01676189
+1434,2022-12-06,Mobile or digital wallet,0,0.01140241
+1435,2022-12-06,International money transfer,0,0.0154043
+1436,2022-12-06,International money transfer,0,0.01711644
+1437,2022-12-06,Virtual currency,0,0.01366961
+1438,2022-12-06,International money transfer,1,0.01888149
+1439,2022-12-06,Mobile or digital wallet,0,0.01140241
+1440,2022-12-06,Virtual currency,0,0.01366961
+1441,2022-12-06,Domestic (US) money transfer,0,0.01256361
+1442,2022-12-06,Domestic (US) money transfer,0,0.01394194
+1443,2022-12-06,International money transfer,0,0.01711644
+1444,2022-12-06,Virtual currency,0,0.01596911
+1445,2022-12-06,Virtual currency,0,0.01519191
+1446,2022-12-06,Check cashing service,0,0.01835839
+1447,2022-12-06,Mobile or digital wallet,0,0.01140241
+1448,2022-12-06,Mobile or digital wallet,0,0.00990455
+1449,2022-12-06,Mobile or digital wallet,0,0.01140241
+1450,2022-12-06,Check cashing service,0,0.01835839
+1451,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1452,2022-12-07,Virtual currency,0,0.01366961
+1453,2022-12-07,Mobile or digital wallet,0,0.00990455
+1454,2022-12-07,Virtual currency,0,0.01647017
+1455,2022-12-07,International money transfer,0,0.01799029
+1456,2022-12-07,Debt settlement,0,0.01743967
+1457,2022-12-07,Mobile or digital wallet,0,0.01140241
+1458,2022-12-07,Mobile or digital wallet,0,0.01140241
+1459,2022-12-07,Mobile or digital wallet,0,0.01140241
+1460,2022-12-07,Mobile or digital wallet,0,0.01140241
+1461,2022-12-07,International money transfer,0,0.0154043
+1462,2022-12-07,Domestic (US) money transfer,0,0.01396449
+1463,2022-12-07,Refund anticipation check,0,0.02297495
+1464,2022-12-07,Check cashing service,0,0.02221657
+1465,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1466,2022-12-07,International money transfer,0,0.01711644
+1467,2022-12-07,International money transfer,0,0.01799029
+1468,2022-12-07,Mobile or digital wallet,0,0.00990455
+1469,2022-12-07,Foreign currency exchange,0,0.01756702
+1470,2022-12-07,Virtual currency,0,0.01366961
+1471,2022-12-07,Mobile or digital wallet,0,0.01140241
+1472,2022-12-07,Virtual currency,0,0.01676189
+1473,2022-12-07,Domestic (US) money transfer,0,0.01396449
+1474,2022-12-07,Mobile or digital wallet,0,0.01140241
+1475,2022-12-07,Domestic (US) money transfer,0,0.01467983
+1476,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1477,2022-12-07,Check cashing service,0,0.02221657
+1478,2022-12-07,Virtual currency,1,0.01676189
+1479,2022-12-07,Mobile or digital wallet,0,0.01140241
+1480,2022-12-07,Mobile or digital wallet,0,0.01140241
+1481,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1482,2022-12-07,Domestic (US) money transfer,0,0.01540961
+1483,2022-12-07,International money transfer,0,0.0154043
+1484,2022-12-07,Domestic (US) money transfer,0,0.01540961
+1485,2022-12-07,International money transfer,0,0.01711644
+1486,2022-12-07,Mobile or digital wallet,0,0.01140241
+1487,2022-12-07,International money transfer,0,0.0154043
+1488,2022-12-07,International money transfer,0,0.01711644
+1489,2022-12-07,Mobile or digital wallet,0,0.01140241
+1490,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1491,2022-12-07,Domestic (US) money transfer,0,0.01256361
+1492,2022-12-08,Mobile or digital wallet,0,0.01140241
+1493,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1494,2022-12-08,Virtual currency,0,0.01366961
+1495,2022-12-08,Mobile or digital wallet,0,0.01140241
+1496,2022-12-08,Domestic (US) money transfer,0,0.01514106
+1497,2022-12-08,Virtual currency,0,0.01676189
+1498,2022-12-08,Virtual currency,0,0.01366961
+1499,2022-12-08,International money transfer,0,0.01888149
+1500,2022-12-08,Domestic (US) money transfer,0,0.01396449
+1501,2022-12-08,International money transfer,0,0.01888149
+1502,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1503,2022-12-08,Domestic (US) money transfer,1,0.01396449
+1504,2022-12-08,International money transfer,0,0.01888149
+1505,2022-12-08,International money transfer,0,0.01888149
+1506,2022-12-08,Mobile or digital wallet,0,0.01140241
+1507,2022-12-08,Mobile or digital wallet,0,0.01140241
+1508,2022-12-08,Mobile or digital wallet,0,0.01140241
+1509,2022-12-08,Mobile or digital wallet,0,0.00990455
+1510,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1511,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1512,2022-12-08,Mobile or digital wallet,0,0.01141913
+1513,2022-12-08,Mobile or digital wallet,0,0.01141913
+1514,2022-12-08,Mobile or digital wallet,0,0.01141913
+1515,2022-12-08,International money transfer,0,0.01708888
+1516,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1517,2022-12-08,Check cashing service,0,0.01835839
+1518,2022-12-08,Mobile or digital wallet,0,0.01140241
+1519,2022-12-08,International money transfer,0,0.0154043
+1520,2022-12-08,Mobile or digital wallet,0,0.00990455
+1521,2022-12-08,Mobile or digital wallet,0,0.01140241
+1522,2022-12-08,Virtual currency,0,0.01662722
+1523,2022-12-08,Foreign currency exchange,0,0.01450431
+1524,2022-12-08,Mobile or digital wallet,0,0.00990455
+1525,2022-12-08,Mobile or digital wallet,0,0.01140241
+1526,2022-12-08,Domestic (US) money transfer,0,0.01467983
+1527,2022-12-08,Mobile or digital wallet,0,0.00990455
+1528,2022-12-08,Virtual currency,0,0.01596911
+1529,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1530,2022-12-08,Domestic (US) money transfer,0,0.01256361
+1531,2022-12-08,Refund anticipation check,0,0.02749614
+1532,2022-12-08,Mobile or digital wallet,0,0.01140241
+1533,2022-12-08,International money transfer,0,0.0154043
+1534,2022-12-08,Virtual currency,0,0.01366961
+1535,2022-12-08,Virtual currency,0,0.01519191
+1536,2022-12-09,International money transfer,0,0.01888149
+1537,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1538,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1539,2022-12-09,Virtual currency,0,0.01676189
+1540,2022-12-09,Domestic (US) money transfer,0,0.01396449
+1541,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1542,2022-12-09,Mobile or digital wallet,0,0.01140241
+1543,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1544,2022-12-09,International money transfer,0,0.01888149
+1545,2022-12-09,International money transfer,0,0.01711644
+1546,2022-12-09,Virtual currency,0,0.01366961
+1547,2022-12-09,Virtual currency,0,0.01366961
+1548,2022-12-09,Mobile or digital wallet,0,0.01140241
+1549,2022-12-09,International money transfer,0,0.01711644
+1550,2022-12-09,Mobile or digital wallet,0,0.01140241
+1551,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1552,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1553,2022-12-09,Domestic (US) money transfer,0,0.01396449
+1554,2022-12-09,Mobile or digital wallet,0,0.01140241
+1555,2022-12-09,Mobile or digital wallet,0,0.01140241
+1556,2022-12-09,Domestic (US) money transfer,0,0.01467983
+1557,2022-12-09,Money order,0,0.01523281
+1558,2022-12-09,Domestic (US) money transfer,0,0.01467983
+1559,2022-12-09,Virtual currency,0,0.01366961
+1560,2022-12-09,Mobile or digital wallet,0,0.01140241
+1561,2022-12-09,Domestic (US) money transfer,0,0.01394194
+1562,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1563,2022-12-09,Virtual currency,0,0.01366961
+1564,2022-12-09,Mobile or digital wallet,0,0.01141913
+1565,2022-12-09,International money transfer,0,0.0154043
+1566,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1567,2022-12-09,Mobile or digital wallet,0,0.01141913
+1568,2022-12-09,Domestic (US) money transfer,0,0.01396449
+1569,2022-12-09,International money transfer,0,0.01711644
+1570,2022-12-09,Mobile or digital wallet,0,0.01140241
+1571,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1572,2022-12-09,Mobile or digital wallet,0,0.01141913
+1573,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1574,2022-12-09,Check cashing service,0,0.02221657
+1575,2022-12-09,Domestic (US) money transfer,0,0.01396449
+1576,2022-12-09,Virtual currency,0,0.01366961
+1577,2022-12-09,Mobile or digital wallet,0,0.00990455
+1578,2022-12-09,International money transfer,0,0.01888149
+1579,2022-12-09,Mobile or digital wallet,0,0.01141913
+1580,2022-12-09,Domestic (US) money transfer,0,0.01256361
+1581,2022-12-10,Domestic (US) money transfer,0,0.01540961
+1582,2022-12-10,Mobile or digital wallet,0,0.01387638
+1583,2022-12-10,International money transfer,0,0.01888149
+1584,2022-12-10,Mobile or digital wallet,0,0.01141913
+1585,2022-12-10,Mobile or digital wallet,0,0.01140241
+1586,2022-12-10,Check cashing service,0,0.02209805
+1587,2022-12-10,Mobile or digital wallet,0,0.00990455
+1588,2022-12-10,Mobile or digital wallet,0,0.01141913
+1589,2022-12-10,Mobile or digital wallet,0,0.01140241
+1590,2022-12-10,Mobile or digital wallet,0,0.01140241
+1591,2022-12-10,Virtual currency,0,0.01366961
+1592,2022-12-10,International money transfer,0,0.0154043
+1593,2022-12-10,Domestic (US) money transfer,0,0.01256361
+1594,2022-12-10,Mobile or digital wallet,0,0.01141913
+1595,2022-12-10,Traveler's check or cashier's check,0,0.01418468
+1596,2022-12-10,Mobile or digital wallet,0,0.00990455
+1597,2022-12-10,Virtual currency,0,0.01366961
+1598,2022-12-10,Mobile or digital wallet,0,0.01141913
+1599,2022-12-10,Domestic (US) money transfer,1,0.01540961
+1600,2022-12-10,International money transfer,0,0.01711644
+1601,2022-12-10,Domestic (US) money transfer,0,0.01540961
+1602,2022-12-10,Domestic (US) money transfer,1,0.01540961
+1603,2022-12-10,Domestic (US) money transfer,0,0.01540961
+1604,2022-12-10,Mobile or digital wallet,0,0.01141913
+1605,2022-12-11,Mobile or digital wallet,0,0.00990455
+1606,2022-12-11,Mobile or digital wallet,0,0.01719535
+1607,2022-12-11,Mobile or digital wallet,0,0.01141913
+1608,2022-12-11,Mobile or digital wallet,0,0.01140241
+1609,2022-12-11,Mobile or digital wallet,0,0.01140241
+1610,2022-12-11,Mobile or digital wallet,0,0.00990455
+1611,2022-12-11,International money transfer,0,0.01711644
+1612,2022-12-11,International money transfer,0,0.01711644
+1613,2022-12-11,Virtual currency,0,0.01596911
+1614,2022-12-11,International money transfer,0,0.0154043
+1615,2022-12-11,Mobile or digital wallet,0,0.01141913
+1616,2022-12-11,Domestic (US) money transfer,0,0.01396449
+1617,2022-12-11,Virtual currency,0,0.01366961
+1618,2022-12-11,International money transfer,0,0.01711644
+1619,2022-12-11,Virtual currency,0,0.01366961
+1620,2022-12-12,International money transfer,0,0.0154043
+1621,2022-12-12,Domestic (US) money transfer,0,0.01256361
+1622,2022-12-12,Domestic (US) money transfer,0,0.01256361
+1623,2022-12-12,Mobile or digital wallet,0,0.01141913
+1624,2022-12-12,International money transfer,0,0.01711644
+1625,2022-12-12,Mobile or digital wallet,0,0.01141913
+1626,2022-12-12,Domestic (US) money transfer,0,0.01467983
+1627,2022-12-12,International money transfer,0,0.01711644
+1628,2022-12-12,International money transfer,0,0.01711644
+1629,2022-12-12,International money transfer,0,0.01888149
+1630,2022-12-12,Mobile or digital wallet,0,0.01141913
+1631,2022-12-12,Mobile or digital wallet,0,0.01141913
+1632,2022-12-12,Domestic (US) money transfer,0,0.01256361
+1633,2022-12-12,Mobile or digital wallet,0,0.01140241
+1634,2022-12-12,Virtual currency,0,0.01366961
+1635,2022-12-12,Mobile or digital wallet,0,0.01141913
+1636,2022-12-12,Domestic (US) money transfer,0,0.01396449
+1637,2022-12-12,Mobile or digital wallet,0,0.01141913
+1638,2022-12-12,Mobile or digital wallet,0,0.01140241
+1639,2022-12-12,Mobile or digital wallet,0,0.01140241
+1640,2022-12-12,Debt settlement,0,0.02126892
+1641,2022-12-12,International money transfer,0,0.01711644
+1642,2022-12-12,Virtual currency,0,0.01366961
+1643,2022-12-12,Virtual currency,0,0.01366961
+1644,2022-12-12,Mobile or digital wallet,0,0.01374495
+1645,2022-12-12,Mobile or digital wallet,0,0.00990455
+1646,2022-12-12,Domestic (US) money transfer,0,0.01396449
+1647,2022-12-12,Virtual currency,0,0.01366961
+1648,2022-12-12,Mobile or digital wallet,0,0.01140241
+1649,2022-12-12,Mobile or digital wallet,1,0.01141913
+1650,2022-12-12,Mobile or digital wallet,0,0.00990455
+1651,2022-12-12,Mobile or digital wallet,0,0.01141913
+1652,2022-12-12,Mobile or digital wallet,0,0.01140241
+1653,2022-12-12,Domestic (US) money transfer,0,0.01396449
+1654,2022-12-12,Virtual currency,0,0.01366961
+1655,2022-12-12,Virtual currency,0,0.01519191
+1656,2022-12-13,Mobile or digital wallet,0,0.01141913
+1657,2022-12-13,Mobile or digital wallet,0,0.01140241
+1658,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1659,2022-12-13,Mobile or digital wallet,0,0.01140241
+1660,2022-12-13,Domestic (US) money transfer,0,0.01514106
+1661,2022-12-13,Virtual currency,0,0.01366961
+1662,2022-12-13,International money transfer,0,0.01888149
+1663,2022-12-13,Traveler's check or cashier's check,0,0.01418468
+1664,2022-12-13,Mobile or digital wallet,0,0.00990455
+1665,2022-12-13,Check cashing service,0,0.01835839
+1666,2022-12-13,Virtual currency,0,0.01366961
+1667,2022-12-13,Mobile or digital wallet,0,0.01140241
+1668,2022-12-13,Mobile or digital wallet,0,0.01140241
+1669,2022-12-13,Virtual currency,0,0.01366961
+1670,2022-12-13,Virtual currency,0,0.01366961
+1671,2022-12-13,Virtual currency,0,0.01366961
+1672,2022-12-13,Mobile or digital wallet,0,0.01140241
+1673,2022-12-13,International money transfer,0,0.01888149
+1674,2022-12-13,International money transfer,0,0.01711644
+1675,2022-12-13,Domestic (US) money transfer,0,0.01396449
+1676,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1677,2022-12-13,Mobile or digital wallet,0,0.01140241
+1678,2022-12-13,Virtual currency,0,0.01366961
+1679,2022-12-13,Mobile or digital wallet,0,0.00990455
+1680,2022-12-13,Virtual currency,0,0.01366961
+1681,2022-12-13,Mobile or digital wallet,0,0.00990455
+1682,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1683,2022-12-13,Domestic (US) money transfer,0,0.01396449
+1684,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1685,2022-12-13,International money transfer,0,0.0154043
+1686,2022-12-13,Mobile or digital wallet,0,0.01140241
+1687,2022-12-13,International money transfer,0,0.0154043
+1688,2022-12-13,International money transfer,0,0.01888149
+1689,2022-12-13,Mobile or digital wallet,0,0.01140241
+1690,2022-12-13,Mobile or digital wallet,0,0.01140241
+1691,2022-12-13,International money transfer,0,0.01711644
+1692,2022-12-13,Domestic (US) money transfer,0,0.01396449
+1693,2022-12-13,Mobile or digital wallet,0,0.01140241
+1694,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1695,2022-12-13,Mobile or digital wallet,0,0.01141913
+1696,2022-12-13,Virtual currency,0,0.01676189
+1697,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1698,2022-12-13,Virtual currency,0,0.01676189
+1699,2022-12-13,Mobile or digital wallet,0,0.01140241
+1700,2022-12-13,Mobile or digital wallet,0,0.01141913
+1701,2022-12-13,Mobile or digital wallet,0,0.00990455
+1702,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1703,2022-12-13,Mobile or digital wallet,0,0.01140241
+1704,2022-12-13,Debt settlement,0,0.01743967
+1705,2022-12-13,Virtual currency,0,0.01519191
+1706,2022-12-13,International money transfer,0,0.01711644
+1707,2022-12-13,International money transfer,0,0.01888149
+1708,2022-12-13,Domestic (US) money transfer,0,0.01256361
+1709,2022-12-14,Mobile or digital wallet,0,0.01140241
+1710,2022-12-14,International money transfer,0,0.01855358
+1711,2022-12-14,Check cashing service,0,0.01835839
+1712,2022-12-14,Virtual currency,0,0.01366961
+1713,2022-12-14,Money order,0,0.01752141
+1714,2022-12-14,Domestic (US) money transfer,0,0.01540961
+1715,2022-12-14,Virtual currency,1,0.01366961
+1716,2022-12-14,Virtual currency,1,0.01366961
+1717,2022-12-14,Mobile or digital wallet,0,0.01140241
+1718,2022-12-14,Virtual currency,0,0.01366961
+1719,2022-12-14,Mobile or digital wallet,0,0.00990455
+1720,2022-12-14,Virtual currency,0,0.01596911
+1721,2022-12-14,Check cashing service,0,0.01835839
+1722,2022-12-14,Virtual currency,0,0.01662722
+1723,2022-12-14,Domestic (US) money transfer,1,0.01540961
+1724,2022-12-14,Mobile or digital wallet,0,0.01141913
+1725,2022-12-14,Mobile or digital wallet,0,0.00990455
+1726,2022-12-14,Mobile or digital wallet,0,0.01141913
+1727,2022-12-14,Mobile or digital wallet,0,0.00990455
+1728,2022-12-14,International money transfer,0,0.01711644
+1729,2022-12-14,International money transfer,0,0.01708888
+1730,2022-12-14,Domestic (US) money transfer,0,0.01540961
+1731,2022-12-14,Refund anticipation check,0,0.01898763
+1732,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1733,2022-12-14,International money transfer,0,0.01711644
+1734,2022-12-14,International money transfer,0,0.01711644
+1735,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1736,2022-12-14,Mobile or digital wallet,0,0.01141913
+1737,2022-12-14,International money transfer,0,0.01711644
+1738,2022-12-14,Mobile or digital wallet,0,0.01141913
+1739,2022-12-14,Virtual currency,0,0.01366961
+1740,2022-12-14,Virtual currency,0,0.01366961
+1741,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1742,2022-12-14,Debt settlement,0,0.02119546
+1743,2022-12-14,Virtual currency,0,0.01519191
+1744,2022-12-14,Mobile or digital wallet,0,0.01141913
+1745,2022-12-14,Virtual currency,0,0.01366961
+1746,2022-12-14,Domestic (US) money transfer,1,0.01256361
+1747,2022-12-14,Domestic (US) money transfer,0,0.01540961
+1748,2022-12-14,Virtual currency,0,0.01366961
+1749,2022-12-14,Virtual currency,0,0.01519191
+1750,2022-12-14,Mobile or digital wallet,0,0.01140241
+1751,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1752,2022-12-14,Money order,0,0.01752141
+1753,2022-12-14,International money transfer,0,0.01711644
+1754,2022-12-14,Mobile or digital wallet,0,0.01141913
+1755,2022-12-14,Virtual currency,0,0.01366961
+1756,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1757,2022-12-14,Virtual currency,0,0.01366961
+1758,2022-12-14,Virtual currency,0,0.01366961
+1759,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1760,2022-12-14,Virtual currency,0,0.01366961
+1761,2022-12-14,International money transfer,0,0.01873012
+1762,2022-12-14,Virtual currency,0,0.01366961
+1763,2022-12-14,Mobile or digital wallet,0,0.01140241
+1764,2022-12-14,Virtual currency,0,0.01366961
+1765,2022-12-14,Mobile or digital wallet,0,0.01140241
+1766,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1767,2022-12-14,Traveler's check or cashier's check,0,0.01418468
+1768,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1769,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1770,2022-12-14,Mobile or digital wallet,0,0.01141913
+1771,2022-12-14,Mobile or digital wallet,0,0.01140241
+1772,2022-12-14,International money transfer,0,0.01711644
+1773,2022-12-14,International money transfer,0,0.0154043
+1774,2022-12-14,Mobile or digital wallet,0,0.01140241
+1775,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1776,2022-12-14,Virtual currency,0,0.01676189
+1777,2022-12-14,Domestic (US) money transfer,0,0.01256361
+1778,2022-12-14,Virtual currency,0,0.01366961
+1779,2022-12-14,Mobile or digital wallet,0,0.00990455
+1780,2022-12-14,Virtual currency,0,0.01596911
+1781,2022-12-14,Mobile or digital wallet,0,0.00990455
+1782,2022-12-15,Domestic (US) money transfer,0,0.01396449
+1783,2022-12-15,Virtual currency,0,0.01366961
+1784,2022-12-15,Mobile or digital wallet,0,0.01140241
+1785,2022-12-15,Refund anticipation check,0,0.02749614
+1786,2022-12-15,International money transfer,0,0.01888149
+1787,2022-12-15,Mobile or digital wallet,0,0.01140241
+1788,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1789,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1790,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1791,2022-12-15,Virtual currency,0,0.01366961
+1792,2022-12-15,Mobile or digital wallet,0,0.01140241
+1793,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1794,2022-12-15,Mobile or digital wallet,0,0.00990455
+1795,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1796,2022-12-15,International money transfer,0,0.01708888
+1797,2022-12-15,Virtual currency,0,0.01366961
+1798,2022-12-15,Traveler's check or cashier's check,0,0.01725178
+1799,2022-12-15,Check cashing service,0,0.02230755
+1800,2022-12-15,International money transfer,0,0.01711644
+1801,2022-12-15,Mobile or digital wallet,0,0.00990455
+1802,2022-12-15,Mobile or digital wallet,0,0.01141913
+1803,2022-12-15,Mobile or digital wallet,0,0.00990455
+1804,2022-12-15,International money transfer,0,0.01888149
+1805,2022-12-15,Domestic (US) money transfer,0,0.01540961
+1806,2022-12-15,Virtual currency,0,0.01366961
+1807,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1808,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1809,2022-12-15,Mobile or digital wallet,0,0.01141913
+1810,2022-12-15,Domestic (US) money transfer,0,0.01396449
+1811,2022-12-15,Virtual currency,0,0.01676189
+1812,2022-12-15,Mobile or digital wallet,0,0.00990455
+1813,2022-12-15,Mobile or digital wallet,0,0.01140241
+1814,2022-12-15,Domestic (US) money transfer,0,0.01396449
+1815,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1816,2022-12-15,International money transfer,0,0.01888149
+1817,2022-12-15,Virtual currency,0,0.01519191
+1818,2022-12-15,International money transfer,0,0.01888149
+1819,2022-12-15,International money transfer,0,0.01711644
+1820,2022-12-15,Mobile or digital wallet,0,0.01141913
+1821,2022-12-15,Mobile or digital wallet,0,0.00990455
+1822,2022-12-15,Mobile or digital wallet,0,0.01141913
+1823,2022-12-15,International money transfer,0,0.01888149
+1824,2022-12-15,Virtual currency,0,0.01366961
+1825,2022-12-15,Mobile or digital wallet,0,0.00990455
+1826,2022-12-15,Virtual currency,0,0.01519191
+1827,2022-12-15,Domestic (US) money transfer,0,0.01256361
+1828,2022-12-15,Mobile or digital wallet,0,0.00990455
+1829,2022-12-15,Check cashing service,0,0.02238478
+1830,2022-12-16,Mobile or digital wallet,0,0.00990455
+1831,2022-12-16,International money transfer,0,0.01888149
+1832,2022-12-16,Mobile or digital wallet,0,0.01140241
+1833,2022-12-16,Mobile or digital wallet,0,0.00990455
+1834,2022-12-16,Mobile or digital wallet,0,0.00990455
+1835,2022-12-16,International money transfer,0,0.01711644
+1836,2022-12-16,Virtual currency,0,0.01676189
+1837,2022-12-16,International money transfer,0,0.01711644
+1838,2022-12-16,Mobile or digital wallet,0,0.01140241
+1839,2022-12-16,Virtual currency,0,0.01366961
+1840,2022-12-16,International money transfer,0,0.01711644
+1841,2022-12-16,Mobile or digital wallet,0,0.00990455
+1842,2022-12-16,Domestic (US) money transfer,0,0.01256361
+1843,2022-12-16,International money transfer,0,0.01799029
+1844,2022-12-16,Mobile or digital wallet,0,0.01140241
+1845,2022-12-16,Domestic (US) money transfer,0,0.01396449
+1846,2022-12-16,Mobile or digital wallet,0,0.01140241
+1847,2022-12-16,International money transfer,0,0.01855358
+1848,2022-12-16,Mobile or digital wallet,0,0.01140241
+1849,2022-12-16,Mobile or digital wallet,0,0.00990455
+1850,2022-12-16,Virtual currency,0,0.01366961
+1851,2022-12-16,Virtual currency,0,0.01516741
+1852,2022-12-16,International money transfer,0,0.01888149
+1853,2022-12-16,Virtual currency,0,0.01519191
+1854,2022-12-16,International money transfer,0,0.01711644
+1855,2022-12-16,Virtual currency,0,0.01676189
+1856,2022-12-16,Domestic (US) money transfer,0,0.01396449
+1857,2022-12-16,Domestic (US) money transfer,0,0.01396449
+1858,2022-12-16,Domestic (US) money transfer,0,0.01256361
+1859,2022-12-16,Debt settlement,0,0.01743967
+1860,2022-12-16,Traveler's check or cashier's check,0,0.01418468
+1861,2022-12-16,Domestic (US) money transfer,0,0.01256361
+1862,2022-12-16,Domestic (US) money transfer,0,0.01540961
+1863,2022-12-17,International money transfer,0,0.01888149
+1864,2022-12-17,Mobile or digital wallet,0,0.01141913
+1865,2022-12-17,Mobile or digital wallet,0,0.01140241
+1866,2022-12-17,Virtual currency,0,0.01366961
+1867,2022-12-17,Virtual currency,0,0.01366961
+1868,2022-12-17,Mobile or digital wallet,0,0.01141913
+1869,2022-12-17,International money transfer,0,0.01888149
+1870,2022-12-17,Mobile or digital wallet,0,0.01140241
+1871,2022-12-17,Mobile or digital wallet,0,0.01141913
+1872,2022-12-17,Foreign currency exchange,0,0.01450431
+1873,2022-12-17,Mobile or digital wallet,0,0.00990455
+1874,2022-12-17,Domestic (US) money transfer,0,0.01256361
+1875,2022-12-17,Mobile or digital wallet,0,0.01141913
+1876,2022-12-17,Virtual currency,0,0.01366961
+1877,2022-12-17,Domestic (US) money transfer,0,0.01467983
+1878,2022-12-17,Virtual currency,0,0.01676189
+1879,2022-12-17,Mobile or digital wallet,0,0.01140241
+1880,2022-12-17,Virtual currency,0,0.01676189
+1881,2022-12-17,Mobile or digital wallet,0,0.01141913
+1882,2022-12-17,Domestic (US) money transfer,0,0.01256361
+1883,2022-12-17,Domestic (US) money transfer,0,0.01394194
+1884,2022-12-17,Domestic (US) money transfer,0,0.01256361
+1885,2022-12-17,Virtual currency,1,0.01676189
+1886,2022-12-17,Domestic (US) money transfer,0,0.01256361
+1887,2022-12-17,Domestic (US) money transfer,0,0.01514106
+1888,2022-12-17,Virtual currency,0,0.01676189
+1889,2022-12-17,Virtual currency,0,0.01366961
+1890,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1891,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1892,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1893,2022-12-18,Foreign currency exchange,0,0.0176393
+1894,2022-12-18,Mobile or digital wallet,0,0.01141913
+1895,2022-12-18,International money transfer,0,0.0154043
+1896,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1897,2022-12-18,Domestic (US) money transfer,0,0.01540961
+1898,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1899,2022-12-18,Mobile or digital wallet,0,0.00990455
+1900,2022-12-18,Foreign currency exchange,0,0.02349346
+1901,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1902,2022-12-18,Mobile or digital wallet,0,0.01141913
+1903,2022-12-18,Mobile or digital wallet,0,0.01140241
+1904,2022-12-18,Mobile or digital wallet,0,0.00990455
+1905,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1906,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1907,2022-12-18,Mobile or digital wallet,0,0.01440215
+1908,2022-12-18,Domestic (US) money transfer,0,0.01256361
+1909,2022-12-18,Domestic (US) money transfer,0,0.01396449
+1910,2022-12-19,Virtual currency,0,0.01366961
+1911,2022-12-19,Foreign currency exchange,0,0.01450431
+1912,2022-12-19,Mobile or digital wallet,0,0.00990455
+1913,2022-12-19,Virtual currency,0,0.01366961
+1914,2022-12-19,Virtual currency,0,0.01366961
+1915,2022-12-19,Domestic (US) money transfer,0,0.01396449
+1916,2022-12-19,Domestic (US) money transfer,0,0.01396449
+1917,2022-12-19,Mobile or digital wallet,0,0.00990455
+1918,2022-12-19,Domestic (US) money transfer,0,0.01396449
+1919,2022-12-19,International money transfer,0,0.01711644
+1920,2022-12-19,Domestic (US) money transfer,0,0.01256361
+1921,2022-12-19,International money transfer,0,0.01711644
+1922,2022-12-19,Domestic (US) money transfer,0,0.01396449
+1923,2022-12-19,Mobile or digital wallet,0,0.00990455
+1924,2022-12-19,Domestic (US) money transfer,0,0.01540961
+1925,2022-12-19,Mobile or digital wallet,0,0.01141913
+1926,2022-12-19,Foreign currency exchange,0,0.01756702
+1927,2022-12-19,Domestic (US) money transfer,0,0.01396449
+1928,2022-12-19,Mobile or digital wallet,0,0.01141913
+1929,2022-12-19,Domestic (US) money transfer,0,0.01467983
+1930,2022-12-19,Virtual currency,0,0.01596911
+1931,2022-12-19,Mobile or digital wallet,0,0.01387638
+1932,2022-12-19,Mobile or digital wallet,0,0.01141913
+1933,2022-12-19,International money transfer,0,0.01711644
+1934,2022-12-19,Virtual currency,0,0.01596911
+1935,2022-12-19,Domestic (US) money transfer,0,0.01256361
+1936,2022-12-19,Domestic (US) money transfer,0,0.01256361
+1937,2022-12-19,Mobile or digital wallet,0,0.01141913
+1938,2022-12-19,Mobile or digital wallet,0,0.01140241
+1939,2022-12-19,Mobile or digital wallet,0,0.01140241
+1940,2022-12-19,International money transfer,0,0.01711644
+1941,2022-12-19,Mobile or digital wallet,0,0.01140241
+1942,2022-12-19,Mobile or digital wallet,0,0.01141913
+1943,2022-12-19,Traveler's check or cashier's check,0,0.01718106
+1944,2022-12-19,Mobile or digital wallet,0,0.01141913
+1945,2022-12-19,Mobile or digital wallet,0,0.00990455
+1946,2022-12-19,International money transfer,0,0.01888149
+1947,2022-12-20,Domestic (US) money transfer,0,0.01540961
+1948,2022-12-20,Mobile or digital wallet,0,0.01140241
+1949,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1950,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1951,2022-12-20,International money transfer,0,0.01888149
+1952,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1953,2022-12-20,Mobile or digital wallet,0,0.01140241
+1954,2022-12-20,Virtual currency,0,0.01366961
+1955,2022-12-20,International money transfer,0,0.0154043
+1956,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1957,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1958,2022-12-20,International money transfer,0,0.01888149
+1959,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1960,2022-12-20,Mobile or digital wallet,0,0.01141913
+1961,2022-12-20,International money transfer,0,0.0154043
+1962,2022-12-20,Mobile or digital wallet,0,0.01141913
+1963,2022-12-20,Virtual currency,0,0.01366961
+1964,2022-12-20,Mobile or digital wallet,0,0.01140241
+1965,2022-12-20,Check cashing service,0,0.01835839
+1966,2022-12-20,Debt settlement,0,0.01743967
+1967,2022-12-20,Mobile or digital wallet,0,0.01140241
+1968,2022-12-20,Mobile or digital wallet,0,0.01141913
+1969,2022-12-20,Mobile or digital wallet,0,0.01140241
+1970,2022-12-20,International money transfer,0,0.01888149
+1971,2022-12-20,Mobile or digital wallet,0,0.01140241
+1972,2022-12-20,Mobile or digital wallet,0,0.00990455
+1973,2022-12-20,Mobile or digital wallet,0,0.01140241
+1974,2022-12-20,Virtual currency,0,0.01366961
+1975,2022-12-20,Mobile or digital wallet,0,0.01140241
+1976,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1977,2022-12-20,Virtual currency,0,0.01366961
+1978,2022-12-20,Virtual currency,0,0.01366961
+1979,2022-12-20,Domestic (US) money transfer,0,0.01396449
+1980,2022-12-20,Domestic (US) money transfer,0,0.01396449
+1981,2022-12-20,Virtual currency,0,0.01366961
+1982,2022-12-20,Mobile or digital wallet,0,0.01141913
+1983,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1984,2022-12-20,Virtual currency,0,0.01366961
+1985,2022-12-20,Virtual currency,0,0.01366961
+1986,2022-12-20,Virtual currency,0,0.01519191
+1987,2022-12-20,International money transfer,0,0.01711644
+1988,2022-12-20,International money transfer,0,0.0154043
+1989,2022-12-20,Mobile or digital wallet,0,0.01141913
+1990,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1991,2022-12-20,Domestic (US) money transfer,0,0.01396449
+1992,2022-12-20,Mobile or digital wallet,0,0.01141913
+1993,2022-12-20,International money transfer,0,0.01711644
+1994,2022-12-20,Debt settlement,0,0.01743967
+1995,2022-12-20,Check cashing service,0,0.02221657
+1996,2022-12-20,Domestic (US) money transfer,0,0.01256361
+1997,2022-12-20,Domestic (US) money transfer,0,0.01396449
+1998,2022-12-20,Mobile or digital wallet,0,0.01719535
+1999,2022-12-20,International money transfer,0,0.01888149
+2000,2022-12-20,Domestic (US) money transfer,0,0.01540961
+2001,2022-12-20,Money order,0,0.01834768
+2002,2022-12-20,Foreign currency exchange,1,0.01450431
+2003,2022-12-21,International money transfer,1,0.0154043
+2004,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2005,2022-12-21,Mobile or digital wallet,0,0.01140241
+2006,2022-12-21,Refund anticipation check,0,0.02297495
+2007,2022-12-21,Refund anticipation check,0,0.01898763
+2008,2022-12-21,Mobile or digital wallet,0,0.01140241
+2009,2022-12-21,International money transfer,0,0.01888149
+2010,2022-12-21,Mobile or digital wallet,0,0.01141913
+2011,2022-12-21,Check cashing service,0,0.02209805
+2012,2022-12-21,Mobile or digital wallet,0,0.00990455
+2013,2022-12-21,Refund anticipation check,0,0.02749614
+2014,2022-12-21,Domestic (US) money transfer,0,0.01540961
+2015,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2016,2022-12-21,Debt settlement,0,0.01743967
+2017,2022-12-21,Mobile or digital wallet,0,0.00990455
+2018,2022-12-21,Mobile or digital wallet,0,0.00990455
+2019,2022-12-21,Mobile or digital wallet,0,0.00990455
+2020,2022-12-21,Mobile or digital wallet,0,0.00990455
+2021,2022-12-21,Mobile or digital wallet,0,0.01141913
+2022,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2023,2022-12-21,Domestic (US) money transfer,0,0.01540961
+2024,2022-12-21,Refund anticipation check,0,0.02749614
+2025,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2026,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2027,2022-12-21,International money transfer,0,0.0154043
+2028,2022-12-21,International money transfer,0,0.01711644
+2029,2022-12-21,International money transfer,0,0.01711644
+2030,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2031,2022-12-21,Mobile or digital wallet,0,0.01141913
+2032,2022-12-21,Mobile or digital wallet,0,0.01140241
+2033,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2034,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2035,2022-12-21,Virtual currency,0,0.01366961
+2036,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2037,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2038,2022-12-21,Mobile or digital wallet,0,0.01141913
+2039,2022-12-21,Domestic (US) money transfer,0,0.01540961
+2040,2022-12-21,Virtual currency,0,0.01366961
+2041,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2042,2022-12-21,Check cashing service,0,0.02238478
+2043,2022-12-21,Virtual currency,0,0.01366961
+2044,2022-12-21,International money transfer,0,0.01711644
+2045,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2046,2022-12-21,International money transfer,0,0.01888149
+2047,2022-12-21,Virtual currency,0,0.01519191
+2048,2022-12-21,Domestic (US) money transfer,0,0.01540961
+2049,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2050,2022-12-21,Domestic (US) money transfer,0,0.01396449
+2051,2022-12-21,Domestic (US) money transfer,0,0.01256361
+2052,2022-12-21,Mobile or digital wallet,0,0.01140241
+2053,2022-12-21,Mobile or digital wallet,0,0.01140241
+2054,2022-12-21,Traveler's check or cashier's check,0,0.01718106
+2055,2022-12-21,International money transfer,0,0.01711644
+2056,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2057,2022-12-22,Virtual currency,1,0.01366961
+2058,2022-12-22,Refund anticipation check,0,0.02285248
+2059,2022-12-22,Domestic (US) money transfer,0,0.01467983
+2060,2022-12-22,Virtual currency,0,0.01676189
+2061,2022-12-22,Mobile or digital wallet,0,0.01374495
+2062,2022-12-22,Domestic (US) money transfer,0,0.01396449
+2063,2022-12-22,Mobile or digital wallet,0,0.01141913
+2064,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2065,2022-12-22,Mobile or digital wallet,0,0.01140241
+2066,2022-12-22,Domestic (US) money transfer,0,0.01396449
+2067,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2068,2022-12-22,Virtual currency,0,0.01676189
+2069,2022-12-22,International money transfer,0,0.01711644
+2070,2022-12-22,Virtual currency,0,0.01366961
+2071,2022-12-22,Domestic (US) money transfer,0,0.01514106
+2072,2022-12-22,International money transfer,0,0.0154043
+2073,2022-12-22,Mobile or digital wallet,0,0.01140241
+2074,2022-12-22,Mobile or digital wallet,0,0.01140241
+2075,2022-12-22,International money transfer,0,0.0154043
+2076,2022-12-22,Domestic (US) money transfer,0,0.01540961
+2077,2022-12-22,Domestic (US) money transfer,0,0.01540961
+2078,2022-12-22,Mobile or digital wallet,0,0.00990455
+2079,2022-12-22,Foreign currency exchange,0,0.0176393
+2080,2022-12-22,Domestic (US) money transfer,0,0.01396449
+2081,2022-12-22,Domestic (US) money transfer,0,0.01514106
+2082,2022-12-22,Virtual currency,0,0.01596911
+2083,2022-12-22,Mobile or digital wallet,0,0.01140241
+2084,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2085,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2086,2022-12-22,Mobile or digital wallet,0,0.01140241
+2087,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2088,2022-12-22,Refund anticipation check,0,0.02306896
+2089,2022-12-22,Refund anticipation check,0,0.02306896
+2090,2022-12-22,Refund anticipation check,0,0.02306896
+2091,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2092,2022-12-22,Mobile or digital wallet,0,0.01141913
+2093,2022-12-22,Virtual currency,0,0.01519191
+2094,2022-12-22,Debt settlement,0,0.01743967
+2095,2022-12-22,Domestic (US) money transfer,0,0.01396449
+2096,2022-12-22,Mobile or digital wallet,0,0.01141913
+2097,2022-12-22,Traveler's check or cashier's check,0,0.01725178
+2098,2022-12-22,Mobile or digital wallet,0,0.00990455
+2099,2022-12-22,Mobile or digital wallet,0,0.00990455
+2100,2022-12-22,Domestic (US) money transfer,0,0.01514106
+2101,2022-12-22,Mobile or digital wallet,0,0.00990455
+2102,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2103,2022-12-22,Virtual currency,0,0.01366961
+2104,2022-12-22,Domestic (US) money transfer,0,0.01256361
+2105,2022-12-22,Domestic (US) money transfer,0,0.01396449
+2106,2022-12-22,Virtual currency,0,0.01647017
+2107,2022-12-22,Mobile or digital wallet,0,0.00990455
+2108,2022-12-23,Virtual currency,0,0.01366961
+2109,2022-12-23,Domestic (US) money transfer,0,0.01256361
+2110,2022-12-23,Domestic (US) money transfer,0,0.01540961
+2111,2022-12-23,Mobile or digital wallet,0,0.01140241
+2112,2022-12-23,International money transfer,0,0.01888149
+2113,2022-12-23,Virtual currency,0,0.01662722
+2114,2022-12-23,Check cashing service,0,0.01835839
+2115,2022-12-23,Mobile or digital wallet,0,0.01392484
+2116,2022-12-23,Money order,0,0.01844646
+2117,2022-12-23,Mobile or digital wallet,0,0.01140241
+2118,2022-12-23,Virtual currency,0,0.01366961
+2119,2022-12-23,Mobile or digital wallet,0,0.00990455
+2120,2022-12-23,International money transfer,0,0.0154043
+2121,2022-12-23,Mobile or digital wallet,0,0.01140241
+2122,2022-12-23,Mobile or digital wallet,0,0.01141913
+2123,2022-12-23,Mobile or digital wallet,0,0.00990455
+2124,2022-12-23,Domestic (US) money transfer,0,0.01396449
+2125,2022-12-23,Domestic (US) money transfer,0,0.01396449
+2126,2022-12-23,Check cashing service,0,0.01835839
+2127,2022-12-23,Virtual currency,0,0.01366961
+2128,2022-12-23,International money transfer,0,0.01888149
+2129,2022-12-23,Domestic (US) money transfer,0,0.01256361
+2130,2022-12-23,International money transfer,0,0.01708888
+2131,2022-12-24,International money transfer,0,0.01888149
+2132,2022-12-24,Domestic (US) money transfer,0,0.01256361
+2133,2022-12-24,Mobile or digital wallet,0,0.01387638
+2134,2022-12-24,Virtual currency,0,0.01366961
+2135,2022-12-24,Mobile or digital wallet,0,0.00990455
+2136,2022-12-24,Domestic (US) money transfer,0,0.01540961
+2137,2022-12-24,Mobile or digital wallet,0,0.00990455
+2138,2022-12-24,Mobile or digital wallet,0,0.00990455
+2139,2022-12-24,Mobile or digital wallet,0,0.00990455
+2140,2022-12-24,International money transfer,0,0.01711644
+2141,2022-12-24,Mobile or digital wallet,0,0.00990455
+2142,2022-12-24,International money transfer,0,0.01711644
+2143,2022-12-24,Virtual currency,0,0.01676189
+2144,2022-12-24,Money order,0,0.01523281
+2145,2022-12-24,Virtual currency,0,0.01596911
+2146,2022-12-24,Domestic (US) money transfer,0,0.01256361
+2147,2022-12-24,Domestic (US) money transfer,0,0.01396449
+2148,2022-12-24,Money order,0,0.01752141
+2149,2022-12-24,Domestic (US) money transfer,0,0.01540961
+2150,2022-12-24,Mobile or digital wallet,0,0.01140241
+2151,2022-12-24,Virtual currency,0,0.01676189
+2152,2022-12-24,Virtual currency,0,0.01366961
+2153,2022-12-24,Mobile or digital wallet,0,0.01140241
+2154,2022-12-24,Mobile or digital wallet,0,0.01141913
+2155,2022-12-24,Debt settlement,0,0.02110892
+2156,2022-12-24,Mobile or digital wallet,0,0.00990455
+2157,2022-12-24,Money order,0,0.01523281
+2158,2022-12-24,Money order,0,0.01752141
+2159,2022-12-24,Domestic (US) money transfer,0,0.01396449
+2160,2022-12-24,International money transfer,0,0.01888149
+2161,2022-12-24,Domestic (US) money transfer,0,0.01540961
+2162,2022-12-24,Domestic (US) money transfer,0,0.01396449
+2163,2022-12-24,Mobile or digital wallet,0,0.01140241
+2164,2022-12-24,Mobile or digital wallet,0,0.00990455
+2165,2022-12-25,Domestic (US) money transfer,0,0.01256361
+2166,2022-12-25,Mobile or digital wallet,0,0.01141913
+2167,2022-12-25,Mobile or digital wallet,0,0.01440215
+2168,2022-12-25,Domestic (US) money transfer,0,0.01540961
+2169,2022-12-25,Virtual currency,0,0.01366961
+2170,2022-12-25,Virtual currency,0,0.01366961
+2171,2022-12-26,Domestic (US) money transfer,0,0.01394194
+2172,2022-12-26,Mobile or digital wallet,0,0.00990455
+2173,2022-12-26,Virtual currency,0,0.01366961
+2174,2022-12-26,Domestic (US) money transfer,0,0.01256361
+2175,2022-12-26,Mobile or digital wallet,0,0.00990455
+2176,2022-12-26,Mobile or digital wallet,0,0.00990455
+2177,2022-12-26,Mobile or digital wallet,0,0.00990455
+2178,2022-12-26,Mobile or digital wallet,0,0.00990455
+2179,2022-12-26,Domestic (US) money transfer,0,0.01256361
+2180,2022-12-26,Virtual currency,0,0.01366961
+2181,2022-12-26,Virtual currency,0,0.01366961
+2182,2022-12-26,Mobile or digital wallet,0,0.01140241
+2183,2022-12-26,Mobile or digital wallet,0,0.00990455
+2184,2022-12-26,Mobile or digital wallet,0,0.00990455
+2185,2022-12-26,Domestic (US) money transfer,0,0.01256361
+2186,2022-12-26,Mobile or digital wallet,0,0.01140241
+2187,2022-12-26,Check cashing service,0,0.02209805
+2188,2022-12-26,Domestic (US) money transfer,0,0.01540961
+2189,2022-12-26,Mobile or digital wallet,0,0.01140241
+2190,2022-12-26,Domestic (US) money transfer,0,0.01256361
+2191,2022-12-26,International money transfer,0,0.0154043
+2192,2022-12-26,Domestic (US) money transfer,1,0.01256361
+2193,2022-12-26,Domestic (US) money transfer,0,0.01256361
+2194,2022-12-26,Virtual currency,0,0.01519191
+2195,2022-12-27,Domestic (US) money transfer,0,0.01396449
+2196,2022-12-27,Virtual currency,0,0.01366961
+2197,2022-12-27,Money order,0,0.01844646
+2198,2022-12-27,Foreign currency exchange,0,0.01756702
+2199,2022-12-27,Mobile or digital wallet,0,0.01140241
+2200,2022-12-27,Mobile or digital wallet,0,0.00990455
+2201,2022-12-27,Mobile or digital wallet,0,0.00990455
+2202,2022-12-27,Mobile or digital wallet,0,0.00990455
+2203,2022-12-27,Mobile or digital wallet,0,0.00990455
+2204,2022-12-27,Mobile or digital wallet,0,0.00990455
+2205,2022-12-27,Mobile or digital wallet,0,0.00990455
+2206,2022-12-27,Mobile or digital wallet,0,0.01141913
+2207,2022-12-27,International money transfer,0,0.0154043
+2208,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2209,2022-12-27,Virtual currency,0,0.01366961
+2210,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2211,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2212,2022-12-27,Mobile or digital wallet,0,0.00990455
+2213,2022-12-27,International money transfer,0,0.01888149
+2214,2022-12-27,Check cashing service,1,0.01835839
+2215,2022-12-27,Domestic (US) money transfer,0,0.01540961
+2216,2022-12-27,Domestic (US) money transfer,0,0.01540961
+2217,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2218,2022-12-27,Mobile or digital wallet,0,0.01140241
+2219,2022-12-27,Domestic (US) money transfer,0,0.01396449
+2220,2022-12-27,Money order,0,0.01523281
+2221,2022-12-27,Virtual currency,0,0.01676189
+2222,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2223,2022-12-27,Domestic (US) money transfer,0,0.01396449
+2224,2022-12-27,Mobile or digital wallet,0,0.00990455
+2225,2022-12-27,Mobile or digital wallet,0,0.00990455
+2226,2022-12-27,Domestic (US) money transfer,0,0.01256361
+2227,2022-12-27,Virtual currency,0,0.01366961
+2228,2022-12-27,Domestic (US) money transfer,0,0.01540961
+2229,2022-12-27,International money transfer,0,0.0154043
+2230,2022-12-27,Mobile or digital wallet,0,0.01141913
+2231,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2232,2022-12-28,Virtual currency,0,0.01519191
+2233,2022-12-28,Virtual currency,1,0.01366961
+2234,2022-12-28,Virtual currency,0,0.01596911
+2235,2022-12-28,Mobile or digital wallet,0,0.00990455
+2236,2022-12-28,Mobile or digital wallet,1,0.01141913
+2237,2022-12-28,Mobile or digital wallet,0,0.01140241
+2238,2022-12-28,Mobile or digital wallet,0,0.01141913
+2239,2022-12-28,Virtual currency,0,0.01366961
+2240,2022-12-28,International money transfer,0,0.01711644
+2241,2022-12-28,Mobile or digital wallet,0,0.00990455
+2242,2022-12-28,Mobile or digital wallet,0,0.00990455
+2243,2022-12-28,Virtual currency,0,0.01366961
+2244,2022-12-28,Mobile or digital wallet,0,0.01140241
+2245,2022-12-28,Mobile or digital wallet,0,0.01140241
+2246,2022-12-28,Virtual currency,0,0.01676189
+2247,2022-12-28,Mobile or digital wallet,0,0.00990455
+2248,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2249,2022-12-28,Mobile or digital wallet,0,0.00990455
+2250,2022-12-28,Virtual currency,0,0.01366961
+2251,2022-12-28,Money order,0,0.01844646
+2252,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2253,2022-12-28,Domestic (US) money transfer,0,0.01396449
+2254,2022-12-28,Mobile or digital wallet,0,0.00990455
+2255,2022-12-28,Mobile or digital wallet,0,0.01141913
+2256,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2257,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2258,2022-12-28,Domestic (US) money transfer,0,0.01540961
+2259,2022-12-28,Virtual currency,0,0.01366961
+2260,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2261,2022-12-28,Mobile or digital wallet,0,0.00990455
+2262,2022-12-28,Domestic (US) money transfer,0,0.01396449
+2263,2022-12-28,Virtual currency,0,0.01366961
+2264,2022-12-28,Mobile or digital wallet,0,0.01140241
+2265,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2266,2022-12-28,Mobile or digital wallet,0,0.01140241
+2267,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2268,2022-12-28,Domestic (US) money transfer,0,0.01396449
+2269,2022-12-28,International money transfer,0,0.01799029
+2270,2022-12-28,Domestic (US) money transfer,0,0.01396449
+2271,2022-12-28,Mobile or digital wallet,0,0.01140241
+2272,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2273,2022-12-28,Domestic (US) money transfer,0,0.01396449
+2274,2022-12-28,Domestic (US) money transfer,0,0.01256361
+2275,2022-12-28,Domestic (US) money transfer,0,0.01540961
+2276,2022-12-29,Domestic (US) money transfer,0,0.01396449
+2277,2022-12-29,International money transfer,0,0.01711644
+2278,2022-12-29,Virtual currency,0,0.01676189
+2279,2022-12-29,Virtual currency,0,0.01366961
+2280,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2281,2022-12-29,International money transfer,0,0.01711644
+2282,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2283,2022-12-29,Mobile or digital wallet,0,0.01141913
+2284,2022-12-29,Virtual currency,0,0.01519191
+2285,2022-12-29,Mobile or digital wallet,0,0.01140241
+2286,2022-12-29,Money order,0,0.01752141
+2287,2022-12-29,Domestic (US) money transfer,0,0.01540961
+2288,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2289,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2290,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2291,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2292,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2293,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2294,2022-12-29,Mobile or digital wallet,0,0.01141913
+2295,2022-12-29,Mobile or digital wallet,0,0.00990455
+2296,2022-12-29,Mobile or digital wallet,0,0.01140241
+2297,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2298,2022-12-29,International money transfer,0,0.01711644
+2299,2022-12-29,Traveler's check or cashier's check,0,0.01418468
+2300,2022-12-29,Domestic (US) money transfer,0,0.01256361
+2301,2022-12-29,Domestic (US) money transfer,0,0.01540961
+2302,2022-12-29,Mobile or digital wallet,0,0.00990455
+2303,2022-12-29,Mobile or digital wallet,0,0.00990455
+2304,2022-12-29,Foreign currency exchange,0,0.02349346
+2305,2022-12-29,Debt settlement,0,0.02099618
+2306,2022-12-29,Mobile or digital wallet,0,0.00990455
+2307,2022-12-29,Mobile or digital wallet,0,0.00990455
+2308,2022-12-29,Virtual currency,0,0.01662722
+2309,2022-12-29,Domestic (US) money transfer,0,0.01540961
+2310,2022-12-29,Debt settlement,1,0.02099618
+2311,2022-12-29,Virtual currency,0,0.01596911
+2312,2022-12-29,Mobile or digital wallet,0,0.01140241
+2313,2022-12-29,Mobile or digital wallet,0,0.00990455
+2314,2022-12-29,Domestic (US) money transfer,0,0.01540961
+2315,2022-12-29,Debt settlement,0,0.01743967
+2316,2022-12-30,Mobile or digital wallet,0,0.01140241
+2317,2022-12-30,Virtual currency,0,0.01366961
+2318,2022-12-30,Mobile or digital wallet,0,0.01140241
+2319,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2320,2022-12-30,Mobile or digital wallet,0,0.01140241
+2321,2022-12-30,Virtual currency,0,0.01519191
+2322,2022-12-30,Refund anticipation check,0,0.01898763
+2323,2022-12-30,Virtual currency,0,0.01366961
+2324,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2325,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2326,2022-12-30,International money transfer,0,0.01711644
+2327,2022-12-30,Refund anticipation check,0,0.02749614
+2328,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2329,2022-12-30,Virtual currency,0,0.01366961
+2330,2022-12-30,International money transfer,0,0.01888149
+2331,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2332,2022-12-30,Mobile or digital wallet,0,0.01141913
+2333,2022-12-30,Mobile or digital wallet,0,0.01140241
+2334,2022-12-30,Domestic (US) money transfer,0,0.01540961
+2335,2022-12-30,Mobile or digital wallet,0,0.00990455
+2336,2022-12-30,Virtual currency,0,0.01366961
+2337,2022-12-30,Mobile or digital wallet,0,0.00990455
+2338,2022-12-30,Mobile or digital wallet,0,0.01141913
+2339,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2340,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2341,2022-12-30,Mobile or digital wallet,0,0.01140241
+2342,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2343,2022-12-30,Virtual currency,0,0.01519191
+2344,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2345,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2346,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2347,2022-12-30,International money transfer,0,0.0154043
+2348,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2349,2022-12-30,Virtual currency,1,0.01366961
+2350,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2351,2022-12-30,International money transfer,0,0.01888149
+2352,2022-12-30,Mobile or digital wallet,0,0.00990455
+2353,2022-12-30,Mobile or digital wallet,0,0.01141913
+2354,2022-12-30,Check cashing service,0,0.01835839
+2355,2022-12-30,Mobile or digital wallet,0,0.01140241
+2356,2022-12-30,Check cashing service,0,0.01835839
+2357,2022-12-30,Domestic (US) money transfer,0,0.01540961
+2358,2022-12-30,International money transfer,0,0.01711644
+2359,2022-12-30,International money transfer,0,0.01799029
+2360,2022-12-30,International money transfer,0,0.01888149
+2361,2022-12-30,Mobile or digital wallet,0,0.01141913
+2362,2022-12-30,Virtual currency,0,0.01519191
+2363,2022-12-30,Mobile or digital wallet,0,0.01140241
+2364,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2365,2022-12-30,Mobile or digital wallet,0,0.00990455
+2366,2022-12-30,International money transfer,0,0.0154043
+2367,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2368,2022-12-30,International money transfer,0,0.0154043
+2369,2022-12-30,Domestic (US) money transfer,0,0.01396449
+2370,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2371,2022-12-30,Mobile or digital wallet,0,0.01141913
+2372,2022-12-30,Virtual currency,0,0.01366961
+2373,2022-12-30,Mobile or digital wallet,0,0.01140241
+2374,2022-12-30,Mobile or digital wallet,0,0.01141913
+2375,2022-12-30,Virtual currency,0,0.01519191
+2376,2022-12-30,Domestic (US) money transfer,0,0.01540961
+2377,2022-12-30,International money transfer,0,0.01711644
+2378,2022-12-30,International money transfer,0,0.01888149
+2379,2022-12-30,Domestic (US) money transfer,0,0.01256361
+2380,2022-12-31,Refund anticipation check,0,0.02749614
+2381,2022-12-31,Mobile or digital wallet,0,0.01140241
+2382,2022-12-31,Money order,0,0.01752141
+2383,2022-12-31,Virtual currency,0,0.01676189
+2384,2022-12-31,Mobile or digital wallet,0,0.01141913
+2385,2022-12-31,Domestic (US) money transfer,0,0.01528563
+2386,2022-12-31,International money transfer,0,0.01711644
+2387,2022-12-31,Mobile or digital wallet,0,0.01141913
+2388,2022-12-31,International money transfer,0,0.0154043
+2389,2022-12-31,Domestic (US) money transfer,0,0.01467983
+2390,2022-12-31,Domestic (US) money transfer,0,0.01256361
+2391,2022-12-31,Mobile or digital wallet,0,0.01141913
+2392,2022-12-31,Domestic (US) money transfer,0,0.01256361
+2393,2022-12-31,International money transfer,0,0.01888149
+2394,2022-12-31,Domestic (US) money transfer,0,0.01256361
+2395,2022-12-31,Virtual currency,0,0.01676189
+2396,2022-12-31,Mobile or digital wallet,0,0.01140241

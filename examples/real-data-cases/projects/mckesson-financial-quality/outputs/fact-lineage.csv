@@ -1,0 +1,313 @@
+entity,cik,fiscal_year,metric,tag,start,end,value_usd,filed,accession,selection_rule
+McKesson,0000927653,2018,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2017-04-01,2018-03-31,208357000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,gross_profit,GrossProfit,2017-04-01,2018-03-31,11184000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,operating_income,OperatingIncomeLoss,2017-04-01,2018-03-31,762000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,net_income,NetIncomeLoss,2017-04-01,2018-03-31,67000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2017-04-01,2018-03-31,4345000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2017-04-01,2018-03-31,405000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,inventory,InventoryNet,,2018-03-31,16310000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,receivables,ReceivablesNetCurrent,,2018-03-31,17711000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,accounts_payable,AccountsPayableCurrent,,2018-03-31,32177000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,assets,Assets,,2018-03-31,60381000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,equity,StockholdersEquity,,2018-03-31,9804000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,cash,CashAndCashEquivalentsAtCarryingValue,,2018-03-31,2672000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2018,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2018-03-31,6751000000,2019-05-15,0000927653-19-000009,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2018-04-01,2019-03-31,214319000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,gross_profit,GrossProfit,2018-04-01,2019-03-31,11754000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,operating_income,OperatingIncomeLoss,2018-04-01,2019-03-31,886000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,net_income,NetIncomeLoss,2018-04-01,2019-03-31,34000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2018-04-01,2019-03-31,4036000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2018-04-01,2019-03-31,426000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,inventory,InventoryNet,,2019-03-31,16709000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,receivables,ReceivablesNetCurrent,,2019-03-31,18246000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,accounts_payable,AccountsPayableCurrent,,2019-03-31,33853000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,assets,Assets,,2019-03-31,59672000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,equity,StockholdersEquity,,2019-03-31,8094000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,cash,CashAndCashEquivalentsAtCarryingValue,,2019-03-31,2981000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2019,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2019-03-31,7265000000,2020-05-22,0000927653-20-000033,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2019-04-01,2020-03-31,231051000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,gross_profit,GrossProfit,2019-04-01,2020-03-31,12023000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,operating_income,OperatingIncomeLoss,2019-04-01,2020-03-31,2489000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,net_income,NetIncomeLoss,2019-04-01,2020-03-31,900000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2019-04-01,2020-03-31,4374000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2019-04-01,2020-03-31,362000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,inventory,InventoryNet,,2020-03-31,16734000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,receivables,ReceivablesNetCurrent,,2020-03-31,19950000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,accounts_payable,AccountsPayableCurrent,,2020-03-31,37195000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,assets,Assets,,2020-03-31,61247000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,equity,StockholdersEquity,,2020-03-31,5092000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,cash,CashAndCashEquivalentsAtCarryingValue,,2020-03-31,4015000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2020,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2020-03-31,6335000000,2021-05-12,0000927653-21-000039,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2020-04-01,2021-03-31,238228000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,gross_profit,GrossProfit,2020-04-01,2021-03-31,12148000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,operating_income,OperatingIncomeLoss,2020-04-01,2021-03-31,-5040000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,net_income,NetIncomeLoss,2020-04-01,2021-03-31,-4539000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2020-04-01,2021-03-31,4542000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2020-04-01,2021-03-31,451000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,inventory,InventoryNet,,2021-03-31,19246000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,receivables,ReceivablesNetCurrent,,2021-03-31,19181000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,accounts_payable,AccountsPayableCurrent,,2021-03-31,38975000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,assets,Assets,,2021-03-31,65015000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,equity,StockholdersEquity,,2021-03-31,-21000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,cash,CashAndCashEquivalentsAtCarryingValue,,2021-03-31,6278000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2021,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2021-03-31,6406000000,2022-05-09,0000927653-22-000051,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2021-04-01,2022-03-31,263966000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,gross_profit,GrossProfit,2021-04-01,2022-03-31,13130000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,operating_income,OperatingIncomeLoss,2021-04-01,2022-03-31,2038000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,net_income,NetIncomeLoss,2021-04-01,2022-03-31,1114000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2021-04-01,2022-03-31,4434000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2021-04-01,2022-03-31,388000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,inventory,InventoryNet,,2022-03-31,18702000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,receivables,ReceivablesNetCurrent,,2022-03-31,18583000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,accounts_payable,AccountsPayableCurrent,,2022-03-31,38086000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,assets,Assets,,2022-03-31,63298000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,equity,StockholdersEquity,,2022-03-31,-2272000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,cash,CashAndCashEquivalentsAtCarryingValue,,2022-03-31,3532000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2022,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2022-03-31,5080000000,2023-05-09,0000927653-23-000038,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2022-04-01,2023-03-31,276711000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,gross_profit,GrossProfit,2022-04-01,2023-03-31,12358000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,operating_income,OperatingIncomeLoss,2022-04-01,2023-03-31,4381000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,net_income,NetIncomeLoss,2022-04-01,2023-03-31,3560000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2022-04-01,2023-03-31,5159000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2022-04-01,2023-03-31,390000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,inventory,InventoryNet,,2023-03-31,19691000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,receivables,ReceivablesNetCurrent,,2023-03-31,19410000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,accounts_payable,AccountsPayableCurrent,,2023-03-31,42490000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,assets,Assets,,2023-03-31,62320000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,equity,StockholdersEquity,,2023-03-31,-1857000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,cash,CashAndCashEquivalentsAtCarryingValue,,2023-03-31,4678000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2023,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2023-03-31,4626000000,2024-05-08,0000927653-24-000035,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2023-04-01,2024-03-31,308951000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,gross_profit,GrossProfit,2023-04-01,2024-03-31,12828000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,operating_income,OperatingIncomeLoss,2023-04-01,2024-03-31,3909000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,net_income,NetIncomeLoss,2023-04-01,2024-03-31,3002000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2023-04-01,2024-03-31,4314000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2023-04-01,2024-03-31,431000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,inventory,InventoryNet,,2024-03-31,21139000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,receivables,ReceivablesNetCurrent,,2024-03-31,21622000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,accounts_payable,AccountsPayableCurrent,,2024-03-31,47097000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,assets,Assets,,2024-03-31,67443000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,equity,StockholdersEquity,,2024-03-31,-1971000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,cash,CashAndCashEquivalentsAtCarryingValue,,2024-03-31,4583000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2024,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2024-03-31,5579000000,2025-05-09,0000927653-25-000036,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,revenue,RevenueFromContractWithCustomerExcludingAssessedTax,2024-04-01,2025-03-31,359051000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,gross_profit,GrossProfit,2024-04-01,2025-03-31,13323000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,operating_income,OperatingIncomeLoss,2024-04-01,2025-03-31,4422000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,net_income,NetIncomeLoss,2024-04-01,2025-03-31,3295000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2024-04-01,2025-03-31,6085000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2024-04-01,2025-03-31,537000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,inventory,InventoryNet,,2025-03-31,23001000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,receivables,ReceivablesNetCurrent,,2025-03-31,25643000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,accounts_payable,AccountsPayableCurrent,,2025-03-31,55330000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,assets,Assets,,2025-03-31,75140000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,equity,StockholdersEquity,,2025-03-31,-2074000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,cash,CashAndCashEquivalentsAtCarryingValue,,2025-03-31,5691000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+McKesson,0000927653,2025,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2025-03-31,4463000000,2026-05-08,0000927653-26-000069,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,revenue,Revenues,2017-07-01,2018-06-30,136809000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,gross_profit,GrossProfit,2017-07-01,2018-06-30,7181000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,operating_income,OperatingIncomeLoss,2017-07-01,2018-06-30,126000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,net_income,NetIncomeLoss,2017-07-01,2018-06-30,256000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2017-07-01,2018-06-30,2768000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2017-07-01,2018-06-30,384000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,inventory,InventoryNet,,2018-06-30,12308000000,2019-08-20,0000721371-19-000090,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,receivables,ReceivablesNetCurrent,,2018-06-30,7800000000,2019-08-20,0000721371-19-000090,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,accounts_payable,AccountsPayableCurrent,,2018-06-30,19677000000,2019-08-20,0000721371-19-000090,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,assets,Assets,,2018-06-30,39951000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,equity,StockholdersEquity,,2018-06-30,6059000000,2019-08-20,0000721371-19-000090,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,cash,CashAndCashEquivalentsAtCarryingValue,,2018-06-30,1763000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2018,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2018-06-30,8012000000,2019-08-20,0000721371-19-000090,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,revenue,Revenues,2018-07-01,2019-06-30,145534000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,gross_profit,GrossProfit,2018-07-01,2019-06-30,6834000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,operating_income,OperatingIncomeLoss,2018-07-01,2019-06-30,2060000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,net_income,NetIncomeLoss,2018-07-01,2019-06-30,1363000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2018-07-01,2019-06-30,2722000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2018-07-01,2019-06-30,328000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,inventory,InventoryNet,,2019-06-30,12822000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,receivables,ReceivablesNetCurrent,,2019-06-30,8448000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,accounts_payable,AccountsPayableCurrent,,2019-06-30,21535000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,assets,Assets,,2019-06-30,40963000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,equity,StockholdersEquity,,2019-06-30,6328000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,cash,CashAndCashEquivalentsAtCarryingValue,,2019-06-30,2531000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2019,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2019-06-30,7579000000,2020-08-13,0000721371-20-000089,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,revenue,Revenues,2019-07-01,2020-06-30,152922000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,gross_profit,GrossProfit,2019-07-01,2020-06-30,6868000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,operating_income,OperatingIncomeLoss,2019-07-01,2020-06-30,-4098000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,net_income,NetIncomeLoss,2019-07-01,2020-06-30,-3696000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2019-07-01,2020-06-30,1960000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2019-07-01,2020-06-30,375000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,inventory,InventoryNet,,2020-06-30,13198000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,receivables,ReceivablesNetCurrent,,2020-06-30,8264000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,accounts_payable,AccountsPayableCurrent,,2020-06-30,21374000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,assets,Assets,,2020-06-30,40766000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,equity,StockholdersEquity,,2020-06-30,1789000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,cash,CashAndCashEquivalentsAtCarryingValue,,2020-06-30,2771000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2020,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2020-06-30,6765000000,2021-08-16,0000721371-21-000080,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,revenue,Revenues,2020-07-01,2021-06-30,162467000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,gross_profit,GrossProfit,2020-07-01,2021-06-30,6778000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,operating_income,OperatingIncomeLoss,2020-07-01,2021-06-30,472000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,net_income,NetIncomeLoss,2020-07-01,2021-06-30,611000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2020-07-01,2021-06-30,2429000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2020-07-01,2021-06-30,400000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,inventory,InventoryNet,,2021-06-30,14594000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,receivables,ReceivablesNetCurrent,,2021-06-30,9103000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,accounts_payable,AccountsPayableCurrent,,2021-06-30,23700000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,assets,Assets,,2021-06-30,44453000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,equity,StockholdersEquity,,2021-06-30,1791000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,cash,CashAndCashEquivalentsAtCarryingValue,,2021-06-30,3407000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2021,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2021-06-30,5365000000,2022-08-11,0000721371-22-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,revenue,Revenues,2021-07-01,2022-06-30,181326000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,gross_profit,GrossProfit,2021-07-01,2022-06-30,6484000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,operating_income,OperatingIncomeLoss,2021-07-01,2022-06-30,-607000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,net_income,NetIncomeLoss,2021-07-01,2022-06-30,-938000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2021-07-01,2022-06-30,3175000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2021-07-01,2022-06-30,387000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,inventory,InventoryNet,,2022-06-30,15636000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,receivables,ReceivablesNetCurrent,,2022-06-30,10561000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,accounts_payable,AccountsPayableCurrent,,2022-06-30,27128000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,assets,Assets,,2022-06-30,43878000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,equity,StockholdersEquity,,2022-06-30,-709000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,cash,CashAndCashEquivalentsAtCarryingValue,,2022-06-30,4717000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2022,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2022-06-30,4735000000,2023-08-15,0000721371-23-000060,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,revenue,Revenues,2022-07-01,2023-06-30,204979000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,gross_profit,GrossProfit,2022-07-01,2023-06-30,6874000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,operating_income,OperatingIncomeLoss,2022-07-01,2023-06-30,752000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,net_income,NetIncomeLoss,2022-07-01,2023-06-30,330000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2022-07-01,2023-06-30,2844000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2022-07-01,2023-06-30,481000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,inventory,InventoryNet,,2023-06-30,16119000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,receivables,ReceivablesNetCurrent,,2023-06-30,11108000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,accounts_payable,AccountsPayableCurrent,,2023-06-30,29934000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,assets,Assets,,2023-06-30,43349000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,equity,StockholdersEquity,,2023-06-30,-2958000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,cash,CashAndCashEquivalentsAtCarryingValue,,2023-06-30,4076000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2023,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2023-06-30,3909000000,2024-08-14,0000721371-24-000056,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,revenue,Revenues,2023-07-01,2024-06-30,226827000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,gross_profit,GrossProfit,2023-07-01,2024-06-30,7414000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,operating_income,OperatingIncomeLoss,2023-07-01,2024-06-30,1243000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,net_income,NetIncomeLoss,2023-07-01,2024-06-30,852000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2023-07-01,2024-06-30,3762000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2023-07-01,2024-06-30,511000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,inventory,InventoryNet,,2024-06-30,14957000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,receivables,ReceivablesNetCurrent,,2024-06-30,12084000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,accounts_payable,AccountsPayableCurrent,,2024-06-30,31759000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,assets,Assets,,2024-06-30,45121000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,equity,StockholdersEquity,,2024-06-30,-3213000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,cash,CashAndCashEquivalentsAtCarryingValue,,2024-06-30,5133000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2024,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2024-06-30,4658000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,revenue,Revenues,2024-07-01,2025-06-30,222578000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,gross_profit,GrossProfit,2024-07-01,2025-06-30,8168000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,operating_income,OperatingIncomeLoss,2024-07-01,2025-06-30,2275000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,net_income,NetIncomeLoss,2024-07-01,2025-06-30,1561000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2024-07-01,2025-06-30,2397000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2024-07-01,2025-06-30,547000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,inventory,InventoryNet,,2025-06-30,16831000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,receivables,ReceivablesNetCurrent,,2025-06-30,13242000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,accounts_payable,AccountsPayableCurrent,,2025-06-30,34713000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,assets,Assets,,2025-06-30,53122000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,equity,StockholdersEquity,,2025-06-30,-2781000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,cash,CashAndCashEquivalentsAtCarryingValue,,2025-06-30,3874000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cardinal Health,0000721371,2025,long_term_debt,LongTermDebtAndCapitalLeaseObligations,,2025-06-30,7977000000,2025-08-12,0000721371-25-000079,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,revenue,Revenues,2017-10-01,2018-09-30,167939635000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,gross_profit,GrossProfit,2017-10-01,2018-09-30,4612317000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,operating_income,OperatingIncomeLoss,2017-10-01,2018-09-30,1443685000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,net_income,NetIncomeLoss,2017-10-01,2018-09-30,1658405000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2017-10-01,2018-09-30,1411388000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2017-10-01,2018-09-30,336411000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,inventory,InventoryNet,,2018-09-30,11918508000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,receivables,AccountsReceivableNetCurrent,,2018-09-30,11314226000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,accounts_payable,AccountsPayableCurrent,,2018-09-30,26836873000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,assets,Assets,,2018-09-30,37669838000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,equity,StockholdersEquity,,2018-09-30,2932824000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,cash,CashAndCashEquivalentsAtCarryingValue,,2018-09-30,2492516000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2018,long_term_debt,LongTermDebtNoncurrent,,2018-09-30,4158532000,2019-11-19,0001140859-19-000040,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,revenue,Revenues,2018-10-01,2019-09-30,179589121000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,gross_profit,GrossProfit,2018-10-01,2019-09-30,5138312000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,operating_income,OperatingIncomeLoss,2018-10-01,2019-09-30,1111923000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,net_income,NetIncomeLoss,2018-10-01,2019-09-30,855365000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2018-10-01,2019-09-30,2344023000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2018-10-01,2019-09-30,310222000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,inventory,InventoryNet,,2019-09-30,11060254000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,receivables,AccountsReceivableNetCurrent,,2019-09-30,12386879000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,accounts_payable,AccountsPayableCurrent,,2019-09-30,28385074000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,assets,Assets,,2019-09-30,39171980000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,equity,StockholdersEquity,,2019-09-30,2878917000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,cash,CashAndCashEquivalentsAtCarryingValue,,2019-09-30,3374194000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2019,long_term_debt,LongTermDebtNoncurrent,,2019-09-30,4033880000,2020-11-19,0001140859-20-000050,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,revenue,Revenues,2019-10-01,2020-09-30,189893926000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,gross_profit,GrossProfit,2019-10-01,2020-09-30,5191884000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,operating_income,OperatingIncomeLoss,2019-10-01,2020-09-30,-5135354000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,net_income,NetIncomeLoss,2019-10-01,2020-09-30,-3408716000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2019-10-01,2020-09-30,2207040000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2019-10-01,2020-09-30,369677000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,inventory,InventoryNet,,2020-09-30,12589278000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,receivables,AccountsReceivableNetCurrent,,2020-09-30,13846301000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,accounts_payable,AccountsPayableCurrent,,2020-09-30,31705055000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,assets,Assets,,2020-09-30,44274830000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,equity,StockholdersEquity,,2020-09-30,-1018924000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,cash,CashAndCashEquivalentsAtCarryingValue,,2020-09-30,4597746000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2020,long_term_debt,LongTermDebt,,2020-09-30,4119520000,2021-11-23,0001140859-21-000058,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,revenue,Revenues,2020-10-01,2021-09-30,213988843000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,gross_profit,GrossProfit,2020-10-01,2021-09-30,6943228000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,operating_income,OperatingIncomeLoss,2020-10-01,2021-09-30,2354197000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,net_income,NetIncomeLoss,2020-10-01,2021-09-30,1539932000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2020-10-01,2021-09-30,2666586000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2020-10-01,2021-09-30,438217000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,inventory,InventoryNet,,2021-09-30,15368352000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,receivables,AccountsReceivableNetCurrent,,2021-09-30,18167175000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,accounts_payable,AccountsPayableCurrent,,2021-09-30,38009954000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,assets,Assets,,2021-09-30,57337805000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,equity,StockholdersEquity,,2021-09-30,223354000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,cash,CashAndCashEquivalentsAtCarryingValue,,2021-09-30,2547142000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2021,long_term_debt,LongTermDebt,,2021-09-30,6683924000,2022-11-22,0001140859-22-000098,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,revenue,Revenues,2021-10-01,2022-09-30,238587006000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,gross_profit,GrossProfit,2021-10-01,2022-09-30,8296367000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,operating_income,OperatingIncomeLoss,2021-10-01,2022-09-30,2366378000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,net_income,NetIncomeLoss,2021-10-01,2022-09-30,1698820000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2021-10-01,2022-09-30,2703088000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2021-10-01,2022-09-30,496318000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,inventory,InventoryNet,,2022-09-30,15556394000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,receivables,AccountsReceivableNetCurrent,,2022-09-30,18452675000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,accounts_payable,AccountsPayableCurrent,,2022-09-30,40192890000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,assets,Assets,,2022-09-30,56560616000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,equity,StockholdersEquity,,2022-09-30,-211559000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,cash,CashAndCashEquivalentsAtCarryingValue,,2022-09-30,3388189000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2022,long_term_debt,LongTermDebt,,2022-09-30,5702833000,2023-11-21,0001140859-23-000197,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,revenue,Revenues,2022-10-01,2023-09-30,262173411000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,gross_profit,GrossProfit,2022-10-01,2023-09-30,8959493000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,operating_income,OperatingIncomeLoss,2022-10-01,2023-09-30,2340731000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,net_income,NetIncomeLoss,2022-10-01,2023-09-30,1745293000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2022-10-01,2023-09-30,3911334000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2022-10-01,2023-09-30,458359000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,inventory,InventoryNet,,2023-09-30,17454768000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,receivables,AccountsReceivableNetCurrent,,2023-09-30,20911081000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,accounts_payable,AccountsPayableCurrent,,2023-09-30,45836037000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,assets,Assets,,2023-09-30,62558746000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,equity,StockholdersEquity,,2023-09-30,522003000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,cash,CashAndCashEquivalentsAtCarryingValue,,2023-09-30,2592051000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2023,long_term_debt,LongTermDebt,,2023-09-30,4787457000,2024-11-26,0001140859-24-000177,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,revenue,Revenues,2023-10-01,2024-09-30,293958599000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,gross_profit,GrossProfit,2023-10-01,2024-09-30,9910029000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,operating_income,OperatingIncomeLoss,2023-10-01,2024-09-30,2175249000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,net_income,NetIncomeLoss,2023-10-01,2024-09-30,1509120000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2023-10-01,2024-09-30,3484685000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2023-10-01,2024-09-30,487173000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,inventory,InventoryNet,,2024-09-30,18998833000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,receivables,AccountsReceivableNetCurrent,,2024-09-30,23871815000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,accounts_payable,AccountsPayableCurrent,,2024-09-30,50942162000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,assets,Assets,,2024-09-30,67101667000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,equity,StockholdersEquity,,2024-09-30,645938000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,cash,CashAndCashEquivalentsAtCarryingValue,,2024-09-30,3132648000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2024,long_term_debt,LongTermDebt,,2024-09-30,4388076000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,revenue,Revenues,2024-10-01,2025-09-30,321332819000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,gross_profit,GrossProfit,2024-10-01,2025-09-30,11478539000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,operating_income,OperatingIncomeLoss,2024-10-01,2025-09-30,2628601000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,net_income,NetIncomeLoss,2024-10-01,2025-09-30,1554169000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,operating_cash_flow,NetCashProvidedByUsedInOperatingActivities,2024-10-01,2025-09-30,3875120000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,capital_expenditure,PaymentsToAcquirePropertyPlantAndEquipment,2024-10-01,2025-09-30,667981000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,inventory,InventoryNet,,2025-09-30,20492480000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,receivables,AccountsReceivableNetCurrent,,2025-09-30,25225299000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,accounts_payable,AccountsPayableCurrent,,2025-09-30,54719761000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,assets,Assets,,2025-09-30,76590112000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,equity,StockholdersEquity,,2025-09-30,1508019000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,cash,CashAndCashEquivalentsAtCarryingValue,,2025-09-30,4356138000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end
+Cencora,0001140859,2025,long_term_debt,LongTermDebt,,2025-09-30,7660773000,2025-11-25,0001140859-25-000131,latest-filed annual 10-K fact for the entity fiscal end

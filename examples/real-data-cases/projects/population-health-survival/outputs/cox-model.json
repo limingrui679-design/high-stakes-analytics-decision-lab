@@ -1,0 +1,141 @@
+{
+  "features": [
+    "age",
+    "ejection_fraction",
+    "serum_creatinine",
+    "serum_sodium",
+    "sex",
+    "diabetes",
+    "high_blood_pressure",
+    "smoking"
+  ],
+  "coefficients": {
+    "age": {
+      "coefficient_per_sd": 0.5489947871737585,
+      "hazard_ratio_per_sd": 1.7315116050945754,
+      "ci95": [
+        1.393588218039399,
+        2.151376138064071
+      ],
+      "standardization_center": 60.83389297658862,
+      "standardization_sd": 11.894809074044469,
+      "schoenfeld_time_correlation": -0.006523378747723926
+    },
+    "ejection_fraction": {
+      "coefficient_per_sd": -0.550605100426935,
+      "hazard_ratio_per_sd": 0.5766008034066888,
+      "ci95": [
+        0.45261235872441447,
+        0.7345545919829193
+      ],
+      "standardization_center": 38.08361204013378,
+      "standardization_sd": 11.834840741039171,
+      "schoenfeld_time_correlation": -0.12921507732645193
+    },
+    "serum_creatinine": {
+      "coefficient_per_sd": 0.32773165451311537,
+      "hazard_ratio_per_sd": 1.3878165080205433,
+      "ci95": [
+        1.2007130096701006,
+        1.6040757819918336
+      ],
+      "standardization_center": 1.393879598662207,
+      "standardization_sd": 1.0345100640898541,
+      "schoenfeld_time_correlation": 0.13877783329540108
+    },
+    "serum_sodium": {
+      "coefficient_per_sd": -0.16216838779112694,
+      "hazard_ratio_per_sd": 0.850298012680536,
+      "ci95": [
+        0.6946791797043497,
+        1.0407778604739173
+      ],
+      "standardization_center": 136.62541806020067,
+      "standardization_sd": 4.412477283909235,
+      "schoenfeld_time_correlation": 0.08505215762391498
+    },
+    "sex": {
+      "coefficient_per_sd": -0.07113553820170695,
+      "hazard_ratio_per_sd": 0.9313356520131468,
+      "ci95": [
+        0.7406732893818737,
+        1.1710778681308023
+      ],
+      "standardization_center": 0.6488294314381271,
+      "standardization_sd": 0.4781363790627447,
+      "schoenfeld_time_correlation": -0.05426727515954158
+    },
+    "diabetes": {
+      "coefficient_per_sd": 0.06865130820278263,
+      "hazard_ratio_per_sd": 1.0710626732592095,
+      "ci95": [
+        0.865721183626754,
+        1.3251093674793983
+      ],
+      "standardization_center": 0.4180602006688963,
+      "standardization_sd": 0.49406706510360904,
+      "schoenfeld_time_correlation": 0.0269486332844254
+    },
+    "high_blood_pressure": {
+      "coefficient_per_sd": 0.22231419840820024,
+      "hazard_ratio_per_sd": 1.2489637386400705,
+      "ci95": [
+        1.0220991452843076,
+        1.5261830788478714
+      ],
+      "standardization_center": 0.3511705685618729,
+      "standardization_sd": 0.4781363790627447,
+      "schoenfeld_time_correlation": 0.005191952488757906
+    },
+    "smoking": {
+      "coefficient_per_sd": 0.0316949081340672,
+      "hazard_ratio_per_sd": 1.0322025406618351,
+      "ci95": [
+        0.8219081601559683,
+        1.2963030866448204
+      ],
+      "standardization_center": 0.3210702341137124,
+      "standardization_sd": 0.46767042805677167,
+      "schoenfeld_time_correlation": -0.03448499404832489
+    }
+  },
+  "iterations": 7,
+  "partial_log_likelihood": -472.4508909669843,
+  "ridge": 1e-05,
+  "harrell_c_index_apparent": 0.7306489632943667,
+  "baseline_cumulative_hazard_180d": 0.33410183196893467,
+  "calibration_180d_known_outcomes": [
+    {
+      "risk_group": 1,
+      "n": 38,
+      "mean_predicted_180d_risk": 0.10679431362019318,
+      "observed_180d_event_rate": 0.2631578947368421
+    },
+    {
+      "risk_group": 2,
+      "n": 39,
+      "mean_predicted_180d_risk": 0.22223199007965577,
+      "observed_180d_event_rate": 0.20512820512820512
+    },
+    {
+      "risk_group": 3,
+      "n": 38,
+      "mean_predicted_180d_risk": 0.33693736059500756,
+      "observed_180d_event_rate": 0.4473684210526316
+    },
+    {
+      "risk_group": 4,
+      "n": 39,
+      "mean_predicted_180d_risk": 0.47013293125965094,
+      "observed_180d_event_rate": 0.5641025641025641
+    },
+    {
+      "risk_group": 5,
+      "n": 39,
+      "mean_predicted_180d_risk": 0.753129858388614,
+      "observed_180d_event_rate": 0.8205128205128205
+    }
+  ],
+  "known_180d_outcomes": 193,
+  "interpretation": "Hazard ratios are associational, per one sample standard deviation; calibration and discrimination are apparent, not external validation."
+}

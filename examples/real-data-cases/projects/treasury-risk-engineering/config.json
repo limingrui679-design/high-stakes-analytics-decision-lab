@@ -1,0 +1,16 @@
+{
+  "project_id": "treasury-risk-engineering",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "trading_days_per_year": 252,
+    "historical_var_confidence": 0.95,
+    "block_bootstrap_length": 20,
+    "duration_years": {"2 Yr": 1.9, "5 Yr": 4.5, "10 Yr": 8.0}
+  },
+  "parameter_register": [
+    {"parameter": "duration_years", "source_id": "analyst-duration-approximation", "status": "hypothetical approximation", "approved_by": "repository author self-review", "boundary": "Not security-level effective duration."},
+    {"parameter": "historical_var_confidence", "source_id": "analysis-protocol", "status": "risk convention", "approved_by": "repository author self-review", "boundary": "Historical loss quantile, not a forecast."},
+    {"parameter": "block_bootstrap_length", "source_id": "analysis-protocol", "status": "dependence-preserving choice", "approved_by": "repository author self-review", "boundary": "Sensitivity assumption, not an estimated dependence law."},
+    {"parameter": "trading_days_per_year", "source_id": "analysis-protocol", "status": "annualization convention", "approved_by": "repository author self-review", "boundary": "Used only for scaling summary moments."}
+  ]
+}

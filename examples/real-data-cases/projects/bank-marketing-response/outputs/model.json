@@ -1,0 +1,364 @@
+{
+  "selected_candidate": "client-history-plus-campaign-context",
+  "classifier": {
+    "class_counts": {
+      "0": 23524,
+      "1": 1188
+    },
+    "total": 24712,
+    "numeric_fields": [
+      "age",
+      "campaign",
+      "pdays",
+      "previous",
+      "emp.var.rate",
+      "cons.price.idx",
+      "cons.conf.idx",
+      "euribor3m",
+      "nr.employed"
+    ],
+    "categorical_fields": [
+      "job",
+      "marital",
+      "education",
+      "default",
+      "housing",
+      "loan",
+      "contact",
+      "poutcome",
+      "month",
+      "day_of_week"
+    ],
+    "numeric": {
+      "age": {
+        "0": {
+          "mean": 40.216119707532734,
+          "variance": 85.65545412604276
+        },
+        "1": {
+          "mean": 39.49747474747475,
+          "variance": 88.20134155370046
+        }
+      },
+      "campaign": {
+        "0": {
+          "mean": 2.9039279034177863,
+          "variance": 11.038000130158746
+        },
+        "1": {
+          "mean": 2.68013468013468,
+          "variance": 5.752696864744044
+        }
+      },
+      "pdays": {
+        "0": {
+          "mean": 998.7885563679646,
+          "variance": 210.30856095626646
+        },
+        "1": {
+          "mean": 998.1632996632997,
+          "variance": 831.6801346801349
+        }
+      },
+      "previous": {
+        "0": {
+          "mean": 0.005271212378847135,
+          "variance": 0.005243649605280916
+        },
+        "1": {
+          "mean": 0.005050505050505051,
+          "variance": 0.005029230808506292
+        }
+      },
+      "emp.var.rate": {
+        "0": {
+          "mean": 1.2636966502301434,
+          "variance": 0.07075104958109245
+        },
+        "1": {
+          "mean": 1.235858585858606,
+          "variance": 0.14666590079395472
+        }
+      },
+      "cons.price.idx": {
+        "0": {
+          "mean": 93.92214257779357,
+          "variance": 0.11525518529924254
+        },
+        "1": {
+          "mean": 93.88337205387236,
+          "variance": 0.11653408892349511
+        }
+      },
+      "cons.conf.idx": {
+        "0": {
+          "mean": -39.12867709571612,
+          "variance": 9.182233321907038
+        },
+        "1": {
+          "mean": -39.67441077441051,
+          "variance": 9.140052306269663
+        }
+      },
+      "euribor3m": {
+        "0": {
+          "mean": 4.9041629824863975,
+          "variance": 0.0155605059356863
+        },
+        "1": {
+          "mean": 4.913830808080805,
+          "variance": 0.014944883734140055
+        }
+      },
+      "nr.employed": {
+        "0": {
+          "mean": 5215.366230230679,
+          "variance": 306.11505561778677
+        },
+        "1": {
+          "mean": 5218.375589225526,
+          "variance": 255.72531768116897
+        }
+      }
+    },
+    "categorical": {
+      "job": {
+        "0": {
+          "housemaid": 742,
+          "services": 2341,
+          "admin.": 5775,
+          "blue-collar": 5722,
+          "technician": 4188,
+          "retired": 698,
+          "management": 1514,
+          "unemployed": 524,
+          "self-employed": 802,
+          "unknown": 234,
+          "entrepreneur": 819,
+          "student": 165
+        },
+        "1": {
+          "blue-collar": 284,
+          "entrepreneur": 47,
+          "technician": 204,
+          "housemaid": 22,
+          "unknown": 13,
+          "services": 123,
+          "management": 80,
+          "admin.": 297,
+          "student": 13,
+          "unemployed": 20,
+          "self-employed": 41,
+          "retired": 44
+        }
+      },
+      "marital": {
+        "0": {
+          "married": 15050,
+          "single": 5731,
+          "divorced": 2708,
+          "unknown": 35
+        },
+        "1": {
+          "divorced": 127,
+          "married": 742,
+          "single": 314,
+          "unknown": 5
+        }
+      },
+      "education": {
+        "0": {
+          "basic.4y": 2630,
+          "high.school": 5301,
+          "basic.6y": 1394,
+          "basic.9y": 3559,
+          "professional.course": 3118,
+          "unknown": 1031,
+          "university.degree": 6482,
+          "illiterate": 9
+        },
+        "1": {
+          "basic.4y": 106,
+          "university.degree": 350,
+          "basic.9y": 189,
+          "professional.course": 145,
+          "unknown": 44,
+          "high.school": 276,
+          "basic.6y": 78
+        }
+      },
+      "default": {
+        "0": {
+          "no": 16971,
+          "unknown": 6551,
+          "yes": 2
+        },
+        "1": {
+          "unknown": 294,
+          "no": 894
+        }
+      },
+      "housing": {
+        "0": {
+          "no": 11250,
+          "yes": 11678,
+          "unknown": 596
+        },
+        "1": {
+          "yes": 588,
+          "no": 579,
+          "unknown": 21
+        }
+      },
+      "loan": {
+        "0": {
+          "no": 19376,
+          "yes": 3552,
+          "unknown": 596
+        },
+        "1": {
+          "no": 991,
+          "yes": 176,
+          "unknown": 21
+        }
+      },
+      "contact": {
+        "0": {
+          "telephone": 12926,
+          "cellular": 10598
+        },
+        "1": {
+          "telephone": 532,
+          "cellular": 656
+        }
+      },
+      "poutcome": {
+        "0": {
+          "nonexistent": 23400,
+          "failure": 119,
+          "success": 5
+        },
+        "1": {
+          "nonexistent": 1182,
+          "failure": 5,
+          "success": 1
+        }
+      },
+      "month": {
+        "0": {
+          "may": 7523,
+          "jun": 4186,
+          "jul": 6278,
+          "aug": 4904,
+          "oct": 25,
+          "nov": 608
+        },
+        "1": {
+          "may": 240,
+          "jun": 188,
+          "jul": 407,
+          "aug": 271,
+          "oct": 42,
+          "nov": 40
+        }
+      },
+      "day_of_week": {
+        "0": {
+          "mon": 5228,
+          "tue": 4699,
+          "wed": 4687,
+          "thu": 4658,
+          "fri": 4252
+        },
+        "1": {
+          "mon": 238,
+          "tue": 235,
+          "wed": 269,
+          "thu": 221,
+          "fri": 225
+        }
+      }
+    },
+    "vocabulary": {
+      "job": [
+        "admin.",
+        "blue-collar",
+        "entrepreneur",
+        "housemaid",
+        "management",
+        "retired",
+        "self-employed",
+        "services",
+        "student",
+        "technician",
+        "unemployed",
+        "unknown"
+      ],
+      "marital": [
+        "divorced",
+        "married",
+        "single",
+        "unknown"
+      ],
+      "education": [
+        "basic.4y",
+        "basic.6y",
+        "basic.9y",
+        "high.school",
+        "illiterate",
+        "professional.course",
+        "university.degree",
+        "unknown"
+      ],
+      "default": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "housing": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "loan": [
+        "no",
+        "unknown",
+        "yes"
+      ],
+      "contact": [
+        "cellular",
+        "telephone"
+      ],
+      "poutcome": [
+        "failure",
+        "nonexistent",
+        "success"
+      ],
+      "month": [
+        "aug",
+        "jul",
+        "jun",
+        "may",
+        "nov",
+        "oct"
+      ],
+      "day_of_week": [
+        "fri",
+        "mon",
+        "thu",
+        "tue",
+        "wed"
+      ]
+    },
+    "smoothing": "Laplace add-one for categorical fields"
+  },
+  "calibration": {
+    "method": "validation-set Platt calibration",
+    "center": 6.14078094780102,
+    "spread": 5.925992461487741,
+    "intercept": -2.2076885930513908,
+    "slope": 0.5681954681528836,
+    "iterations": 2500,
+    "l2": 0.001
+  }
+}

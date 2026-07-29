@@ -1,0 +1,465 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "supply-chain-resilience",
+  "title": "Resilient Supply-Network Design",
+  "domain": "Supply-chain operations research, systems engineering, risk analysis, and sustainable operations",
+  "decision_owner": "Manufacturing network steering committee",
+  "decision_question": "Choose a three-year supply-network design that meets service and capital constraints while reducing disruption recovery time and concentration risk.",
+  "time_horizon": "3 years",
+  "risk_aversion": 0.4,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "Synthetic network simulation summaries and engineering estimates",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative supplier lead-time history",
+      "Synthetic disruption scenarios",
+      "Hypothetical lifecycle-cost and emissions estimates"
+    ],
+    "causal_claim_status": "No causal claim; outcomes are scenario-based engineering estimates.",
+    "limitations": [
+      "Supplier failures are not modeled with an explicit dependency network.",
+      "Inventory policies are summarized inside each alternative.",
+      "Emissions estimates omit supplier-capital construction.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "service_level",
+      "label": "On-time service level",
+      "direction": "maximize",
+      "weight": 0.25,
+      "unit": "percent",
+      "scale": {
+        "worst": 75,
+        "best": 99
+      }
+    },
+    {
+      "id": "total_cost",
+      "label": "Three-year total cost",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 430,
+        "best": 250
+      }
+    },
+    {
+      "id": "recovery_days",
+      "label": "Major-disruption recovery time",
+      "direction": "minimize",
+      "weight": 0.22,
+      "unit": "days",
+      "scale": {
+        "worst": 90,
+        "best": 5
+      }
+    },
+    {
+      "id": "emissions",
+      "label": "Logistics emissions",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "index points",
+      "scale": {
+        "worst": 100,
+        "best": 35
+      }
+    },
+    {
+      "id": "supplier_concentration",
+      "label": "Supplier concentration",
+      "direction": "minimize",
+      "weight": 0.15,
+      "unit": "HHI points",
+      "scale": {
+        "worst": 7000,
+        "best": 1800
+      }
+    },
+    {
+      "id": "capital_need",
+      "label": "Upfront capital need",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 100,
+        "best": 5
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "service_level",
+      "operator": ">=",
+      "threshold": 90,
+      "label": "Customer-service requirement"
+    },
+    {
+      "criterion": "capital_need",
+      "operator": "<=",
+      "threshold": 80,
+      "label": "Capital appropriation"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "normal",
+      "label": "Normal operations",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "regional-disruption",
+      "label": "Regional production disruption",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "service_level": {
+            "add": -8
+          },
+          "recovery_days": {
+            "multiply": 1.6
+          },
+          "total_cost": {
+            "multiply": 1.08
+          }
+        },
+        "dual-source": {
+          "service_level": {
+            "add": 4
+          },
+          "recovery_days": {
+            "multiply": 0.7
+          }
+        },
+        "flexible-network": {
+          "service_level": {
+            "add": 5
+          },
+          "recovery_days": {
+            "multiply": 0.55
+          }
+        }
+      }
+    },
+    {
+      "id": "transport-shock",
+      "label": "Global transport shock",
+      "probability": 0.15,
+      "adjustments": {
+        "*": {
+          "service_level": {
+            "add": -6
+          },
+          "total_cost": {
+            "multiply": 1.14
+          },
+          "emissions": {
+            "multiply": 1.12
+          }
+        },
+        "regional-hub": {
+          "service_level": {
+            "add": 4
+          },
+          "emissions": {
+            "multiply": 0.85
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "current-lean",
+      "label": "Current lean network",
+      "description": "Maintain low inventory and primary single-region sourcing.",
+      "metrics": {
+        "service_level": {
+          "distribution": "normal",
+          "mean": 94,
+          "sd": 2,
+          "min": 75,
+          "max": 99
+        },
+        "total_cost": {
+          "distribution": "triangular",
+          "low": 260,
+          "mode": 285,
+          "high": 320
+        },
+        "recovery_days": {
+          "distribution": "triangular",
+          "low": 38,
+          "mode": 55,
+          "high": 82
+        },
+        "emissions": {
+          "distribution": "triangular",
+          "low": 62,
+          "mode": 72,
+          "high": 85
+        },
+        "supplier_concentration": {
+          "distribution": "triangular",
+          "low": 5200,
+          "mode": 6100,
+          "high": 6900
+        },
+        "capital_need": {
+          "distribution": "triangular",
+          "low": 5,
+          "mode": 9,
+          "high": 15
+        }
+      },
+      "groups": []
+    },
+    {
+      "id": "dual-source",
+      "label": "Dual-source critical components",
+      "description": "Qualify second suppliers and hold targeted safety stock for critical parts.",
+      "metrics": {
+        "service_level": {
+          "distribution": "normal",
+          "mean": 96,
+          "sd": 1.5,
+          "min": 80,
+          "max": 99
+        },
+        "total_cost": {
+          "distribution": "triangular",
+          "low": 300,
+          "mode": 325,
+          "high": 365
+        },
+        "recovery_days": {
+          "distribution": "triangular",
+          "low": 18,
+          "mode": 28,
+          "high": 45
+        },
+        "emissions": {
+          "distribution": "triangular",
+          "low": 65,
+          "mode": 75,
+          "high": 88
+        },
+        "supplier_concentration": {
+          "distribution": "triangular",
+          "low": 3000,
+          "mode": 3700,
+          "high": 4500
+        },
+        "capital_need": {
+          "distribution": "triangular",
+          "low": 28,
+          "mode": 40,
+          "high": 55
+        }
+      },
+      "groups": []
+    },
+    {
+      "id": "regional-hub",
+      "label": "Regional production hub",
+      "description": "Build a regional postponement and final-assembly hub close to demand.",
+      "metrics": {
+        "service_level": {
+          "distribution": "normal",
+          "mean": 95.5,
+          "sd": 1.8,
+          "min": 80,
+          "max": 99
+        },
+        "total_cost": {
+          "distribution": "triangular",
+          "low": 320,
+          "mode": 355,
+          "high": 405
+        },
+        "recovery_days": {
+          "distribution": "triangular",
+          "low": 16,
+          "mode": 25,
+          "high": 40
+        },
+        "emissions": {
+          "distribution": "triangular",
+          "low": 38,
+          "mode": 48,
+          "high": 62
+        },
+        "supplier_concentration": {
+          "distribution": "triangular",
+          "low": 3600,
+          "mode": 4300,
+          "high": 5100
+        },
+        "capital_need": {
+          "distribution": "triangular",
+          "low": 58,
+          "mode": 74,
+          "high": 94
+        }
+      },
+      "groups": []
+    },
+    {
+      "id": "flexible-network",
+      "label": "Flexible multi-region network",
+      "description": "Combine supplier diversification, modular production, digital visibility, and pre-negotiated surge capacity.",
+      "metrics": {
+        "service_level": {
+          "distribution": "normal",
+          "mean": 97,
+          "sd": 1.2,
+          "min": 82,
+          "max": 99.5
+        },
+        "total_cost": {
+          "distribution": "triangular",
+          "low": 325,
+          "mode": 360,
+          "high": 410
+        },
+        "recovery_days": {
+          "distribution": "triangular",
+          "low": 8,
+          "mode": 15,
+          "high": 28
+        },
+        "emissions": {
+          "distribution": "triangular",
+          "low": 48,
+          "mode": 58,
+          "high": 72
+        },
+        "supplier_concentration": {
+          "distribution": "triangular",
+          "low": 1900,
+          "mode": 2500,
+          "high": 3300
+        },
+        "capital_need": {
+          "distribution": "triangular",
+          "low": 48,
+          "mode": 64,
+          "high": 82
+        }
+      },
+      "groups": []
+    }
+  ],
+  "decision_notes": [
+    "A production model should include network topology, correlated failures, inventory optimization, and recovery policies.",
+    "Worker and supplier-community impacts should be added before deployment."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "service_level": -0.48,
+          "total_cost": 0.48,
+          "recovery_days": 0.48,
+          "emissions": 0.48,
+          "supplier_concentration": 0.48,
+          "capital_need": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "supply-chain-resilience-synthetic-parameter-register",
+        "citation": "Resilient Supply-Network Design — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "supply-chain-resilience-synthetic-parameter-register"
+      }
+    ]
+  }
+}

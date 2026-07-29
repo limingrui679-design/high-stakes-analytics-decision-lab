@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "clinical-evidence-design",
+  "title": "Population Health Evidence Design",
+  "domain": "Biostatistics, clinical research, health data science, and population health",
+  "decision_owner": "Population health research steering committee",
+  "decision_question": "Choose an evaluation design for a community prevention program that balances statistical precision, representativeness, time, cost, and operational burden.",
+  "time_horizon": "30 months",
+  "risk_aversion": 0.35,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "Synthetic pilot, recruitment, outcome-rate, and study-operations assumptions",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative two-group pilot dataset bundled with the case",
+      "Synthetic recruitment and event-rate scenarios",
+      "Hypothetical site-capacity elicitation"
+    ],
+    "causal_claim_status": "No causal conclusion; the case compares study designs, while the companion evidence module reports descriptive effect estimates and uncertainty.",
+    "limitations": [
+      "Power is represented by a precision score rather than a full design-specific simulation.",
+      "Site and participant outcomes may be correlated.",
+      "The bundled individual-level dataset is synthetic and too small for clinical inference.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "precision",
+      "label": "Expected statistical precision",
+      "direction": "maximize",
+      "weight": 0.27,
+      "unit": "score",
+      "scale": {
+        "worst": 0.35,
+        "best": 0.95
+      }
+    },
+    {
+      "id": "transportability",
+      "label": "Population transportability",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.95
+      }
+    },
+    {
+      "id": "months",
+      "label": "Time to decision-quality evidence",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "months",
+      "scale": {
+        "worst": 42,
+        "best": 12
+      }
+    },
+    {
+      "id": "cost",
+      "label": "Study cost",
+      "direction": "minimize",
+      "weight": 0.15,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 10,
+        "best": 2
+      }
+    },
+    {
+      "id": "enrollment_gap",
+      "label": "Maximum enrollment gap",
+      "direction": "minimize",
+      "weight": 0.12,
+      "unit": "probability points",
+      "scale": {
+        "worst": 0.35,
+        "best": 0.02
+      }
+    },
+    {
+      "id": "site_burden",
+      "label": "Clinical-site burden",
+      "direction": "minimize",
+      "weight": 0.08,
+      "unit": "index points",
+      "scale": {
+        "worst": 85,
+        "best": 15
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "cost",
+      "operator": "<=",
+      "threshold": 8,
+      "label": "Research budget ceiling"
+    },
+    {
+      "criterion": "enrollment_gap",
+      "operator": "<=",
+      "threshold": 0.18,
+      "label": "Representativeness tolerance"
+    },
+    {
+      "criterion": "months",
+      "operator": "<=",
+      "threshold": 32,
+      "label": "Evidence deadline"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Expected recruitment and event rate",
+      "probability": 0.5,
+      "adjustments": {}
+    },
+    {
+      "id": "recruitment-shortfall",
+      "label": "Underrepresented-group recruitment shortfall",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "months": {
+            "multiply": 1.12
+          },
+          "enrollment_gap": {
+            "multiply": 1.25
+          },
+          "precision": {
+            "multiply": 0.92
+          }
+        },
+        "adaptive-stratified": {
+          "enrollment_gap": {
+            "multiply": 0.82
+          }
+        }
+      }
+    },
+    {
+      "id": "lower-event-rate",
+      "label": "Lower-than-expected outcome rate",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "precision": {
+            "multiply": 0.86
+          },
+          "months": {
+            "multiply": 1.08
+          }
+        },
+        "adaptive-stratified": {
+          "precision": {
+            "multiply": 1.06
+          }
+        },
+        "registry-observational": {
+          "precision": {
+            "multiply": 0.9
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "registry-observational",
+      "label": "Registry-based observational study",
+      "description": "Link routine-care records and estimate adjusted associations without randomized assignment.",
+      "metrics": {
+        "precision": {
+          "distribution": "triangular",
+          "low": 0.58,
+          "mode": 0.7,
+          "high": 0.82
+        },
+        "transportability": {
+          "distribution": "triangular",
+          "low": 0.7,
+          "mode": 0.82,
+          "high": 0.9
+        },
+        "months": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 17,
+          "high": 24
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 2.1,
+          "mode": 3,
+          "high": 4.2
+        },
+        "enrollment_gap": {
+          "distribution": "triangular",
+          "low": 0.1,
+          "mode": 0.16,
+          "high": 0.24
+        },
+        "site_burden": {
+          "distribution": "triangular",
+          "low": 14,
+          "mode": 22,
+          "high": 35
+        }
+      },
+      "groups": [
+        {
+          "id": "urban",
+          "label": "Urban participants",
+          "metrics": {
+            "enrollment_probability": 0.82,
+            "retention_probability": 0.76
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural participants",
+          "metrics": {
+            "enrollment_probability": 0.67,
+            "retention_probability": 0.69
+          }
+        },
+        {
+          "id": "limited-access",
+          "label": "Limited-access participants",
+          "metrics": {
+            "enrollment_probability": 0.61,
+            "retention_probability": 0.63
+          }
+        }
+      ]
+    },
+    {
+      "id": "parallel-rct",
+      "label": "Conventional parallel RCT",
+      "description": "Randomize eligible participants at fixed sites using a pre-specified sample size.",
+      "metrics": {
+        "precision": {
+          "distribution": "triangular",
+          "low": 0.73,
+          "mode": 0.84,
+          "high": 0.92
+        },
+        "transportability": {
+          "distribution": "triangular",
+          "low": 0.48,
+          "mode": 0.62,
+          "high": 0.75
+        },
+        "months": {
+          "distribution": "triangular",
+          "low": 22,
+          "mode": 28,
+          "high": 36
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 5.8,
+          "mode": 7.2,
+          "high": 8.8
+        },
+        "enrollment_gap": {
+          "distribution": "triangular",
+          "low": 0.12,
+          "mode": 0.2,
+          "high": 0.31
+        },
+        "site_burden": {
+          "distribution": "triangular",
+          "low": 45,
+          "mode": 58,
+          "high": 74
+        }
+      },
+      "groups": [
+        {
+          "id": "urban",
+          "label": "Urban participants",
+          "metrics": {
+            "enrollment_probability": 0.78,
+            "retention_probability": 0.84
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural participants",
+          "metrics": {
+            "enrollment_probability": 0.55,
+            "retention_probability": 0.79
+          }
+        },
+        {
+          "id": "limited-access",
+          "label": "Limited-access participants",
+          "metrics": {
+            "enrollment_probability": 0.5,
+            "retention_probability": 0.71
+          }
+        }
+      ]
+    },
+    {
+      "id": "adaptive-stratified",
+      "label": "Adaptive stratified pragmatic trial",
+      "description": "Randomize within population strata and use pre-specified adaptations for recruitment and information accrual.",
+      "metrics": {
+        "precision": {
+          "distribution": "normal",
+          "mean": 0.84,
+          "sd": 0.045,
+          "min": 0.62,
+          "max": 0.95
+        },
+        "transportability": {
+          "distribution": "triangular",
+          "low": 0.7,
+          "mode": 0.82,
+          "high": 0.91
+        },
+        "months": {
+          "distribution": "triangular",
+          "low": 19,
+          "mode": 24,
+          "high": 31
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 5.5,
+          "mode": 6.8,
+          "high": 8.3
+        },
+        "enrollment_gap": {
+          "distribution": "triangular",
+          "low": 0.04,
+          "mode": 0.09,
+          "high": 0.17
+        },
+        "site_burden": {
+          "distribution": "triangular",
+          "low": 38,
+          "mode": 49,
+          "high": 66
+        }
+      },
+      "groups": [
+        {
+          "id": "urban",
+          "label": "Urban participants",
+          "metrics": {
+            "enrollment_probability": 0.76,
+            "retention_probability": 0.82
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural participants",
+          "metrics": {
+            "enrollment_probability": 0.72,
+            "retention_probability": 0.79
+          }
+        },
+        {
+          "id": "limited-access",
+          "label": "Limited-access participants",
+          "metrics": {
+            "enrollment_probability": 0.69,
+            "retention_probability": 0.75
+          }
+        }
+      ]
+    },
+    {
+      "id": "stepped-wedge",
+      "label": "Cluster stepped-wedge trial",
+      "description": "Randomize implementation timing across community sites while all sites eventually receive the program.",
+      "metrics": {
+        "precision": {
+          "distribution": "triangular",
+          "low": 0.65,
+          "mode": 0.78,
+          "high": 0.88
+        },
+        "transportability": {
+          "distribution": "triangular",
+          "low": 0.68,
+          "mode": 0.79,
+          "high": 0.89
+        },
+        "months": {
+          "distribution": "triangular",
+          "low": 27,
+          "mode": 33,
+          "high": 40
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 6.2,
+          "mode": 7.5,
+          "high": 9.2
+        },
+        "enrollment_gap": {
+          "distribution": "triangular",
+          "low": 0.07,
+          "mode": 0.13,
+          "high": 0.22
+        },
+        "site_burden": {
+          "distribution": "triangular",
+          "low": 52,
+          "mode": 66,
+          "high": 82
+        }
+      },
+      "groups": [
+        {
+          "id": "urban",
+          "label": "Urban participants",
+          "metrics": {
+            "enrollment_probability": 0.75,
+            "retention_probability": 0.8
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural participants",
+          "metrics": {
+            "enrollment_probability": 0.67,
+            "retention_probability": 0.75
+          }
+        },
+        {
+          "id": "limited-access",
+          "label": "Limited-access participants",
+          "metrics": {
+            "enrollment_probability": 0.63,
+            "retention_probability": 0.7
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real protocol requires a statistician-approved estimand, power simulation, multiplicity plan, missing-data strategy, and data-monitoring plan.",
+    "The adaptive design must pre-specify adaptation rules and preserve type-I error control."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "precision": -0.48,
+          "transportability": -0.48,
+          "months": 0.48,
+          "cost": 0.48,
+          "enrollment_gap": 0.48,
+          "site_burden": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "clinical-evidence-design-synthetic-parameter-register",
+        "citation": "Population Health Evidence Design — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "clinical-evidence-design-synthetic-parameter-register"
+      }
+    ]
+  }
+}

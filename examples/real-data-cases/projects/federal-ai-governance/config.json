@@ -1,0 +1,16 @@
+{
+  "project_id": "federal-ai-governance",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "missing_value_interpretation": "null, empty, ?, N/A, and NA are unreported; Not Applicable remains a substantive response",
+    "field_family_scheme": "six analyst-defined information families covering all public inventory columns",
+    "disclosure_readiness_interpretation": "share of review-relevant public fields populated; measurement readiness only",
+    "contact_field_suppression": "Email Address"
+  },
+  "parameter_register": [
+    {"parameter": "missing_value_interpretation", "source_id": "responsible-reporting-rule", "status": "measurement rule and claim boundary", "approved_by": "repository author self-review", "boundary": "Blank or missing-coded reporting does not mean absent or noncompliant."},
+    {"parameter": "field_family_scheme", "source_id": "analyst-disclosure-taxonomy", "status": "reproducible measurement design", "approved_by": "repository author self-review", "boundary": "Families organize public columns for measurement; they are not a governance maturity model."},
+    {"parameter": "disclosure_readiness_interpretation", "source_id": "responsible-reporting-rule", "status": "claim boundary", "approved_by": "repository author self-review", "boundary": "A completeness score measures external observability only and must never be interpreted as control presence, quality, ethics, safety, or compliance."},
+    {"parameter": "contact_field_suppression", "source_id": "privacy-minimization-rule", "status": "required", "approved_by": "repository author self-review", "boundary": "Official contact address excluded from processed data and outputs."}
+  ]
+}

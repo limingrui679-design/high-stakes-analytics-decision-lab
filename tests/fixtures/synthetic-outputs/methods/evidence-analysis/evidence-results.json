@@ -1,0 +1,98 @@
+{
+  "analysis_type": "two_group_evidence_analysis",
+  "data_quality": {
+    "rows_received": 40,
+    "rows_outside_comparison_groups": 0,
+    "missing_count_by_column": {
+      "followup_days": 0,
+      "health_score_change": 0,
+      "event": 0,
+      "arm": 0,
+      "adverse_event_180d": 0
+    }
+  },
+  "comparison": {
+    "exposed_group": "adaptive",
+    "reference_group": "standard",
+    "binary_outcome": "adverse_event_180d"
+  },
+  "binary_outcome": {
+    "groups": {
+      "standard": {
+        "n": 20,
+        "events": 6,
+        "risk": 0.3
+      },
+      "adaptive": {
+        "n": 20,
+        "events": 3,
+        "risk": 0.15
+      }
+    },
+    "risk_difference": -0.15,
+    "risk_difference_ci95": [
+      -0.404611468712625,
+      0.10461146871262497
+    ],
+    "risk_ratio": 0.5,
+    "risk_ratio_ci95": [
+      0.144748138408722,
+      1.7271379290148847
+    ],
+    "odds_ratio": 0.4117647058823529,
+    "odds_ratio_ci95": [
+      0.08687228741068817,
+      1.951717608272858
+    ],
+    "continuity_correction": 0.0,
+    "interval_method": "Wald intervals; log scale for ratios"
+  },
+  "continuous_outcome": {
+    "outcome": "health_score_change",
+    "groups": {
+      "standard": {
+        "n": 20,
+        "mean": 3.5549999999999997,
+        "sd": 1.35276519921623
+      },
+      "adaptive": {
+        "n": 20,
+        "mean": 6.045,
+        "sd": 1.1878662869992875
+      }
+    },
+    "mean_difference": 2.49,
+    "mean_difference_ci95": [
+      1.7009934854514828,
+      3.2790065145485174
+    ],
+    "interval_method": "Normal approximation with unequal variances"
+  },
+  "time_to_event": {
+    "time_column": "followup_days",
+    "event_column": "event",
+    "groups": {
+      "standard": {
+        "horizon": 180.0,
+        "n": 20,
+        "survival_probability": 0.7,
+        "ci95": [
+          0.49915976498719183,
+          0.9008402350128081
+        ],
+        "method": "Kaplan–Meier with Greenwood standard error"
+      },
+      "adaptive": {
+        "horizon": 180.0,
+        "n": 20,
+        "survival_probability": 0.85,
+        "ci95": [
+          0.6935065496578212,
+          1.0
+        ],
+        "method": "Kaplan–Meier with Greenwood standard error"
+      }
+    }
+  },
+  "interpretation_boundary": "Effect estimates are descriptive unless assignment and identification justify causal interpretation. Approximate intervals do not replace a study-specific analysis plan."
+}

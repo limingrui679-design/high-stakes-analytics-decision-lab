@@ -1,0 +1,44 @@
+{
+  "rows": 1500,
+  "columns": 13,
+  "column_names": [
+    "date",
+    "1 Mo",
+    "2 Mo",
+    "3 Mo",
+    "6 Mo",
+    "1 Yr",
+    "2 Yr",
+    "3 Yr",
+    "5 Yr",
+    "7 Yr",
+    "10 Yr",
+    "20 Yr",
+    "30 Yr"
+  ],
+  "missing_count_by_column": {
+    "date": 0,
+    "1 Mo": 0,
+    "2 Mo": 0,
+    "3 Mo": 0,
+    "6 Mo": 0,
+    "1 Yr": 0,
+    "2 Yr": 0,
+    "3 Yr": 0,
+    "5 Yr": 0,
+    "7 Yr": 0,
+    "10 Yr": 0,
+    "20 Yr": 0,
+    "30 Yr": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 1500,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Market-level public data.",
+    "status": "approved_for_public_analysis"
+  }
+}

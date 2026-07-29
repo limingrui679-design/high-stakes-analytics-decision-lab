@@ -1,0 +1,133 @@
+{
+  "selected_candidate": "issue-and-product",
+  "classifier": {
+    "class_counts": {
+      "0": 8710,
+      "1": 127
+    },
+    "total": 8837,
+    "numeric_fields": [],
+    "categorical_fields": [
+      "sub_product",
+      "issue",
+      "sub_issue"
+    ],
+    "numeric": {},
+    "categorical": {
+      "sub_product": {
+        "0": {
+          "Domestic (US) money transfer": 2542,
+          "Mobile or digital wallet": 3372,
+          "Virtual currency": 1219,
+          "International money transfer": 938,
+          "Refund anticipation check": 91,
+          "Check cashing service": 104,
+          "Traveler's check or cashier's check": 143,
+          "Debt settlement": 106,
+          "Money order": 108,
+          "Foreign currency exchange": 87
+        },
+        "1": {
+          "International money transfer": 26,
+          "Debt settlement": 4,
+          "Domestic (US) money transfer": 32,
+          "Mobile or digital wallet": 29,
+          "Virtual currency": 21,
+          "Refund anticipation check": 5,
+          "Foreign currency exchange": 1,
+          "Check cashing service": 5,
+          "Traveler's check or cashier's check": 2,
+          "Money order": 2
+        }
+      },
+      "issue": {
+        "0": {
+          "Money was not available when promised": 716,
+          "Managing, opening, or closing your mobile wallet account": 962,
+          "Unauthorized transactions or other transaction problem": 869,
+          "Other transaction problem": 1263,
+          "Fraud or scam": 3658,
+          "Other service problem": 259,
+          "Confusing or missing disclosures": 221,
+          "Unexpected or other fees": 191,
+          "Problem adding money": 63,
+          "Lost or stolen check": 73,
+          "Wrong amount charged or received": 105,
+          "Confusing or misleading advertising or marketing": 72,
+          "Problem with customer service": 187,
+          "Incorrect exchange rate": 11,
+          "Lost or stolen money order": 45,
+          "Overdraft, savings, or rewards features": 15
+        },
+        "1": {
+          "Other transaction problem": 23,
+          "Fraud or scam": 45,
+          "Money was not available when promised": 19,
+          "Unauthorized transactions or other transaction problem": 10,
+          "Managing, opening, or closing your mobile wallet account": 6,
+          "Lost or stolen check": 3,
+          "Problem with customer service": 4,
+          "Confusing or missing disclosures": 5,
+          "Wrong amount charged or received": 1,
+          "Confusing or misleading advertising or marketing": 1,
+          "Other service problem": 5,
+          "Unexpected or other fees": 4,
+          "Problem adding money": 1
+        }
+      },
+      "sub_issue": {
+        "0": {
+          "None": 8710
+        },
+        "1": {
+          "None": 127
+        }
+      }
+    },
+    "vocabulary": {
+      "sub_product": [
+        "Check cashing service",
+        "Debt settlement",
+        "Domestic (US) money transfer",
+        "Foreign currency exchange",
+        "International money transfer",
+        "Mobile or digital wallet",
+        "Money order",
+        "Refund anticipation check",
+        "Traveler's check or cashier's check",
+        "Virtual currency"
+      ],
+      "issue": [
+        "Confusing or misleading advertising or marketing",
+        "Confusing or missing disclosures",
+        "Fraud or scam",
+        "Incorrect exchange rate",
+        "Lost or stolen check",
+        "Lost or stolen money order",
+        "Managing, opening, or closing your mobile wallet account",
+        "Money was not available when promised",
+        "Other service problem",
+        "Other transaction problem",
+        "Overdraft, savings, or rewards features",
+        "Problem adding money",
+        "Problem with customer service",
+        "Unauthorized transactions or other transaction problem",
+        "Unexpected or other fees",
+        "Wrong amount charged or received"
+      ],
+      "sub_issue": [
+        "None"
+      ]
+    },
+    "smoothing": "Laplace add-one for categorical fields"
+  },
+  "calibration": {
+    "method": "validation-set Platt calibration",
+    "center": -4.44195998724346,
+    "spread": 0.7483737418824479,
+    "intercept": -4.297709336785308,
+    "slope": 0.1944491028948795,
+    "iterations": 2500,
+    "l2": 0.001
+  }
+}

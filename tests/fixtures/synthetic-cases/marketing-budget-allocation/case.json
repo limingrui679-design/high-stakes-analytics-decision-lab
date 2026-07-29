@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "marketing-budget-allocation",
+  "title": "Privacy-Conscious Marketing Budget Allocation",
+  "domain": "Business analytics, marketing analytics, causal experimentation, and behavioral decision-making",
+  "decision_owner": "Consumer-platform growth committee",
+  "decision_question": "Allocate the annual acquisition budget across strategies while protecting incremental profit, customer value, privacy, and underserved-customer reach.",
+  "time_horizon": "12 months",
+  "risk_aversion": 0.25,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "Synthetic experiment summaries and market scenarios",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative randomized campaign lift estimates",
+      "Synthetic customer-lifetime-value model",
+      "Hypothetical privacy and brand-risk review"
+    ],
+    "causal_claim_status": "Incremental-profit inputs are framed as hypothetical randomized-test estimates; no real causal result is claimed.",
+    "limitations": [
+      "Cross-channel interference and competitor response are simplified.",
+      "Long-term brand effects are represented by a proxy score.",
+      "Customer groups are aggregated and may conceal intersectional effects.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "incremental_profit",
+      "label": "Incremental contribution profit",
+      "direction": "maximize",
+      "weight": 0.26,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 0,
+        "best": 28
+      }
+    },
+    {
+      "id": "customer_value",
+      "label": "Acquired-customer lifetime value",
+      "direction": "maximize",
+      "weight": 0.16,
+      "unit": "USD",
+      "scale": {
+        "worst": 80,
+        "best": 260
+      }
+    },
+    {
+      "id": "cac",
+      "label": "Customer acquisition cost",
+      "direction": "minimize",
+      "weight": 0.16,
+      "unit": "USD",
+      "scale": {
+        "worst": 120,
+        "best": 35
+      }
+    },
+    {
+      "id": "privacy_risk",
+      "label": "Privacy and manipulation risk",
+      "direction": "minimize",
+      "weight": 0.17,
+      "unit": "index points",
+      "scale": {
+        "worst": 90,
+        "best": 5
+      }
+    },
+    {
+      "id": "underserved_reach",
+      "label": "Underserved-customer reach",
+      "direction": "maximize",
+      "weight": 0.15,
+      "unit": "percent",
+      "scale": {
+        "worst": 5,
+        "best": 45
+      }
+    },
+    {
+      "id": "spend",
+      "label": "Annual marketing spend",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 20,
+        "best": 10
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "privacy_risk",
+      "operator": "<=",
+      "threshold": 60,
+      "label": "Privacy-risk tolerance"
+    },
+    {
+      "criterion": "spend",
+      "operator": "<=",
+      "threshold": 18,
+      "label": "Marketing budget"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base market",
+      "probability": 0.5,
+      "adjustments": {}
+    },
+    {
+      "id": "tracking-restriction",
+      "label": "Stricter tracking restrictions",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "cac": {
+            "multiply": 1.1
+          }
+        },
+        "performance-ads": {
+          "incremental_profit": {
+            "multiply": 0.72
+          },
+          "cac": {
+            "multiply": 1.2
+          }
+        },
+        "causal-personalization": {
+          "incremental_profit": {
+            "multiply": 0.88
+          },
+          "privacy_risk": {
+            "add": 5
+          }
+        }
+      }
+    },
+    {
+      "id": "demand-downturn",
+      "label": "Consumer demand downturn",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "incremental_profit": {
+            "multiply": 0.7
+          },
+          "customer_value": {
+            "multiply": 0.82
+          },
+          "cac": {
+            "multiply": 1.12
+          }
+        },
+        "balanced-portfolio": {
+          "incremental_profit": {
+            "multiply": 1.08
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "current-mix",
+      "label": "Current channel mix",
+      "description": "Maintain broad paid media, affiliates, and organic programs.",
+      "metrics": {
+        "incremental_profit": {
+          "distribution": "normal",
+          "mean": 13,
+          "sd": 3,
+          "min": 0,
+          "max": 28
+        },
+        "customer_value": {
+          "distribution": "triangular",
+          "low": 125,
+          "mode": 155,
+          "high": 195
+        },
+        "cac": {
+          "distribution": "triangular",
+          "low": 66,
+          "mode": 78,
+          "high": 96
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 28,
+          "mode": 38,
+          "high": 52
+        },
+        "underserved_reach": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 17,
+          "high": 24
+        },
+        "spend": {
+          "distribution": "triangular",
+          "low": 14,
+          "mode": 15.5,
+          "high": 17
+        }
+      },
+      "groups": [
+        {
+          "id": "established",
+          "label": "Established customers",
+          "metrics": {
+            "conversion_rate": 0.12,
+            "offer_exposure": 0.71
+          }
+        },
+        {
+          "id": "new-to-category",
+          "label": "New-to-category customers",
+          "metrics": {
+            "conversion_rate": 0.07,
+            "offer_exposure": 0.49
+          }
+        },
+        {
+          "id": "underserved",
+          "label": "Underserved customers",
+          "metrics": {
+            "conversion_rate": 0.05,
+            "offer_exposure": 0.32
+          }
+        }
+      ]
+    },
+    {
+      "id": "performance-ads",
+      "label": "Performance-ad concentration",
+      "description": "Concentrate spend on short-run conversion-optimized digital advertising.",
+      "metrics": {
+        "incremental_profit": {
+          "distribution": "normal",
+          "mean": 20,
+          "sd": 4.2,
+          "min": 0,
+          "max": 30
+        },
+        "customer_value": {
+          "distribution": "triangular",
+          "low": 105,
+          "mode": 135,
+          "high": 175
+        },
+        "cac": {
+          "distribution": "triangular",
+          "low": 48,
+          "mode": 59,
+          "high": 78
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 48,
+          "mode": 62,
+          "high": 79
+        },
+        "underserved_reach": {
+          "distribution": "triangular",
+          "low": 8,
+          "mode": 13,
+          "high": 20
+        },
+        "spend": {
+          "distribution": "triangular",
+          "low": 15,
+          "mode": 16.5,
+          "high": 18.5
+        }
+      },
+      "groups": [
+        {
+          "id": "established",
+          "label": "Established customers",
+          "metrics": {
+            "conversion_rate": 0.16,
+            "offer_exposure": 0.82
+          }
+        },
+        {
+          "id": "new-to-category",
+          "label": "New-to-category customers",
+          "metrics": {
+            "conversion_rate": 0.08,
+            "offer_exposure": 0.48
+          }
+        },
+        {
+          "id": "underserved",
+          "label": "Underserved customers",
+          "metrics": {
+            "conversion_rate": 0.05,
+            "offer_exposure": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "causal-personalization",
+      "label": "Incrementality-based personalization",
+      "description": "Target customers with estimated positive incremental treatment effects and maintain randomized holdouts.",
+      "metrics": {
+        "incremental_profit": {
+          "distribution": "normal",
+          "mean": 22,
+          "sd": 3.4,
+          "min": 0,
+          "max": 30
+        },
+        "customer_value": {
+          "distribution": "triangular",
+          "low": 165,
+          "mode": 205,
+          "high": 250
+        },
+        "cac": {
+          "distribution": "triangular",
+          "low": 42,
+          "mode": 52,
+          "high": 68
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 35,
+          "mode": 48,
+          "high": 65
+        },
+        "underserved_reach": {
+          "distribution": "triangular",
+          "low": 19,
+          "mode": 27,
+          "high": 37
+        },
+        "spend": {
+          "distribution": "triangular",
+          "low": 14.5,
+          "mode": 16,
+          "high": 17.5
+        }
+      },
+      "groups": [
+        {
+          "id": "established",
+          "label": "Established customers",
+          "metrics": {
+            "conversion_rate": 0.15,
+            "offer_exposure": 0.72
+          }
+        },
+        {
+          "id": "new-to-category",
+          "label": "New-to-category customers",
+          "metrics": {
+            "conversion_rate": 0.12,
+            "offer_exposure": 0.63
+          }
+        },
+        {
+          "id": "underserved",
+          "label": "Underserved customers",
+          "metrics": {
+            "conversion_rate": 0.1,
+            "offer_exposure": 0.55
+          }
+        }
+      ]
+    },
+    {
+      "id": "balanced-portfolio",
+      "label": "Balanced experiment portfolio",
+      "description": "Combine causal targeting, partnerships, referral programs, and protected exploration budgets.",
+      "metrics": {
+        "incremental_profit": {
+          "distribution": "normal",
+          "mean": 19,
+          "sd": 2.8,
+          "min": 0,
+          "max": 28
+        },
+        "customer_value": {
+          "distribution": "triangular",
+          "low": 175,
+          "mode": 215,
+          "high": 255
+        },
+        "cac": {
+          "distribution": "triangular",
+          "low": 48,
+          "mode": 58,
+          "high": 72
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 19,
+          "mode": 29,
+          "high": 42
+        },
+        "underserved_reach": {
+          "distribution": "triangular",
+          "low": 27,
+          "mode": 34,
+          "high": 43
+        },
+        "spend": {
+          "distribution": "triangular",
+          "low": 14,
+          "mode": 15.5,
+          "high": 18.8
+        }
+      },
+      "groups": [
+        {
+          "id": "established",
+          "label": "Established customers",
+          "metrics": {
+            "conversion_rate": 0.14,
+            "offer_exposure": 0.68
+          }
+        },
+        {
+          "id": "new-to-category",
+          "label": "New-to-category customers",
+          "metrics": {
+            "conversion_rate": 0.12,
+            "offer_exposure": 0.64
+          }
+        },
+        {
+          "id": "underserved",
+          "label": "Underserved customers",
+          "metrics": {
+            "conversion_rate": 0.11,
+            "offer_exposure": 0.6
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real campaign portfolio should estimate incremental lift using randomized or defensible quasi-experimental designs.",
+    "Privacy and manipulation risk require qualitative review in addition to scoring."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "incremental_profit": -0.48,
+          "customer_value": -0.48,
+          "cac": 0.48,
+          "privacy_risk": 0.48,
+          "underserved_reach": -0.48,
+          "spend": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "marketing-budget-allocation-synthetic-parameter-register",
+        "citation": "Privacy-Conscious Marketing Budget Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "marketing-budget-allocation-synthetic-parameter-register"
+      }
+    ]
+  }
+}

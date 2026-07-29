@@ -1,0 +1,12 @@
+{
+  "grain": "patient follow-up",
+  "primary_key": null,
+  "fields": {
+    "age": "age in years",
+    "ejection_fraction": "percentage of blood leaving the heart per contraction",
+    "serum_creatinine": "serum creatinine, mg/dL",
+    "time": "follow-up time in days",
+    "DEATH_EVENT": "death observed during follow-up (1/0)",
+    "sex": "binary coding supplied by the source; interpretation limited"
+  }
+}

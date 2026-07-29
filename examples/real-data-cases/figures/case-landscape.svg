@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Ten complete real-data projects, ten evidence-matched paths</title>
+<desc id="desc">Ten numbered cards show each case domain, adaptive analytical route, one headline metric, and the evidence-matched terminal output.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="900" fill="#EEF3F8"/>
+<circle cx="1180" cy="870" r="120" fill="#246BFD" opacity=".035"/>
+<circle cx="36" cy="895" r="86" fill="#246BFD" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#246BFD"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#246BFD"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#246BFD">REAL-DATA CASE GALLERY</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Ten complete real-data projects, ten evidence-matched paths</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Complete projects span health, behavior, AI, operations, business, finance, policy, and spatial planning.</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#246BFD" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#246BFD"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="44.0" y="144.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="138.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="138.0" width="8" height="128" rx="4" fill="#246BFD"/>
+<text x="66.0" y="162.0" class="eyebrow" text-anchor="start" style="fill:#246BFD">01</text>
+<text x="110.0" y="162.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="66.0" y="190.0" class="section" text-anchor="start" style="fill:#0B1324">Heart-Failure Follow-up and Survival</text>
+<text x="66.0" y="239.0" class="small" text-anchor="start" style="fill:#617084">Observed death-event rate: 32.1%</text>
+<text x="66.0" y="258.0" class="small" text-anchor="start" style="fill:#246BFD">Prospective validation required</text>
+<rect x="620.0" y="144.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="138.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="138.0" width="8" height="128" rx="4" fill="#008C82"/>
+<text x="642.0" y="162.0" class="eyebrow" text-anchor="start" style="fill:#008C82">02</text>
+<text x="686.0" y="162.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → INFERENTIAL</text>
+<text x="642.0" y="190.0" class="section" text-anchor="start" style="fill:#0B1324">Pseudoword Reading: Repeated Measures</text>
+<text x="642.0" y="239.0" class="small" text-anchor="start" style="fill:#617084">Complete participant pairs: 57</text>
+<text x="642.0" y="258.0" class="small" text-anchor="start" style="fill:#008C82">Bounded behavioral inference</text>
+<rect x="44.0" y="288.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="282.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="282.0" width="8" height="128" rx="4" fill="#C69214"/>
+<text x="66.0" y="306.0" class="eyebrow" text-anchor="start" style="fill:#C69214">03</text>
+<text x="110.0" y="306.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE</text>
+<text x="66.0" y="334.0" class="section" text-anchor="start" style="fill:#0B1324">Census-Income Model Validation</text>
+<text x="66.0" y="383.0" class="small" text-anchor="start" style="fill:#617084">Independent-test AUC: 0.905</text>
+<text x="66.0" y="402.0" class="small" text-anchor="start" style="fill:#C69214">Benchmark only · no deployment</text>
+<rect x="620.0" y="288.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="282.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="282.0" width="8" height="128" rx="4" fill="#D85B43"/>
+<text x="642.0" y="306.0" class="eyebrow" text-anchor="start" style="fill:#D85B43">04</text>
+<text x="686.0" y="306.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="642.0" y="334.0" class="section" text-anchor="start" style="fill:#0B1324">Bike-Demand Forecasting and Allocation</text>
+<text x="642.0" y="383.0" class="small" text-anchor="start" style="fill:#617084">Forecast MAE improvement versus overall mean: 38.3%</text>
+<text x="642.0" y="402.0" class="small" text-anchor="start" style="fill:#D85B43">Bounded allocation recommendation</text>
+<rect x="44.0" y="432.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="426.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="426.0" width="8" height="128" rx="4" fill="#7257D9"/>
+<text x="66.0" y="450.0" class="eyebrow" text-anchor="start" style="fill:#7257D9">05</text>
+<text x="110.0" y="450.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="66.0" y="478.0" class="section" text-anchor="start" style="fill:#0B1324">Marketing Response and Capacity</text>
+<text x="66.0" y="527.0" class="small" text-anchor="start" style="fill:#617084">Untouched-test AUC: 0.650</text>
+<text x="66.0" y="546.0" class="small" text-anchor="start" style="fill:#7257D9">Randomized campaign required</text>
+<rect x="620.0" y="432.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="426.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="426.0" width="8" height="128" rx="4" fill="#B9487C"/>
+<text x="642.0" y="450.0" class="eyebrow" text-anchor="start" style="fill:#B9487C">06</text>
+<text x="686.0" y="450.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="642.0" y="478.0" class="section" text-anchor="start" style="fill:#0B1324">Treasury Yield-Curve Tail Risk</text>
+<text x="642.0" y="527.0" class="small" text-anchor="start" style="fill:#617084">Short-baseline historical ES95 loss: 0.4%</text>
+<text x="642.0" y="546.0" class="small" text-anchor="start" style="fill:#B9487C">Risk-bounded comparison</text>
+<rect x="44.0" y="576.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="570.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="570.0" width="8" height="128" rx="4" fill="#4E7D32"/>
+<text x="66.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#4E7D32">07</text>
+<text x="110.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC</text>
+<text x="66.0" y="622.0" class="section" text-anchor="start" style="fill:#0B1324">SEC Peer Financial Quality</text>
+<text x="66.0" y="671.0" class="small" text-anchor="start" style="fill:#617084">Panel size: 3 entities × 8 fiscal years</text>
+<text x="66.0" y="690.0" class="small" text-anchor="start" style="fill:#4E7D32">Targeted filing diligence</text>
+<rect x="620.0" y="576.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="570.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="570.0" width="8" height="128" rx="4" fill="#246BFD"/>
+<text x="642.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#246BFD">08</text>
+<text x="686.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PREDICTIVE</text>
+<text x="642.0" y="622.0" class="section" text-anchor="start" style="fill:#0B1324">Complaint Monitoring: Negative Validation</text>
+<text x="642.0" y="671.0" class="small" text-anchor="start" style="fill:#617084">Later-period untimely-response prevalence: 2.5%</text>
+<text x="642.0" y="690.0" class="small" text-anchor="start" style="fill:#246BFD">DO NOT DEPLOY</text>
+<rect x="44.0" y="720.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="714.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="714.0" width="8" height="128" rx="4" fill="#008C82"/>
+<text x="66.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#008C82">09</text>
+<text x="110.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE</text>
+<text x="66.0" y="766.0" class="section" text-anchor="start" style="fill:#0B1324">Public AI Disclosure Readiness</text>
+<text x="66.0" y="815.0" class="small" text-anchor="start" style="fill:#617084">Public use cases: 70</text>
+<text x="66.0" y="834.0" class="small" text-anchor="start" style="fill:#008C82">Evidence request</text>
+<rect x="620.0" y="720.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="714.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="714.0" width="8" height="128" rx="4" fill="#C69214"/>
+<text x="642.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#C69214">10</text>
+<text x="686.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → PRESCRIPTIVE</text>
+<text x="642.0" y="766.0" class="section" text-anchor="start" style="fill:#0B1324">Spatial Equity and Hub Planning</text>
+<text x="642.0" y="815.0" class="small" text-anchor="start" style="fill:#617084">Analyzed tracts: 1,597</text>
+<text x="642.0" y="834.0" class="small" text-anchor="start" style="fill:#C69214">Planning-screen allocation</text>
+<line x1="36" y1="860.0" x2="1164" y2="860.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="882.0" class="footnote" text-anchor="start">Sources: official or academic datasets; identities and hashes in cases.json</text>
+<text x="1158.0" y="882.0" class="footnote" text-anchor="end">Complete reports · code · figures · reviewed source snapshots</text>
+<text x="600.0" y="882.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+<title id="title">Decision summary</title>
+<desc id="desc">Executive scorecard showing the preferred modeled alternative, decision value, probability of being best, robustness, and constraint-breach upper bound versus tolerance.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="510" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#246BFD"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#246BFD">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Decision summary</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">One answer, four diagnostics, and the risk boundary that governs feasibility</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#246BFD" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#246BFD"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="134.0" width="540.0" height="214.0" rx="18" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="62.0" y="165.0" class="kicker" text-anchor="start" style="fill:#246BFD">MODELED DECISION</text>
+<text x="62.0" y="210.0" class="display" text-anchor="start" style="fill:#FFFFFF">Calibrated model with live</text>
+<text x="62.0" y="241.0" class="display" text-anchor="start" style="fill:#FFFFFF">monitoring</text>
+<rect x="62.0" y="292.0" width="187.6" height="28.0" rx="14" fill="#FFF0D8" stroke="none" stroke-width="1"/>
+<text x="155.8" y="311.0" class="pill" text-anchor="middle" style="fill:#B06A00">Illustrative preference</text>
+<text x="62.0" y="331.0" class="small" text-anchor="start" style="fill:#C7D4E4">Highest-ranked option that passes the modeled risk rule</text>
+<rect x="596.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="614.0" y="166.0" class="eyebrow" text-anchor="start">DECISION VALUE</text>
+<text x="614.0" y="222.0" class="display" text-anchor="start" style="fill:#174EA6">71.8</text>
+<text x="614.0" y="272.0" class="small" text-anchor="start">of 100 · downside</text>
+<text x="614.0" y="289.0" class="small" text-anchor="start">adjusted</text>
+<rect x="614.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="614.0" y="315.0" width="103.4" height="10.0" rx="5.0" fill="#246BFD"/>
+<rect x="786.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="804.0" y="166.0" class="eyebrow" text-anchor="start">MODELED P(BEST)</text>
+<text x="804.0" y="222.0" class="display" text-anchor="start" style="fill:#0B1324">100%</text>
+<text x="804.0" y="272.0" class="small" text-anchor="start">feasible set ·</text>
+<text x="804.0" y="289.0" class="small" text-anchor="start">10,000 draws</text>
+<rect x="804.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="804.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#246BFD"/>
+<rect x="976.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="994.0" y="166.0" class="eyebrow" text-anchor="start">ROBUSTNESS</text>
+<text x="994.0" y="222.0" class="display" text-anchor="start" style="fill:#0B1324">91</text>
+<text x="994.0" y="272.0" class="small" text-anchor="start">diagnostic · not</text>
+<text x="994.0" y="289.0" class="small" text-anchor="start">confidence</text>
+<rect x="994.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="994.0" y="315.0" width="131.7" height="10.0" rx="5.0" fill="#246BFD"/>
+<rect x="36.0" y="366.0" width="1128.0" height="102.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="58.0" y="396.0" class="eyebrow" text-anchor="start">CONSTRAINT RISK BOUNDARY</text>
+<text x="58.0" y="432.0" class="section" text-anchor="start">3.1%</text>
+<text x="58.0" y="454.0" class="small" text-anchor="start">311/10,000 · U95 3.41% · tail crosses</text>
+<line x1="322" y1="423" x2="938" y2="423" stroke="#B9C6D5" stroke-width="9" stroke-linecap="round"/>
+<line x1="322" y1="423" x2="516.4" y2="423" stroke="#246BFD" stroke-width="9" stroke-linecap="round"/>
+<circle cx="499.4" cy="423" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 516.4 414 L 525.4 423 L 516.4 432 L 507.4 423 Z" fill="#246BFD" stroke="#0B1F3A"/>
+<line x1="778.3" y1="397" x2="778.3" y2="450" stroke="#B33A3A" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="778.3" y="389.0" class="small" text-anchor="middle" style="fill:#B33A3A">tolerance 8.0%</text>
+<text x="963.0" y="417.0" class="section" text-anchor="start" style="fill:#26734D">PASS</text>
+<text x="963.0" y="441.0" class="small" text-anchor="start">U95 is inside tolerance</text>
+<line x1="36" y1="470.0" x2="1164" y2="470.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="492.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="492.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

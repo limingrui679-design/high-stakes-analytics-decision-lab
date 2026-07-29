@@ -1,0 +1,20 @@
+{
+  "grain": "official business-day par yield curve",
+  "primary_key": "date",
+  "units": "annualized percentage yield",
+  "fields": {
+    "1 Mo": "Treasury par yield at 1 Mo maturity",
+    "2 Mo": "Treasury par yield at 2 Mo maturity",
+    "3 Mo": "Treasury par yield at 3 Mo maturity",
+    "6 Mo": "Treasury par yield at 6 Mo maturity",
+    "1 Yr": "Treasury par yield at 1 Yr maturity",
+    "2 Yr": "Treasury par yield at 2 Yr maturity",
+    "3 Yr": "Treasury par yield at 3 Yr maturity",
+    "5 Yr": "Treasury par yield at 5 Yr maturity",
+    "7 Yr": "Treasury par yield at 7 Yr maturity",
+    "10 Yr": "Treasury par yield at 10 Yr maturity",
+    "20 Yr": "Treasury par yield at 20 Yr maturity",
+    "30 Yr": "Treasury par yield at 30 Yr maturity",
+    "date": "observation date, ISO 8601"
+  }
+}

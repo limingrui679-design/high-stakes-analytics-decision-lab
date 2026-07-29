@@ -1,0 +1,14 @@
+{
+  "project_id": "cfpb-fintech-complaint-operations",
+  "source_id": "cfpb-ccdb-digital-payments-2022",
+  "verified_at": "2026-07-28T10:13:47.665523+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/cfpb-digital-payments-2022-sanitized.csv",
+      "sha256": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b",
+      "bytes": 2082347
+    }
+  ]
+}

@@ -1,0 +1,550 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "ai-model-validation",
+  "title": "AI Model Deployment and Validation Strategy",
+  "domain": "Artificial intelligence, statistics, model risk, and responsible deployment",
+  "decision_owner": "Model risk and product governance committee",
+  "decision_question": "Choose a deployment strategy for a high-impact prediction model under calibration, subgroup-error, drift, capacity, and contestability constraints.",
+  "time_horizon": "18 months",
+  "risk_aversion": 0.45,
+  "max_constraint_violation_rate": 0.08,
+  "sensitivity_weight_multiplier": 1.6,
+  "evidence": {
+    "type": "Synthetic out-of-time validation, subgroup, latency, and drift estimates",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Bundled synthetic prediction-score dataset",
+      "Illustrative calibration and threshold analysis",
+      "Synthetic distribution-shift and reviewer-capacity scenarios"
+    ],
+    "causal_claim_status": "No causal claim; predictive performance does not establish the effect of acting on a score.",
+    "limitations": [
+      "The score data are synthetic and do not demonstrate production generalization.",
+      "Group error gaps depend on a single illustrative threshold.",
+      "Human-review quality and feedback loops are simplified.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "decision_value",
+      "label": "Validated decision value",
+      "direction": "maximize",
+      "weight": 0.23,
+      "unit": "index points",
+      "scale": {
+        "worst": 20,
+        "best": 90
+      }
+    },
+    {
+      "id": "brier_score",
+      "label": "Brier score",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.08
+      }
+    },
+    {
+      "id": "subgroup_fnr_gap",
+      "label": "Maximum subgroup FNR gap",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "probability points",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.02
+      }
+    },
+    {
+      "id": "drift_resilience",
+      "label": "Drift resilience",
+      "direction": "maximize",
+      "weight": 0.16,
+      "unit": "score",
+      "scale": {
+        "worst": 0.2,
+        "best": 0.95
+      }
+    },
+    {
+      "id": "review_burden",
+      "label": "Human-review burden",
+      "direction": "minimize",
+      "weight": 0.11,
+      "unit": "cases per 1,000",
+      "scale": {
+        "worst": 700,
+        "best": 80
+      }
+    },
+    {
+      "id": "contestability",
+      "label": "Contestability and traceability",
+      "direction": "maximize",
+      "weight": 0.12,
+      "unit": "score",
+      "scale": {
+        "worst": 0.2,
+        "best": 1
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "brier_score",
+      "operator": "<=",
+      "threshold": 0.2,
+      "label": "Calibration and accuracy tolerance"
+    },
+    {
+      "criterion": "subgroup_fnr_gap",
+      "operator": "<=",
+      "threshold": 0.15,
+      "label": "Subgroup error-gap tolerance"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Stable operating population",
+      "probability": 0.5,
+      "adjustments": {}
+    },
+    {
+      "id": "population-drift",
+      "label": "Population and policy drift",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "brier_score": {
+            "multiply": 1.25
+          },
+          "subgroup_fnr_gap": {
+            "multiply": 1.3
+          },
+          "decision_value": {
+            "multiply": 0.88
+          }
+        },
+        "monitored-calibrated": {
+          "brier_score": {
+            "multiply": 0.86
+          },
+          "drift_resilience": {
+            "multiply": 1.08
+          }
+        },
+        "shadow-human": {
+          "subgroup_fnr_gap": {
+            "multiply": 0.82
+          }
+        }
+      }
+    },
+    {
+      "id": "review-capacity-crunch",
+      "label": "Reviewer capacity crunch",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "review_burden": {
+            "multiply": 1.25
+          }
+        },
+        "full-human-review": {
+          "decision_value": {
+            "multiply": 0.78
+          },
+          "review_burden": {
+            "multiply": 1.25
+          }
+        },
+        "monitored-calibrated": {
+          "review_burden": {
+            "multiply": 0.82
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "static-release",
+      "label": "Static model release",
+      "description": "Deploy the current model and threshold with periodic aggregate reporting.",
+      "metrics": {
+        "decision_value": {
+          "distribution": "triangular",
+          "low": 58,
+          "mode": 70,
+          "high": 81
+        },
+        "brier_score": {
+          "distribution": "triangular",
+          "low": 0.15,
+          "mode": 0.18,
+          "high": 0.23
+        },
+        "subgroup_fnr_gap": {
+          "distribution": "triangular",
+          "low": 0.09,
+          "mode": 0.14,
+          "high": 0.22
+        },
+        "drift_resilience": {
+          "distribution": "triangular",
+          "low": 0.28,
+          "mode": 0.42,
+          "high": 0.58
+        },
+        "review_burden": {
+          "distribution": "triangular",
+          "low": 90,
+          "mode": 140,
+          "high": 220
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.46
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "false_negative_rate": 0.16,
+            "calibration_gap": 0.03
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "false_negative_rate": 0.24,
+            "calibration_gap": 0.06
+          }
+        },
+        {
+          "id": "group-c",
+          "label": "Group C",
+          "metrics": {
+            "false_negative_rate": 0.28,
+            "calibration_gap": 0.08
+          }
+        }
+      ]
+    },
+    {
+      "id": "monitored-calibrated",
+      "label": "Calibrated model with live monitoring",
+      "description": "Recalibrate on held-out data, monitor drift and subgroup errors, and route uncertain cases for review.",
+      "metrics": {
+        "decision_value": {
+          "distribution": "normal",
+          "mean": 75,
+          "sd": 5,
+          "min": 48,
+          "max": 88
+        },
+        "brier_score": {
+          "distribution": "triangular",
+          "low": 0.1,
+          "mode": 0.13,
+          "high": 0.18
+        },
+        "subgroup_fnr_gap": {
+          "distribution": "triangular",
+          "low": 0.04,
+          "mode": 0.08,
+          "high": 0.14
+        },
+        "drift_resilience": {
+          "distribution": "triangular",
+          "low": 0.7,
+          "mode": 0.82,
+          "high": 0.93
+        },
+        "review_burden": {
+          "distribution": "triangular",
+          "low": 170,
+          "mode": 250,
+          "high": 390
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.82
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "false_negative_rate": 0.13,
+            "calibration_gap": 0.02
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "false_negative_rate": 0.16,
+            "calibration_gap": 0.03
+          }
+        },
+        {
+          "id": "group-c",
+          "label": "Group C",
+          "metrics": {
+            "false_negative_rate": 0.18,
+            "calibration_gap": 0.04
+          }
+        }
+      ]
+    },
+    {
+      "id": "full-human-review",
+      "label": "Model plus universal human review",
+      "description": "Use scores only for prioritization and require a trained reviewer for every consequential action.",
+      "metrics": {
+        "decision_value": {
+          "distribution": "triangular",
+          "low": 52,
+          "mode": 66,
+          "high": 78
+        },
+        "brier_score": {
+          "distribution": "triangular",
+          "low": 0.12,
+          "mode": 0.15,
+          "high": 0.2
+        },
+        "subgroup_fnr_gap": {
+          "distribution": "triangular",
+          "low": 0.03,
+          "mode": 0.07,
+          "high": 0.13
+        },
+        "drift_resilience": {
+          "distribution": "triangular",
+          "low": 0.58,
+          "mode": 0.72,
+          "high": 0.86
+        },
+        "review_burden": {
+          "distribution": "triangular",
+          "low": 480,
+          "mode": 570,
+          "high": 680
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.94
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "false_negative_rate": 0.11,
+            "calibration_gap": 0.03
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "false_negative_rate": 0.13,
+            "calibration_gap": 0.04
+          }
+        },
+        {
+          "id": "group-c",
+          "label": "Group C",
+          "metrics": {
+            "false_negative_rate": 0.15,
+            "calibration_gap": 0.05
+          }
+        }
+      ]
+    },
+    {
+      "id": "shadow-human",
+      "label": "Shadow deployment before bounded automation",
+      "description": "Run the model without decision authority, collect prospective errors, then automate only validated low-risk strata.",
+      "metrics": {
+        "decision_value": {
+          "distribution": "triangular",
+          "low": 42,
+          "mode": 61,
+          "high": 79
+        },
+        "brier_score": {
+          "distribution": "triangular",
+          "low": 0.11,
+          "mode": 0.145,
+          "high": 0.2
+        },
+        "subgroup_fnr_gap": {
+          "distribution": "triangular",
+          "low": 0.025,
+          "mode": 0.06,
+          "high": 0.12
+        },
+        "drift_resilience": {
+          "distribution": "triangular",
+          "low": 0.66,
+          "mode": 0.8,
+          "high": 0.92
+        },
+        "review_burden": {
+          "distribution": "triangular",
+          "low": 360,
+          "mode": 470,
+          "high": 620
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.96
+        }
+      },
+      "groups": [
+        {
+          "id": "group-a",
+          "label": "Group A",
+          "metrics": {
+            "false_negative_rate": 0.1,
+            "calibration_gap": 0.025
+          }
+        },
+        {
+          "id": "group-b",
+          "label": "Group B",
+          "metrics": {
+            "false_negative_rate": 0.12,
+            "calibration_gap": 0.03
+          }
+        },
+        {
+          "id": "group-c",
+          "label": "Group C",
+          "metrics": {
+            "false_negative_rate": 0.14,
+            "calibration_gap": 0.035
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A production decision requires time-separated external validation, leakage review, documented threshold costs, and post-deployment incident governance.",
+    "Subgroup diagnostics should include uncertainty and sample size, not just point estimates."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "decision_value": -0.48,
+          "brier_score": 0.48,
+          "subgroup_fnr_gap": 0.48,
+          "drift_resilience": -0.48,
+          "review_burden": 0.48,
+          "contestability": -0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "ai-model-validation-synthetic-parameter-register",
+        "citation": "AI Model Deployment and Validation Strategy — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "ai-model-validation-synthetic-parameter-register"
+      }
+    ]
+  }
+}

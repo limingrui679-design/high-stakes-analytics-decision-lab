@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+<title id="title">Pseudoword minus meaningful fixation duration</title>
+<desc id="desc">Participant-level paired contrast with 95% bootstrap intervals. Source: Harvard Dataverse DOI 10.7910/DVN/3YCB56, V1</desc>
+<defs>
+  <pattern id="microGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<rect width="1000" height="540" fill="#F3F6FA"/>
+<rect width="1000" height="102" fill="#0B1F3A"/>
+<rect width="1000" height="102" fill="url(#microGrid)"/>
+<rect width="8" height="102" fill="#7257D9"/>
+<circle cx="925" cy="50" r="30" fill="none" stroke="#7257D9" stroke-width="2" opacity=".9"/>
+<circle cx="925" cy="50" r="9" fill="#7257D9"/>
+<circle cx="925" cy="50" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".55"/>
+<line x1="860" y1="50" x2="990" y2="50" stroke="#49627F" stroke-width="1"/>
+<line x1="925" y1="4" x2="925" y2="96" stroke="#49627F" stroke-width="1"/>
+<text x="42" y="24" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.6" fill="#7257D9">EDITORIAL EVIDENCE · ANALYTICAL REPORT</text>
+<text x="42" y="55" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="25" font-weight="760" fill="#FFFFFF">Pseudoword minus meaningful fixation duration</text>
+<text x="42" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="13.5" fill="#C7D4E4">Participant-level paired contrast with 95% bootstrap intervals</text>
+<rect x="36" y="110" width="928" height="348" rx="18" fill="#07152A" opacity=".07"/>
+<rect x="32" y="104" width="936" height="350" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+<rect x="32" y="104" width="5" height="350" rx="2.5" fill="#7257D9"/>
+<rect x="45" y="112" width="74" height="8" rx="4" fill="#EEEAFE"/>
+<rect x="48" y="115.0" width="900" height="54" rx="10" fill="#FFFFFF"/><text x="66" y="147.0" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="13.5" font-weight="650" fill="#0B1324">Control</text><line x1="359.0" y1="142.0" x2="573.6" y2="142.0" stroke="#7257D9" stroke-width="5" stroke-linecap="round"/><circle cx="466.9" cy="142.0" r="8" fill="#FFFFFF" stroke="#7257D9" stroke-width="3"/><circle cx="466.9" cy="142.0" r="3" fill="#7257D9"/><rect x="770" y="128.0" width="164" height="28" rx="14" fill="#EEEAFE"/><text x="852" y="147.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="750" fill="#0B1324">27.70 [18.19, 37.10]</text><rect x="48" y="177.0" width="900" height="54" rx="10" fill="#F8FAFC"/><text x="66" y="209.0" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="13.5" font-weight="650" fill="#0B1324">Dyslexic</text><line x1="519.3" y1="204.0" x2="851.0" y2="204.0" stroke="#7257D9" stroke-width="5" stroke-linecap="round"/><circle cx="678.8" cy="204.0" r="8" fill="#FFFFFF" stroke="#7257D9" stroke-width="3"/><circle cx="678.8" cy="204.0" r="3" fill="#7257D9"/><rect x="770" y="190.0" width="164" height="28" rx="14" fill="#EEEAFE"/><text x="852" y="209.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="750" fill="#0B1324">46.38 [32.32, 61.56]</text>
+<line x1="42" y1="485" x2="958" y2="485" stroke="#B9C6D5"/>
+<text x="42" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#617084">Source: Harvard Dataverse DOI 10.7910/DVN/3YCB56, V1</text>
+<text x="958" y="510" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="750" letter-spacing=".8" fill="#7257D9">SOURCE-TRACEABLE · CLAIM-BOUNDED</text>
+</svg>

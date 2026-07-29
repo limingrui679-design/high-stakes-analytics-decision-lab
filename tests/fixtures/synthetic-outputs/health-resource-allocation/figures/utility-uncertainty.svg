@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="526" viewBox="0 0 1200 526" role="img" aria-labelledby="title desc">
+<title id="title">Utility uncertainty and downside</title>
+<desc id="desc">Dot and interval plot comparing P05 to P95 utility, expected utility, and the average of the worst ten percent of simulated outcomes.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="526" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#008C82"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#008C82">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Utility uncertainty and downside</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Expected value is shown beside overlap and the average of the worst 10% of outcomes</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#008C82"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<line x1="342.0" y1="136.0" x2="342.0" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="342.0" y="464.0" class="small" text-anchor="middle">0.0</text>
+<line x1="480.4" y1="136.0" x2="480.4" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="480.4" y="464.0" class="small" text-anchor="middle">0.2</text>
+<line x1="618.8" y1="136.0" x2="618.8" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="618.8" y="464.0" class="small" text-anchor="middle">0.4</text>
+<line x1="757.2" y1="136.0" x2="757.2" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="757.2" y="464.0" class="small" text-anchor="middle">0.6</text>
+<line x1="895.6" y1="136.0" x2="895.6" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="895.6" y="464.0" class="small" text-anchor="middle">0.8</text>
+<line x1="1034.0" y1="136.0" x2="1034.0" y2="442.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1034.0" y="464.0" class="small" text-anchor="middle">1.0</text>
+<text x="342.0" y="126.0" class="small" text-anchor="start">P05</text>
+<text x="1034.0" y="126.0" class="small" text-anchor="end">P95</text>
+<rect x="30.0" y="150.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="180.0" class="section" text-anchor="start">Targeted hybrid</text>
+<rect x="700.7" y="169.0" width="118.3" height="14" rx="7" fill="#DDF5F2"/>
+<line x1="700.7" y1="176" x2="819.0" y2="176" stroke="#008C82" stroke-width="2"/>
+<circle cx="762.4" cy="176" r="8" fill="#008C82" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 696.1 168.0 L 704.1 176.0 L 696.1 184.0 L 688.1 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.607</text>
+<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.512</text>
+<text x="48.0" y="252.0" class="label" text-anchor="start">Expand fixed clinics</text>
+<rect x="632.5" y="241.0" width="140.4" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="632.5" y1="248" x2="773.0" y2="248" stroke="#263449" stroke-width="2"/>
+<circle cx="706.4" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 628.4 240.0 L 636.4 248.0 L 628.4 256.0 L 620.4 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.527</text>
+<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.414</text>
+<rect x="30.0" y="294.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="324.0" class="label" text-anchor="start">Status quo</text>
+<rect x="652.6" y="313.0" width="74.6" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="652.6" y1="320" x2="727.3" y2="320" stroke="#263449" stroke-width="2"/>
+<circle cx="691.9" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 650.5 312.0 L 658.5 320.0 L 650.5 328.0 L 642.5 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.506</text>
+<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.446</text>
+<text x="48.0" y="396.0" class="label" text-anchor="start">Mobile-first network</text>
+<rect x="688.4" y="385.0" width="133.1" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="688.4" y1="392" x2="821.5" y2="392" stroke="#263449" stroke-width="2"/>
+<circle cx="757.7" cy="392" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 684.5 384.0 L 692.5 392.0 L 684.5 400.0 L 676.5 392.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="387.0" class="mono" text-anchor="start">mean 0.601</text>
+<text x="1052.0" y="407.0" class="small" text-anchor="start">CVaR10 0.495</text>
+<text x="342.0" y="492.0" class="small" text-anchor="start">● expected utility   ◆ worst-decile average   band = P05–P95</text>
+<line x1="36" y1="486.0" x2="1164" y2="486.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="508.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="508.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

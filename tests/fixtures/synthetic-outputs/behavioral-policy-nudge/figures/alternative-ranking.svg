@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="566" viewBox="0 0 1200 566" role="img" aria-labelledby="title desc">
+<title id="title">Alternative ranking</title>
+<desc id="desc">Horizontal ranked bars compare risk-adjusted decision value on a zero-to-100 scale. Labels show feasibility, probability-best, and the breach-frequency upper bound.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="566" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#C69214"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#C69214">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Alternative ranking</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Risk-adjusted decision value · direct ranks, feasibility, P(best), and breach U95</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#C69214" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#C69214"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<line x1="366.0" y1="132.0" x2="366.0" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="366.0" y="512.0" class="small" text-anchor="middle">0</text>
+<line x1="517.2" y1="132.0" x2="517.2" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="517.2" y="512.0" class="small" text-anchor="middle">20</text>
+<line x1="668.4" y1="132.0" x2="668.4" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="668.4" y="512.0" class="small" text-anchor="middle">40</text>
+<line x1="819.6" y1="132.0" x2="819.6" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="819.6" y="512.0" class="small" text-anchor="middle">60</text>
+<line x1="970.8" y1="132.0" x2="970.8" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="970.8" y="512.0" class="small" text-anchor="middle">80</text>
+<line x1="1122.0" y1="132.0" x2="1122.0" y2="490.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1122.0" y="512.0" class="small" text-anchor="middle">100</text>
+<rect x="30.0" y="132.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="58" cy="160" r="17" fill="#C69214"/>
+<text x="58.0" y="165.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
+<text x="86.0" y="156.0" class="section" text-anchor="start">Simplified form plus assisted</text>
+<text x="86.0" y="172.0" class="section" text-anchor="start">renewal</text>
+<rect x="366" y="145" width="498.4" height="30" rx="7" fill="#C69214" stroke="#8B6400" stroke-width="2"/>
+<text x="854.4" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">65.9</text>
+<rect x="86.0" y="180.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
+<text x="124.0" y="199.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
+<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 99% · U95 2.85%</text>
+<circle cx="58" cy="248" r="17" fill="#0B1F3A"/>
+<text x="58.0" y="253.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">2</text>
+<text x="86.0" y="244.0" class="label" text-anchor="start">Behaviorally informed reminders</text>
+<rect x="366" y="233" width="425.9" height="30" rx="7" fill="#FFF2C7" stroke="#C69214" stroke-width="1"/>
+<text x="781.9" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">56.3</text>
+<rect x="86.0" y="268.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
+<text x="124.0" y="287.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
+<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 1% · U95 0.03%</text>
+<rect x="30.0" y="308.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="58" cy="336" r="17" fill="#0B1F3A"/>
+<text x="58.0" y="341.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
+<text x="86.0" y="332.0" class="label" text-anchor="start">Current renewal process</text>
+<rect x="366" y="321" width="352.4" height="30" rx="7" fill="#FFF2C7" stroke="#C69214" stroke-width="1"/>
+<text x="708.4" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">46.6</text>
+<rect x="86.0" y="356.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
+<text x="124.0" y="375.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
+<text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 0% · U95 0.03%</text>
+<circle cx="58" cy="424" r="17" fill="#0B1F3A"/>
+<text x="58.0" y="429.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">4</text>
+<text x="86.0" y="420.0" class="label" text-anchor="start">Automatic renewal with opt-out</text>
+<rect x="366" y="409" width="435.8" height="30" rx="7" fill="#FBE7E7" stroke="#B33A3A" stroke-width="1"/>
+<text x="791.8" y="429.0" class="value" text-anchor="end" style="fill:#0B1324">57.6</text>
+<rect x="86.0" y="444.0" width="76.0" height="28.0" rx="14" fill="#FBE7E7" stroke="none" stroke-width="1"/>
+<text x="124.0" y="463.0" class="pill" text-anchor="middle" style="fill:#B33A3A">RISK FAIL</text>
+<text x="174.0" y="463.0" class="small" text-anchor="start">P(best) n/a · U95 51.01%</text>
+<line x1="36" y1="526.0" x2="1164" y2="526.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="548.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="548.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

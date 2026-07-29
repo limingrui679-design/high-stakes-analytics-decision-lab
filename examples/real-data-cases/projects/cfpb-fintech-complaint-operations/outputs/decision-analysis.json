@@ -1,0 +1,89 @@
+{
+  "question": "Does the later-period evidence justify deploying an individual complaint ranking model?",
+  "decision": "do_not_deploy_ranking_model",
+  "auc_validation": {
+    "observed_auc": 0.6107876712328767,
+    "block_bootstrap_95_interval": [
+      0.5386500770096976,
+      0.6966899099655705
+    ],
+    "permutation_null": {
+      "samples": 500,
+      "mean_auc": 0.5006276969178084,
+      "95_interval": [
+        0.4333720390981735,
+        0.569574236586758
+      ],
+      "one_sided_p_value": 0.001996007984031936
+    }
+  },
+  "capacity_validation": {
+    "5%": {
+      "capacity_share": 0.05008347245409015,
+      "selected_count": 120,
+      "positive_capture": 0.05,
+      "precision": 0.025,
+      "lift_vs_random": 0.9983333333333334,
+      "random_capture_benchmark": 0.05008347245409015,
+      "excess_capture_over_random": -8.347245409014853e-05,
+      "lift_block_bootstrap_95_interval": [
+        0.33259269558769,
+        2.457085235920852
+      ]
+    },
+    "10%": {
+      "capacity_share": 0.1001669449081803,
+      "selected_count": 240,
+      "positive_capture": 0.11666666666666667,
+      "precision": 0.029166666666666667,
+      "lift_vs_random": 1.1647222222222222,
+      "random_capture_benchmark": 0.1001669449081803,
+      "excess_capture_over_random": 0.016499721758486366,
+      "lift_block_bootstrap_95_interval": [
+        0.40320442176870747,
+        1.85653024691358
+      ]
+    },
+    "20%": {
+      "capacity_share": 0.2003338898163606,
+      "selected_count": 480,
+      "positive_capture": 0.2,
+      "precision": 0.025,
+      "lift_vs_random": 0.9983333333333334,
+      "random_capture_benchmark": 0.2003338898163606,
+      "excess_capture_over_random": -0.0003338898163605941,
+      "lift_block_bootstrap_95_interval": [
+        0.5653135691593353,
+        1.7540162037037035
+      ]
+    }
+  },
+  "deployment_gate": {
+    "status": "do_not_deploy_ranking_model",
+    "passes": false,
+    "auc_gate": {
+      "threshold": 0.65,
+      "observed": 0.6107876712328767,
+      "passes": false
+    },
+    "capacity_lift_gate": {
+      "threshold": 1.2,
+      "passes_any_review_capacity": false
+    },
+    "reason": "Later-period discrimination is weak and no tested capacity has both the required point lift and a block-bootstrap lower bound above random review.",
+    "permitted_use": "Retain the privacy-minimized data contract, calendar split, aggregate monitoring, and negative-validation evidence; do not operationalize individual complaint ranking.",
+    "reversal_conditions": [
+      "A pre-registered future-period evaluation exceeds the AUC gate and reproduces material lift above random review.",
+      "Operationally available features add stable signal without violating the privacy and use boundary.",
+      "A prospective workflow study demonstrates benefit and checks distributional burden before any ranking use."
+    ]
+  },
+  "source_of_metrics": "untouched November-December 2022 evaluation",
+  "approval_chain": [
+    {
+      "role": "repository author",
+      "status": "self-reviewed negative validation",
+      "scope": "public-data research demonstration only"
+    }
+  ]
+}

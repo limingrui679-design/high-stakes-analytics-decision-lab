@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="542" viewBox="0 0 1200 542" role="img" aria-labelledby="title desc">
+<title id="title">Criterion trade-off profile</title>
+<desc id="desc">A directly labeled scorecard compares normalized criterion values and weights for each alternative, with the preferred option outlined.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="542" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#246BFD"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#246BFD">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Criterion trade-off profile</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Every score uses its declared worst-to-best reference scale; weights remain visible</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#246BFD" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#246BFD"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="279.0" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="350.2" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Validated decision</text>
+<text x="350.2" y="159.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">value</text>
+<text x="350.2" y="174.0" class="small" text-anchor="middle">weight 23%</text>
+<rect x="427.3" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="498.5" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Brier score</text>
+<text x="498.5" y="174.0" class="small" text-anchor="middle">weight 20%</text>
+<rect x="575.7" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="646.8" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Maximum subgroup</text>
+<text x="646.8" y="159.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">FNR gap</text>
+<text x="646.8" y="174.0" class="small" text-anchor="middle">weight 18%</text>
+<rect x="724.0" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="795.2" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Drift resilience</text>
+<text x="795.2" y="174.0" class="small" text-anchor="middle">weight 16%</text>
+<rect x="872.3" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="943.5" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Human-review</text>
+<text x="943.5" y="159.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">burden</text>
+<text x="943.5" y="174.0" class="small" text-anchor="middle">weight 11%</text>
+<rect x="1020.7" y="128.0" width="140.3" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="1091.8" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Contestability and</text>
+<text x="1091.8" y="159.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">traceability</text>
+<text x="1091.8" y="174.0" class="small" text-anchor="middle">weight 12%</text>
+<rect x="30.0" y="180.0" width="1134.0" height="68.0" rx="10" fill="#E8F0FF" stroke="#246BFD" stroke-width="2"/>
+<text x="48.0" y="209.0" class="section" text-anchor="start">Calibrated model with live</text>
+<text x="48.0" y="225.0" class="section" text-anchor="start">monitoring</text>
+<rect x="48.0" y="218.0" width="82.0" height="28.0" rx="14" fill="#246BFD" stroke="none" stroke-width="1"/>
+<text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
+<text x="290.0" y="206.0" class="value" text-anchor="start">75</text>
+<rect x="290.0" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="219.0" width="86.9" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="290.0" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="438.3" y="206.0" class="value" text-anchor="start">73</text>
+<rect x="438.3" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="438.3" y="219.0" width="84.7" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="438.3" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="586.7" y="206.0" class="value" text-anchor="start">73</text>
+<rect x="586.7" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="219.0" width="85.4" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="586.7" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="735.0" y="206.0" class="value" text-anchor="start">85</text>
+<rect x="735.0" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="735.0" y="219.0" width="98.7" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="735.0" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="206.0" class="value" text-anchor="start">69</text>
+<rect x="883.3" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="219.0" width="80.5" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="883.3" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="1031.7" y="206.0" class="value" text-anchor="start">77</text>
+<rect x="1031.7" y="219.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="1031.7" y="219.0" width="90.2" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="1031.7" y="241.0" class="small" text-anchor="start">higher value</text>
+<rect x="30.0" y="256.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="48.0" y="285.0" class="label" text-anchor="start">Shadow deployment before</text>
+<text x="48.0" y="301.0" class="label" text-anchor="start">bounded automation</text>
+<text x="290.0" y="282.0" class="value" text-anchor="start">55</text>
+<rect x="290.0" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="295.0" width="63.9" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="317.0" class="small" text-anchor="start">mid-range</text>
+<text x="438.3" y="282.0" class="value" text-anchor="start">62</text>
+<rect x="438.3" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="438.3" y="295.0" width="72.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="438.3" y="317.0" class="small" text-anchor="start">mid-range</text>
+<text x="586.7" y="282.0" class="value" text-anchor="start">82</text>
+<rect x="586.7" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="295.0" width="95.8" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="317.0" class="small" text-anchor="start">higher value</text>
+<text x="735.0" y="282.0" class="value" text-anchor="start">79</text>
+<rect x="735.0" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="735.0" y="295.0" width="92.0" height="8.0" rx="4.0" fill="#263449"/>
+<text x="735.0" y="317.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="282.0" class="value" text-anchor="start">31</text>
+<rect x="883.3" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="295.0" width="36.3" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="317.0" class="small" text-anchor="start">trade-off</text>
+<text x="1031.7" y="282.0" class="value" text-anchor="start">95</text>
+<rect x="1031.7" y="295.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="1031.7" y="295.0" width="110.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="1031.7" y="317.0" class="small" text-anchor="start">higher value</text>
+<rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="48.0" y="361.0" class="label" text-anchor="start">Model plus universal human</text>
+<text x="48.0" y="377.0" class="label" text-anchor="start">review</text>
+<text x="290.0" y="358.0" class="value" text-anchor="start">57</text>
+<rect x="290.0" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="371.0" width="66.8" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="393.0" class="small" text-anchor="start">mid-range</text>
+<text x="438.3" y="358.0" class="value" text-anchor="start">60</text>
+<rect x="438.3" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="438.3" y="371.0" width="69.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="438.3" y="393.0" class="small" text-anchor="start">mid-range</text>
+<text x="586.7" y="358.0" class="value" text-anchor="start">77</text>
+<rect x="586.7" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="371.0" width="89.9" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="393.0" class="small" text-anchor="start">higher value</text>
+<text x="735.0" y="358.0" class="value" text-anchor="start">69</text>
+<rect x="735.0" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="735.0" y="371.0" width="80.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="735.0" y="393.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="358.0" class="value" text-anchor="start">16</text>
+<rect x="883.3" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="371.0" width="18.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="393.0" class="small" text-anchor="start">trade-off</text>
+<text x="1031.7" y="358.0" class="value" text-anchor="start">93</text>
+<rect x="1031.7" y="371.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="1031.7" y="371.0" width="107.6" height="8.0" rx="4.0" fill="#263449"/>
+<text x="1031.7" y="393.0" class="small" text-anchor="start">higher value</text>
+<rect x="30.0" y="408.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="48.0" y="437.0" class="label" text-anchor="start">Static model release</text>
+<text x="290.0" y="434.0" class="value" text-anchor="start">67</text>
+<rect x="290.0" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="447.0" width="78.4" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="469.0" class="small" text-anchor="start">higher value</text>
+<text x="438.3" y="434.0" class="value" text-anchor="start">45</text>
+<rect x="438.3" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="438.3" y="447.0" width="52.6" height="8.0" rx="4.0" fill="#263449"/>
+<text x="438.3" y="469.0" class="small" text-anchor="start">mid-range</text>
+<text x="586.7" y="434.0" class="value" text-anchor="start">49</text>
+<rect x="586.7" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="447.0" width="56.9" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="469.0" class="small" text-anchor="start">mid-range</text>
+<text x="735.0" y="434.0" class="value" text-anchor="start">30</text>
+<rect x="735.0" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="735.0" y="447.0" width="35.1" height="8.0" rx="4.0" fill="#263449"/>
+<text x="735.0" y="469.0" class="small" text-anchor="start">trade-off</text>
+<text x="883.3" y="434.0" class="value" text-anchor="start">87</text>
+<rect x="883.3" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="447.0" width="101.7" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="469.0" class="small" text-anchor="start">higher value</text>
+<text x="1031.7" y="434.0" class="value" text-anchor="start">32</text>
+<rect x="1031.7" y="447.0" width="116.3" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="1031.7" y="447.0" width="37.8" height="8.0" rx="4.0" fill="#263449"/>
+<text x="1031.7" y="469.0" class="small" text-anchor="start">trade-off</text>
+<line x1="36" y1="502.0" x2="1164" y2="502.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="524.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="524.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

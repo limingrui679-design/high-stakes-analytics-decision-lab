@@ -1,0 +1,12 @@
+{
+  "grain": "participant with repeated meaningful and pseudoword measures",
+  "primary_key": "subnum",
+  "fields": {
+    "subnum": "opaque participant pairing identifier",
+    "group": "1 control; 2 dyslexic",
+    "Vd": "pseudoword-passage fixation duration (source codebook)",
+    "Td": "meaningful-text-passage fixation duration (source codebook)",
+    "p_avg_f": "average fixation count on target pseudowords",
+    "m_avg_f": "average fixation count on target meaningful words"
+  }
+}

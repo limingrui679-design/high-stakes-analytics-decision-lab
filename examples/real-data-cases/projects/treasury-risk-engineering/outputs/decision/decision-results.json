@@ -1,0 +1,2144 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-07-28T10:05:59.976799+00:00",
+    "case_id": "real-treasury-risk-engineering",
+    "case_hash_sha256": "560e97bcaec27b9bfed1206430146a2f237a641d666148a2fd512dae7ff98d36",
+    "samples": 10000,
+    "seed": 20260727,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which duration profile should remain in exploratory risk review under the historical evidence",
+    "domain": "Financial risk engineering",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which duration profile should remain in exploratory risk review under the historical evidence?",
+    "time_horizon": "Historical-risk review only",
+    "recommendation": "short-baseline",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "short-baseline",
+      "intermediate",
+      "barbell",
+      "long-duration"
+    ],
+    "pareto_frontier": [
+      "short-baseline"
+    ],
+    "pareto_frontier_unconstrained": [
+      "short-baseline"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.029384835412279986,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 90.78699999999999,
+    "robustness_components": {
+      "probability_best": {
+        "value": 0.6929,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "annualized_mean_return",
+      "label": "Historical annualized return",
+      "direction": "maximize",
+      "weight": 0.3,
+      "unit": "return fraction",
+      "scale": {
+        "worst": -0.1,
+        "best": 0.12
+      },
+      "normalized_weight": 0.3
+    },
+    {
+      "id": "expected_shortfall95_loss",
+      "label": "Historical ES95 loss",
+      "direction": "minimize",
+      "weight": 0.45,
+      "unit": "daily loss fraction",
+      "scale": {
+        "worst": 0.08,
+        "best": 0
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "worst_day_loss",
+      "label": "Worst historical day",
+      "direction": "minimize",
+      "weight": 0.25,
+      "unit": "daily loss fraction",
+      "scale": {
+        "worst": 0.1,
+        "best": 0
+      },
+      "normalized_weight": 0.25
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "annualized_mean_return": {
+            "multiply": 0.92
+          },
+          "expected_shortfall95_loss": {
+            "multiply": 1.08
+          },
+          "worst_day_loss": {
+            "multiply": 1.08
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "short-baseline"
+      ],
+      "winner": "short-baseline",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "short-baseline"
+      ],
+      "winner": "short-baseline",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "short-baseline": {
+      "alternative_id": "short-baseline",
+      "label": "Short Baseline",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.8081397908621875,
+      "utility_p05": 0.7792696811318182,
+      "utility_p95": 0.8398595493136363,
+      "cvar10": 0.7775479844683173,
+      "risk_adjusted_utility": 0.8004918392637199,
+      "value_score": 80.049183926372,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "annualized_mean_return": {
+          "label": "Historical annualized return",
+          "unit": "return fraction",
+          "mean": 0.014906110645360059,
+          "normalized_score": 0.522300502933455,
+          "scale_clipping_rate": 0.0,
+          "p05": -0.00476104,
+          "p95": 0.03722234
+        },
+        "expected_shortfall95_loss": {
+          "label": "Historical ES95 loss",
+          "unit": "daily loss fraction",
+          "mean": 0.004472011980240018,
+          "normalized_score": 0.9440998502470009,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00405402,
+          "p95": 0.0049522023
+        },
+        "worst_day_loss": {
+          "label": "Worst historical day",
+          "unit": "daily loss fraction",
+          "mean": 0.009358117051600645,
+          "normalized_score": 0.9064188294840327,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.0068184396,
+          "p95": 0.010991106
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.8095334576448476,
+          "p05": 0.7799746809943182,
+          "p95": 0.8405515811647727,
+          "cvar10": 0.7785995553530314,
+          "risk_adjusted_utility": 0.8017999820718935,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.8039587905141979,
+          "p05": 0.7763435552125,
+          "p95": 0.8328960197738636,
+          "cvar10": 0.7749103761751818,
+          "risk_adjusted_utility": 0.7966966869294438,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.6929,
+      "probability_best_unconstrained": 0.6929,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "intermediate": {
+      "alternative_id": "intermediate",
+      "label": "Intermediate",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7818329243816093,
+      "utility_p05": 0.7417997978420455,
+      "utility_p95": 0.8230218021306819,
+      "cvar10": 0.7389292422609317,
+      "risk_adjusted_utility": 0.7711070038514399,
+      "value_score": 77.110700385144,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "annualized_mean_return": {
+          "label": "Historical annualized return",
+          "unit": "return fraction",
+          "mean": 0.010322395395800073,
+          "normalized_score": 0.5014654336172729,
+          "scale_clipping_rate": 0.0,
+          "p05": -0.018129932199999983,
+          "p95": 0.03718714
+        },
+        "expected_shortfall95_loss": {
+          "label": "Historical ES95 loss",
+          "unit": "daily loss fraction",
+          "mean": 0.006438450564279953,
+          "normalized_score": 0.9195193679464947,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00587065,
+          "p95": 0.00716444
+        },
+        "worst_day_loss": {
+          "label": "Worst historical day",
+          "unit": "daily loss fraction",
+          "mean": 0.012956168511800441,
+          "normalized_score": 0.8704383148820112,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00962768,
+          "p95": 0.0151365564
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7834182191662892,
+          "p05": 0.7431759303977274,
+          "p95": 0.8246091183806818,
+          "cvar10": 0.7400164700219696,
+          "risk_adjusted_utility": 0.7725677818802092,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.7770770400275642,
+          "p05": 0.7384595325727272,
+          "p95": 0.8149996098556819,
+          "cvar10": 0.7364272439355452,
+          "risk_adjusted_utility": 0.7669145910045594,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.1459,
+      "probability_best_unconstrained": 0.1459,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    },
+    "barbell": {
+      "alternative_id": "barbell",
+      "label": "Barbell",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.777382150528293,
+      "utility_p05": 0.7365416277931818,
+      "utility_p95": 0.8236020234659092,
+      "cvar10": 0.7339017874741816,
+      "risk_adjusted_utility": 0.7665120597647651,
+      "value_score": 76.6512059764765,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "annualized_mean_return": {
+          "label": "Historical annualized return",
+          "unit": "return fraction",
+          "mean": 0.007951344773080056,
+          "normalized_score": 0.49068793078672945,
+          "scale_clipping_rate": 0.0,
+          "p05": -0.02060876,
+          "p95": 0.04149576445999978
+        },
+        "expected_shortfall95_loss": {
+          "label": "Historical ES95 loss",
+          "unit": "daily loss fraction",
+          "mean": 0.006352559172360001,
+          "normalized_score": 0.9205930103454948,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00579387,
+          "p95": 0.007006446
+        },
+        "worst_day_loss": {
+          "label": "Worst historical day",
+          "unit": "daily loss fraction",
+          "mean": 0.013636433345279031,
+          "normalized_score": 0.8636356665471688,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00970666,
+          "p95": 0.015398866800000001
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7787283419795425,
+          "p05": 0.7377213250568182,
+          "p95": 0.8260966357386365,
+          "cvar10": 0.7349795374166674,
+          "risk_adjusted_utility": 0.7677911408388238,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.773343576174536,
+          "p05": 0.7338445563659091,
+          "p95": 0.8171856116943181,
+          "cvar10": 0.7310641174578184,
+          "risk_adjusted_utility": 0.7627737114953566,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.1253,
+      "probability_best_unconstrained": 0.1253,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    },
+    "long-duration": {
+      "alternative_id": "long-duration",
+      "label": "Long Duration",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7456474814828432,
+      "utility_p05": 0.6888523601352273,
+      "utility_p95": 0.8044542781250001,
+      "cvar10": 0.6850520848810226,
+      "risk_adjusted_utility": 0.7304986323323881,
+      "value_score": 73.04986323323881,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "annualized_mean_return": {
+          "label": "Historical annualized return",
+          "unit": "return fraction",
+          "mean": 0.00426364406344001,
+          "normalized_score": 0.47392565483381915,
+          "scale_clipping_rate": 0.0,
+          "p05": -0.03725354,
+          "p95": 0.04551044
+        },
+        "expected_shortfall95_loss": {
+          "label": "Historical ES95 loss",
+          "unit": "daily loss fraction",
+          "mean": 0.008900829823199966,
+          "normalized_score": 0.888739627209997,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.00807839,
+          "p95": 0.009888318
+        },
+        "worst_day_loss": {
+          "label": "Worst historical day",
+          "unit": "daily loss fraction",
+          "mean": 0.018585218884720433,
+          "normalized_score": 0.8141478111527416,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.013062399999999998,
+          "p95": 0.0205098048
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7477309888978008,
+          "p05": 0.6897246298863636,
+          "p95": 0.8058823335227273,
+          "cvar10": 0.6860593815856062,
+          "risk_adjusted_utility": 0.7323130870697521,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.7393969592379723,
+          "p05": 0.686424885809091,
+          "p95": 0.7926029867602273,
+          "cvar10": 0.6824499560093632,
+          "risk_adjusted_utility": 0.7251602084308201,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0359,
+      "probability_best_unconstrained": 0.0359,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "annualized_mean_return",
+      "label": "↓ Historical annualized return",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.8339693567522042,
+        "intermediate": 0.8047300097339519,
+        "barbell": 0.8009609149164026,
+        "long-duration": 0.7643827138632022
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.8398997117431575,
+          "cvar10": 0.8161782917793444,
+          "risk_adjusted_utility": 0.8339693567522042
+        },
+        "intermediate": {
+          "expected_utility": 0.8129848677998651,
+          "cvar10": 0.7799654355362122,
+          "risk_adjusted_utility": 0.8047300097339519
+        },
+        "barbell": {
+          "expected_utility": 0.8092370638329138,
+          "cvar10": 0.776132468166869,
+          "risk_adjusted_utility": 0.8009609149164026
+        },
+        "long-duration": {
+          "expected_utility": 0.7758387955549599,
+          "cvar10": 0.7300144687879291,
+          "risk_adjusted_utility": 0.7643827138632022
+        }
+      }
+    },
+    {
+      "criterion": "annualized_mean_return",
+      "label": "↑ Historical annualized return",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.7611427531129189,
+        "intermediate": 0.7315604261629687,
+        "barbell": 0.7260031917249288,
+        "long-duration": 0.6906733506527101
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.7708564054801765,
+          "cvar10": 0.7320017960111458,
+          "risk_adjusted_utility": 0.7611427531129189
+        },
+        "intermediate": {
+          "expected_utility": 0.745263251673214,
+          "cvar10": 0.6904519496322327,
+          "risk_adjusted_utility": 0.7315604261629687
+        },
+        "barbell": {
+          "expected_utility": 0.7399872523011303,
+          "cvar10": 0.6840510099963242,
+          "risk_adjusted_utility": 0.7260031917249288
+        },
+        "long-duration": {
+          "expected_utility": 0.710205504093844,
+          "cvar10": 0.6320768903293085,
+          "risk_adjusted_utility": 0.6906733506527101
+        }
+      }
+    },
+    {
+      "criterion": "expected_shortfall95_loss",
+      "label": "↓ Historical ES95 loss",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.7752005445615668,
+        "intermediate": 0.7449904792744468,
+        "barbell": 0.7393729999176333,
+        "long-duration": 0.7026576591280754
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.7841468392060461,
+          "cvar10": 0.748361660628129,
+          "risk_adjusted_utility": 0.7752005445615668
+        },
+        "intermediate": {
+          "expected_utility": 0.7575353166936829,
+          "cvar10": 0.7073559670167388,
+          "risk_adjusted_utility": 0.7449904792744468
+        },
+        "barbell": {
+          "expected_utility": 0.7521096458546694,
+          "cvar10": 0.7011630621065248,
+          "risk_adjusted_utility": 0.7393729999176333
+        },
+        "long-duration": {
+          "expected_utility": 0.7203959263545282,
+          "cvar10": 0.649442857448717,
+          "risk_adjusted_utility": 0.7026576591280754
+        }
+      }
+    },
+    {
+      "criterion": "expected_shortfall95_loss",
+      "label": "↑ Historical ES95 loss",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.8268055765855357,
+        "intermediate": 0.798274772675749,
+        "barbell": 0.7947433204497066,
+        "long-duration": 0.7594569133148479
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.83311204666756,
+          "cvar10": 0.8078861663394626,
+          "risk_adjusted_utility": 0.8268055765855357
+        },
+        "intermediate": {
+          "expected_utility": 0.8071222711588284,
+          "cvar10": 0.7717322772265107,
+          "risk_adjusted_utility": 0.798274772675749
+        },
+        "barbell": {
+          "expected_utility": 0.8036861860049244,
+          "cvar10": 0.7679147237840533,
+          "risk_adjusted_utility": 0.7947433204497066
+        },
+        "long-duration": {
+          "expected_utility": 0.7719297123306877,
+          "cvar10": 0.7220385162673282,
+          "risk_adjusted_utility": 0.7594569133148479
+        }
+      }
+    },
+    {
+      "criterion": "worst_day_loss",
+      "label": "↓ Worst historical day",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.7910343914707749,
+        "intermediate": 0.7622540702227854,
+        "barbell": 0.7578031421222289,
+        "long-duration": 0.723009889476945
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.7992053328056556,
+          "cvar10": 0.7665215674661329,
+          "risk_adjusted_utility": 0.7910343914707749
+        },
+        "intermediate": {
+          "expected_utility": 0.7737778888815705,
+          "cvar10": 0.7276826142464297,
+          "risk_adjusted_utility": 0.7622540702227854
+        },
+        "barbell": {
+          "expected_utility": 0.7695409217993048,
+          "cvar10": 0.722589803091001,
+          "risk_adjusted_utility": 0.7578031421222289
+        },
+        "long-duration": {
+          "expected_utility": 0.7394201787855766,
+          "cvar10": 0.67377902155105,
+          "risk_adjusted_utility": 0.723009889476945
+        }
+      }
+    },
+    {
+      "criterion": "worst_day_loss",
+      "label": "↑ Worst historical day",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "short-baseline",
+      "scores": {
+        "short-baseline": 0.8120144968912144,
+        "intermediate": 0.7818782923916796,
+        "barbell": 0.7771164880431581,
+        "long-duration": 0.7396332163286761
+      },
+      "score_details": {
+        "short-baseline": {
+          "expected_utility": 0.819059684042387,
+          "cvar10": 0.7908789354376967,
+          "risk_adjusted_utility": 0.8120144968912144
+        },
+        "intermediate": {
+          "expected_utility": 0.7916779677705428,
+          "cvar10": 0.7524792662550903,
+          "risk_adjusted_utility": 0.7818782923916796
+        },
+        "barbell": {
+          "expected_utility": 0.7869658745303929,
+          "cvar10": 0.7475683285814538,
+          "risk_adjusted_utility": 0.7771164880431581
+        },
+        "long-duration": {
+          "expected_utility": 0.7532586292239516,
+          "cvar10": 0.6987569776428493,
+          "risk_adjusted_utility": 0.7396332163286761
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "annualized_mean_return": -0.28,
+          "expected_shortfall95_loss": 0.28,
+          "worst_day_loss": 0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "short-baseline",
+      "ranking": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "feasible_alternatives": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "alternatives": {
+        "short-baseline": {
+          "expected_utility": 0.8081283776465557,
+          "cvar10": 0.7779283650278406,
+          "risk_adjusted_utility": 0.8005783744918769,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.6746
+        },
+        "intermediate": {
+          "expected_utility": 0.7818520111431841,
+          "cvar10": 0.7394837855289332,
+          "risk_adjusted_utility": 0.7712599547396214,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1515
+        },
+        "barbell": {
+          "expected_utility": 0.7774650976065086,
+          "cvar10": 0.7346537908063177,
+          "risk_adjusted_utility": 0.7667622709064609,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1352
+        },
+        "long-duration": {
+          "expected_utility": 0.745761997346923,
+          "cvar10": 0.6858037184214326,
+          "risk_adjusted_utility": 0.7307724276155504,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0387
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "short-baseline",
+      "ranking": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "feasible_alternatives": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "alternatives": {
+        "short-baseline": {
+          "expected_utility": 0.8081397908621875,
+          "cvar10": 0.7775479844683173,
+          "risk_adjusted_utility": 0.8004918392637199,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.6929
+        },
+        "intermediate": {
+          "expected_utility": 0.7818329243816093,
+          "cvar10": 0.7389292422609317,
+          "risk_adjusted_utility": 0.7711070038514399,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1459
+        },
+        "barbell": {
+          "expected_utility": 0.777382150528293,
+          "cvar10": 0.7339017874741816,
+          "risk_adjusted_utility": 0.7665120597647651,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1253
+        },
+        "long-duration": {
+          "expected_utility": 0.7456474814828432,
+          "cvar10": 0.6850520848810226,
+          "risk_adjusted_utility": 0.7304986323323881,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0359
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "short-baseline",
+      "ranking": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "feasible_alternatives": [
+        "short-baseline",
+        "intermediate",
+        "barbell",
+        "long-duration"
+      ],
+      "alternatives": {
+        "short-baseline": {
+          "expected_utility": 0.808096725605258,
+          "cvar10": 0.7769853682916364,
+          "risk_adjusted_utility": 0.8003188862768527,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.7079
+        },
+        "intermediate": {
+          "expected_utility": 0.7818093607391751,
+          "cvar10": 0.7383694152544551,
+          "risk_adjusted_utility": 0.770949374367995,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1399
+        },
+        "barbell": {
+          "expected_utility": 0.7773620953051278,
+          "cvar10": 0.7335692890842264,
+          "risk_adjusted_utility": 0.7664138937499024,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.1201
+        },
+        "long-duration": {
+          "expected_utility": 0.7456106242814615,
+          "cvar10": 0.6843590059037039,
+          "risk_adjusted_utility": 0.7302977196870222,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0321
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "short-baseline",
+        "right_alternative": "intermediate",
+        "correlation": 0.12737702316729685
+      },
+      {
+        "left_alternative": "short-baseline",
+        "right_alternative": "barbell",
+        "correlation": 0.11857142306431238
+      },
+      {
+        "left_alternative": "short-baseline",
+        "right_alternative": "long-duration",
+        "correlation": 0.1076630066855765
+      },
+      {
+        "left_alternative": "intermediate",
+        "right_alternative": "barbell",
+        "correlation": 0.10486879189676358
+      },
+      {
+        "left_alternative": "intermediate",
+        "right_alternative": "long-duration",
+        "correlation": 0.11456831650796233
+      },
+      {
+        "left_alternative": "barbell",
+        "right_alternative": "long-duration",
+        "correlation": 0.1114701801384272
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 57,
+      "parameters_with_resolved_source": 57,
+      "parameters_approved_for_declared_use": 57,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-27",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.annualized_mean_return.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.annualized_mean_return.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.annualized_mean_return.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.expected_shortfall95_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.expected_shortfall95_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.expected_shortfall95_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.worst_day_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.worst_day_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.worst_day_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.annualized_mean_return.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.annualized_mean_return.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.annualized_mean_return.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.expected_shortfall95_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.expected_shortfall95_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.expected_shortfall95_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.worst_day_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.worst_day_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.worst_day_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.annualized_mean_return.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.annualized_mean_return.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.annualized_mean_return.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.expected_shortfall95_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.expected_shortfall95_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.expected_shortfall95_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.worst_day_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.worst_day_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.worst_day_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.annualized_mean_return.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.annualized_mean_return.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.annualized_mean_return.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.expected_shortfall95_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.expected_shortfall95_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.expected_shortfall95_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.worst_day_loss.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.worst_day_loss.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.worst_day_loss.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "treasury-risk-engineering-analysis-output",
+        "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.annualized_mean_return.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.expected_shortfall95_loss.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.worst_day_loss.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.annualized_mean_return",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.expected_shortfall95_loss",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.worst_day_loss",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 0,
+      "parameter": 12,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.annualized_mean_return",
+        "alternative_id": "short-baseline",
+        "criterion_id": "annualized_mean_return",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.expected_shortfall95_loss",
+        "alternative_id": "short-baseline",
+        "criterion_id": "expected_shortfall95_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.worst_day_loss",
+        "alternative_id": "short-baseline",
+        "criterion_id": "worst_day_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.annualized_mean_return",
+        "alternative_id": "intermediate",
+        "criterion_id": "annualized_mean_return",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.expected_shortfall95_loss",
+        "alternative_id": "intermediate",
+        "criterion_id": "expected_shortfall95_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.worst_day_loss",
+        "alternative_id": "intermediate",
+        "criterion_id": "worst_day_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.annualized_mean_return",
+        "alternative_id": "barbell",
+        "criterion_id": "annualized_mean_return",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.expected_shortfall95_loss",
+        "alternative_id": "barbell",
+        "criterion_id": "expected_shortfall95_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.worst_day_loss",
+        "alternative_id": "barbell",
+        "criterion_id": "worst_day_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[3].metrics.annualized_mean_return",
+        "alternative_id": "long-duration",
+        "criterion_id": "annualized_mean_return",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[3].metrics.expected_shortfall95_loss",
+        "alternative_id": "long-duration",
+        "criterion_id": "expected_shortfall95_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[3].metrics.worst_day_loss",
+        "alternative_id": "long-duration",
+        "criterion_id": "worst_day_loss",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-27",
+    "sources": [
+      "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.",
+      "projects/treasury-risk-engineering/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "Approximate hypothetical portfolios omit convexity, security selection, bid–ask costs, taxes, financing, and investability.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

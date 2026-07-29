@@ -1,0 +1,44 @@
+{
+  "rows": 299,
+  "columns": 13,
+  "column_names": [
+    "age",
+    "anaemia",
+    "creatinine_phosphokinase",
+    "diabetes",
+    "ejection_fraction",
+    "high_blood_pressure",
+    "platelets",
+    "serum_creatinine",
+    "serum_sodium",
+    "sex",
+    "smoking",
+    "time",
+    "DEATH_EVENT"
+  ],
+  "missing_count_by_column": {
+    "age": 0,
+    "anaemia": 0,
+    "creatinine_phosphokinase": 0,
+    "diabetes": 0,
+    "ejection_fraction": 0,
+    "high_blood_pressure": 0,
+    "platelets": 0,
+    "serum_creatinine": 0,
+    "serum_sodium": 0,
+    "sex": 0,
+    "smoking": 0,
+    "time": 0,
+    "DEATH_EVENT": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 299,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Use only aggregate results; do not attempt re-identification.",
+    "status": "approved_for_public_aggregate_analysis"
+  }
+}

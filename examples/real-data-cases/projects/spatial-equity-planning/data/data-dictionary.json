@@ -1,0 +1,15 @@
+{
+  "grain": "Massachusetts census tract",
+  "primary_key": "geoid",
+  "coordinate_reference_system": "EPSG:4326 (Gazetteer internal points)",
+  "estimate_period": "2019-2023 ACS 5-year",
+  "fields": {
+    "population": "B01003 estimate",
+    "poverty_count": "B17001 population below poverty level",
+    "median_household_income": "B19013 median household income",
+    "public_transit_workers": "B08301 public transportation workers",
+    "median_gross_rent": "B25064 median gross rent",
+    "latitude": "Census Gazetteer internal point latitude",
+    "longitude": "Census Gazetteer internal point longitude"
+  }
+}

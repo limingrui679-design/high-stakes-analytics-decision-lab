@@ -1,0 +1,41 @@
+{
+  "project_id": "bank-marketing-response",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "split_fractions": [0.6, 0.2, 0.2],
+    "contact_capacity_shares": [0.05, 0.1, 0.2],
+    "bootstrap_samples": 500,
+    "bootstrap_block_rows": 50,
+    "forbidden_predictor": "duration"
+  },
+  "parameter_register": [
+    {
+      "parameter": "split_fractions",
+      "source_id": "uci-source-order-and-author-method",
+      "status": "pre-specified temporal proxy",
+      "approved_by": "repository author self-review",
+      "boundary": "The UCI archive states rows are ordered by date, but supplies no full observation date; row order is therefore a temporal proxy."
+    },
+    {
+      "parameter": "contact_capacity_shares",
+      "source_id": "analyst-capacity-scenarios",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Illustrative contact-capacity choices, not a bank operating constraint."
+    },
+    {
+      "parameter": "bootstrap_block_rows",
+      "source_id": "dependence-preserving-resampling-rule",
+      "status": "robustness design",
+      "approved_by": "repository author self-review",
+      "boundary": "Adjacent-row blocks partially preserve campaign-period dependence; block length is sensitivity-tested."
+    },
+    {
+      "parameter": "forbidden_predictor",
+      "source_id": "uci-variable-definition",
+      "status": "leakage exclusion",
+      "approved_by": "repository author self-review",
+      "boundary": "Call duration is known only after contact and is excluded from all pre-contact prediction and targeting."
+    }
+  ]
+}

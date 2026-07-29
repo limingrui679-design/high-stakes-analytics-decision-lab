@@ -1,0 +1,46 @@
+{
+  "rows": 1620,
+  "columns": 14,
+  "column_names": [
+    "geoid",
+    "latitude",
+    "longitude",
+    "population",
+    "population_moe",
+    "poverty_population",
+    "poverty_count",
+    "poverty_count_moe",
+    "median_household_income",
+    "median_income_moe",
+    "workers",
+    "public_transit_workers",
+    "median_gross_rent",
+    "median_rent_moe"
+  ],
+  "missing_count_by_column": {
+    "geoid": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "population": 0,
+    "population_moe": 0,
+    "poverty_population": 0,
+    "poverty_count": 0,
+    "poverty_count_moe": 0,
+    "median_household_income": 35,
+    "median_income_moe": 0,
+    "workers": 0,
+    "public_transit_workers": 0,
+    "median_gross_rent": 122,
+    "median_rent_moe": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 1620,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Use published tract-level estimates and margins of error; suppress no individual-level inference.",
+    "status": "approved_for_public_aggregate_analysis"
+  }
+}

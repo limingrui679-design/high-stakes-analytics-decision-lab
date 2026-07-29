@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="548" viewBox="0 0 1200 548" role="img" aria-labelledby="title desc">
+<title id="title">Clinical Evidence Design</title>
+<desc id="desc">Two group risks are compared on a common zero-to-one scale. A separate effect panel shows the risk difference, confidence interval, risk ratio, and odds ratio.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="548" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#008C82"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#008C82">EVIDENCE ANALYSIS</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Clinical Evidence Design</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Observed binary outcomes · effect magnitude, uncertainty, sample size, and causal boundary</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#008C82"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="134.0" width="680.0" height="226.0" rx="17" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="58.0" y="166.0" class="eyebrow" text-anchor="start">OBSERVED EVENT RISK</text>
+<text x="58.0" y="188.0" class="small" text-anchor="start">Same 0–100% scale for both groups</text>
+<text x="58.0" y="222.0" class="label" text-anchor="start">standard</text>
+<text x="686.0" y="222.0" class="value" text-anchor="end">30.0%</text>
+<rect x="240.0" y="212.0" width="410.0" height="14.0" rx="7.0" fill="#E8EDF3"/>
+<rect x="240.0" y="212.0" width="123.0" height="14.0" rx="7.0" fill="#617084"/>
+<text x="240.0" y="244.0" class="small" text-anchor="start">6 events / 20 observations</text>
+<text x="58.0" y="298.0" class="section" text-anchor="start">adaptive</text>
+<text x="686.0" y="298.0" class="value" text-anchor="end">15.0%</text>
+<rect x="240.0" y="288.0" width="410.0" height="14.0" rx="7.0" fill="#E8EDF3"/>
+<rect x="240.0" y="288.0" width="61.5" height="14.0" rx="7.0" fill="#008C82"/>
+<text x="240.0" y="320.0" class="small" text-anchor="start">3 events / 20 observations</text>
+<rect x="736.0" y="134.0" width="428.0" height="226.0" rx="17" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="760.0" y="166.0" class="eyebrow" text-anchor="start" style="fill:#008C82">EFFECT ESTIMATE</text>
+<text x="760.0" y="216.0" class="display" text-anchor="start" style="fill:#FFFFFF">-15.0%</text>
+<text x="760.0" y="244.0" class="label" text-anchor="start" style="fill:#C7D4E4">risk difference</text>
+<text x="760.0" y="285.0" class="section" text-anchor="start" style="fill:#FFFFFF">95% CI  -40.5%  to  +10.5%</text>
+<text x="760.0" y="320.0" class="label" text-anchor="start" style="fill:#C7D4E4">RR 0.50   ·   OR 0.41</text>
+<rect x="36.0" y="382.0" width="1128.0" height="104.0" rx="15" fill="#DDF5F2" stroke="#008C82" stroke-width="1"/>
+<text x="58.0" y="412.0" class="eyebrow" text-anchor="start" style="fill:#008C82">INTERPRETATION BOUNDARY</text>
+<text x="58.0" y="444.0" class="section" text-anchor="start">Observed comparison—not automatically a causal effect</text>
+<text x="58.0" y="469.0" class="small" text-anchor="start">Approximate intervals require a study-specific analysis plan and defensible assignment or identification.</text>
+<line x1="36" y1="508.0" x2="1164" y2="508.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="530.0" class="footnote" text-anchor="start">Source: evidence-results.json</text>
+<text x="1158.0" y="530.0" class="footnote" text-anchor="end">Approximate intervals · causal design required</text>
+</svg>

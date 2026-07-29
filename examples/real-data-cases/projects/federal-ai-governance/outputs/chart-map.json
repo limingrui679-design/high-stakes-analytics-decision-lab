@@ -1,0 +1,45 @@
+{
+  "project_id": "federal-ai-governance",
+  "charts": [
+    {
+      "path": "figures/assurance-disclosure.svg",
+      "question": "Assurance and recourse evidence remains largely unobservable",
+      "supported_finding": "Populated classification fields are separated from control-evidence questions unavailable in the snapshot.",
+      "interpretation_boundary": "The result is an evidence request, not an adverse assurance conclusion.",
+      "source_id": "usdot-ai-use-cases-anj8-k6f5",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/field-status.svg",
+      "question": "Every public field is classified exactly once",
+      "supported_finding": "Fully populated, partially populated, and unavailable fields use one missing-value rule, including NA tokens.",
+      "interpretation_boundary": "A missing public field may reflect publication design, exemption, or non-disclosure rather than an absent internal control.",
+      "source_id": "usdot-ai-use-cases-anj8-k6f5",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/governance-completeness.svg",
+      "question": "Measurement readiness defines the next evidence request",
+      "supported_finding": "Information-family completeness identifies which materials must precede governance, safety, ethics, or compliance evaluation.",
+      "interpretation_boundary": "No system ranking or actual-capability score is supported by the public inventory.",
+      "source_id": "usdot-ai-use-cases-anj8-k6f5",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/governance-reporting.svg",
+      "question": "Public reporting coverage varies by information family",
+      "supported_finding": "The complete public schema shows what an external reader can observe across inventory fields.",
+      "interpretation_boundary": "Disclosure coverage measures observability, never control quality or governance capability.",
+      "source_id": "usdot-ai-use-cases-anj8-k6f5",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/stage-distribution.svg",
+      "question": "Lifecycle-stage patterns provide descriptive context",
+      "supported_finding": "Use cases are grouped by reported stage without converting stage labels into maturity scores.",
+      "interpretation_boundary": "Self-reported stages are not independently verified operating states.",
+      "source_id": "usdot-ai-use-cases-anj8-k6f5",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "project_id": "behavioral-reading-experiment",
+  "analysis_seed": 20260727,
+  "parameters": {
+    "paired_bootstrap_repetitions": 1500,
+    "permutation_repetitions": 5000,
+    "primary_contrast": "Vd - Td"
+  },
+  "parameter_register": [
+    {"parameter": "primary_contrast", "source_id": "source-study-design", "status": "source-defined variables; analyst-defined contrast", "approved_by": "repository author self-review", "boundary": "Within-study behavioral contrast only."},
+    {"parameter": "paired_bootstrap_repetitions", "source_id": "analysis-protocol", "status": "reproducibility choice", "approved_by": "repository author self-review", "boundary": "Participant is the resampling unit."},
+    {"parameter": "permutation_repetitions", "source_id": "analysis-protocol", "status": "reproducibility choice", "approved_by": "repository author self-review", "boundary": "Monte Carlo randomization-style p-value."}
+  ]
+}

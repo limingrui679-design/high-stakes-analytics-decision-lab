@@ -1,0 +1,14 @@
+{
+  "project_id": "population-health-survival",
+  "source_id": "uci-heart-failure-519",
+  "verified_at": "2026-07-28T10:13:58.411756+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/uci-heart-failure.zip",
+      "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7",
+      "bytes": 12421
+    }
+  ]
+}

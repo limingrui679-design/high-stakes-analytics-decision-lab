@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "corporate-finance-capital-allocation",
+  "title": "Corporate Finance Capital Allocation",
+  "domain": "Finance, accounting, valuation, risk management, and capital allocation",
+  "decision_owner": "Chief financial officer and board finance committee",
+  "decision_question": "Allocate excess balance-sheet capacity across liquidity, operating investment, acquisition, and shareholder distribution under earnings and credit stress.",
+  "time_horizon": "36 months",
+  "risk_aversion": 0.5,
+  "max_constraint_violation_rate": 0.08,
+  "sensitivity_weight_multiplier": 1.6,
+  "evidence": {
+    "type": "Synthetic financial statements, discounted cash-flow estimates, and stress scenarios",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative income statement, cash-flow, and balance-sheet forecasts",
+      "Synthetic cost-of-capital and covenant stress assumptions",
+      "Hypothetical investment and acquisition cases"
+    ],
+    "causal_claim_status": "No causal claim; returns, synergies, working-capital effects, and financing costs are scenario assumptions.",
+    "limitations": [
+      "Tax, accounting-policy, and covenant interactions are simplified.",
+      "Valuation ranges do not include a full comparable-company or transaction analysis.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "npv",
+      "label": "Risk-adjusted net present value",
+      "direction": "maximize",
+      "weight": 0.27,
+      "unit": "USD millions",
+      "scale": {
+        "worst": -40,
+        "best": 160
+      }
+    },
+    {
+      "id": "roic",
+      "label": "Three-year return on invested capital",
+      "direction": "maximize",
+      "weight": 0.17,
+      "unit": "percent",
+      "scale": {
+        "worst": 2,
+        "best": 20
+      }
+    },
+    {
+      "id": "net_debt_ebitda",
+      "label": "Peak net debt to EBITDA",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "multiple",
+      "scale": {
+        "worst": 5,
+        "best": 0.5
+      }
+    },
+    {
+      "id": "cash_coverage",
+      "label": "Minimum cash-flow coverage",
+      "direction": "maximize",
+      "weight": 0.16,
+      "unit": "multiple",
+      "scale": {
+        "worst": 0.7,
+        "best": 2.8
+      }
+    },
+    {
+      "id": "earnings_volatility",
+      "label": "Earnings volatility",
+      "direction": "minimize",
+      "weight": 0.11,
+      "unit": "index points",
+      "scale": {
+        "worst": 85,
+        "best": 15
+      }
+    },
+    {
+      "id": "reporting_transparency",
+      "label": "Accounting and reporting transparency",
+      "direction": "maximize",
+      "weight": 0.09,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 1
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "net_debt_ebitda",
+      "operator": "<=",
+      "threshold": 3.5,
+      "label": "Leverage tolerance"
+    },
+    {
+      "criterion": "cash_coverage",
+      "operator": ">=",
+      "threshold": 1.2,
+      "label": "Minimum cash-flow coverage"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base operating plan",
+      "probability": 0.5,
+      "adjustments": {}
+    },
+    {
+      "id": "demand-downturn",
+      "label": "Demand and margin downturn",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "npv": {
+            "multiply": 0.72
+          },
+          "roic": {
+            "multiply": 0.78
+          },
+          "net_debt_ebitda": {
+            "multiply": 1.22
+          },
+          "cash_coverage": {
+            "multiply": 0.78
+          },
+          "earnings_volatility": {
+            "multiply": 1.25
+          }
+        },
+        "working-capital-platform": {
+          "cash_coverage": {
+            "multiply": 1.12
+          }
+        },
+        "acquisition": {
+          "npv": {
+            "add": -18
+          }
+        }
+      }
+    },
+    {
+      "id": "rate-refinancing-shock",
+      "label": "Rate and refinancing shock",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "npv": {
+            "add": -12
+          },
+          "cash_coverage": {
+            "multiply": 0.86
+          }
+        },
+        "leveraged-buyback": {
+          "net_debt_ebitda": {
+            "multiply": 1.18
+          },
+          "cash_coverage": {
+            "multiply": 0.82
+          }
+        },
+        "retain-liquidity": {
+          "npv": {
+            "add": 6
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "retain-liquidity",
+      "label": "Retain liquidity and refinance",
+      "description": "Preserve cash, retire near-term debt, and delay discretionary investment.",
+      "metrics": {
+        "npv": {
+          "distribution": "triangular",
+          "low": 15,
+          "mode": 30,
+          "high": 48
+        },
+        "roic": {
+          "distribution": "triangular",
+          "low": 5,
+          "mode": 7,
+          "high": 9
+        },
+        "net_debt_ebitda": {
+          "distribution": "triangular",
+          "low": 0.9,
+          "mode": 1.3,
+          "high": 1.8
+        },
+        "cash_coverage": {
+          "distribution": "triangular",
+          "low": 1.8,
+          "mode": 2.2,
+          "high": 2.7
+        },
+        "earnings_volatility": {
+          "distribution": "triangular",
+          "low": 18,
+          "mode": 25,
+          "high": 36
+        },
+        "reporting_transparency": {
+          "distribution": "fixed",
+          "value": 0.92
+        }
+      }
+    },
+    {
+      "id": "working-capital-platform",
+      "label": "Working-capital and finance platform",
+      "description": "Invest in receivables, inventory, treasury, and reporting systems with staged operating changes.",
+      "metrics": {
+        "npv": {
+          "distribution": "normal",
+          "mean": 88,
+          "sd": 18,
+          "min": 10,
+          "max": 145
+        },
+        "roic": {
+          "distribution": "triangular",
+          "low": 10,
+          "mode": 14,
+          "high": 18
+        },
+        "net_debt_ebitda": {
+          "distribution": "triangular",
+          "low": 1.4,
+          "mode": 2,
+          "high": 3.2
+        },
+        "cash_coverage": {
+          "distribution": "triangular",
+          "low": 1.35,
+          "mode": 1.85,
+          "high": 2.4
+        },
+        "earnings_volatility": {
+          "distribution": "triangular",
+          "low": 24,
+          "mode": 34,
+          "high": 49
+        },
+        "reporting_transparency": {
+          "distribution": "fixed",
+          "value": 0.9
+        }
+      }
+    },
+    {
+      "id": "acquisition",
+      "label": "Strategic acquisition",
+      "description": "Acquire a faster-growing adjacent business using cash and term debt.",
+      "metrics": {
+        "npv": {
+          "distribution": "normal",
+          "mean": 108,
+          "sd": 38,
+          "min": -55,
+          "max": 185
+        },
+        "roic": {
+          "distribution": "triangular",
+          "low": 7,
+          "mode": 13,
+          "high": 21
+        },
+        "net_debt_ebitda": {
+          "distribution": "triangular",
+          "low": 2.4,
+          "mode": 3.2,
+          "high": 4.3
+        },
+        "cash_coverage": {
+          "distribution": "triangular",
+          "low": 0.95,
+          "mode": 1.35,
+          "high": 1.9
+        },
+        "earnings_volatility": {
+          "distribution": "triangular",
+          "low": 40,
+          "mode": 57,
+          "high": 78
+        },
+        "reporting_transparency": {
+          "distribution": "fixed",
+          "value": 0.66
+        }
+      }
+    },
+    {
+      "id": "leveraged-buyback",
+      "label": "Debt-funded share repurchase",
+      "description": "Return capital through a debt-funded repurchase while maintaining current operations.",
+      "metrics": {
+        "npv": {
+          "distribution": "triangular",
+          "low": 34,
+          "mode": 63,
+          "high": 94
+        },
+        "roic": {
+          "distribution": "triangular",
+          "low": 8,
+          "mode": 11,
+          "high": 15
+        },
+        "net_debt_ebitda": {
+          "distribution": "triangular",
+          "low": 2.8,
+          "mode": 3.6,
+          "high": 4.6
+        },
+        "cash_coverage": {
+          "distribution": "triangular",
+          "low": 0.85,
+          "mode": 1.2,
+          "high": 1.65
+        },
+        "earnings_volatility": {
+          "distribution": "triangular",
+          "low": 36,
+          "mode": 51,
+          "high": 72
+        },
+        "reporting_transparency": {
+          "distribution": "fixed",
+          "value": 0.84
+        }
+      }
+    }
+  ],
+  "decision_notes": [
+    "A real board paper should reconcile accounting earnings, free cash flow, covenant definitions, tax effects, and valuation assumptions.",
+    "Scenario probabilities are planning inputs rather than market forecasts."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "npv": -0.48,
+          "roic": -0.48,
+          "net_debt_ebitda": 0.48,
+          "cash_coverage": -0.48,
+          "earnings_volatility": 0.48,
+          "reporting_transparency": -0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "corporate-finance-capital-allocation-synthetic-parameter-register",
+        "citation": "Corporate Finance Capital Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "corporate-finance-capital-allocation-synthetic-parameter-register"
+      }
+    ]
+  }
+}

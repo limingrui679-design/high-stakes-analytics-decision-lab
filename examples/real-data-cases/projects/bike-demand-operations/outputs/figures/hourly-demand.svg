@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+<title id="title">Average hourly bike demand</title>
+<desc id="desc">Capital Bikeshare, 2011–2012; observed rentals by hour. Source: UCI Bike Sharing, DOI 10.24432/C5W894; train 2011, test 2012</desc>
+<defs>
+  <pattern id="microGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<rect width="1000" height="540" fill="#F3F6FA"/>
+<rect width="1000" height="102" fill="#0B1F3A"/>
+<rect width="1000" height="102" fill="url(#microGrid)"/>
+<rect width="8" height="102" fill="#4E7D32"/>
+<circle cx="925" cy="50" r="30" fill="none" stroke="#4E7D32" stroke-width="2" opacity=".9"/>
+<circle cx="925" cy="50" r="9" fill="#4E7D32"/>
+<circle cx="925" cy="50" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".55"/>
+<line x1="860" y1="50" x2="990" y2="50" stroke="#49627F" stroke-width="1"/>
+<line x1="925" y1="4" x2="925" y2="96" stroke="#49627F" stroke-width="1"/>
+<text x="42" y="24" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.6" fill="#4E7D32">EDITORIAL EVIDENCE · ANALYTICAL REPORT</text>
+<text x="42" y="55" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="25" font-weight="760" fill="#FFFFFF">Average hourly bike demand</text>
+<text x="42" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="13.5" fill="#C7D4E4">Capital Bikeshare, 2011–2012; observed rentals by hour</text>
+<rect x="36" y="110" width="928" height="348" rx="18" fill="#07152A" opacity=".07"/>
+<rect x="32" y="104" width="936" height="350" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+<rect x="32" y="104" width="5" height="350" rx="2.5" fill="#4E7D32"/>
+<rect x="45" y="112" width="74" height="8" rx="4" fill="#E8F2DF"/>
+<rect x="66" y="119" width="874" height="317" rx="13" fill="#FBFCFE" stroke="#D9E2EC"/><rect x="90" y="126" width="106" height="24" rx="12" fill="#E8F2DF"/><text x="143" y="142" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="9" font-weight="800" letter-spacing=".8" fill="#4E7D32">24 OBSERVATIONS</text><line x1="90" y1="430" x2="930" y2="430" stroke="#263449" stroke-width="1.4"/><line x1="90" y1="110" x2="90" y2="430" stroke="#263449" stroke-width="1.4"/><line x1="90" y1="430" x2="90" y2="436" stroke="#0B1324"/><text x="90" y="451" text-anchor="middle" font-family="Arial" font-size="12" fill="#617084">0</text><line x1="300" y1="430" x2="300" y2="436" stroke="#0B1324"/><text x="300" y="451" text-anchor="middle" font-family="Arial" font-size="12" fill="#617084">6</text><line x1="510" y1="430" x2="510" y2="436" stroke="#0B1324"/><text x="510" y="451" text-anchor="middle" font-family="Arial" font-size="12" fill="#617084">12</text><line x1="720" y1="430" x2="720" y2="436" stroke="#0B1324"/><text x="720" y="451" text-anchor="middle" font-family="Arial" font-size="12" fill="#617084">17</text><line x1="930" y1="430" x2="930" y2="436" stroke="#0B1324"/><text x="930" y="451" text-anchor="middle" font-family="Arial" font-size="12" fill="#617084">23</text><line x1="90" y1="110" x2="930" y2="110" stroke="#D9E2EC" stroke-dasharray="2 5"/><text x="82" y="114" text-anchor="end" font-family="Arial" font-size="12" fill="#617084">461.45</text><line x1="90" y1="190" x2="930" y2="190" stroke="#D9E2EC" stroke-dasharray="2 5"/><text x="82" y="194" text-anchor="end" font-family="Arial" font-size="12" fill="#617084">347.68</text><line x1="90" y1="270" x2="930" y2="270" stroke="#D9E2EC" stroke-dasharray="2 5"/><text x="82" y="274" text-anchor="end" font-family="Arial" font-size="12" fill="#617084">233.90</text><line x1="90" y1="350" x2="930" y2="350" stroke="#D9E2EC" stroke-dasharray="2 5"/><text x="82" y="354" text-anchor="end" font-family="Arial" font-size="12" fill="#617084">120.13</text><line x1="90" y1="430" x2="930" y2="430" stroke="#D9E2EC" stroke-dasharray="2 5"/><text x="82" y="434" text-anchor="end" font-family="Arial" font-size="12" fill="#617084">6.35</text><polyline points="90.0,396.6 126.5,411.0 163.0,418.4 199.6,426.2 236.1,430.0 272.6,420.5 309.1,381.0 345.7,285.4 382.2,182.0 418.7,280.3 455.2,312.4 491.7,288.1 528.3,256.3 564.8,256.1 601.3,265.0 637.8,257.8 674.3,215.1 710.9,110.0 747.4,135.3 783.9,215.4 820.4,275.5 857.0,313.3 893.5,342.1 930.0,372.7" fill="none" stroke="#4E7D32" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="930.0" cy="372.7" r="6" fill="#FFFFFF" stroke="#4E7D32" stroke-width="3"/><line x1="110" y1="96" x2="140" y2="96" stroke="#4E7D32" stroke-width="4" stroke-linecap="round"/><text x="146" y="100" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="12.5" font-weight="650" fill="#C7D4E4">Average demand</text>
+<line x1="42" y1="485" x2="958" y2="485" stroke="#B9C6D5"/>
+<text x="42" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#617084">Source: UCI Bike Sharing, DOI 10.24432/C5W894; train 2011, test 2012</text>
+<text x="958" y="510" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="750" letter-spacing=".8" fill="#4E7D32">SOURCE-TRACEABLE · CLAIM-BOUNDED</text>
+</svg>

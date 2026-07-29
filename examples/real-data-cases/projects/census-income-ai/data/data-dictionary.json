@@ -1,0 +1,24 @@
+{
+  "grain": "Census-derived person record",
+  "primary_key": null,
+  "target": "income",
+  "train_test_contract": "Use source-provided adult.data for training and adult.test for final evaluation.",
+  "fields": {
+    "age": "age",
+    "workclass": "workclass",
+    "fnlwgt": "fnlwgt",
+    "education": "education",
+    "education_num": "education num",
+    "marital_status": "marital status",
+    "occupation": "occupation",
+    "relationship": "relationship",
+    "race": "race",
+    "sex": "sex",
+    "capital_gain": "capital gain",
+    "capital_loss": "capital loss",
+    "hours_per_week": "hours per week",
+    "native_country": "native country",
+    "income": "income",
+    "source_split": "source split"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "portfolio_version": "7.0.0",
+  "verified_on": "2026-07-28",
+  "public_project_type": "real_world_research_project",
+  "project_count": 10,
+  "projects": [
+    {
+      "id": "population-health-survival",
+      "code": "R1",
+      "title": "Heart-Failure Follow-up Risk and Survival",
+      "analytics": ["descriptive", "inferential", "survival", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["biostatistics", "population health", "survival analysis"]
+    },
+    {
+      "id": "behavioral-reading-experiment",
+      "code": "R2",
+      "title": "Pseudoword Reading: Repeated-Measures Behavioral Inference",
+      "analytics": ["descriptive", "inferential", "experimental-design", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["statistics", "behavioral science", "repeated measures"]
+    },
+    {
+      "id": "census-income-ai",
+      "code": "R3",
+      "title": "End-to-End Census-Income AI Validation",
+      "analytics": ["descriptive", "predictive", "responsible-ai"],
+      "decision_analysis": "not_for_consequential_action",
+      "method_domains": ["artificial intelligence", "model validation", "responsible AI"]
+    },
+    {
+      "id": "bike-demand-operations",
+      "code": "R4",
+      "title": "Bike-Demand Forecasting and Robust Service Allocation",
+      "analytics": ["descriptive", "predictive", "prescriptive", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["operations research", "systems engineering", "decision analysis"]
+    },
+    {
+      "id": "bank-marketing-response",
+      "code": "R5",
+      "title": "Bank Marketing Response and Capacity Planning",
+      "analytics": ["descriptive", "predictive", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["business analytics", "marketing analytics", "capacity planning"]
+    },
+    {
+      "id": "treasury-risk-engineering",
+      "code": "R6A",
+      "title": "Treasury Yield-Curve Portfolio Risk Engineering",
+      "analytics": ["descriptive", "risk", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["financial risk engineering", "tail risk", "backtesting"]
+    },
+    {
+      "id": "mckesson-financial-quality",
+      "code": "R6B",
+      "title": "SEC Peer Financial Quality and Cash Conversion",
+      "analytics": ["descriptive", "diagnostic", "scenario"],
+      "decision_analysis": "diligence_priority_only",
+      "method_domains": ["finance", "accounting", "peer diagnostics"]
+    },
+    {
+      "id": "cfpb-fintech-complaint-operations",
+      "code": "R6C",
+      "title": "Privacy-Preserving Complaint Monitoring and Negative Model Validation",
+      "analytics": ["descriptive", "predictive", "negative-validation"],
+      "decision_analysis": "do_not_deploy_ranking_model",
+      "method_domains": ["financial technology", "model risk", "privacy engineering"]
+    },
+    {
+      "id": "federal-ai-governance",
+      "code": "R7",
+      "title": "Public AI Inventory Disclosure and Measurement Readiness",
+      "analytics": ["descriptive", "missingness", "responsible-ai"],
+      "decision_analysis": "evidence_request_only",
+      "method_domains": ["technology policy", "disclosure measurement", "responsible AI"]
+    },
+    {
+      "id": "spatial-equity-planning",
+      "code": "R8",
+      "title": "Spatial Equity and Service-Hub Planning",
+      "analytics": ["descriptive", "spatial", "prescriptive", "decision"],
+      "decision_analysis": "embedded",
+      "method_domains": ["urban planning", "spatial analytics", "location allocation"]
+    }
+  ],
+  "synthetic_fixture_policy": {
+    "public_project_count": 0,
+    "location": "tests/fixtures/synthetic-cases",
+    "purpose": "offline regression and edge-case testing only"
+  }
+}

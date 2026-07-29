@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="616" viewBox="0 0 1200 616" role="img" aria-labelledby="title desc">
+<title id="title">Weight sensitivity</title>
+<desc id="desc">A directly labeled sensitivity matrix shows risk-adjusted scores and the winner after increasing or decreasing one criterion weight at a time.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="616" fill="#EEF3F8"/>
+<circle cx="1180" cy="586" r="120" fill="#7257D9" opacity=".035"/>
+<circle cx="36" cy="611" r="86" fill="#7257D9" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#7257D9"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#7257D9"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#7257D9">DECISION INTELLIGENCE</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Weight sensitivity</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Which stakeholder priorities can change the winner?</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#7257D9" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#7257D9"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<text x="413.5" y="140.0" class="small" text-anchor="middle">Short Baseline</text>
+<text x="413.5" y="174.0" class="eyebrow" text-anchor="middle" style="fill:#7257D9">BASELINE PREFERENCE</text>
+<text x="628.5" y="140.0" class="small" text-anchor="middle">Intermediate</text>
+<text x="843.5" y="140.0" class="small" text-anchor="middle">Barbell</text>
+<text x="1058.5" y="140.0" class="small" text-anchor="middle">Long Duration</text>
+<rect x="30.0" y="185.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="212.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="210.0" class="label" text-anchor="start">↓ Historical annualized</text>
+<text x="76.0" y="225.0" class="label" text-anchor="start">return</text>
+<rect x="311.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.834</text>
+<text x="512.0" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.805</text>
+<rect x="741.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.801</text>
+<rect x="956.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.764</text>
+<text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
+<text x="76.0" y="272.0" class="label" text-anchor="start">↑ Historical annualized</text>
+<text x="76.0" y="287.0" class="label" text-anchor="start">return</text>
+<rect x="311.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="282.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.761</text>
+<text x="512.0" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.732</text>
+<rect x="741.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.726</text>
+<rect x="956.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.691</text>
+<rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="334.0" class="label" text-anchor="start">↓ Historical ES95 loss</text>
+<rect x="311.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="344.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.775</text>
+<text x="512.0" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.745</text>
+<rect x="741.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.739</text>
+<rect x="956.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.703</text>
+<text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
+<text x="76.0" y="396.0" class="label" text-anchor="start">↑ Historical ES95 loss</text>
+<rect x="311.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.827</text>
+<text x="512.0" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.798</text>
+<rect x="741.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.795</text>
+<rect x="956.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.759</text>
+<rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="458.0" class="label" text-anchor="start">↓ Worst historical day</text>
+<rect x="311.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="468.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.791</text>
+<text x="512.0" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="468.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.762</text>
+<rect x="741.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.758</text>
+<rect x="956.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.723</text>
+<text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
+<text x="76.0" y="520.0" class="label" text-anchor="start">↑ Worst historical day</text>
+<rect x="311.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.812</text>
+<text x="512.0" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.782</text>
+<rect x="741.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.777</text>
+<rect x="956.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.740</text>
+<text x="48.0" y="584.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>
+<line x1="36" y1="576.0" x2="1164" y2="576.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="598.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="598.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+<text x="600.0" y="598.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

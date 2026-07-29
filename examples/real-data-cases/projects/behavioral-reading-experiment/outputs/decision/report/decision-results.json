@@ -1,0 +1,1798 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-07-28T10:05:35.956703+00:00",
+    "case_id": "real-behavioral-reading-experiment",
+    "case_hash_sha256": "a6ddb1ff59e3b854a0fbf35e06aa6ff7f7ea625ca7d8ce9891fe79f8037fbb1e",
+    "samples": 10000,
+    "seed": 20260727,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which reading-assessment protocol should advance to a larger preregistered validation study",
+    "domain": "Behavioral science and experimental design",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which reading-assessment protocol should advance to a larger preregistered validation study?",
+    "time_horizon": "Next validation study",
+    "recommendation": "baseline-meaningful-only",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "baseline-meaningful-only",
+      "pseudoword-only",
+      "combined-protocol"
+    ],
+    "pareto_frontier": [
+      "baseline-meaningful-only",
+      "pseudoword-only",
+      "combined-protocol"
+    ],
+    "pareto_frontier_unconstrained": [
+      "baseline-meaningful-only",
+      "pseudoword-only",
+      "combined-protocol"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.005594937418188062,
+    "weight_sensitivity_stability": 0.6666666666666666,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 76.74766666666666,
+    "robustness_components": {
+      "probability_best": {
+        "value": 0.5027,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 0.6666666666666666,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": false,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "the winner is sensitive to criterion weights",
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "group_separation",
+      "label": "Standardized group separation",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "standardized difference",
+      "scale": {
+        "worst": 0,
+        "best": 2
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "mean_fixation_duration",
+      "label": "Assessment burden",
+      "direction": "minimize",
+      "weight": 0.3,
+      "unit": "mean fixation duration",
+      "scale": {
+        "worst": 600,
+        "best": 150
+      },
+      "normalized_weight": 0.3
+    },
+    {
+      "id": "measurement_stability",
+      "label": "Measurement stability",
+      "direction": "maximize",
+      "weight": 0.25,
+      "unit": "index",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.25
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "group_separation": {
+            "multiply": 0.92
+          },
+          "mean_fixation_duration": {
+            "multiply": 1.08
+          },
+          "measurement_stability": {
+            "multiply": 0.92
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "baseline-meaningful-only"
+      ],
+      "winner": "baseline-meaningful-only",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "baseline-meaningful-only"
+      ],
+      "winner": "baseline-meaningful-only",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "baseline-meaningful-only": {
+      "alternative_id": "baseline-meaningful-only",
+      "label": "Baseline: Meaningful Only",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5154838639224572,
+      "utility_p05": 0.45574475351146004,
+      "utility_p95": 0.59457903336326,
+      "cvar10": 0.45359346558949,
+      "risk_adjusted_utility": 0.5000112643392154,
+      "value_score": 50.00112643392154,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "group_separation": {
+          "label": "Standardized group separation",
+          "unit": "standardized difference",
+          "mean": 0.24758545496171988,
+          "normalized_score": 0.12379272748085994,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.02444619,
+          "p95": 0.57929435
+        },
+        "mean_fixation_duration": {
+          "label": "Assessment burden",
+          "unit": "mean fixation duration",
+          "mean": 226.57897560516065,
+          "normalized_score": 0.8298244986551856,
+          "scale_clipping_rate": 0.0,
+          "p05": 215.55719298,
+          "p95": 244.01122105320002
+        },
+        "measurement_stability": {
+          "label": "Measurement stability",
+          "unit": "index",
+          "mean": 0.8433191478380393,
+          "normalized_score": 0.8433191478380393,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.7773574592,
+          "p95": 0.88977055
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.5238695754597172,
+          "p05": 0.46941605513900003,
+          "p95": 0.6018481921233334,
+          "cvar10": 0.468805652078738,
+          "risk_adjusted_utility": 0.5101035946144724,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.490326729310672,
+          "p05": 0.44088122822083997,
+          "p95": 0.5594041871733998,
+          "cvar10": 0.44007299595786226,
+          "risk_adjusted_utility": 0.4777632959724696,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.5027,
+      "probability_best_unconstrained": 0.5027,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "pseudoword-only": {
+      "alternative_id": "pseudoword-only",
+      "label": "Pseudoword Only",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5163296586651547,
+      "utility_p05": 0.43240702456,
+      "utility_p95": 0.6192590440666667,
+      "cvar10": 0.42867633168864516,
+      "risk_adjusted_utility": 0.4944163269210273,
+      "value_score": 49.44163269210273,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "group_separation": {
+          "label": "Standardized group separation",
+          "unit": "standardized difference",
+          "mean": 0.3868924841013615,
+          "normalized_score": 0.19344624205068076,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.03012251,
+          "p95": 0.82334448
+        },
+        "mean_fixation_duration": {
+          "label": "Assessment burden",
+          "unit": "mean fixation duration",
+          "mean": 261.66999519942857,
+          "normalized_score": 0.7518444551123763,
+          "scale_clipping_rate": 0.0,
+          "p05": 248.05438596,
+          "p95": 282.40920000000006
+        },
+        "measurement_stability": {
+          "label": "Measurement stability",
+          "unit": "index",
+          "mean": 0.814902052834515,
+          "normalized_score": 0.814902052834515,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.7488998996,
+          "p95": 0.86771965
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.5255519010420769,
+          "p05": 0.44290859996399995,
+          "p95": 0.6258177976706667,
+          "cvar10": 0.44229946161228423,
+          "risk_adjusted_utility": 0.5047387911846287,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.48866293153438284,
+          "p05": 0.4105440522529,
+          "p95": 0.5812629133901397,
+          "cvar10": 0.41011777229027363,
+          "risk_adjusted_utility": 0.4690266417233555,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.4836,
+      "probability_best_unconstrained": 0.4836,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "combined-protocol": {
+      "alternative_id": "combined-protocol",
+      "label": "Combined Protocol",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.379306589984213,
+      "utility_p05": 0.2708799729719266,
+      "utility_p95": 0.4834710632818467,
+      "cvar10": 0.2666844395322083,
+      "risk_adjusted_utility": 0.3511510523712118,
+      "value_score": 35.11510523712118,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 10000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "group_separation": {
+          "label": "Standardized group separation",
+          "unit": "standardized difference",
+          "mean": 0.5998837021635235,
+          "normalized_score": 0.29994185108176175,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.15700334,
+          "p95": 1.05377967
+        },
+        "mean_fixation_duration": {
+          "label": "Assessment burden",
+          "unit": "mean fixation duration",
+          "mean": 488.2888047593533,
+          "normalized_score": 0.24824710053477428,
+          "scale_clipping_rate": 0.0,
+          "p05": 464.44578947,
+          "p95": 528.333536844
+        },
+        "measurement_stability": {
+          "label": "Measurement stability",
+          "unit": "index",
+          "mean": 0.6794345073479685,
+          "normalized_score": 0.6794345073479685,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6157057864,
+          "p95": 0.7287113124999993
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.39196585360434105,
+          "p05": 0.2863139522443333,
+          "p95": 0.493960610711,
+          "cvar10": 0.28321569084010695,
+          "risk_adjusted_utility": 0.36477831291328255,
+          "sample_count": 7500
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.34132879912383385,
+          "p05": 0.24469163980878003,
+          "p95": 0.43993276605845966,
+          "cvar10": 0.24127029240628473,
+          "risk_adjusted_utility": 0.3163141724444466,
+          "sample_count": 2500
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0137,
+      "probability_best_unconstrained": 0.0137,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "group_separation",
+      "label": "↓ Standardized group separation",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "baseline-meaningful-only",
+      "scores": {
+        "baseline-meaningful-only": 0.5704766874007752,
+        "pseudoword-only": 0.554567266800395,
+        "combined-protocol": 0.36950189373353004
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5846058291768507,
+          "cvar10": 0.5280892620725489,
+          "risk_adjusted_utility": 0.5704766874007752
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5733090851265255,
+          "cvar10": 0.49834181182200377,
+          "risk_adjusted_utility": 0.554567266800395
+        },
+        "combined-protocol": {
+          "expected_utility": 0.3933121321434721,
+          "cvar10": 0.29807117850370385,
+          "risk_adjusted_utility": 0.36950189373353004
+        }
+      }
+    },
+    {
+      "criterion": "group_separation",
+      "label": "↑ Standardized group separation",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "pseudoword-only",
+      "scores": {
+        "baseline-meaningful-only": 0.42624005952887817,
+        "pseudoword-only": 0.4314376220612697,
+        "combined-protocol": 0.33158736818659074
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.44354059396379614,
+          "cvar10": 0.3743384562241242,
+          "risk_adjusted_utility": 0.42624005952887817
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.4570245413277994,
+          "cvar10": 0.3546768642616805,
+          "risk_adjusted_utility": 0.4314376220612697
+        },
+        "combined-protocol": {
+          "expected_utility": 0.36472939304294794,
+          "cvar10": 0.23216129361751914,
+          "risk_adjusted_utility": 0.33158736818659074
+        }
+      }
+    },
+    {
+      "criterion": "mean_fixation_duration",
+      "label": "↓ Assessment burden",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "pseudoword-only",
+      "scores": {
+        "baseline-meaningful-only": 0.46401706855711744,
+        "pseudoword-only": 0.4663563842262576,
+        "combined-protocol": 0.3633806936592345
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.48055712672992784,
+          "cvar10": 0.4143968940386862,
+          "risk_adjusted_utility": 0.46401706855711744
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.4901613479487948,
+          "cvar10": 0.39494149305864595,
+          "risk_adjusted_utility": 0.4663563842262576
+        },
+        "combined-protocol": {
+          "expected_utility": 0.3938687554785965,
+          "cvar10": 0.2719165082011483,
+          "risk_adjusted_utility": 0.3633806936592345
+        }
+      }
+    },
+    {
+      "criterion": "mean_fixation_duration",
+      "label": "↑ Assessment burden",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "baseline-meaningful-only",
+      "scores": {
+        "baseline-meaningful-only": 0.5421669240121685,
+        "pseudoword-only": 0.5272649601298941,
+        "combined-protocol": 0.33657268352565434
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5564848162789,
+          "cvar10": 0.49921324721197413,
+          "risk_adjusted_utility": 0.5421669240121685
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5470489799408792,
+          "cvar10": 0.46791290069693886,
+          "risk_adjusted_utility": 0.5272649601298941
+        },
+        "combined-protocol": {
+          "expected_utility": 0.36221187396906873,
+          "cvar10": 0.2596551121954111,
+          "risk_adjusted_utility": 0.33657268352565434
+        }
+      }
+    },
+    {
+      "criterion": "measurement_stability",
+      "label": "↓ Measurement stability",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "baseline-meaningful-only",
+      "scores": {
+        "baseline-meaningful-only": 0.46972296548511955,
+        "pseudoword-only": 0.46592512574623735,
+        "combined-protocol": 0.3217817503359721
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.48568065629376833,
+          "cvar10": 0.42184989305917325,
+          "risk_adjusted_utility": 0.46972296548511955
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.48918671374066164,
+          "cvar10": 0.39614036176296447,
+          "risk_adjusted_utility": 0.46592512574623735
+        },
+        "combined-protocol": {
+          "expected_utility": 0.35202223386023707,
+          "cvar10": 0.23106029976317716,
+          "risk_adjusted_utility": 0.3217817503359721
+        }
+      }
+    },
+    {
+      "criterion": "measurement_stability",
+      "label": "↑ Measurement stability",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "baseline-meaningful-only",
+      "scores": {
+        "baseline-meaningful-only": 0.5368580397062362,
+        "pseudoword-only": 0.5291042444961174,
+        "combined-protocol": 0.38696228584909076
+      },
+      "score_details": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5519100065797456,
+          "cvar10": 0.491702139085708,
+          "risk_adjusted_utility": 0.5368580397062362
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5495043691284138,
+          "cvar10": 0.46790387059922794,
+          "risk_adjusted_utility": 0.5291042444961174
+        },
+        "combined-protocol": {
+          "expected_utility": 0.41265413635796266,
+          "cvar10": 0.30988673432247515,
+          "risk_adjusted_utility": 0.38696228584909076
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "group_separation": -0.28,
+          "mean_fixation_duration": 0.28,
+          "measurement_stability": -0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "baseline-meaningful-only",
+      "ranking": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "feasible_alternatives": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "alternatives": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5154099533761455,
+          "cvar10": 0.4543772172981944,
+          "risk_adjusted_utility": 0.5001517693566577,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.4965
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5160898373692452,
+          "cvar10": 0.43006381143222233,
+          "risk_adjusted_utility": 0.49458333088498946,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.4871
+        },
+        "combined-protocol": {
+          "expected_utility": 0.37928194288109407,
+          "cvar10": 0.2681079427670814,
+          "risk_adjusted_utility": 0.3514884428525909,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0164
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "baseline-meaningful-only",
+      "ranking": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "feasible_alternatives": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "alternatives": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5154838639224572,
+          "cvar10": 0.45359346558949,
+          "risk_adjusted_utility": 0.5000112643392154,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.5027
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5163296586651547,
+          "cvar10": 0.42867633168864516,
+          "risk_adjusted_utility": 0.4944163269210273,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.4836
+        },
+        "combined-protocol": {
+          "expected_utility": 0.379306589984213,
+          "cvar10": 0.2666844395322083,
+          "risk_adjusted_utility": 0.3511510523712118,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0137
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "baseline-meaningful-only",
+      "ranking": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "feasible_alternatives": [
+        "baseline-meaningful-only",
+        "pseudoword-only",
+        "combined-protocol"
+      ],
+      "alternatives": {
+        "baseline-meaningful-only": {
+          "expected_utility": 0.5155311215779321,
+          "cvar10": 0.4531238044203941,
+          "risk_adjusted_utility": 0.49992929228854766,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.5053
+        },
+        "pseudoword-only": {
+          "expected_utility": 0.5164101047359,
+          "cvar10": 0.42761345825062047,
+          "risk_adjusted_utility": 0.49421094311458014,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.4822
+        },
+        "combined-protocol": {
+          "expected_utility": 0.37933135265627244,
+          "cvar10": 0.26540273312526624,
+          "risk_adjusted_utility": 0.35084919777352086,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0125
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "baseline-meaningful-only",
+        "right_alternative": "pseudoword-only",
+        "correlation": 0.17574896513011187
+      },
+      {
+        "left_alternative": "baseline-meaningful-only",
+        "right_alternative": "combined-protocol",
+        "correlation": 0.22584794884668263
+      },
+      {
+        "left_alternative": "pseudoword-only",
+        "right_alternative": "combined-protocol",
+        "correlation": 0.18018166251865597
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 48,
+      "parameters_with_resolved_source": 48,
+      "parameters_approved_for_declared_use": 48,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-27",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.group_separation.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.group_separation.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.group_separation.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.mean_fixation_duration.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.mean_fixation_duration.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.mean_fixation_duration.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.measurement_stability.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.measurement_stability.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.measurement_stability.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.group_separation.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.group_separation.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.group_separation.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.mean_fixation_duration.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.mean_fixation_duration.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.mean_fixation_duration.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.measurement_stability.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.measurement_stability.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.measurement_stability.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.group_separation.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.group_separation.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.group_separation.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.mean_fixation_duration.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.mean_fixation_duration.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.mean_fixation_duration.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.measurement_stability.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.measurement_stability.values",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.measurement_stability.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "behavioral-reading-experiment-analysis-output",
+        "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.group_separation.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.mean_fixation_duration.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.measurement_stability.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.group_separation",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.mean_fixation_duration",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.measurement_stability",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 0,
+      "parameter": 9,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.group_separation",
+        "alternative_id": "baseline-meaningful-only",
+        "criterion_id": "group_separation",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.mean_fixation_duration",
+        "alternative_id": "baseline-meaningful-only",
+        "criterion_id": "mean_fixation_duration",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[0].metrics.measurement_stability",
+        "alternative_id": "baseline-meaningful-only",
+        "criterion_id": "measurement_stability",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.group_separation",
+        "alternative_id": "pseudoword-only",
+        "criterion_id": "group_separation",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.mean_fixation_duration",
+        "alternative_id": "pseudoword-only",
+        "criterion_id": "mean_fixation_duration",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[1].metrics.measurement_stability",
+        "alternative_id": "pseudoword-only",
+        "criterion_id": "measurement_stability",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.group_separation",
+        "alternative_id": "combined-protocol",
+        "criterion_id": "group_separation",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.mean_fixation_duration",
+        "alternative_id": "combined-protocol",
+        "criterion_id": "mean_fixation_duration",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      },
+      {
+        "path": "alternatives[2].metrics.measurement_stability",
+        "alternative_id": "combined-protocol",
+        "criterion_id": "measurement_stability",
+        "distribution": "empirical",
+        "uncertainty_type": "parameter"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-27",
+    "sources": [
+      "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56",
+      "projects/behavioral-reading-experiment/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "The public file contains 57 participants and does not establish downstream educational or policy outcomes.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

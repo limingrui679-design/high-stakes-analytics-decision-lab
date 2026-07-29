@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
+<title id="title">Community Screening Capacity Optimization</title>
+<desc id="desc">The optimal feasible allocation is summarized above ranked horizontal bars. Each row directly labels robust value, expected value, worst case, and maximum regret.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="730" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#4E7D32"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#4E7D32">RESOURCE OPTIMIZATION</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Community Screening Capacity Optimization</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Exact discrete search · feasibility, expected value, worst case, and maximum regret</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#4E7D32" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#4E7D32"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="134.0" width="1128.0" height="106.0" rx="17" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="58.0" y="164.0" class="eyebrow" text-anchor="start" style="fill:#4E7D32">OPTIMAL FEASIBLE ALLOCATION</text>
+<text x="58.0" y="198.0" class="section" text-anchor="start" style="fill:#FFFFFF">fixed_clinic=20 · mobile_unit=40 · digital_navigation=60</text>
+<text x="804.0" y="175.0" class="display" text-anchor="middle" style="fill:#FFFFFF">175.4</text>
+<text x="804.0" y="207.0" class="eyebrow" text-anchor="middle" style="fill:#C7D4E4">ROBUST VALUE</text>
+<text x="970.0" y="175.0" class="big" text-anchor="middle" style="fill:#FFFFFF">178.2</text>
+<text x="970.0" y="207.0" class="eyebrow" text-anchor="middle" style="fill:#C7D4E4">EXPECTED</text>
+<text x="1100.0" y="175.0" class="big" text-anchor="middle" style="fill:#FFFFFF">172.0</text>
+<text x="1100.0" y="207.0" class="eyebrow" text-anchor="middle" style="fill:#C7D4E4">WORST CASE</text>
+<text x="36.0" y="274.0" class="eyebrow" text-anchor="start">TOP FEASIBLE ALLOCATIONS</text>
+<text x="1080.0" y="274.0" class="small" text-anchor="end">common scale 0.0 to 175.4</text>
+<line x1="414.0" y1="288" x2="414.0" y2="652" stroke="#D9E2EC"/>
+<text x="414.0" y="674.0" class="small" text-anchor="middle">0.0</text>
+<line x1="580.5" y1="288" x2="580.5" y2="652" stroke="#D9E2EC"/>
+<text x="580.5" y="674.0" class="small" text-anchor="middle">43.9</text>
+<line x1="747.0" y1="288" x2="747.0" y2="652" stroke="#D9E2EC"/>
+<text x="747.0" y="674.0" class="small" text-anchor="middle">87.7</text>
+<line x1="913.5" y1="288" x2="913.5" y2="652" stroke="#D9E2EC"/>
+<text x="913.5" y="674.0" class="small" text-anchor="middle">131.6</text>
+<line x1="1080.0" y1="288" x2="1080.0" y2="652" stroke="#D9E2EC"/>
+<text x="1080.0" y="674.0" class="small" text-anchor="middle">175.4</text>
+<line x1="414.0" y1="284" x2="414.0" y2="652" stroke="#0B1324" stroke-width="1.5"/>
+<rect x="30.0" y="291.0" width="1134.0" height="64.0" rx="10" fill="#FFFFFF" stroke="#4E7D32" stroke-width="2"/>
+<circle cx="56" cy="317" r="16" fill="#4E7D32"/>
+<text x="56.0" y="322.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
+<text x="84.0" y="314.0" class="section" text-anchor="start">fixed_clinic=20 · mobile_unit=40 ·</text>
+<text x="84.0" y="329.0" class="section" text-anchor="start">digital_navigation=60</text>
+<rect x="414.0" y="306" width="666.0" height="22" rx="6" fill="#4E7D32" stroke="#4E7D32"/>
+<text x="1090.0" y="322.0" class="value" text-anchor="start">175.4</text>
+<text x="414.0" y="347.0" class="small" text-anchor="start">expected 178.2 · worst 172.0 · max regret 6.0</text>
+<rect x="30.0" y="367.0" width="1134.0" height="64.0" rx="10" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="56" cy="393" r="16" fill="#0B1F3A"/>
+<text x="56.0" y="398.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">2</text>
+<text x="84.0" y="390.0" class="label" text-anchor="start">fixed_clinic=10 · mobile_unit=50 ·</text>
+<text x="84.0" y="405.0" class="label" text-anchor="start">digital_navigation=50</text>
+<rect x="414.0" y="382" width="649.5" height="22" rx="6" fill="#E8F2DF" stroke="#4E7D32"/>
+<text x="1073.5" y="398.0" class="value" text-anchor="start">171.1</text>
+<text x="414.0" y="423.0" class="small" text-anchor="start">expected 174.4 · worst 167.0 · max regret 10.0</text>
+<rect x="30.0" y="443.0" width="1134.0" height="64.0" rx="10" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="56" cy="469" r="16" fill="#0B1F3A"/>
+<text x="56.0" y="474.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
+<text x="84.0" y="466.0" class="label" text-anchor="start">fixed_clinic=30 · mobile_unit=30 ·</text>
+<text x="84.0" y="481.0" class="label" text-anchor="start">digital_navigation=60</text>
+<rect x="414.0" y="458" width="646.6" height="22" rx="6" fill="#E8F2DF" stroke="#4E7D32"/>
+<text x="1070.6" y="474.0" class="value" text-anchor="start">170.3</text>
+<text x="414.0" y="499.0" class="small" text-anchor="start">expected 172.2 · worst 168.0 · max regret 10.0</text>
+<rect x="30.0" y="519.0" width="1134.0" height="64.0" rx="10" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="56" cy="545" r="16" fill="#0B1F3A"/>
+<text x="56.0" y="550.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">4</text>
+<text x="84.0" y="542.0" class="label" text-anchor="start">fixed_clinic=50 · mobile_unit=20 ·</text>
+<text x="84.0" y="557.0" class="label" text-anchor="start">digital_navigation=50</text>
+<rect x="414.0" y="534" width="640.0" height="22" rx="6" fill="#E8F2DF" stroke="#4E7D32"/>
+<text x="1064.0" y="550.0" class="value" text-anchor="start">168.6</text>
+<text x="414.0" y="575.0" class="small" text-anchor="start">expected 172.3 · worst 164.0 · max regret 15.0</text>
+<rect x="30.0" y="595.0" width="1134.0" height="64.0" rx="10" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<circle cx="56" cy="621" r="16" fill="#0B1F3A"/>
+<text x="56.0" y="626.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">5</text>
+<text x="84.0" y="618.0" class="label" text-anchor="start">fixed_clinic=30 · mobile_unit=40 ·</text>
+<text x="84.0" y="633.0" class="label" text-anchor="start">digital_navigation=40</text>
+<rect x="414.0" y="610" width="637.8" height="22" rx="6" fill="#E8F2DF" stroke="#4E7D32"/>
+<text x="1061.8" y="626.0" class="value" text-anchor="start">168.0</text>
+<text x="414.0" y="651.0" class="small" text-anchor="start">expected 174.5 · worst 160.0 · max regret 16.0</text>
+<line x1="36" y1="690.0" x2="1164" y2="690.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="712.0" class="footnote" text-anchor="start">Source: optimization-results.json</text>
+<text x="1158.0" y="712.0" class="footnote" text-anchor="end">Optimal only on the declared grid and scenarios</text>
+</svg>

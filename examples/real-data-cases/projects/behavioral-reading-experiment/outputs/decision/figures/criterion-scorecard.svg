@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="466" viewBox="0 0 1200 466" role="img" aria-labelledby="title desc">
+<title id="title">Criterion trade-off profile</title>
+<desc id="desc">A directly labeled scorecard compares normalized criterion values and weights for each alternative, with the preferred option outlined.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="466" fill="#EEF3F8"/>
+<circle cx="1180" cy="436" r="120" fill="#C69214" opacity=".035"/>
+<circle cx="36" cy="461" r="86" fill="#C69214" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#C69214"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#C69214"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#C69214">DECISION INTELLIGENCE</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Criterion trade-off profile</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Every score uses its declared worst-to-best reference scale; weights remain visible</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#C69214" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#C69214"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="279.0" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="424.3" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Standardized group separation</text>
+<text x="424.3" y="174.0" class="small" text-anchor="middle">weight 45%</text>
+<rect x="575.7" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="721.0" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Assessment burden</text>
+<text x="721.0" y="174.0" class="small" text-anchor="middle">weight 30%</text>
+<rect x="872.3" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="1017.7" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Measurement stability</text>
+<text x="1017.7" y="174.0" class="small" text-anchor="middle">weight 25%</text>
+<rect x="30.0" y="180.0" width="1134.0" height="68.0" rx="10" fill="#FFF2C7" stroke="#C69214" stroke-width="2"/>
+<text x="48.0" y="209.0" class="section" text-anchor="start">Baseline: Meaningful Only</text>
+<rect x="48.0" y="218.0" width="82.0" height="28.0" rx="14" fill="#C69214" stroke="none" stroke-width="1"/>
+<text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
+<text x="290.0" y="206.0" class="value" text-anchor="start">12</text>
+<rect x="290.0" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="219.0" width="32.8" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="290.0" y="241.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="206.0" class="value" text-anchor="start">83</text>
+<rect x="586.7" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="219.0" width="219.6" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="586.7" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="206.0" class="value" text-anchor="start">84</text>
+<rect x="883.3" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="219.0" width="223.2" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="883.3" y="241.0" class="small" text-anchor="start">higher value</text>
+<rect x="30.0" y="256.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="48.0" y="285.0" class="label" text-anchor="start">Pseudoword Only</text>
+<text x="290.0" y="282.0" class="value" text-anchor="start">19</text>
+<rect x="290.0" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="295.0" width="51.2" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="317.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="282.0" class="value" text-anchor="start">75</text>
+<rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="295.0" width="199.0" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="317.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="282.0" class="value" text-anchor="start">81</text>
+<rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="295.0" width="215.7" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="317.0" class="small" text-anchor="start">higher value</text>
+<rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="48.0" y="361.0" class="label" text-anchor="start">Combined Protocol</text>
+<text x="290.0" y="358.0" class="value" text-anchor="start">30</text>
+<rect x="290.0" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="290.0" y="371.0" width="79.4" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="393.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="358.0" class="value" text-anchor="start">25</text>
+<rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="586.7" y="371.0" width="65.7" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="393.0" class="small" text-anchor="start">trade-off</text>
+<text x="883.3" y="358.0" class="value" text-anchor="start">68</text>
+<rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="883.3" y="371.0" width="179.8" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="393.0" class="small" text-anchor="start">higher value</text>
+<line x1="36" y1="426.0" x2="1164" y2="426.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="448.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="448.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+<text x="600.0" y="448.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

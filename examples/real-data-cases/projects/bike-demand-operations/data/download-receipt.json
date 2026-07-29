@@ -1,0 +1,14 @@
+{
+  "project_id": "bike-demand-operations",
+  "source_id": "uci-bike-sharing-275",
+  "verified_at": "2026-07-28T10:13:01.931648+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/uci-bike-sharing.zip",
+      "sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+      "bytes": 279992
+    }
+  ]
+}

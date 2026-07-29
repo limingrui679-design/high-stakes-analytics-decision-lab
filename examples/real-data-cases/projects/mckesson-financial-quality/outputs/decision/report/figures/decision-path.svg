@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="652" viewBox="0 0 1200 652" role="img" aria-labelledby="title desc">
+<title id="title">Decision evidence gates</title>
+<desc id="desc">Case-specific evidence gates are arranged in sequence. Each gate is explicitly labeled pass, limit, block, or required.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="652" fill="#EEF3F8"/>
+<circle cx="1180" cy="622" r="120" fill="#7257D9" opacity=".035"/>
+<circle cx="36" cy="647" r="86" fill="#7257D9" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#7257D9"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#7257D9"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#7257D9">DECISION PATH</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Decision evidence gates</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">The peer panel prioritizes filing work; it does not rank securities</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#7257D9" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#7257D9"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="54.0" y="140.0" width="1092.0" height="78.0" rx="13" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<text x="78.0" y="168.0" class="eyebrow" text-anchor="start" style="fill:#5038A6">01</text>
+<text x="128.0" y="168.0" class="section" text-anchor="start" style="fill:#0B1324">Fact-level lineage</text>
+<text x="128.0" y="193.0" class="small" text-anchor="start" style="fill:#617084">Company, CIK, XBRL tag, accession, filing date, and fiscal period are retained.</text>
+<rect x="1010.0" y="158.0" width="108.0" height="30.0" rx="15" fill="#EEEAFE" stroke="#5038A6" stroke-width="1"/>
+<text x="1064.0" y="178.0" class="pill" text-anchor="middle" style="fill:#5038A6">PASS</text>
+<line x1="98" y1="218" x2="98" y2="236" stroke="#B9C6D5" stroke-width="2"/>
+<rect x="54.0" y="236.0" width="1092.0" height="78.0" rx="13" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<text x="78.0" y="264.0" class="eyebrow" text-anchor="start" style="fill:#5038A6">02</text>
+<text x="128.0" y="264.0" class="section" text-anchor="start" style="fill:#0B1324">Repeated peer evidence</text>
+<text x="128.0" y="289.0" class="small" text-anchor="start" style="fill:#617084">The comparison uses 24 company-years rather than one company or one annual snapshot.</text>
+<rect x="1010.0" y="254.0" width="108.0" height="30.0" rx="15" fill="#EEEAFE" stroke="#5038A6" stroke-width="1"/>
+<text x="1064.0" y="274.0" class="pill" text-anchor="middle" style="fill:#5038A6">PASS</text>
+<line x1="98" y1="314" x2="98" y2="332" stroke="#B9C6D5" stroke-width="2"/>
+<rect x="54.0" y="332.0" width="1092.0" height="78.0" rx="13" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<text x="78.0" y="360.0" class="eyebrow" text-anchor="start" style="fill:#5038A6">03</text>
+<text x="128.0" y="360.0" class="section" text-anchor="start" style="fill:#0B1324">Economic comparability</text>
+<text x="128.0" y="385.0" class="small" text-anchor="start" style="fill:#617084">Shared SIC and common tags do not resolve segment, acquisition, policy, or calendar differences.</text>
+<rect x="1010.0" y="350.0" width="108.0" height="30.0" rx="15" fill="#EEF1F5" stroke="#617084" stroke-width="1"/>
+<text x="1064.0" y="370.0" class="pill" text-anchor="middle" style="fill:#617084">LIMIT</text>
+<line x1="98" y1="410" x2="98" y2="428" stroke="#B9C6D5" stroke-width="2"/>
+<rect x="54.0" y="428.0" width="1092.0" height="78.0" rx="13" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<text x="78.0" y="456.0" class="eyebrow" text-anchor="start" style="fill:#5038A6">04</text>
+<text x="128.0" y="456.0" class="section" text-anchor="start" style="fill:#0B1324">Footnote and filing reconciliation</text>
+<text x="128.0" y="481.0" class="small" text-anchor="start" style="fill:#617084">The recurring cash-conversion gap must be traced through filings and footnotes.</text>
+<rect x="1010.0" y="446.0" width="108.0" height="30.0" rx="15" fill="#FFF2C7" stroke="#C69214" stroke-width="1"/>
+<text x="1064.0" y="466.0" class="pill" text-anchor="middle" style="fill:#C69214">REQUIRED</text>
+<line x1="98" y1="506" x2="98" y2="524" stroke="#B9C6D5" stroke-width="2"/>
+<rect x="54.0" y="524.0" width="1092.0" height="78.0" rx="13" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<text x="78.0" y="552.0" class="eyebrow" text-anchor="start" style="fill:#5038A6">05</text>
+<text x="128.0" y="552.0" class="section" text-anchor="start" style="fill:#0B1324">Security or credit ranking</text>
+<text x="128.0" y="577.0" class="small" text-anchor="start" style="fill:#617084">The panel omits valuation, market expectations, covenants, segment detail, and assurance work.</text>
+<rect x="1010.0" y="542.0" width="108.0" height="30.0" rx="15" fill="#FCE7E2" stroke="#D85B43" stroke-width="1"/>
+<text x="1064.0" y="562.0" class="pill" text-anchor="middle" style="fill:#D85B43">BLOCK</text>
+<line x1="36" y1="612.0" x2="1164" y2="612.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="634.0" class="footnote" text-anchor="start">Source: U.S. Securities and Exchange Commission; project outputs/results.json</text>
+<text x="1158.0" y="634.0" class="footnote" text-anchor="end">Gate status does not imply operational authorization</text>
+<text x="600.0" y="634.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

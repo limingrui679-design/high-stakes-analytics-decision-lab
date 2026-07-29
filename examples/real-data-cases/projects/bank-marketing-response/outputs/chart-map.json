@@ -1,0 +1,29 @@
+{
+  "project_id": "bank-marketing-response",
+  "charts": [
+    {
+      "path": "figures/calibration.svg",
+      "question": "Untouched-test probabilities are checked, not assumed",
+      "supported_finding": "Model and calibration choices are fixed before the final source-order split is evaluated.",
+      "interpretation_boundary": "Predicting response is not the same as estimating incremental lift, customer value, or profit.",
+      "source_id": "uci-bank-marketing-222",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/capacity-capture.svg",
+      "question": "Capacity planning preserves common campaign shocks",
+      "supported_finding": "Every capacity option shares adjacent-row block-bootstrap replicates, so probability-best reflects the same campaign perturbations.",
+      "interpretation_boundary": "Only a randomized campaign can establish incremental effect and ROI.",
+      "source_id": "uci-bank-marketing-222",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/monthly-response.svg",
+      "question": "Observed response varies across the campaign sequence",
+      "supported_finding": "The descriptive view preserves source order and reveals why random row splitting would overstate independence.",
+      "interpretation_boundary": "Monthly response is observational and may reflect targeting, seasonality, or campaign composition.",
+      "source_id": "uci-bank-marketing-222",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

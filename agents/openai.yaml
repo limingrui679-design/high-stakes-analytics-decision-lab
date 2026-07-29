@@ -1,0 +1,4 @@
+interface:
+  display_name: "High-Stakes Analytics & Decision Lab"
+  short_description: "Build source-backed analytics and decisions"
+  default_prompt: "Use $high-stakes-analytics-decision-lab to profile and safely prepare any uploaded data before turning a real dataset or research question into descriptive, diagnostic, predictive, and—only when justified—prescriptive analysis with source lineage, validation, dependent-risk modeling, and explicit claim limits."

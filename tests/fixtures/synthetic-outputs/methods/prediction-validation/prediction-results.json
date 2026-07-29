@@ -1,0 +1,185 @@
+{
+  "analysis_type": "binary_prediction_validation",
+  "data_quality": {
+    "rows_received": 40,
+    "rows_analyzed": 40,
+    "rows_missing_label_or_score": 0,
+    "threshold_validation": "finite_closed_unit_interval",
+    "calibration_bins": 10,
+    "period_ordering": "declared_lifecycle_order"
+  },
+  "overall": {
+    "n": 40,
+    "prevalence": 0.5,
+    "auc": 0.9975,
+    "brier_score": 0.10946249999999998,
+    "threshold": 0.5,
+    "accuracy": 0.95,
+    "precision": 1.0,
+    "recall_sensitivity": 0.9,
+    "specificity": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.1,
+    "confusion_matrix": {
+      "true_positive": 18,
+      "true_negative": 20,
+      "false_positive": 0,
+      "false_negative": 2
+    },
+    "expected_calibration_error": 0.25825
+  },
+  "calibration": [
+    {
+      "bin": 1,
+      "low": 0.0,
+      "high": 0.1,
+      "n": 1,
+      "mean_score": 0.08,
+      "observed_rate": 0.0,
+      "absolute_gap": 0.08
+    },
+    {
+      "bin": 2,
+      "low": 0.1,
+      "high": 0.2,
+      "n": 4,
+      "mean_score": 0.1475,
+      "observed_rate": 0.0,
+      "absolute_gap": 0.1475
+    },
+    {
+      "bin": 3,
+      "low": 0.2,
+      "high": 0.3,
+      "n": 6,
+      "mean_score": 0.24833333333333332,
+      "observed_rate": 0.0,
+      "absolute_gap": 0.24833333333333332
+    },
+    {
+      "bin": 4,
+      "low": 0.3,
+      "high": 0.4,
+      "n": 6,
+      "mean_score": 0.3466666666666667,
+      "observed_rate": 0.0,
+      "absolute_gap": 0.3466666666666667
+    },
+    {
+      "bin": 5,
+      "low": 0.4,
+      "high": 0.5,
+      "n": 5,
+      "mean_score": 0.454,
+      "observed_rate": 0.4,
+      "absolute_gap": 0.05399999999999999
+    },
+    {
+      "bin": 6,
+      "low": 0.5,
+      "high": 0.6,
+      "n": 5,
+      "mean_score": 0.5660000000000001,
+      "observed_rate": 1.0,
+      "absolute_gap": 0.43399999999999994
+    },
+    {
+      "bin": 7,
+      "low": 0.6,
+      "high": 0.7,
+      "n": 6,
+      "mean_score": 0.65,
+      "observed_rate": 1.0,
+      "absolute_gap": 0.35
+    },
+    {
+      "bin": 8,
+      "low": 0.7,
+      "high": 0.8,
+      "n": 4,
+      "mean_score": 0.7350000000000001,
+      "observed_rate": 1.0,
+      "absolute_gap": 0.2649999999999999
+    },
+    {
+      "bin": 9,
+      "low": 0.8,
+      "high": 0.9,
+      "n": 3,
+      "mean_score": 0.8366666666666666,
+      "observed_rate": 1.0,
+      "absolute_gap": 0.16333333333333344
+    }
+  ],
+  "subgroups": {
+    "A": {
+      "n": 14,
+      "prevalence": 0.42857142857142855,
+      "auc": 1.0,
+      "brier_score": 0.07719285714285715,
+      "threshold": 0.5,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall_sensitivity": 1.0,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "confusion_matrix": {
+        "true_positive": 6,
+        "true_negative": 8,
+        "false_positive": 0,
+        "false_negative": 0
+      }
+    },
+    "B": {
+      "n": 12,
+      "prevalence": 0.5,
+      "auc": 1.0,
+      "brier_score": 0.11081666666666667,
+      "threshold": 0.5,
+      "accuracy": 0.9166666666666666,
+      "precision": 1.0,
+      "recall_sensitivity": 0.8333333333333334,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.16666666666666666,
+      "confusion_matrix": {
+        "true_positive": 5,
+        "true_negative": 6,
+        "false_positive": 0,
+        "false_negative": 1
+      }
+    },
+    "C": {
+      "n": 14,
+      "prevalence": 0.5714285714285714,
+      "auc": 1.0,
+      "brier_score": 0.14057142857142857,
+      "threshold": 0.5,
+      "accuracy": 0.9285714285714286,
+      "precision": 1.0,
+      "recall_sensitivity": 0.875,
+      "specificity": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.125,
+      "confusion_matrix": {
+        "true_positive": 7,
+        "true_negative": 6,
+        "false_positive": 0,
+        "false_negative": 1
+      }
+    }
+  },
+  "drift": {
+    "reference_period": "baseline",
+    "current_period": "current",
+    "period_ordering": "declared_lifecycle_order",
+    "ordered_periods": [
+      "baseline",
+      "current"
+    ],
+    "population_stability_index": 1.0928900388332354,
+    "interpretation": "PSI is a descriptive score-distribution diagnostic; investigate data, label, population, and policy changes before attributing a cause."
+  },
+  "interpretation_boundary": "This evaluates predictions, not intervention effects. Threshold choice must reflect error costs, capacity, subgroup impacts, and contestability."
+}

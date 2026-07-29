@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "project_id": "census-income-ai",
+  "source_id": "uci-adult-2",
+  "title": "Adult / Census Income",
+  "publisher": "UCI Machine Learning Repository",
+  "landing_page": "https://archive.ics.uci.edu/dataset/2/adult",
+  "doi": "10.24432/C5XW20",
+  "download_url": "https://archive.ics.uci.edu/static/public/2/adult.zip",
+  "version": "UCI static archive snapshot; files timestamped 2023-05-22",
+  "accessed_at": "2026-07-27",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribution": "Permitted with attribution",
+  "expected_rows": 48842,
+  "grain": "one Census-derived person record meeting the dataset extraction rules",
+  "raw_files": [
+    {
+      "path": "data/raw/uci-adult.zip",
+      "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Use demographic fields only for model error analysis; do not present the score as a welfare or eligibility decision tool.",
+    "status": "approved_for_public_benchmark_analysis"
+  },
+  "citation": "Becker, B. & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20"
+}

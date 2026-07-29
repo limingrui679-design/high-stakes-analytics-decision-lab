@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+<title id="title">Decision summary</title>
+<desc id="desc">Executive scorecard showing the preferred modeled alternative, decision value, probability of being best, robustness, and constraint-breach upper bound versus tolerance.</desc>
+<defs>
+  <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 28px; font-weight: 780; letter-spacing: -0.35px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+  .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
+</style>
+<rect width="1200" height="510" fill="#EEF3F8"/>
+<circle cx="1180" cy="480" r="120" fill="#D85B43" opacity=".035"/>
+<circle cx="36" cy="505" r="86" fill="#D85B43" opacity=".025"/>
+<rect width="1200" height="118" fill="#0B1F3A"/>
+<rect width="1200" height="118" fill="url(#headerGrid)"/>
+<rect width="10" height="118" fill="#D85B43"/>
+<rect x="34" y="19" width="4" height="16" rx="2" fill="#D85B43"/>
+<text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#D85B43">DECISION INTELLIGENCE</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Decision summary</text>
+<text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">One answer, four diagnostics, and the risk boundary that governs feasibility</text>
+<rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
+<text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
+<circle cx="1125" cy="58" r="31" fill="none" stroke="#D85B43" stroke-width="2"/>
+<circle cx="1125" cy="58" r="10" fill="#D85B43"/>
+<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
+<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
+<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="134.0" width="540.0" height="214.0" rx="18" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
+<text x="62.0" y="165.0" class="kicker" text-anchor="start" style="fill:#D85B43">MODELED DECISION</text>
+<text x="62.0" y="210.0" class="display" text-anchor="start" style="fill:#FFFFFF">Baseline: Poverty Priority</text>
+<rect x="62.0" y="292.0" width="266.8" height="28.0" rx="14" fill="#FBE7E7" stroke="none" stroke-width="1"/>
+<text x="195.4" y="311.0" class="pill" text-anchor="middle" style="fill:#B33A3A">Provisional—validate before action</text>
+<text x="62.0" y="331.0" class="small" text-anchor="start" style="fill:#C7D4E4">Highest-ranked option that passes the modeled risk rule</text>
+<rect x="598.0" y="140.0" width="180.0" height="214.0" rx="16" fill="#07152A" opacity=".055"/><rect x="596.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="614.0" y="166.0" class="eyebrow" text-anchor="start">DECISION VALUE</text>
+<text x="614.0" y="222.0" class="display" text-anchor="start" style="fill:#A63C2A">68.8</text>
+<text x="614.0" y="272.0" class="small" text-anchor="start">of 100 · downside</text>
+<text x="614.0" y="289.0" class="small" text-anchor="start">adjusted</text>
+<rect x="614.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="614.0" y="315.0" width="99.0" height="10.0" rx="5.0" fill="#D85B43"/>
+<rect x="788.0" y="140.0" width="180.0" height="214.0" rx="16" fill="#07152A" opacity=".055"/><rect x="786.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="804.0" y="166.0" class="eyebrow" text-anchor="start">MODELED P(BEST)</text>
+<text x="804.0" y="222.0" class="display" text-anchor="start" style="fill:#0B1324">84%</text>
+<text x="804.0" y="272.0" class="small" text-anchor="start">feasible set ·</text>
+<text x="804.0" y="289.0" class="small" text-anchor="start">10,000 draws</text>
+<rect x="804.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="804.0" y="315.0" width="121.7" height="10.0" rx="5.0" fill="#D85B43"/>
+<rect x="978.0" y="140.0" width="180.0" height="214.0" rx="16" fill="#07152A" opacity=".055"/><rect x="976.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="994.0" y="166.0" class="eyebrow" text-anchor="start">ROBUSTNESS</text>
+<text x="994.0" y="222.0" class="display" text-anchor="start" style="fill:#0B1324">95</text>
+<text x="994.0" y="272.0" class="small" text-anchor="start">diagnostic · not</text>
+<text x="994.0" y="289.0" class="small" text-anchor="start">confidence</text>
+<rect x="994.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
+<rect x="994.0" y="315.0" width="137.3" height="10.0" rx="5.0" fill="#D85B43"/>
+<rect x="38.0" y="372.0" width="1128.0" height="102.0" rx="16" fill="#07152A" opacity=".055"/><rect x="36.0" y="366.0" width="1128.0" height="102.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="58.0" y="396.0" class="eyebrow" text-anchor="start">CONSTRAINT RISK BOUNDARY</text>
+<text x="58.0" y="432.0" class="section" text-anchor="start">0 observed</text>
+<text x="58.0" y="454.0" class="small" text-anchor="start">0/10,000 · U95 0.00% · bounded support</text>
+<line x1="322" y1="423" x2="938" y2="423" stroke="#B9C6D5" stroke-width="9" stroke-linecap="round"/>
+<line x1="322" y1="423" x2="322.0" y2="423" stroke="#D85B43" stroke-width="9" stroke-linecap="round"/>
+<circle cx="322.0" cy="423" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 322.0 414 L 331.0 423 L 322.0 432 L 313.0 423 Z" fill="#D85B43" stroke="#0B1F3A"/>
+<line x1="778.3" y1="397" x2="778.3" y2="450" stroke="#B33A3A" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="778.3" y="389.0" class="small" text-anchor="middle" style="fill:#B33A3A">tolerance 10.0%</text>
+<text x="963.0" y="417.0" class="section" text-anchor="start" style="fill:#26734D">PASS</text>
+<text x="963.0" y="441.0" class="small" text-anchor="start">U95 is inside tolerance</text>
+<line x1="36" y1="470.0" x2="1164" y2="470.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="492.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="492.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+<text x="600.0" y="492.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+</svg>

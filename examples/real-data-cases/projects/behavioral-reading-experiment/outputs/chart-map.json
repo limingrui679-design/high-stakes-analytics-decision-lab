@@ -1,0 +1,29 @@
+{
+  "project_id": "behavioral-reading-experiment",
+  "charts": [
+    {
+      "path": "figures/paired-effect.svg",
+      "question": "The primary effect is estimated within participant",
+      "supported_finding": "Paired fixation-duration differences preserve the repeated-measures design and display participant-bootstrap uncertainty.",
+      "interpretation_boundary": "The contrast is specific to this sample, task, and measurement protocol.",
+      "source_id": "harvard-dataverse-3ycb56",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/paired-outcomes.svg",
+      "question": "Multiplicity changes how the outcome family is read",
+      "supported_finding": "Primary and secondary outcomes are shown together after sign-flip inference and Holm adjustment.",
+      "interpretation_boundary": "Statistical separation does not establish a downstream educational or policy benefit.",
+      "source_id": "harvard-dataverse-3ycb56",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/protocol-burden.svg",
+      "question": "Additional contrast carries an assessment-time cost",
+      "supported_finding": "The protocol comparison places group separation beside measurement burden so neither outcome is optimized in isolation.",
+      "interpretation_boundary": "The value placed on burden versus separation is a stakeholder judgment, not a property of the dataset.",
+      "source_id": "harvard-dataverse-3ycb56",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

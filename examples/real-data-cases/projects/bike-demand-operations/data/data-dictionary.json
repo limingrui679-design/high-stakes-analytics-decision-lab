@@ -1,0 +1,13 @@
+{
+  "grain": "observed system-hour",
+  "primary_key": "instant",
+  "fields": {
+    "dteday": "calendar date",
+    "hr": "hour, 0-23",
+    "workingday": "1 when neither weekend nor holiday",
+    "weathersit": "weather severity category, 1-4",
+    "casual": "casual rental count",
+    "registered": "registered rental count",
+    "cnt": "total rentals"
+  }
+}

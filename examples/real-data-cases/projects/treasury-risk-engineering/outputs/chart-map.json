@@ -1,0 +1,29 @@
+{
+  "project_id": "treasury-risk-engineering",
+  "charts": [
+    {
+      "path": "figures/expected-shortfall.svg",
+      "question": "Longer duration increases historical tail loss",
+      "supported_finding": "Empirical VaR and expected shortfall are reported together so the severity beyond the quantile remains visible.",
+      "interpretation_boundary": "Historical tail loss is scenario evidence, not a guarantee about a future regime.",
+      "source_id": "us-treasury-daily-par-yield-2020-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/var-backtest.svg",
+      "question": "Coverage and breach dependence are separate diagnostics",
+      "supported_finding": "Rolling exceedances, Kupiec coverage, and Christoffersen independence test different failure modes.",
+      "interpretation_boundary": "Passing one backtest does not validate the full return model or authorize investment use.",
+      "source_id": "us-treasury-daily-par-yield-2020-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/yield-curves.svg",
+      "question": "Common market regimes anchor the portfolio comparison",
+      "supported_finding": "Observed Treasury curves provide the shared daily shocks used by every hypothetical duration allocation.",
+      "interpretation_boundary": "The portfolios are approximations and omit convexity, security selection, costs, taxes, and financing.",
+      "source_id": "us-treasury-daily-par-yield-2020-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

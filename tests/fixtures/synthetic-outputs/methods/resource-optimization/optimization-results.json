@@ -1,0 +1,402 @@
+{
+  "analysis_type": "exact_grid_resource_optimization",
+  "status": "optimal_on_declared_grid",
+  "title": "Community Screening Capacity Optimization",
+  "evaluated_allocations": 294,
+  "feasible_allocations": 84,
+  "config_summary": {
+    "resources": [
+      "fixed_clinic",
+      "mobile_unit",
+      "digital_navigation"
+    ],
+    "risk_aversion": 0.45,
+    "objective": "expected scenario value minus risk_aversion times the gap between expected and worst-case value"
+  },
+  "best_by_scenario": {
+    "base": 178.0,
+    "winter_surge": 190.0,
+    "staff_shortage": 176.0
+  },
+  "ranking": [
+    {
+      "allocation": {
+        "fixed_clinic": 20.0,
+        "mobile_unit": 40.0,
+        "digital_navigation": 60.0
+      },
+      "expected_value": 178.2,
+      "worst_case_value": 172.0,
+      "robust_value": 175.41,
+      "scenario_values": {
+        "base": 172.0,
+        "winter_surge": 190.0,
+        "staff_shortage": 176.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 60.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 61.0,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 120.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 6.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 10.0,
+        "mobile_unit": 50.0,
+        "digital_navigation": 50.0
+      },
+      "expected_value": 174.4,
+      "worst_case_value": 167.0,
+      "robust_value": 171.07,
+      "scenario_values": {
+        "base": 168.0,
+        "winter_surge": 190.0,
+        "staff_shortage": 167.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 60.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 67.5,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 117.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 10.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 30.0,
+        "mobile_unit": 30.0,
+        "digital_navigation": 60.0
+      },
+      "expected_value": 172.2,
+      "worst_case_value": 168.0,
+      "robust_value": 170.31,
+      "scenario_values": {
+        "base": 168.0,
+        "winter_surge": 180.0,
+        "staff_shortage": 171.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 60.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 51.0,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 117.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 10.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 50.0,
+        "mobile_unit": 20.0,
+        "digital_navigation": 50.0
+      },
+      "expected_value": 172.3,
+      "worst_case_value": 164.0,
+      "robust_value": 168.565,
+      "scenario_values": {
+        "base": 174.0,
+        "winter_surge": 175.0,
+        "staff_shortage": 164.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 70.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 37.5,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 120.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 15.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 30.0,
+        "mobile_unit": 40.0,
+        "digital_navigation": 40.0
+      },
+      "expected_value": 174.5,
+      "worst_case_value": 160.0,
+      "robust_value": 167.975,
+      "scenario_values": {
+        "base": 174.0,
+        "winter_surge": 185.0,
+        "staff_shortage": 160.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 70.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 54.0,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 120.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 16.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 20.0,
+        "mobile_unit": 40.0,
+        "digital_navigation": 50.0
+      },
+      "expected_value": 168.4,
+      "worst_case_value": 162.0,
+      "robust_value": 165.52,
+      "scenario_values": {
+        "base": 164.0,
+        "winter_surge": 180.0,
+        "staff_shortage": 162.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 60.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 57.5,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 114.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 14.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 40.0,
+        "mobile_unit": 20.0,
+        "digital_navigation": 60.0
+      },
+      "expected_value": 166.2,
+      "worst_case_value": 164.0,
+      "robust_value": 165.20999999999998,
+      "scenario_values": {
+        "base": 164.0,
+        "winter_surge": 170.0,
+        "staff_shortage": 166.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 60.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 41.0,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 114.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 20.0
+    },
+    {
+      "allocation": {
+        "fixed_clinic": 40.0,
+        "mobile_unit": 30.0,
+        "digital_navigation": 40.0
+      },
+      "expected_value": 168.5,
+      "worst_case_value": 155.0,
+      "robust_value": 162.425,
+      "scenario_values": {
+        "base": 170.0,
+        "winter_surge": 175.0,
+        "staff_shortage": 155.0
+      },
+      "constraints": [
+        {
+          "id": "minimum_physical_capacity",
+          "label": "Minimum physical screening capacity",
+          "value": 70.0,
+          "operator": ">=",
+          "threshold": 40.0,
+          "holds": true
+        },
+        {
+          "id": "rural_access",
+          "label": "Minimum rural-access capacity",
+          "value": 44.0,
+          "operator": ">=",
+          "threshold": 28.0,
+          "holds": true
+        },
+        {
+          "id": "budget",
+          "label": "Budget",
+          "value": 117.0,
+          "operator": "<=",
+          "threshold": 120.0,
+          "holds": true
+        }
+      ],
+      "maximum_regret": 21.0
+    }
+  ],
+  "optimal_allocation": {
+    "allocation": {
+      "fixed_clinic": 20.0,
+      "mobile_unit": 40.0,
+      "digital_navigation": 60.0
+    },
+    "expected_value": 178.2,
+    "worst_case_value": 172.0,
+    "robust_value": 175.41,
+    "scenario_values": {
+      "base": 172.0,
+      "winter_surge": 190.0,
+      "staff_shortage": 176.0
+    },
+    "constraints": [
+      {
+        "id": "minimum_physical_capacity",
+        "label": "Minimum physical screening capacity",
+        "value": 60.0,
+        "operator": ">=",
+        "threshold": 40.0,
+        "holds": true
+      },
+      {
+        "id": "rural_access",
+        "label": "Minimum rural-access capacity",
+        "value": 61.0,
+        "operator": ">=",
+        "threshold": 28.0,
+        "holds": true
+      },
+      {
+        "id": "budget",
+        "label": "Budget",
+        "value": 120.0,
+        "operator": "<=",
+        "threshold": 120.0,
+        "holds": true
+      }
+    ],
+    "maximum_regret": 6.0
+  },
+  "interpretation_boundary": "Optimality holds only on the declared discrete grid, linear coefficients, constraints, and scenarios. Validate coefficients and use a production solver for larger or nonlinear problems."
+}

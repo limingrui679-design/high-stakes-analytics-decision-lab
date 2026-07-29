@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="864" viewBox="0 0 1200 864" role="img" aria-labelledby="title desc">
+<title id="title">Weight sensitivity</title>
+<desc id="desc">A directly labeled sensitivity matrix shows risk-adjusted scores and the winner after increasing or decreasing one criterion weight at a time.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="864" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#008C82"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#008C82">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Weight sensitivity</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Which stakeholder priorities can change the winner?</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#008C82"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<text x="413.5" y="140.0" class="small" text-anchor="middle">Targeted hybrid</text>
+<text x="413.5" y="174.0" class="eyebrow" text-anchor="middle" style="fill:#008C82">BASELINE PREFERENCE</text>
+<text x="628.5" y="140.0" class="small" text-anchor="middle">Expand fixed clinics</text>
+<text x="843.5" y="140.0" class="small" text-anchor="middle">Status quo</text>
+<text x="1058.5" y="140.0" class="small" text-anchor="middle">Mobile-first network</text>
+<rect x="30.0" y="185.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="212.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="210.0" class="label" text-anchor="start">↓ Expected health gain</text>
+<rect x="311.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.574</text>
+<text x="512.0" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.490</text>
+<rect x="741.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.517</text>
+<rect x="956.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="219.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
+<text x="76.0" y="272.0" class="label" text-anchor="start">↑ Expected health gain</text>
+<rect x="311.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.583</text>
+<text x="512.0" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.495</text>
+<rect x="741.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.453</text>
+<rect x="956.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="281.0" class="small" text-anchor="middle">infeasible</text>
+<rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="334.0" class="label" text-anchor="start">↓ Annual program cost</text>
+<rect x="311.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.593</text>
+<text x="512.0" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.501</text>
+<rect x="741.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.468</text>
+<rect x="956.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="343.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
+<text x="76.0" y="396.0" class="label" text-anchor="start">↑ Annual program cost</text>
+<rect x="311.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.560</text>
+<text x="512.0" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.481</text>
+<rect x="741.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.513</text>
+<rect x="956.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="405.0" class="small" text-anchor="middle">infeasible</text>
+<rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="458.0" class="label" text-anchor="start">↓ High- versus low-access gap</text>
+<rect x="311.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.572</text>
+<text x="512.0" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.494</text>
+<rect x="741.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.508</text>
+<rect x="956.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="467.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
+<text x="76.0" y="520.0" class="label" text-anchor="start">↑ High- versus low-access gap</text>
+<rect x="311.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.587</text>
+<text x="512.0" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.491</text>
+<rect x="741.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.461</text>
+<rect x="956.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="529.0" class="small" text-anchor="middle">infeasible</text>
+<rect x="30.0" y="557.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="584.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="582.0" class="label" text-anchor="start">↓ Implementation risk</text>
+<rect x="311.0" y="566.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="592.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.584</text>
+<text x="512.0" y="578.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="566.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="592.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.497</text>
+<rect x="741.0" y="566.0" width="205.0" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="592.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.475</text>
+<rect x="956.0" y="566.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="591.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="646.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
+<text x="76.0" y="644.0" class="label" text-anchor="start">↑ Implementation risk</text>
+<rect x="311.0" y="628.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="654.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.571</text>
+<text x="512.0" y="640.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="628.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="654.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.488</text>
+<rect x="741.0" y="628.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="654.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.504</text>
+<rect x="956.0" y="628.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="653.0" class="small" text-anchor="middle">infeasible</text>
+<rect x="30.0" y="681.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
+<text x="48.0" y="708.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
+<text x="76.0" y="706.0" class="label" text-anchor="start">↓ Evidence quality</text>
+<rect x="311.0" y="690.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="716.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.570</text>
+<text x="512.0" y="702.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="690.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="716.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.481</text>
+<rect x="741.0" y="690.0" width="205.0" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="716.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.471</text>
+<rect x="956.0" y="690.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="715.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="770.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
+<text x="76.0" y="768.0" class="label" text-anchor="start">↑ Evidence quality</text>
+<rect x="311.0" y="752.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="413.5" y="778.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.591</text>
+<text x="512.0" y="764.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="526.0" y="752.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="628.5" y="778.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.508</text>
+<rect x="741.0" y="752.0" width="205.0" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="843.5" y="778.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.509</text>
+<rect x="956.0" y="752.0" width="205.0" height="42.0" rx="7" fill="#F3F6FA" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1058.5" y="777.0" class="small" text-anchor="middle">infeasible</text>
+<text x="48.0" y="832.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>
+<line x1="36" y1="824.0" x2="1164" y2="824.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="846.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="846.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "project_id": "bike-demand-operations",
+  "source_id": "uci-bike-sharing-275",
+  "title": "Bike Sharing",
+  "publisher": "UCI Machine Learning Repository",
+  "landing_page": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+  "doi": "10.24432/C5W894",
+  "download_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+  "version": "2011-2012 Capital Bikeshare hourly snapshot",
+  "accessed_at": "2026-07-27",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribution": "Permitted with attribution",
+  "expected_rows": 17379,
+  "grain": "one observed hour in the Capital Bikeshare system",
+  "raw_files": [
+    {
+      "path": "data/raw/uci-bike-sharing.zip",
+      "sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Aggregate operational records only.",
+    "status": "approved_for_public_analysis"
+  },
+  "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894"
+}

@@ -1,0 +1,544 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "urban-regeneration",
+  "title": "Inclusive Urban Regeneration Strategy",
+  "domain": "Urban planning, place-based policy, systems analysis, and public finance",
+  "decision_owner": "Metropolitan regeneration authority",
+  "decision_question": "Choose a five-year regeneration strategy that improves access and economic opportunity without exceeding fiscal or displacement-risk tolerances.",
+  "time_horizon": "5 years",
+  "risk_aversion": 0.35,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "Synthetic spatial-policy appraisal and scenario assumptions",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative parcel and transit accessibility summaries",
+      "Synthetic housing-market forecast",
+      "Hypothetical community consultation priorities"
+    ],
+    "causal_claim_status": "No causal claim; economic and displacement effects are modeled planning assumptions.",
+    "limitations": [
+      "Spatial spillovers across neighboring districts are simplified.",
+      "Distributional outcomes are represented with three community groups.",
+      "Delivery timelines do not include litigation or permitting appeals.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "economic_uplift",
+      "label": "Local economic uplift",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "index points",
+      "scale": {
+        "worst": 0,
+        "best": 100
+      }
+    },
+    {
+      "id": "affordable_homes",
+      "label": "Net affordable homes",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "homes",
+      "scale": {
+        "worst": 0,
+        "best": 2500
+      }
+    },
+    {
+      "id": "access_gain",
+      "label": "Jobs-access gain",
+      "direction": "maximize",
+      "weight": 0.18,
+      "unit": "index points",
+      "scale": {
+        "worst": 0,
+        "best": 40
+      }
+    },
+    {
+      "id": "displacement_risk",
+      "label": "Displacement risk",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "index points",
+      "scale": {
+        "worst": 80,
+        "best": 5
+      }
+    },
+    {
+      "id": "fiscal_cost",
+      "label": "Public fiscal cost",
+      "direction": "minimize",
+      "weight": 0.12,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 420,
+        "best": 40
+      }
+    },
+    {
+      "id": "delivery_risk",
+      "label": "Delivery risk",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "index points",
+      "scale": {
+        "worst": 80,
+        "best": 10
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "fiscal_cost",
+      "operator": "<=",
+      "threshold": 350,
+      "label": "Five-year public funding envelope"
+    },
+    {
+      "criterion": "displacement_risk",
+      "operator": "<=",
+      "threshold": 60,
+      "label": "Community displacement tolerance"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "Base growth",
+      "probability": 0.5,
+      "adjustments": {}
+    },
+    {
+      "id": "construction-inflation",
+      "label": "Construction-cost inflation",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "fiscal_cost": {
+            "multiply": 1.2
+          },
+          "delivery_risk": {
+            "add": 8
+          }
+        },
+        "neighborhood-retrofit": {
+          "fiscal_cost": {
+            "multiply": 0.92
+          }
+        }
+      }
+    },
+    {
+      "id": "housing-downturn",
+      "label": "Housing-market downturn",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "economic_uplift": {
+            "multiply": 0.7
+          },
+          "affordable_homes": {
+            "multiply": 0.85
+          }
+        },
+        "transit-corridor": {
+          "access_gain": {
+            "multiply": 1.05
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "status-quo",
+      "label": "Status quo grants",
+      "description": "Continue small competitive grants without a coordinated land or transit strategy.",
+      "metrics": {
+        "economic_uplift": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 20,
+          "high": 30
+        },
+        "affordable_homes": {
+          "distribution": "triangular",
+          "low": 120,
+          "mode": 240,
+          "high": 420
+        },
+        "access_gain": {
+          "distribution": "triangular",
+          "low": 2,
+          "mode": 5,
+          "high": 9
+        },
+        "displacement_risk": {
+          "distribution": "triangular",
+          "low": 18,
+          "mode": 27,
+          "high": 40
+        },
+        "fiscal_cost": {
+          "distribution": "triangular",
+          "low": 45,
+          "mode": 60,
+          "high": 80
+        },
+        "delivery_risk": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 20,
+          "high": 30
+        }
+      },
+      "groups": [
+        {
+          "id": "long-term-renters",
+          "label": "Long-term renters",
+          "metrics": {
+            "access_gain": 4,
+            "displacement_risk": 33
+          }
+        },
+        {
+          "id": "homeowners",
+          "label": "Existing homeowners",
+          "metrics": {
+            "access_gain": 5,
+            "displacement_risk": 12
+          }
+        },
+        {
+          "id": "new-residents",
+          "label": "New residents",
+          "metrics": {
+            "access_gain": 6,
+            "displacement_risk": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "transit-corridor",
+      "label": "Transit-led mixed-income corridor",
+      "description": "Coordinate bus rapid transit, inclusionary housing, and station-area development.",
+      "metrics": {
+        "economic_uplift": {
+          "distribution": "normal",
+          "mean": 76,
+          "sd": 11,
+          "min": 20,
+          "max": 100
+        },
+        "affordable_homes": {
+          "distribution": "triangular",
+          "low": 1200,
+          "mode": 1750,
+          "high": 2350
+        },
+        "access_gain": {
+          "distribution": "triangular",
+          "low": 24,
+          "mode": 31,
+          "high": 39
+        },
+        "displacement_risk": {
+          "distribution": "triangular",
+          "low": 29,
+          "mode": 42,
+          "high": 61
+        },
+        "fiscal_cost": {
+          "distribution": "triangular",
+          "low": 230,
+          "mode": 285,
+          "high": 350
+        },
+        "delivery_risk": {
+          "distribution": "triangular",
+          "low": 34,
+          "mode": 48,
+          "high": 67
+        }
+      },
+      "groups": [
+        {
+          "id": "long-term-renters",
+          "label": "Long-term renters",
+          "metrics": {
+            "access_gain": 29,
+            "displacement_risk": 48
+          }
+        },
+        {
+          "id": "homeowners",
+          "label": "Existing homeowners",
+          "metrics": {
+            "access_gain": 31,
+            "displacement_risk": 22
+          }
+        },
+        {
+          "id": "new-residents",
+          "label": "New residents",
+          "metrics": {
+            "access_gain": 34,
+            "displacement_risk": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "innovation-district",
+      "label": "Innovation district",
+      "description": "Use anchor-institution investment, commercial zoning, and research-space incentives.",
+      "metrics": {
+        "economic_uplift": {
+          "distribution": "normal",
+          "mean": 84,
+          "sd": 13,
+          "min": 15,
+          "max": 100
+        },
+        "affordable_homes": {
+          "distribution": "triangular",
+          "low": 450,
+          "mode": 760,
+          "high": 1150
+        },
+        "access_gain": {
+          "distribution": "triangular",
+          "low": 13,
+          "mode": 21,
+          "high": 30
+        },
+        "displacement_risk": {
+          "distribution": "triangular",
+          "low": 43,
+          "mode": 58,
+          "high": 75
+        },
+        "fiscal_cost": {
+          "distribution": "triangular",
+          "low": 170,
+          "mode": 240,
+          "high": 330
+        },
+        "delivery_risk": {
+          "distribution": "triangular",
+          "low": 30,
+          "mode": 44,
+          "high": 64
+        }
+      },
+      "groups": [
+        {
+          "id": "long-term-renters",
+          "label": "Long-term renters",
+          "metrics": {
+            "access_gain": 18,
+            "displacement_risk": 66
+          }
+        },
+        {
+          "id": "homeowners",
+          "label": "Existing homeowners",
+          "metrics": {
+            "access_gain": 22,
+            "displacement_risk": 30
+          }
+        },
+        {
+          "id": "new-residents",
+          "label": "New residents",
+          "metrics": {
+            "access_gain": 27,
+            "displacement_risk": 18
+          }
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-retrofit",
+      "label": "Neighborhood retrofit and anti-displacement",
+      "description": "Fund building retrofits, community land ownership, small-business support, and targeted accessibility upgrades.",
+      "metrics": {
+        "economic_uplift": {
+          "distribution": "normal",
+          "mean": 58,
+          "sd": 9,
+          "min": 15,
+          "max": 90
+        },
+        "affordable_homes": {
+          "distribution": "triangular",
+          "low": 950,
+          "mode": 1450,
+          "high": 2100
+        },
+        "access_gain": {
+          "distribution": "triangular",
+          "low": 13,
+          "mode": 19,
+          "high": 27
+        },
+        "displacement_risk": {
+          "distribution": "triangular",
+          "low": 10,
+          "mode": 18,
+          "high": 30
+        },
+        "fiscal_cost": {
+          "distribution": "triangular",
+          "low": 180,
+          "mode": 230,
+          "high": 360
+        },
+        "delivery_risk": {
+          "distribution": "triangular",
+          "low": 24,
+          "mode": 35,
+          "high": 50
+        }
+      },
+      "groups": [
+        {
+          "id": "long-term-renters",
+          "label": "Long-term renters",
+          "metrics": {
+            "access_gain": 18,
+            "displacement_risk": 17
+          }
+        },
+        {
+          "id": "homeowners",
+          "label": "Existing homeowners",
+          "metrics": {
+            "access_gain": 20,
+            "displacement_risk": 13
+          }
+        },
+        {
+          "id": "new-residents",
+          "label": "New residents",
+          "metrics": {
+            "access_gain": 21,
+            "displacement_risk": 12
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real plan should use parcel-level and travel-time analysis and publish neighborhood distributional results.",
+    "Community preferences should influence weights through a documented deliberative process."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "economic_uplift": -0.48,
+          "affordable_homes": -0.48,
+          "access_gain": -0.48,
+          "displacement_risk": 0.48,
+          "fiscal_cost": 0.48,
+          "delivery_risk": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "urban-regeneration-synthetic-parameter-register",
+        "citation": "Inclusive Urban Regeneration Strategy — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "urban-regeneration-synthetic-parameter-register"
+      }
+    ]
+  }
+}

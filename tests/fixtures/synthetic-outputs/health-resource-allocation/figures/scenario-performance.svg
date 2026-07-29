@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="488" viewBox="0 0 1200 488" role="img" aria-labelledby="title desc">
+<title id="title">Scenario resilience</title>
+<desc id="desc">Small-multiple panels compare all alternatives on a common zero-to-one scale within each scenario and directly label the winner and scenario probability.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="488" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#008C82"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#008C82">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Scenario resilience</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Small multiples reveal which external conditions preserve—or overturn—the preferred option</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#008C82"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="54.0" y="164.0" class="section" text-anchor="start">Base demand</text>
+<rect x="298.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="340.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 55%</text>
+<text x="54.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="54.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Targeted hybrid</text>
+<rect x="54.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="229.0" width="168.7" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="382.0" y="237.0" class="mono" text-anchor="end">0.598</text>
+<text x="382.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#008C82">WINNER</text>
+<text x="54.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Expand fixed clinics</text>
+<rect x="54.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="273.0" width="146.0" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="382.0" y="281.0" class="mono" text-anchor="end">0.518</text>
+<text x="54.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Status quo</text>
+<rect x="54.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="317.0" width="141.8" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="382.0" y="325.0" class="mono" text-anchor="end">0.503</text>
+<text x="54.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Mobile-first network</text>
+<rect x="54.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="361.0" width="164.9" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="382.0" y="369.0" class="mono" text-anchor="end">0.585</text>
+<rect x="418.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="436.0" y="164.0" class="section" text-anchor="start">Winter demand surge</text>
+<rect x="680.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="722.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 25%</text>
+<text x="436.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="436.0" y="219.0" class="small" text-anchor="start" style="fill:#617084">Targeted hybrid</text>
+<rect x="436.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="229.0" width="167.8" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="764.0" y="237.0" class="mono" text-anchor="end">0.595</text>
+<text x="436.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Expand fixed clinics</text>
+<rect x="436.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="273.0" width="144.5" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="764.0" y="281.0" class="mono" text-anchor="end">0.512</text>
+<text x="436.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Status quo</text>
+<rect x="436.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="317.0" width="139.7" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="764.0" y="325.0" class="mono" text-anchor="end">0.495</text>
+<text x="436.0" y="351.0" class="small" text-anchor="start" style="fill:#0B1324">Mobile-first network</text>
+<rect x="436.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="361.0" width="170.7" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="764.0" y="369.0" class="mono" text-anchor="end">0.605</text>
+<text x="764.0" y="351.0" class="eyebrow" text-anchor="end" style="fill:#D85B43">WINNER</text>
+<text x="436.0" y="412.0" class="small" text-anchor="start" style="fill:#B06A00">Scenario overturns the baseline preference</text>
+<rect x="800.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="818.0" y="164.0" class="section" text-anchor="start">Clinical staff shortage</text>
+<rect x="1062.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="1104.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 20%</text>
+<text x="818.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="818.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Targeted hybrid</text>
+<rect x="818.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="229.0" width="149.3" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="1146.0" y="237.0" class="mono" text-anchor="end">0.529</text>
+<text x="1146.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#008C82">WINNER</text>
+<text x="818.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Expand fixed clinics</text>
+<rect x="818.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="273.0" width="122.0" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="1146.0" y="281.0" class="mono" text-anchor="end">0.433</text>
+<text x="818.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Status quo</text>
+<rect x="818.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="317.0" width="128.5" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="1146.0" y="325.0" class="mono" text-anchor="end">0.456</text>
+<text x="818.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Mobile-first network</text>
+<rect x="818.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="361.0" width="144.7" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="1146.0" y="369.0" class="mono" text-anchor="end">0.513</text>
+<line x1="36" y1="448.0" x2="1164" y2="448.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="470.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="470.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

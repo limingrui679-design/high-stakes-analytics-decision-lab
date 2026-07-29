@@ -1,0 +1,39 @@
+{
+  "project_id": "treasury-risk-engineering",
+  "source_id": "us-treasury-daily-par-yield-2020-2025",
+  "verified_at": "2026-07-28T10:14:31.042544+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/treasury-2020.csv",
+      "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7",
+      "bytes": 17912
+    },
+    {
+      "path": "data/raw/treasury-2021.csv",
+      "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea",
+      "bytes": 17912
+    },
+    {
+      "path": "data/raw/treasury-2022.csv",
+      "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814",
+      "bytes": 18226
+    },
+    {
+      "path": "data/raw/treasury-2023.csv",
+      "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4",
+      "bytes": 19098
+    },
+    {
+      "path": "data/raw/treasury-2024.csv",
+      "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d",
+      "bytes": 19098
+    },
+    {
+      "path": "data/raw/treasury-2025.csv",
+      "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5",
+      "bytes": 20155
+    }
+  ]
+}

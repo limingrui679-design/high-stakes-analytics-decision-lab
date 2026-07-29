@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="488" viewBox="0 0 1200 488" role="img" aria-labelledby="title desc">
+<title id="title">Scenario resilience</title>
+<desc id="desc">Small-multiple panels compare all alternatives on a common zero-to-one scale within each scenario and directly label the winner and scenario probability.</desc>
+<style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+  .kicker { font-size: 11px; font-weight: 800; letter-spacing: 1.6px; }
+  .title { font-size: 27px; font-weight: 760; letter-spacing: -0.2px; }
+  .subtitle { font-size: 14px; }
+  .section { fill: #0B1324; font-size: 17px; font-weight: 720; }
+  .label { fill: #263449; font-size: 14px; }
+  .small { fill: #617084; font-size: 12px; }
+  .eyebrow { fill: #617084; font-size: 10.5px; font-weight: 800; letter-spacing: 1px; }
+  .value { fill: #0B1324; font-size: 16px; font-weight: 750; font-variant-numeric: tabular-nums; }
+  .big { fill: #0B1324; font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .display { fill: #0B1324; font-size: 38px; font-weight: 820; font-variant-numeric: tabular-nums; }
+  .mono { fill: #263449; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .pill { font-size: 11px; font-weight: 760; letter-spacing: .25px; }
+  .footnote { fill: #8B98A9; font-size: 10.5px; }
+</style>
+<rect width="1200" height="488" fill="#F3F6FA"/>
+<rect width="1200" height="112" fill="#0B1F3A"/>
+<rect width="10" height="112" fill="#246BFD"/>
+<text x="42.0" y="32.0" class="kicker" text-anchor="start" style="fill:#246BFD">DECISION INTELLIGENCE</text>
+<text x="42.0" y="66.0" class="title" text-anchor="start" style="fill:#FFFFFF">Scenario resilience</text>
+<text x="42.0" y="93.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Small multiples reveal which external conditions preserve—or overturn—the preferred option</text>
+<circle cx="1122" cy="56" r="28" fill="none" stroke="#246BFD" stroke-width="2"/>
+<circle cx="1122" cy="56" r="9" fill="#246BFD"/>
+<line x1="1084" y1="56" x2="1160" y2="56" stroke="#49627F" stroke-width="1"/>
+<line x1="1122" y1="18" x2="1122" y2="94" stroke="#49627F" stroke-width="1"/>
+<rect x="36.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="54.0" y="164.0" class="section" text-anchor="start">In-distribution operations</text>
+<rect x="298.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="340.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 55%</text>
+<text x="54.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="54.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Auditable model with human…</text>
+<rect x="54.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="229.0" width="194.2" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="382.0" y="237.0" class="mono" text-anchor="end">0.689</text>
+<text x="382.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#246BFD">WINNER</text>
+<text x="54.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Rules-based staff assistan…</text>
+<rect x="54.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="273.0" width="193.2" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="382.0" y="281.0" class="mono" text-anchor="end">0.685</text>
+<text x="54.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Current manual triage</text>
+<rect x="54.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="317.0" width="152.2" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="382.0" y="325.0" class="mono" text-anchor="end">0.540</text>
+<text x="54.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Vendor black-box automatio…</text>
+<rect x="54.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="54.0" y="361.0" width="141.0" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="382.0" y="369.0" class="mono" text-anchor="end">0.500</text>
+<rect x="418.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="436.0" y="164.0" class="section" text-anchor="start">Policy and population shift</text>
+<rect x="680.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="722.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 30%</text>
+<text x="436.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="436.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Auditable model with human…</text>
+<rect x="436.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="229.0" width="188.2" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="764.0" y="237.0" class="mono" text-anchor="end">0.667</text>
+<text x="764.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#246BFD">WINNER</text>
+<text x="436.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Rules-based staff assistan…</text>
+<rect x="436.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="273.0" width="181.1" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="764.0" y="281.0" class="mono" text-anchor="end">0.642</text>
+<text x="436.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Current manual triage</text>
+<rect x="436.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="317.0" width="137.5" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="764.0" y="325.0" class="mono" text-anchor="end">0.488</text>
+<text x="436.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Vendor black-box automatio…</text>
+<rect x="436.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="436.0" y="361.0" width="108.2" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="764.0" y="369.0" class="mono" text-anchor="end">0.384</text>
+<rect x="800.0" y="136.0" width="364.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="818.0" y="164.0" class="section" text-anchor="start">Security incident</text>
+<rect x="1062.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
+<text x="1104.0" y="168.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">P 15%</text>
+<text x="818.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
+<text x="818.0" y="219.0" class="small" text-anchor="start" style="fill:#617084">Auditable model with human…</text>
+<rect x="818.0" y="229.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="229.0" width="178.9" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="1146.0" y="237.0" class="mono" text-anchor="end">0.635</text>
+<text x="818.0" y="263.0" class="small" text-anchor="start" style="fill:#0B1324">Rules-based staff assistan…</text>
+<rect x="818.0" y="273.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="273.0" width="183.6" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="1146.0" y="281.0" class="mono" text-anchor="end">0.651</text>
+<text x="1146.0" y="263.0" class="eyebrow" text-anchor="end" style="fill:#C69214">WINNER</text>
+<text x="818.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Current manual triage</text>
+<rect x="818.0" y="317.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="317.0" width="142.2" height="8.0" rx="4.0" fill="#D85B43"/>
+<text x="1146.0" y="325.0" class="mono" text-anchor="end">0.504</text>
+<text x="818.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Vendor black-box automatio…</text>
+<rect x="818.0" y="361.0" width="282.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
+<rect x="818.0" y="361.0" width="120.6" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="1146.0" y="369.0" class="mono" text-anchor="end">0.428</text>
+<text x="818.0" y="412.0" class="small" text-anchor="start" style="fill:#B06A00">Scenario overturns the baseline preference</text>
+<line x1="36" y1="448.0" x2="1164" y2="448.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="470.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
+<text x="1158.0" y="470.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>
+</svg>

@@ -1,0 +1,25 @@
+{
+  "project_id": "cfpb-fintech-complaint-operations",
+  "review_status": "approved_for_public_aggregate_analysis",
+  "stored_fields": [
+    "complaint_id",
+    "date_received",
+    "date_sent_to_company",
+    "sub_product",
+    "issue",
+    "sub_issue",
+    "state",
+    "submitted_via",
+    "company_response",
+    "timely"
+  ],
+  "excluded_before_storage": [
+    "consumer complaint narrative",
+    "company",
+    "ZIP code",
+    "tags",
+    "company public response"
+  ],
+  "record_count": 13534,
+  "direct_identifiers_stored": false
+}

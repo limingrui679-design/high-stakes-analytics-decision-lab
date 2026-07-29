@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-28",
+  "project_id": "cfpb-fintech-complaint-operations",
+  "decision_status": "do_not_deploy",
+  "decision": "Do not deploy the individual complaint-ranking model; retain the privacy-minimized data contract, aggregate monitoring, and negative-validation evidence.",
+  "adaptive_route": [
+    "descriptive",
+    "predictive",
+    "deployment decision"
+  ],
+  "evidence_basis": [
+    {
+      "label": "Later-period AUC",
+      "value": "0.611",
+      "context": "95% block interval 0.539–0.697."
+    },
+    {
+      "label": "Top-5% lift",
+      "value": "1.00",
+      "context": "No gain over random review at the tested tier."
+    },
+    {
+      "label": "Outcome prevalence",
+      "value": "2.5%",
+      "context": "Untimely-response indicator in the later test period."
+    }
+  ],
+  "evidence_gates": [
+    {
+      "label": "Privacy-minimized public data contract",
+      "status": "PASS",
+      "detail": "Narratives, company names, ZIP codes, tags, and public-response text are excluded."
+    },
+    {
+      "label": "Later-calendar-period evaluation",
+      "status": "PASS",
+      "detail": "The final test period follows the training and validation periods."
+    },
+    {
+      "label": "AUC deployment threshold",
+      "status": "BLOCK",
+      "detail": "Observed AUC 0.611 is below the predeclared 0.650 gate."
+    },
+    {
+      "label": "Capacity lift with uncertainty",
+      "status": "BLOCK",
+      "detail": "No review tier has both required point lift and a block-bootstrap lower bound above random review."
+    },
+    {
+      "label": "Prospective workflow benefit",
+      "status": "REQUIRED",
+      "detail": "No prospective study demonstrates benefit, distributional burden, or safe escalation."
+    }
+  ],
+  "methods": [
+    "Minimize the stored administrative fields before analysis.",
+    "Use ordered calendar train, validation, and later-period test windows.",
+    "Validate calibration, AUC, cumulative gain, and capacity lift on the held-out period.",
+    "Use day-block resampling and a 500-permutation null benchmark before applying deployment gates."
+  ],
+  "supported_uses": [
+    "Retain aggregate complaint-volume and timeliness monitoring.",
+    "Reuse the privacy-minimized extraction and calendar validation design.",
+    "Document the negative result as evidence against deployment."
+  ],
+  "unsupported_uses": [
+    "Rank individual complaints with the tested model.",
+    "Interpret the timely indicator as merit, harm, resolution quality, or compliance.",
+    "Use statistical significance to override failed operational gates."
+  ],
+  "claim_boundary": "The timely indicator is not complaint merit, consumer harm, resolution quality, company quality, or regulatory compliance. Weak ranking performance cannot be rescued by privacy or validation discipline; those are separate contributions.",
+  "reversal_conditions": [
+    "A pre-registered future-period evaluation exceeds the AUC gate and reproduces material lift above random review.",
+    "Operationally available features add stable signal without violating the privacy and use boundary.",
+    "A prospective workflow study demonstrates benefit and checks distributional burden before any ranking use."
+  ],
+  "recommended_next_steps": [
+    "Define a future-period protocol and freeze AUC, capacity-lift, privacy, and burden gates before fitting.",
+    "Evaluate whether newly available operational features add stable signal without expanding sensitive data use.",
+    "Run a prospective workflow study before any return to individual ranking."
+  ],
+  "case_specific": {
+    "deployment_gate": {
+      "status": "do_not_deploy_ranking_model",
+      "passes": false,
+      "auc_gate": {
+        "threshold": 0.65,
+        "observed": 0.6107876712328767,
+        "passes": false
+      },
+      "capacity_lift_gate": {
+        "threshold": 1.2,
+        "passes_any_review_capacity": false
+      },
+      "reason": "Later-period discrimination is weak and no tested capacity has both the required point lift and a block-bootstrap lower bound above random review.",
+      "permitted_use": "Retain the privacy-minimized data contract, calendar split, aggregate monitoring, and negative-validation evidence; do not operationalize individual complaint ranking.",
+      "reversal_conditions": [
+        "A pre-registered future-period evaluation exceeds the AUC gate and reproduces material lift above random review.",
+        "Operationally available features add stable signal without violating the privacy and use boundary.",
+        "A prospective workflow study demonstrates benefit and checks distributional burden before any ranking use."
+      ]
+    },
+    "capacity_validation": {
+      "5%": {
+        "capacity_share": 0.05008347245409015,
+        "selected_count": 120,
+        "positive_capture": 0.05,
+        "precision": 0.025,
+        "lift_vs_random": 0.9983333333333334,
+        "random_capture_benchmark": 0.05008347245409015,
+        "excess_capture_over_random": -8.347245409014853e-05,
+        "lift_block_bootstrap_95_interval": [
+          0.33259269558769,
+          2.457085235920852
+        ]
+      },
+      "10%": {
+        "capacity_share": 0.1001669449081803,
+        "selected_count": 240,
+        "positive_capture": 0.11666666666666667,
+        "precision": 0.029166666666666667,
+        "lift_vs_random": 1.1647222222222222,
+        "random_capture_benchmark": 0.1001669449081803,
+        "excess_capture_over_random": 0.016499721758486366,
+        "lift_block_bootstrap_95_interval": [
+          0.40320442176870747,
+          1.85653024691358
+        ]
+      },
+      "20%": {
+        "capacity_share": 0.2003338898163606,
+        "selected_count": 480,
+        "positive_capture": 0.2,
+        "precision": 0.025,
+        "lift_vs_random": 0.9983333333333334,
+        "random_capture_benchmark": 0.2003338898163606,
+        "excess_capture_over_random": -0.0003338898163605941,
+        "lift_block_bootstrap_95_interval": [
+          0.5653135691593353,
+          1.7540162037037035
+        ]
+      }
+    },
+    "auc_validation": {
+      "observed_auc": 0.6107876712328767,
+      "block_bootstrap_95_interval": [
+        0.5386500770096976,
+        0.6966899099655705
+      ],
+      "permutation_null": {
+        "samples": 500,
+        "mean_auc": 0.5006276969178084,
+        "95_interval": [
+          0.4333720390981735,
+          0.569574236586758
+        ],
+        "one_sided_p_value": 0.001996007984031936
+      }
+    }
+  },
+  "source": {
+    "title": "Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service",
+    "publisher": "Consumer Financial Protection Bureau",
+    "version": "Closed 2022 UTC date window; privacy-minimized extract created 2026-07-27",
+    "accessed_at": "2026-07-27",
+    "grain": "one CFPB complaint received in 2022 for a money-transfer, virtual-currency, or money-service product",
+    "expected_rows": 13534,
+    "source_manifest_sha256": "121b854089edc35463e8dfd7b7e09ead820c3bae8c24ab2933aba88e7f23829d",
+    "analytical_results_sha256": "5d73ce3abc222a74751c8a1fcf3a27a1c95a0deb17bcc327cfd2d7197c738df1"
+  }
+}

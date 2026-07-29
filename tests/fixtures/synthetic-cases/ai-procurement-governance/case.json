@@ -1,0 +1,549 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "ai-procurement-governance",
+  "title": "AI-Assisted Case Triage Procurement",
+  "domain": "Artificial intelligence, AI ethics, technology policy, and public-sector governance",
+  "decision_owner": "Public-service technology and ethics board",
+  "decision_question": "Choose whether and how to use AI for benefit-case triage while preserving accuracy, privacy, group equity, contestability, and fiscal feasibility.",
+  "time_horizon": "24 months",
+  "risk_aversion": 0.5,
+  "max_constraint_violation_rate": 0.08,
+  "sensitivity_weight_multiplier": 1.6,
+  "evidence": {
+    "type": "Synthetic benchmark, red-team, and service-design estimates",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Illustrative offline benchmark by claimant group",
+      "Synthetic distribution-shift and security scenarios",
+      "Hypothetical human-factors review"
+    ],
+    "causal_claim_status": "No causal claim; task-benefit and harm inputs are prospective scenario estimates.",
+    "limitations": [
+      "Offline error rates may not predict outcomes after staff adapt to the system.",
+      "Contestability and dignity are represented imperfectly by numerical scores.",
+      "Security threats and vendor lock-in are simplified.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "task_benefit",
+      "label": "Processing-time reduction",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "percent",
+      "scale": {
+        "worst": 0,
+        "best": 55
+      }
+    },
+    {
+      "id": "severe_error_rate",
+      "label": "Severe case-error rate",
+      "direction": "minimize",
+      "weight": 0.24,
+      "unit": "percent",
+      "scale": {
+        "worst": 15,
+        "best": 1
+      }
+    },
+    {
+      "id": "group_error_gap",
+      "label": "Maximum group error gap",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "percentage points",
+      "scale": {
+        "worst": 12,
+        "best": 0.5
+      }
+    },
+    {
+      "id": "privacy_risk",
+      "label": "Privacy and security risk",
+      "direction": "minimize",
+      "weight": 0.15,
+      "unit": "index points",
+      "scale": {
+        "worst": 90,
+        "best": 5
+      }
+    },
+    {
+      "id": "contestability",
+      "label": "Contestability and human control",
+      "direction": "maximize",
+      "weight": 0.13,
+      "unit": "score",
+      "scale": {
+        "worst": 0.2,
+        "best": 1
+      }
+    },
+    {
+      "id": "annual_cost",
+      "label": "Annualized cost",
+      "direction": "minimize",
+      "weight": 0.1,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 15,
+        "best": 4
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "severe_error_rate",
+      "operator": "<=",
+      "threshold": 8,
+      "label": "Maximum severe-error rate"
+    },
+    {
+      "criterion": "privacy_risk",
+      "operator": "<=",
+      "threshold": 55,
+      "label": "Privacy and security tolerance"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "In-distribution operations",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "distribution-shift",
+      "label": "Policy and population shift",
+      "probability": 0.3,
+      "adjustments": {
+        "*": {
+          "severe_error_rate": {
+            "multiply": 1.25
+          },
+          "group_error_gap": {
+            "multiply": 1.35
+          }
+        },
+        "vendor-black-box": {
+          "severe_error_rate": {
+            "multiply": 1.25
+          },
+          "group_error_gap": {
+            "multiply": 1.2
+          }
+        },
+        "open-model-human": {
+          "severe_error_rate": {
+            "multiply": 0.85
+          }
+        }
+      }
+    },
+    {
+      "id": "security-incident",
+      "label": "Security incident",
+      "probability": 0.15,
+      "adjustments": {
+        "*": {
+          "privacy_risk": {
+            "add": 18
+          },
+          "task_benefit": {
+            "multiply": 0.82
+          }
+        },
+        "vendor-black-box": {
+          "privacy_risk": {
+            "add": 12
+          }
+        },
+        "rules-assist": {
+          "privacy_risk": {
+            "add": -6
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "current-manual",
+      "label": "Current manual triage",
+      "description": "Retain staff-led triage with existing rules and quality assurance.",
+      "metrics": {
+        "task_benefit": {
+          "distribution": "triangular",
+          "low": 0,
+          "mode": 4,
+          "high": 9
+        },
+        "severe_error_rate": {
+          "distribution": "triangular",
+          "low": 4,
+          "mode": 5.5,
+          "high": 7.5
+        },
+        "group_error_gap": {
+          "distribution": "triangular",
+          "low": 2.5,
+          "mode": 4,
+          "high": 6.2
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 12,
+          "mode": 20,
+          "high": 32
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.88
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 9.5,
+          "mode": 11,
+          "high": 13
+        }
+      },
+      "groups": [
+        {
+          "id": "standard",
+          "label": "Standard-documentation claimants",
+          "metrics": {
+            "severe_error_rate": 0.045,
+            "appeal_success_rate": 0.11
+          }
+        },
+        {
+          "id": "complex",
+          "label": "Complex-needs claimants",
+          "metrics": {
+            "severe_error_rate": 0.082,
+            "appeal_success_rate": 0.2
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language claimants",
+          "metrics": {
+            "severe_error_rate": 0.096,
+            "appeal_success_rate": 0.23
+          }
+        }
+      ]
+    },
+    {
+      "id": "vendor-black-box",
+      "label": "Vendor black-box automation",
+      "description": "Procure a proprietary end-to-end model with automated case routing.",
+      "metrics": {
+        "task_benefit": {
+          "distribution": "normal",
+          "mean": 47,
+          "sd": 6,
+          "min": 0,
+          "max": 60
+        },
+        "severe_error_rate": {
+          "distribution": "triangular",
+          "low": 3.5,
+          "mode": 5.2,
+          "high": 8.5
+        },
+        "group_error_gap": {
+          "distribution": "triangular",
+          "low": 4.5,
+          "mode": 7,
+          "high": 11
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 42,
+          "mode": 58,
+          "high": 78
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.35
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 6,
+          "mode": 7.5,
+          "high": 9.5
+        }
+      },
+      "groups": [
+        {
+          "id": "standard",
+          "label": "Standard-documentation claimants",
+          "metrics": {
+            "severe_error_rate": 0.032,
+            "appeal_success_rate": 0.08
+          }
+        },
+        {
+          "id": "complex",
+          "label": "Complex-needs claimants",
+          "metrics": {
+            "severe_error_rate": 0.091,
+            "appeal_success_rate": 0.27
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language claimants",
+          "metrics": {
+            "severe_error_rate": 0.114,
+            "appeal_success_rate": 0.31
+          }
+        }
+      ]
+    },
+    {
+      "id": "open-model-human",
+      "label": "Auditable model with human review",
+      "description": "Use an inspectable model for prioritization while preserving trained human decisions, appeals, and monitoring.",
+      "metrics": {
+        "task_benefit": {
+          "distribution": "normal",
+          "mean": 35,
+          "sd": 5,
+          "min": 0,
+          "max": 55
+        },
+        "severe_error_rate": {
+          "distribution": "triangular",
+          "low": 2.2,
+          "mode": 3.5,
+          "high": 5.8
+        },
+        "group_error_gap": {
+          "distribution": "triangular",
+          "low": 1.2,
+          "mode": 2.4,
+          "high": 4.2
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 20,
+          "mode": 32,
+          "high": 48
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.86
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 8,
+          "mode": 9.5,
+          "high": 12
+        }
+      },
+      "groups": [
+        {
+          "id": "standard",
+          "label": "Standard-documentation claimants",
+          "metrics": {
+            "severe_error_rate": 0.029,
+            "appeal_success_rate": 0.08
+          }
+        },
+        {
+          "id": "complex",
+          "label": "Complex-needs claimants",
+          "metrics": {
+            "severe_error_rate": 0.047,
+            "appeal_success_rate": 0.12
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language claimants",
+          "metrics": {
+            "severe_error_rate": 0.052,
+            "appeal_success_rate": 0.14
+          }
+        }
+      ]
+    },
+    {
+      "id": "rules-assist",
+      "label": "Rules-based staff assistant",
+      "description": "Improve data validation, queueing, and checklist support without predictive case scoring.",
+      "metrics": {
+        "task_benefit": {
+          "distribution": "normal",
+          "mean": 22,
+          "sd": 4,
+          "min": 0,
+          "max": 45
+        },
+        "severe_error_rate": {
+          "distribution": "triangular",
+          "low": 2.8,
+          "mode": 4.1,
+          "high": 7.2
+        },
+        "group_error_gap": {
+          "distribution": "triangular",
+          "low": 1.8,
+          "mode": 3,
+          "high": 5
+        },
+        "privacy_risk": {
+          "distribution": "triangular",
+          "low": 10,
+          "mode": 18,
+          "high": 29
+        },
+        "contestability": {
+          "distribution": "fixed",
+          "value": 0.93
+        },
+        "annual_cost": {
+          "distribution": "triangular",
+          "low": 5,
+          "mode": 6.3,
+          "high": 8
+        }
+      },
+      "groups": [
+        {
+          "id": "standard",
+          "label": "Standard-documentation claimants",
+          "metrics": {
+            "severe_error_rate": 0.036,
+            "appeal_success_rate": 0.09
+          }
+        },
+        {
+          "id": "complex",
+          "label": "Complex-needs claimants",
+          "metrics": {
+            "severe_error_rate": 0.061,
+            "appeal_success_rate": 0.16
+          }
+        },
+        {
+          "id": "limited-language",
+          "label": "Limited-local-language claimants",
+          "metrics": {
+            "severe_error_rate": 0.068,
+            "appeal_success_rate": 0.18
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real procurement should include participatory impact assessment, security testing, accessibility review, and a non-AI alternative.",
+    "Automation must not remove meaningful notice, explanation, or appeal."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "task_benefit": -0.48,
+          "severe_error_rate": 0.48,
+          "group_error_gap": 0.48,
+          "privacy_risk": 0.48,
+          "contestability": -0.48,
+          "annual_cost": 0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "ai-procurement-governance-synthetic-parameter-register",
+        "citation": "AI-Assisted Case Triage Procurement — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "ai-procurement-governance-synthetic-parameter-register"
+      }
+    ]
+  }
+}

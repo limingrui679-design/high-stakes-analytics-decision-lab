@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc"><title id="title">High-Stakes Analytics &amp; Decision Lab</title><desc id="desc">An adaptive evidence workflow routes a question to an Evidence Intelligence Report first and adds a Decision Intelligence Brief only when the evidence supports it.</desc><rect width="1400" height="760" rx="28" fill="#0B1F3A"/>
+<defs>
+<pattern id="heroGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+<circle cx="1" cy="1" r=".9" fill="#FFFFFF" opacity=".11"/>
+</pattern>
+</defs>
+<rect width="1400" height="760" rx="28" fill="url(#heroGrid)"/>
+<circle cx="1265" cy="88" r="198" fill="#13345B" opacity=".78"/>
+<circle cx="1265" cy="88" r="102" fill="none" stroke="#008C82" stroke-width="2"/>
+<circle cx="1265" cy="88" r="31" fill="#008C82"/>
+<circle cx="1265" cy="88" r="14" fill="#0B1F3A"/>
+<line x1="1116" y1="88" x2="1398" y2="88" stroke="#36516F"/>
+<line x1="1265" y1="-58" x2="1265" y2="232" stroke="#36516F"/>
+<text x="64.0" y="55.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#008C82">PLATFORM-NEUTRAL ANALYTICAL SKILL</text>
+<text x="64.0" y="121.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="48" font-weight="820" letter-spacing="0" fill="#FFFFFF">High-Stakes Analytics &amp; Decision Lab</text>
+<text x="64.0" y="166.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="22" font-weight="560" letter-spacing="0" fill="#D4DFEC">Route the question. Prove the evidence. Match the report to the case.</text>
+<text x="64.0" y="201.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="15" font-weight="450" letter-spacing="0" fill="#98ACC2">Evidence Intelligence is primary; a Decision Intelligence Brief is added only when justified.</text>
+<rect x="64" y="240" width="204" height="96" rx="16" fill="#102B4B" stroke="#294866"/>
+<rect x="64" y="240" width="6" height="96" rx="3" fill="#008C82"/>
+<text x="86.0" y="282.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="30" font-weight="840" letter-spacing="0" fill="#FFFFFF">10</text>
+<text x="86.0" y="312.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="800" letter-spacing="1.1" fill="#93A9C0">REAL-DATA PROJECTS</text>
+<rect x="286" y="240" width="204" height="96" rx="16" fill="#102B4B" stroke="#294866"/>
+<rect x="286" y="240" width="6" height="96" rx="3" fill="#7257D9"/>
+<text x="308.0" y="282.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="30" font-weight="840" letter-spacing="0" fill="#FFFFFF">20</text>
+<text x="308.0" y="312.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="800" letter-spacing="1.1" fill="#93A9C0">INTELLIGENCE PRODUCTS</text>
+<rect x="508" y="240" width="204" height="96" rx="16" fill="#102B4B" stroke="#294866"/>
+<rect x="508" y="240" width="6" height="96" rx="3" fill="#C69214"/>
+<text x="530.0" y="282.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="30" font-weight="840" letter-spacing="0" fill="#FFFFFF">104+</text>
+<text x="530.0" y="312.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="800" letter-spacing="1.1" fill="#93A9C0">ACCESSIBLE FIGURES</text>
+<rect x="730" y="240" width="204" height="96" rx="16" fill="#102B4B" stroke="#294866"/>
+<rect x="730" y="240" width="6" height="96" rx="3" fill="#D85B43"/>
+<text x="752.0" y="282.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="30" font-weight="840" letter-spacing="0" fill="#FFFFFF">04</text>
+<text x="752.0" y="312.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="800" letter-spacing="1.1" fill="#93A9C0">ADAPTIVE ROUTES</text>
+<rect x="67" y="408" width="288" height="216" rx="20" fill="#020A14" opacity=".24"/>
+<rect x="64" y="400" width="294" height="218" rx="20" fill="#FFFFFF" stroke="#33516E"/>
+<rect x="64" y="400" width="294" height="8" rx="4" fill="#246BFD"/>
+<text x="89.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.3" fill="#246BFD">01</text>
+<text x="136.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.1" fill="#8B98A9">QUESTION</text>
+<text x="89.0" y="489.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="760" letter-spacing="0" fill="#0B1324">Decision context</text>
+<text x="89.0" y="522.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="520" letter-spacing="0" fill="#617084">Owner · scope · horizon</text>
+<line x1="89" y1="551" x2="333" y2="551" stroke="#D9E2EC"/>
+<text x="89.0" y="586.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="820" letter-spacing="1.1" fill="#8B98A9">EVIDENCE GATE</text>
+<line x1="363" y1="509" x2="377" y2="509" stroke="#008C82" stroke-width="2"/>
+<path d="M 372 503 L 379 509 L 372 515" fill="none" stroke="#008C82" stroke-width="2"/>
+<rect x="385" y="408" width="288" height="216" rx="20" fill="#020A14" opacity=".24"/>
+<rect x="382" y="400" width="294" height="218" rx="20" fill="#FFFFFF" stroke="#33516E"/>
+<rect x="382" y="400" width="294" height="8" rx="4" fill="#7257D9"/>
+<text x="407.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.3" fill="#7257D9">02</text>
+<text x="454.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.1" fill="#8B98A9">ROUTE</text>
+<text x="407.0" y="489.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="760" letter-spacing="0" fill="#0B1324">Evidence-matched method</text>
+<text x="407.0" y="522.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="520" letter-spacing="0" fill="#617084">Describe · diagnose · predict</text>
+<line x1="407" y1="551" x2="651" y2="551" stroke="#D9E2EC"/>
+<text x="407.0" y="586.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="820" letter-spacing="1.1" fill="#8B98A9">EVIDENCE GATE</text>
+<line x1="681" y1="509" x2="695" y2="509" stroke="#008C82" stroke-width="2"/>
+<path d="M 690 503 L 697 509 L 690 515" fill="none" stroke="#008C82" stroke-width="2"/>
+<rect x="703" y="408" width="288" height="216" rx="20" fill="#020A14" opacity=".24"/>
+<rect x="700" y="400" width="294" height="218" rx="20" fill="#FFFFFF" stroke="#33516E"/>
+<rect x="700" y="400" width="294" height="8" rx="4" fill="#008C82"/>
+<text x="725.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.3" fill="#008C82">03</text>
+<text x="772.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.1" fill="#8B98A9">EVIDENCE</text>
+<text x="725.0" y="489.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="760" letter-spacing="0" fill="#0B1324">Intelligence report</text>
+<text x="725.0" y="522.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="520" letter-spacing="0" fill="#617084">QA · methods · validation · all figures</text>
+<line x1="725" y1="551" x2="969" y2="551" stroke="#D9E2EC"/>
+<text x="725.0" y="586.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="820" letter-spacing="1.1" fill="#008C82">PRIMARY EVIDENCE</text>
+<line x1="999" y1="509" x2="1013" y2="509" stroke="#008C82" stroke-width="2"/>
+<path d="M 1008 503 L 1015 509 L 1008 515" fill="none" stroke="#008C82" stroke-width="2"/>
+<rect x="1021" y="408" width="288" height="216" rx="20" fill="#020A14" opacity=".24"/>
+<rect x="1018" y="400" width="294" height="218" rx="20" fill="#FFFFFF" stroke="#33516E"/>
+<rect x="1018" y="400" width="294" height="8" rx="4" fill="#C69214"/>
+<text x="1043.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.3" fill="#C69214">04</text>
+<text x="1090.0" y="442.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="11" font-weight="820" letter-spacing="1.1" fill="#8B98A9">DECISION</text>
+<text x="1043.0" y="489.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="19" font-weight="760" letter-spacing="0" fill="#0B1324">Intelligence brief</text>
+<text x="1043.0" y="522.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="520" letter-spacing="0" fill="#617084">Gates · risk · status · reversal</text>
+<line x1="1043" y1="551" x2="1287" y2="551" stroke="#D9E2EC"/>
+<text x="1043.0" y="586.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9" font-weight="820" letter-spacing="1.1" fill="#C69214">ONLY WHEN JUSTIFIED</text>
+<text x="64.0" y="680.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10" font-weight="820" letter-spacing="1.2" fill="#008C82">DESCRIPTIVE</text>
+<text x="245.0" y="680.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10" font-weight="820" letter-spacing="1.2" fill="#C69214">DIAGNOSTIC</text>
+<text x="420.0" y="680.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10" font-weight="820" letter-spacing="1.2" fill="#7257D9">PREDICTIVE</text>
+<text x="585.0" y="680.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10" font-weight="820" letter-spacing="1.2" fill="#D85B43">PRESCRIPTIVE</text>
+<text x="1336.0" y="680.0" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10" font-weight="820" letter-spacing="1.1" fill="#91A7BE">REAL DATA · REPRODUCIBLE · CLAIM-BOUNDED</text>
+<line x1="64" y1="705" x2="1336" y2="705" stroke="#294866"/>
+<text x="64.0" y="732.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="12" font-weight="560" letter-spacing="0" fill="#AFC0D3">Health · behavior · AI · operations · business · finance · policy · spatial planning</text></svg>

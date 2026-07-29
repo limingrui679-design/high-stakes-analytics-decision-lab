@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-07-28",
+  "project_id": "federal-ai-governance",
+  "decision_status": "evidence_request_required",
+  "decision": "Issue the structured evidence request before evaluating governance capability; do not score unobserved controls from missing-coded public-inventory fields.",
+  "adaptive_route": [
+    "descriptive",
+    "measurement-readiness",
+    "evidence decision"
+  ],
+  "evidence_basis": [
+    {
+      "label": "Public use cases",
+      "value": "70",
+      "context": "One row per publicly reported AI use case."
+    },
+    {
+      "label": "Fields analyzed",
+      "value": "34",
+      "context": "Complete reviewed public schema, not a selected seven-field subset."
+    },
+    {
+      "label": "Mean readiness",
+      "value": "41.6%",
+      "context": "External observability only; not governance maturity."
+    }
+  ],
+  "evidence_gates": [
+    {
+      "label": "Complete public-schema inventory",
+      "status": "PASS",
+      "detail": "All 34 public fields are classified and measured across 70 use cases."
+    },
+    {
+      "label": "Disclosure-readiness measurement",
+      "status": "PASS",
+      "detail": "Completeness can be reported with an external-observability definition."
+    },
+    {
+      "label": "Assurance and recourse evidence",
+      "status": "BLOCK",
+      "detail": "Testing, impact, monitoring, appeal, fallback, and remedy evidence is largely unobservable."
+    },
+    {
+      "label": "Governance-capability inference",
+      "status": "BLOCK",
+      "detail": "Blank or missing-coded public fields cannot establish that a control is absent, weak, unsafe, or noncompliant."
+    },
+    {
+      "label": "Structured evidence request",
+      "status": "REQUIRED",
+      "detail": "Capability review must begin with owner, lineage, test, monitoring, and recourse evidence."
+    }
+  ],
+  "methods": [
+    "Classify all 34 reviewed public fields rather than selecting a favorable subset.",
+    "Group fields into six information families and measure public reporting completeness.",
+    "Separate field availability, reporting completeness, and measurement readiness from governance capability.",
+    "Translate unobservable assurance and recourse evidence into a structured information request."
+  ],
+  "supported_uses": [
+    "Measure field availability and public reporting completeness.",
+    "Compare disclosure families and development-stage reporting patterns.",
+    "Use the missing-evidence schema to scope the next review."
+  ],
+  "unsupported_uses": [
+    "Score actual governance capability from public-field completeness.",
+    "Treat a blank or missing-coded field as proof that a control is absent or ineffective.",
+    "Infer safety, ethics, legality, or compliance from observability alone."
+  ],
+  "claim_boundary": "A blank or missing-coded public-inventory field is a disclosure signal, not proof that a control is absent, ineffective, unethical, unsafe, or noncompliant.",
+  "reversal_conditions": [
+    "Publisher documentation establishes that missing-coded fields are not part of the public reporting contract.",
+    "A revised inventory materially changes field availability or definitions.",
+    "Reviewed internal evidence supports a separately scoped capability evaluation."
+  ],
+  "recommended_next_steps": [
+    "Send the structured request for ownership, data lineage, testing, impact, monitoring, and recourse artifacts.",
+    "Confirm the publisher's reporting contract and distinguish optional, withheld, and unavailable fields.",
+    "Create a separately scoped capability evaluation only after reviewed evidence is available."
+  ],
+  "case_specific": {
+    "disclosure_readiness": {
+      "definition": "share of non-identity review-relevant public fields populated",
+      "mean": 0.4157142857142853,
+      "median": 0.4166666666666667,
+      "minimum": 0.3333333333333333,
+      "maximum": 0.4666666666666667,
+      "interpretation": "external measurement readiness only; not governance maturity or control quality"
+    },
+    "field_availability_status_counts": {
+      "fully populated (95–100%)": 12,
+      "partially populated (>0–<95%)": 8,
+      "unavailable in snapshot (0%)": 14
+    },
+    "family_reporting_completeness": {
+      "identity and ownership": 1.0,
+      "lifecycle and operations": 0.8,
+      "purpose and outputs": 0.7857142857142857,
+      "data and privacy": 0.4685714285714286,
+      "code and transparency": 0.4,
+      "assurance and recourse": 0.09090909090909091
+    },
+    "evidence_request": [
+      {
+        "information_request": "system purpose, owner, users, and decision role",
+        "why_needed": "defines the unit and responsibility boundary",
+        "inventory_support": "partially observable"
+      },
+      {
+        "information_request": "training and evaluation data lineage",
+        "why_needed": "supports validity, privacy, and representativeness review",
+        "inventory_support": "partially observable"
+      },
+      {
+        "information_request": "predeployment test design and results",
+        "why_needed": "supports performance and failure-mode evaluation",
+        "inventory_support": "not observable in reviewed fields"
+      },
+      {
+        "information_request": "impact assessment, monitoring, and incident triggers",
+        "why_needed": "supports lifecycle assurance and escalation review",
+        "inventory_support": "not observable in reviewed fields"
+      },
+      {
+        "information_request": "notice, appeal, fallback, and remedy process",
+        "why_needed": "supports contestability and recourse review",
+        "inventory_support": "not observable in reviewed fields"
+      }
+    ]
+  },
+  "source": {
+    "title": "Department of Transportation Inventory of Artificial Intelligence Use Cases",
+    "publisher": "U.S. Department of Transportation",
+    "version": "Dataset modified 2026-02-01; temporal coverage 2022-03-18/2026-01-28",
+    "accessed_at": "2026-07-27",
+    "grain": "one publicly reported DOT AI use case",
+    "expected_rows": 70,
+    "source_manifest_sha256": "dcdf065122e864c466fe8f9d297be15df9b24728fa5d926b0e4f0a1eb0f6ae87",
+    "analytical_results_sha256": "9857e21083824124bdb70c0c13c9cca7541b04b7a063e397098b77f13d063316"
+  }
+}

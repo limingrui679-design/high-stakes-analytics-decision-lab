@@ -1,0 +1,53 @@
+{
+  "project_id": "cfpb-fintech-complaint-operations",
+  "charts": [
+    {
+      "path": "figures/auc-null-benchmark.svg",
+      "question": "The observed AUC is weak against a label-permutation null",
+      "supported_finding": "A day-block interval and 500-permutation benchmark make the limited discrimination explicit.",
+      "interpretation_boundary": "A weak ranking result should terminate deployment rather than be rescued by narrative.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/calibration.svg",
+      "question": "Calibration is tested only after model selection",
+      "supported_finding": "The November–December period remains separate from model and calibrator choice.",
+      "interpretation_boundary": "Probability calibration cannot compensate for weak ranking or an outcome with limited decision meaning.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/capacity-capture.svg",
+      "question": "No tested review capacity delivers reliable lift",
+      "supported_finding": "Every capacity is compared with random review and paired with day-block uncertainty.",
+      "interpretation_boundary": "No artificial utility score is introduced to force a preferred operating point.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/cumulative-gain.svg",
+      "question": "The gain curve stays close to random review",
+      "supported_finding": "Useful operational ranking should visibly separate from the diagonal; this model does not.",
+      "interpretation_boundary": "The chart supports a negative validation result, not a claim that all future models will fail.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/monthly-volume.svg",
+      "question": "Calendar structure defines the validation contract",
+      "supported_finding": "Complaint volume is shown over time because later-period validation—not a random split—matches the monitoring question.",
+      "interpretation_boundary": "Published complaints are selective and do not measure the underlying incidence of consumer harm.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/subproduct-late-rate.svg",
+      "question": "Subproduct differences remain descriptive context",
+      "supported_finding": "Observed late-response rates identify where definitions and process review may be most useful.",
+      "interpretation_boundary": "The timely-response flag does not establish complaint merit, resolution quality, compliance, or company quality.",
+      "source_id": "cfpb-ccdb-digital-payments-2022",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "project_id": "mckesson-financial-quality",
+  "charts": [
+    {
+      "path": "figures/cash-earnings.svg",
+      "question": "Cash conversion is interpreted beside reported earnings",
+      "supported_finding": "Operating cash flow and earnings relationships reveal recurring reconciliation questions across company-years.",
+      "interpretation_boundary": "Cash-to-earnings variation can reflect legitimate business timing and requires filing-level explanation.",
+      "source_id": "sec-companyfacts-drug-distributor-peer-panel",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/margin-trends.svg",
+      "question": "Thin operating margins persist across the peer set",
+      "supported_finding": "Eight common fiscal years separate company-specific movement from a one-period snapshot.",
+      "interpretation_boundary": "Consolidated filing facts omit segment mix, acquisition effects, and non-GAAP reconciliations.",
+      "source_id": "sec-companyfacts-drug-distributor-peer-panel",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/peer-margin-gap.svg",
+      "question": "Within-year peer gaps distinguish cross-section from trend",
+      "supported_finding": "Peer medians and ranks show relative positioning without converting the panel into a security recommendation.",
+      "interpretation_boundary": "The comparison is an accounting diagnostic, not a valuation or investment ranking.",
+      "source_id": "sec-companyfacts-drug-distributor-peer-panel",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/revenue-scale.svg",
+      "question": "Scale is compared on a reconciled peer-year panel",
+      "supported_finding": "Revenue trajectories establish the denominator context for interpreting thin margins and cash conversion.",
+      "interpretation_boundary": "Common industry classification and XBRL tags do not guarantee economic comparability.",
+      "source_id": "sec-companyfacts-drug-distributor-peer-panel",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/working-capital-days.svg",
+      "question": "Working-capital cycles identify where diligence should deepen",
+      "supported_finding": "Receivables, inventory, and payables timing are combined into a comparable operating-cycle view.",
+      "interpretation_boundary": "Alerts prioritize filing and footnote review; they do not prove earnings-management or liquidity stress.",
+      "source_id": "sec-companyfacts-drug-distributor-peer-panel",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

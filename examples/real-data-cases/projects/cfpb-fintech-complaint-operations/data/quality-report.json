@@ -1,0 +1,38 @@
+{
+  "rows": 13534,
+  "columns": 10,
+  "column_names": [
+    "complaint_id",
+    "date_received",
+    "date_sent_to_company",
+    "sub_product",
+    "issue",
+    "sub_issue",
+    "state",
+    "submitted_via",
+    "company_response",
+    "timely"
+  ],
+  "missing_count_by_column": {
+    "complaint_id": 0,
+    "date_received": 0,
+    "date_sent_to_company": 0,
+    "sub_product": 0,
+    "issue": 0,
+    "sub_issue": 0,
+    "state": 0,
+    "submitted_via": 0,
+    "company_response": 0,
+    "timely": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 13534,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Narratives, company names, ZIP codes, tags, and public-response text are excluded before repository storage; outputs are aggregate.",
+    "status": "approved_for_public_aggregate_analysis"
+  }
+}

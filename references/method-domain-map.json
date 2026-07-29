@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Machine-readable routing from transferable method domains to the ten real-data projects.",
+  "domains": [
+    {
+      "id": "statistical-inference",
+      "label": "Statistical inference and study design",
+      "project_ids": [
+        "population-health-survival",
+        "behavioral-reading-experiment"
+      ]
+    },
+    {
+      "id": "predictive-validation",
+      "label": "Predictive validation and model risk",
+      "project_ids": [
+        "census-income-ai",
+        "bank-marketing-response",
+        "cfpb-fintech-complaint-operations"
+      ]
+    },
+    {
+      "id": "optimization-systems",
+      "label": "Optimization and systems decisions",
+      "project_ids": [
+        "bike-demand-operations",
+        "spatial-equity-planning"
+      ]
+    },
+    {
+      "id": "finance-risk",
+      "label": "Financial diagnostics and risk",
+      "project_ids": [
+        "treasury-risk-engineering",
+        "mckesson-financial-quality"
+      ]
+    },
+    {
+      "id": "policy-governance",
+      "label": "Public policy, disclosure, and governance evidence",
+      "project_ids": [
+        "federal-ai-governance",
+        "cfpb-fintech-complaint-operations",
+        "spatial-equity-planning"
+      ]
+    },
+    {
+      "id": "responsible-ai",
+      "label": "Responsible AI and sociotechnical boundaries",
+      "project_ids": [
+        "census-income-ai",
+        "federal-ai-governance",
+        "cfpb-fintech-complaint-operations"
+      ]
+    }
+  ]
+}

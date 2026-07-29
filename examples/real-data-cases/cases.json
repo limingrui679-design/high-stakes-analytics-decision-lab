@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0",
+  "case_count": 10,
+  "scope": "Ten reproducible real-data projects bundled with the Skill. Each project includes its reviewed source snapshot, source manifest, configuration, preparation and analysis code, Evidence Intelligence Report, all figures, machine-readable results, and an evidence-matched Decision Intelligence Brief.",
+  "cases": [
+    {
+      "number": "01",
+      "id": "health-survival",
+      "project_id": "population-health-survival",
+      "title": "Heart-Failure Follow-up Risk and Survival",
+      "gallery_title": "Heart-Failure Follow-up and Survival",
+      "gallery_endpoint": "Prospective validation required",
+      "domain": "Population health",
+      "route": ["descriptive", "predictive", "prescriptive"],
+      "question": "How should censored follow-up evidence inform an illustrative triage-rule comparison without becoming a treatment claim?",
+      "source": {
+        "dataset": "Heart Failure Clinical Records",
+        "publisher": "UCI Machine Learning Repository",
+        "url": "https://doi.org/10.24432/C5Z89R",
+        "version": "UCI static archive snapshot; source file timestamp 2023-05-22",
+        "accessed_at": "2026-07-27",
+        "license": "CC BY 4.0",
+        "grain": "one de-identified patient follow-up record",
+        "prepared_rows": 299,
+        "snapshot_files": [
+          {
+            "name": "uci-heart-failure.zip",
+            "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7"
+          }
+        ]
+      },
+      "methods": [
+        "Kaplan-Meier survival",
+        "Breslow-tie Cox proportional hazards",
+        "180-day calibration",
+        "patient bootstrap",
+        "candidate protocol comparison"
+      ],
+      "headline_metrics": [
+        {"label": "Observed death-event rate", "value": "32.1%"},
+        {"label": "Observed 180-day survival", "value": "65.4%"},
+        {"label": "Low-versus-higher ejection-fraction risk difference", "value": "33.0% (95% bootstrap interval 20.9%–44.7%)"},
+        {"label": "Apparent Cox Harrell C-index", "value": "0.731"}
+      ],
+      "result": "Low ejection fraction is associated with higher observed risk; censoring-aware analysis supports external triage validation, not a treatment recommendation.",
+      "terminal_output": "Illustrative triage comparison requiring prospective or external validation",
+      "boundary": "Small observational cohort, incomplete treatment information, analyst-defined thresholds, and no causal treatment estimand.",
+      "figure": "figures/01-survival.svg",
+      "figure_alt": "Multivariable Cox proportional-hazards estimates for the heart-failure cohort"
+    },
+    {
+      "number": "02",
+      "id": "behavioral-repeated-measures",
+      "project_id": "behavioral-reading-experiment",
+      "title": "Pseudoword Reading: Repeated-Measures Inference",
+      "gallery_title": "Pseudoword Reading: Repeated Measures",
+      "gallery_endpoint": "Bounded behavioral inference",
+      "domain": "Behavioral science",
+      "route": ["descriptive", "inferential"],
+      "question": "How does passage type change eye-movement burden within the same participant, and how stable is the contrast across reader groups?",
+      "source": {
+        "dataset": "Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading",
+        "publisher": "Harvard Dataverse",
+        "url": "https://doi.org/10.7910/DVN/3YCB56",
+        "version": "V1; file UNF:6:XJRpAtIOiQJZWyv7L3uj3A==",
+        "accessed_at": "2026-07-27",
+        "license": "CC0 1.0",
+        "grain": "one de-identified participant with repeated passage measures",
+        "prepared_rows": 57,
+        "snapshot_files": [
+          {
+            "name": "pseudoword-passage-reading.tsv",
+            "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8"
+          }
+        ]
+      },
+      "methods": [
+        "within-participant contrasts",
+        "participant bootstrap",
+        "sign-flip inference",
+        "Holm multiplicity correction",
+        "label permutation",
+        "minimum-detectable-effect sensitivity"
+      ],
+      "headline_metrics": [
+        {"label": "Complete participant pairs", "value": "57"},
+        {"label": "Mean paired fixation-duration difference", "value": "34.25 (95% bootstrap interval 25.87–43.35)"},
+        {"label": "Holm-adjusted sign-flip p-value", "value": "0.0003"},
+        {"label": "80% power design-sensitivity MDE", "value": "12.22"}
+      ],
+      "result": "Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.",
+      "terminal_output": "Bounded behavioral inference and future-study design target",
+      "boundary": "The public sample is small and does not establish downstream educational outcomes or an intervention effect.",
+      "figure": "figures/02-repeated-measures.svg",
+      "figure_alt": "Participant-level paired passage contrast with bootstrap uncertainty"
+    },
+    {
+      "number": "03",
+      "id": "responsible-model-validation",
+      "project_id": "census-income-ai",
+      "title": "End-to-End Census-Income Model Validation",
+      "gallery_title": "Census-Income Model Validation",
+      "gallery_endpoint": "Benchmark only · no deployment",
+      "domain": "Responsible AI",
+      "route": ["descriptive", "predictive"],
+      "question": "Does a benchmark classifier improve on simple baselines while remaining calibrated and acceptably stable across groups?",
+      "source": {
+        "dataset": "Adult / Census Income",
+        "publisher": "UCI Machine Learning Repository",
+        "url": "https://doi.org/10.24432/C5XW20",
+        "version": "UCI static archive snapshot; files timestamped 2023-05-22",
+        "accessed_at": "2026-07-27",
+        "license": "CC BY 4.0",
+        "grain": "one Census-derived person record meeting the dataset extraction rules",
+        "prepared_rows": 48842,
+        "snapshot_files": [
+          {
+            "name": "uci-adult.zip",
+            "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
+          }
+        ]
+      },
+      "methods": [
+        "majority and mixed-naive-Bayes baselines",
+        "sparse one-hot logistic regression",
+        "independent source test",
+        "calibration",
+        "subgroup error analysis",
+        "drift and abnormal-input diagnostics"
+      ],
+      "headline_metrics": [
+        {"label": "Independent-test AUC", "value": "0.905"},
+        {"label": "Independent-test Brier score", "value": "0.102"},
+        {"label": "Naive Bayes versus sparse-logistic AUC", "value": "0.891 versus 0.905"},
+        {"label": "Prepared records", "value": "48,842"}
+      ],
+      "result": "The sparse logistic model improves on the baselines, but calibration and subgroup errors prevent consequential reuse.",
+      "terminal_output": "Validated benchmark with an explicit non-deployment boundary",
+      "boundary": "Historical 1994 data, missing categories, social-structure shift, and no validation for a real eligibility decision.",
+      "figure": "figures/03-model-validation.svg",
+      "figure_alt": "Independent-test comparison of majority, naive Bayes, and sparse logistic models"
+    },
+    {
+      "number": "04",
+      "id": "forecast-allocation",
+      "project_id": "bike-demand-operations",
+      "title": "Bike-Demand Forecasting and Robust Allocation",
+      "gallery_title": "Bike-Demand Forecasting and Allocation",
+      "gallery_endpoint": "Bounded allocation recommendation",
+      "domain": "Operations research",
+      "route": ["descriptive", "predictive", "prescriptive"],
+      "question": "How should a fixed service resource be distributed across time blocks when demand is forecast out of time?",
+      "source": {
+        "dataset": "Bike Sharing",
+        "publisher": "UCI Machine Learning Repository",
+        "url": "https://doi.org/10.24432/C5W894",
+        "version": "2011–2012 Capital Bikeshare hourly snapshot",
+        "accessed_at": "2026-07-27",
+        "license": "CC BY 4.0",
+        "grain": "one observed hour in the Capital Bikeshare system",
+        "prepared_rows": 17379,
+        "snapshot_files": [
+          {
+            "name": "uci-bike-sharing.zip",
+            "sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401"
+          }
+        ]
+      },
+      "methods": [
+        "2011-to-2012 out-of-time forecast",
+        "exhaustive integer allocation",
+        "hard feasibility constraints",
+        "Pareto analysis",
+        "resource shadow value",
+        "perfect-information upper bound"
+      ],
+      "headline_metrics": [
+        {"label": "Forecast MAE improvement versus overall mean", "value": "38.3%"},
+        {"label": "Held-out robust-policy unmet share", "value": "20.5%"},
+        {"label": "Perfect-foresight upper-bound improvement", "value": "1.6%"},
+        {"label": "Feasible allocations evaluated", "value": "6,545"}
+      ],
+      "result": "A robust time-block allocation reduces modeled unmet demand out of time, while the perfect-information bound limits the value of further forecast improvement.",
+      "terminal_output": "Bounded allocation recommendation with reversal conditions",
+      "boundary": "System totals omit station imbalance, routing, labor, service time, and causal effects; resource units are illustrative scalers.",
+      "figure": "figures/04-forecast-allocation.svg",
+      "figure_alt": "Held-out unmet demand across feasible bike-service allocation strategies"
+    },
+    {
+      "number": "05",
+      "id": "marketing-capacity",
+      "project_id": "bank-marketing-response",
+      "title": "Marketing Response and Capacity Planning",
+      "gallery_title": "Marketing Response and Capacity",
+      "gallery_endpoint": "Randomized campaign required",
+      "domain": "Business analytics",
+      "route": ["descriptive", "predictive", "prescriptive"],
+      "question": "Can pre-contact information concentrate observed responses under a fixed outreach capacity without using post-contact leakage?",
+      "source": {
+        "dataset": "Bank Marketing",
+        "publisher": "UCI Machine Learning Repository",
+        "url": "https://doi.org/10.24432/C5K306",
+        "version": "UCI archive retrieved 2026-07-27; bank-additional-full.csv",
+        "accessed_at": "2026-07-27",
+        "license": "CC BY 4.0",
+        "grain": "one direct-marketing contact outcome",
+        "prepared_rows": 41188,
+        "snapshot_files": [
+          {
+            "name": "uci-bank-marketing.zip",
+            "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4"
+          }
+        ]
+      },
+      "methods": [
+        "leakage-safe feature timing",
+        "ordered train-validation-test split",
+        "probability calibration",
+        "capacity capture",
+        "shared-block bootstrap",
+        "probability-best comparison"
+      ],
+      "headline_metrics": [
+        {"label": "Untouched-test AUC", "value": "0.650"},
+        {"label": "Untouched-test Brier score", "value": "0.210"},
+        {"label": "Top-5% observed response capture", "value": "7.4%"},
+        {"label": "Shared-block P(best)", "value": "59.0%"}
+      ],
+      "result": "Pre-contact features weakly concentrate observed responses; common campaign shocks are preserved across capacity options.",
+      "terminal_output": "Exploratory capacity comparison requiring a randomized campaign",
+      "boundary": "Observed response concentration is not incremental lift, causal treatment effect, profit, or return on outreach.",
+      "figure": "figures/05-capacity-planning.svg",
+      "figure_alt": "Held-out response capture across alternative marketing review capacities"
+    },
+    {
+      "number": "06",
+      "id": "treasury-tail-risk",
+      "project_id": "treasury-risk-engineering",
+      "title": "Treasury Yield-Curve Tail-Risk Engineering",
+      "gallery_title": "Treasury Yield-Curve Tail Risk",
+      "gallery_endpoint": "Risk-bounded comparison",
+      "domain": "Financial risk",
+      "route": ["descriptive", "predictive", "prescriptive"],
+      "question": "How do duration choices change historical tail loss, backtest behavior, and sensitivity to dependent market shocks?",
+      "source": {
+        "dataset": "Daily Treasury Par Yield Curve Rates",
+        "publisher": "U.S. Department of the Treasury",
+        "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+        "version": "Official daily par yields, 2020-01-02 through 2025-12-31",
+        "accessed_at": "2026-07-27",
+        "license": "U.S. Government work",
+        "grain": "one U.S. Treasury business-day yield curve",
+        "prepared_rows": 1500,
+        "snapshot_files": [
+          {"name": "treasury-2020.csv", "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"},
+          {"name": "treasury-2021.csv", "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"},
+          {"name": "treasury-2022.csv", "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"},
+          {"name": "treasury-2023.csv", "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"},
+          {"name": "treasury-2024.csv", "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"},
+          {"name": "treasury-2025.csv", "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"}
+        ]
+      },
+      "methods": [
+        "daily carry plus first-order duration response",
+        "historical VaR and expected shortfall",
+        "rolling coverage backtest",
+        "breach-independence diagnostic",
+        "regime comparison",
+        "block bootstrap"
+      ],
+      "headline_metrics": [
+        {"label": "Short-baseline historical ES95 loss", "value": "0.4%"},
+        {"label": "Short-baseline rolling VaR exceedance rate", "value": "6.0%"},
+        {"label": "Kupiec coverage p approximation", "value": "0.114"},
+        {"label": "Daily yield curves", "value": "1,500"}
+      ],
+      "result": "Longer-duration allocations show materially larger historical tail losses; the short allocation remains the risk reference.",
+      "terminal_output": "Risk-bounded duration comparison, not an investment instruction",
+      "boundary": "First-order duration omits convexity, security selection, costs, financing, taxes, liquidity, and future-regime uncertainty.",
+      "figure": "figures/06-tail-risk.svg",
+      "figure_alt": "Historical expected shortfall across illustrative Treasury duration allocations"
+    },
+    {
+      "number": "07",
+      "id": "financial-peer-panel",
+      "project_id": "mckesson-financial-quality",
+      "title": "SEC Peer Financial Quality and Cash Conversion",
+      "gallery_title": "SEC Peer Financial Quality",
+      "gallery_endpoint": "Targeted filing diligence",
+      "domain": "Finance and accounting",
+      "route": ["descriptive", "diagnostic"],
+      "question": "Which recurring peer differences deserve filing and footnote reconciliation across a low-margin distribution industry?",
+      "source": {
+        "dataset": "SEC Companyfacts Drug-Distributor Peer Panel",
+        "publisher": "U.S. Securities and Exchange Commission",
+        "url": "https://www.sec.gov/edgar/search/",
+        "version": "McKesson reviewed 2026-07-27; Cardinal Health and Cencora reviewed 2026-07-28",
+        "accessed_at": "2026-07-28",
+        "license": "U.S. federal government public data; SEC fair-access terms apply",
+        "grain": "one company fiscal year for three SEC SIC 5122 peers",
+        "prepared_rows": 24,
+        "snapshot_files": [
+          {"name": "sec-mckesson-companyfacts.json", "sha256": "bdce70c079cc574834bd9d54df23c3ec82f99fea05774e89dfc1700573ccf172"},
+          {"name": "sec-cardinal-companyfacts.json", "sha256": "871e1330231f7a84945660e4182b2027f34596574000c8209159d06904144769"},
+          {"name": "sec-cencora-companyfacts.json", "sha256": "7c5ef663912bb6276a1cd6ede1f693ab32ec99d97efe179f2923c0a35876f9dc"}
+        ]
+      },
+      "methods": [
+        "XBRL fact reconciliation",
+        "common-size ratios",
+        "within-year peer medians and ranks",
+        "dispersion and persistence",
+        "cash-conversion diagnostics",
+        "operating-margin stress"
+      ],
+      "headline_metrics": [
+        {"label": "Panel size", "value": "3 entities × 8 fiscal years"},
+        {"label": "FY2025 operating-margin range", "value": "0.4%"},
+        {"label": "FY2025 working-capital-cycle range", "value": "4.3 days"},
+        {"label": "Fact lineage", "value": "entity + CIK + tag + accession + fiscal period"}
+      ],
+      "result": "All three firms combine large scale with thin operating margins; recurring cash-conversion differences prioritize deeper filing reconciliation.",
+      "terminal_output": "Targeted diligence request rather than a security ranking",
+      "boundary": "Common SIC and XBRL taxonomy do not guarantee economic comparability; consolidated facts omit segment and footnote detail.",
+      "figure": "figures/07-peer-finance.svg",
+      "figure_alt": "Operating-margin trends across three public drug distributors over eight fiscal years"
+    },
+    {
+      "number": "08",
+      "id": "fintech-negative-validation",
+      "project_id": "cfpb-fintech-complaint-operations",
+      "title": "Privacy-Preserving Complaint Monitoring and Negative Validation",
+      "gallery_title": "Complaint Monitoring: Negative Validation",
+      "gallery_endpoint": "DO NOT DEPLOY",
+      "domain": "Financial technology",
+      "route": ["descriptive", "predictive"],
+      "question": "Does a privacy-minimized complaint model create reliable ranking gain over random review in a later calendar period?",
+      "source": {
+        "dataset": "Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service",
+        "publisher": "Consumer Financial Protection Bureau",
+        "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
+        "version": "Closed 2022 UTC window; privacy-minimized extract created 2026-07-27",
+        "accessed_at": "2026-07-27",
+        "license": "CC0",
+        "grain": "one 2022 complaint for a money-transfer, virtual-currency, or money-service product",
+        "prepared_rows": 13534,
+        "snapshot_files": [
+          {
+            "name": "cfpb-digital-payments-2022-sanitized.csv",
+            "sha256": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
+          }
+        ]
+      },
+      "methods": [
+        "privacy-minimized administrative data",
+        "calendar train-validation-test split",
+        "rare-event calibration",
+        "cumulative gain and capacity lift",
+        "day-block bootstrap",
+        "500-label-permutation null benchmark"
+      ],
+      "headline_metrics": [
+        {"label": "Later-period untimely-response prevalence", "value": "2.5%"},
+        {"label": "Later-period AUC", "value": "0.611 (95% block interval 0.539–0.697)"},
+        {"label": "Top-5% lift versus random", "value": "1.00 (95% interval 0.33–2.46)"},
+        {"label": "Decision", "value": "do_not_deploy"}
+      ],
+      "result": "The model contains weak statistical signal but no reliable operational ranking gain at tested review capacities.",
+      "terminal_output": "do_not_deploy ranking model",
+      "boundary": "The timely flag is not complaint merit, harm, resolution quality, company quality, or compliance; the 2022 model may not transport.",
+      "figure": "figures/08-negative-validation.svg",
+      "figure_alt": "Held-out cumulative gain curve compared with random complaint review"
+    },
+    {
+      "number": "09",
+      "id": "ai-disclosure-readiness",
+      "project_id": "federal-ai-governance",
+      "title": "Public AI Inventory Disclosure and Measurement Readiness",
+      "gallery_title": "Public AI Disclosure Readiness",
+      "gallery_endpoint": "Evidence request",
+      "domain": "Technology policy",
+      "route": ["descriptive"],
+      "question": "What can an external reviewer measure from a public AI inventory, and what evidence is still required before capability evaluation?",
+      "source": {
+        "dataset": "Department of Transportation Inventory of Artificial Intelligence Use Cases",
+        "publisher": "U.S. Department of Transportation",
+        "url": "https://catalog.data.gov/dataset/department-of-transportation-inventory-of-artificial-intelligence-use-cases",
+        "version": "Dataset modified 2026-02-01; temporal coverage 2022-03-18/2026-01-28",
+        "accessed_at": "2026-07-27",
+        "license": "U.S. Government work",
+        "grain": "one publicly reported DOT AI use case",
+        "prepared_rows": 70,
+        "snapshot_files": [
+          {
+            "name": "dot-ai-use-cases.csv",
+            "sha256": "fbbd292ddd62d016b6a4128597c1144e9474180173507b9a5f1d83088ac85de4"
+          }
+        ]
+      },
+      "methods": [
+        "complete public-schema inventory",
+        "six-family disclosure taxonomy",
+        "field availability classification",
+        "stage-by-family completeness",
+        "measurement-readiness distribution",
+        "evidence-request schema"
+      ],
+      "headline_metrics": [
+        {"label": "Public use cases", "value": "70"},
+        {"label": "Public fields analyzed", "value": "34"},
+        {"label": "Fields unavailable in the snapshot", "value": "14"},
+        {"label": "Mean disclosure readiness", "value": "41.6% (observability only)"}
+      ],
+      "result": "The inventory supports disclosure-readiness measurement and a targeted evidence request, not a governance-capability score.",
+      "terminal_output": "Evidence request before any capability assessment",
+      "boundary": "Blank or missing-coded fields are disclosure signals; they do not prove control absence, ineffectiveness, unethical behavior, safety failure, or noncompliance.",
+      "figure": "figures/09-disclosure-readiness.svg",
+      "figure_alt": "Public AI inventory reporting completeness by information family"
+    },
+    {
+      "number": "10",
+      "id": "spatial-service-planning",
+      "project_id": "spatial-equity-planning",
+      "title": "Spatial Equity and Service-Hub Planning",
+      "gallery_title": "Spatial Equity and Hub Planning",
+      "gallery_endpoint": "Planning-screen allocation",
+      "domain": "Urban planning",
+      "route": ["descriptive", "prescriptive"],
+      "question": "Where is need spatially clustered, and how do alternative hub strategies change modeled coverage under a fixed radius and capacity?",
+      "source": {
+        "dataset": "2019–2023 ACS 5-Year Estimates and 2023 Census Gazetteer",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/data/developers/data-sets/acs-5year/2023.html",
+        "version": "2019–2023 ACS 5-year estimates; 2023 Gazetteer",
+        "accessed_at": "2026-07-27",
+        "license": "U.S. Government work / Census open data",
+        "grain": "one Massachusetts 2020-vintage census tract",
+        "prepared_rows": 1620,
+        "analyzed_rows": 1597,
+        "snapshot_files": [
+          {"name": "acs-b01003-ma.dat", "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f"},
+          {"name": "acs-b17001-ma.dat", "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0"},
+          {"name": "acs-b19013-ma.dat", "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce"},
+          {"name": "acs-b08301-ma.dat", "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2"},
+          {"name": "acs-b25064-ma.dat", "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4"},
+          {"name": "2023_Gaz_tracts_national.zip", "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c"}
+        ]
+      },
+      "methods": [
+        "ACS rate construction",
+        "z-score composite need",
+        "five-nearest-neighbor Moran's I",
+        "greedy maximum coverage",
+        "radius and weight sensitivity",
+        "tract bootstrap"
+      ],
+      "headline_metrics": [
+        {"label": "Analyzed tracts", "value": "1,597"},
+        {"label": "Poverty-rate Moran's I", "value": "0.491"},
+        {"label": "Composite-plan need coverage", "value": "78.1%"},
+        {"label": "High-poverty population coverage", "value": "65.6%"}
+      ],
+      "result": "Need is spatially clustered, and a composite allocation balances poverty, transit dependence, and housing pressure better than a single-indicator rule.",
+      "terminal_output": "Planning-screen allocation with radius, weight, and geography reversal tests",
+      "boundary": "Straight-line centroid distance and tract aggregates are screening approximations; travel time, site feasibility, capacity, and ACS uncertainty require local review.",
+      "figure": "figures/10-spatial-planning.svg",
+      "figure_alt": "Massachusetts tract-level need and selected service hubs"
+    }
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "schema_version": "1.0",
+  "project_id": "cfpb-fintech-complaint-operations",
+  "decision_use": "exploratory",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260727,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.train_end",
+      "label": "train end",
+      "value_or_distribution": "2022-08-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for train_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.validation_end",
+      "label": "validation end",
+      "value_or_distribution": "2022-10-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for validation_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.test_end",
+      "label": "test end",
+      "value_or_distribution": "2022-12-31",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "closed-period-time-split",
+      "source_fact": "Registered project configuration for test_end; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Calendar split tests later-period transport within 2022, not post-2022 generalization."
+    },
+    {
+      "parameter_path": "config.parameters.triage_capacity_shares",
+      "label": "triage capacity shares",
+      "value_or_distribution": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-capacity-scenarios",
+      "source_fact": "Registered project configuration for triage_capacity_shares; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative review capacity, not a CFPB or company service-level target."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_block_days",
+      "label": "bootstrap block days",
+      "value_or_distribution": 7,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "dependence-preserving-resampling-rule",
+      "source_fact": "Registered project configuration for bootstrap_block_days; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Week blocks preserve shared calendar shocks better than independent complaint resampling; block length is sensitivity-tested."
+    },
+    {
+      "parameter_path": "config.parameters.permutation_samples",
+      "label": "permutation samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "negative-validation-protocol",
+      "source_fact": "Registered project configuration for permutation_samples; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Permutation inference benchmarks ranking signal against label exchangeability; it does not establish transport."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_deployment_auc",
+      "label": "minimum deployment auc",
+      "value_or_distribution": 0.65,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-deployment-gate",
+      "source_fact": "Registered project configuration for minimum_deployment_auc; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_deployment_lift",
+      "label": "minimum deployment lift",
+      "value_or_distribution": 1.2,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-deployment-gate",
+      "source_fact": "Registered project configuration for minimum_deployment_lift; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter_path": "derived.timely",
+      "label": "timely",
+      "value_or_distribution": "derived or source-defined field",
+      "unit": "project-specific",
+      "uncertainty_type": "none",
+      "source_id": "cfpb-field-definition",
+      "source_fact": "observed operational outcome",
+      "transformation": "Defined or derived in prepare_data.py or analyze.py.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "observed_or_assumed_as_labeled",
+      "notes": "A timely-response flag is not a measure of complaint merit, consumer harm, resolution quality, or regulatory compliance."
+    }
+  ],
+  "coverage": {
+    "configured_parameter_count": 10,
+    "resolved_parameter_count": 10,
+    "source_coverage_rate": 1.0,
+    "independent_domain_review_rate": 0.0
+  },
+  "coverage_boundary": "Complete traceability does not imply external approval or strong evidence. All records remain exploratory and independently unreviewed."
+}

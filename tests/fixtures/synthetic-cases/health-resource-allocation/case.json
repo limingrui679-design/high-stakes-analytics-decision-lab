@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.2",
+  "evidence_type": "synthetic_test_fixture",
+  "decision_use": "illustrative",
+  "portfolio_visibility": "test_only",
+  "case_id": "health-resource-allocation",
+  "title": "Community Screening Resource Allocation",
+  "domain": "Biostatistics, population health, public policy, and operations",
+  "decision_owner": "Regional public health authority",
+  "decision_question": "Choose a 12-month screening-delivery strategy under a USD 10 million budget while improving access and limiting implementation risk.",
+  "time_horizon": "12 months",
+  "risk_aversion": 0.3,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "evidence": {
+    "type": "Synthetic demonstration assumptions informed by a hypothetical needs assessment",
+    "decision_use": "illustrative",
+    "as_of": "Synthetic demonstration; no production as-of date",
+    "sources": [
+      "Synthetic demand forecast by district",
+      "Illustrative expert elicitation on capacity and implementation risk"
+    ],
+    "causal_claim_status": "No causal claim; health gains are scenario inputs that would require trial or quasi-experimental evidence in a real deployment.",
+    "limitations": [
+      "Health gains are aggregate and do not model disease-specific survival outcomes.",
+      "Geographic travel times are summarized rather than optimized on a road network.",
+      "The Gaussian copula and factor loadings are synthetic assumptions; tail dependence may differ in real data and requires domain approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "health_gain",
+      "label": "Expected health gain",
+      "direction": "maximize",
+      "weight": 0.32,
+      "unit": "QALY-equivalent points",
+      "scale": {
+        "worst": 150,
+        "best": 900
+      }
+    },
+    {
+      "id": "cost",
+      "label": "Annual program cost",
+      "direction": "minimize",
+      "weight": 0.18,
+      "unit": "USD millions",
+      "scale": {
+        "worst": 12,
+        "best": 4
+      }
+    },
+    {
+      "id": "access_gap",
+      "label": "High- versus low-access gap",
+      "direction": "minimize",
+      "weight": 0.2,
+      "unit": "probability points",
+      "scale": {
+        "worst": 0.35,
+        "best": 0
+      }
+    },
+    {
+      "id": "implementation_risk",
+      "label": "Implementation risk",
+      "direction": "minimize",
+      "weight": 0.15,
+      "unit": "index points",
+      "scale": {
+        "worst": 80,
+        "best": 10
+      }
+    },
+    {
+      "id": "evidence_quality",
+      "label": "Evidence quality",
+      "direction": "maximize",
+      "weight": 0.15,
+      "unit": "score",
+      "scale": {
+        "worst": 0.3,
+        "best": 0.95
+      }
+    }
+  ],
+  "constraints": [
+    {
+      "criterion": "cost",
+      "operator": "<=",
+      "threshold": 10,
+      "label": "Annual budget ceiling"
+    },
+    {
+      "criterion": "implementation_risk",
+      "operator": "<=",
+      "threshold": 65,
+      "label": "Operational risk tolerance"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "base-demand",
+      "label": "Base demand",
+      "probability": 0.55,
+      "adjustments": {}
+    },
+    {
+      "id": "winter-surge",
+      "label": "Winter demand surge",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "health_gain": {
+            "multiply": 1.08
+          },
+          "cost": {
+            "multiply": 1.06
+          },
+          "implementation_risk": {
+            "add": 5
+          }
+        },
+        "mobile-first": {
+          "health_gain": {
+            "multiply": 1.1
+          },
+          "implementation_risk": {
+            "add": 3
+          }
+        }
+      }
+    },
+    {
+      "id": "staff-shortage",
+      "label": "Clinical staff shortage",
+      "probability": 0.2,
+      "adjustments": {
+        "*": {
+          "health_gain": {
+            "multiply": 0.88
+          },
+          "cost": {
+            "multiply": 1.08
+          },
+          "implementation_risk": {
+            "add": 9
+          }
+        },
+        "fixed-site-expansion": {
+          "health_gain": {
+            "multiply": 0.9
+          }
+        }
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "status-quo",
+      "label": "Status quo",
+      "description": "Maintain current hospital-centered screening capacity.",
+      "metrics": {
+        "health_gain": {
+          "distribution": "triangular",
+          "low": 270,
+          "mode": 340,
+          "high": 430
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 4.8,
+          "mode": 5.3,
+          "high": 6
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 0.22,
+          "mode": 0.27,
+          "high": 0.33
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 16,
+          "mode": 23,
+          "high": 34
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.82
+        }
+      },
+      "groups": [
+        {
+          "id": "urban-high-income",
+          "label": "Urban higher-income residents",
+          "metrics": {
+            "access_probability": 0.78,
+            "expected_health_gain": 5.1
+          }
+        },
+        {
+          "id": "urban-low-income",
+          "label": "Urban lower-income residents",
+          "metrics": {
+            "access_probability": 0.58,
+            "expected_health_gain": 4.3
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural residents",
+          "metrics": {
+            "access_probability": 0.43,
+            "expected_health_gain": 3.7
+          }
+        }
+      ]
+    },
+    {
+      "id": "fixed-site-expansion",
+      "label": "Expand fixed clinics",
+      "description": "Add evening capacity and two permanent community screening sites.",
+      "metrics": {
+        "health_gain": {
+          "distribution": "normal",
+          "mean": 590,
+          "sd": 75,
+          "min": 300,
+          "max": 850
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 7.2,
+          "mode": 8.3,
+          "high": 10.4
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 0.12,
+          "mode": 0.17,
+          "high": 0.24
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 30,
+          "mode": 42,
+          "high": 62
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.76
+        }
+      },
+      "groups": [
+        {
+          "id": "urban-high-income",
+          "label": "Urban higher-income residents",
+          "metrics": {
+            "access_probability": 0.86,
+            "expected_health_gain": 7.4
+          }
+        },
+        {
+          "id": "urban-low-income",
+          "label": "Urban lower-income residents",
+          "metrics": {
+            "access_probability": 0.73,
+            "expected_health_gain": 6.6
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural residents",
+          "metrics": {
+            "access_probability": 0.61,
+            "expected_health_gain": 5.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobile-first",
+      "label": "Mobile-first network",
+      "description": "Deploy mobile units using rotating rural and underserved-neighborhood schedules.",
+      "metrics": {
+        "health_gain": {
+          "distribution": "triangular",
+          "low": 510,
+          "mode": 680,
+          "high": 870
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 7.5,
+          "mode": 8.8,
+          "high": 10.1
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 0.03,
+          "mode": 0.07,
+          "high": 0.14
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 36,
+          "mode": 49,
+          "high": 68
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.7
+        }
+      },
+      "groups": [
+        {
+          "id": "urban-high-income",
+          "label": "Urban higher-income residents",
+          "metrics": {
+            "access_probability": 0.82,
+            "expected_health_gain": 7.8
+          }
+        },
+        {
+          "id": "urban-low-income",
+          "label": "Urban lower-income residents",
+          "metrics": {
+            "access_probability": 0.8,
+            "expected_health_gain": 7.7
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural residents",
+          "metrics": {
+            "access_probability": 0.76,
+            "expected_health_gain": 7.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "hybrid-targeted",
+      "label": "Targeted hybrid",
+      "description": "Combine extended fixed-site hours with one risk-targeted mobile unit.",
+      "metrics": {
+        "health_gain": {
+          "distribution": "normal",
+          "mean": 650,
+          "sd": 70,
+          "min": 350,
+          "max": 880
+        },
+        "cost": {
+          "distribution": "triangular",
+          "low": 7.8,
+          "mode": 8.6,
+          "high": 9.8
+        },
+        "access_gap": {
+          "distribution": "triangular",
+          "low": 0.06,
+          "mode": 0.1,
+          "high": 0.17
+        },
+        "implementation_risk": {
+          "distribution": "triangular",
+          "low": 28,
+          "mode": 39,
+          "high": 56
+        },
+        "evidence_quality": {
+          "distribution": "fixed",
+          "value": 0.79
+        }
+      },
+      "groups": [
+        {
+          "id": "urban-high-income",
+          "label": "Urban higher-income residents",
+          "metrics": {
+            "access_probability": 0.84,
+            "expected_health_gain": 7.7
+          }
+        },
+        {
+          "id": "urban-low-income",
+          "label": "Urban lower-income residents",
+          "metrics": {
+            "access_probability": 0.78,
+            "expected_health_gain": 7.3
+          }
+        },
+        {
+          "id": "rural",
+          "label": "Rural residents",
+          "metrics": {
+            "access_probability": 0.72,
+            "expected_health_gain": 6.8
+          }
+        }
+      ]
+    }
+  ],
+  "decision_notes": [
+    "A real analysis should estimate health outcomes by condition and validate transportability across districts.",
+    "The authority should pre-register an evaluation plan before rollout."
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "systemic-adverse-shock",
+        "label": "Systemic adverse demand and delivery shock",
+        "description": "A shared latent shock moves outcome distributions across criteria and alternatives in the adverse direction; signs follow each criterion's value direction.",
+        "loadings": {
+          "health_gain": -0.48,
+          "cost": 0.48,
+          "access_gap": 0.48,
+          "implementation_risk": 0.48,
+          "evidence_quality": -0.48
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "health-resource-allocation-synthetic-parameter-register",
+        "citation": "Community Screening Resource Allocation — synthetic parameter register, distribution assumptions, value weights, scenarios, constraints, and dependence model (v5 demonstration).",
+        "source_type": "synthetic_demonstration_register",
+        "as_of": "2026-07-27",
+        "owner": "Repository maintainer (synthetic example)",
+        "approved_decision_uses": [
+          "illustrative"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "case_author",
+            "actor": "Repository maintainer (synthetic example)",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Illustrative portfolio demonstration only"
+          },
+          {
+            "sequence": 2,
+            "role": "independent_domain_reviewer",
+            "actor": "Not assigned",
+            "status": "not_obtained",
+            "date": null,
+            "scope": "Required before exploratory or operational use"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "health-resource-allocation-synthetic-parameter-register"
+      }
+    ]
+  }
+}

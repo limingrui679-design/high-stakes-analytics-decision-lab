@@ -1,0 +1,14 @@
+{
+  "project_id": "census-income-ai",
+  "source_id": "uci-adult-2",
+  "verified_at": "2026-07-28T10:13:33.352310+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/uci-adult.zip",
+      "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+      "bytes": 620237
+    }
+  ]
+}

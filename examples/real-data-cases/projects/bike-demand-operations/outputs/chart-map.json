@@ -1,0 +1,29 @@
+{
+  "project_id": "bike-demand-operations",
+  "charts": [
+    {
+      "path": "figures/allocation-unmet.svg",
+      "question": "Feasible allocations reveal an explicit service trade-off",
+      "supported_finding": "Every candidate respects the same resource total and minimum block coverage before unmet demand is compared.",
+      "interpretation_boundary": "Modeled unmet demand is a planning quantity, not a measured service outcome under rollout.",
+      "source_id": "uci-bike-sharing-275",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/hourly-demand.svg",
+      "question": "Demand structure is evaluated out of time",
+      "supported_finding": "The forecast learns from 2011 and is evaluated on 2012, preserving the direction of operational time.",
+      "interpretation_boundary": "System totals omit station imbalance, travel time, labor rules, and causal service response.",
+      "source_id": "uci-bike-sharing-275",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/resource-shadow-value.svg",
+      "question": "The value of additional capacity is not constant",
+      "supported_finding": "Resource shadow values and the perfect-information upper bound show where learning or added capacity could matter.",
+      "interpretation_boundary": "The curve is conditional on the simplified demand and allocation model.",
+      "source_id": "uci-bike-sharing-275",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

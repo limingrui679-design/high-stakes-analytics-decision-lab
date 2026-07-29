@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "project_id": "bank-marketing-response",
+  "charts": [
+    {
+      "file": "decision-summary.svg",
+      "report_section": "Technical summary",
+      "question": "What is the evidence-matched terminal decision?",
+      "family": "Tables & Scorecards",
+      "type": "decision scorecard",
+      "supported_claim": "Advance the 5% review-capacity rule only to a randomized campaign pilot; do not treat observational response concentration as causal lift.",
+      "source": "outputs/results.json and source-manifest.json",
+      "palette_policy": "single-root preferred",
+      "accessibility": "Direct metric labels and textual decision outcome"
+    },
+    {
+      "file": "decision-path.svg",
+      "report_section": "The evidence gates determine the terminal decision",
+      "question": "Which evidence gates pass, block, limit, or remain required?",
+      "family": "Decomposition & Progression",
+      "type": "labeled gate sequence",
+      "supported_claim": "Terminal status: randomized_pilot_required",
+      "source": "outputs/results.json",
+      "palette_policy": "hard two-root cap",
+      "accessibility": "Every status is labeled in text and not encoded by color alone"
+    },
+    {
+      "file": "../../figures/capacity-capture.svg",
+      "report_section": "The 5% tier is the leading pilot candidate, but the ranking is not decisive",
+      "question": "What primary quantitative evidence supports the decision?",
+      "family": "Project-native analytical visual",
+      "type": "existing reviewed project figure",
+      "supported_claim": "Higher capacity captures more observed responders, but also consumes more review effort. The exploratory utility ranking favors 5%; its 59% probability-best is too weak for an irreversible operating decision.",
+      "source": "outputs/results.json",
+      "palette_policy": "project visual system",
+      "accessibility": "Observed response capture across 5%, 10%, and 20% review capacities"
+    },
+    {
+      "file": "../../figures/calibration.svg",
+      "report_section": "Calibration instability reinforces the need for an experiment",
+      "question": "Which validation or boundary evidence controls interpretation?",
+      "family": "Project-native analytical visual",
+      "type": "existing reviewed project figure",
+      "supported_claim": "The chart is a probability-quality diagnostic, not evidence of campaign impact. A randomized pilot must estimate incremental response and burden directly.",
+      "source": "outputs/results.json",
+      "palette_policy": "project visual system",
+      "accessibility": "Held-out predicted and observed response rates by score bin"
+    }
+  ]
+}

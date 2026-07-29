@@ -1,0 +1,50 @@
+{
+  "rows": 48842,
+  "columns": 16,
+  "column_names": [
+    "age",
+    "workclass",
+    "fnlwgt",
+    "education",
+    "education_num",
+    "marital_status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "capital_gain",
+    "capital_loss",
+    "hours_per_week",
+    "native_country",
+    "income",
+    "source_split"
+  ],
+  "missing_count_by_column": {
+    "age": 0,
+    "workclass": 2799,
+    "fnlwgt": 0,
+    "education": 0,
+    "education_num": 0,
+    "marital_status": 0,
+    "occupation": 2809,
+    "relationship": 0,
+    "race": 0,
+    "sex": 0,
+    "capital_gain": 0,
+    "capital_loss": 0,
+    "hours_per_week": 0,
+    "native_country": 857,
+    "income": 0,
+    "source_split": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 48842,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Use demographic fields only for model error analysis; do not present the score as a welfare or eligibility decision tool.",
+    "status": "approved_for_public_benchmark_analysis"
+  }
+}
