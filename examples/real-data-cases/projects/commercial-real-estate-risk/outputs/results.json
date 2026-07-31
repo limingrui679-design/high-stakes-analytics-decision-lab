@@ -1,0 +1,617 @@
+{
+  "project_id": "commercial-real-estate-risk",
+  "data": {
+    "transactions": 12399,
+    "period": [
+      "2021-01-04",
+      "2025-12-31"
+    ],
+    "boroughs": 5,
+    "segments": 25
+  },
+  "study_design": {
+    "unit": "filtered NYC commercial-property sale record",
+    "observed_outcomes": "transaction count, nominal sale value, price per gross square foot",
+    "financing_layer": "analyst break-even cap-rate scenario, not observed NOI or loan terms",
+    "claim_class": "market-screen and diligence-prioritization evidence"
+  },
+  "borough_statistics": {
+    "Bronx": {
+      "transactions": 1331,
+      "median_price_per_sqft": 336.95652173913044,
+      "median_absolute_deviation": 143.04347826086956,
+      "median_bootstrap_95_interval": [
+        323.3139909735654,
+        355.45023696682466
+      ]
+    },
+    "Brooklyn": {
+      "transactions": 4868,
+      "median_price_per_sqft": 482.42824527071105,
+      "median_absolute_deviation": 177.42208672086718,
+      "median_bootstrap_95_interval": [
+        473.72490565792737,
+        494.14855802169836
+      ]
+    },
+    "Manhattan": {
+      "transactions": 2172,
+      "median_price_per_sqft": 742.8801010225669,
+      "median_absolute_deviation": 384.63215563506265,
+      "median_bootstrap_95_interval": [
+        710.3611365301756,
+        771.9997093261918
+      ]
+    },
+    "Queens": {
+      "transactions": 3203,
+      "median_price_per_sqft": 458.3333333333333,
+      "median_absolute_deviation": 150.94288205798995,
+      "median_bootstrap_95_interval": [
+        448.32826747720367,
+        469.53152211772897
+      ]
+    },
+    "Staten Island": {
+      "transactions": 825,
+      "median_price_per_sqft": 330.88235294117646,
+      "median_absolute_deviation": 122.12911366677392,
+      "median_bootstrap_95_interval": [
+        317.74520986499044,
+        352.99003322259136
+      ]
+    }
+  },
+  "annual_activity": {
+    "2021": {
+      "transactions": 2710,
+      "nominal_sale_value": 24237853795.0,
+      "median_price_per_sqft": 463.2450459951452
+    },
+    "2022": {
+      "transactions": 2800,
+      "nominal_sale_value": 24673935313.0,
+      "median_price_per_sqft": 465.99238732394366
+    },
+    "2023": {
+      "transactions": 2172,
+      "nominal_sale_value": 17396393962.0,
+      "median_price_per_sqft": 470.6995230524642
+    },
+    "2024": {
+      "transactions": 2324,
+      "nominal_sale_value": 17816526109.0,
+      "median_price_per_sqft": 460.1971707903217
+    },
+    "2025": {
+      "transactions": 2393,
+      "nominal_sale_value": 21293396136.0,
+      "median_price_per_sqft": 503.8759689922481
+    }
+  },
+  "segment_statistics": [
+    {
+      "borough": "Bronx",
+      "property_type": "Hotel",
+      "transactions": 14,
+      "median_price_per_sqft": 487.69808396137654,
+      "median_absolute_deviation": 137.89506120083254,
+      "data_sufficiency_gate": "insufficient_public_transactions"
+    },
+    {
+      "borough": "Bronx",
+      "property_type": "Industrial",
+      "transactions": 116,
+      "median_price_per_sqft": 366.8795762579841,
+      "median_absolute_deviation": 138.4467404370886,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Bronx",
+      "property_type": "Office",
+      "transactions": 81,
+      "median_price_per_sqft": 350.0,
+      "median_absolute_deviation": 115.0,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Bronx",
+      "property_type": "Other commercial",
+      "transactions": 776,
+      "median_price_per_sqft": 291.22623321366837,
+      "median_absolute_deviation": 115.30243194567251,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Bronx",
+      "property_type": "Retail",
+      "transactions": 344,
+      "median_price_per_sqft": 450.0,
+      "median_absolute_deviation": 162.01923076923077,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Brooklyn",
+      "property_type": "Hotel",
+      "transactions": 28,
+      "median_price_per_sqft": 393.1801003655288,
+      "median_absolute_deviation": 162.04787867452666,
+      "data_sufficiency_gate": "insufficient_public_transactions"
+    },
+    {
+      "borough": "Brooklyn",
+      "property_type": "Industrial",
+      "transactions": 355,
+      "median_price_per_sqft": 514.2857142857143,
+      "median_absolute_deviation": 208.74140024281672,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Brooklyn",
+      "property_type": "Office",
+      "transactions": 263,
+      "median_price_per_sqft": 466.2004662004662,
+      "median_absolute_deviation": 158.2294517077126,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Brooklyn",
+      "property_type": "Other commercial",
+      "transactions": 3380,
+      "median_price_per_sqft": 461.5930944055944,
+      "median_absolute_deviation": 164.6233974358974,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Brooklyn",
+      "property_type": "Retail",
+      "transactions": 842,
+      "median_price_per_sqft": 564.6110056925996,
+      "median_absolute_deviation": 218.96706629866026,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Manhattan",
+      "property_type": "Hotel",
+      "transactions": 97,
+      "median_price_per_sqft": 687.8396739130435,
+      "median_absolute_deviation": 310.20684674036386,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Manhattan",
+      "property_type": "Industrial",
+      "transactions": 45,
+      "median_price_per_sqft": 802.2222222222222,
+      "median_absolute_deviation": 327.239371493638,
+      "data_sufficiency_gate": "insufficient_public_transactions"
+    },
+    {
+      "borough": "Manhattan",
+      "property_type": "Office",
+      "transactions": 360,
+      "median_price_per_sqft": 513.0567239117586,
+      "median_absolute_deviation": 375.7178330465478,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Manhattan",
+      "property_type": "Other commercial",
+      "transactions": 1350,
+      "median_price_per_sqft": 733.3550630160801,
+      "median_absolute_deviation": 373.03111427916326,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Manhattan",
+      "property_type": "Retail",
+      "transactions": 320,
+      "median_price_per_sqft": 1056.7362849109504,
+      "median_absolute_deviation": 487.5285242478105,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Queens",
+      "property_type": "Hotel",
+      "transactions": 31,
+      "median_price_per_sqft": 523.8485729744352,
+      "median_absolute_deviation": 157.17942086046924,
+      "data_sufficiency_gate": "insufficient_public_transactions"
+    },
+    {
+      "borough": "Queens",
+      "property_type": "Industrial",
+      "transactions": 239,
+      "median_price_per_sqft": 510.2040816326531,
+      "median_absolute_deviation": 186.67466986794722,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Queens",
+      "property_type": "Office",
+      "transactions": 251,
+      "median_price_per_sqft": 485.44776119402985,
+      "median_absolute_deviation": 188.91003945861632,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Queens",
+      "property_type": "Other commercial",
+      "transactions": 1837,
+      "median_price_per_sqft": 426.2036306235201,
+      "median_absolute_deviation": 126.80969122958072,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Queens",
+      "property_type": "Retail",
+      "transactions": 845,
+      "median_price_per_sqft": 542.1875,
+      "median_absolute_deviation": 207.8125,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Staten Island",
+      "property_type": "Hotel",
+      "transactions": 3,
+      "median_price_per_sqft": 338.2416865898718,
+      "median_absolute_deviation": 34.39829442782201,
+      "data_sufficiency_gate": "insufficient_public_transactions"
+    },
+    {
+      "borough": "Staten Island",
+      "property_type": "Industrial",
+      "transactions": 65,
+      "median_price_per_sqft": 291.6666666666667,
+      "median_absolute_deviation": 129.23011844331643,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Staten Island",
+      "property_type": "Office",
+      "transactions": 129,
+      "median_price_per_sqft": 341.88034188034186,
+      "median_absolute_deviation": 101.82547219584254,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Staten Island",
+      "property_type": "Other commercial",
+      "transactions": 361,
+      "median_price_per_sqft": 308.26410144293834,
+      "median_absolute_deviation": 102.07613256916733,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    },
+    {
+      "borough": "Staten Island",
+      "property_type": "Retail",
+      "transactions": 267,
+      "median_price_per_sqft": 404.4117647058824,
+      "median_absolute_deviation": 175.923675255226,
+      "data_sufficiency_gate": "advance_to_property_level_diligence"
+    }
+  ],
+  "decision_options": {
+    "Bronx": {
+      "transaction_share": 0.10734736672312284,
+      "price_dispersion_ratio": 0.42451612903225805,
+      "geocoded_share": 1.0
+    },
+    "Brooklyn": {
+      "transaction_share": 0.3926123074441487,
+      "price_dispersion_ratio": 0.3677688619191608,
+      "geocoded_share": 1.0
+    },
+    "Manhattan": {
+      "transaction_share": 0.17517541737236875,
+      "price_dispersion_ratio": 0.5177580542346206,
+      "geocoded_share": 1.0
+    },
+    "Queens": {
+      "transaction_share": 0.25832728445842407,
+      "price_dispersion_ratio": 0.3293299244901599,
+      "geocoded_share": 1.0
+    },
+    "Staten Island": {
+      "transaction_share": 0.06653762400193564,
+      "price_dispersion_ratio": 0.36910132130402784,
+      "geocoded_share": 1.0
+    }
+  },
+  "financing_stress": {
+    "loan_to_value": 0.65,
+    "amortization_years": 30,
+    "target_dscr": 1.25,
+    "scenarios": [
+      {
+        "interest_rate": 0.045,
+        "annual_debt_service_per_dollar_of_debt": 0.06080223717910629,
+        "break_even_cap_rate_for_target_dscr": 0.04940181770802386
+      },
+      {
+        "interest_rate": 0.065,
+        "annual_debt_service_per_dollar_of_debt": 0.07584816281915584,
+        "break_even_cap_rate_for_target_dscr": 0.06162663229056412
+      },
+      {
+        "interest_rate": 0.085,
+        "annual_debt_service_per_dollar_of_debt": 0.09226961803012004,
+        "break_even_cap_rate_for_target_dscr": 0.07496906464947253
+      }
+    ],
+    "boundary": "The source contains sale records, not lease-level NOI, expenses, debt terms, property condition, or appraisal evidence."
+  },
+  "planning_delivery": {
+    "status": "diligence_screen_only",
+    "sufficiently_observed_segments": 20,
+    "next_action": "Use sufficiently observed segments to request property-level lease, expense, condition, title, zoning, and financing evidence.",
+    "reversal_conditions": [
+      "Arm's-length review removes a material share of transactions.",
+      "Property-level NOI or condition evidence reverses segment comparisons.",
+      "Alternative financing terms change the required cap-rate threshold.",
+      "A planning or community review rejects the screen's geography or regeneration assumptions."
+    ]
+  },
+  "provenance": {
+    "source_id": "nyc-dof-annualized-property-sales-w2pb-icbu",
+    "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update",
+    "version": "filtered 2021-2025 commercial-unit snapshot from dataset w2pb-icbu",
+    "license": "NYC Open Data Terms of Use",
+    "accessed_at": "2026-07-30",
+    "raw_sha256": {
+      "nyc-commercial-sales-2021-2025.csv": "daa08cd7e6d95c2060cdc2eb1b8b6308932c334179dc57af46c203374935389a"
+    },
+    "config_sha256": "7291d1f5113fe7d45d990b8b6a24620d7289e69b649a14426ff2ab4b5d8d2d72"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260730,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_segment_transactions",
+      "label": "minimum segment transactions",
+      "value_or_distribution": 50,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-data-sufficiency-gate",
+      "source_fact": "Registered project configuration for minimum_segment_transactions; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Passing the count gate allows only property-level diligence."
+    },
+    {
+      "parameter_path": "config.parameters.loan_to_value",
+      "label": "loan to value",
+      "value_or_distribution": 0.65,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for loan_to_value; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Not an observed or recommended loan term."
+    },
+    {
+      "parameter_path": "config.parameters.amortization_years",
+      "label": "amortization years",
+      "value_or_distribution": 30,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for amortization_years; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Used only to expose debt-service sensitivity."
+    },
+    {
+      "parameter_path": "config.parameters.dscr_target",
+      "label": "dscr target",
+      "value_or_distribution": 1.25,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for dscr_target; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Not a lender covenant or underwriting approval."
+    },
+    {
+      "parameter_path": "config.parameters.interest_rates",
+      "label": "interest rates",
+      "value_or_distribution": [
+        0.045,
+        0.065,
+        0.085
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-rate-stress-grid",
+      "source_fact": "Registered project configuration for interest_rates; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative fixed-rate grid, not a market quote or forecast."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-reproducibility-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Transaction resampling does not correct administrative selection or measurement error."
+    }
+  ]
+}

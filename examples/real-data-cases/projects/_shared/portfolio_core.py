@@ -60,6 +60,8 @@ PROJECTS_WITH_CASES = {
     "behavioral-reading-experiment",
     "bike-demand-operations",
     "treasury-risk-engineering",
+    "regime-aware-multi-asset-portfolio",
+    "commercial-real-estate-risk",
     "spatial-equity-planning",
 }
 
@@ -264,32 +266,53 @@ def _refresh_cfpb(project_root: Path, manifest: dict[str, Any]) -> None:
         shutil.copy2(minimized_path, target)
 
 
-def _refresh_sec_peer_panel(
+def _refresh_multi_asset_snapshot(
     project_root: Path,
     manifest: dict[str, Any],
 ) -> None:
-    urls = manifest["download_urls"]
-    raw_items = manifest["raw_files"]
-    if len(urls) != len(raw_items):
-        raise ValueError("SEC peer download URLs and raw-file records must align.")
-    with tempfile.TemporaryDirectory(prefix="hsdl-sec-peers-") as directory:
+    raw_item = manifest["raw_files"][0]
+    target = project_root / raw_item["path"]
+    reviewed: dict[str, Any] = {
+        "source": manifest["source_id"],
+        "requested_period": manifest["requested_period"],
+        "symbols": {},
+    }
+    with tempfile.TemporaryDirectory(prefix="hsdl-multi-asset-") as directory:
         temporary_root = Path(directory)
-        for url, item in zip(urls, raw_items):
-            target = temporary_root / Path(item["path"]).name
-            _download(url, target)
-            observed = sha256(target)
-            if observed != item["sha256"]:
+        for item in manifest["download_urls"]:
+            symbol = item["symbol"]
+            response_path = temporary_root / f"{symbol}.json"
+            _download(item["url"], response_path)
+            payload = load_json(response_path)
+            result = payload.get("chart", {}).get("result")
+            if not result:
+                raise ValueError(f"Market-data response missing result for {symbol}.")
+            chart = result[0]
+            timestamps = chart.get("timestamp", [])
+            adjusted_groups = chart.get("indicators", {}).get("adjclose", [])
+            if not adjusted_groups:
+                raise ValueError(f"Adjusted close missing for {symbol}.")
+            adjusted = adjusted_groups[0].get("adjclose", [])
+            if len(timestamps) != len(adjusted):
                 raise ValueError(
-                    "SEC Companyfacts snapshot changed for "
-                    f"{target.name}: expected {item['sha256']}; "
-                    f"observed {observed}. Review the filing update before "
-                    "changing the manifest."
+                    f"Market-data timestamp/price mismatch for {symbol}."
                 )
-        for item in raw_items:
-            source = temporary_root / Path(item["path"]).name
-            destination = project_root / item["path"]
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, destination)
+            reviewed["symbols"][symbol] = {
+                "timestamp": timestamps,
+                "adjusted_close": adjusted,
+            }
+        combined = temporary_root / target.name
+        write_json(combined, reviewed)
+        observed = sha256(combined)
+        if observed != raw_item["sha256"]:
+            raise ValueError(
+                "Multi-asset source snapshot changed. "
+                f"Expected {raw_item['sha256']}; observed {observed}. "
+                "Review corrections and the changed end point before updating "
+                "the manifest."
+            )
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(combined, target)
 
 
 def download_project(project_root: Path, *, refresh: bool = False) -> dict[str, Any]:
@@ -301,8 +324,8 @@ def download_project(project_root: Path, *, refresh: bool = False) -> dict[str, 
             _refresh_spatial(project_root, manifest)
         elif manifest["project_id"] == "cfpb-fintech-complaint-operations":
             _refresh_cfpb(project_root, manifest)
-        elif manifest["project_id"] == "mckesson-financial-quality":
-            _refresh_sec_peer_panel(project_root, manifest)
+        elif manifest["project_id"] == "regime-aware-multi-asset-portfolio":
+            _refresh_multi_asset_snapshot(project_root, manifest)
         else:
             _refresh_generic(project_root, manifest)
     records = verify_raw_files(project_root)
@@ -510,25 +533,6 @@ def _prepare_treasury(project_root: Path) -> tuple[list[dict[str, Any]], dict[st
     return rows, dictionary
 
 
-def _prepare_ai_governance(project_root: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    rows = read_csv(project_root / "data/raw/dot-ai-use-cases.csv")
-    suppressed = "Email Address"
-    for row in rows:
-        row.pop(suppressed, None)
-    fields = list(rows[0])
-    write_csv(project_root / "data/processed/analysis.csv", rows, fields)
-    dictionary = {
-        "grain": "publicly reported DOT AI use case",
-        "primary_key": "Use Case Identifier",
-        "missing_value_policy": MISSING_VALUE_POLICY,
-        "suppressed_fields": {
-            suppressed: "official contact address removed before analysis"
-        },
-        "fields": {field: field for field in fields},
-    }
-    return rows, dictionary
-
-
 def _read_pipe_table(path: Path) -> dict[str, dict[str, str]]:
     rows = read_csv(path, delimiter="|")
     return {row["GEO_ID"]: row for row in rows}
@@ -662,203 +666,6 @@ def _prepare_bank_marketing(
     return rows, dictionary
 
 
-SEC_FACT_TAGS = {
-    "revenue": [
-        "RevenueFromContractWithCustomerExcludingAssessedTax",
-        "SalesRevenueNet",
-        "Revenues",
-    ],
-    "gross_profit": ["GrossProfit"],
-    "operating_income": ["OperatingIncomeLoss"],
-    "net_income": ["NetIncomeLoss"],
-    "operating_cash_flow": ["NetCashProvidedByUsedInOperatingActivities"],
-    "capital_expenditure": ["PaymentsToAcquirePropertyPlantAndEquipment"],
-    "inventory": ["InventoryNet"],
-    "receivables": [
-        "ReceivablesNetCurrent",
-        "AccountsReceivableGrossCurrent",
-        "AccountsReceivableNetCurrent",
-    ],
-    "accounts_payable": ["AccountsPayableCurrent"],
-    "assets": ["Assets"],
-    "equity": ["StockholdersEquity"],
-    "cash": [
-        "CashAndCashEquivalentsAtCarryingValue",
-        "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
-    ],
-    "long_term_debt": [
-        "LongTermDebtAndCapitalLeaseObligations",
-        "LongTermDebt",
-        "LongTermDebtNoncurrent",
-    ],
-}
-SEC_DURATION_METRICS = {
-    "revenue",
-    "gross_profit",
-    "operating_income",
-    "net_income",
-    "operating_cash_flow",
-    "capital_expenditure",
-}
-
-
-def _sec_annual_fact(
-    facts: dict[str, Any],
-    metric: str,
-    fiscal_year: int,
-    target_end: str,
-) -> dict[str, Any] | None:
-    duration = metric in SEC_DURATION_METRICS
-    candidates: list[dict[str, Any]] = []
-    for tag in SEC_FACT_TAGS[metric]:
-        fact = facts.get(tag)
-        if not fact:
-            continue
-        for item in fact.get("units", {}).get("USD", []):
-            if (
-                item.get("form") != "10-K"
-                or item.get("fp") != "FY"
-                or item.get("end") != target_end
-            ):
-                continue
-            if duration:
-                start = item.get("start")
-                if not start:
-                    continue
-                days = (
-                    datetime.fromisoformat(item["end"])
-                    - datetime.fromisoformat(start)
-                ).days
-                if not 350 <= days <= 380:
-                    continue
-            elif item.get("start"):
-                continue
-            candidates.append({"tag": tag, **item})
-        if candidates:
-            break
-    if not candidates:
-        return None
-    return max(
-        candidates,
-        key=lambda item: (
-            item.get("filed", ""),
-            item.get("accn", ""),
-        ),
-    )
-
-
-def _prepare_mckesson(
-    project_root: Path,
-) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    config = load_json(project_root / "config.json")
-    parameters = config["parameters"]
-    rows: list[dict[str, Any]] = []
-    lineage: list[dict[str, Any]] = []
-    entities: list[dict[str, Any]] = []
-    for peer in parameters["peer_set"]:
-        companyfacts = load_json(project_root / peer["raw_file"])
-        entity = {
-            "entity": peer["label"],
-            "cik": str(companyfacts["cik"]).zfill(10),
-            "fiscal_year_end": peer["fiscal_year_end"],
-            "raw_file": peer["raw_file"],
-        }
-        entities.append(entity)
-        facts = companyfacts["facts"]["us-gaap"]
-        for fiscal_year in range(
-            parameters["fiscal_year_start"],
-            parameters["fiscal_year_end"] + 1,
-        ):
-            target_end = f"{fiscal_year}-{peer['fiscal_year_end']}"
-            row: dict[str, Any] = {
-                "entity": peer["label"],
-                "cik": entity["cik"],
-                "fiscal_year": fiscal_year,
-                "period_end": target_end,
-            }
-            for metric in SEC_FACT_TAGS:
-                selected = _sec_annual_fact(
-                    facts,
-                    metric,
-                    fiscal_year,
-                    target_end,
-                )
-                row[metric] = "" if selected is None else selected["val"]
-                lineage.append(
-                    {
-                        "entity": peer["label"],
-                        "cik": entity["cik"],
-                        "fiscal_year": fiscal_year,
-                        "metric": metric,
-                        "tag": "" if selected is None else selected["tag"],
-                        "start": (
-                            "" if selected is None else selected.get("start", "")
-                        ),
-                        "end": (
-                            "" if selected is None else selected.get("end", "")
-                        ),
-                        "value_usd": (
-                            "" if selected is None else selected["val"]
-                        ),
-                        "filed": (
-                            "" if selected is None else selected.get("filed", "")
-                        ),
-                        "accession": (
-                            "" if selected is None else selected.get("accn", "")
-                        ),
-                        "selection_rule": (
-                            "latest-filed annual 10-K fact for the entity fiscal end"
-                        ),
-                    }
-                )
-            rows.append(row)
-    fields = ["entity", "cik", "fiscal_year", "period_end", *SEC_FACT_TAGS]
-    write_csv(project_root / "data/processed/analysis.csv", rows, fields)
-    write_csv(
-        project_root / "outputs/fact-lineage.csv",
-        lineage,
-        [
-            "entity",
-            "cik",
-            "fiscal_year",
-            "metric",
-            "tag",
-            "start",
-            "end",
-            "value_usd",
-            "filed",
-            "accession",
-            "selection_rule",
-        ],
-    )
-    dictionary = {
-        "grain": "one healthcare-distributor company fiscal year",
-        "primary_key": ["cik", "fiscal_year"],
-        "entities": entities,
-        "fact_selection": (
-            "For each metric and fiscal period, use the latest-filed annual 10-K "
-            "presentation at the entity-specific fiscal year end in the reviewed "
-            "SEC Companyfacts snapshot."
-        ),
-        "fields": {
-            "revenue": "annual revenue, USD",
-            "gross_profit": "annual gross profit, USD",
-            "operating_income": "annual operating income or loss, USD",
-            "net_income": "annual net income or loss, USD",
-            "operating_cash_flow": "annual cash provided by operations, USD",
-            "capital_expenditure": "annual payments to acquire PP&E, USD",
-            "inventory": "fiscal-year-end inventory, USD",
-            "receivables": "fiscal-year-end current receivables, USD",
-            "accounts_payable": "fiscal-year-end accounts payable, USD",
-            "assets": "fiscal-year-end assets, USD",
-            "equity": "fiscal-year-end stockholders' equity, USD",
-            "cash": "fiscal-year-end cash measure selected by tag priority, USD",
-            "long_term_debt": "fiscal-year-end long-term debt measure, USD",
-        },
-    }
-    return rows, dictionary
-
-
 def _prepare_cfpb(
     project_root: Path,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -922,10 +729,8 @@ PREPARERS: dict[str, Callable[[Path], tuple[list[dict[str, Any]], dict[str, Any]
     "census-income-ai": _prepare_adult,
     "bike-demand-operations": _prepare_bike,
     "treasury-risk-engineering": _prepare_treasury,
-    "federal-ai-governance": _prepare_ai_governance,
     "spatial-equity-planning": _prepare_spatial,
     "bank-marketing-response": _prepare_bank_marketing,
-    "mckesson-financial-quality": _prepare_mckesson,
     "cfpb-fintech-complaint-operations": _prepare_cfpb,
 }
 

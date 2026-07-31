@@ -4,10 +4,10 @@
 
 ## Executive Summary
 
-- **Provisional preference — Baseline: Poverty Priority.** It is the highest-ranked feasible option, with decision value score **68.8/100** and a modeled **84% probability of being best among decision-feasible alternatives**.
-- **The lead is narrow rather than absolute.** It leads the next feasible option, Composite Equity, by **0.019 utility points**.
+- **Provisional preference — Baseline: Poverty Priority.** It is the highest-ranked feasible option, with decision value score **68.8/100** and a modeled **85% probability of being best among decision-feasible alternatives**.
+- **The lead is narrow rather than absolute.** It leads the next feasible option, Composite Equity, by **0.020 utility points**.
 - **Modeled robustness is 95/100.** The option remains preferred in **100%** of two-sided weight stresses and **100%** of probability-weighted scenario comparisons.
-- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+0.7%** and CVaR10 by **-0.000**; the ×1.35 loading stress does not change the modeled winner.
+- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.0%** and CVaR10 by **-0.001**; the ×1.35 loading stress does not change the modeled winner.
 - **Constraint-breach evidence — 0/10,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
 - **Decision status — Provisional—validate before action.** The current blockers are: evidence is not labeled for operational use.
 - **Evidence boundary.** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
@@ -58,7 +58,7 @@ The interval chart prevents a precise-looking average from obscuring overlap amo
 
 ## Shared shocks change the uncertainty question
 
-**The declared factor model gives Baseline: Poverty Priority P(best) 84%, versus 84% under independent residuals and 85% under the stronger correlation stress.** Its CVaR10 moves from 0.648 independently to 0.648 under declared dependence and 0.647 under stress.
+**The declared factor model gives Baseline: Poverty Priority P(best) 85%, versus 84% under independent residuals and 86% under the stronger correlation stress.** Its CVaR10 moves from 0.649 independently to 0.648 under declared dependence and 0.648 under stress.
 
 ![Correlation and tail-risk stress](figures/correlation-stress.svg)
 
@@ -66,7 +66,7 @@ The three states use matched seeds, stratified scenario counts, and the same mar
 
 ## Scenario tests show when the preferred option is most exposed
 
-**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.654.** The same feasible alternative remains ahead in every modeled scenario.
+**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.655.** The same feasible alternative remains ahead in every modeled scenario.
 
 ![Scenario performance](figures/scenario-performance.svg)
 
@@ -117,9 +117,9 @@ This test both increases and decreases each criterion weight while preserving ri
 
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
-| 1 | Baseline: Poverty Priority | Yes | 68.8 | 0.701 | 0.648 | 84.5% | 84.5% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Composite Equity | Yes | 66.8 | 0.682 | 0.628 | 15.5% | 15.5% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
-| 3 | Transit Priority | Yes | 49.5 | 0.507 | 0.460 | 0.0% | 0.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
+| 1 | Baseline: Poverty Priority | Yes | 68.8 | 0.701 | 0.648 | 84.7% | 84.7% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Composite Equity | Yes | 66.8 | 0.682 | 0.628 | 15.3% | 15.3% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
+| 3 | Transit Priority | Yes | 49.6 | 0.507 | 0.460 | 0.0% | 0.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
 
 ### Readiness checks
 
@@ -144,8 +144,8 @@ No hard constraints were supplied.
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Need-weighted coverage | 45.0% | 0.768 share | 0.706 share–0.81 share | 0.768 | 0.0% |
-| High-poverty population coverage | 35.0% | 0.67 share | 0.603 share–0.726 share | 0.670 | 0.0% |
+| Need-weighted coverage | 45.0% | 0.768 share | 0.707 share–0.81 share | 0.768 | 0.0% |
+| High-poverty population coverage | 35.0% | 0.671 share | 0.604 share–0.726 share | 0.671 | 0.0% |
 | Population-weighted distance | 20.0% | 19.8 km | 18.9 km–21.3 km | 0.604 | 0.0% |
 
 #### Composite Equity
@@ -153,24 +153,24 @@ No hard constraints were supplied.
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
 | Need-weighted coverage | 45.0% | 0.765 share | 0.702 share–0.811 share | 0.765 | 0.0% |
-| High-poverty population coverage | 35.0% | 0.643 share | 0.576 share–0.704 share | 0.643 | 0.0% |
-| Population-weighted distance | 20.0% | 21.9 km | 20.8 km–23.5 km | 0.563 | 0.0% |
+| High-poverty population coverage | 35.0% | 0.643 share | 0.575 share–0.703 share | 0.643 | 0.0% |
+| Population-weighted distance | 20.0% | 21.9 km | 20.8 km–23.6 km | 0.563 | 0.0% |
 
 #### Transit Priority
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Need-weighted coverage | 45.0% | 0.62 share | 0.561 share–0.67 share | 0.620 | 0.0% |
-| High-poverty population coverage | 35.0% | 0.408 share | 0.353 share–0.463 share | 0.408 | 0.0% |
-| Population-weighted distance | 20.0% | 28.6 km | 27.3 km–30.7 km | 0.429 | 0.0% |
+| Need-weighted coverage | 45.0% | 0.619 share | 0.562 share–0.67 share | 0.619 | 0.0% |
+| High-poverty population coverage | 35.0% | 0.409 share | 0.352 share–0.469 share | 0.409 | 0.0% |
+| Population-weighted distance | 20.0% | 28.6 km | 27.2 km–30.7 km | 0.429 | 0.0% |
 
 ### Correlation sensitivity
 
 | Dependence state | Modeled winner | Recommended option P(best) | CVaR10 | Breach U95 |
 |---|---|---:|---:|---:|
-| Independent residuals | Baseline: Poverty Priority | 83.8% | 0.648 | 0.00% |
-| Declared factor model | Baseline: Poverty Priority | 84.5% | 0.648 | 0.00% |
-| Loading stress ×1.35 | Baseline: Poverty Priority | 85.4% | 0.647 | 0.00% |
+| Independent residuals | Baseline: Poverty Priority | 83.7% | 0.649 | 0.00% |
+| Declared factor model | Baseline: Poverty Priority | 84.7% | 0.648 | 0.00% |
+| Loading stress ×1.35 | Baseline: Poverty Priority | 85.6% | 0.648 | 0.00% |
 
 ### Parameter provenance and approval
 
@@ -186,7 +186,7 @@ Coverage: **48/48 parameters sourced** and **48/48 approved for the declared use
 - projects/spatial-equity-planning/outputs/results.json
 - Engine version: `7.0.0`
 - Samples: `10000`
-- Random seed: `20260727`
+- Random seed: `20260726`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
 - Case SHA-256: `b415e08e6d44ff656cac03f2e454798d876b19bb6a6cecb5578623dfd60ab6e9`
 

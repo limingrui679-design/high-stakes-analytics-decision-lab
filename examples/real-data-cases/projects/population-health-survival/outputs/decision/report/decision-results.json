@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-28T10:05:24.971534+00:00",
+    "generated_at": "2026-07-30T18:38:47.390421+00:00",
     "case_id": "real-population-health-survival",
     "case_hash_sha256": "9c2215f0017eefaaaf248aa7b58ff385d44dd640cfe3bcdf442257520633ba90",
     "samples": 10000,
-    "seed": 20260727,
+    "seed": 20260726,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -38,14 +38,14 @@
       "dual-marker-triage"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.05607591135899992,
+    "utility_margin": 0.055033835677999576,
     "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 95.725,
+    "robustness_score": 95.65299999999999,
     "robustness_components": {
       "probability_best": {
-        "value": 0.8575,
+        "value": 0.8551,
         "weight": 0.3
       },
       "weight_stability": {
@@ -176,12 +176,12 @@
       "alternative_id": "current-age-rule",
       "label": "Current Age Rule",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6362658782177999,
-      "utility_p05": 0.5715059425,
-      "utility_p95": 0.6923634125,
-      "cvar10": 0.5667164319599995,
-      "risk_adjusted_utility": 0.6188785166533498,
-      "value_score": 61.88785166533498,
+      "expected_utility": 0.6359613867575993,
+      "utility_p05": 0.5712548005,
+      "utility_p95": 0.6912877424999999,
+      "cvar10": 0.5667158126160001,
+      "risk_adjusted_utility": 0.6186499932221995,
+      "value_score": 61.86499932221995,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -195,17 +195,17 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.507863825652002,
-          "normalized_score": 0.507863825652002,
+          "mean": 0.50760347336,
+          "normalized_score": 0.50760347336,
           "scale_clipping_rate": 0.0,
-          "p05": 0.411765,
-          "p95": 0.598214
+          "p05": 0.410526,
+          "p95": 0.597826
         },
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.3934820993320015,
-          "normalized_score": 0.6065179006679987,
+          "mean": 0.39421371956800155,
+          "normalized_score": 0.605786280431995,
           "scale_clipping_rate": 0.0,
           "p05": 0.337793,
           "p95": 0.448161
@@ -213,36 +213,36 @@
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.04845642705199942,
-          "normalized_score": 0.9030871458959991,
+          "mean": 0.04839212076799936,
+          "normalized_score": 0.9032157584639976,
           "scale_clipping_rate": 0.0,
-          "p05": 0.003663,
-          "p95": 0.12210669399999934
+          "p05": 0.003573,
+          "p95": 0.122984
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6438184645066679,
-          "p05": 0.583398225,
-          "p95": 0.6957052949999999,
-          "cvar10": 0.5787667655333335,
-          "risk_adjusted_utility": 0.6275555397633343,
+          "mean": 0.6433547055866637,
+          "p05": 0.5832512725,
+          "p95": 0.695290515,
+          "cvar10": 0.5779413018666668,
+          "risk_adjusted_utility": 0.6270013546566645,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6136081193511996,
-          "p05": 0.5533348473999999,
-          "p95": 0.6644119878999999,
-          "cvar10": 0.5487500697759997,
-          "risk_adjusted_utility": 0.5973936069573996,
+          "mean": 0.6137814302704019,
+          "p05": 0.5539600936000001,
+          "p95": 0.6665327155,
+          "cvar10": 0.5494790307520002,
+          "risk_adjusted_utility": 0.5977058303908015,
           "sample_count": 2500
         }
       },
       "group_impacts": {},
-      "probability_best": 0.0438,
-      "probability_best_unconstrained": 0.0438,
+      "probability_best": 0.0447,
+      "probability_best_unconstrained": 0.0447,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -250,12 +250,12 @@
       "alternative_id": "ejection-triage",
       "label": "Ejection Triage",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6488952244578005,
-      "utility_p05": 0.5844652732000001,
-      "utility_p95": 0.7092769099999999,
-      "cvar10": 0.578239756734,
-      "risk_adjusted_utility": 0.6312313575268503,
-      "value_score": 63.12313575268503,
+      "expected_utility": 0.6491027490679999,
+      "utility_p05": 0.5838401017,
+      "utility_p95": 0.7084924699999999,
+      "cvar10": 0.5789397075040004,
+      "risk_adjusted_utility": 0.6315619886770001,
+      "value_score": 63.156198867700006,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -269,8 +269,8 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.5179949960439961,
-          "normalized_score": 0.5179949960439961,
+          "mean": 0.517269502976001,
+          "normalized_score": 0.517269502976001,
           "scale_clipping_rate": 0.0,
           "p05": 0.431579,
           "p95": 0.602151
@@ -278,45 +278,45 @@
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.3177471123999996,
-          "normalized_score": 0.6822528876000087,
+          "mean": 0.3182597661639985,
+          "normalized_score": 0.6817402338360099,
           "scale_clipping_rate": 0.0,
-          "p05": 0.270903,
+          "p05": 0.274247,
           "p95": 0.36481644
         },
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.07775678008399965,
-          "normalized_score": 0.8444864398320026,
+          "mean": 0.07638119484399887,
+          "normalized_score": 0.8472376103120023,
           "scale_clipping_rate": 0.0,
-          "p05": 0.006474,
-          "p95": 0.157843
+          "p05": 0.006157,
+          "p95": 0.1564532439999996
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6563147913866697,
-          "p05": 0.5952635675,
-          "p95": 0.71322659,
-          "cvar10": 0.5898926057333335,
-          "risk_adjusted_utility": 0.6397092449733357,
+          "mean": 0.6562371591533331,
+          "p05": 0.59542535,
+          "p95": 0.7121544900000001,
+          "cvar10": 0.5905388869999999,
+          "risk_adjusted_utility": 0.6398125911149999,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6266365236711996,
-          "p05": 0.5641747201,
-          "p95": 0.6842935863999999,
-          "cvar10": 0.5592258819999997,
-          "risk_adjusted_utility": 0.6097838632533996,
+          "mean": 0.6276995188119994,
+          "p05": 0.5658055615,
+          "p95": 0.6848113735,
+          "cvar10": 0.561202716592,
+          "risk_adjusted_utility": 0.6110753182569996,
           "sample_count": 2500
         }
       },
       "group_impacts": {},
-      "probability_best": 0.0987,
-      "probability_best_unconstrained": 0.0987,
+      "probability_best": 0.1002,
+      "probability_best_unconstrained": 0.1002,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -324,12 +324,12 @@
       "alternative_id": "dual-marker-triage",
       "label": "Dual Marker Triage",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7059722924278,
-      "utility_p05": 0.636187023,
-      "utility_p95": 0.76655367,
-      "cvar10": 0.6313121982600011,
-      "risk_adjusted_utility": 0.6873072688858503,
-      "value_score": 68.73072688858502,
+      "expected_utility": 0.7053140922499993,
+      "utility_p05": 0.6352824119,
+      "utility_p95": 0.76560608,
+      "cvar10": 0.6304410206700007,
+      "risk_adjusted_utility": 0.6865958243549997,
+      "value_score": 68.65958243549997,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -343,8 +343,8 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.7259785514680015,
-          "normalized_score": 0.7259785514680015,
+          "mean": 0.7256887240719985,
+          "normalized_score": 0.7256887240719985,
           "scale_clipping_rate": 0.0,
           "p05": 0.6461905200000001,
           "p95": 0.808081
@@ -352,8 +352,8 @@
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.4342854083960017,
-          "normalized_score": 0.5657145916039897,
+          "mean": 0.43446850902800205,
+          "normalized_score": 0.5655314909719912,
           "scale_clipping_rate": 0.0,
           "p05": 0.381271,
           "p95": 0.488294
@@ -361,36 +361,36 @@
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.08086486642799935,
-          "normalized_score": 0.838270267143996,
+          "mean": 0.08181056174799933,
+          "normalized_score": 0.8363788765039913,
           "scale_clipping_rate": 0.0,
-          "p05": 0.008939,
-          "p95": 0.182513
+          "p05": 0.009979,
+          "p95": 0.18153180000000002
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7156277850399985,
-          "p05": 0.65354391,
-          "p95": 0.7697392525,
-          "cvar10": 0.6487770368666669,
-          "risk_adjusted_utility": 0.6989150979966656,
+          "mean": 0.7151248081133326,
+          "p05": 0.652800335,
+          "p95": 0.7700507550000001,
+          "cvar10": 0.6486303802666674,
+          "risk_adjusted_utility": 0.6985012011516663,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6770058145912007,
-          "p05": 0.6111940276,
-          "p95": 0.7323887385999999,
-          "cvar10": 0.6071102629119998,
-          "risk_adjusted_utility": 0.6595319266714005,
+          "mean": 0.6758819446599994,
+          "p05": 0.6115024981,
+          "p95": 0.732143827,
+          "cvar10": 0.6068829170799998,
+          "risk_adjusted_utility": 0.6586321877649994,
           "sample_count": 2500
         }
       },
       "group_impacts": {},
-      "probability_best": 0.8575,
-      "probability_best_unconstrained": 0.8575,
+      "probability_best": 0.8551,
+      "probability_best_unconstrained": 0.8551,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     }
@@ -403,25 +403,25 @@
       "factor": 0.6666666666666666,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.6828734277855293,
-        "ejection-triage": 0.6538571632828217,
-        "current-age-rule": 0.6416237573547046
+        "dual-marker-triage": 0.6822069608651764,
+        "ejection-triage": 0.654337104803764,
+        "current-age-rule": 0.6413710248284719
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.7024417761265879,
-          "cvar10": 0.6241683827623535,
-          "risk_adjusted_utility": 0.6828734277855293
+          "expected_utility": 0.7017185689872942,
+          "cvar10": 0.6236721364988229,
+          "risk_adjusted_utility": 0.6822069608651764
         },
         "ejection-triage": {
-          "expected_utility": 0.671995264766115,
-          "cvar10": 0.5994428588329417,
-          "risk_adjusted_utility": 0.6538571632828217
+          "expected_utility": 0.6723674395548227,
+          "cvar10": 0.6002461005505878,
+          "risk_adjusted_utility": 0.654337104803764
         },
         "current-age-rule": {
-          "expected_utility": 0.6589250639647042,
-          "cvar10": 0.5897198375247058,
-          "risk_adjusted_utility": 0.6416237573547046
+          "expected_utility": 0.6586127832395313,
+          "cvar10": 0.5896457495952934,
+          "risk_adjusted_utility": 0.6413710248284719
         }
       }
     },
@@ -432,25 +432,25 @@
       "factor": 1.5,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.6913217478902666,
-        "ejection-triage": 0.6071486894351228,
-        "current-age-rule": 0.5946547376778553
+        "dual-marker-triage": 0.6906663443748161,
+        "ejection-triage": 0.6073813922093465,
+        "current-age-rule": 0.5943899069201612
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.7096469114351853,
-          "cvar10": 0.6363462572555104,
-          "risk_adjusted_utility": 0.6913217478902666
+          "expected_utility": 0.7090563715642445,
+          "cvar10": 0.6354962628065308,
+          "risk_adjusted_utility": 0.6906663443748161
         },
         "ejection-triage": {
-          "expected_utility": 0.6248523253613881,
-          "cvar10": 0.5540377816563269,
-          "risk_adjusted_utility": 0.6071486894351228
+          "expected_utility": 0.624888479377632,
+          "cvar10": 0.55486013070449,
+          "risk_adjusted_utility": 0.6073813922093465
         },
         "current-age-rule": {
-          "expected_utility": 0.6126818277465281,
-          "cvar10": 0.5405734674718368,
-          "risk_adjusted_utility": 0.5946547376778553
+          "expected_utility": 0.612385443480487,
+          "cvar10": 0.5404032972391839,
+          "risk_adjusted_utility": 0.5943899069201612
         }
       }
     },
@@ -461,25 +461,25 @@
       "factor": 0.6666666666666666,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.7015257276050575,
-        "ejection-triage": 0.6261195324648359,
-        "current-age-rule": 0.6209226249374997
+        "dual-marker-triage": 0.7007942482662216,
+        "ejection-triage": 0.6265346093725557,
+        "current-age-rule": 0.6207581058508878
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.7215564814082246,
-          "cvar10": 0.6414334661955562,
-          "risk_adjusted_utility": 0.7015257276050575
+          "expected_utility": 0.7208454923919991,
+          "cvar10": 0.640640515888889,
+          "risk_adjusted_utility": 0.7007942482662216
         },
         "ejection-triage": {
-          "expected_utility": 0.6451888174420035,
-          "cvar10": 0.5689116775333332,
-          "risk_adjusted_utility": 0.6261195324648359
+          "expected_utility": 0.645476361871556,
+          "cvar10": 0.5697093518755549,
+          "risk_adjusted_utility": 0.6265346093725557
         },
         "current-age-rule": {
-          "expected_utility": 0.6395712090566663,
-          "cvar10": 0.5649768725800001,
-          "risk_adjusted_utility": 0.6209226249374997
+          "expected_utility": 0.6393141763493319,
+          "cvar10": 0.5650898943555556,
+          "risk_adjusted_utility": 0.6207581058508878
         }
       }
     },
@@ -490,25 +490,25 @@
       "factor": 1.5,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.6704648892915643,
-        "ejection-triage": 0.6370956500659533,
-        "current-age-rule": 0.6163167494934798
+        "dual-marker-triage": 0.6697841595068255,
+        "ejection-triage": 0.6373439249848257,
+        "current-age-rule": 0.6159988083124347
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.6876778097116512,
-          "cvar10": 0.618826128031304,
-          "risk_adjusted_utility": 0.6704648892915643
+          "expected_utility": 0.687081579039825,
+          "cvar10": 0.6178919009078266,
+          "risk_adjusted_utility": 0.6697841595068255
         },
         "ejection-triage": {
-          "expected_utility": 0.6532462239980829,
-          "cvar10": 0.5886439282695647,
-          "risk_adjusted_utility": 0.6370956500659533
+          "expected_utility": 0.6533598122986083,
+          "cvar10": 0.5892962630434782,
+          "risk_adjusted_utility": 0.6373439249848257
         },
         "current-age-rule": {
-          "expected_utility": 0.6323857072330453,
-          "cvar10": 0.5681098762747833,
-          "risk_adjusted_utility": 0.6163167494934798
+          "expected_utility": 0.632025503323826,
+          "cvar10": 0.5679187232782609,
+          "risk_adjusted_utility": 0.6159988083124347
         }
       }
     },
@@ -519,25 +519,25 @@
       "factor": 0.6666666666666666,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.6768069127421987,
-        "ejection-triage": 0.6147368615269272,
-        "current-age-rule": 0.5952278479078376
+        "dual-marker-triage": 0.6761833970752718,
+        "ejection-triage": 0.6149089849794547,
+        "current-age-rule": 0.5949076976900374
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.6939452038172347,
-          "cvar10": 0.6253920395170907,
-          "risk_adjusted_utility": 0.6768069127421987
+          "expected_utility": 0.6933991118632713,
+          "cvar10": 0.6245362527112731,
+          "risk_adjusted_utility": 0.6761833970752718
         },
         "ejection-triage": {
-          "expected_utility": 0.6311142048783273,
-          "cvar10": 0.5656048314727271,
-          "risk_adjusted_utility": 0.6147368615269272
+          "expected_utility": 0.6310904889549094,
+          "cvar10": 0.5663644730530908,
+          "risk_adjusted_utility": 0.6149089849794547
         },
         "current-age-rule": {
-          "expected_utility": 0.6120093993379653,
-          "cvar10": 0.5448831936174543,
-          "risk_adjusted_utility": 0.5952278479078376
+          "expected_utility": 0.6116655347842922,
+          "cvar10": 0.5446341864072731,
+          "risk_adjusted_utility": 0.5949076976900374
         }
       }
     },
@@ -548,25 +548,25 @@
       "factor": 1.5,
       "winner": "dual-marker-triage",
       "scores": {
-        "dual-marker-triage": 0.6992891167178663,
-        "ejection-triage": 0.6507433612032009,
-        "current-age-rule": 0.6471308851752009
+        "dual-marker-triage": 0.6986436189366674,
+        "ejection-triage": 0.6513616035619987,
+        "current-age-rule": 0.6469409568477354
       },
       "score_details": {
         "dual-marker-triage": {
-          "expected_utility": 0.7206720673962662,
-          "cvar10": 0.6351402646826665,
-          "risk_adjusted_utility": 0.6992891167178663
+          "expected_utility": 0.7198768460560007,
+          "cvar10": 0.6349439375786675,
+          "risk_adjusted_utility": 0.6986436189366674
         },
         "ejection-triage": {
-          "expected_utility": 0.670627581721601,
-          "cvar10": 0.5910906996480007,
-          "risk_adjusted_utility": 0.6507433612032009
+          "expected_utility": 0.6711177336506648,
+          "cvar10": 0.592093213296,
+          "risk_adjusted_utility": 0.6513616035619987
         },
         "current-age-rule": {
-          "expected_utility": 0.6659126857376011,
-          "cvar10": 0.5907854834880005,
-          "risk_adjusted_utility": 0.6471308851752009
+          "expected_utility": 0.6656563169472026,
+          "cvar10": 0.5907948765493339,
+          "risk_adjusted_utility": 0.6469409568477354
         }
       }
     }
@@ -600,31 +600,31 @@
       ],
       "alternatives": {
         "current-age-rule": {
-          "expected_utility": 0.6361177972272002,
-          "cvar10": 0.570276303452,
-          "risk_adjusted_utility": 0.6196574237834002,
+          "expected_utility": 0.6360052000001989,
+          "cvar10": 0.5704979491319995,
+          "risk_adjusted_utility": 0.6196283872831491,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0493
+          "probability_best": 0.049
         },
         "ejection-triage": {
-          "expected_utility": 0.6487889628281992,
-          "cvar10": 0.5819046888320009,
-          "risk_adjusted_utility": 0.6320678943291496,
+          "expected_utility": 0.6491819342095998,
+          "cvar10": 0.5825845023039998,
+          "risk_adjusted_utility": 0.6325325762331998,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1067
+          "probability_best": 0.1107
         },
         "dual-marker-triage": {
-          "expected_utility": 0.705876647997398,
-          "cvar10": 0.6342361408240003,
-          "risk_adjusted_utility": 0.6879665212040486,
+          "expected_utility": 0.705359674509399,
+          "cvar10": 0.6336281319920009,
+          "risk_adjusted_utility": 0.6874267888800494,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.844
+          "probability_best": 0.8403
         }
       }
     },
@@ -642,31 +642,31 @@
       ],
       "alternatives": {
         "current-age-rule": {
-          "expected_utility": 0.6362658782177999,
-          "cvar10": 0.5667164319599995,
-          "risk_adjusted_utility": 0.6188785166533498,
+          "expected_utility": 0.6359613867575993,
+          "cvar10": 0.5667158126160001,
+          "risk_adjusted_utility": 0.6186499932221995,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0438
+          "probability_best": 0.0447
         },
         "ejection-triage": {
-          "expected_utility": 0.6488952244578005,
-          "cvar10": 0.578239756734,
-          "risk_adjusted_utility": 0.6312313575268503,
+          "expected_utility": 0.6491027490679999,
+          "cvar10": 0.5789397075040004,
+          "risk_adjusted_utility": 0.6315619886770001,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0987
+          "probability_best": 0.1002
         },
         "dual-marker-triage": {
-          "expected_utility": 0.7059722924278,
-          "cvar10": 0.6313121982600011,
-          "risk_adjusted_utility": 0.6873072688858503,
+          "expected_utility": 0.7053140922499993,
+          "cvar10": 0.6304410206700007,
+          "risk_adjusted_utility": 0.6865958243549997,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8575
+          "probability_best": 0.8551
         }
       }
     },
@@ -684,31 +684,31 @@
       ],
       "alternatives": {
         "current-age-rule": {
-          "expected_utility": 0.6363290200636038,
-          "cvar10": 0.5638016515219993,
-          "risk_adjusted_utility": 0.6181971779282027,
+          "expected_utility": 0.6359499503741998,
+          "cvar10": 0.5638153328879991,
+          "risk_adjusted_utility": 0.6179162960026496,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0417
+          "probability_best": 0.0405
         },
         "ejection-triage": {
-          "expected_utility": 0.6489107137719998,
-          "cvar10": 0.5753581017659996,
-          "risk_adjusted_utility": 0.6305225607704997,
+          "expected_utility": 0.6490840153678005,
+          "cvar10": 0.5763028090079996,
+          "risk_adjusted_utility": 0.6308887137778503,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0908
+          "probability_best": 0.0932
         },
         "dual-marker-triage": {
-          "expected_utility": 0.7060194584414013,
-          "cvar10": 0.6287011181019999,
-          "risk_adjusted_utility": 0.686689873356551,
+          "expected_utility": 0.7052972915448001,
+          "cvar10": 0.6279091147019995,
+          "risk_adjusted_utility": 0.6859502473340999,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8675
+          "probability_best": 0.8663
         }
       }
     },
@@ -718,17 +718,17 @@
       {
         "left_alternative": "current-age-rule",
         "right_alternative": "ejection-triage",
-        "correlation": 0.2658933159184464
+        "correlation": 0.2762875612209116
       },
       {
         "left_alternative": "current-age-rule",
         "right_alternative": "dual-marker-triage",
-        "correlation": 0.2991085193302271
+        "correlation": 0.2979596267631498
       },
       {
         "left_alternative": "ejection-triage",
         "right_alternative": "dual-marker-triage",
-        "correlation": 0.285935391014255
+        "correlation": 0.28531984348146483
       }
     ]
   },

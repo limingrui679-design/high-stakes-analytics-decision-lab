@@ -65,7 +65,7 @@
 <text x="413.5" y="282.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.761</text>
 <text x="512.0" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.732</text>
+<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.731</text>
 <rect x="741.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
 <text x="843.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.726</text>
 <rect x="956.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
@@ -85,7 +85,7 @@
 <text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
 <text x="76.0" y="396.0" class="label" text-anchor="start">↑ Historical ES95 loss</text>
 <rect x="311.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.827</text>
+<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.826</text>
 <text x="512.0" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
 <text x="628.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.798</text>

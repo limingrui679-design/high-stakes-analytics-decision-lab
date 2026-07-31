@@ -1,0 +1,48 @@
+{
+  "rows": 12399,
+  "columns": 16,
+  "column_names": [
+    "transaction_id",
+    "sale_date",
+    "sale_year",
+    "borough",
+    "neighborhood",
+    "property_type",
+    "building_class_category",
+    "commercial_units",
+    "total_units",
+    "gross_square_feet",
+    "sale_price",
+    "price_per_sqft",
+    "year_built",
+    "latitude",
+    "longitude",
+    "community_board"
+  ],
+  "missing_count_by_column": {
+    "transaction_id": 0,
+    "sale_date": 0,
+    "sale_year": 0,
+    "borough": 0,
+    "neighborhood": 0,
+    "property_type": 0,
+    "building_class_category": 0,
+    "commercial_units": 0,
+    "total_units": 0,
+    "gross_square_feet": 0,
+    "sale_price": 0,
+    "price_per_sqft": 0,
+    "year_built": 0,
+    "latitude": 130,
+    "longitude": 130,
+    "community_board": 130
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 12399,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "status": "pass_with_minimization",
+    "notes": "The source is public administrative data. Street address and owner-identifying fields are not downloaded; the processed case uses a deterministic transaction key."
+  }
+}

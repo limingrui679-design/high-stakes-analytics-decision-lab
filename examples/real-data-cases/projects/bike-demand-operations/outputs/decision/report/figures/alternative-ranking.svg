@@ -56,8 +56,8 @@
 <circle cx="58" cy="160" r="17" fill="#4E7D32"/>
 <text x="58.0" y="165.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
 <text x="86.0" y="156.0" class="section" text-anchor="start">Robust Optimized</text>
-<rect x="366" y="145" width="453.7" height="30" rx="7" fill="#4E7D32" stroke="#355B20" stroke-width="2"/>
-<text x="809.7" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">60.0</text>
+<rect x="366" y="145" width="453.6" height="30" rx="7" fill="#4E7D32" stroke="#355B20" stroke-width="2"/>
+<text x="809.6" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">60.0</text>
 <rect x="86.0" y="180.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="199.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
 <text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 55% · U95 0.00%</text>
@@ -73,8 +73,8 @@
 <circle cx="58" cy="336" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="341.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
 <text x="86.0" y="332.0" class="label" text-anchor="start">Equal Baseline</text>
-<rect x="366" y="321" width="381.7" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
-<text x="737.7" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">50.5</text>
+<rect x="366" y="321" width="381.5" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
+<text x="737.5" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">50.5</text>
 <rect x="86.0" y="356.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="375.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
 <text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 0% · U95 0.00%</text>

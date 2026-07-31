@@ -12,4 +12,6 @@ Every `case.json` is explicitly marked:
 }
 ```
 
-They are excluded from the public portfolio, project counts, application mapping, and evidence claims. None is a real case study, real result, recommendation, or source-backed application example.
+They are excluded from the public portfolio, project counts, and empirical
+evidence claims. None is a real case study, real result, recommendation, or
+source-backed portfolio example.

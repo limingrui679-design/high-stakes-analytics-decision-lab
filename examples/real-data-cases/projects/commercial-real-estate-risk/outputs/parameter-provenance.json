@@ -1,0 +1,263 @@
+{
+  "schema_version": "1.0",
+  "project_id": "commercial-real-estate-risk",
+  "decision_use": "exploratory",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260730,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_segment_transactions",
+      "label": "minimum segment transactions",
+      "value_or_distribution": 50,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analyst-data-sufficiency-gate",
+      "source_fact": "Registered project configuration for minimum_segment_transactions; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Passing the count gate allows only property-level diligence."
+    },
+    {
+      "parameter_path": "config.parameters.loan_to_value",
+      "label": "loan to value",
+      "value_or_distribution": 0.65,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for loan_to_value; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Not an observed or recommended loan term."
+    },
+    {
+      "parameter_path": "config.parameters.amortization_years",
+      "label": "amortization years",
+      "value_or_distribution": 30,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for amortization_years; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Used only to expose debt-service sensitivity."
+    },
+    {
+      "parameter_path": "config.parameters.dscr_target",
+      "label": "dscr target",
+      "value_or_distribution": 1.25,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-financing-scenario",
+      "source_fact": "Registered project configuration for dscr_target; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Not a lender covenant or underwriting approval."
+    },
+    {
+      "parameter_path": "config.parameters.interest_rates",
+      "label": "interest rates",
+      "value_or_distribution": [
+        0.045,
+        0.065,
+        0.085
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-rate-stress-grid",
+      "source_fact": "Registered project configuration for interest_rates; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative fixed-rate grid, not a market quote or forecast."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-reproducibility-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is nyc-dof-annualized-property-sales-w2pb-icbu.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Transaction resampling does not correct administrative selection or measurement error."
+    }
+  ],
+  "coverage": {
+    "configured_parameter_count": 7,
+    "resolved_parameter_count": 7,
+    "source_coverage_rate": 1.0,
+    "independent_domain_review_rate": 0.0
+  },
+  "coverage_boundary": "Complete traceability does not imply external approval or strong evidence. All records remain exploratory and independently unreviewed."
+}

@@ -52,7 +52,7 @@
 <text x="573.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#4E7D32">WINNER</text>
 <text x="54.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Demand Proportional</text>
 <rect x="54.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="54.0" y="273.0" width="288.4" height="8.0" rx="4.0" fill="#246BFD"/>
+<rect x="54.0" y="273.0" width="288.3" height="8.0" rx="4.0" fill="#246BFD"/>
 <text x="573.0" y="281.0" class="mono" text-anchor="end">0.610</text>
 <text x="54.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Equal Baseline</text>
 <rect x="54.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
@@ -71,10 +71,10 @@
 <text x="627.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Demand Proportional</text>
 <rect x="627.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
 <rect x="627.0" y="273.0" width="273.6" height="8.0" rx="4.0" fill="#246BFD"/>
-<text x="1146.0" y="281.0" class="mono" text-anchor="end">0.578</text>
+<text x="1146.0" y="281.0" class="mono" text-anchor="end">0.579</text>
 <text x="627.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Equal Baseline</text>
 <rect x="627.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="627.0" y="317.0" width="227.6" height="8.0" rx="4.0" fill="#008C82"/>
+<rect x="627.0" y="317.0" width="227.3" height="8.0" rx="4.0" fill="#008C82"/>
 <text x="1146.0" y="325.0" class="mono" text-anchor="end">0.481</text>
 <line x1="36" y1="404.0" x2="1164" y2="404.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="426.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

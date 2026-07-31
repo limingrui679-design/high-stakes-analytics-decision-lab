@@ -1,0 +1,13 @@
+{
+  "project_id": "regime-aware-multi-asset-portfolio",
+  "primary_key": "date",
+  "fields": {
+    "date": "common US trading date in ISO format",
+    "SPY": "reviewed adjusted closing-price series for SPY; case label: US equity",
+    "TLT": "reviewed adjusted closing-price series for TLT; case label: long Treasury",
+    "VNQ": "reviewed adjusted closing-price series for VNQ; case label: listed real estate",
+    "GLD": "reviewed adjusted closing-price series for GLD; case label: gold",
+    "BIL": "reviewed adjusted closing-price series for BIL; case label: Treasury bills"
+  },
+  "interpretation_boundary": "Adjusted-price histories are an educational market-data snapshot. They do not establish tradability at the recorded price, future returns, suitability, or authorization to invest."
+}

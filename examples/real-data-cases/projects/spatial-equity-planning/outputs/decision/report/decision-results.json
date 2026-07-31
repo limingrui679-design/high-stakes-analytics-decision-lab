@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-28T10:06:12.258912+00:00",
+    "generated_at": "2026-07-30T18:39:26.774046+00:00",
     "case_id": "real-spatial-equity-planning",
     "case_hash_sha256": "b415e08e6d44ff656cac03f2e454798d876b19bb6a6cecb5578623dfd60ab6e9",
     "samples": 10000,
-    "seed": 20260727,
+    "seed": 20260726,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -34,14 +34,14 @@
       "baseline-poverty-priority"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.019216336972752823,
+    "utility_margin": 0.019660409890365327,
     "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 95.35,
+    "robustness_score": 95.416,
     "robustness_components": {
       "probability_best": {
-        "value": 0.845,
+        "value": 0.8472,
         "weight": 0.3
       },
       "weight_stability": {
@@ -172,12 +172,12 @@
       "alternative_id": "baseline-poverty-priority",
       "label": "Baseline: Poverty Priority",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7008679889214849,
-      "utility_p05": 0.649332923294,
-      "utility_p95": 0.7352737974700001,
-      "cvar10": 0.6475584709291029,
-      "risk_adjusted_utility": 0.6875406094233895,
-      "value_score": 68.75406094233895,
+      "expected_utility": 0.7009568048616243,
+      "utility_p05": 0.6499056751216,
+      "utility_p95": 0.73421125314,
+      "cvar10": 0.6484378526642646,
+      "risk_adjusted_utility": 0.6878270668122843,
+      "value_score": 68.78270668122843,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -191,54 +191,54 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.7678413482880019,
-          "normalized_score": 0.7678413482880019,
+          "mean": 0.7677027599475992,
+          "normalized_score": 0.7677027599475992,
           "scale_clipping_rate": 0.0,
-          "p05": 0.70630838,
+          "p05": 0.707138036,
           "p95": 0.8102524
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.6701945004463968,
-          "normalized_score": 0.6701945004463968,
+          "mean": 0.6706109635227947,
+          "normalized_score": 0.6706109635227947,
           "scale_clipping_rate": 0.0,
-          "p05": 0.6031809800000001,
+          "p05": 0.604313592,
           "p95": 0.7257916
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 19.80717324108828,
-          "normalized_score": 0.6038565351782308,
+          "mean": 19.805818586944216,
+          "normalized_score": 0.6038836282611093,
           "scale_clipping_rate": 0.0,
           "p05": 18.9386495,
-          "p95": 21.306821050799993
+          "p95": 21.288581352
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7144027985401076,
-          "p05": 0.69029614076,
-          "p95": 0.73742036359,
-          "cvar10": 0.6886435701597333,
-          "risk_adjusted_utility": 0.7079629914450141,
+          "mean": 0.7143331250151482,
+          "p05": 0.69035178174,
+          "p95": 0.7361470103100001,
+          "cvar10": 0.6890913452293328,
+          "risk_adjusted_utility": 0.7080226800686944,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6602635600656271,
-          "p05": 0.6379186966975999,
-          "p95": 0.6806209198040001,
-          "cvar10": 0.6361937081499517,
-          "risk_adjusted_utility": 0.6542460970867083,
+          "mean": 0.660827844401049,
+          "p05": 0.6399576299984001,
+          "p95": 0.6807122199960001,
+          "cvar10": 0.6382980119174401,
+          "risk_adjusted_utility": 0.6551953862801467,
           "sample_count": 2500
         }
       },
       "group_impacts": {},
-      "probability_best": 0.845,
-      "probability_best_unconstrained": 0.845,
+      "probability_best": 0.8472,
+      "probability_best_unconstrained": 0.8472,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -246,12 +246,12 @@
       "alternative_id": "transit-priority",
       "label": "Transit Priority",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5074087015103809,
-      "utility_p05": 0.4614225700364,
-      "utility_p95": 0.5439997228800001,
-      "cvar10": 0.4595764174021197,
-      "risk_adjusted_utility": 0.49545063048331556,
-      "value_score": 49.545063048331556,
+      "expected_utility": 0.5074626103032246,
+      "utility_p05": 0.4612045728859999,
+      "utility_p95": 0.54377827545,
+      "cvar10": 0.45961895061883173,
+      "risk_adjusted_utility": 0.4955016953821264,
+      "value_score": 49.55016953821264,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -265,48 +265,48 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.6195988335680006,
-          "normalized_score": 0.6195988335680006,
+          "mean": 0.6192036137843993,
+          "normalized_score": 0.6192036137843993,
           "scale_clipping_rate": 0.0,
-          "p05": 0.561474436,
-          "p95": 0.6703391999999999
+          "p05": 0.562270788,
+          "p95": 0.6697264
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.4082525444291996,
-          "normalized_score": 0.4082525444291996,
+          "mean": 0.40871840614360083,
+          "normalized_score": 0.40871840614360083,
           "scale_clipping_rate": 0.0,
-          "p05": 0.352954688,
-          "p95": 0.4632886
+          "p05": 0.35241363600000003,
+          "p95": 0.4693328
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 28.57479103635968,
-          "normalized_score": 0.4285041792728114,
+          "mean": 28.557614512503864,
+          "normalized_score": 0.4288477097499291,
           "scale_clipping_rate": 0.0,
-          "p05": 27.2698152,
+          "p05": 27.2295081,
           "p95": 30.706639812000002
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5182322728757068,
-          "p05": 0.49038799035999997,
-          "p95": 0.54650279149,
-          "cvar10": 0.4885084548376005,
-          "risk_adjusted_utility": 0.5108013183661803,
+          "mean": 0.5182983960898682,
+          "p05": 0.49067820763,
+          "p95": 0.54601777013,
+          "cvar10": 0.4891641585381329,
+          "risk_adjusted_utility": 0.5110148367019344,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.47493798741440557,
-          "p05": 0.44986664558239997,
-          "p95": 0.50128599943,
-          "cvar10": 0.44801487251372785,
-          "risk_adjusted_utility": 0.46820720868923615,
+          "mean": 0.47495525294330265,
+          "p05": 0.4493988208268,
+          "p95": 0.5015012791051999,
+          "cvar10": 0.4478619968589439,
+          "risk_adjusted_utility": 0.46818193892221294,
           "sample_count": 2500
         }
       },
@@ -320,12 +320,12 @@
       "alternative_id": "composite-equity",
       "label": "Composite Equity",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6817126106462301,
-      "utility_p05": 0.6300300146787999,
-      "utility_p95": 0.71816604684,
-      "cvar10": 0.6281592578638561,
-      "risk_adjusted_utility": 0.6683242724506366,
-      "value_score": 66.83242724506367,
+      "expected_utility": 0.6816153125068385,
+      "utility_p05": 0.6292473534884002,
+      "utility_p95": 0.7180137556999999,
+      "cvar10": 0.6278206901671606,
+      "risk_adjusted_utility": 0.668166656921919,
+      "value_score": 66.8166656921919,
       "constraint_violation_count": 0,
       "constraint_sample_count": 10000,
       "constraint_violation_rate": 0.0,
@@ -339,54 +339,54 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.7646620787048,
-          "normalized_score": 0.7646620787048,
+          "mean": 0.7645203665439954,
+          "normalized_score": 0.7645203665439954,
           "scale_clipping_rate": 0.0,
-          "p05": 0.702406108,
-          "p95": 0.8105911
+          "p05": 0.701909032,
+          "p95": 0.8108721
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.6430529608612028,
-          "normalized_score": 0.6430529608612028,
+          "mean": 0.643077405314003,
+          "normalized_score": 0.643077405314003,
           "scale_clipping_rate": 0.0,
-          "p05": 0.5762655704000001,
-          "p95": 0.7035618
+          "p05": 0.5753954160000001,
+          "p95": 0.703383
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 21.863465268087232,
-          "normalized_score": 0.5627306946382621,
+          "mean": 21.873986074465908,
+          "normalized_score": 0.5625202785106852,
           "scale_clipping_rate": 0.0,
-          "p05": 20.7590938,
-          "p95": 23.540078844
+          "p05": 20.8018655,
+          "p95": 23.575432536
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6949423883646891,
-          "p05": 0.67035851345,
-          "p95": 0.7201429688400001,
-          "cvar10": 0.6687966963106672,
-          "risk_adjusted_utility": 0.6884059653511836,
+          "mean": 0.6949181258148798,
+          "p05": 0.6698031898000001,
+          "p95": 0.7202650624,
+          "cvar10": 0.6683964492829333,
+          "risk_adjusted_utility": 0.6882877066818931,
           "sample_count": 7500
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6420232774908508,
-          "p05": 0.6183612583376001,
-          "p95": 0.6655302205160001,
-          "cvar10": 0.616964280871584,
-          "risk_adjusted_utility": 0.6357585283360341,
+          "mean": 0.6417068725827101,
+          "p05": 0.6190930525759999,
+          "p95": 0.6649205918272001,
+          "cvar10": 0.617491314113632,
+          "risk_adjusted_utility": 0.6356529829654406,
           "sample_count": 2500
         }
       },
       "group_impacts": {},
-      "probability_best": 0.155,
-      "probability_best_unconstrained": 0.155,
+      "probability_best": 0.1528,
+      "probability_best_unconstrained": 0.1528,
       "pareto_efficient": false,
       "pareto_efficient_unconstrained": false
     }
@@ -399,25 +399,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6758890712947992,
-        "composite-equity": 0.6538362999090243,
-        "transit-priority": 0.4758930780616179
+        "baseline-poverty-priority": 0.6762455582105746,
+        "composite-equity": 0.653685889457325,
+        "transit-priority": 0.4759580117562922
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.6890491607979848,
-          "cvar10": 0.6364088027852425,
-          "risk_adjusted_utility": 0.6758890712947992
+          "expected_utility": 0.6891781069052744,
+          "cvar10": 0.6374479121264753,
+          "risk_adjusted_utility": 0.6762455582105746
         },
         "composite-equity": {
-          "expected_utility": 0.6670744692241326,
-          "cvar10": 0.6141217919636991,
-          "risk_adjusted_utility": 0.6538362999090243
+          "expected_utility": 0.6669850088532208,
+          "cvar10": 0.6137885312696377,
+          "risk_adjusted_utility": 0.653685889457325
         },
         "transit-priority": {
-          "expected_utility": 0.48761044291198,
-          "cvar10": 0.4407409835105316,
-          "risk_adjusted_utility": 0.4758930780616179
+          "expected_utility": 0.48774360968890096,
+          "cvar10": 0.440601217958466,
+          "risk_adjusted_utility": 0.4759580117562922
         }
       }
     },
@@ -428,25 +428,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6995580322155206,
-        "composite-equity": 0.6832864791330269,
-        "transit-priority": 0.5156812518093562
+        "baseline-poverty-priority": 0.6997728215886839,
+        "composite-equity": 0.6831352937923761,
+        "transit-priority": 0.5157086087945212
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7131692181928879,
-          "cvar10": 0.6587244742834185,
-          "risk_adjusted_utility": 0.6995580322155206
+          "expected_utility": 0.7132162659998637,
+          "cvar10": 0.6594424883551447,
+          "risk_adjusted_utility": 0.6997728215886839
         },
         "composite-equity": {
-          "expected_utility": 0.6969482272284169,
-          "cvar10": 0.6423012348468571,
-          "risk_adjusted_utility": 0.6832864791330269
+          "expected_utility": 0.6968427714116239,
+          "cvar10": 0.6420128609346328,
+          "risk_adjusted_utility": 0.6831352937923761
         },
         "transit-priority": {
-          "expected_utility": 0.5280150522964745,
-          "cvar10": 0.4786798503480014,
-          "risk_adjusted_utility": 0.5156812518093562
+          "expected_utility": 0.5279864680854796,
+          "cvar10": 0.4788750309216459,
+          "risk_adjusted_utility": 0.5157086087945212
         }
       }
     },
@@ -457,25 +457,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6918615782389674,
-        "composite-equity": 0.6736662246177223,
-        "transit-priority": 0.5084219541461767
+        "baseline-poverty-priority": 0.6920659987214093,
+        "composite-equity": 0.673507992219994,
+        "transit-priority": 0.5084688099994588
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7049192043804579,
-          "cvar10": 0.6526886998144962,
-          "risk_adjusted_utility": 0.6918615782389674
+          "expected_utility": 0.704964746170523,
+          "cvar10": 0.6533697563740684,
+          "risk_adjusted_utility": 0.6920659987214093
         },
         "composite-equity": {
-          "expected_utility": 0.6868186021272732,
-          "cvar10": 0.6342090920890698,
-          "risk_adjusted_utility": 0.6736662246177223
+          "expected_utility": 0.686705224777589,
+          "cvar10": 0.6339162945472093,
+          "risk_adjusted_utility": 0.673507992219994
         },
         "transit-priority": {
-          "expected_utility": 0.5205047977286523,
-          "cvar10": 0.47217342339875024,
-          "risk_adjusted_utility": 0.5084219541461767
+          "expected_utility": 0.5205042976450617,
+          "cvar10": 0.47236234706265023,
+          "risk_adjusted_utility": 0.5084688099994588
         }
       }
     },
@@ -486,25 +486,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6825471295710811,
-        "composite-equity": 0.6621729304844212,
-        "transit-priority": 0.48067008110091136
+        "baseline-poverty-priority": 0.6829335302801812,
+        "composite-equity": 0.6620263851586619,
+        "transit-priority": 0.4807289367432861
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.6962995970209431,
-          "cvar10": 0.641289727221495,
-          "risk_adjusted_utility": 0.6825471295710811
+          "expected_utility": 0.6964372114707369,
+          "cvar10": 0.6424224867085143,
+          "risk_adjusted_utility": 0.6829335302801812
         },
         "composite-equity": {
-          "expected_utility": 0.6759547904654839,
-          "cvar10": 0.6208273505412328,
-          "risk_adjusted_utility": 0.6621729304844212
+          "expected_utility": 0.675875624201519,
+          "cvar10": 0.6204786680300903,
+          "risk_adjusted_utility": 0.6620263851586619
         },
         "transit-priority": {
-          "expected_utility": 0.4926407632216963,
-          "cvar10": 0.44475803473855663,
-          "risk_adjusted_utility": 0.48067008110091136
+          "expected_utility": 0.4927560267049851,
+          "cvar10": 0.44464766685818924,
+          "risk_adjusted_utility": 0.4807289367432861
         }
       }
     },
@@ -515,25 +515,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6939619460008303,
-        "composite-equity": 0.6763560691970175,
-        "transit-priority": 0.5008662688405793
+        "baseline-poverty-priority": 0.6942654150029225,
+        "composite-equity": 0.6762041214196328,
+        "transit-priority": 0.5009024687055568
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7077973784745746,
-          "cvar10": 0.6524556485795975,
-          "risk_adjusted_utility": 0.6939619460008303
+          "expected_utility": 0.707890603190229,
+          "cvar10": 0.653389850441003,
+          "risk_adjusted_utility": 0.6942654150029225
         },
         "composite-equity": {
-          "expected_utility": 0.6902113189325142,
-          "cvar10": 0.6347903199905276,
-          "risk_adjusted_utility": 0.6763560691970175
+          "expected_utility": 0.6901221006494208,
+          "cvar10": 0.6344501837302687,
+          "risk_adjusted_utility": 0.6762041214196328
         },
         "transit-priority": {
-          "expected_utility": 0.5130447388130654,
-          "cvar10": 0.4643308589231207,
-          "risk_adjusted_utility": 0.5008662688405793
+          "expected_utility": 0.5130779603427483,
+          "cvar10": 0.46437599379398214,
+          "risk_adjusted_utility": 0.5009024687055568
         }
       }
     },
@@ -544,25 +544,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.679361488200315,
-        "composite-equity": 0.6580926448359588,
-        "transit-priority": 0.4885343129640694
+        "baseline-poverty-priority": 0.679625644027734,
+        "composite-equity": 0.6579279076025962,
+        "transit-priority": 0.48860483161424495
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.6920487658539204,
-          "cvar10": 0.6412996552394984,
-          "risk_adjusted_utility": 0.679361488200315
+          "expected_utility": 0.692131970625214,
+          "cvar10": 0.6421066642352938,
+          "risk_adjusted_utility": 0.679625644027734
         },
         "composite-equity": {
-          "expected_utility": 0.670896072827327,
-          "cvar10": 0.619682360861854,
-          "risk_adjusted_utility": 0.6580926448359588
+          "expected_utility": 0.6707884912344629,
+          "cvar10": 0.6193461567069961,
+          "risk_adjusted_utility": 0.6579279076025962
         },
         "transit-priority": {
-          "expected_utility": 0.5002355631251496,
-          "cvar10": 0.45343056248082875,
-          "risk_adjusted_utility": 0.4885343129640694
+          "expected_utility": 0.5003158011620162,
+          "cvar10": 0.45347192297093103,
+          "risk_adjusted_utility": 0.48860483161424495
         }
       }
     }
@@ -596,31 +596,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7008072313493791,
-          "cvar10": 0.6480177095254884,
-          "risk_adjusted_utility": 0.6876098508934064,
+          "expected_utility": 0.7010063483027479,
+          "cvar10": 0.6489669193068716,
+          "risk_adjusted_utility": 0.6879964910537788,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8376
+          "probability_best": 0.8371
         },
         "transit-priority": {
-          "expected_utility": 0.5073445723763511,
-          "cvar10": 0.46047693540804036,
-          "risk_adjusted_utility": 0.4956276631342734,
+          "expected_utility": 0.5075122658530542,
+          "cvar10": 0.46036217086141595,
+          "risk_adjusted_utility": 0.4957247421051446,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.6816820945573947,
-          "cvar10": 0.6285688156207846,
-          "risk_adjusted_utility": 0.6684037748232422,
+          "expected_utility": 0.6816657541800918,
+          "cvar10": 0.628335908817,
+          "risk_adjusted_utility": 0.6683332928393189,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1624
+          "probability_best": 0.1629
         }
       }
     },
@@ -638,31 +638,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7008679889214849,
-          "cvar10": 0.6475584709291029,
-          "risk_adjusted_utility": 0.6875406094233895,
+          "expected_utility": 0.7009568048616243,
+          "cvar10": 0.6484378526642646,
+          "risk_adjusted_utility": 0.6878270668122843,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.845
+          "probability_best": 0.8472
         },
         "transit-priority": {
-          "expected_utility": 0.5074087015103809,
-          "cvar10": 0.4595764174021197,
-          "risk_adjusted_utility": 0.49545063048331556,
+          "expected_utility": 0.5074626103032246,
+          "cvar10": 0.45961895061883173,
+          "risk_adjusted_utility": 0.4955016953821264,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.6817126106462301,
-          "cvar10": 0.6281592578638561,
-          "risk_adjusted_utility": 0.6683242724506366,
+          "expected_utility": 0.6816153125068385,
+          "cvar10": 0.6278206901671606,
+          "risk_adjusted_utility": 0.668166656921919,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.155
+          "probability_best": 0.1528
         }
       }
     },
@@ -680,31 +680,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7008849487161634,
-          "cvar10": 0.6471322435312158,
-          "risk_adjusted_utility": 0.6874467724199265,
+          "expected_utility": 0.700943873065262,
+          "cvar10": 0.6480228165108723,
+          "risk_adjusted_utility": 0.6877136089266646,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8537
+          "probability_best": 0.8562
         },
         "transit-priority": {
-          "expected_utility": 0.507426184597742,
-          "cvar10": 0.45890799033216045,
-          "risk_adjusted_utility": 0.49529663603134666,
+          "expected_utility": 0.5074533334604494,
+          "cvar10": 0.45903706949551987,
+          "risk_adjusted_utility": 0.49534926746921704,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.681718170299374,
-          "cvar10": 0.6276786576104332,
-          "risk_adjusted_utility": 0.6682082921271388,
+          "expected_utility": 0.68159898409343,
+          "cvar10": 0.6273607303575918,
+          "risk_adjusted_utility": 0.6680394206594704,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1463
+          "probability_best": 0.1438
         }
       }
     },
@@ -714,17 +714,17 @@
       {
         "left_alternative": "baseline-poverty-priority",
         "right_alternative": "transit-priority",
-        "correlation": 0.6891017794776978
+        "correlation": 0.7041571632625688
       },
       {
         "left_alternative": "baseline-poverty-priority",
         "right_alternative": "composite-equity",
-        "correlation": 0.7701129701900852
+        "correlation": 0.7622780917810803
       },
       {
         "left_alternative": "transit-priority",
         "right_alternative": "composite-equity",
-        "correlation": 0.6846589593966492
+        "correlation": 0.6857434402188005
       }
     ]
   },

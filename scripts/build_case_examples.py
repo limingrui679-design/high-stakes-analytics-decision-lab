@@ -35,9 +35,9 @@ PROJECT_FIGURES = {
     "bike-demand-operations": "allocation-unmet.svg",
     "bank-marketing-response": "capacity-capture.svg",
     "treasury-risk-engineering": "expected-shortfall.svg",
-    "mckesson-financial-quality": "margin-trends.svg",
+    "regime-aware-multi-asset-portfolio": "portfolio-growth.svg",
     "cfpb-fintech-complaint-operations": "cumulative-gain.svg",
-    "federal-ai-governance": "governance-reporting.svg",
+    "commercial-real-estate-risk": "borough-price-per-sqft.svg",
     "spatial-equity-planning": "need-map.svg",
 }
 

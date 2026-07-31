@@ -1,0 +1,413 @@
+{
+  "project_id": "regime-aware-multi-asset-portfolio",
+  "data": {
+    "price_rows": 2766,
+    "evaluated_days": 2513,
+    "start": "2016-01-05",
+    "end": "2025-12-31",
+    "assets": [
+      "SPY",
+      "TLT",
+      "VNQ",
+      "GLD",
+      "BIL"
+    ]
+  },
+  "study_design": {
+    "unit": "common US trading day",
+    "information_set": "trailing 252 trading days available before each monthly rebalance",
+    "evaluation": "walk-forward daily returns after the initial lookback",
+    "benchmarks": [
+      "equal-weight benchmark",
+      "60/40 equity-Treasury benchmark"
+    ],
+    "claim_class": "historical portfolio-design comparison"
+  },
+  "strategy_metrics": {
+    "walk-forward inverse-volatility": {
+      "annualized_return": 0.06853351122645579,
+      "annualized_volatility": 0.07102446782083534,
+      "return_to_volatility": 0.9649281906530693,
+      "maximum_drawdown": -0.16611947377869773,
+      "daily_var95_loss": 0.006764850913664185,
+      "daily_expected_shortfall95_loss": 0.010360236901610271,
+      "annual_turnover": 0.015000000000000005
+    },
+    "equal-weight benchmark": {
+      "annualized_return": 0.07919956051242893,
+      "annualized_volatility": 0.08740415629324828,
+      "return_to_volatility": 0.9061303703534161,
+      "maximum_drawdown": -0.20243138362804058,
+      "daily_var95_loss": 0.008342725092882515,
+      "daily_expected_shortfall95_loss": 0.012769060756609149
+    },
+    "60/40 equity-Treasury benchmark": {
+      "annualized_return": 0.0927252396738596,
+      "annualized_volatility": 0.11439450985341133,
+      "return_to_volatility": 0.8105742119327282,
+      "maximum_drawdown": -0.272352758436217,
+      "daily_var95_loss": 0.011017475509716497,
+      "daily_expected_shortfall95_loss": 0.017049410180982834
+    }
+  },
+  "decision_options": {
+    "walk-forward inverse-volatility": {
+      "annualized_return": 0.06853351122645579,
+      "annualized_volatility": 0.07102446782083534,
+      "return_to_volatility": 0.9649281906530693,
+      "maximum_drawdown": -0.16611947377869773,
+      "daily_var95_loss": 0.006764850913664185,
+      "daily_expected_shortfall95_loss": 0.010360236901610271,
+      "annual_turnover": 0.015000000000000005
+    },
+    "equal-weight benchmark": {
+      "annualized_return": 0.07919956051242893,
+      "annualized_volatility": 0.08740415629324828,
+      "return_to_volatility": 0.9061303703534161,
+      "maximum_drawdown": -0.20243138362804058,
+      "daily_var95_loss": 0.008342725092882515,
+      "daily_expected_shortfall95_loss": 0.012769060756609149
+    },
+    "60/40 equity-Treasury benchmark": {
+      "annualized_return": 0.0927252396738596,
+      "annualized_volatility": 0.11439450985341133,
+      "return_to_volatility": 0.8105742119327282,
+      "maximum_drawdown": -0.272352758436217,
+      "daily_var95_loss": 0.011017475509716497,
+      "daily_expected_shortfall95_loss": 0.017049410180982834
+    }
+  },
+  "stress_periods": {
+    "pandemic selloff (2020-02-19 to 2020-03-23)": {
+      "walk-forward inverse-volatility": -0.11815430874828481,
+      "equal-weight benchmark": -0.1446996882219086,
+      "60/40 equity-Treasury benchmark": -0.16022695554116295
+    },
+    "2022 inflation/rate regime": {
+      "walk-forward inverse-volatility": -0.1212624388252388,
+      "equal-weight benchmark": -0.15101916185138053,
+      "60/40 equity-Treasury benchmark": -0.22830956908541578
+    }
+  },
+  "probability_best_shared_block_bootstrap": {
+    "block_months": 6,
+    "samples": 1000,
+    "probability_best": {
+      "walk-forward inverse-volatility": 0.008,
+      "equal-weight benchmark": 0.068,
+      "60/40 equity-Treasury benchmark": 0.924
+    },
+    "dependence_boundary": "Every strategy receives the same sampled month blocks, so common market shocks remain aligned."
+  },
+  "latest_walk_forward_weights": {
+    "month": "2025-12",
+    "SPY": 0.16249999999999998,
+    "TLT": 0.16249999999999998,
+    "VNQ": 0.16249999999999998,
+    "GLD": 0.16249999999999998,
+    "BIL": 0.35
+  },
+  "decision_support": {
+    "status": "research_only",
+    "next_action": "Use the walk-forward comparison to define a prospective paper portfolio; do not infer suitability or future outperformance.",
+    "reversal_conditions": [
+      "Results reverse under a separately sourced total-return history.",
+      "A realistic fee, tax, liquidity, or turnover model removes the observed advantage.",
+      "A longer crisis regime changes drawdown or tail-loss ordering.",
+      "The investor's horizon, liabilities, or fiduciary constraints reject the weight bounds."
+    ]
+  },
+  "provenance": {
+    "source_id": "yahoo-finance-chart-api-reviewed-etf-snapshot",
+    "citation": "Yahoo Finance Chart API adjusted-price histories for SPY, TLT, VNQ, GLD, and BIL; reviewed fixed-period snapshot",
+    "version": "2015-01-01 through 2025-12-31 request window",
+    "license": "Yahoo terms of service; upstream market-data rights remain separate",
+    "accessed_at": "2026-07-30",
+    "raw_sha256": {
+      "yahoo-adjusted-close-2015-2025.json": "8a29e3094f6280384bd98723f827b94de3f72538f80bd4beb8505413afe56546"
+    },
+    "config_sha256": "fc6e9811808a38b8d9da6341bf370861606bd4862cf377a56c964fa67a30e298"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260730,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.volatility_lookback_days",
+      "label": "volatility lookback days",
+      "value_or_distribution": 252,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "walk-forward-research-protocol",
+      "source_fact": "Registered project configuration for volatility_lookback_days; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Trailing information only; not asserted to be optimal."
+    },
+    {
+      "parameter_path": "config.parameters.rebalance_frequency",
+      "label": "rebalance frequency",
+      "value_or_distribution": "monthly",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "walk-forward-research-protocol",
+      "source_fact": "Registered project configuration for rebalance_frequency; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Trailing information only; not asserted to be optimal."
+    },
+    {
+      "parameter_path": "config.parameters.minimum_weight",
+      "label": "minimum weight",
+      "value_or_distribution": 0.05,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-diversification-constraint",
+      "source_fact": "Registered project configuration for minimum_weight; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative diversification bounds, not an investor mandate."
+    },
+    {
+      "parameter_path": "config.parameters.maximum_weight",
+      "label": "maximum weight",
+      "value_or_distribution": 0.35,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-diversification-constraint",
+      "source_fact": "Registered project configuration for maximum_weight; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Illustrative diversification bounds, not an investor mandate."
+    },
+    {
+      "parameter_path": "config.parameters.transaction_cost_bps",
+      "label": "transaction cost bps",
+      "value_or_distribution": 10,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-cost-sensitivity",
+      "source_fact": "Registered project configuration for transaction_cost_bps; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Does not include bid-ask variation, taxes, impact, or account-specific fees."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 1000,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "shared-market-shock-resampling-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "All strategies share sampled month blocks; the chosen block length remains a sensitivity."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_block_months",
+      "label": "bootstrap block months",
+      "value_or_distribution": 6,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "shared-market-shock-resampling-protocol",
+      "source_fact": "Registered project configuration for bootstrap_block_months; source dataset is yahoo-finance-chart-api-reviewed-etf-snapshot.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "All strategies share sampled month blocks; the chosen block length remains a sensitivity."
+    }
+  ]
+}

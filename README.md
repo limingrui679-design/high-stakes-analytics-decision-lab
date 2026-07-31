@@ -202,9 +202,9 @@ below shows the portfolio; the table opens each full report.
 | Bike-Demand Forecasting and Robust Allocation | 17,379 system-hours | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/bike-demand-operations/outputs/report.md) · [Figures](examples/real-data-cases/projects/bike-demand-operations/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-report.md) |
 | Marketing Response and Capacity Planning | 41,188 contacts | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/bank-marketing-response/outputs/report.md) · [Figures](examples/real-data-cases/projects/bank-marketing-response/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/decision-report.md) |
 | Treasury Yield-Curve Tail-Risk Engineering | 1,500 daily curves | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/treasury-risk-engineering/outputs/report.md) · [Figures](examples/real-data-cases/projects/treasury-risk-engineering/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/decision-report.md) |
-| SEC Peer Financial Quality and Cash Conversion | 3 firms × 8 fiscal years | descriptive → diagnostic | [Evidence](examples/real-data-cases/projects/mckesson-financial-quality/outputs/report.md) · [Figures](examples/real-data-cases/projects/mckesson-financial-quality/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/mckesson-financial-quality/outputs/decision/report/decision-report.md) |
+| Regime-Aware Multi-Asset Portfolio Construction | 5 assets × 2,766 common trading dates | descriptive → diagnostic → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/report.md) · [Figures](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/decision/report/decision-report.md) |
 | Complaint Monitoring and Negative Validation | 13,534 complaints | descriptive → predictive | [Evidence](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/report.md) · [Figures](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/chart-map.json) · [`do_not_deploy`](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md) |
-| Public AI Inventory Disclosure Readiness | 70 use cases × 34 fields | descriptive | [Evidence](examples/real-data-cases/projects/federal-ai-governance/outputs/report.md) · [Figures](examples/real-data-cases/projects/federal-ai-governance/outputs/chart-map.json) · [Evidence request](examples/real-data-cases/projects/federal-ai-governance/outputs/decision/report/decision-report.md) |
+| Commercial Real Estate Transactions and Regeneration Risk | 12,399 filtered transactions | descriptive → diagnostic → prescriptive | [Evidence](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/report.md) · [Figures](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md) |
 | Spatial Equity and Service-Hub Planning | 1,597 analyzed tracts | descriptive → prescriptive | [Evidence](examples/real-data-cases/projects/spatial-equity-planning/outputs/report.md) · [Figures](examples/real-data-cases/projects/spatial-equity-planning/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/decision-report.md) |
 
 [Open the complete visual gallery, case cards, and report index](examples/real-data-cases/README.md).
@@ -331,7 +331,22 @@ python3 scripts/route_question.py \
   --output-dir /absolute/path/to/blueprint
 ```
 
-When row-level data are available, copy and complete
+When a question and row-level data are available, initialize a reviewable
+workspace in one command:
+
+```bash
+python3 scripts/init_case.py /absolute/path/to/input.csv \
+  --question "Which customers are likely to respond next month?" \
+  --output-dir /absolute/path/to/customer-response-workspace
+```
+
+This preserves and hash-checks the source, creates a draft data contract, runs
+the quality gate, suggests an analytical route, and writes a short workspace
+guide. It does not apply cleaning, fit a model, or generate a recommendation.
+Add `--contract /absolute/path/to/data-contract.json` when a reviewed contract
+already exists.
+
+To run the same stages separately, copy and complete
 [`assets/data-contract-template.json`](assets/data-contract-template.json),
 then profile a CSV, TSV, JSON, JSONL, or NDJSON source:
 
@@ -438,7 +453,8 @@ Run the complete standalone verification suite:
 python3 -m unittest discover -s tests -v
 ```
 
-The 65 public tests cover data-readiness safety, the command-line round-trip,
+The 67 public tests cover data-readiness safety, custom-workspace
+initialization, the command-line round-trip,
 routing, the decision engine, ten-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
 package naming, links, and SVG accessibility.
@@ -457,7 +473,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # ten complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 65-test standalone regression suite
+└── tests/                          # complete 67-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence

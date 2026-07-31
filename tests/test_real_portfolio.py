@@ -24,7 +24,7 @@ PROJECT_ROOT = ROOT / "examples" / "real-data-cases" / "projects"
 SHARED_DIR = PROJECT_ROOT / "_shared"
 sys.path.insert(0, str(SHARED_DIR))
 from portfolio_modeling import _total_variation_distance  # noqa: E402
-from portfolio_core import is_missing_value  # noqa: E402
+from portfolio_core import PROJECTS_WITH_CASES, is_missing_value  # noqa: E402
 
 
 class RealPortfolioContractTests(unittest.TestCase):
@@ -97,7 +97,19 @@ class RealPortfolioContractTests(unittest.TestCase):
                 )
                 self.assertEqual(quality["rows"], manifest["expected_rows"])
                 self.assertTrue(quality["row_count_matches_manifest"])
-        self.assertEqual(checked, 22)
+        expected = sum(
+            len(
+                json.loads(
+                    (
+                        PROJECT_ROOT
+                        / item["id"]
+                        / "source-manifest.json"
+                    ).read_text(encoding="utf-8")
+                )["raw_files"]
+            )
+            for item in self.catalog["projects"]
+        )
+        self.assertEqual(checked, expected)
 
     def test_all_configured_parameters_have_resolved_records(self) -> None:
         for item in self.catalog["projects"]:
@@ -134,7 +146,7 @@ class RealPortfolioContractTests(unittest.TestCase):
         cases = sorted(
             PROJECT_ROOT.glob("*/outputs/decision/case.json")
         )
-        self.assertEqual(len(cases), 5)
+        self.assertEqual(len(cases), len(PROJECTS_WITH_CASES))
         for path in cases:
             with self.subTest(project=path.parents[2].name):
                 case = json.loads(path.read_text(encoding="utf-8"))
@@ -177,15 +189,28 @@ class RealPortfolioContractTests(unittest.TestCase):
             routed_ids.update(domain["project_ids"])
         self.assertEqual(routed_ids, real_ids)
 
-    def test_weak_cases_enforce_honest_claim_boundaries(self) -> None:
-        finance = json.loads(
+    def test_replacement_cases_enforce_honest_claim_boundaries(self) -> None:
+        portfolio = json.loads(
             (
                 PROJECT_ROOT
-                / "mckesson-financial-quality/outputs/results.json"
+                / "regime-aware-multi-asset-portfolio/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(finance["data"]["entities"], 3)
-        self.assertEqual(finance["data"]["company_years"], 24)
+        self.assertEqual(portfolio["data"]["price_rows"], 2766)
+        adaptive = portfolio["strategy_metrics"][
+            "walk-forward inverse-volatility"
+        ]
+        equal_weight = portfolio["strategy_metrics"][
+            "equal-weight benchmark"
+        ]
+        self.assertLess(
+            adaptive["daily_expected_shortfall95_loss"],
+            equal_weight["daily_expected_shortfall95_loss"],
+        )
+        self.assertGreater(
+            adaptive["maximum_drawdown"],
+            equal_weight["maximum_drawdown"],
+        )
 
         complaints = json.loads(
             (
@@ -203,116 +228,83 @@ class RealPortfolioContractTests(unittest.TestCase):
             0.9983333333333334,
         )
 
-        disclosure = json.loads(
+        real_estate = json.loads(
             (
                 PROJECT_ROOT
-                / "federal-ai-governance/outputs/results.json"
+                / "commercial-real-estate-risk/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(disclosure["public_fields_analyzed"], 34)
-        self.assertGreater(
-            disclosure["field_availability_status_counts"][
-                "unavailable in snapshot (0%)"
-            ],
-            0,
+        self.assertEqual(real_estate["data"]["transactions"], 12399)
+        self.assertEqual(
+            real_estate["planning_delivery"]["status"],
+            "diligence_screen_only",
         )
-        self.assertIn(
-            "not governance maturity",
-            disclosure["disclosure_readiness"]["interpretation"],
+        self.assertEqual(
+            real_estate["planning_delivery"][
+                "sufficiently_observed_segments"
+            ],
+            20,
         )
         quality = json.loads(
             (
                 PROJECT_ROOT
-                / "federal-ai-governance/data/quality-report.json"
+                / "commercial-real-estate-risk/data/quality-report.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(
-            quality["missing_count_by_column"]["High Impact Justification"],
-            70,
-        )
-        self.assertEqual(
-            disclosure["field_reporting_completeness"][
-                "High Impact Justification"
-            ],
-            0.0,
-        )
-        self.assertEqual(
-            disclosure["field_availability_status_counts"],
-            {
-                "fully populated (95–100%)": 12,
-                "partially populated (>0–<95%)": 8,
-                "unavailable in snapshot (0%)": 14,
-            },
-        )
-        self.assertAlmostEqual(
-            disclosure["disclosure_readiness"]["mean"],
-            0.4157142857142857,
-        )
+        self.assertEqual(quality["duplicate_key_count"], 0)
         case_index = json.loads(
             (
                 ROOT
                 / "examples/real-data-cases/cases.json"
             ).read_text(encoding="utf-8")
         )
-        governance_case = next(
+        real_estate_case = next(
             item
             for item in case_index["cases"]
-            if item["project_id"] == "federal-ai-governance"
+            if item["project_id"] == "commercial-real-estate-risk"
         )
         case_metrics = {
             item["label"]: item["value"]
-            for item in governance_case["headline_metrics"]
+            for item in real_estate_case["headline_metrics"]
         }
-        self.assertEqual(
-            case_metrics["Fields unavailable in the snapshot"],
-            "14",
-        )
-        self.assertEqual(
-            case_metrics["Mean disclosure readiness"],
-            "41.6% (observability only)",
-        )
+        self.assertEqual(case_metrics["Filtered transactions"], "12,399")
+        self.assertEqual(case_metrics["Break-even cap rate at 8.5% debt"], "7.5%")
 
-    def test_peer_panel_and_disclosure_taxonomy_properties(self) -> None:
-        finance = json.loads(
+    def test_portfolio_and_real_estate_numerical_properties(self) -> None:
+        portfolio = json.loads(
             (
                 PROJECT_ROOT
-                / "mckesson-financial-quality/outputs/results.json"
+                / "regime-aware-multi-asset-portfolio/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        by_year = {}
-        for row in finance["annual_metrics"]:
-            by_year.setdefault(row["fiscal_year"], []).append(row)
-        self.assertEqual(set(by_year), set(range(2018, 2026)))
-        for rows in by_year.values():
-            self.assertEqual(len(rows), 3)
-            self.assertEqual(
-                {row["peer_rank_operating_margin"] for row in rows},
-                {1, 2, 3},
-            )
-            median = sorted(row["operating_margin"] for row in rows)[1]
-            for row in rows:
-                self.assertAlmostEqual(
-                    row["peer_median_operating_margin"],
-                    median,
-                )
+        probabilities = portfolio[
+            "probability_best_shared_block_bootstrap"
+        ]["probability_best"]
+        self.assertAlmostEqual(sum(probabilities.values()), 1.0)
+        latest_weights = portfolio["latest_walk_forward_weights"]
+        self.assertAlmostEqual(
+            sum(latest_weights[symbol] for symbol in ("SPY", "TLT", "VNQ", "GLD", "BIL")),
+            1.0,
+        )
+        for symbol in ("SPY", "TLT", "VNQ", "GLD", "BIL"):
+            self.assertGreaterEqual(latest_weights[symbol], 0.05 - 1e-9)
+            self.assertLessEqual(latest_weights[symbol], 0.35 + 1e-9)
 
-        disclosure = json.loads(
+        real_estate = json.loads(
             (
                 PROJECT_ROOT
-                / "federal-ai-governance/outputs/results.json"
+                / "commercial-real-estate-risk/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        classified = [
-            field
-            for fields in disclosure["information_families"].values()
-            for field in fields
+        self.assertEqual(
+            set(real_estate["borough_statistics"]),
+            {"Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"},
+        )
+        cap_rates = [
+            item["break_even_cap_rate_for_target_dscr"]
+            for item in real_estate["financing_stress"]["scenarios"]
         ]
-        self.assertEqual(len(classified), 34)
-        self.assertEqual(len(set(classified)), 34)
-        self.assertEqual(
-            sum(disclosure["field_availability_status_counts"].values()),
-            34,
-        )
+        self.assertEqual(cap_rates, sorted(cap_rates))
 
     def test_modular_runtime_has_small_stable_facade(self) -> None:
         shared = PROJECT_ROOT / "_shared"
@@ -324,8 +316,9 @@ class RealPortfolioContractTests(unittest.TestCase):
             "portfolio_core.py",
             "portfolio_clinical.py",
             "portfolio_modeling.py",
-            "portfolio_finance.py",
-            "portfolio_governance_spatial.py",
+            "portfolio_treasury.py",
+            "portfolio_spatial.py",
+            "portfolio_asset_realestate.py",
             "portfolio_reporting.py",
         ]
         for name in modules:

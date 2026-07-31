@@ -56,24 +56,24 @@
 <text x="1034.0" y="126.0" class="small" text-anchor="end">P95</text>
 <rect x="30.0" y="150.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="180.0" class="section" text-anchor="start">Dual Marker Triage</text>
-<rect x="782.2" y="169.0" width="90.2" height="14" rx="7" fill="#DDF5F2"/>
-<line x1="782.2" y1="176" x2="872.5" y2="176" stroke="#008C82" stroke-width="2"/>
-<circle cx="830.5" cy="176" r="8" fill="#008C82" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 778.9 168.0 L 786.9 176.0 L 778.9 184.0 L 770.9 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.706</text>
-<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.631</text>
+<rect x="781.6" y="169.0" width="90.2" height="14" rx="7" fill="#DDF5F2"/>
+<line x1="781.6" y1="176" x2="871.8" y2="176" stroke="#008C82" stroke-width="2"/>
+<circle cx="830.1" cy="176" r="8" fill="#008C82" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 778.3 168.0 L 786.3 176.0 L 778.3 184.0 L 770.3 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.705</text>
+<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.630</text>
 <text x="48.0" y="252.0" class="label" text-anchor="start">Ejection Triage</text>
-<rect x="746.4" y="241.0" width="86.4" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="746.4" y1="248" x2="832.8" y2="248" stroke="#263449" stroke-width="2"/>
-<circle cx="791.0" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 742.1 240.0 L 750.1 248.0 L 742.1 256.0 L 734.1 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<rect x="746.0" y="241.0" width="86.3" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="746.0" y1="248" x2="832.3" y2="248" stroke="#263449" stroke-width="2"/>
+<circle cx="791.2" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 742.6 240.0 L 750.6 248.0 L 742.6 256.0 L 734.6 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
 <text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.649</text>
-<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.578</text>
+<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.579</text>
 <rect x="30.0" y="294.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="324.0" class="label" text-anchor="start">Current Age Rule</text>
-<rect x="737.5" y="313.0" width="83.6" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="737.5" y1="320" x2="821.1" y2="320" stroke="#263449" stroke-width="2"/>
-<circle cx="782.3" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<rect x="737.3" y="313.0" width="83.1" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="737.3" y1="320" x2="820.4" y2="320" stroke="#263449" stroke-width="2"/>
+<circle cx="782.1" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
 <path d="M 734.2 312.0 L 742.2 320.0 L 734.2 328.0 L 726.2 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
 <text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.636</text>
 <text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.567</text>

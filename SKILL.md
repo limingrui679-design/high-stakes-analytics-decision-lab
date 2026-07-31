@@ -65,7 +65,20 @@ starting a new project.
 
 Whenever a user supplies row-level data, preserve the source unchanged and run
 the data-quality gate before calculating a descriptive result, fitting a model,
-or comparing decisions. Copy and complete
+or comparing decisions. For a new dataset, initialize the complete review
+workspace in one command:
+
+```bash
+python3 scripts/init_case.py /absolute/path/to/input.csv \
+  --question "Which groups are most likely to need support next month?" \
+  --output-dir /absolute/path/to/case-workspace
+```
+
+The initializer preserves and hash-checks the source, drafts the contract,
+profiles quality, routes the question, and lists unresolved decisions. It must
+not apply cleaning, fit a model, or generate a recommendation.
+
+To run the gate separately, copy and complete
 [data-contract-template.json](assets/data-contract-template.json), then run:
 
 ```bash

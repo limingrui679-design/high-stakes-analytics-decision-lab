@@ -118,8 +118,8 @@ This test both increases and decreases each criterion weight while preserving ri
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
 | 1 | Robust Optimized | Yes | 60.0 | 0.608 | 0.575 | 54.9% | 54.9% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Demand Proportional | Yes | 59.8 | 0.607 | 0.572 | 45.1% | 45.1% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 3 | Equal Baseline | Yes | 50.5 | 0.515 | 0.474 | 0.0% | 0.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Demand Proportional | Yes | 59.8 | 0.607 | 0.573 | 45.1% | 45.1% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 3 | Equal Baseline | Yes | 50.5 | 0.515 | 0.473 | 0.0% | 0.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
 
 ### Readiness checks
 
@@ -152,8 +152,8 @@ No hard constraints were supplied.
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Unmet demand | 45.0% | 0.22 share | 0.203 share–0.24 share | 0.559 | 0.0% |
-| Wet-day unmet demand | 35.0% | 0.172 share | 0.153 share–0.194 share | 0.657 | 0.0% |
+| Unmet demand | 45.0% | 0.22 share | 0.202 share–0.24 share | 0.560 | 0.0% |
+| Wet-day unmet demand | 35.0% | 0.172 share | 0.153 share–0.194 share | 0.656 | 0.0% |
 | Shift imbalance | 20.0% | 0.281 allocation range/total | 0.275 allocation range/total–0.297 allocation range/total | 0.626 | 0.0% |
 
 #### Equal Baseline
@@ -161,7 +161,7 @@ No hard constraints were supplied.
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
 | Unmet demand | 45.0% | 0.327 share | 0.308 share–0.355 share | 0.346 | 0.0% |
-| Wet-day unmet demand | 35.0% | 0.272 share | 0.248 share–0.3 share | 0.456 | 0.0% |
+| Wet-day unmet demand | 35.0% | 0.272 share | 0.248 share–0.3 share | 0.455 | 0.0% |
 | Shift imbalance | 20.0% | 0 allocation range/total | 0 allocation range/total–0 allocation range/total | 1.000 | 0.0% |
 
 ### Correlation sensitivity
@@ -186,7 +186,7 @@ Coverage: **48/48 parameters sourced** and **48/48 approved for the declared use
 - projects/bike-demand-operations/outputs/results.json
 - Engine version: `7.0.0`
 - Samples: `10000`
-- Random seed: `20260727`
+- Random seed: `20260726`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
 - Case SHA-256: `0c41a2b9ae0ac2f54d721052a168fd265d4acfb894b484490fab765bf31e8a3f`
 

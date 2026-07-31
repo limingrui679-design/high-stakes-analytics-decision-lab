@@ -55,7 +55,7 @@
 <text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
 <text x="290.0" y="206.0" class="value" text-anchor="start">52</text>
 <rect x="290.0" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="219.0" width="138.2" height="8.0" rx="4.0" fill="#7257D9"/>
+<rect x="290.0" y="219.0" width="138.1" height="8.0" rx="4.0" fill="#7257D9"/>
 <text x="290.0" y="241.0" class="small" text-anchor="start">mid-range</text>
 <text x="586.7" y="206.0" class="value" text-anchor="start">94</text>
 <rect x="586.7" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
@@ -63,27 +63,27 @@
 <text x="586.7" y="241.0" class="small" text-anchor="start">higher value</text>
 <text x="883.3" y="206.0" class="value" text-anchor="start">91</text>
 <rect x="883.3" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="219.0" width="239.9" height="8.0" rx="4.0" fill="#7257D9"/>
+<rect x="883.3" y="219.0" width="239.8" height="8.0" rx="4.0" fill="#7257D9"/>
 <text x="883.3" y="241.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="256.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="48.0" y="285.0" class="label" text-anchor="start">Intermediate</text>
 <text x="290.0" y="282.0" class="value" text-anchor="start">50</text>
 <rect x="290.0" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="295.0" width="132.7" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="295.0" width="132.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="317.0" class="small" text-anchor="start">mid-range</text>
 <text x="586.7" y="282.0" class="value" text-anchor="start">92</text>
 <rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="295.0" width="243.4" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="295.0" width="243.3" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="317.0" class="small" text-anchor="start">higher value</text>
 <text x="883.3" y="282.0" class="value" text-anchor="start">87</text>
 <rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="295.0" width="230.4" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="883.3" y="295.0" width="230.3" height="8.0" rx="4.0" fill="#263449"/>
 <text x="883.3" y="317.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="48.0" y="361.0" class="label" text-anchor="start">Barbell</text>
 <text x="290.0" y="358.0" class="value" text-anchor="start">49</text>
 <rect x="290.0" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="371.0" width="129.9" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="371.0" width="129.8" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="393.0" class="small" text-anchor="start">mid-range</text>
 <text x="586.7" y="358.0" class="value" text-anchor="start">92</text>
 <rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
@@ -91,13 +91,13 @@
 <text x="586.7" y="393.0" class="small" text-anchor="start">higher value</text>
 <text x="883.3" y="358.0" class="value" text-anchor="start">86</text>
 <rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="371.0" width="228.6" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="883.3" y="371.0" width="228.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="883.3" y="393.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="408.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="48.0" y="437.0" class="label" text-anchor="start">Long Duration</text>
 <text x="290.0" y="434.0" class="value" text-anchor="start">47</text>
 <rect x="290.0" y="447.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="447.0" width="125.4" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="447.0" width="125.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="469.0" class="small" text-anchor="start">mid-range</text>
 <text x="586.7" y="434.0" class="value" text-anchor="start">89</text>
 <rect x="586.7" y="447.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>

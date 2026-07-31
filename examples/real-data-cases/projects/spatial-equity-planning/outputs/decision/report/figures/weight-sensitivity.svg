@@ -99,7 +99,7 @@
 <text x="76.0" y="520.0" class="label" text-anchor="start">↑ Population-weighted</text>
 <text x="76.0" y="535.0" class="label" text-anchor="start">distance</text>
 <rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#FCE7E2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.679</text>
+<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.680</text>
 <text x="583.7" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#FCE7E2" stroke="#D9E2EC" stroke-width="1"/>
 <text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.658</text>

@@ -50,7 +50,7 @@
 <rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.605</text>
 <rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.607</text>
+<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.606</text>
 <text x="870.3" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.535</text>
@@ -81,7 +81,7 @@
 <rect x="597.7" y="380.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.605</text>
 <rect x="884.3" y="380.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.496</text>
+<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.495</text>
 <rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="458.0" class="label" text-anchor="start">↓ Shift imbalance</text>
@@ -91,7 +91,7 @@
 <rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.597</text>
 <rect x="884.3" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.470</text>
+<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.469</text>
 <text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#4E7D32">↑</text>
 <text x="76.0" y="520.0" class="label" text-anchor="start">↑ Shift imbalance</text>
 <rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>

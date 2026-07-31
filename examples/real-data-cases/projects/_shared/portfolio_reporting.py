@@ -6,8 +6,9 @@ from __future__ import annotations
 from portfolio_core import *
 from portfolio_clinical import *
 from portfolio_modeling import *
-from portfolio_finance import *
-from portfolio_governance_spatial import *
+from portfolio_treasury import *
+from portfolio_spatial import *
+from portfolio_asset_realestate import *
 
 ANALYZERS: dict[str, Callable[[Path], dict[str, Any]]] = {
     "population-health-survival": analyze_population,
@@ -15,12 +16,15 @@ ANALYZERS: dict[str, Callable[[Path], dict[str, Any]]] = {
     "census-income-ai": analyze_adult,
     "bike-demand-operations": analyze_bike,
     "treasury-risk-engineering": analyze_treasury,
-    "federal-ai-governance": analyze_ai_governance,
+    "commercial-real-estate-risk": analyze_real_estate,
     "spatial-equity-planning": analyze_spatial,
     "bank-marketing-response": analyze_bank_marketing,
-    "mckesson-financial-quality": analyze_mckesson,
+    "regime-aware-multi-asset-portfolio": analyze_multi_asset,
     "cfpb-fintech-complaint-operations": analyze_cfpb,
 }
+
+PREPARERS["regime-aware-multi-asset-portfolio"] = prepare_multi_asset
+PREPARERS["commercial-real-estate-risk"] = prepare_real_estate
 
 
 REPORT_COPY = {
@@ -75,16 +79,16 @@ REPORT_COPY = {
         "methods": "Source-order train/validation/test design, leakage-controlled mixed naive Bayes, AUC/Brier/calibration, capacity lift, subgroup checks, shared block bootstrap, and decision sensitivity.",
         "limits": "The source supplies order but not full dates, comes from one bank and campaign system, and is observational; response is not causal lift, value, or profit.",
     },
-    "mckesson-financial-quality": {
-        "answer": "Across 24 company-years, all three drug distributors combine large scale with thin operating margins; recurring cash-conversion and working-capital gaps warrant filing-level reconciliation, not a security ranking.",
+    "regime-aware-multi-asset-portfolio": {
+        "answer": "The walk-forward allocation is evaluated against equal-weight and 60/40 benchmarks under shared market histories, costs, drawdowns, and correlated stress; it is research evidence, not an investment mandate.",
         "findings": [
-            "The panel contains three direct industry peers and eight common fiscal years, with every fact reconciled to entity, CIK, tag, accession, filing date, and fiscal period.",
-            "Within-year peer medians and ranks separate cross-sectional differences from each company's own time trend.",
-            "Operating-margin dispersion and working-capital-cycle dispersion are reported by year rather than inferred from one latest observation.",
-            "Margin stress remains an analyst sensitivity, while cash-conversion alerts only prioritize footnote review.",
+            "Every strategy is evaluated on the same post-lookback trading days and the adaptive allocation uses only trailing information at each monthly rebalance.",
+            "Shared month-block resampling keeps common market shocks aligned when estimating probability-best.",
+            "Historical pandemic and 2022 rate-regime performance are reported separately from full-period averages.",
+            "Transaction-cost, turnover, drawdown, and tail-loss evidence prevent a return-only ranking.",
         ],
-        "methods": "Multi-entity SEC Companyfacts reconciliation, entity-specific fiscal calendars, common-size statements, cash-earnings quality, free-cash-flow proxy, working-capital cycles, peer medians and ranks, dispersion, persistence flags, and explicit margin stress.",
-        "limits": "A common SIC and XBRL taxonomy do not equal economic comparability. Consolidated facts omit footnote detail, segment economics, acquisition effects, non-GAAP reconciliations, market prices, and valuation.",
+        "methods": "Adjusted-price alignment, daily returns, monthly walk-forward inverse-volatility allocation, bounded weights, declared turnover cost, equal-weight and 60/40 benchmarks, drawdown, historical VaR/ES, regime stress, and shared moving-block bootstrap.",
+        "limits": "The provider snapshot and ETF proxies omit taxes, bid–ask spreads, market impact, tracking error, investor liabilities, capacity, and future regimes. Historical adjusted prices do not establish future performance or suitability.",
     },
     "cfpb-fintech-complaint-operations": {
         "answer": "The later-period ranking model fails the deployment gate: AUC is weak and top-capacity lift is not reliably above random review. The defensible contribution is the privacy-preserving data contract, calendar validation, and explicit negative result.",
@@ -107,16 +111,16 @@ REPORT_COPY = {
         "methods": "Yield-curve changes, first-order duration returns, empirical VaR/ES, drawdown, rolling Kupiec coverage, Christoffersen independence, regime stress, and block-length sensitivity.",
         "limits": "Approximate hypothetical portfolios omit convexity, security selection, bid–ask costs, taxes, financing, and investability.",
     },
-    "federal-ai-governance": {
-        "answer": "The public DOT inventory supports a disclosure-readiness analysis, not a governance-capability assessment: several operational fields are informative, while an entire set of assurance and recourse questions remains unmeasurable from this snapshot.",
+    "commercial-real-estate-risk": {
+        "answer": "Public sales records support a transaction-liquidity and price screen; financing scenarios can identify evidence needs, but property-level income, condition, leases, title, and loan terms are required before valuation or investment.",
         "findings": [
-            "The assurance-and-recourse view separates populated classification fields from control-evidence fields that are unavailable in the snapshot.",
-            "Every processed public field is counted exactly once and classified as fully populated, partially populated, or unavailable.",
-            "The stage-by-family matrix shows disclosure structure without ranking systems or inferring control quality.",
-            "Information-family coverage identifies which additional evidence requests must precede governance, safety, ethics, or compliance evaluation.",
+            "Borough medians are paired with transaction counts, dispersion, and bootstrap uncertainty rather than treated as appraisal values.",
+            "Annual transaction activity shows how observed liquidity changes across the post-2020 rate regime.",
+            "The financing layer reports break-even cap-rate requirements under declared LTV, amortization, rate, and DSCR assumptions.",
+            "Segments pass only a public-data sufficiency gate and advance to property-level diligence, never directly to acquisition.",
         ],
-        "methods": "Complete public-schema inventory, six-family disclosure taxonomy, field availability classification, stage-by-family completeness, measurement-readiness distribution, privacy suppression, and an explicit evidence-request schema.",
-        "limits": "Public self-reported inventory only. Missing fields may reflect publication rules or snapshot design; internal evidence, control effectiveness, safety, ethics, compliance, and exempt use cases are not observed.",
+        "methods": "Administrative transaction filtering, privacy minimization, robust price-per-square-foot summaries, median bootstrap intervals, borough/property-type segment depth, annual liquidity trends, and amortizing-debt break-even cap-rate scenarios.",
+        "limits": "The source does not establish arm's-length status, lease income, operating expenses, occupancy, property condition, appraisal value, zoning feasibility, financing availability, or causal regeneration effects.",
     },
     "spatial-equity-planning": {
         "answer": "Need is spatially clustered, and composite location allocation balances poverty, transit dependence, and housing pressure better than a single-indicator rule.",
@@ -238,36 +242,30 @@ VISUAL_COPY: dict[str, list[dict[str, str]]] = {
             "boundary": "Only a randomized campaign can establish incremental effect and ROI.",
         },
     ],
-    "mckesson-financial-quality": [
+    "regime-aware-multi-asset-portfolio": [
         {
-            "file": "revenue-scale.svg",
-            "title": "Scale is compared on a reconciled peer-year panel",
-            "finding": "Revenue trajectories establish the denominator context for interpreting thin margins and cash conversion.",
-            "boundary": "Common industry classification and XBRL tags do not guarantee economic comparability.",
+            "file": "portfolio-growth.svg",
+            "title": "Walk-forward growth remains benchmarked through time",
+            "finding": "The adaptive allocation uses only trailing information and remains beside equal-weight and 60/40 references.",
+            "boundary": "Historical adjusted-price performance does not establish future returns, suitability, or executable prices.",
         },
         {
-            "file": "margin-trends.svg",
-            "title": "Thin operating margins persist across the peer set",
-            "finding": "Eight common fiscal years separate company-specific movement from a one-period snapshot.",
-            "boundary": "Consolidated filing facts omit segment mix, acquisition effects, and non-GAAP reconciliations.",
+            "file": "risk-adjusted-performance.svg",
+            "title": "Risk-adjusted performance is one comparison, not a mandate",
+            "finding": "Annualized return is read beside volatility, turnover, drawdown, and explicit benchmarks.",
+            "boundary": "The ratio omits investor liabilities, taxes, capacity, and preference-specific utility.",
         },
         {
-            "file": "peer-margin-gap.svg",
-            "title": "Within-year peer gaps distinguish cross-section from trend",
-            "finding": "Peer medians and ranks show relative positioning without converting the panel into a security recommendation.",
-            "boundary": "The comparison is an accounting diagnostic, not a valuation or investment ranking.",
+            "file": "tail-loss.svg",
+            "title": "Tail loss remains visible across every strategy",
+            "finding": "Expected shortfall reports the severity beyond the historical 95% loss quantile.",
+            "boundary": "Historical tails are incomplete stress evidence and can understate an unobserved regime.",
         },
         {
-            "file": "working-capital-days.svg",
-            "title": "Working-capital cycles identify where diligence should deepen",
-            "finding": "Receivables, inventory, and payables timing are combined into a comparable operating-cycle view.",
-            "boundary": "Alerts prioritize filing and footnote review; they do not prove earnings-management or liquidity stress.",
-        },
-        {
-            "file": "cash-earnings.svg",
-            "title": "Cash conversion is interpreted beside reported earnings",
-            "finding": "Operating cash flow and earnings relationships reveal recurring reconciliation questions across company-years.",
-            "boundary": "Cash-to-earnings variation can reflect legitimate business timing and requires filing-level explanation.",
+            "file": "probability-best.svg",
+            "title": "Probability-best preserves correlated market shocks",
+            "finding": "All strategies receive the same sampled month blocks rather than independent perturbations.",
+            "boundary": "Bootstrap frequency is conditional on this history, block length, strategy set, and estimation design.",
         },
     ],
     "cfpb-fintech-complaint-operations": [
@@ -328,36 +326,30 @@ VISUAL_COPY: dict[str, list[dict[str, str]]] = {
             "boundary": "Passing one backtest does not validate the full return model or authorize investment use.",
         },
     ],
-    "federal-ai-governance": [
+    "commercial-real-estate-risk": [
         {
-            "file": "governance-reporting.svg",
-            "title": "Public reporting coverage varies by information family",
-            "finding": "The complete public schema shows what an external reader can observe across inventory fields.",
-            "boundary": "Disclosure coverage measures observability, never control quality or governance capability.",
+            "file": "borough-price-per-sqft.svg",
+            "title": "Transaction pricing differs across boroughs",
+            "finding": "Median nominal price per reported gross square foot is paired with count, dispersion, and bootstrap uncertainty.",
+            "boundary": "Administrative sale price is not appraisal value and the source does not establish arm's-length status or condition.",
         },
         {
-            "file": "field-status.svg",
-            "title": "Every public field is classified exactly once",
-            "finding": "Fully populated, partially populated, and unavailable fields use one missing-value rule, including NA tokens.",
-            "boundary": "A missing public field may reflect publication design, exemption, or non-disclosure rather than an absent internal control.",
+            "file": "transaction-activity.svg",
+            "title": "Observed liquidity changes across calendar years",
+            "finding": "Filtered transaction counts show the market activity available to the public-data screen.",
+            "boundary": "Recorded sales do not measure unsold inventory, financing availability, demand, or causal rate effects.",
         },
         {
-            "file": "stage-distribution.svg",
-            "title": "Lifecycle-stage patterns provide descriptive context",
-            "finding": "Use cases are grouped by reported stage without converting stage labels into maturity scores.",
-            "boundary": "Self-reported stages are not independently verified operating states.",
+            "file": "financing-stress.svg",
+            "title": "Debt cost changes the income hurdle",
+            "finding": "Break-even cap rates expose the NOI required by declared LTV, rate, amortization, and DSCR assumptions.",
+            "boundary": "The source contains no lease-level NOI, expenses, occupancy, or property-specific loan terms.",
         },
         {
-            "file": "assurance-disclosure.svg",
-            "title": "Assurance and recourse evidence remains largely unobservable",
-            "finding": "Populated classification fields are separated from control-evidence questions unavailable in the snapshot.",
-            "boundary": "The result is an evidence request, not an adverse assurance conclusion.",
-        },
-        {
-            "file": "governance-completeness.svg",
-            "title": "Measurement readiness defines the next evidence request",
-            "finding": "Information-family completeness identifies which materials must precede governance, safety, ethics, or compliance evaluation.",
-            "boundary": "No system ranking or actual-capability score is supported by the public inventory.",
+            "file": "segment-observation.svg",
+            "title": "Public-data depth gates the next diligence step",
+            "finding": "Only sufficiently observed borough/property-type segments advance to property-level evidence collection.",
+            "boundary": "Passing the observation gate is not a valuation, planning approval, financing decision, or acquisition recommendation.",
         },
     ],
     "spatial-equity-planning": [
@@ -464,32 +456,28 @@ def _headline_snapshot(result: dict[str, Any]) -> list[str]:
             ),
             f"Shared-block P(best): {_percent(option['probability_best'])}",
         ]
-    if project_id == "mckesson-financial-quality":
-        evidence = result["evidence_table"]
-        summaries = evidence["entity_summaries"]
-        latest_margins = [
-            item["latest_operating_margin"] for item in summaries.values()
-        ]
-        latest_cycles = [
-            item["latest_working_capital_cycle_days"]
-            for item in summaries.values()
-        ]
+    if project_id == "regime-aware-multi-asset-portfolio":
+        adaptive = result["strategy_metrics"]["walk-forward inverse-volatility"]
+        probabilities = result[
+            "probability_best_shared_block_bootstrap"
+        ]["probability_best"]
         return [
             (
-                "Panel size: "
-                f"{evidence['panel']['entities']} entities × "
-                f"{len(evidence['panel']['common_fiscal_years'])} fiscal years"
+                "Walk-forward evaluation: "
+                f"{result['data']['evaluated_days']:,} common trading days"
             ),
             (
-                "FY2025 operating-margin range: "
-                f"{_percent(max(latest_margins) - min(latest_margins))}"
+                "Adaptive annualized return / volatility: "
+                f"{_percent(adaptive['annualized_return'])} / "
+                f"{_percent(adaptive['annualized_volatility'])}"
             ),
             (
-                "FY2025 working-capital-cycle range: "
-                f"{max(latest_cycles) - min(latest_cycles):.1f} days"
+                "Adaptive maximum drawdown: "
+                f"{_percent(adaptive['maximum_drawdown'])}"
             ),
             (
-                "Fact lineage: entity + CIK + tag + accession + fiscal period"
+                "Adaptive shared-block P(best): "
+                f"{_percent(probabilities['walk-forward inverse-volatility'])}"
             ),
         ]
     if project_id == "cfpb-fintech-complaint-operations":
@@ -528,19 +516,22 @@ def _headline_snapshot(result: dict[str, Any]) -> list[str]:
             ),
             "Return model: daily carry plus first-order duration response",
         ]
-    if project_id == "federal-ai-governance":
-        status = result["field_availability_status_counts"]
+    if project_id == "commercial-real-estate-risk":
+        highest = max(
+            result["borough_statistics"].items(),
+            key=lambda item: item[1]["median_price_per_sqft"],
+        )
+        financing = result["financing_stress"]["scenarios"][-1]
         return [
-            f"Publicly reported use cases: {result['data']['use_cases']}",
-            f"Public fields analyzed: {result['public_fields_analyzed']}",
+            f"Filtered commercial transactions: {result['data']['transactions']:,}",
+            f"Observed borough/property-type segments: {result['data']['segments']}",
             (
-                "Fields unavailable in the snapshot: "
-                f"{status['unavailable in snapshot (0%)']}"
+                "Highest borough median price per square foot: "
+                f"{highest[0]} at ${highest[1]['median_price_per_sqft']:,.0f}"
             ),
             (
-                "Mean disclosure-readiness score: "
-                f"{_percent(result['disclosure_readiness']['mean'])} "
-                "(observability only)"
+                f"Break-even cap rate at {financing['interest_rate']:.1%} debt: "
+                f"{_percent(financing['break_even_cap_rate_for_target_dscr'])}"
             ),
         ]
     if project_id == "spatial-equity-planning":
@@ -1130,6 +1121,18 @@ def _criteria_for_project(project_id: str) -> list[dict[str, Any]]:
             {"id": "expected_shortfall95_loss", "label": "Historical ES95 loss", "direction": "minimize", "weight": 0.45, "unit": "daily loss fraction", "scale": {"worst": 0.08, "best": 0}},
             {"id": "worst_day_loss", "label": "Worst historical day", "direction": "minimize", "weight": 0.25, "unit": "daily loss fraction", "scale": {"worst": 0.10, "best": 0}},
         ]
+    if project_id == "regime-aware-multi-asset-portfolio":
+        return [
+            {"id": "annualized_return", "label": "Historical annualized return", "direction": "maximize", "weight": 0.30, "unit": "return fraction", "scale": {"worst": -0.10, "best": 0.20}},
+            {"id": "daily_expected_shortfall95_loss", "label": "Historical daily ES95 loss", "direction": "minimize", "weight": 0.40, "unit": "loss fraction", "scale": {"worst": 0.10, "best": 0}},
+            {"id": "maximum_drawdown", "label": "Historical maximum drawdown", "direction": "maximize", "weight": 0.30, "unit": "return fraction", "scale": {"worst": -0.60, "best": 0}},
+        ]
+    if project_id == "commercial-real-estate-risk":
+        return [
+            {"id": "transaction_share", "label": "Public transaction depth", "direction": "maximize", "weight": 0.45, "unit": "share", "scale": {"worst": 0, "best": 0.60}},
+            {"id": "price_dispersion_ratio", "label": "Relative price dispersion", "direction": "minimize", "weight": 0.30, "unit": "MAD/median", "scale": {"worst": 1.5, "best": 0}},
+            {"id": "geocoded_share", "label": "Approximate geography coverage", "direction": "maximize", "weight": 0.25, "unit": "share", "scale": {"worst": 0, "best": 1}},
+        ]
     return [
         {"id": "need_coverage", "label": "Need-weighted coverage", "direction": "maximize", "weight": 0.45, "unit": "share", "scale": {"worst": 0, "best": 1}},
         {"id": "high_poverty_coverage", "label": "High-poverty population coverage", "direction": "maximize", "weight": 0.35, "unit": "share", "scale": {"worst": 0, "best": 1}},
@@ -1146,6 +1149,11 @@ def _case_options(project_id: str, result: dict[str, Any]) -> list[dict[str, Any
         source = result["optimization"]["policies_2012_evaluation"]
     elif project_id == "treasury-risk-engineering":
         source = result["portfolios"]
+    elif project_id in {
+        "regime-aware-multi-asset-portfolio",
+        "commercial-real-estate-risk",
+    }:
+        source = result["decision_options"]
     else:
         source = result["location_allocation"]["strategies"]
     alternatives = []
@@ -1203,6 +1211,16 @@ def _case_question(project_id: str) -> tuple[str, str, str]:
             "Which duration profile should remain in exploratory risk review under the historical evidence?",
             "Financial risk engineering",
             "Historical-risk review only",
+        ),
+        "regime-aware-multi-asset-portfolio": (
+            "Which transparent portfolio rule should advance to a prospective paper-portfolio validation?",
+            "Asset allocation and financial risk",
+            "Research-only prospective validation",
+        ),
+        "commercial-real-estate-risk": (
+            "Which borough market should advance first to property-level commercial real-estate diligence?",
+            "Real-estate finance and market screening",
+            "Pre-acquisition evidence collection only",
         ),
         "spatial-equity-planning": (
             "Which five-hub prioritization rule should advance to local network and stakeholder review?",

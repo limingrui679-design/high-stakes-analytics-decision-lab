@@ -73,7 +73,7 @@
 <text x="290.0" y="317.0" class="small" text-anchor="start">mid-range</text>
 <text x="586.7" y="282.0" class="value" text-anchor="start">66</text>
 <rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="295.0" width="173.8" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="295.0" width="173.6" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="317.0" class="small" text-anchor="start">mid-range</text>
 <text x="883.3" y="282.0" class="value" text-anchor="start">63</text>
 <rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
@@ -87,7 +87,7 @@
 <text x="290.0" y="393.0" class="small" text-anchor="start">trade-off</text>
 <text x="586.7" y="358.0" class="value" text-anchor="start">46</text>
 <rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="371.0" width="120.7" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="371.0" width="120.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="393.0" class="small" text-anchor="start">mid-range</text>
 <text x="883.3" y="358.0" class="value" text-anchor="start">100</text>
 <rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>

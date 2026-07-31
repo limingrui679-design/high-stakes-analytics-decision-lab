@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "project_id": "commercial-real-estate-risk",
+  "title": "Commercial Real Estate Transactions and Regeneration Risk",
+  "source_id": "nyc-dof-annualized-property-sales-w2pb-icbu",
+  "publisher": "New York City Department of Finance via NYC Open Data",
+  "landing_page": "https://data.cityofnewyork.us/City-Government/NYC-Citywide-Annualized-Calendar-Sales-Update/w2pb-icbu/about_data",
+  "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update",
+  "version": "filtered 2021-2025 commercial-unit snapshot from dataset w2pb-icbu",
+  "accessed_at": "2026-07-30",
+  "license": "NYC Open Data Terms of Use",
+  "license_url": "https://opendata.cityofnewyork.us/overview/#termsofuse",
+  "redistribution": "The filtered public-data snapshot is included under the NYC Open Data Terms of Use with source attribution and field minimization.",
+  "grain": "one public NYC property-sale record before robust analytical filtering",
+  "expected_rows": 12399,
+  "download_url": "https://data.cityofnewyork.us/resource/w2pb-icbu.csv?$select=borough,neighborhood,building_class_category,block,lot,commercial_units,total_units,gross_square_feet,year_built,sale_price,sale_date,latitude,longitude,community_board&$where=sale_date%20%3E=%20%272021-01-01T00:00:00.000%27%20AND%20sale_date%20%3C%20%272026-01-01T00:00:00.000%27%20AND%20commercial_units%20%3E%200&$order=sale_date,borough,block,lot&$limit=50000",
+  "raw_files": [
+    {
+      "path": "data/raw/nyc-commercial-sales-2021-2025.csv",
+      "sha256": "daa08cd7e6d95c2060cdc2eb1b8b6308932c334179dc57af46c203374935389a"
+    }
+  ],
+  "privacy_review": {
+    "status": "pass_with_minimization",
+    "notes": "The source is public administrative data. Street address and owner-identifying fields are not downloaded; the processed case uses a deterministic transaction key."
+  },
+  "claim_boundary": "Public sales records do not establish arm's-length status, property income, condition, appraisal value, financing terms, investability, or causal regeneration effects."
+}

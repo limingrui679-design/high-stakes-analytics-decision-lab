@@ -53,7 +53,7 @@
 <text x="402.0" y="161.0" class="section" text-anchor="start">P(best among feasible)</text>
 <text x="402.0" y="181.0" class="small" text-anchor="start">How often this option leads</text>
 <rect x="690.0" y="162.0" width="320.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="690.0" y="162.0" width="175.6" height="10.0" rx="5.0" fill="#4E7D32"/>
+<rect x="690.0" y="162.0" width="175.7" height="10.0" rx="5.0" fill="#4E7D32"/>
 <line x1="930.0" y1="158.0" x2="930.0" y2="176.0" stroke="#0B1324" stroke-width="1.5"/>
 <text x="1030.0" y="167.0" class="value" text-anchor="start">55%</text>
 <rect x="1083.0" y="153.0" width="62.0" height="28.0" rx="14" fill="#E8F2DF" stroke="none" stroke-width="1"/>

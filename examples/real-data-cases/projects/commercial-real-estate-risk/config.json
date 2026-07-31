@@ -1,0 +1,56 @@
+{
+  "project_id": "commercial-real-estate-risk",
+  "analysis_seed": 20260730,
+  "parameters": {
+    "minimum_segment_transactions": 50,
+    "loan_to_value": 0.65,
+    "amortization_years": 30,
+    "dscr_target": 1.25,
+    "interest_rates": [0.045, 0.065, 0.085],
+    "bootstrap_samples": 500
+  },
+  "parameter_register": [
+    {
+      "parameter": "minimum_segment_transactions",
+      "source_id": "analyst-data-sufficiency-gate",
+      "status": "screening assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Passing the count gate allows only property-level diligence."
+    },
+    {
+      "parameter": "loan_to_value",
+      "source_id": "analyst-financing-scenario",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Not an observed or recommended loan term."
+    },
+    {
+      "parameter": "amortization_years",
+      "source_id": "analyst-financing-scenario",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Used only to expose debt-service sensitivity."
+    },
+    {
+      "parameter": "dscr_target",
+      "source_id": "analyst-financing-scenario",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "Not a lender covenant or underwriting approval."
+    },
+    {
+      "parameter": "interest_rates",
+      "source_id": "analyst-rate-stress-grid",
+      "status": "scenario range",
+      "approved_by": "repository author self-review",
+      "boundary": "Illustrative fixed-rate grid, not a market quote or forecast."
+    },
+    {
+      "parameter": "bootstrap_samples",
+      "source_id": "analysis-reproducibility-protocol",
+      "status": "computational design",
+      "approved_by": "repository author self-review",
+      "boundary": "Transaction resampling does not correct administrative selection or measurement error."
+    }
+  ]
+}

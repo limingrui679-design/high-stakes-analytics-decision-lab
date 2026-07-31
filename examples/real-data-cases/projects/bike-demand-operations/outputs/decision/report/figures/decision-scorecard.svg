@@ -59,7 +59,7 @@
 <text x="804.0" y="272.0" class="small" text-anchor="start">feasible set ·</text>
 <text x="804.0" y="289.0" class="small" text-anchor="start">10,000 draws</text>
 <rect x="804.0" y="315.0" width="144.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="804.0" y="315.0" width="79.0" height="10.0" rx="5.0" fill="#4E7D32"/>
+<rect x="804.0" y="315.0" width="79.1" height="10.0" rx="5.0" fill="#4E7D32"/>
 <rect x="978.0" y="140.0" width="180.0" height="214.0" rx="16" fill="#07152A" opacity=".055"/><rect x="976.0" y="134.0" width="180.0" height="214.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="994.0" y="166.0" class="eyebrow" text-anchor="start">ROBUSTNESS</text>
 <text x="994.0" y="222.0" class="display" text-anchor="start" style="fill:#0B1324">78</text>

@@ -1,0 +1,316 @@
+{
+  "schema_version": "1.3",
+  "case_id": "real-commercial-real-estate-risk",
+  "title": "Which borough market should advance first to property-level commercial real-estate diligence",
+  "domain": "Real-estate finance and market screening",
+  "decision_owner": "Hypothetical domain review panel; no real owner authorization",
+  "decision_question": "Which borough market should advance first to property-level commercial real-estate diligence?",
+  "time_horizon": "Pre-acquisition evidence collection only",
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-30",
+    "sources": [
+      "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update",
+      "projects/commercial-real-estate-risk/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "The source does not establish arm's-length status, lease income, operating expenses, occupancy, property condition, appraisal value, zoning feasibility, financing availability, or causal regeneration effects.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "transaction_share",
+      "label": "Public transaction depth",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 0.6
+      }
+    },
+    {
+      "id": "price_dispersion_ratio",
+      "label": "Relative price dispersion",
+      "direction": "minimize",
+      "weight": 0.3,
+      "unit": "MAD/median",
+      "scale": {
+        "worst": 1.5,
+        "best": 0
+      }
+    },
+    {
+      "id": "geocoded_share",
+      "label": "Approximate geography coverage",
+      "direction": "maximize",
+      "weight": 0.25,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "baseline-Bronx",
+      "label": "Baseline: Bronx",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "transaction_share": {
+          "distribution": "fixed",
+          "value": 0.10734737,
+          "uncertainty_type": "none"
+        },
+        "price_dispersion_ratio": {
+          "distribution": "fixed",
+          "value": 0.42451613,
+          "uncertainty_type": "none"
+        },
+        "geocoded_share": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "Brooklyn",
+      "label": "Brooklyn",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "transaction_share": {
+          "distribution": "fixed",
+          "value": 0.39261231,
+          "uncertainty_type": "none"
+        },
+        "price_dispersion_ratio": {
+          "distribution": "fixed",
+          "value": 0.36776886,
+          "uncertainty_type": "none"
+        },
+        "geocoded_share": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "Manhattan",
+      "label": "Manhattan",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "transaction_share": {
+          "distribution": "fixed",
+          "value": 0.17517542,
+          "uncertainty_type": "none"
+        },
+        "price_dispersion_ratio": {
+          "distribution": "fixed",
+          "value": 0.51775805,
+          "uncertainty_type": "none"
+        },
+        "geocoded_share": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "Queens",
+      "label": "Queens",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "transaction_share": {
+          "distribution": "fixed",
+          "value": 0.25832728,
+          "uncertainty_type": "none"
+        },
+        "price_dispersion_ratio": {
+          "distribution": "fixed",
+          "value": 0.32932992,
+          "uncertainty_type": "none"
+        },
+        "geocoded_share": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "Staten Island",
+      "label": "Staten Island",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "transaction_share": {
+          "distribution": "fixed",
+          "value": 0.06653762,
+          "uncertainty_type": "none"
+        },
+        "price_dispersion_ratio": {
+          "distribution": "fixed",
+          "value": 0.36910132,
+          "uncertainty_type": "none"
+        },
+        "geocoded_share": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "transaction_share": {
+            "multiply": 0.92
+          },
+          "price_dispersion_ratio": {
+            "multiply": 1.08
+          },
+          "geocoded_share": {
+            "multiply": 0.92
+          }
+        }
+      }
+    }
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "transaction_share": -0.28,
+          "price_dispersion_ratio": 0.28,
+          "geocoded_share": -0.28
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-30",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output"
+      },
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions"
+      }
+    ]
+  },
+  "constraints": [],
+  "risk_aversion": 0.25,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "readiness_thresholds": {
+    "minimum_probability_best": 0.5,
+    "minimum_weight_stability": 0.75,
+    "minimum_scenario_stability": 0.75,
+    "maximum_scale_clipping_rate": 0.05
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

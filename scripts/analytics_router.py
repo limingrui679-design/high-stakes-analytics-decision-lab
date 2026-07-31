@@ -405,6 +405,22 @@ def render_blueprint_svg(blueprint: dict[str, Any]) -> str:
     question_lines = _wrap(blueprint["question"], 92)[:2]
     primary_label = blueprint["routing"]["primary_label"]
     execution_order = blueprint["routing"]["execution_order"]
+    if blueprint.get("data_status") == "profiled":
+        readiness = blueprint.get("data_readiness", {})
+        footer_status = (
+            "Data profiled"
+            + (
+                f" · quality gate {readiness['status']}"
+                if readiness.get("status")
+                else ""
+            )
+            + " · routing aid only · no empirical finding or recommendation"
+        )
+    else:
+        footer_status = (
+            "No data supplied → blueprint only · no empirical finding · "
+            "no forecast · no recommendation"
+        )
     body: list[str] = [
         f'<rect width="{width}" height="{height}" rx="22" fill="{canvas}"/>',
         f'<rect width="{width}" height="180" rx="22" fill="{navy}"/>',
@@ -484,7 +500,7 @@ def render_blueprint_svg(blueprint: dict[str, Any]) -> str:
             _svg_text(1194, 580, "DO NOT SKIP", size=9, weight=800, fill="#A63C2A", anchor="middle"),
             _svg_text(1194, 600, "causal-evidence guardrail", size=12, weight=700, fill="#A63C2A", anchor="middle"),
             f'<line x1="48" y1="678" x2="1352" y2="678" stroke="{grid}"/>',
-            _svg_text(48, 703, "No data supplied → blueprint only · no empirical finding · no forecast · no recommendation", size=11, fill=muted),
+            _svg_text(48, 703, footer_status, size=11, fill=muted),
             _svg_text(1352, 703, "Source: routing blueprint JSON", size=11, fill="#8B98A9", anchor="end"),
         ]
     )
@@ -502,6 +518,26 @@ def render_blueprint_svg(blueprint: dict[str, Any]) -> str:
 
 def render_blueprint_report(blueprint: dict[str, Any]) -> str:
     routing = blueprint["routing"]
+    if blueprint.get("data_status") == "profiled":
+        readiness = blueprint.get("data_readiness", {})
+        rows = readiness.get("rows")
+        columns = readiness.get("columns")
+        shape = (
+            f" ({rows:,} rows × {columns:,} columns)"
+            if isinstance(rows, int) and isinstance(columns, int)
+            else ""
+        )
+        status = readiness.get("status", "not recorded")
+        data_note = (
+            f"> A dataset was profiled{shape}; its quality gate is `{status}`. "
+            "This document remains a planning blueprint, not an empirical finding, "
+            "forecast, or recommendation."
+        )
+    else:
+        data_note = (
+            "> No dataset was supplied. This document is an analysis blueprint, not an "
+            "empirical finding, forecast, or recommendation."
+        )
     lines = [
         "# Question-to-Analysis Blueprint",
         "",
@@ -519,8 +555,7 @@ def render_blueprint_report(blueprint: dict[str, Any]) -> str:
         + " → ".join(MODE_LABELS[mode] for mode in routing["execution_order"]),
         f"- **Why:** {routing['reason']}",
         "",
-        "> No dataset was supplied. This document is an analysis blueprint, not an "
-        "empirical finding, forecast, or recommendation.",
+        data_note,
         "",
     ]
     for index, lens in enumerate(blueprint["analysis_lenses"], start=1):

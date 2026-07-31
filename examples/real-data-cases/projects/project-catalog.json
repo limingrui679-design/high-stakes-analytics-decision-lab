@@ -1,6 +1,6 @@
 {
-  "portfolio_version": "7.0.0",
-  "verified_on": "2026-07-28",
+  "portfolio_version": "8.0.0",
+  "verified_on": "2026-07-30",
   "public_project_type": "real_world_research_project",
   "project_count": 10,
   "projects": [
@@ -53,12 +53,12 @@
       "method_domains": ["financial risk engineering", "tail risk", "backtesting"]
     },
     {
-      "id": "mckesson-financial-quality",
+      "id": "regime-aware-multi-asset-portfolio",
       "code": "R6B",
-      "title": "SEC Peer Financial Quality and Cash Conversion",
-      "analytics": ["descriptive", "diagnostic", "scenario"],
-      "decision_analysis": "diligence_priority_only",
-      "method_domains": ["finance", "accounting", "peer diagnostics"]
+      "title": "Regime-Aware Multi-Asset Portfolio Construction",
+      "analytics": ["descriptive", "diagnostic", "predictive", "risk", "decision"],
+      "decision_analysis": "research_only_paper_portfolio",
+      "method_domains": ["asset allocation", "financial risk", "walk-forward validation"]
     },
     {
       "id": "cfpb-fintech-complaint-operations",
@@ -69,12 +69,12 @@
       "method_domains": ["financial technology", "model risk", "privacy engineering"]
     },
     {
-      "id": "federal-ai-governance",
+      "id": "commercial-real-estate-risk",
       "code": "R7",
-      "title": "Public AI Inventory Disclosure and Measurement Readiness",
-      "analytics": ["descriptive", "missingness", "responsible-ai"],
-      "decision_analysis": "evidence_request_only",
-      "method_domains": ["technology policy", "disclosure measurement", "responsible AI"]
+      "title": "Commercial Real Estate Transactions and Regeneration Risk",
+      "analytics": ["descriptive", "diagnostic", "scenario", "decision"],
+      "decision_analysis": "property_level_diligence_only",
+      "method_domains": ["real-estate finance", "transaction analytics", "regeneration screening"]
     },
     {
       "id": "spatial-equity-planning",

@@ -1,0 +1,31 @@
+{
+  "project_id": "commercial-real-estate-risk",
+  "primary_key": "transaction_id",
+  "fields": {
+    "transaction_id": "deterministic transaction key built from borough, block, lot, sale date, and price; street address is excluded",
+    "sale_date": "recorded property sale date",
+    "sale_year": "calendar year from sale_date",
+    "borough": "NYC borough name",
+    "neighborhood": "Department of Finance valuation neighborhood",
+    "property_type": "analyst grouping from building_class_category",
+    "building_class_category": "NYC Department of Finance class category",
+    "commercial_units": "reported commercial-unit count",
+    "total_units": "reported total-unit count",
+    "gross_square_feet": "reported gross building area",
+    "sale_price": "recorded sale price in nominal US dollars",
+    "price_per_sqft": "sale_price divided by gross_square_feet",
+    "year_built": "reported construction year; zero means unavailable",
+    "latitude": "public approximate latitude when reported",
+    "longitude": "public approximate longitude when reported",
+    "community_board": "public community-board identifier when reported"
+  },
+  "filter_policy": {
+    "period": "2021-01-01 through 2025-12-31",
+    "commercial_units": "> 0",
+    "sale_price": ">= 100,000 USD",
+    "gross_square_feet": "> 0",
+    "price_per_sqft": "20 to 5,000 USD for robust screening",
+    "duplicates": "exact borough/block/lot/date/price duplicates removed"
+  },
+  "interpretation_boundary": "Administrative sales records do not establish arm's-length status, property condition, lease income, operating expenses, financing terms, appraisal value, or investability."
+}

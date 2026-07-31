@@ -51,9 +51,9 @@ projects/
 | 04 · Bike-Demand Forecasting and Robust Allocation | Operations research<br>Forecast MAE improvement versus overall mean: 38.3% | descriptive → predictive → prescriptive | [Evidence](projects/bike-demand-operations/outputs/report.md) · [Card](cases/04-forecast-allocation.md) · [Decision](projects/bike-demand-operations/outputs/decision/report/decision-report.md) |
 | 05 · Marketing Response and Capacity Planning | Business analytics<br>Untouched-test AUC: 0.650 | descriptive → predictive → prescriptive | [Evidence](projects/bank-marketing-response/outputs/report.md) · [Card](cases/05-marketing-capacity.md) · [Decision](projects/bank-marketing-response/outputs/decision/report/decision-report.md) |
 | 06 · Treasury Yield-Curve Tail-Risk Engineering | Financial risk<br>Short-baseline historical ES95 loss: 0.4% | descriptive → predictive → prescriptive | [Evidence](projects/treasury-risk-engineering/outputs/report.md) · [Card](cases/06-treasury-tail-risk.md) · [Decision](projects/treasury-risk-engineering/outputs/decision/report/decision-report.md) |
-| 07 · SEC Peer Financial Quality and Cash Conversion | Finance and accounting<br>Panel size: 3 entities × 8 fiscal years | descriptive → diagnostic | [Evidence](projects/mckesson-financial-quality/outputs/report.md) · [Card](cases/07-financial-peer-panel.md) · [Decision](projects/mckesson-financial-quality/outputs/decision/report/decision-report.md) |
+| 07 · Regime-Aware Multi-Asset Portfolio Construction | Asset allocation and financial risk<br>Walk-forward evaluation: 2,513 trading days | descriptive → diagnostic → predictive → prescriptive | [Evidence](projects/regime-aware-multi-asset-portfolio/outputs/report.md) · [Card](cases/07-multi-asset-portfolio.md) · [Decision](projects/regime-aware-multi-asset-portfolio/outputs/decision/report/decision-report.md) |
 | 08 · Privacy-Preserving Complaint Monitoring and Negative Validation | Financial technology<br>Later-period untimely-response prevalence: 2.5% | descriptive → predictive | [Evidence](projects/cfpb-fintech-complaint-operations/outputs/report.md) · [Card](cases/08-fintech-negative-validation.md) · [Decision](projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md) |
-| 09 · Public AI Inventory Disclosure and Measurement Readiness | Technology policy<br>Public use cases: 70 | descriptive | [Evidence](projects/federal-ai-governance/outputs/report.md) · [Card](cases/09-ai-disclosure-readiness.md) · [Decision](projects/federal-ai-governance/outputs/decision/report/decision-report.md) |
+| 09 · Commercial Real Estate Transactions and Regeneration Risk | Real-estate finance and planning<br>Filtered transactions: 12,399 | descriptive → diagnostic → prescriptive | [Evidence](projects/commercial-real-estate-risk/outputs/report.md) · [Card](cases/09-commercial-real-estate-risk.md) · [Decision](projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md) |
 | 10 · Spatial Equity and Service-Hub Planning | Urban planning<br>Analyzed tracts: 1,597 | descriptive → prescriptive | [Evidence](projects/spatial-equity-planning/outputs/report.md) · [Card](cases/10-spatial-service-planning.md) · [Decision](projects/spatial-equity-planning/outputs/decision/report/decision-report.md) |
 
 ## Optional visual gallery
@@ -133,14 +133,14 @@ visual comparison across all ten projects is useful.
 </tr>
 <tr>
 <td width="50%">
-  <a href="projects/mckesson-financial-quality/outputs/report.md">
-    <img src="figures/07-peer-finance.svg" alt="Operating-margin trends across three public drug distributors over eight fiscal years">
+  <a href="projects/regime-aware-multi-asset-portfolio/outputs/report.md">
+    <img src="figures/07-multi-asset.svg" alt="Walk-forward multi-asset portfolio growth beside equal-weight and 60/40 benchmarks">
   </a>
-  <br><strong>07 · SEC Peer Financial Quality and Cash Conversion</strong>
-  <br>All three firms combine large scale with thin operating margins; recurring cash-conversion differences prioritize deeper filing reconciliation.
-  <br><em>Boundary:</em> Common SIC and XBRL taxonomy do not guarantee economic comparability; consolidated facts omit segment and footnote detail.
-  <br><a href="cases/07-financial-peer-panel.md">Case card</a> · <a href="projects/mckesson-financial-quality/outputs/report.md">Evidence Intelligence Report</a>
-  · <a href="projects/mckesson-financial-quality/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
+  <br><strong>07 · Regime-Aware Multi-Asset Portfolio Construction</strong>
+  <br>The bounded adaptive rule reduced historical drawdown and tail loss relative to both benchmarks and had the highest return-to-volatility ratio, but it did not maximize sampled mean return.
+  <br><em>Boundary:</em> Provider terms apply; ETF histories omit future regimes, taxes, bid-ask spreads, impact, investor liabilities, capacity, and suitability.
+  <br><a href="cases/07-multi-asset-portfolio.md">Case card</a> · <a href="projects/regime-aware-multi-asset-portfolio/outputs/report.md">Evidence Intelligence Report</a>
+  · <a href="projects/regime-aware-multi-asset-portfolio/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
 </td>
 <td width="50%">
   <a href="projects/cfpb-fintech-complaint-operations/outputs/report.md">
@@ -155,14 +155,14 @@ visual comparison across all ten projects is useful.
 </tr>
 <tr>
 <td width="50%">
-  <a href="projects/federal-ai-governance/outputs/report.md">
-    <img src="figures/09-disclosure-readiness.svg" alt="Public AI inventory reporting completeness by information family">
+  <a href="projects/commercial-real-estate-risk/outputs/report.md">
+    <img src="figures/09-real-estate.svg" alt="Commercial-property median transaction price per square foot across NYC boroughs">
   </a>
-  <br><strong>09 · Public AI Inventory Disclosure and Measurement Readiness</strong>
-  <br>The inventory supports disclosure-readiness measurement and a targeted evidence request, not a governance-capability score.
-  <br><em>Boundary:</em> Blank or missing-coded fields are disclosure signals; they do not prove control absence, ineffectiveness, unethical behavior, safety failure, or noncompliance.
-  <br><a href="cases/09-ai-disclosure-readiness.md">Case card</a> · <a href="projects/federal-ai-governance/outputs/report.md">Evidence Intelligence Report</a>
-  · <a href="projects/federal-ai-governance/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
+  <br><strong>09 · Commercial Real Estate Transactions and Regeneration Risk</strong>
+  <br>Public transactions support a market-depth screen and financing evidence request, not property valuation or acquisition.
+  <br><em>Boundary:</em> The source does not establish arm's-length status, NOI, expenses, occupancy, condition, appraisal value, debt terms, or causal regeneration effects.
+  <br><a href="cases/09-commercial-real-estate-risk.md">Case card</a> · <a href="projects/commercial-real-estate-risk/outputs/report.md">Evidence Intelligence Report</a>
+  · <a href="projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
 </td>
 <td width="50%">
   <a href="projects/spatial-equity-planning/outputs/report.md">

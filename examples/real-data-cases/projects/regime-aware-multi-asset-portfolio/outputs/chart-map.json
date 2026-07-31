@@ -1,0 +1,37 @@
+{
+  "project_id": "regime-aware-multi-asset-portfolio",
+  "charts": [
+    {
+      "path": "figures/portfolio-growth.svg",
+      "question": "Walk-forward growth remains benchmarked through time",
+      "supported_finding": "The adaptive allocation uses only trailing information and remains beside equal-weight and 60/40 references.",
+      "interpretation_boundary": "Historical adjusted-price performance does not establish future returns, suitability, or executable prices.",
+      "source_id": "yahoo-finance-chart-api-reviewed-etf-snapshot",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/probability-best.svg",
+      "question": "Probability-best preserves correlated market shocks",
+      "supported_finding": "All strategies receive the same sampled month blocks rather than independent perturbations.",
+      "interpretation_boundary": "Bootstrap frequency is conditional on this history, block length, strategy set, and estimation design.",
+      "source_id": "yahoo-finance-chart-api-reviewed-etf-snapshot",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/risk-adjusted-performance.svg",
+      "question": "Risk-adjusted performance is one comparison, not a mandate",
+      "supported_finding": "Annualized return is read beside volatility, turnover, drawdown, and explicit benchmarks.",
+      "interpretation_boundary": "The ratio omits investor liabilities, taxes, capacity, and preference-specific utility.",
+      "source_id": "yahoo-finance-chart-api-reviewed-etf-snapshot",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/tail-loss.svg",
+      "question": "Tail loss remains visible across every strategy",
+      "supported_finding": "Expected shortfall reports the severity beyond the historical 95% loss quantile.",
+      "interpretation_boundary": "Historical tails are incomplete stress evidence and can understate an unobserved regime.",
+      "source_id": "yahoo-finance-chart-api-reviewed-etf-snapshot",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

@@ -5,9 +5,9 @@
 ## Executive Summary
 
 - **Provisional preference — Dual Marker Triage.** It is the highest-ranked feasible option, with decision value score **68.7/100** and a modeled **86% probability of being best among decision-feasible alternatives**.
-- **The lead is meaningful rather than absolute.** It leads the next feasible option, Ejection Triage, by **0.056 utility points**.
+- **The lead is meaningful rather than absolute.** It leads the next feasible option, Ejection Triage, by **0.055 utility points**.
 - **Modeled robustness is 96/100.** The option remains preferred in **100%** of two-sided weight stresses and **100%** of probability-weighted scenario comparisons.
-- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.4%** and CVaR10 by **-0.003**; the ×1.35 loading stress does not change the modeled winner.
+- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.5%** and CVaR10 by **-0.003**; the ×1.35 loading stress does not change the modeled winner.
 - **Constraint-breach evidence — 0/10,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
 - **Decision status — Provisional—validate before action.** The current blockers are: evidence is not labeled for operational use.
 - **Evidence boundary.** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
@@ -50,7 +50,7 @@ Each cell below places an outcome on its declared worst-to-best reference scale.
 
 ## Downside risk remains visible behind the average
 
-**Dual Marker Triage has expected utility 0.706, but its worst-decile average falls to 0.631.** The widest criterion-level uncertainty for this option is associated with **Recorded-sex selection gap**, making it a priority for further evidence collection.
+**Dual Marker Triage has expected utility 0.705, but its worst-decile average falls to 0.630.** The widest criterion-level uncertainty for this option is associated with **Recorded-sex selection gap**, making it a priority for further evidence collection.
 
 ![Utility uncertainty and downside](figures/utility-uncertainty.svg)
 
@@ -58,7 +58,7 @@ The interval chart prevents a precise-looking average from obscuring overlap amo
 
 ## Shared shocks change the uncertainty question
 
-**The declared factor model gives Dual Marker Triage P(best) 86%, versus 84% under independent residuals and 87% under the stronger correlation stress.** Its CVaR10 moves from 0.634 independently to 0.631 under declared dependence and 0.629 under stress.
+**The declared factor model gives Dual Marker Triage P(best) 86%, versus 84% under independent residuals and 87% under the stronger correlation stress.** Its CVaR10 moves from 0.634 independently to 0.630 under declared dependence and 0.628 under stress.
 
 ![Correlation and tail-risk stress](figures/correlation-stress.svg)
 
@@ -66,7 +66,7 @@ The three states use matched seeds, stratified scenario counts, and the same mar
 
 ## Scenario tests show when the preferred option is most exposed
 
-**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.660.** The same feasible alternative remains ahead in every modeled scenario.
+**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.659.** The same feasible alternative remains ahead in every modeled scenario.
 
 ![Scenario performance](figures/scenario-performance.svg)
 
@@ -117,9 +117,9 @@ This test both increases and decreases each criterion weight while preserving ri
 
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
-| 1 | Dual Marker Triage | Yes | 68.7 | 0.706 | 0.631 | 85.8% | 85.8% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Ejection Triage | Yes | 63.1 | 0.649 | 0.578 | 9.9% | 9.9% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 3 | Current Age Rule | Yes | 61.9 | 0.636 | 0.567 | 4.4% | 4.4% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 1 | Dual Marker Triage | Yes | 68.7 | 0.705 | 0.630 | 85.5% | 85.5% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Ejection Triage | Yes | 63.2 | 0.649 | 0.579 | 10.0% | 10.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 3 | Current Age Rule | Yes | 61.9 | 0.636 | 0.567 | 4.5% | 4.5% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
 
 ### Readiness checks
 
@@ -146,31 +146,31 @@ No hard constraints were supplied.
 |---|---:|---:|---:|---:|---:|
 | Observed event capture | 45.0% | 0.726 share | 0.646 share–0.808 share | 0.726 | 0.0% |
 | Follow-up workload | 30.0% | 0.434 share | 0.381 share–0.488 share | 0.566 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.081 absolute share | 0.009 absolute share–0.183 absolute share | 0.838 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.082 absolute share | 0.01 absolute share–0.182 absolute share | 0.836 | 0.0% |
 
 #### Ejection Triage
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Observed event capture | 45.0% | 0.518 share | 0.432 share–0.602 share | 0.518 | 0.0% |
-| Follow-up workload | 30.0% | 0.318 share | 0.271 share–0.365 share | 0.682 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.078 absolute share | 0.006 absolute share–0.158 absolute share | 0.844 | 0.0% |
+| Observed event capture | 45.0% | 0.517 share | 0.432 share–0.602 share | 0.517 | 0.0% |
+| Follow-up workload | 30.0% | 0.318 share | 0.274 share–0.365 share | 0.682 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.076 absolute share | 0.006 absolute share–0.156 absolute share | 0.847 | 0.0% |
 
 #### Current Age Rule
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Observed event capture | 45.0% | 0.508 share | 0.412 share–0.598 share | 0.508 | 0.0% |
-| Follow-up workload | 30.0% | 0.393 share | 0.338 share–0.448 share | 0.607 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.048 absolute share | 0.004 absolute share–0.122 absolute share | 0.903 | 0.0% |
+| Observed event capture | 45.0% | 0.508 share | 0.411 share–0.598 share | 0.508 | 0.0% |
+| Follow-up workload | 30.0% | 0.394 share | 0.338 share–0.448 share | 0.606 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.048 absolute share | 0.004 absolute share–0.123 absolute share | 0.903 | 0.0% |
 
 ### Correlation sensitivity
 
 | Dependence state | Modeled winner | Recommended option P(best) | CVaR10 | Breach U95 |
 |---|---|---:|---:|---:|
-| Independent residuals | Dual Marker Triage | 84.4% | 0.634 | 0.00% |
-| Declared factor model | Dual Marker Triage | 85.8% | 0.631 | 0.00% |
-| Loading stress ×1.35 | Dual Marker Triage | 86.8% | 0.629 | 0.00% |
+| Independent residuals | Dual Marker Triage | 84.0% | 0.634 | 0.00% |
+| Declared factor model | Dual Marker Triage | 85.5% | 0.630 | 0.00% |
+| Loading stress ×1.35 | Dual Marker Triage | 86.6% | 0.628 | 0.00% |
 
 ### Parameter provenance and approval
 
@@ -186,7 +186,7 @@ Coverage: **48/48 parameters sourced** and **48/48 approved for the declared use
 - projects/population-health-survival/outputs/results.json
 - Engine version: `7.0.0`
 - Samples: `10000`
-- Random seed: `20260727`
+- Random seed: `20260726`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
 - Case SHA-256: `9c2215f0017eefaaaf248aa7b58ff385d44dd640cfe3bcdf442257520633ba90`
 

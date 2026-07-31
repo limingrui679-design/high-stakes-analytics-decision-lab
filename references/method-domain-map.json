@@ -29,18 +29,19 @@
     },
     {
       "id": "finance-risk",
-      "label": "Financial diagnostics and risk",
+      "label": "Asset allocation, financial risk, and real-estate finance",
       "project_ids": [
         "treasury-risk-engineering",
-        "mckesson-financial-quality"
+        "regime-aware-multi-asset-portfolio",
+        "commercial-real-estate-risk"
       ]
     },
     {
       "id": "policy-governance",
-      "label": "Public policy, disclosure, and governance evidence",
+      "label": "Public policy, planning, and administrative evidence",
       "project_ids": [
-        "federal-ai-governance",
         "cfpb-fintech-complaint-operations",
+        "commercial-real-estate-risk",
         "spatial-equity-planning"
       ]
     },
@@ -49,7 +50,6 @@
       "label": "Responsible AI and sociotechnical boundaries",
       "project_ids": [
         "census-income-ai",
-        "federal-ai-governance",
         "cfpb-fintech-complaint-operations"
       ]
     }

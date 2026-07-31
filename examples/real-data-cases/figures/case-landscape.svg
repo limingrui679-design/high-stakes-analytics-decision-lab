@@ -85,10 +85,10 @@
 <rect x="44.0" y="576.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="570.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="42.0" y="570.0" width="8" height="128" rx="4" fill="#4E7D32"/>
 <text x="66.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#4E7D32">07</text>
-<text x="110.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC</text>
-<text x="66.0" y="622.0" class="section" text-anchor="start" style="fill:#0B1324">SEC Peer Financial Quality</text>
-<text x="66.0" y="671.0" class="small" text-anchor="start" style="fill:#617084">Panel size: 3 entities × 8 fiscal years</text>
-<text x="66.0" y="690.0" class="small" text-anchor="start" style="fill:#4E7D32">Targeted filing diligence</text>
+<text x="110.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="66.0" y="622.0" class="section" text-anchor="start" style="fill:#0B1324">Regime-Aware Multi-Asset Allocation</text>
+<text x="66.0" y="671.0" class="small" text-anchor="start" style="fill:#617084">Walk-forward evaluation: 2,513 trading days</text>
+<text x="66.0" y="690.0" class="small" text-anchor="start" style="fill:#4E7D32">Research-only paper portfolio</text>
 <rect x="620.0" y="576.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="570.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="618.0" y="570.0" width="8" height="128" rx="4" fill="#246BFD"/>
 <text x="642.0" y="594.0" class="eyebrow" text-anchor="start" style="fill:#246BFD">08</text>
@@ -99,10 +99,10 @@
 <rect x="44.0" y="720.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="714.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="42.0" y="714.0" width="8" height="128" rx="4" fill="#008C82"/>
 <text x="66.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#008C82">09</text>
-<text x="110.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE</text>
-<text x="66.0" y="766.0" class="section" text-anchor="start" style="fill:#0B1324">Public AI Disclosure Readiness</text>
-<text x="66.0" y="815.0" class="small" text-anchor="start" style="fill:#617084">Public use cases: 70</text>
-<text x="66.0" y="834.0" class="small" text-anchor="start" style="fill:#008C82">Evidence request</text>
+<text x="110.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="66.0" y="766.0" class="section" text-anchor="start" style="fill:#0B1324">Commercial Real Estate Risk Screen</text>
+<text x="66.0" y="815.0" class="small" text-anchor="start" style="fill:#617084">Filtered transactions: 12,399</text>
+<text x="66.0" y="834.0" class="small" text-anchor="start" style="fill:#008C82">Property-level diligence request</text>
 <rect x="620.0" y="720.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="714.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="618.0" y="714.0" width="8" height="128" rx="4" fill="#C69214"/>
 <text x="642.0" y="738.0" class="eyebrow" text-anchor="start" style="fill:#C69214">10</text>

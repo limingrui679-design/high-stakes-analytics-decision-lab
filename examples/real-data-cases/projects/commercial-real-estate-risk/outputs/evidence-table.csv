@@ -1,0 +1,26 @@
+borough,property_type,transactions,median_price_per_sqft,median_absolute_deviation,data_sufficiency_gate
+Bronx,Hotel,14,487.69808396137654,137.89506120083254,insufficient_public_transactions
+Bronx,Industrial,116,366.8795762579841,138.4467404370886,advance_to_property_level_diligence
+Bronx,Office,81,350.0,115.0,advance_to_property_level_diligence
+Bronx,Other commercial,776,291.22623321366837,115.30243194567251,advance_to_property_level_diligence
+Bronx,Retail,344,450.0,162.01923076923077,advance_to_property_level_diligence
+Brooklyn,Hotel,28,393.1801003655288,162.04787867452666,insufficient_public_transactions
+Brooklyn,Industrial,355,514.2857142857143,208.74140024281672,advance_to_property_level_diligence
+Brooklyn,Office,263,466.2004662004662,158.2294517077126,advance_to_property_level_diligence
+Brooklyn,Other commercial,3380,461.5930944055944,164.6233974358974,advance_to_property_level_diligence
+Brooklyn,Retail,842,564.6110056925996,218.96706629866026,advance_to_property_level_diligence
+Manhattan,Hotel,97,687.8396739130435,310.20684674036386,advance_to_property_level_diligence
+Manhattan,Industrial,45,802.2222222222222,327.239371493638,insufficient_public_transactions
+Manhattan,Office,360,513.0567239117586,375.7178330465478,advance_to_property_level_diligence
+Manhattan,Other commercial,1350,733.3550630160801,373.03111427916326,advance_to_property_level_diligence
+Manhattan,Retail,320,1056.7362849109504,487.5285242478105,advance_to_property_level_diligence
+Queens,Hotel,31,523.8485729744352,157.17942086046924,insufficient_public_transactions
+Queens,Industrial,239,510.2040816326531,186.67466986794722,advance_to_property_level_diligence
+Queens,Office,251,485.44776119402985,188.91003945861632,advance_to_property_level_diligence
+Queens,Other commercial,1837,426.2036306235201,126.80969122958072,advance_to_property_level_diligence
+Queens,Retail,845,542.1875,207.8125,advance_to_property_level_diligence
+Staten Island,Hotel,3,338.2416865898718,34.39829442782201,insufficient_public_transactions
+Staten Island,Industrial,65,291.6666666666667,129.23011844331643,advance_to_property_level_diligence
+Staten Island,Office,129,341.88034188034186,101.82547219584254,advance_to_property_level_diligence
+Staten Island,Other commercial,361,308.26410144293834,102.07613256916733,advance_to_property_level_diligence
+Staten Island,Retail,267,404.4117647058824,175.923675255226,advance_to_property_level_diligence
