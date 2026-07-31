@@ -395,7 +395,15 @@ def adaptive_system_svg() -> str:
         [
             rounded_rect(338, 172, 294, 262, fill=NAVY, stroke=NAVY, radius=22),
             text(365, 208, "ADAPTIVE ROUTER", css="kicker", fill=TEAL),
-            text(365, 245, "Route before format", css="big", fill=PAPER),
+            _hero_text(
+                365,
+                245,
+                "Route before format",
+                size=26,
+                weight=800,
+                fill=PAPER,
+                spacing=-0.25,
+            ),
             wrapped_text(
                 365,
                 278,

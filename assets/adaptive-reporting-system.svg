@@ -56,7 +56,7 @@
 <text x="108.0" y="389.0" class="small" text-anchor="start" style="fill:#617084">Explore · validate · pilot · stop</text>
 <rect x="338.0" y="172.0" width="294.0" height="262.0" rx="22" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
 <text x="365.0" y="208.0" class="kicker" text-anchor="start" style="fill:#008C82">ADAPTIVE ROUTER</text>
-<text x="365.0" y="245.0" class="big" text-anchor="start" style="fill:#FFFFFF">Route before format</text>
+<text x="365.0" y="245.0" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="26" font-weight="800" letter-spacing="-0.25" fill="#FFFFFF">Route before format</text>
 <text x="365.0" y="278.0" class="label" text-anchor="start" style="fill:#D4DFEC">Select only the descriptive,</text>
 <text x="365.0" y="298.0" class="label" text-anchor="start" style="fill:#D4DFEC">diagnostic, predictive, and</text>
 <text x="365.0" y="318.0" class="label" text-anchor="start" style="fill:#D4DFEC">prescriptive work the evidence</text>
