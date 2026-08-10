@@ -1,6 +1,6 @@
 # 01 · Jersey City Bike Demand and Rebalancing Evidence
 
-**Technical summary.** Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.
+**Technical summary.** Held-out station-hour MAE is 0.69 pickups/day, a 33.1% improvement over the hour-only baseline.
 
 ## Evidence products
 

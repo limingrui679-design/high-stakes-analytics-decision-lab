@@ -26,9 +26,13 @@ produced, it makes each transition conditional on visible evidence.
 | **Shared uncertainty** | Disturbing alternatives independently | Retains common time, market, participant, operational, campaign, or spatial shocks |
 | **Reproducible evidence** | Separating prose from analysis | Links claims and accessible figures to JSON, CSV, hashes, and rerunnable code |
 
-The contribution is not a newly invented statistical estimator. It is an
-adaptive orchestration system for evidence gating, method selection, claim
-control, dependent-risk handling, and case-specific analytical communication.
+Its contribution is an adaptive orchestration system for evidence gating,
+method selection, claim control, dependent-risk handling, and case-specific
+analytical communication.
+
+The public portfolio contains 15 primary reports and 10 conditional briefs—25
+intelligence products in total—plus 119 canonical accessible figures: 50
+evidence figures and 69 decision figures.
 
 ## Quick install
 
@@ -185,7 +189,7 @@ the table opens each full report.
   <img src="examples/real-data-cases/figures/case-landscape.svg" alt="Fifteen real-data cases and their evidence-matched analytical paths" width="92%">
 </p>
 
-| Project | Evidence | Adaptive route | Open artifacts |
+| Project | Evidence | Evidence path / terminal direction | Open artifacts |
 |---|---:|---|---|
 | Jersey City Bike Demand and Rebalancing Evidence | 17,906 station-hour-month rows | predictive → scenario | [Evidence](examples/real-data-cases/projects/bike-demand-operations/outputs/report.md) · [Decision](examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-report.md) |
 | Cross-City 311 Distribution Shift and Transfer Gate | 8,760 city-day-family rows | descriptive → transport gate | [Evidence](examples/real-data-cases/projects/cross-city-311-shift/outputs/report.md) · [Result](examples/real-data-cases/projects/cross-city-311-shift/outputs/results.json) |
@@ -220,9 +224,9 @@ for palette, chart families, report composition, prohibited shortcuts, and QA.
 
 ## Install
 
-High-Stakes Analytics & Decision Lab follows the open `SKILL.md` +
-YAML-frontmatter format used by the Agent Skills ecosystem. Install it across
-supported runtimes with:
+High-Stakes Analytics & Decision Lab uses the open Agent Skills format: a
+`SKILL.md` file with YAML frontmatter. Install it across supported runtimes
+with:
 
 ```bash
 npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g

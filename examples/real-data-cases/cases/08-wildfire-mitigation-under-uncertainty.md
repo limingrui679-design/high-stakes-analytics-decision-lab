@@ -1,6 +1,6 @@
 # 08 · Wildfire Mitigation Evidence Allocation Under Uncertainty
 
-**Technical summary.** No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.
+**Technical summary.** Across 8,892 valid mapped perimeters, recent observed acres is the lowest-regret proxy allocation under the tested scenarios.
 
 ## Evidence products
 

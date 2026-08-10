@@ -1,6 +1,6 @@
 # 02 · Cross-City 311 Distribution Shift and Transfer Gate
 
-**Technical summary.** Administrative shift audit only; requests are not latent need or service quality.
+**Technical summary.** The 2023 cross-city total-variation distance is 58.1%, and the transfer gate is refused.
 
 ## Evidence products
 

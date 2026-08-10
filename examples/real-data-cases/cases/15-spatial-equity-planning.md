@@ -1,6 +1,6 @@
 # 15 · Spatial Equity Planning with Transit and Site-Evidence Gates
 
-**Technical summary.** No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.
+**Technical summary.** Across 1,597 analyzed tracts and 265 rapid-transit stop records, the high-poverty weighted nearest-stop distance is 40.65 km.
 
 ## Evidence products
 

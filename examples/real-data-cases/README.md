@@ -76,7 +76,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/01-bike-demand-operations.svg" alt="Representative evidence figure for Jersey City Bike Demand and Rebalancing Evidence">
   </a>
   <br><strong>01 · Jersey City Bike Demand and Rebalancing Evidence</strong>
-  <br>Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.
+  <br>Held-out station-hour MAE is 0.69 pickups/day, a 33.1% improvement over the hour-only baseline.
   <br><em>Boundary:</em> Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.
   <br><a href="cases/01-bike-demand-operations.md">Case card</a> · <a href="projects/bike-demand-operations/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/bike-demand-operations/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -86,7 +86,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/02-cross-city-311-shift.svg" alt="Representative evidence figure for Cross-City 311 Distribution Shift and Transfer Gate">
   </a>
   <br><strong>02 · Cross-City 311 Distribution Shift and Transfer Gate</strong>
-  <br>Administrative shift audit only; requests are not latent need or service quality.
+  <br>The 2023 cross-city total-variation distance is 58.1%, and the transfer gate is refused.
   <br><em>Boundary:</em> Administrative shift audit only; requests are not latent need or service quality.
   <br><a href="cases/02-cross-city-311-shift.md">Case card</a> · <a href="projects/cross-city-311-shift/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/cross-city-311-shift/outputs/results.json">Terminal result</a>
@@ -108,7 +108,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/04-census-income-ai.svg" alt="Representative evidence figure for ACS Employment AI Temporal Transport and Audit">
   </a>
   <br><strong>04 · ACS Employment AI Temporal Transport and Audit</strong>
-  <br>No eligibility, hiring, credit, benefits, or other consequential action.
+  <br>The untouched 2023 temporal test yields an AUC of 0.640 and a weighted Brier score of 0.158.
   <br><em>Boundary:</em> No eligibility, hiring, credit, benefits, or other consequential action.
   <br><a href="cases/04-census-income-ai.md">Case card</a> · <a href="projects/census-income-ai/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/census-income-ai/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -152,7 +152,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/08-wildfire-mitigation-under-uncertainty.svg" alt="Representative evidence figure for Wildfire Mitigation Evidence Allocation Under Uncertainty">
   </a>
   <br><strong>08 · Wildfire Mitigation Evidence Allocation Under Uncertainty</strong>
-  <br>No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.
+  <br>Across 8,892 valid mapped perimeters, recent observed acres is the lowest-regret proxy allocation under the tested scenarios.
   <br><em>Boundary:</em> No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.
   <br><a href="cases/08-wildfire-mitigation-under-uncertainty.md">Case card</a> · <a href="projects/wildfire-mitigation-under-uncertainty/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/wildfire-mitigation-under-uncertainty/outputs/results.json">Terminal result</a>
@@ -164,7 +164,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/09-sec-nport-filing-review.svg" alt="Representative evidence figure for SEC N-PORT Liquidity and Crowding Filing Review">
   </a>
   <br><strong>09 · SEC N-PORT Liquidity and Crowding Filing Review</strong>
-  <br>Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.
+  <br>Across 11,747 reviewed filings, median top-10 holding concentration is 34.5% and the 90th-percentile Level-3 share is 0.2%.
   <br><em>Boundary:</em> Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.
   <br><a href="cases/09-sec-nport-filing-review.md">Case card</a> · <a href="projects/sec-nport-filing-review/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/sec-nport-filing-review/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -174,7 +174,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/10-social-norm-field-experiment.svg" alt="Representative evidence figure for Social-Norm Field Experiment with Household-Clustered Inference">
   </a>
   <br><strong>10 · Social-Norm Field Experiment with Household-Clustered Inference</strong>
-  <br>Causal scope is the historical randomized experiment; no new campaign authorization.
+  <br>The Neighbors arm has the largest observed intent-to-treat effect at 8.1%, with a household-clustered 95% interval of 7.5% to 8.8%.
   <br><em>Boundary:</em> Causal scope is the historical randomized experiment; no new campaign authorization.
   <br><a href="cases/10-social-norm-field-experiment.md">Case card</a> · <a href="projects/social-norm-field-experiment/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/social-norm-field-experiment/outputs/results.json">Terminal result</a>
@@ -186,7 +186,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/11-population-health-survival.svg" alt="Representative evidence figure for Population Health Risk Transport Across NHIS Cohorts">
   </a>
   <br><strong>11 · Population Health Risk Transport Across NHIS Cohorts</strong>
-  <br>Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.
+  <br>The 2017 temporal test yields an AUC of 0.846 and weighted two-year mortality of 2.32% across 58,754 linked adults.
   <br><em>Boundary:</em> Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.
   <br><a href="cases/11-population-health-survival.md">Case card</a> · <a href="projects/population-health-survival/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/population-health-survival/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -196,7 +196,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/12-opportunity-zone-policy-evaluation.svg" alt="Representative evidence figure for Opportunity Zone One-Year Policy Evidence Screen">
   </a>
   <br><strong>12 · Opportunity Zone One-Year Policy Evidence Screen</strong>
-  <br>Associational one-year screen; no causal effect because parallel trends are unavailable.
+  <br>The matched one-year screen contains 1,460 complete tract panels, including 138 designated QOZ tracts and 121 unique matched controls.
   <br><em>Boundary:</em> Associational one-year screen; no causal effect because parallel trends are unavailable.
   <br><a href="cases/12-opportunity-zone-policy-evaluation.md">Case card</a> · <a href="projects/opportunity-zone-policy-evaluation/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/opportunity-zone-policy-evaluation/outputs/results.json">Terminal result</a>
@@ -218,7 +218,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/14-nhanes-population-transportability.svg" alt="Representative evidence figure for NHANES Mortality Transportability and Population Inequality">
   </a>
   <br><strong>14 · NHANES Mortality Transportability and Population Inequality</strong>
-  <br>Population research only; no individual diagnosis or treatment.
+  <br>The external-cohort check yields an AUC of 0.804 and a Brier score of 0.022 across 11,820 linked adults.
   <br><em>Boundary:</em> Population research only; no individual diagnosis or treatment.
   <br><a href="cases/14-nhanes-population-transportability.md">Case card</a> · <a href="projects/nhanes-population-transportability/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/nhanes-population-transportability/outputs/results.json">Terminal result</a>
@@ -230,7 +230,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/15-spatial-equity-planning.svg" alt="Representative evidence figure for Spatial Equity Planning with Transit and Site-Evidence Gates">
   </a>
   <br><strong>15 · Spatial Equity Planning with Transit and Site-Evidence Gates</strong>
-  <br>No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.
+  <br>Across 1,597 analyzed tracts and 265 rapid-transit stop records, the high-poverty weighted nearest-stop distance is 40.65 km.
   <br><em>Boundary:</em> No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.
   <br><a href="cases/15-spatial-equity-planning.md">Case card</a> · <a href="projects/spatial-equity-planning/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/spatial-equity-planning/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>

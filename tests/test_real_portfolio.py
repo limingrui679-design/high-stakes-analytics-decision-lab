@@ -48,6 +48,19 @@ class RealPortfolioContractTests(unittest.TestCase):
             len({item["id"] for item in self.catalog["projects"]}),
             15,
         )
+        case_index = json.loads(
+            (
+                ROOT / "examples" / "real-data-cases" / "cases.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertEqual(case_index["case_count"], 15)
+        self.assertEqual(len(case_index["cases"]), 15)
+        for case in case_index["cases"]:
+            with self.subTest(case_result=case["id"]):
+                self.assertNotEqual(
+                    case["result"].strip(),
+                    case["boundary"].strip(),
+                )
 
     def test_every_project_has_real_source_and_report_contract(self) -> None:
         for item in self.catalog["projects"]:

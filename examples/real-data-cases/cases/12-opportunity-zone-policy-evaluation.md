@@ -1,6 +1,6 @@
 # 12 · Opportunity Zone One-Year Policy Evidence Screen
 
-**Technical summary.** Associational one-year screen; no causal effect because parallel trends are unavailable.
+**Technical summary.** The matched one-year screen contains 1,460 complete tract panels, including 138 designated QOZ tracts and 121 unique matched controls.
 
 ## Evidence products
 

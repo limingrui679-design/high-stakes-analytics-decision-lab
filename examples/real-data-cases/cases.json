@@ -61,7 +61,7 @@
           "value": "modeled scenario only"
         }
       ],
-      "result": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
+      "result": "Held-out station-hour MAE is 0.69 pickups/day, a 33.1% improvement over the hour-only baseline.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
       "figure": "figures/01-bike-demand-operations.svg",
@@ -122,7 +122,7 @@
           "value": "refused"
         }
       ],
-      "result": "Administrative shift audit only; requests are not latent need or service quality.",
+      "result": "The 2023 cross-city total-variation distance is 58.1%, and the transfer gate is refused.",
       "terminal_output": "transfer refused",
       "boundary": "Administrative shift audit only; requests are not latent need or service quality.",
       "figure": "figures/02-cross-city-311-shift.svg",
@@ -246,7 +246,7 @@
           "value": "no consequential use"
         }
       ],
-      "result": "No eligibility, hiring, credit, benefits, or other consequential action.",
+      "result": "The untouched 2023 temporal test yields an AUC of 0.640 and a weighted Brier score of 0.158.",
       "terminal_output": "do not use for consequential action",
       "boundary": "No eligibility, hiring, credit, benefits, or other consequential action.",
       "figure": "figures/04-census-income-ai.svg",
@@ -511,7 +511,7 @@
           "value": "request effectiveness and feasibility evidence"
         }
       ],
-      "result": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+      "result": "Across 8,892 valid mapped perimeters, recent observed acres is the lowest-regret proxy allocation under the tested scenarios.",
       "terminal_output": "evidence request before mitigation allocation",
       "boundary": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
       "figure": "figures/08-wildfire-mitigation-under-uncertainty.svg",
@@ -576,7 +576,7 @@
           "value": "targeted filing review only"
         }
       ],
-      "result": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
+      "result": "Across 11,747 reviewed filings, median top-10 holding concentration is 34.5% and the 90th-percentile Level-3 share is 0.2%.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
       "figure": "figures/09-sec-nport-filing-review.svg",
@@ -644,7 +644,7 @@
           "value": "the randomized experiment only"
         }
       ],
-      "result": "Causal scope is the historical randomized experiment; no new campaign authorization.",
+      "result": "The Neighbors arm has the largest observed intent-to-treat effect at 8.1%, with a household-clustered 95% interval of 7.5% to 8.8%.",
       "terminal_output": "observed field effect no new campaign authorization",
       "boundary": "Causal scope is the historical randomized experiment; no new campaign authorization.",
       "figure": "figures/10-social-norm-field-experiment.svg",
@@ -710,7 +710,7 @@
           "value": "research triage validation only"
         }
       ],
-      "result": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+      "result": "The 2017 temporal test yields an AUC of 0.846 and weighted two-year mortality of 2.32% across 58,754 linked adults.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
       "figure": "figures/11-population-health-survival.svg",
@@ -775,7 +775,7 @@
           "value": "not identified"
         }
       ],
-      "result": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+      "result": "The matched one-year screen contains 1,460 complete tract panels, including 138 designated QOZ tracts and 121 unique matched controls.",
       "terminal_output": "associational policy screen only",
       "boundary": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
       "figure": "figures/12-opportunity-zone-policy-evaluation.svg",
@@ -899,7 +899,7 @@
           "value": "population research only"
         }
       ],
-      "result": "Population research only; no individual diagnosis or treatment.",
+      "result": "The external-cohort check yields an AUC of 0.804 and a Brier score of 0.022 across 11,820 linked adults.",
       "terminal_output": "population research only",
       "boundary": "Population research only; no individual diagnosis or treatment.",
       "figure": "figures/14-nhanes-population-transportability.svg",
@@ -983,7 +983,7 @@
           "value": "blocked pending land and feasibility evidence"
         }
       ],
-      "result": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
+      "result": "Across 1,597 analyzed tracts and 265 rapid-transit stop records, the high-poverty weighted nearest-stop distance is 40.65 km.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
       "figure": "figures/15-spatial-equity-planning.svg",

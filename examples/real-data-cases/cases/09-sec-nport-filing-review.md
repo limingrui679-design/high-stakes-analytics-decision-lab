@@ -1,6 +1,6 @@
 # 09 · SEC N-PORT Liquidity and Crowding Filing Review
 
-**Technical summary.** Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.
+**Technical summary.** Across 11,747 reviewed filings, median top-10 holding concentration is 34.5% and the 90th-percentile Level-3 share is 0.2%.
 
 ## Evidence products
 

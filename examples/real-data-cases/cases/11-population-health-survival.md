@@ -1,6 +1,6 @@
 # 11 · Population Health Risk Transport Across NHIS Cohorts
 
-**Technical summary.** Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.
+**Technical summary.** The 2017 temporal test yields an AUC of 0.846 and weighted two-year mortality of 2.32% across 58,754 linked adults.
 
 ## Evidence products
 

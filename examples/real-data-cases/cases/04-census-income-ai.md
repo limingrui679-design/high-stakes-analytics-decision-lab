@@ -1,6 +1,6 @@
 # 04 · ACS Employment AI Temporal Transport and Audit
 
-**Technical summary.** No eligibility, hiring, credit, benefits, or other consequential action.
+**Technical summary.** The untouched 2023 temporal test yields an AUC of 0.640 and a weighted Brier score of 0.158.
 
 ## Evidence products
 

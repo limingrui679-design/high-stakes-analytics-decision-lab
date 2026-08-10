@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import sys
 import unittest
 import urllib.parse
 import xml.etree.ElementTree as ET
@@ -8,6 +9,16 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPT_DIR = ROOT / "scripts"
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from build_readme_visuals import (  # noqa: E402
+    _portfolio_metrics,
+    adaptive_system_svg,
+    hero_svg,
+    report_layers_svg,
+)
+
 SKILL_NAME = "high-stakes-analytics-decision-lab"
 LEGACY_NAME = "high-stakes-" + "decision-lab"
 
@@ -33,6 +44,23 @@ class PackageIntegrityTests(unittest.TestCase):
             f"npx skills add limingrui679-design/{SKILL_NAME} -g",
             readme,
         )
+        test_count = sum(
+            len(re.findall(r"^\s+def test_", path.read_text(encoding="utf-8"), re.MULTILINE))
+            for path in (ROOT / "tests").glob("test_*.py")
+        )
+        self.assertIn(f"The {test_count} public tests", readme)
+        self.assertIn(f"complete {test_count}-test", readme)
+        metrics = _portfolio_metrics()
+        normalized_readme = " ".join(readme.split())
+        portfolio_sentence = (
+            f'The public portfolio contains {metrics["primary_reports"]} primary '
+            f'reports and {metrics["conditional_briefs"]} conditional briefs—'
+            f'{metrics["intelligence_products"]} intelligence products in total—'
+            f'plus {metrics["accessible_figures"]} canonical accessible figures: '
+            f'{metrics["evidence_figures"]} evidence figures and '
+            f'{metrics["decision_figures"]} decision figures.'
+        )
+        self.assertIn(portfolio_sentence, normalized_readme)
 
     def test_local_markdown_and_html_links_resolve(self) -> None:
         missing: list[str] = []
@@ -70,6 +98,30 @@ class PackageIntegrityTests(unittest.TestCase):
                     f"{svg_path.relative_to(ROOT)}: missing title or desc"
                 )
         self.assertEqual(failures, [])
+        self.assertEqual(
+            _portfolio_metrics(),
+            {
+                "real_data_projects": 15,
+                "primary_reports": 15,
+                "conditional_briefs": 10,
+                "intelligence_products": 25,
+                "evidence_figures": 50,
+                "decision_figures": 69,
+                "accessible_figures": 119,
+                "adaptive_routes": 4,
+            },
+        )
+        generated_visuals = {
+            "readme-hero.svg": hero_svg(),
+            "report-layers.svg": report_layers_svg(),
+            "adaptive-reporting-system.svg": adaptive_system_svg(),
+        }
+        for name, expected in generated_visuals.items():
+            with self.subTest(generated_visual=name):
+                self.assertEqual(
+                    (ROOT / "assets" / name).read_text(encoding="utf-8"),
+                    expected,
+                )
 
     def test_package_has_no_mac_metadata_or_legacy_name(self) -> None:
         forbidden_paths = [

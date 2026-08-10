@@ -37,7 +37,36 @@ from visual_system import (
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "assets"
+PROJECT_ROOT = ROOT / "examples" / "real-data-cases" / "projects"
 FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif"
+
+
+def _portfolio_metrics() -> dict[str, int]:
+    project_count = sum(
+        1
+        for path in PROJECT_ROOT.iterdir()
+        if path.is_dir() and not path.name.startswith("_")
+    )
+    evidence_reports = len(list(PROJECT_ROOT.glob("*/outputs/report.md")))
+    decision_reports = len(
+        list(PROJECT_ROOT.glob("*/outputs/decision/report/decision-report.md"))
+    )
+    evidence_figures = len(list(PROJECT_ROOT.glob("*/outputs/figures/*.svg")))
+    decision_figures = len(
+        list(PROJECT_ROOT.glob("*/outputs/decision/report/figures/*.svg"))
+    )
+    return {
+        "real_data_projects": project_count,
+        "primary_reports": evidence_reports,
+        "conditional_briefs": decision_reports,
+        "intelligence_products": evidence_reports + decision_reports,
+        "evidence_figures": evidence_figures,
+        "decision_figures": decision_figures,
+        "accessible_figures": evidence_figures + decision_figures,
+        "adaptive_routes": len(
+            ("descriptive", "diagnostic", "predictive", "prescriptive")
+        ),
+    }
 
 
 def _hero_text(
@@ -108,11 +137,12 @@ def hero_svg() -> str:
         ),
     ]
 
+    portfolio = _portfolio_metrics()
     metrics = [
-        ("15", "REAL-DATA PROJECTS", TEAL),
-        ("25", "INTELLIGENCE PRODUCTS", VIOLET),
-        ("119", "ACCESSIBLE FIGURES", GOLD),
-        ("04", "ADAPTIVE ROUTES", CORAL),
+        (str(portfolio["real_data_projects"]), "REAL-DATA PROJECTS", TEAL),
+        (str(portfolio["intelligence_products"]), "INTELLIGENCE PRODUCTS", VIOLET),
+        (str(portfolio["accessible_figures"]), "ACCESSIBLE FIGURES", GOLD),
+        (f'{portfolio["adaptive_routes"]:02d}', "ADAPTIVE ROUTES", CORAL),
     ]
     for index, (value, label, color) in enumerate(metrics):
         x = 64 + index * 222

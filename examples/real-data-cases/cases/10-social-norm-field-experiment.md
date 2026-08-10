@@ -1,6 +1,6 @@
 # 10 · Social-Norm Field Experiment with Household-Clustered Inference
 
-**Technical summary.** Causal scope is the historical randomized experiment; no new campaign authorization.
+**Technical summary.** The Neighbors arm has the largest observed intent-to-treat effect at 8.1%, with a household-clustered 95% interval of 7.5% to 8.8%.
 
 ## Evidence products
 
