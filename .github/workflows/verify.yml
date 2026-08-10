@@ -51,3 +51,43 @@ jobs:
         run: ruff check scripts tests
       - name: Run mypy
         run: mypy scripts
+      - name: Check prose and identifiers
+        run: >-
+          codespell --config .codespellrc
+          README.md CONTRIBUTING.md references scripts tests
+
+  portfolio-reproducibility:
+    name: Portfolio rebuild ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13", "3.14"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Rebuild and compare all fifteen projects
+        run: python scripts/verify_portfolio_reproducibility.py
+
+  source-builder-security:
+    name: Source builder security
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - name: Install hardened XML parser
+        run: python -m pip install defusedxml==0.7.1
+      - name: Run source-builder security tests
+        run: >-
+          python -m unittest discover -s tests
+          -p 'test_reproducibility_and_source_security.py' -v
