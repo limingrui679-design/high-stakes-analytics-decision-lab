@@ -1,2 +1,2 @@
 # Optional dependency used only to rebuild external XPT source snapshots.
-pandas==2.3.3
+pandas==3.0.5
