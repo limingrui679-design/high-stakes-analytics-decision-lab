@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "High-Stakes Analytics & Decision Lab"
+type: software
+authors:
+  - family-names: "Li"
+    given-names: "Mingrui"
+repository-code: "https://github.com/limingrui679-design/high-stakes-analytics-decision-lab"
+url: "https://github.com/limingrui679-design/high-stakes-analytics-decision-lab"
+license: MIT
+abstract: >-
+  A platform-neutral analytical Skill for source-backed, evidence-constrained
+  descriptive, diagnostic, predictive, and prescriptive analysis.
+keywords:
+  - analytics
+  - decision-science
+  - data-quality
+  - reproducible-research
+  - responsible-ai
+  - agent-skills

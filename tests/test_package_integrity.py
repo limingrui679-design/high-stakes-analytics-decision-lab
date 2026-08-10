@@ -18,6 +18,7 @@ from build_readme_visuals import (  # noqa: E402
     hero_svg,
     report_layers_svg,
 )
+import build_case_examples  # noqa: E402
 
 SKILL_NAME = "high-stakes-analytics-decision-lab"
 LEGACY_NAME = "high-stakes-" + "decision-lab"
@@ -52,6 +53,7 @@ class PackageIntegrityTests(unittest.TestCase):
         self.assertIn(f"complete {test_count}-test", readme)
         metrics = _portfolio_metrics()
         normalized_readme = " ".join(readme.split())
+        self.assertNotRegex(readme, r"\S<br/>\S")
         portfolio_sentence = (
             f'The public portfolio contains {metrics["primary_reports"]} primary '
             f'reports and {metrics["conditional_briefs"]} conditional briefs—'
@@ -122,6 +124,28 @@ class PackageIntegrityTests(unittest.TestCase):
                     (ROOT / "assets" / name).read_text(encoding="utf-8"),
                     expected,
                 )
+        cases = build_case_examples.load_cases()
+        for case in cases:
+            with self.subTest(generated_case_card=case["id"]):
+                self.assertEqual(
+                    (
+                        build_case_examples.CASE_DIR
+                        / build_case_examples.card_filename(case)
+                    ).read_text(encoding="utf-8"),
+                    build_case_examples.case_card(case),
+                )
+        self.assertEqual(
+            (build_case_examples.CASE_ROOT / "README.md").read_text(
+                encoding="utf-8"
+            ),
+            build_case_examples.gallery_readme(cases),
+        )
+        self.assertEqual(
+            (
+                build_case_examples.FIGURE_DIR / "case-landscape.svg"
+            ).read_text(encoding="utf-8"),
+            build_case_examples.gallery_svg(cases),
+        )
 
     def test_package_has_no_mac_metadata_or_legacy_name(self) -> None:
         forbidden_paths = [

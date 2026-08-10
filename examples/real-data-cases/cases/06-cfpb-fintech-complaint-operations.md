@@ -1,6 +1,6 @@
 # 06 · Human-in-the-Loop Complaint Triage Information System
 
-**Technical summary.** The model contains weak statistical signal but no reliable operational ranking gain at tested review capacities.
+**Technical summary.** The later-period AUC is 0.611 (block-bootstrap 95% interval 0.539 to 0.697), while top-5% lift is 1.00 (95% interval 0.33 to 2.46); the ranking model fails the deployment gate.
 
 ## Evidence products
 

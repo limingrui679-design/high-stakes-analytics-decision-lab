@@ -1,6 +1,6 @@
 # 13 · Small-Sample Repeated-Measures Inference
 
-**Technical summary.** Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.
+**Technical summary.** Across 57 complete participant pairs, the mean pseudoword-minus-meaningful fixation-duration difference is 34.25 (bootstrap 95% interval 25.87 to 43.35), with a Holm-adjusted sign-flip p-value of 0.0003.
 
 ## Evidence products
 

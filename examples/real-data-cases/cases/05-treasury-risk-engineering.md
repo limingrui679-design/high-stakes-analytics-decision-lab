@@ -1,6 +1,6 @@
 # 05 · Treasury Curve and Tail-Risk Decision Engine
 
-**Technical summary.** Longer-duration allocations show materially larger historical tail losses; the short allocation remains the risk reference.
+**Technical summary.** Historical ES95 loss rises from 0.4% for the short baseline to 0.9% for the long-duration portfolio; the short-baseline rolling VaR exceedance rate is 6.0%.
 
 ## Evidence products
 

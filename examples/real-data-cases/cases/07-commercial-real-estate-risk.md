@@ -1,6 +1,6 @@
 # 07 · Commercial Real Estate Diligence Decision Product
 
-**Technical summary.** Public transactions support a market-depth screen and financing evidence request, not property valuation or acquisition.
+**Technical summary.** Across 12,399 filtered commercial transactions, Manhattan has the highest borough median price per square foot at $743; the break-even cap rate at 8.5% debt is 7.5%.
 
 ## Evidence products
 

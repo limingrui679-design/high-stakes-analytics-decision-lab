@@ -1,6 +1,6 @@
 # 03 · Capacity-Constrained Marketing Pilot
 
-**Technical summary.** Pre-contact features weakly concentrate observed responses; common campaign shocks are preserved across capacity options.
+**Technical summary.** The untouched test yields an AUC of 0.650 and a Brier score of 0.210; the top 5% captures 7.4% of observed responses.
 
 ## Evidence products
 

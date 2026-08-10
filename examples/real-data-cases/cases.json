@@ -184,7 +184,7 @@
           "value": "59.0%"
         }
       ],
-      "result": "Pre-contact features weakly concentrate observed responses; common campaign shocks are preserved across capacity options.",
+      "result": "The untouched test yields an AUC of 0.650 and a Brier score of 0.210; the top 5% captures 7.4% of observed responses.",
       "terminal_output": "randomized pilot required",
       "boundary": "Observed response concentration is not incremental lift, causal treatment effect, profit, or return on outreach.",
       "figure": "figures/03-bank-marketing-response.svg",
@@ -328,7 +328,7 @@
           "value": "1,500"
         }
       ],
-      "result": "Longer-duration allocations show materially larger historical tail losses; the short allocation remains the risk reference.",
+      "result": "Historical ES95 loss rises from 0.4% for the short baseline to 0.9% for the long-duration portfolio; the short-baseline rolling VaR exceedance rate is 6.0%.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "First-order duration omits convexity, security selection, costs, financing, taxes, liquidity, and future-regime uncertainty.",
       "figure": "figures/05-treasury-risk-engineering.svg",
@@ -389,7 +389,7 @@
           "value": "do_not_deploy"
         }
       ],
-      "result": "The model contains weak statistical signal but no reliable operational ranking gain at tested review capacities.",
+      "result": "The later-period AUC is 0.611 (block-bootstrap 95% interval 0.539 to 0.697), while top-5% lift is 1.00 (95% interval 0.33 to 2.46); the ranking model fails the deployment gate.",
       "terminal_output": "do not deploy",
       "boundary": "The timely flag is not complaint merit, harm, resolution quality, company quality, or compliance; the 2022 model may not transport.",
       "figure": "figures/06-cfpb-fintech-complaint-operations.svg",
@@ -451,7 +451,7 @@
           "value": "7.5%"
         }
       ],
-      "result": "Public transactions support a market-depth screen and financing evidence request, not property valuation or acquisition.",
+      "result": "Across 12,399 filtered commercial transactions, Manhattan has the highest borough median price per square foot at $743; the break-even cap rate at 8.5% debt is 7.5%.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "The source does not establish arm's-length status, NOI, expenses, occupancy, condition, appraisal value, debt terms, or causal regeneration effects.",
       "figure": "figures/07-commercial-real-estate-risk.svg",
@@ -836,7 +836,7 @@
           "value": "12.22"
         }
       ],
-      "result": "Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.",
+      "result": "Across 57 complete participant pairs, the mean pseudoword-minus-meaningful fixation-duration difference is 34.25 (bootstrap 95% interval 25.87 to 43.35), with a Holm-adjusted sign-flip p-value of 0.0003.",
       "terminal_output": "claim-bounded decision review",
       "boundary": "The public sample is small and does not establish downstream educational outcomes or an intervention effect.",
       "figure": "figures/13-behavioral-reading-experiment.svg",

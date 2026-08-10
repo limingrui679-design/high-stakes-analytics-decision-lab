@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import importlib.util
 import json
+import re
 import sys
 import unittest
 from collections import Counter
@@ -60,6 +61,14 @@ class RealPortfolioContractTests(unittest.TestCase):
                 self.assertNotEqual(
                     case["result"].strip(),
                     case["boundary"].strip(),
+                )
+                self.assertRegex(case["result"], r"\d")
+                self.assertIsNone(
+                    re.search(
+                        r"\b(?:would|could|might|may)\b",
+                        case["result"],
+                        flags=re.IGNORECASE,
+                    )
                 )
 
     def test_every_project_has_real_source_and_report_contract(self) -> None:

@@ -56,13 +56,13 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 ```mermaid
 flowchart TD
-    Q["1 · Frame the question<br/>decision · population · estimand · horizon"] --> S["2 · Establish the evidence contract<br/>source · license · grain · lineage"]
+    Q["1 · Frame the question <br/> decision · population · estimand · horizon"] --> S["2 · Establish the evidence contract <br/> source · license · grain · lineage"]
     S --> G{"3 · Data-readiness gate"}
-    G -->|"blocked"| X["Stop<br/>request corrected evidence"]
-    G -->|"confirmation required"| U["Approve named transformation<br/>or revise the source"]
+    G -->|"blocked"| X["Stop <br/> request corrected evidence"]
+    G -->|"confirmation required"| U["Approve named transformation <br/> or revise the source"]
     U --> G
-    G -->|"ready or bounded limitations"| D["4 · Descriptive baseline<br/>always first"]
-    D --> R{"5 · Which additional route<br/>does the case justify?"}
+    G -->|"ready or bounded limitations"| D["4 · Descriptive baseline <br/> always first"]
+    D --> R{"5 · Which additional route <br/> does the case justify?"}
     R -->|"explain drivers"| A["Diagnostic"]
     R -->|"estimate outcomes"| P["Predictive"]
     R -->|"compare feasible actions"| O["Prescriptive"]
@@ -72,7 +72,7 @@ flowchart TD
     O --> E
     E --> J{"7 · Is a decision layer justified?"}
     J -->|"no"| N["Evidence request · negative validation · stop"]
-    J -->|"yes"| B["Decision Intelligence Brief<br/>bounded action · pilot · diligence"]
+    J -->|"yes"| B["Decision Intelligence Brief <br/> bounded action · pilot · diligence"]
 ```
 
 Routes may be composed rather than chosen exclusively. Across every path, the
@@ -88,8 +88,8 @@ fixed evidence spine remains the same:
 
 ```mermaid
 flowchart LR
-    A["Uploaded source<br/>immutable + hashed"] --> B["Data contract<br/>grain · key · time · target"]
-    B --> C["Quality profile<br/>missing · duplicates · validity · privacy · leakage"]
+    A["Uploaded source <br/> immutable + hashed"] --> B["Data contract <br/> grain · key · time · target"]
+    B --> C["Quality profile <br/> missing · duplicates · validity · privacy · leakage"]
     C --> D{"Readiness gate"}
     D -->|"ready"| E["Safe normalization"]
     D -->|"limitations"| F["Proceed with visible boundaries"]

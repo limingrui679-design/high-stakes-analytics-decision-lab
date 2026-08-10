@@ -98,7 +98,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/03-bank-marketing-response.svg" alt="Representative evidence figure for Capacity-Constrained Marketing Pilot">
   </a>
   <br><strong>03 · Capacity-Constrained Marketing Pilot</strong>
-  <br>Pre-contact features weakly concentrate observed responses; common campaign shocks are preserved across capacity options.
+  <br>The untouched test yields an AUC of 0.650 and a Brier score of 0.210; the top 5% captures 7.4% of observed responses.
   <br><em>Boundary:</em> Observed response concentration is not incremental lift, causal treatment effect, profit, or return on outreach.
   <br><a href="cases/03-bank-marketing-response.md">Case card</a> · <a href="projects/bank-marketing-response/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/bank-marketing-response/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -120,7 +120,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/05-treasury-risk-engineering.svg" alt="Representative evidence figure for Treasury Curve and Tail-Risk Decision Engine">
   </a>
   <br><strong>05 · Treasury Curve and Tail-Risk Decision Engine</strong>
-  <br>Longer-duration allocations show materially larger historical tail losses; the short allocation remains the risk reference.
+  <br>Historical ES95 loss rises from 0.4% for the short baseline to 0.9% for the long-duration portfolio; the short-baseline rolling VaR exceedance rate is 6.0%.
   <br><em>Boundary:</em> First-order duration omits convexity, security selection, costs, financing, taxes, liquidity, and future-regime uncertainty.
   <br><a href="cases/05-treasury-risk-engineering.md">Case card</a> · <a href="projects/treasury-risk-engineering/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/treasury-risk-engineering/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -130,7 +130,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/06-cfpb-fintech-complaint-operations.svg" alt="Representative evidence figure for Human-in-the-Loop Complaint Triage Information System">
   </a>
   <br><strong>06 · Human-in-the-Loop Complaint Triage Information System</strong>
-  <br>The model contains weak statistical signal but no reliable operational ranking gain at tested review capacities.
+  <br>The later-period AUC is 0.611 (block-bootstrap 95% interval 0.539 to 0.697), while top-5% lift is 1.00 (95% interval 0.33 to 2.46); the ranking model fails the deployment gate.
   <br><em>Boundary:</em> The timely flag is not complaint merit, harm, resolution quality, company quality, or compliance; the 2022 model may not transport.
   <br><a href="cases/06-cfpb-fintech-complaint-operations.md">Case card</a> · <a href="projects/cfpb-fintech-complaint-operations/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -142,7 +142,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/07-commercial-real-estate-risk.svg" alt="Representative evidence figure for Commercial Real Estate Diligence Decision Product">
   </a>
   <br><strong>07 · Commercial Real Estate Diligence Decision Product</strong>
-  <br>Public transactions support a market-depth screen and financing evidence request, not property valuation or acquisition.
+  <br>Across 12,399 filtered commercial transactions, Manhattan has the highest borough median price per square foot at $743; the break-even cap rate at 8.5% debt is 7.5%.
   <br><em>Boundary:</em> The source does not establish arm's-length status, NOI, expenses, occupancy, condition, appraisal value, debt terms, or causal regeneration effects.
   <br><a href="cases/07-commercial-real-estate-risk.md">Case card</a> · <a href="projects/commercial-real-estate-risk/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
@@ -208,7 +208,7 @@ visual comparison across all fifteen projects is useful.
     <img src="figures/13-behavioral-reading-experiment.svg" alt="Representative evidence figure for Small-Sample Repeated-Measures Inference">
   </a>
   <br><strong>13 · Small-Sample Repeated-Measures Inference</strong>
-  <br>Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.
+  <br>Across 57 complete participant pairs, the mean pseudoword-minus-meaningful fixation-duration difference is 34.25 (bootstrap 95% interval 25.87 to 43.35), with a Holm-adjusted sign-flip p-value of 0.0003.
   <br><em>Boundary:</em> The public sample is small and does not establish downstream educational outcomes or an intervention effect.
   <br><a href="cases/13-behavioral-reading-experiment.md">Case card</a> · <a href="projects/behavioral-reading-experiment/outputs/report.md">Evidence Intelligence Report</a>
   · <a href="projects/behavioral-reading-experiment/outputs/decision/report/decision-report.md">Decision Intelligence Brief</a>
