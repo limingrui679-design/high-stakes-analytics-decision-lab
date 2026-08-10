@@ -34,7 +34,7 @@ Station-hour history is compared with an hour-only baseline.
 | Source | Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate. |
 | Version | Jersey City trip history, January-December 2021; derived station-hour aggregate |
 | Accessed | 2026-08-10 |
-| License | [Citi Bike Data Use Policy](https://citibikenyc.com/data-use-policy) |
+| License | [Citi Bike Data Sharing Policy](https://citibikenyc.com/data-sharing-policy) |
 | Analytical grain | one station-hour-month aggregate |
 | Expected rows | 17,906 |
 | Results | [`results.json`](results.json) |
@@ -150,6 +150,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `bike-demand-operations`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `300fd148b1dff467b88bb61eec07add554dd08276b003a77684243e5d87420ff`
+- Result SHA-256: `c9989ec88eb0072a7fbc89613400d9a68d5ca0c1b0f80343a29948b61fd5fc9f`
 
 </details>

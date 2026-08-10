@@ -244,9 +244,9 @@ def chart_header(
             text(1002.5, 36, "MODEL-BOUND EVIDENCE", css="micro", anchor="middle", fill="#AFC0D3"),
             f'<circle cx="1125" cy="58" r="31" fill="none" stroke="{accent}" stroke-width="2"/>',
             f'<circle cx="1125" cy="58" r="10" fill="{accent}"/>',
-            f'<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>',
-            f'<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>',
-            f'<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>',
+            '<circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>',
+            '<line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>',
+            '<line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>',
         ]
     )
 

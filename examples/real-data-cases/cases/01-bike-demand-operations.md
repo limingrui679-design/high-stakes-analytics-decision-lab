@@ -53,7 +53,7 @@ Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-servi
 - **Publisher:** Citi Bike
 - **Version:** Jersey City trip history, January-December 2021; derived station-hour aggregate
 - **Accessed:** 2026-08-10
-- **License:** Citi Bike Data Use Policy
+- **License:** Citi Bike Data Sharing Policy
 - **Analytical grain:** one station-hour-month aggregate
 
 ### Reviewed source-snapshot hashes

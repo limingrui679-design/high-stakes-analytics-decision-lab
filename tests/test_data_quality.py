@@ -9,7 +9,6 @@ import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = SKILL_ROOT / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))

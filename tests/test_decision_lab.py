@@ -13,11 +13,14 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = REPO_ROOT / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
+from allocation_optimizer import optimize_allocation
+from allocation_optimizer import write_outputs as write_optimization
 from analytics_router import build_blueprint, render_blueprint_report, write_blueprint
-from allocation_optimizer import optimize_allocation, write_outputs as write_optimization
 from decision_engine import analyze_case, load_case, render_report, validate_case, write_outputs
-from evidence_analysis import analyze_evidence, write_outputs as write_evidence
-from prediction_validation import validate_predictions, write_outputs as write_predictions
+from evidence_analysis import analyze_evidence
+from evidence_analysis import write_outputs as write_evidence
+from prediction_validation import validate_predictions
+from prediction_validation import write_outputs as write_predictions
 from visual_system import BLUE, CORAL, TEAL, VIOLET, theme_for
 
 

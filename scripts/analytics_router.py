@@ -491,12 +491,12 @@ def render_blueprint_svg(blueprint: dict[str, Any]) -> str:
     body.extend(
         [
             f'<rect x="48" y="536" width="1304" height="110" rx="15" fill="{white}" stroke="{grid}"/>',
-            f'<rect x="48" y="536" width="8" height="110" rx="4" fill="#E06950"/>',
+            '<rect x="48" y="536" width="8" height="110" rx="4" fill="#E06950"/>',
             _svg_text(76, 567, "OPTIONAL DIAGNOSTIC BRIDGE", size=10, weight=800, fill="#B34E39"),
             _svg_text(76, 601, "Why did the pattern occur?", size=19, weight=740, fill=ink),
             _svg_text(395, 590, "Decomposition and root-cause hypotheses may guide investigation.", size=14, fill=muted),
             _svg_text(395, 614, "A causal claim still requires an identification strategy.", size=14, weight=650, fill="#B34E39"),
-            f'<rect x="1068" y="558" width="252" height="52" rx="12" fill="#FCE7E2"/>',
+            '<rect x="1068" y="558" width="252" height="52" rx="12" fill="#FCE7E2"/>',
             _svg_text(1194, 580, "DO NOT SKIP", size=9, weight=800, fill="#A63C2A", anchor="middle"),
             _svg_text(1194, 600, "causal-evidence guardrail", size=12, weight=700, fill="#A63C2A", anchor="middle"),
             f'<line x1="48" y1="678" x2="1352" y2="678" stroke="{grid}"/>',

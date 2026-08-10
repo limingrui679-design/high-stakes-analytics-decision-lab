@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from statistics import NormalDist
-from typing import Any, Iterable
+from typing import Any, Iterable, cast
 
 from report_visuals import generate_visuals
 
@@ -152,11 +152,16 @@ def _validate_uncertainty_model(
             f"uncertainty_model.method must be {UNCERTAINTY_METHOD}."
         )
     stress_multiplier = model.get("stress_multiplier")
-    if not _is_number(stress_multiplier) or stress_multiplier <= 1:
+    stress_multiplier_value = (
+        float(cast(float, stress_multiplier))
+        if _is_number(stress_multiplier)
+        else 1.0
+    )
+    if stress_multiplier_value <= 1:
         errors.append(
             "uncertainty_model.stress_multiplier must be a finite number greater than 1."
         )
-        stress_multiplier = 1.0
+        stress_multiplier_value = 1.0
     factors = model.get("factors")
     if not isinstance(factors, list) or not factors:
         errors.append("uncertainty_model.factors must be a non-empty list.")
@@ -199,7 +204,7 @@ def _validate_uncertainty_model(
             errors.append(
                 f"Squared factor loadings for {criterion_id} must sum to less than 1."
             )
-        stressed_squared_sum = squared_sum * float(stress_multiplier) ** 2
+        stressed_squared_sum = squared_sum * stress_multiplier_value**2
         if stressed_squared_sum >= 1:
             errors.append(
                 f"Stressed squared factor loadings for {criterion_id} must sum to less than 1."
@@ -485,8 +490,8 @@ def validate_case(case: dict[str, Any]) -> ValidationResult:
         warnings.append("No obvious status-quo or baseline alternative was found.")
     if group_signatures:
         reference_alternative, reference_groups, reference_metrics = group_signatures[0]
-        for alternative_id, group_ids, metric_ids in group_signatures[1:]:
-            if group_ids != reference_groups:
+        for alternative_id, compared_group_ids, metric_ids in group_signatures[1:]:
+            if compared_group_ids != reference_groups:
                 warnings.append(
                     f"Group identifiers differ between {reference_alternative} and "
                     f"{alternative_id}; cross-alternative parity comparisons may be incomplete."
@@ -514,10 +519,13 @@ def validate_case(case: dict[str, Any]) -> ValidationResult:
         else:
             scenario_ids.append(scenario_id)
         probability = scenario.get("probability")
-        if not _is_number(probability) or probability <= 0:
+        probability_value = (
+            float(cast(float, probability)) if _is_number(probability) else 0.0
+        )
+        if probability_value <= 0:
             errors.append(f"{path}.probability must be a positive finite number.")
         else:
-            probability_total += probability
+            probability_total += probability_value
         adjustments = scenario.get("adjustments", {})
         if not isinstance(adjustments, dict):
             errors.append(f"{path}.adjustments must be an object.")
@@ -1022,7 +1030,9 @@ def _factor_loading_map(
     case: dict[str, Any],
     multiplier: float,
 ) -> dict[str, list[tuple[str, float]]]:
-    mapping = {criterion["id"]: [] for criterion in case["criteria"]}
+    mapping: dict[str, list[tuple[str, float]]] = {
+        criterion["id"]: [] for criterion in case["criteria"]
+    }
     for factor in case["uncertainty_model"]["factors"]:
         for criterion_id, loading in factor["loadings"].items():
             mapping[criterion_id].append(
@@ -1447,7 +1457,6 @@ def analyze_case(
     if samples < 100:
         raise ValueError("samples must be at least 100.")
 
-    rng = random.Random(seed)
     criteria = case["criteria"]
     alternatives = case["alternatives"]
     scenarios = case["scenarios"]
@@ -1457,7 +1466,6 @@ def analyze_case(
         criterion["id"]: float(criterion["weight"]) / total_weight
         for criterion in criteria
     }
-    criterion_by_id = {criterion["id"]: criterion for criterion in criteria}
     main_simulation = _simulate_case_draws(
         case,
         samples=samples,
@@ -1785,7 +1793,7 @@ def analyze_case(
                 alternative_id: detail["risk_adjusted_utility"]
                 for alternative_id, detail in score_details.items()
             }
-            winner = max(scores, key=scores.get)
+            winner = max(scores, key=scores.__getitem__)
             sensitivity.append(
                 {
                     "criterion": criterion["id"],
@@ -2134,7 +2142,6 @@ def render_report(
         alternatives[ranking[1]] if len(ranking) > 1 else None
     )
 
-    criterion_by_id = {criterion["id"]: criterion for criterion in result["criteria"]}
     criterion_differences: list[tuple[float, str]] = []
     if recommended and runner_up:
         for criterion in result["criteria"]:
@@ -2239,6 +2246,9 @@ def render_report(
         "",
     ]
     if recommended:
+        assert declared_correlation_metrics is not None
+        assert independent_metrics is not None
+        assert stressed_metrics is not None
         utility_gap = decision["utility_margin"]
         utility_gap_text = (
             "<0.001" if 0 <= utility_gap < 0.0005 else f"{utility_gap:.3f}"
@@ -2326,6 +2336,9 @@ def render_report(
     )
 
     if recommended:
+        assert declared_correlation_metrics is not None
+        assert independent_metrics is not None
+        assert stressed_metrics is not None
         advantage_phrase = (
             ", ".join(label for _, label in strengths[:2])
             if strengths
@@ -2508,10 +2521,10 @@ def render_report(
                 "",
                 "## Further questions",
                 "",
-                f"- Which empirical or elicited evidence would best validate the declared factor loadings?",
-                f"- Which omitted externality or stakeholder could materially alter the criterion set?",
-                f"- What evidence would justify replacing the current scenario probabilities?",
-                f"- Is the preferred option reversible if early monitoring contradicts the model?",
+                "- Which empirical or elicited evidence would best validate the declared factor loadings?",
+                "- Which omitted externality or stakeholder could materially alter the criterion set?",
+                "- What evidence would justify replacing the current scenario probabilities?",
+                "- Is the preferred option reversible if early monitoring contradicts the model?",
                 "",
             ]
         )

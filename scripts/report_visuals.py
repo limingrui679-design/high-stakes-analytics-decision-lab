@@ -690,7 +690,7 @@ def _scenario_plot(result: dict[str, Any]) -> str:
             alternative_id: alternatives[alternative_id]["scenario_utility"][scenario["id"]]["risk_adjusted_utility"]
             for alternative_id in ranking
         }
-        winner = max(values, key=values.get)
+        winner = max(values, key=values.__getitem__)
         for alt_index, alternative_id in enumerate(ranking):
             row_y = y + 83 + alt_index * 44
             label = alternatives[alternative_id]["label"]

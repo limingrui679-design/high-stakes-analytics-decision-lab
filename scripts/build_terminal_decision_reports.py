@@ -16,7 +16,6 @@ from pathlib import Path
 from typing import Any
 
 from visual_system import (
-    BLUE,
     CORAL,
     CORAL_TINT,
     GOLD,
@@ -32,7 +31,6 @@ from visual_system import (
     theme_for,
     wrapped_text,
 )
-
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PROJECT_ROOT = SKILL_ROOT / "examples" / "real-data-cases" / "projects"

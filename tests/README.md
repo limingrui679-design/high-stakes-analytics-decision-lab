@@ -6,10 +6,10 @@ The public Skill ships its complete standalone regression suite:
 |---|---:|
 | Data readiness, workspace initialization, preprocessing safety, privacy, malformed input, and CLI round-trip | 15 |
 | Decision engine, routing, evidence, prediction, and optimization | 20 |
-| Fifteen-project source hashes, evidence contracts, and claim boundaries | 12 |
+| Fifteen-project source hashes, evidence contracts, claim boundaries, and generator idempotence | 13 |
 | Independent numerical benchmarks, properties, and extreme inputs | 16 |
 | Package naming, links, SVG accessibility, and repository hygiene | 4 |
-| **Total** | **67** |
+| **Total** | **68** |
 
 Run from the Skill directory:
 

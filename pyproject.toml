@@ -1,0 +1,22 @@
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = [
+  "examples/real-data-cases/projects/*/data",
+  "tests/fixtures",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["E402"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["scripts"]
+check_untyped_defs = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+warn_unused_configs = true

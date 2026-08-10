@@ -1,7 +1,7 @@
 {
   "project_id": "bike-demand-operations",
   "source_id": "citibike-jc-2021-derived-station-hour",
-  "verified_at": "2026-08-10T20:54:08.824130+08:00",
+  "verified_at": "2026-08-11T01:38:16.747705+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [

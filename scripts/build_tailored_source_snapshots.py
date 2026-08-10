@@ -20,10 +20,8 @@ import io
 import json
 import math
 import os
-import shutil
 import subprocess
 import tempfile
-import time
 import urllib.parse
 import urllib.request
 import zipfile
@@ -31,7 +29,6 @@ from collections import Counter, defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Iterable
-
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ROOT / "examples" / "real-data-cases" / "projects"
@@ -365,7 +362,7 @@ def build_nport(source_zip: Path) -> None:
             security = (row.get("ISSUER_CUSIP") or "").strip()
             if security:
                 counts[security] += 1
-        crowded_value: Counter[str] = Counter()
+        crowded_value: defaultdict[str, float] = defaultdict(float)
         for row in table("FUND_REPORTED_HOLDING.tsv"):
             security = (row.get("ISSUER_CUSIP") or "").strip()
             if security and counts[security] >= 20:
@@ -538,14 +535,15 @@ def build_social(source_csv: Path, *, accepted_terms: bool) -> None:
             "source_records": 344084,
             "file_sha256": _sha256(source_csv),
             "file_bytes": source_csv.stat().st_size,
-            "raw_redistribution": "prohibited_without_ISPS_permission",
+            "raw_redistribution": "not_redistributed_by_repository",
             "repository_storage": "non_identifying_aggregate_only",
+            "landing_page": "https://doi.org/10.60600/YU/CGMWNW",
             "download_url": (
                 "https://isps-yard-aws-s3-bucket.s3.us-east-2.amazonaws.com/"
                 "published/15d48af8-e38e-4dd0-ace9-62f90826963a/"
                 "GerberGreenLarimer_APSR_2008_social_pressure.csv"
             ),
-            "terms_url": "https://isps.yale.edu/research/data/terms-of-use",
+            "terms_url": "https://creativecommons.org/publicdomain/zero/1.0/",
         },
     )
     print(json.dumps({"case": "social-norm-field-experiment", "rows": len(rows)}))
@@ -570,7 +568,7 @@ def build_nhis() -> None:
         / "population-health-survival/data/raw/nhis-2016-2017-linked-mortality-extract.csv"
     )
     rows = []
-    source_lock = []
+    source_lock: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix="nhis-source-") as directory:
         temp_root = Path(directory)
         for year in (2016, 2017):
@@ -654,7 +652,7 @@ def _acs_tract(year: int) -> tuple[dict[str, dict[str, str]], list[dict[str, Any
 
     tables = ("b01003", "b17001", "b19013", "b25064", "b23025")
     combined: dict[str, dict[str, str]] = defaultdict(dict)
-    source_lock = []
+    source_lock: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix=f"acs-{year}-") as directory:
         temp_root = Path(directory)
         for table in tables:
@@ -775,19 +773,19 @@ def build_opportunity_zone() -> None:
         rows = []
         for geoid in geoids:
             for year in (2018, 2019):
-                row = acs[year][geoid]
+                acs_row = acs[year][geoid]
                 rows.append(
                     {
                         "geoid": geoid,
                         "year": year,
                         "qoz_2018": int(geoid in qozs),
-                        "population": _acs_value(row, "B01003", "001"),
-                        "poverty_universe": _acs_value(row, "B17001", "001"),
-                        "poverty_count": _acs_value(row, "B17001", "002"),
-                        "median_household_income": _acs_value(row, "B19013", "001"),
-                        "median_gross_rent": _acs_value(row, "B25064", "001"),
-                        "civilian_labor_force": _acs_value(row, "B23025", "003"),
-                        "unemployed": _acs_value(row, "B23025", "005"),
+                        "population": _acs_value(acs_row, "B01003", "001"),
+                        "poverty_universe": _acs_value(acs_row, "B17001", "001"),
+                        "poverty_count": _acs_value(acs_row, "B17001", "002"),
+                        "median_household_income": _acs_value(acs_row, "B19013", "001"),
+                        "median_gross_rent": _acs_value(acs_row, "B25064", "001"),
+                        "civilian_labor_force": _acs_value(acs_row, "B23025", "003"),
+                        "unemployed": _acs_value(acs_row, "B23025", "005"),
                         "workplace_jobs": jobs[year].get(geoid, 0),
                     }
                 )
@@ -847,7 +845,7 @@ def build_nhanes() -> None:
         ),
     ]
     rows = []
-    source_lock = []
+    source_lock: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory(prefix="nhanes-source-") as directory:
         temp_root = Path(directory)
         for cohort, public_year, stem, mortality_name in specifications:

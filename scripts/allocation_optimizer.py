@@ -99,9 +99,9 @@ def optimize_allocation(config: dict[str, Any]) -> dict[str, Any]:
     risk_aversion = float(config.get("risk_aversion", 0.5))
     candidates: list[dict[str, Any]] = []
     evaluated = 0
-    for values in itertools.product(*value_grids):
+    for allocation_values in itertools.product(*value_grids):
         evaluated += 1
-        allocation = dict(zip(resource_ids, values))
+        allocation = dict(zip(resource_ids, allocation_values))
         diagnostics = []
         feasible = True
         for constraint in constraints:

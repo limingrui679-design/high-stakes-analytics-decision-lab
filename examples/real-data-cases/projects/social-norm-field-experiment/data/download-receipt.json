@@ -1,7 +1,7 @@
 {
   "project_id": "social-norm-field-experiment",
   "source_id": "yale-isps-d001-terms-compliant-aggregate",
-  "verified_at": "2026-08-10T20:55:51.234088+08:00",
+  "verified_at": "2026-08-11T01:38:16.184854+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "data/raw/external-source-lock.json",
-      "sha256": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4",
-      "bytes": 570
+      "sha256": "336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491",
+      "bytes": 625
     }
   ]
 }

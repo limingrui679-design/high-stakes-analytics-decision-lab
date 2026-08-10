@@ -76,7 +76,7 @@
     "source_id": "citibike-jc-2021-derived-station-hour",
     "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.",
     "version": "Jersey City trip history, January-December 2021; derived station-hour aggregate",
-    "license": "Citi Bike Data Use Policy",
+    "license": "Citi Bike Data Sharing Policy",
     "accessed_at": "2026-08-10",
     "raw_sha256": {
       "citibike-jc-2021-station-hour.csv": "e34022dc61250b3a5e499fa429570a87104cec0985caeaa5980a5b2206e45524",

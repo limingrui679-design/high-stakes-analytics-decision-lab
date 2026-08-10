@@ -4,7 +4,9 @@ import hashlib
 import importlib.util
 import json
 import re
+import shutil
 import sys
+import tempfile
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -13,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = ROOT / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
+import configure_tailored_portfolio as portfolio_configuration  # noqa: E402
 from decision_engine import validate_case  # noqa: E402
 
 MIGRATION_PATH = SCRIPT_DIR / "migrate_case_v12_to_v13.py"
@@ -24,8 +27,8 @@ SPEC.loader.exec_module(MIGRATION)
 PROJECT_ROOT = ROOT / "examples" / "real-data-cases" / "projects"
 SHARED_DIR = PROJECT_ROOT / "_shared"
 sys.path.insert(0, str(SHARED_DIR))
-from portfolio_modeling import _total_variation_distance  # noqa: E402
 from portfolio_core import PROJECTS_WITH_CASES, is_missing_value  # noqa: E402
+from portfolio_modeling import _total_variation_distance  # noqa: E402
 
 
 class RealPortfolioContractTests(unittest.TestCase):
@@ -70,6 +73,43 @@ class RealPortfolioContractTests(unittest.TestCase):
                         flags=re.IGNORECASE,
                     )
                 )
+
+    def test_case_index_generation_preserves_results_and_is_idempotent(self) -> None:
+        source_index = ROOT / "examples/real-data-cases/cases.json"
+        canonical = json.loads(source_index.read_text(encoding="utf-8"))
+        canonical_results = {
+            case["project_id"]: case["result"] for case in canonical["cases"]
+        }
+
+        with tempfile.TemporaryDirectory() as directory:
+            temporary_root = Path(directory)
+            temporary_index = temporary_root / "examples/real-data-cases/cases.json"
+            temporary_index.parent.mkdir(parents=True)
+            shutil.copy2(source_index, temporary_index)
+
+            original_root = portfolio_configuration.ROOT
+            original_projects = portfolio_configuration.PROJECTS
+            try:
+                portfolio_configuration.ROOT = temporary_root
+                portfolio_configuration.PROJECTS = PROJECT_ROOT
+                portfolio_configuration.configure_case_index()
+                first_generation = temporary_index.read_bytes()
+                portfolio_configuration.configure_case_index()
+                second_generation = temporary_index.read_bytes()
+            finally:
+                portfolio_configuration.ROOT = original_root
+                portfolio_configuration.PROJECTS = original_projects
+
+        self.assertEqual(first_generation, second_generation)
+        regenerated = json.loads(first_generation)["cases"]
+        self.assertEqual(
+            {case["project_id"]: case["result"] for case in regenerated},
+            canonical_results,
+        )
+        for case in regenerated:
+            with self.subTest(project=case["project_id"]):
+                self.assertNotEqual(case["result"], case["boundary"])
+                self.assertRegex(case["result"], r"\d")
 
     def test_every_project_has_real_source_and_report_contract(self) -> None:
         for item in self.catalog["projects"]:

@@ -454,13 +454,23 @@ Run the complete standalone verification suite:
 python3 -m unittest discover -s tests -v
 ```
 
-The 67 public tests cover data-readiness safety, custom-workspace
+The 68 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
-routing, the decision engine, fifteen-project source hashes, the evidence
+routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
 package naming, links, and SVG accessibility.
 Synthetic files under `tests/fixtures/` are engineering fixtures only; they are
 not presented as real-data projects.
+
+The supported Python baseline is 3.11 or newer. Continuous integration checks
+Python 3.11, 3.13, and 3.14. Maintainers can additionally run the pinned static
+quality checks with:
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+ruff check scripts tests
+mypy scripts
+```
 
 ## Skill contents
 
@@ -474,11 +484,14 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 67-test standalone regression suite
+└── tests/                          # complete 68-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence
 gates, output contract, and responsible-use boundary.
+
+Repository maintenance follows [CONTRIBUTING.md](CONTRIBUTING.md), the
+[versioning policy](VERSIONING.md), and the [security policy](SECURITY.md).
 
 ## Responsible-use boundary
 

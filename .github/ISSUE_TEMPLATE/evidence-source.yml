@@ -1,0 +1,32 @@
+name: Evidence or source correction
+description: Report a source, license, lineage, metric, or claim-boundary issue.
+title: "[Evidence]: "
+labels:
+  - documentation
+body:
+  - type: input
+    id: project
+    attributes:
+      label: Project or artifact
+      description: Name the affected project, report, figure, or manifest.
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current evidence statement
+      description: Identify the current source, metric, result, or boundary.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and support
+      description: Link authoritative support and explain the exact change required.
+    validations:
+      required: true
+  - type: textarea
+    id: implications
+    attributes:
+      label: Regeneration and claim implications
+      description: List artifacts that must be regenerated and whether the correction narrows or changes a claim.

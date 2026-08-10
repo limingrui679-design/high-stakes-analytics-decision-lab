@@ -3,8 +3,8 @@
 
 from __future__ import annotations
 
-import json
 import hashlib
+import json
 import re
 from pathlib import Path
 
@@ -20,7 +20,6 @@ from visual_system import (
     text,
     wrapped_text,
 )
-
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 CASE_ROOT = SKILL_ROOT / "examples" / "real-data-cases"

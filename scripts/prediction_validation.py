@@ -393,7 +393,7 @@ def _svg(result: dict[str, Any], title: str) -> str:
         ("CALIBRATION", "ECE", _metric_text(overall["expected_calibration_error"]), "lower average gap"),
         ("THRESHOLD", "Recall", _metric_text(overall["recall_sensitivity"]), f"at {overall['threshold']:.2f}"),
     ]
-    for index, (kicker, label, value, note) in enumerate(cards):
+    for index, (kicker, label, metric_value, note) in enumerate(cards):
         column = index % 2
         row = index // 2
         x = 454 + column * 352
@@ -403,7 +403,7 @@ def _svg(result: dict[str, Any], title: str) -> str:
                 rounded_rect(x, y, 330, 94, fill=PAPER, stroke=GRID, radius=14),
                 text(x + 18, y + 25, kicker, css="eyebrow"),
                 text(x + 18, y + 54, label, css="section"),
-                text(x + 306, y + 53, value, css="big", anchor="end", fill=VIOLET),
+                text(x + 306, y + 53, metric_value, css="big", anchor="end", fill=VIOLET),
                 text(x + 18, y + 78, note, css="small"),
             ]
         )

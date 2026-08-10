@@ -48,18 +48,18 @@ Causal scope is the historical randomized experiment; no new campaign authorizat
 
 ## Source identity
 
-- **Dataset:** [Social-Norm Field Experiment with Household-Clustered Inference](https://isps.yale.edu/research/data/d001)
+- **Dataset:** [Social-Norm Field Experiment with Household-Clustered Inference](https://doi.org/10.60600/YU/CGMWNW)
 - **Publisher:** Yale Institution for Social and Policy Studies
 - **Version:** Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference
 - **Accessed:** 2026-08-10
-- **License:** Yale ISPS data terms of use
+- **License:** CC0 1.0 (Yale Dataverse dataset)
 - **Analytical grain:** one treatment by prior-turnout aggregate
 
 ### Reviewed source-snapshot hashes
 
 - `terms-compliant-treatment-aggregate.csv` — `86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6`
 - `cluster-robust-itt.json` — `63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61`
-- `external-source-lock.json` — `eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4`
+- `external-source-lock.json` — `336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491`
 
 The reviewed raw source files are bundled inside the complete project directory.
 The build script verifies each file against both this case index and the

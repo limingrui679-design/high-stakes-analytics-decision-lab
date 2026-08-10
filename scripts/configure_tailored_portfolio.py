@@ -7,7 +7,6 @@ import hashlib
 import json
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ROOT / "examples/real-data-cases/projects"
 
@@ -57,6 +56,7 @@ SPECS = {
         "raw": ["nhis-2016-2017-linked-mortality-extract.csv", "nhis-2016-2017-linked-mortality-extract.source-lock.json"],
         "question": "Do simple population-risk cells developed in NHIS 2016 retain discrimination and calibration in the 2017 linked-mortality cohort?",
         "boundary": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+        "result": "The 2017 temporal test yields an AUC of 0.846 and weighted two-year mortality of 2.32% across 58,754 linked adults.",
         "methods": "Survey weighting, temporal validation, AUC, Brier score, calibration, and bounded review protocols.",
         "config": {"development_cohort": 2016, "validation_cohort": 2017, "review_shares": [0.1, 0.2, 0.3]},
     },
@@ -66,14 +66,15 @@ SPECS = {
         "publisher": "Citi Bike",
         "landing_page": "https://citibikenyc.com/system-data",
         "version": "Jersey City trip history, January-December 2021; derived station-hour aggregate",
-        "license": "Citi Bike Data Use Policy",
-        "license_url": "https://citibikenyc.com/data-use-policy",
+        "license": "Citi Bike Data Sharing Policy",
+        "license_url": "https://citibikenyc.com/data-sharing-policy",
         "redistribution": "Only the derived station-hour aggregate is stored; source trip archives are not redistributed.",
         "expected_rows": 17906,
         "grain": "one station-hour-month aggregate",
         "raw": ["citibike-jc-2021-station-hour.csv", "citibike-jc-2021-station-hour.source-lock.json"],
         "question": "Can station-hour history improve held-out pickup forecasts, and which fixed-budget rebalancing scenario deserves a bounded operations pilot?",
         "boundary": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
+        "result": "Held-out station-hour MAE is 0.69 pickups/day, a 33.1% improvement over the hour-only baseline.",
         "methods": "Temporal holdout, weighted MAE, observed pickup-return imbalance, and fixed-budget scenario comparison.",
         "config": {"development_end": "2021-09", "test_start": "2021-10", "modeled_daily_rebalancing_units": 250, "review_station_hour_counts": [0, 10, 25]},
     },
@@ -91,6 +92,7 @@ SPECS = {
         "raw": ["acs2019-ri-person-pums.zip", "acs2023-ri-person-pums.zip"],
         "question": "How well does a protected-attribute-excluded employment model developed on 2019 PUMS transport to 2023?",
         "boundary": "No eligibility, hiring, credit, benefits, or other consequential action.",
+        "result": "The untouched 2023 temporal test yields an AUC of 0.640 and a weighted Brier score of 0.158.",
         "methods": "Survey-weighted grouped-rate model, temporal AUC/Brier/calibration, and protected-attribute audit slices.",
         "config": {"development_year": 2019, "test_year": 2023, "model_fields": ["age_band", "education_band", "worker_class", "puma"], "audit_only_fields": ["sex", "race", "hispanic_origin"]},
     },
@@ -108,6 +110,7 @@ SPECS = {
         "raw": ["sec-nport-2025q4-fund-risk.csv", "sec-nport-2025q4-fund-risk.source-lock.json"],
         "question": "Which transparent concentration, liquidity, and redemption indicators should trigger targeted filing review?",
         "boundary": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
+        "result": "Across 11,747 reviewed filings, median top-10 holding concentration is 34.5% and the 90th-percentile Level-3 share is 0.2%.",
         "methods": "Filing extraction, percentile indicators, transparent composite score, and review-capacity trade-offs.",
         "config": {"review_shares": [0.05, 0.1, 0.2], "high_risk_reference_share": 0.1, "score_rule": "equal_weight_percentile_mean"},
     },
@@ -126,6 +129,7 @@ SPECS = {
         "raw": ["cross-city-311-daily.csv"],
         "question": "Are city service-request distributions sufficiently comparable to transfer an analytical rule between Chicago and New York?",
         "boundary": "Administrative shift audit only; requests are not latent need or service quality.",
+        "result": "The 2023 cross-city total-variation distance is 58.1%, and the transfer gate is refused.",
         "methods": "Audited ontology, unmatched-category retention, total variation, Jensen-Shannon divergence, and transfer gating.",
         "config": {"baseline_year": 2022, "comparison_year": 2023, "maximum_transfer_total_variation": 0.2},
     },
@@ -143,6 +147,7 @@ SPECS = {
         "raw": ["calfire-fire-perimeters-2000-2025.csv"],
         "question": "Which exposure-weighted evidence-collection allocation is least fragile across historical, recent, and tail-fire scenarios?",
         "boundary": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+        "result": "Across 8,892 valid mapped perimeters, recent observed acres is the lowest-regret proxy allocation under the tested scenarios.",
         "methods": "Observed exposure scenarios, allocation alignment, minimax regret, and evidence-request terminal gate.",
         "config": {"history_start": 2000, "recent_start": 2020, "recent_end": 2024, "tail_quantile": 0.9},
     },
@@ -150,16 +155,20 @@ SPECS = {
         "title": "Social-Norm Field Experiment with Household-Clustered Inference",
         "source_id": "yale-isps-d001-terms-compliant-aggregate",
         "publisher": "Yale Institution for Social and Policy Studies",
-        "landing_page": "https://isps.yale.edu/research/data/d001",
+        "landing_page": "https://doi.org/10.60600/YU/CGMWNW",
+        "additional_sources": [
+            "https://isps.yale.edu/resource/social-pressure-and-voter-turnout-evidence-from-a-large-scale-field-experiment"
+        ],
         "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
-        "license": "Yale ISPS data terms of use",
-        "license_url": "https://isps.yale.edu/research/data/terms-of-use",
+        "license": "CC0 1.0 (Yale Dataverse dataset)",
+        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "redistribution": "Participant rows are not redistributed; only non-identifying aggregates and clustered statistics are stored.",
         "expected_rows": 10,
         "grain": "one treatment by prior-turnout aggregate",
         "raw": ["terms-compliant-treatment-aggregate.csv", "cluster-robust-itt.json", "external-source-lock.json"],
         "question": "What were the intent-to-treat turnout effects of randomized social-pressure mailings after household clustering?",
         "boundary": "Causal scope is the historical randomized experiment; no new campaign authorization.",
+        "result": "The Neighbors arm has the largest observed intent-to-treat effect at 8.1%, with a household-clustered 95% interval of 7.5% to 8.8%.",
         "methods": "Randomized-arm rates, household-clustered sandwich variance, 95% intervals, and descriptive strata contrasts.",
         "config": {"confidence_level": 0.95, "cluster_unit": "household", "primary_outcome": "voted"},
     },
@@ -177,6 +186,7 @@ SPECS = {
         "raw": ["massachusetts-qoz-tract-panel.csv", "massachusetts-qoz-tract-panel.source-lock.json"],
         "question": "How did selected tract outcomes change immediately after QOZ designation relative to observed-covariate matches?",
         "boundary": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+        "result": "The matched one-year screen contains 1,460 complete tract panels, including 138 designated QOZ tracts and 121 unique matched controls.",
         "methods": "Panel linkage, nearest-neighbor matching, change contrasts, bootstrap intervals, and support diagnostics.",
         "config": {"pre_year": 2018, "post_year": 2019, "bootstrap_samples": 500, "matching_fields": ["poverty", "income", "jobs", "unemployment"]},
     },
@@ -194,6 +204,7 @@ SPECS = {
         "raw": ["nhanes-36-month-mortality-cohorts.csv", "nhanes-36-month-mortality-cohorts.source-lock.json"],
         "question": "Do population mortality risk patterns transport between NHANES cohorts, and what inequality gradient remains visible?",
         "boundary": "Population research only; no individual diagnosis or treatment.",
+        "result": "The external-cohort check yields an AUC of 0.804 and a Brier score of 0.022 across 11,820 linked adults.",
         "methods": "Survey-weighted rates, cross-cohort AUC/Brier/calibration, and poverty-income-ratio gradients.",
         "config": {"development_cohort": "2011-2012", "validation_cohort": "2015-2016", "mortality_horizon_months": 36},
     },
@@ -212,6 +223,7 @@ SPECS = {
         "raw": ["acs-b01003-ma.dat", "acs-b17001-ma.dat", "acs-b19013-ma.dat", "acs-b08301-ma.dat", "acs-b25064-ma.dat", "2023_Gaz_tracts_national.zip", "mbta-rapid-transit-stops.json"],
         "question": "Which tract-level service-hub priorities merit local review after observed rapid-transit proximity is added?",
         "boundary": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
+        "result": "Across 1,597 analyzed tracts and 265 rapid-transit stop records, the high-poverty weighted nearest-stop distance is 40.65 km.",
         "methods": "ACS need indicators, Moran's I, heuristic location allocation, bootstrap sensitivity, and nearest-MBTA-stop distance.",
         "config": None,
         "extra_manifest": {
@@ -393,14 +405,14 @@ def configure_case_index() -> None:
                 or "analytical evidence endpoint"
             )
         methods = (
-            [item.strip() for item in spec["methods"].split(",")]
+            [item.strip() for item in str(spec["methods"]).split(",")]
             if spec
             else prior.get("methods", ["case-specific reproducible analysis"])
         )
         question = spec["question"] if spec else prior.get("question", "What claim-bounded conclusion does the source support?")
         boundary = spec["boundary"] if spec else prior.get("boundary", "Reuse requires new source and domain validation.")
         result_text = (
-            spec["boundary"]
+            spec["result"]
             if spec
             else prior.get("result", f"The analysis terminates at {terminal}.")
         )

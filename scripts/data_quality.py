@@ -30,7 +30,6 @@ from visual_system import (
     wrapped_text,
 )
 
-
 DEFAULT_MISSING_TOKENS = {
     "",
     "?",

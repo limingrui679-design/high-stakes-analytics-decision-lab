@@ -182,10 +182,10 @@ def analyze_evidence(
         for group in groups
     }
     effect = _binary_effect(
-        binary_summary[exposed_group]["events"],
-        binary_summary[exposed_group]["n"],
-        binary_summary[reference_group]["events"],
-        binary_summary[reference_group]["n"],
+        int(binary_summary[exposed_group]["events"]),
+        int(binary_summary[exposed_group]["n"]),
+        int(binary_summary[reference_group]["events"]),
+        int(binary_summary[reference_group]["n"]),
     )
 
     continuous_result = None

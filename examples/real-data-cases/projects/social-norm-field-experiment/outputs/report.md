@@ -34,7 +34,7 @@ Observed treatment rates come from the full replication file.
 | Source | Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference. |
 | Version | Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference |
 | Accessed | 2026-08-10 |
-| License | [Yale ISPS data terms of use](https://isps.yale.edu/research/data/terms-of-use) |
+| License | [CC0 1.0 (Yale Dataverse dataset)](https://creativecommons.org/publicdomain/zero/1.0/) |
 | Analytical grain | one treatment by prior-turnout aggregate |
 | Expected rows | 10 |
 | Results | [`results.json`](results.json) |
@@ -141,6 +141,6 @@ The analysis can prioritize validation, diligence, or a bounded pilot; it is not
 
 - Project ID: `social-norm-field-experiment`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `ab0af1196c076d1bb2d243d84195d1f5578fac1db46d6d097ddc084d46bf8d06`
+- Result SHA-256: `c0e0e4041c3bbf3b0165e20548d2b42f65fa6fafa3589581d2a1f4b2d0d3af15`
 
 </details>

@@ -5,11 +5,11 @@
   "title": "Social-Norm Field Experiment with Household-Clustered Inference",
   "project_title": "Social-Norm Field Experiment with Household-Clustered Inference",
   "publisher": "Yale Institution for Social and Policy Studies",
-  "landing_page": "https://isps.yale.edu/research/data/d001",
+  "landing_page": "https://doi.org/10.60600/YU/CGMWNW",
   "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
   "accessed_at": "2026-08-10",
-  "license": "Yale ISPS data terms of use",
-  "license_url": "https://isps.yale.edu/research/data/terms-of-use",
+  "license": "CC0 1.0 (Yale Dataverse dataset)",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "redistribution": "Participant rows are not redistributed; only non-identifying aggregates and clustered statistics are stored.",
   "expected_rows": 10,
   "grain": "one treatment by prior-turnout aggregate",
@@ -24,7 +24,7 @@
     },
     {
       "path": "data/raw/external-source-lock.json",
-      "sha256": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+      "sha256": "336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491"
     }
   ],
   "privacy_review": {
@@ -33,5 +33,8 @@
     "treatment": "Causal scope is the historical randomized experiment; no new campaign authorization.",
     "status": "approved_for_public_minimized_analysis"
   },
-  "citation": "Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference."
+  "citation": "Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference.",
+  "additional_sources": [
+    "https://isps.yale.edu/resource/social-pressure-and-voter-turnout-evidence-from-a-large-scale-field-experiment"
+  ]
 }

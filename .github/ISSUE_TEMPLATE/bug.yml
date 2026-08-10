@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a reproducible failure in code, tests, generation, or documentation.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for providing a bounded, reproducible report.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Observed problem
+      description: Describe what happened and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide the smallest safe sequence of commands or inputs that reproduces the issue.
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Repository revision
+      description: Commit SHA or release tag.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and boundary impact
+      description: Note affected reports, claims, sources, hashes, or decision boundaries. Do not include private data or secrets.

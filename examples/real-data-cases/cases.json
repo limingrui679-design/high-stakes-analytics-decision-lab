@@ -23,7 +23,7 @@
         "url": "https://citibikenyc.com/system-data",
         "version": "Jersey City trip history, January-December 2021; derived station-hour aggregate",
         "accessed_at": "2026-08-10",
-        "license": "Citi Bike Data Use Policy",
+        "license": "Citi Bike Data Sharing Policy",
         "grain": "one station-hour-month aggregate",
         "prepared_rows": 17906,
         "snapshot_files": [
@@ -599,10 +599,10 @@
       "source": {
         "dataset": "Social-Norm Field Experiment with Household-Clustered Inference",
         "publisher": "Yale Institution for Social and Policy Studies",
-        "url": "https://isps.yale.edu/research/data/d001",
+        "url": "https://doi.org/10.60600/YU/CGMWNW",
         "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
         "accessed_at": "2026-08-10",
-        "license": "Yale ISPS data terms of use",
+        "license": "CC0 1.0 (Yale Dataverse dataset)",
         "grain": "one treatment by prior-turnout aggregate",
         "prepared_rows": 10,
         "snapshot_files": [
@@ -616,7 +616,7 @@
           },
           {
             "name": "external-source-lock.json",
-            "sha256": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+            "sha256": "336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491"
           }
         ]
       },

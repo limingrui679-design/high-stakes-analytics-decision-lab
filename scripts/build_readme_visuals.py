@@ -9,16 +9,13 @@ from pathlib import Path
 from visual_system import (
     BLUE,
     BLUE_TINT,
-    CANVAS,
     CORAL,
     GOLD,
     GOLD_TINT,
     GRID,
     GRID_DARK,
-    GREEN,
     INK,
     INK_SOFT,
-    MAGENTA,
     MUTED,
     NAVY,
     NAVY_2,
@@ -33,7 +30,6 @@ from visual_system import (
     text,
     wrapped_text,
 )
-
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "assets"
@@ -101,8 +97,8 @@ def hero_svg() -> str:
         f'<circle cx="1265" cy="88" r="102" fill="none" stroke="{TEAL}" stroke-width="2"/>',
         f'<circle cx="1265" cy="88" r="31" fill="{TEAL}"/>',
         f'<circle cx="1265" cy="88" r="14" fill="{NAVY}"/>',
-        f'<line x1="1116" y1="88" x2="1398" y2="88" stroke="#36516F"/>',
-        f'<line x1="1265" y1="-58" x2="1265" y2="232" stroke="#36516F"/>',
+        '<line x1="1116" y1="88" x2="1398" y2="88" stroke="#36516F"/>',
+        '<line x1="1265" y1="-58" x2="1265" y2="232" stroke="#36516F"/>',
         _hero_text(
             64,
             55,
@@ -268,7 +264,7 @@ def hero_svg() -> str:
                 anchor="end",
                 spacing=1.1,
             ),
-            f'<line x1="64" y1="705" x2="1336" y2="705" stroke="#294866"/>',
+            '<line x1="64" y1="705" x2="1336" y2="705" stroke="#294866"/>',
             _hero_text(
                 64,
                 732,

@@ -15,7 +15,6 @@ from typing import Any
 from analytics_router import build_blueprint, write_blueprint
 from data_quality import load_contract, sha256_file, write_quality_bundle
 
-
 SUPPORTED_SUFFIXES = {".csv", ".tsv", ".json", ".jsonl", ".ndjson"}
 
 

@@ -97,12 +97,12 @@
     "source_id": "yale-isps-d001-terms-compliant-aggregate",
     "citation": "Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference.",
     "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
-    "license": "Yale ISPS data terms of use",
+    "license": "CC0 1.0 (Yale Dataverse dataset)",
     "accessed_at": "2026-08-10",
     "raw_sha256": {
       "terms-compliant-treatment-aggregate.csv": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6",
       "cluster-robust-itt.json": "63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61",
-      "external-source-lock.json": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+      "external-source-lock.json": "336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491"
     },
     "config_sha256": "4e41e98b902f9ab0dbd5146c79e258eed8adcab1968fedac69c7bcff73bd7f19"
   },

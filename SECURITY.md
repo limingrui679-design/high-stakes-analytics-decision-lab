@@ -3,7 +3,7 @@
 ## Supported versions
 
 Until tagged releases exist, security updates apply to the current `main`
-branch.
+branch and its supported Python baseline of 3.11 or newer.
 
 ## Reporting a vulnerability
 

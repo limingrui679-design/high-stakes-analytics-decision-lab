@@ -7,18 +7,17 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = ROOT / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
+import build_case_examples  # noqa: E402
 from build_readme_visuals import (  # noqa: E402
     _portfolio_metrics,
     adaptive_system_svg,
     hero_svg,
     report_layers_svg,
 )
-import build_case_examples  # noqa: E402
 
 SKILL_NAME = "high-stakes-analytics-decision-lab"
 LEGACY_NAME = "high-stakes-" + "decision-lab"
