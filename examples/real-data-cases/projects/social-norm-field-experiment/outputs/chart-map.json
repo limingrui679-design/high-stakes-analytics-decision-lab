@@ -1,0 +1,29 @@
+{
+  "project_id": "social-norm-field-experiment",
+  "charts": [
+    {
+      "path": "figures/cluster-robust-itt.svg",
+      "question": "Clustered treatment effects",
+      "supported_finding": "Standard errors account for household assignment.",
+      "interpretation_boundary": "Intervals do not establish transport.",
+      "source_id": "yale-isps-d001-terms-compliant-aggregate",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/stratum-effects.svg",
+      "question": "Prior-turnout strata",
+      "supported_finding": "Subgroup contrasts expose heterogeneity.",
+      "interpretation_boundary": "These strata comparisons are descriptive.",
+      "source_id": "yale-isps-d001-terms-compliant-aggregate",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/treatment-turnout.svg",
+      "question": "Randomized-arm turnout",
+      "supported_finding": "Observed treatment rates come from the full replication file.",
+      "interpretation_boundary": "The causal scope is the experiment.",
+      "source_id": "yale-isps-d001-terms-compliant-aggregate",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

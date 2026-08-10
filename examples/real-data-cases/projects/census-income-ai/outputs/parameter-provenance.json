@@ -6,11 +6,11 @@
     {
       "parameter_path": "config.analysis_seed",
       "label": "analysis seed",
-      "value_or_distribution": 20260727,
+      "value_or_distribution": 20260810,
       "unit": "configuration value",
       "uncertainty_type": "none",
       "source_id": "analysis-protocol",
-      "source_fact": "Registered project configuration for analysis_seed; source dataset is uci-adult-2.",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is census-acs-pums-ri-2019-2023.",
       "transformation": "Used directly by the reproducible analysis script.",
       "owner": "Repository analysis author",
       "reviewer": "not_assigned",
@@ -39,13 +39,13 @@
       "notes": "Computational setting; it does not increase evidence quality."
     },
     {
-      "parameter_path": "config.parameters.decision_threshold",
-      "label": "decision threshold",
-      "value_or_distribution": 0.5,
+      "parameter_path": "config.parameters.development_year",
+      "label": "development year",
+      "value_or_distribution": 2019,
       "unit": "configuration value",
       "uncertainty_type": "none",
-      "source_id": "analysis-protocol",
-      "source_fact": "Registered project configuration for decision_threshold; source dataset is uci-adult-2.",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for development_year; source dataset is census-acs-pums-ri-2019-2023.",
       "transformation": "Used directly by the reproducible analysis script.",
       "owner": "Repository analysis author",
       "reviewer": "not_assigned",
@@ -71,16 +71,16 @@
         }
       ],
       "evidence_strength": "assumed",
-      "notes": "Not optimized for or authorized in any real decision."
+      "notes": "No eligibility, hiring, credit, benefits, or other consequential action."
     },
     {
-      "parameter_path": "config.parameters.calibration_bins",
-      "label": "calibration bins",
-      "value_or_distribution": 10,
+      "parameter_path": "config.parameters.test_year",
+      "label": "test year",
+      "value_or_distribution": 2023,
       "unit": "configuration value",
       "uncertainty_type": "none",
-      "source_id": "analysis-protocol",
-      "source_fact": "Registered project configuration for calibration_bins; source dataset is uci-adult-2.",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for test_year; source dataset is census-acs-pums-ri-2019-2023.",
       "transformation": "Used directly by the reproducible analysis script.",
       "owner": "Repository analysis author",
       "reviewer": "not_assigned",
@@ -106,16 +106,21 @@
         }
       ],
       "evidence_strength": "assumed",
-      "notes": "Bins with no observations are omitted."
+      "notes": "No eligibility, hiring, credit, benefits, or other consequential action."
     },
     {
-      "parameter_path": "config.parameters.train_split",
-      "label": "train split",
-      "value_or_distribution": "adult.data",
+      "parameter_path": "config.parameters.model_fields",
+      "label": "model fields",
+      "value_or_distribution": [
+        "age_band",
+        "education_band",
+        "worker_class",
+        "puma"
+      ],
       "unit": "configuration value",
       "uncertainty_type": "none",
-      "source_id": "uci-source-split",
-      "source_fact": "Registered project configuration for train_split; source dataset is uci-adult-2.",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for model_fields; source dataset is census-acs-pums-ri-2019-2023.",
       "transformation": "Used directly by the reproducible analysis script.",
       "owner": "Repository analysis author",
       "reviewer": "not_assigned",
@@ -126,7 +131,7 @@
         {
           "sequence": 1,
           "role": "model_author",
-          "actor": "repository author verification",
+          "actor": "repository author self-review",
           "status": "approved",
           "date": "2026-07-27",
           "scope": "Exploratory repository analysis"
@@ -140,17 +145,21 @@
           "scope": "Required before operational use"
         }
       ],
-      "evidence_strength": "observed",
-      "notes": "Final metrics use only the held-out test split."
+      "evidence_strength": "assumed",
+      "notes": "No eligibility, hiring, credit, benefits, or other consequential action."
     },
     {
-      "parameter_path": "config.parameters.test_split",
-      "label": "test split",
-      "value_or_distribution": "adult.test",
+      "parameter_path": "config.parameters.audit_only_fields",
+      "label": "audit only fields",
+      "value_or_distribution": [
+        "sex",
+        "race",
+        "hispanic_origin"
+      ],
       "unit": "configuration value",
       "uncertainty_type": "none",
-      "source_id": "uci-source-split",
-      "source_fact": "Registered project configuration for test_split; source dataset is uci-adult-2.",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for audit_only_fields; source dataset is census-acs-pums-ri-2019-2023.",
       "transformation": "Used directly by the reproducible analysis script.",
       "owner": "Repository analysis author",
       "reviewer": "not_assigned",
@@ -161,7 +170,7 @@
         {
           "sequence": 1,
           "role": "model_author",
-          "actor": "repository author verification",
+          "actor": "repository author self-review",
           "status": "approved",
           "date": "2026-07-27",
           "scope": "Exploratory repository analysis"
@@ -175,8 +184,8 @@
           "scope": "Required before operational use"
         }
       ],
-      "evidence_strength": "observed",
-      "notes": "Final metrics use only the held-out test split."
+      "evidence_strength": "assumed",
+      "notes": "No eligibility, hiring, credit, benefits, or other consequential action."
     }
   ],
   "coverage": {

@@ -8,7 +8,7 @@
       "question": "What is the evidence-matched terminal decision?",
       "family": "Tables & Scorecards",
       "type": "decision scorecard",
-      "supported_claim": "Do not deploy this model for eligibility, credit, employment, or another consequential decision; retain it as a historical benchmark.",
+      "supported_claim": "Do not use the model for hiring, eligibility, credit, benefits, or another consequential action.",
       "source": "outputs/results.json and source-manifest.json",
       "palette_policy": "single-root preferred",
       "accessibility": "Direct metric labels and textual decision outcome"
@@ -19,32 +19,32 @@
       "question": "Which evidence gates pass, block, limit, or remain required?",
       "family": "Decomposition & Progression",
       "type": "labeled gate sequence",
-      "supported_claim": "Terminal status: not_authorized_for_consequential_use",
+      "supported_claim": "Terminal status: do_not_use_for_consequential_action",
       "source": "outputs/results.json",
       "palette_policy": "hard two-root cap",
       "accessibility": "Every status is labeled in text and not encoded by color alone"
     },
     {
-      "file": "../../figures/model-comparison.svg",
-      "report_section": "The independent benchmark is strong enough for method comparison—not use",
+      "file": "../../figures/temporal-performance.svg",
+      "report_section": "Temporal performance is documented without upgrading the use claim",
       "question": "What primary quantitative evidence supports the decision?",
       "family": "Project-native analytical visual",
       "type": "existing reviewed project figure",
-      "supported_claim": "The comparison supports retaining the model as a reproducible benchmark. It does not resolve target validity, contemporary transport, intervention effects, or the cost of errors.",
+      "supported_claim": "The metrics support model auditing only.",
       "source": "outputs/results.json",
       "palette_policy": "project visual system",
-      "accessibility": "Independent-test comparison of majority, naive Bayes, and sparse logistic models"
+      "accessibility": "Bar chart of temporal AUC and one minus Brier score"
     },
     {
-      "file": "../../figures/subgroup-fpr.svg",
-      "report_section": "Calibration and subgroup errors prevent a single aggregate score from carrying the decision",
+      "file": "../../figures/calibration.svg",
+      "report_section": "Calibration and audit slices control the boundary",
       "question": "Which validation or boundary evidence controls interpretation?",
       "family": "Project-native analytical visual",
       "type": "existing reviewed project figure",
-      "supported_claim": "The figure shows why aggregate AUC cannot substitute for an impact assessment. Small groups also carry wider sampling uncertainty, and the historical labels embed a social and economic context that may not transport.",
+      "supported_claim": "Population-period calibration does not establish person-level decision validity.",
       "source": "outputs/results.json",
       "palette_policy": "project visual system",
-      "accessibility": "False-positive rates across sex and race groups"
+      "accessibility": "Predicted versus observed employment calibration in 2023"
     }
   ]
 }

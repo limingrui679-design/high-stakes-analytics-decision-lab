@@ -1,0 +1,16 @@
+{
+  "grain": "treatment by prior-turnout aggregate",
+  "primary_key": [
+    "treatment",
+    "prior_turnout_stratum"
+  ],
+  "fields": {
+    "treatment": "treatment",
+    "prior_turnout_stratum": "prior turnout stratum",
+    "individuals": "individuals",
+    "households": "households",
+    "voters": "voters",
+    "turnout_rate": "turnout rate"
+  },
+  "restricted_source_contract": "Participant rows were used locally to compute household-clustered statistics and were not copied into the repository."
+}

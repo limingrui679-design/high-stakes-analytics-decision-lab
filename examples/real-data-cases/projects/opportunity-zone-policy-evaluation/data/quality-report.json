@@ -1,0 +1,40 @@
+{
+  "rows": 2956,
+  "columns": 11,
+  "column_names": [
+    "geoid",
+    "year",
+    "qoz_2018",
+    "population",
+    "poverty_universe",
+    "poverty_count",
+    "median_household_income",
+    "median_gross_rent",
+    "civilian_labor_force",
+    "unemployed",
+    "workplace_jobs"
+  ],
+  "missing_count_by_column": {
+    "geoid": 0,
+    "year": 0,
+    "qoz_2018": 0,
+    "population": 0,
+    "poverty_universe": 0,
+    "poverty_count": 0,
+    "median_household_income": 0,
+    "median_gross_rent": 0,
+    "civilian_labor_force": 0,
+    "unemployed": 0,
+    "workplace_jobs": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 2956,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+    "status": "approved_for_public_minimized_analysis"
+  }
+}

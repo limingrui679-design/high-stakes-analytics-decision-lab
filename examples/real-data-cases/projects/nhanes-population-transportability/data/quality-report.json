@@ -1,0 +1,40 @@
+{
+  "rows": 11820,
+  "columns": 11,
+  "column_names": [
+    "seqn",
+    "cohort",
+    "age",
+    "sex",
+    "race_ethnicity",
+    "poverty_income_ratio",
+    "exam_weight",
+    "stratum",
+    "psu",
+    "followup_months",
+    "death_within_36_months"
+  ],
+  "missing_count_by_column": {
+    "seqn": 0,
+    "cohort": 0,
+    "age": 0,
+    "sex": 0,
+    "race_ethnicity": 0,
+    "poverty_income_ratio": 0,
+    "exam_weight": 0,
+    "stratum": 0,
+    "psu": 0,
+    "followup_months": 0,
+    "death_within_36_months": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 11820,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Population research only; no individual diagnosis or treatment.",
+    "status": "approved_for_public_minimized_analysis"
+  }
+}

@@ -1,22 +1,15 @@
-# R4 · Bike-Demand Forecasting and Robust Service Allocation
+# Jersey City Bike Demand and Rebalancing Evidence
 
-**Portfolio role:** operations research, systems engineering, forecasting, and prescriptive analytics  
-**Decision boundary:** compare a hypothetical time-block allocation for a pilot—not operate a bike-share system.
+**Analytical question:** Can station-hour history improve held-out pickup forecasts, and which fixed-budget rebalancing scenario deserves a bounded operations pilot?
 
-## Analytical question
-
-How much demand structure is predictable out of time, and how should a fixed pool of service resources be distributed across six-hour blocks under ordinary and wet-day demand?
+**Decision boundary:** Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.
 
 ## Evidence and methods
 
-- UCI Bike Sharing hour-level data, 17,379 system-hours, CC BY 4.0.
-- Time-respecting train on 2011 and test on 2012.
-- Forecast benchmark with out-of-time error metrics.
-- Exhaustive evaluation of all 6,545 feasible integer allocations under a
-  fixed budget and minimum-coverage constraint.
-- Held-out Pareto frontier, binding constraints, 38–42-unit shadow-value
-  sensitivity, and a perfect-information upper bound.
-- Shared-day bootstrap and adverse-weather comparison.
+- Source: Citi Bike — Jersey City trip history, January-December 2021; derived station-hour aggregate.
+- Analytical grain: one station-hour-month aggregate.
+- Methods: Temporal holdout, weighted MAE, observed pickup-return imbalance, and fixed-budget scenario comparison.
+- Every bundled raw or minimized source file is hash-locked in `source-manifest.json`.
 
 ## Reproduce
 
@@ -27,14 +20,8 @@ python3 analyze.py
 python3 build_decision_case.py
 ```
 
-See the [technical report](outputs/report.md), [optimization results](outputs/results.json), [scenario parameters](config.json), and [decision-case input](outputs/decision-case.json).
-
-## Transferable methods
-
-The case demonstrates an out-of-time forecast handoff into exhaustive feasible
-allocation, binding-constraint analysis, Pareto screening, shadow values,
-perfect-information bounds, and dependent day resampling.
+Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
 
 ## Non-negotiable limitation
 
-System totals omit station imbalance, routing, labor, service time, and causal effects. Resource units are explicit hypothetical scalers.
+Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.

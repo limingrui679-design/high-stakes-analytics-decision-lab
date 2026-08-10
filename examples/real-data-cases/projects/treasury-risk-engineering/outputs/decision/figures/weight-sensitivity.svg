@@ -50,42 +50,42 @@
 <text x="76.0" y="210.0" class="label" text-anchor="start">↓ Historical annualized</text>
 <text x="76.0" y="225.0" class="label" text-anchor="start">return</text>
 <rect x="311.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.834</text>
+<text x="413.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.833</text>
 <text x="512.0" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
-<text x="628.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.805</text>
+<text x="628.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.804</text>
 <rect x="741.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
-<text x="843.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.801</text>
+<text x="843.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.802</text>
 <rect x="956.0" y="194.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1058.5" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.764</text>
 <text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
 <text x="76.0" y="272.0" class="label" text-anchor="start">↑ Historical annualized</text>
 <text x="76.0" y="287.0" class="label" text-anchor="start">return</text>
 <rect x="311.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="282.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.761</text>
+<text x="413.5" y="282.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.760</text>
 <text x="512.0" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.732</text>
+<text x="628.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.731</text>
 <rect x="741.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="843.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.726</text>
+<text x="843.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.727</text>
 <rect x="956.0" y="256.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1058.5" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.691</text>
 <rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="334.0" class="label" text-anchor="start">↓ Historical ES95 loss</text>
 <rect x="311.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="344.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.775</text>
+<text x="413.5" y="344.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.774</text>
 <text x="512.0" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="628.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.745</text>
+<text x="628.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.744</text>
 <rect x="741.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="843.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.739</text>
+<text x="843.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.740</text>
 <rect x="956.0" y="318.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1058.5" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.703</text>
 <text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
 <text x="76.0" y="396.0" class="label" text-anchor="start">↑ Historical ES95 loss</text>
 <rect x="311.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.827</text>
+<text x="413.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.826</text>
 <text x="512.0" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="380.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
 <text x="628.5" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.798</text>
@@ -97,23 +97,23 @@
 <text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="458.0" class="label" text-anchor="start">↓ Worst historical day</text>
 <rect x="311.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="468.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.791</text>
+<text x="413.5" y="468.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.790</text>
 <text x="512.0" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
 <text x="628.5" y="468.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.762</text>
 <rect x="741.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
-<text x="843.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.758</text>
+<text x="843.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.759</text>
 <rect x="956.0" y="442.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1058.5" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.723</text>
 <text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#7257D9">↑</text>
 <text x="76.0" y="520.0" class="label" text-anchor="start">↑ Worst historical day</text>
 <rect x="311.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#C69214" stroke-width="3"/>
-<text x="413.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.812</text>
+<text x="413.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.811</text>
 <text x="512.0" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="526.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
-<text x="628.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.782</text>
+<text x="628.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.781</text>
 <rect x="741.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#7257D9" stroke="#D9E2EC" stroke-width="1"/>
-<text x="843.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.777</text>
+<text x="843.5" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.778</text>
 <rect x="956.0" y="504.0" width="205.0" height="42.0" rx="7" fill="#EEEAFE" stroke="#D9E2EC" stroke-width="1"/>
 <text x="1058.5" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.740</text>
 <text x="48.0" y="584.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>

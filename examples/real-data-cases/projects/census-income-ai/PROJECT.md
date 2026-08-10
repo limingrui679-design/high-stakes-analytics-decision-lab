@@ -1,21 +1,15 @@
-# R3 · Census-Income Classification and Subgroup Validation
+# ACS Employment AI Temporal Transport and Audit
 
-**Portfolio role:** end-to-end AI, statistical prediction, and responsible model validation  
-**Decision boundary:** benchmark model development only—never eligibility, hiring, credit, or other consequential classification.
+**Analytical question:** How well does a protected-attribute-excluded employment model developed on 2019 PUMS transport to 2023?
 
-## Analytical question
-
-Can a transparent mixed-feature classifier improve on a majority benchmark out of sample, and what do calibration and subgroup error diagnostics reveal that aggregate accuracy hides?
+**Decision boundary:** No eligibility, hiring, credit, benefits, or other consequential action.
 
 ## Evidence and methods
 
-- UCI Adult dataset, 48,842 Census-derived records, CC BY 4.0.
-- Source-provided train/test split; the final test set is never used for fitting.
-- Majority and mixed Gaussian/categorical naïve-Bayes baselines.
-- Sparse one-hot logistic regression selected on an internal validation split,
-  with the source Adult test file untouched until final evaluation.
-- AUC, Brier score, calibration, sex/race subgroup confusion metrics, drift,
-  and abnormal/unseen/extreme-input challenges.
+- Source: U.S. Census Bureau — Rhode Island ACS 1-year PUMS person files, 2019 and 2023.
+- Analytical grain: one working-age ACS PUMS person record.
+- Methods: Survey-weighted grouped-rate model, temporal AUC/Brier/calibration, and protected-attribute audit slices.
+- Every bundled raw or minimized source file is hash-locked in `source-manifest.json`.
 
 ## Reproduce
 
@@ -26,14 +20,8 @@ python3 analyze.py
 python3 build_decision_case.py
 ```
 
-`build_decision_case.py` intentionally creates only a boundary note: predictive performance alone does not justify an action comparison. Review the [report](outputs/report.md), [model](outputs/model.json), [predictions](outputs/predictions.csv), and [results](outputs/results.json).
-
-## Transferable methods
-
-The case demonstrates baseline comparison, internal model selection, an
-independent test set, calibration, subgroup error analysis, drift checks, and
-an explicit boundary against consequential deployment.
+Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
 
 ## Non-negotiable limitation
 
-The benchmark reflects 1994 social and labor structures and includes sensitive attributes. It is unsuitable for real high-stakes use and is retained to demonstrate validation discipline.
+No eligibility, hiring, credit, benefits, or other consequential action.

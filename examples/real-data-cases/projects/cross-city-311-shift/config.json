@@ -1,0 +1,18 @@
+{
+  "project_id": "cross-city-311-shift",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "baseline_year": 2022,
+    "comparison_year": 2023,
+    "maximum_transfer_total_variation": 0.2
+  },
+  "parameter_register": [
+    {
+      "parameter": "baseline_year/comparison_year/maximum_transfer_total_variation",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Administrative shift audit only; requests are not latent need or service quality."
+    }
+  ]
+}

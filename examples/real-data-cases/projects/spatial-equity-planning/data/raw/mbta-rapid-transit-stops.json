@@ -1,0 +1,1861 @@
+{
+  "source": "MBTA V3 API",
+  "retrieved_at": "2026-08-10T19:59:28.749177+08:00",
+  "data": [
+    {
+      "id": "70095",
+      "name": "JFK/UMass",
+      "latitude": 42.320418,
+      "longitude": -71.052287,
+      "location_type": 0
+    },
+    {
+      "id": "70047",
+      "name": "Airport",
+      "latitude": 42.374262,
+      "longitude": -71.030395,
+      "location_type": 0
+    },
+    {
+      "id": "70073",
+      "name": "Charles/MGH",
+      "latitude": 42.361187,
+      "longitude": -71.071505,
+      "location_type": 0
+    },
+    {
+      "id": "70223",
+      "name": "Summit Avenue",
+      "latitude": 42.34112,
+      "longitude": -71.125652,
+      "location_type": 0
+    },
+    {
+      "id": "70267",
+      "name": "Milton",
+      "latitude": 42.270388,
+      "longitude": -71.067253,
+      "location_type": 0
+    },
+    {
+      "id": "70501",
+      "name": "Lechmere",
+      "latitude": 42.371566,
+      "longitude": -71.076457,
+      "location_type": 0
+    },
+    {
+      "id": "70206",
+      "name": "North Station",
+      "latitude": 42.36528,
+      "longitude": -71.060205,
+      "location_type": 0
+    },
+    {
+      "id": "70013",
+      "name": "Massachusetts Avenue",
+      "latitude": 42.340892,
+      "longitude": -71.084124,
+      "location_type": 0
+    },
+    {
+      "id": "71151",
+      "name": "Kenmore",
+      "latitude": 42.348949,
+      "longitude": -71.095169,
+      "location_type": 0
+    },
+    {
+      "id": "70042",
+      "name": "State",
+      "latitude": 42.358978,
+      "longitude": -71.057598,
+      "location_type": 0
+    },
+    {
+      "id": "70248",
+      "name": "Longwood Medical Area",
+      "latitude": 42.336217,
+      "longitude": -71.099328,
+      "location_type": 0
+    },
+    {
+      "id": "70001",
+      "name": "Forest Hills",
+      "latitude": 42.300926,
+      "longitude": -71.114129,
+      "location_type": 0
+    },
+    {
+      "id": "70247",
+      "name": "Longwood Medical Area",
+      "latitude": 42.33608,
+      "longitude": -71.099883,
+      "location_type": 0
+    },
+    {
+      "id": "70083",
+      "name": "Andrew",
+      "latitude": 42.330154,
+      "longitude": -71.057655,
+      "location_type": 0
+    },
+    {
+      "id": "70212",
+      "name": "Saint Mary's Street",
+      "latitude": 42.346007,
+      "longitude": -71.107166,
+      "location_type": 0
+    },
+    {
+      "id": "70200",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70166",
+      "name": "Eliot",
+      "latitude": 42.318871,
+      "longitude": -71.21642,
+      "location_type": 0
+    },
+    {
+      "id": "70231",
+      "name": "Tappan Street",
+      "latitude": 42.338498,
+      "longitude": -71.138731,
+      "location_type": 0
+    },
+    {
+      "id": "70097",
+      "name": "North Quincy",
+      "latitude": 42.27577,
+      "longitude": -71.030194,
+      "location_type": 0
+    },
+    {
+      "id": "70217",
+      "name": "Saint Paul Street",
+      "latitude": 42.34334,
+      "longitude": -71.116927,
+      "location_type": 0
+    },
+    {
+      "id": "70036",
+      "name": "Oak Grove",
+      "latitude": 42.437735,
+      "longitude": -71.070875,
+      "location_type": 0
+    },
+    {
+      "id": "70110",
+      "name": "South Street",
+      "latitude": 42.339371,
+      "longitude": -71.157057,
+      "location_type": 0
+    },
+    {
+      "id": "70265",
+      "name": "Butler",
+      "latitude": 42.272449,
+      "longitude": -71.062513,
+      "location_type": 0
+    },
+    {
+      "id": "70084",
+      "name": "Andrew",
+      "latitude": 42.330154,
+      "longitude": -71.057655,
+      "location_type": 0
+    },
+    {
+      "id": "70274",
+      "name": "Capen Street",
+      "latitude": 42.267563,
+      "longitude": -71.087338,
+      "location_type": 0
+    },
+    {
+      "id": "70186",
+      "name": "Fenway",
+      "latitude": 42.345328,
+      "longitude": -71.104269,
+      "location_type": 0
+    },
+    {
+      "id": "70154",
+      "name": "Copley",
+      "latitude": 42.349871,
+      "longitude": -71.078049,
+      "location_type": 0
+    },
+    {
+      "id": "70113",
+      "name": "Chestnut Hill Avenue",
+      "latitude": 42.33829,
+      "longitude": -71.153025,
+      "location_type": 0
+    },
+    {
+      "id": "70128",
+      "name": "Griggs Street",
+      "latitude": 42.348747,
+      "longitude": -71.1345,
+      "location_type": 0
+    },
+    {
+      "id": "70269",
+      "name": "Central Avenue",
+      "latitude": 42.270054,
+      "longitude": -71.073523,
+      "location_type": 0
+    },
+    {
+      "id": "70134",
+      "name": "Packard's Corner",
+      "latitude": 42.351891,
+      "longitude": -71.125067,
+      "location_type": 0
+    },
+    {
+      "id": "70502",
+      "name": "Lechmere",
+      "latitude": 42.370989,
+      "longitude": -71.07586,
+      "location_type": 0
+    },
+    {
+      "id": "70152",
+      "name": "Hynes Convention Center",
+      "latitude": 42.347888,
+      "longitude": -71.087903,
+      "location_type": 0
+    },
+    {
+      "id": "70273",
+      "name": "Capen Street",
+      "latitude": 42.267589,
+      "longitude": -71.087139,
+      "location_type": 0
+    },
+    {
+      "id": "70229",
+      "name": "Washington Square",
+      "latitude": 42.339471,
+      "longitude": -71.135139,
+      "location_type": 0
+    },
+    {
+      "id": "70027",
+      "name": "North Station",
+      "latitude": 42.36528,
+      "longitude": -71.060205,
+      "location_type": 0
+    },
+    {
+      "id": "70226",
+      "name": "Brandon Hall",
+      "latitude": 42.340038,
+      "longitude": -71.12866,
+      "location_type": 0
+    },
+    {
+      "id": "70111",
+      "name": "South Street",
+      "latitude": 42.339581,
+      "longitude": -71.157499,
+      "location_type": 0
+    },
+    {
+      "id": "70153",
+      "name": "Hynes Convention Center",
+      "latitude": 42.347888,
+      "longitude": -71.087903,
+      "location_type": 0
+    },
+    {
+      "id": "70043",
+      "name": "Aquarium",
+      "latitude": 42.359784,
+      "longitude": -71.051652,
+      "location_type": 0
+    },
+    {
+      "id": "70270",
+      "name": "Central Avenue",
+      "latitude": 42.270001,
+      "longitude": -71.073358,
+      "location_type": 0
+    },
+    {
+      "id": "70163",
+      "name": "Woodland",
+      "latitude": 42.333094,
+      "longitude": -71.243659,
+      "location_type": 0
+    },
+    {
+      "id": "70098",
+      "name": "North Quincy",
+      "latitude": 42.275802,
+      "longitude": -71.030144,
+      "location_type": 0
+    },
+    {
+      "id": "70009",
+      "name": "Roxbury Crossing",
+      "latitude": 42.33064,
+      "longitude": -71.09604,
+      "location_type": 0
+    },
+    {
+      "id": "70258",
+      "name": "Back of the Hill",
+      "latitude": 42.329399,
+      "longitude": -71.110931,
+      "location_type": 0
+    },
+    {
+      "id": "70205",
+      "name": "North Station",
+      "latitude": 42.36528,
+      "longitude": -71.060205,
+      "location_type": 0
+    },
+    {
+      "id": "70045",
+      "name": "Maverick",
+      "latitude": 42.3691186,
+      "longitude": -71.0395296,
+      "location_type": 0
+    },
+    {
+      "id": "70029",
+      "name": "Community College",
+      "latitude": 42.373622,
+      "longitude": -71.069533,
+      "location_type": 0
+    },
+    {
+      "id": "70094",
+      "name": "Ashmont",
+      "latitude": 42.28453,
+      "longitude": -71.063725,
+      "location_type": 0
+    },
+    {
+      "id": "70179",
+      "name": "Brookline Hills",
+      "latitude": 42.331413,
+      "longitude": -71.127025,
+      "location_type": 0
+    },
+    {
+      "id": "70057",
+      "name": "Revere Beach",
+      "latitude": 42.40776,
+      "longitude": -70.992586,
+      "location_type": 0
+    },
+    {
+      "id": "70278",
+      "name": "Assembly",
+      "latitude": 42.392331,
+      "longitude": -71.077262,
+      "location_type": 0
+    },
+    {
+      "id": "70056",
+      "name": "Beachmont",
+      "latitude": 42.397204,
+      "longitude": -70.992551,
+      "location_type": 0
+    },
+    {
+      "id": "70197",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70271",
+      "name": "Valley Road",
+      "latitude": 42.268389,
+      "longitude": -71.081504,
+      "location_type": 0
+    },
+    {
+      "id": "70512",
+      "name": "Medford/Tufts",
+      "latitude": 42.40828,
+      "longitude": -71.117339,
+      "location_type": 0
+    },
+    {
+      "id": "70103",
+      "name": "Quincy Adams",
+      "latitude": 42.233391,
+      "longitude": -71.007153,
+      "location_type": 0
+    },
+    {
+      "id": "70246",
+      "name": "Museum of Fine Arts",
+      "latitude": 42.338017,
+      "longitude": -71.094682,
+      "location_type": 0
+    },
+    {
+      "id": "70065",
+      "name": "Porter",
+      "latitude": 42.3884,
+      "longitude": -71.119149,
+      "location_type": 0
+    },
+    {
+      "id": "70513",
+      "name": "East Somerville",
+      "latitude": 42.379881,
+      "longitude": -71.087032,
+      "location_type": 0
+    },
+    {
+      "id": "70021",
+      "name": "Downtown Crossing",
+      "latitude": 42.355518,
+      "longitude": -71.060225,
+      "location_type": 0
+    },
+    {
+      "id": "70031",
+      "name": "Sullivan Square",
+      "latitude": 42.383975,
+      "longitude": -71.076994,
+      "location_type": 0
+    },
+    {
+      "id": "70239",
+      "name": "Prudential",
+      "latitude": 42.34557,
+      "longitude": -71.081696,
+      "location_type": 0
+    },
+    {
+      "id": "70266",
+      "name": "Butler",
+      "latitude": 42.272477,
+      "longitude": -71.062438,
+      "location_type": 0
+    },
+    {
+      "id": "70161",
+      "name": "Riverside",
+      "latitude": 42.337348,
+      "longitude": -71.252236,
+      "location_type": 0
+    },
+    {
+      "id": "70213",
+      "name": "Hawes Street",
+      "latitude": 42.344758,
+      "longitude": -71.111761,
+      "location_type": 0
+    },
+    {
+      "id": "70225",
+      "name": "Brandon Hall",
+      "latitude": 42.340053,
+      "longitude": -71.128869,
+      "location_type": 0
+    },
+    {
+      "id": "70279",
+      "name": "Assembly",
+      "latitude": 42.392336,
+      "longitude": -71.07718,
+      "location_type": 0
+    },
+    {
+      "id": "70022",
+      "name": "State",
+      "latitude": 42.358978,
+      "longitude": -71.057598,
+      "location_type": 0
+    },
+    {
+      "id": "70147",
+      "name": "Boston University East",
+      "latitude": 42.349811,
+      "longitude": -71.104657,
+      "location_type": 0
+    },
+    {
+      "id": "70089",
+      "name": "Fields Corner",
+      "latitude": 42.299993,
+      "longitude": -71.062021,
+      "location_type": 0
+    },
+    {
+      "id": "70040",
+      "name": "Government Center",
+      "latitude": 42.359705,
+      "longitude": -71.059215,
+      "location_type": 0
+    },
+    {
+      "id": "70264",
+      "name": "Cedar Grove",
+      "latitude": 42.279693,
+      "longitude": -71.060381,
+      "location_type": 0
+    },
+    {
+      "id": "70510",
+      "name": "Ball Square",
+      "latitude": 42.400103,
+      "longitude": -71.111207,
+      "location_type": 0
+    },
+    {
+      "id": "70151",
+      "name": "Kenmore",
+      "latitude": 42.348949,
+      "longitude": -71.095169,
+      "location_type": 0
+    },
+    {
+      "id": "70204",
+      "name": "Haymarket",
+      "latitude": 42.363021,
+      "longitude": -71.05829,
+      "location_type": 0
+    },
+    {
+      "id": "70187",
+      "name": "Fenway",
+      "latitude": 42.345029,
+      "longitude": -71.104968,
+      "location_type": 0
+    },
+    {
+      "id": "70034",
+      "name": "Malden Center",
+      "latitude": 42.426677,
+      "longitude": -71.074381,
+      "location_type": 0
+    },
+    {
+      "id": "70017",
+      "name": "Tufts Medical Center",
+      "latitude": 42.349662,
+      "longitude": -71.063917,
+      "location_type": 0
+    },
+    {
+      "id": "70023",
+      "name": "State",
+      "latitude": 42.358978,
+      "longitude": -71.057598,
+      "location_type": 0
+    },
+    {
+      "id": "70127",
+      "name": "Allston Street",
+      "latitude": 42.348546,
+      "longitude": -71.137362,
+      "location_type": 0
+    },
+    {
+      "id": "70250",
+      "name": "Brigham Circle",
+      "latitude": 42.334846,
+      "longitude": -71.103017,
+      "location_type": 0
+    },
+    {
+      "id": "70182",
+      "name": "Longwood",
+      "latitude": 42.341808,
+      "longitude": -71.109777,
+      "location_type": 0
+    },
+    {
+      "id": "70203",
+      "name": "Haymarket",
+      "latitude": 42.363021,
+      "longitude": -71.05829,
+      "location_type": 0
+    },
+    {
+      "id": "70010",
+      "name": "Ruggles",
+      "latitude": 42.33649,
+      "longitude": -71.089684,
+      "location_type": 0
+    },
+    {
+      "id": "70081",
+      "name": "Broadway",
+      "latitude": 42.342622,
+      "longitude": -71.056967,
+      "location_type": 0
+    },
+    {
+      "id": "70041",
+      "name": "State",
+      "latitude": 42.358978,
+      "longitude": -71.057598,
+      "location_type": 0
+    },
+    {
+      "id": "70006",
+      "name": "Jackson Square",
+      "latitude": 42.323132,
+      "longitude": -71.099592,
+      "location_type": 0
+    },
+    {
+      "id": "70506",
+      "name": "Gilman Square",
+      "latitude": 42.387831,
+      "longitude": -71.096629,
+      "location_type": 0
+    },
+    {
+      "id": "70253",
+      "name": "Mission Park",
+      "latitude": 42.333279,
+      "longitude": -71.109276,
+      "location_type": 0
+    },
+    {
+      "id": "70244",
+      "name": "Northeastern University",
+      "latitude": 42.340222,
+      "longitude": -71.0892,
+      "location_type": 0
+    },
+    {
+      "id": "70238",
+      "name": "Cleveland Circle",
+      "latitude": 42.336252,
+      "longitude": -71.148774,
+      "location_type": 0
+    },
+    {
+      "id": "70181",
+      "name": "Brookline Village",
+      "latitude": 42.33257,
+      "longitude": -71.117041,
+      "location_type": 0
+    },
+    {
+      "id": "70216",
+      "name": "Kent Street",
+      "latitude": 42.343927,
+      "longitude": -71.114569,
+      "location_type": 0
+    },
+    {
+      "id": "70508",
+      "name": "Magoun Square",
+      "latitude": 42.39405,
+      "longitude": -71.106688,
+      "location_type": 0
+    },
+    {
+      "id": "70093",
+      "name": "Ashmont",
+      "latitude": 42.284508,
+      "longitude": -71.063833,
+      "location_type": 0
+    },
+    {
+      "id": "70165",
+      "name": "Waban",
+      "latitude": 42.325967,
+      "longitude": -71.230714,
+      "location_type": 0
+    },
+    {
+      "id": "70067",
+      "name": "Harvard",
+      "latitude": 42.374663,
+      "longitude": -71.118814,
+      "location_type": 0
+    },
+    {
+      "id": "70088",
+      "name": "Savin Hill",
+      "latitude": 42.310591,
+      "longitude": -71.053612,
+      "location_type": 0
+    },
+    {
+      "id": "70116",
+      "name": "Sutherland Road",
+      "latitude": 42.341589,
+      "longitude": -71.146089,
+      "location_type": 0
+    },
+    {
+      "id": "70131",
+      "name": "Harvard Avenue",
+      "latitude": 42.350602,
+      "longitude": -71.130727,
+      "location_type": 0
+    },
+    {
+      "id": "70503",
+      "name": "Union Square",
+      "latitude": 42.377024,
+      "longitude": -71.093964,
+      "location_type": 0
+    },
+    {
+      "id": "70063",
+      "name": "Davis",
+      "latitude": 42.39674,
+      "longitude": -71.121815,
+      "location_type": 0
+    },
+    {
+      "id": "70507",
+      "name": "Magoun Square",
+      "latitude": 42.394357,
+      "longitude": -71.106824,
+      "location_type": 0
+    },
+    {
+      "id": "70120",
+      "name": "Washington Street",
+      "latitude": 42.344329,
+      "longitude": -71.142385,
+      "location_type": 0
+    },
+    {
+      "id": "70174",
+      "name": "Reservoir",
+      "latitude": 42.335181,
+      "longitude": -71.147879,
+      "location_type": 0
+    },
+    {
+      "id": "70035",
+      "name": "Malden Center",
+      "latitude": 42.426662,
+      "longitude": -71.074314,
+      "location_type": 0
+    },
+    {
+      "id": "70115",
+      "name": "Chiswick Road",
+      "latitude": 42.34054,
+      "longitude": -71.15114,
+      "location_type": 0
+    },
+    {
+      "id": "70072",
+      "name": "Kendall/MIT",
+      "latitude": 42.362434,
+      "longitude": -71.085591,
+      "location_type": 0
+    },
+    {
+      "id": "70173",
+      "name": "Chestnut Hill",
+      "latitude": 42.326782,
+      "longitude": -71.16478,
+      "location_type": 0
+    },
+    {
+      "id": "70091",
+      "name": "Shawmut",
+      "latitude": 42.2931258,
+      "longitude": -71.065738,
+      "location_type": 0
+    },
+    {
+      "id": "70251",
+      "name": "Fenwood Road",
+      "latitude": 42.33374,
+      "longitude": -71.105721,
+      "location_type": 0
+    },
+    {
+      "id": "70020",
+      "name": "Downtown Crossing",
+      "latitude": 42.355518,
+      "longitude": -71.060225,
+      "location_type": 0
+    },
+    {
+      "id": "70263",
+      "name": "Cedar Grove",
+      "latitude": 42.279546,
+      "longitude": -71.060392,
+      "location_type": 0
+    },
+    {
+      "id": "70177",
+      "name": "Beaconsfield",
+      "latitude": 42.335912,
+      "longitude": -71.140903,
+      "location_type": 0
+    },
+    {
+      "id": "70121",
+      "name": "Washington Street",
+      "latitude": 42.343974,
+      "longitude": -71.142731,
+      "location_type": 0
+    },
+    {
+      "id": "70060",
+      "name": "Wonderland",
+      "latitude": 42.413361,
+      "longitude": -70.991685,
+      "location_type": 0
+    },
+    {
+      "id": "70249",
+      "name": "Brigham Circle",
+      "latitude": 42.334331,
+      "longitude": -71.104487,
+      "location_type": 0
+    },
+    {
+      "id": "70170",
+      "name": "Newton Centre",
+      "latitude": 42.329552,
+      "longitude": -71.192024,
+      "location_type": 0
+    },
+    {
+      "id": "70059",
+      "name": "Wonderland",
+      "latitude": 42.413514,
+      "longitude": -70.991714,
+      "location_type": 0
+    },
+    {
+      "id": "70135",
+      "name": "Packard's Corner",
+      "latitude": 42.351651,
+      "longitude": -71.12551,
+      "location_type": 0
+    },
+    {
+      "id": "70061",
+      "name": "Alewife",
+      "latitude": 42.396148,
+      "longitude": -71.140698,
+      "location_type": 0
+    },
+    {
+      "id": "70157",
+      "name": "Arlington",
+      "latitude": 42.351902,
+      "longitude": -71.070893,
+      "location_type": 0
+    },
+    {
+      "id": "70224",
+      "name": "Summit Avenue",
+      "latitude": 42.341027,
+      "longitude": -71.125759,
+      "location_type": 0
+    },
+    {
+      "id": "70504",
+      "name": "Union Square",
+      "latitude": 42.37699,
+      "longitude": -71.093993,
+      "location_type": 0
+    },
+    {
+      "id": "70024",
+      "name": "Haymarket",
+      "latitude": 42.363021,
+      "longitude": -71.05829,
+      "location_type": 0
+    },
+    {
+      "id": "70032",
+      "name": "Wellington",
+      "latitude": 42.401505,
+      "longitude": -71.077252,
+      "location_type": 0
+    },
+    {
+      "id": "70039",
+      "name": "Government Center",
+      "latitude": 42.359705,
+      "longitude": -71.059215,
+      "location_type": 0
+    },
+    {
+      "id": "70230",
+      "name": "Washington Square",
+      "latitude": 42.339519,
+      "longitude": -71.134587,
+      "location_type": 0
+    },
+    {
+      "id": "70101",
+      "name": "Quincy Center",
+      "latitude": 42.251809,
+      "longitude": -71.005409,
+      "location_type": 0
+    },
+    {
+      "id": "70077",
+      "name": "Downtown Crossing",
+      "latitude": 42.355518,
+      "longitude": -71.060225,
+      "location_type": 0
+    },
+    {
+      "id": "70207",
+      "name": "Science Park/West End",
+      "latitude": 42.366664,
+      "longitude": -71.067666,
+      "location_type": 0
+    },
+    {
+      "id": "70159",
+      "name": "Boylston",
+      "latitude": 42.353214,
+      "longitude": -71.064545,
+      "location_type": 0
+    },
+    {
+      "id": "70102",
+      "name": "Quincy Center",
+      "latitude": 42.251809,
+      "longitude": -71.005409,
+      "location_type": 0
+    },
+    {
+      "id": "70233",
+      "name": "Dean Road",
+      "latitude": 42.337807,
+      "longitude": -71.141753,
+      "location_type": 0
+    },
+    {
+      "id": "70155",
+      "name": "Copley",
+      "latitude": 42.350126,
+      "longitude": -71.077376,
+      "location_type": 0
+    },
+    {
+      "id": "70096",
+      "name": "JFK/UMass",
+      "latitude": 42.320434,
+      "longitude": -71.052215,
+      "location_type": 0
+    },
+    {
+      "id": "70144",
+      "name": "Boston University Central",
+      "latitude": 42.350013,
+      "longitude": -71.106902,
+      "location_type": 0
+    },
+    {
+      "id": "70268",
+      "name": "Milton",
+      "latitude": 42.270308,
+      "longitude": -71.067289,
+      "location_type": 0
+    },
+    {
+      "id": "70218",
+      "name": "Saint Paul Street",
+      "latitude": 42.343118,
+      "longitude": -71.117498,
+      "location_type": 0
+    },
+    {
+      "id": "70242",
+      "name": "Symphony",
+      "latitude": 42.342687,
+      "longitude": -71.085056,
+      "location_type": 0
+    },
+    {
+      "id": "70090",
+      "name": "Fields Corner",
+      "latitude": 42.299935,
+      "longitude": -71.061945,
+      "location_type": 0
+    },
+    {
+      "id": "70129",
+      "name": "Griggs Street",
+      "latitude": 42.348919,
+      "longitude": -71.134305,
+      "location_type": 0
+    },
+    {
+      "id": "70025",
+      "name": "Haymarket",
+      "latitude": 42.363021,
+      "longitude": -71.05829,
+      "location_type": 0
+    },
+    {
+      "id": "70112",
+      "name": "Chestnut Hill Avenue",
+      "latitude": 42.33873,
+      "longitude": -71.152526,
+      "location_type": 0
+    },
+    {
+      "id": "70176",
+      "name": "Beaconsfield",
+      "latitude": 42.335625,
+      "longitude": -71.140112,
+      "location_type": 0
+    },
+    {
+      "id": "70078",
+      "name": "Downtown Crossing",
+      "latitude": 42.355518,
+      "longitude": -71.060225,
+      "location_type": 0
+    },
+    {
+      "id": "70150",
+      "name": "Kenmore",
+      "latitude": 42.348949,
+      "longitude": -71.095169,
+      "location_type": 0
+    },
+    {
+      "id": "70202",
+      "name": "Government Center",
+      "latitude": 42.359705,
+      "longitude": -71.059215,
+      "location_type": 0
+    },
+    {
+      "id": "70038",
+      "name": "Bowdoin",
+      "latitude": 42.361365,
+      "longitude": -71.062037,
+      "location_type": 0
+    },
+    {
+      "id": "70235",
+      "name": "Englewood Avenue",
+      "latitude": 42.336964,
+      "longitude": -71.145867,
+      "location_type": 0
+    },
+    {
+      "id": "70160",
+      "name": "Riverside",
+      "latitude": 42.337317,
+      "longitude": -71.252256,
+      "location_type": 0
+    },
+    {
+      "id": "70276",
+      "name": "Mattapan",
+      "latitude": 42.267559,
+      "longitude": -71.092233,
+      "location_type": 0
+    },
+    {
+      "id": "70162",
+      "name": "Woodland",
+      "latitude": 42.332703,
+      "longitude": -71.243055,
+      "location_type": 0
+    },
+    {
+      "id": "70030",
+      "name": "Sullivan Square",
+      "latitude": 42.383975,
+      "longitude": -71.076994,
+      "location_type": 0
+    },
+    {
+      "id": "70243",
+      "name": "Northeastern University",
+      "latitude": 42.339897,
+      "longitude": -71.09021,
+      "location_type": 0
+    },
+    {
+      "id": "70275",
+      "name": "Mattapan",
+      "latitude": 42.267625,
+      "longitude": -71.092389,
+      "location_type": 0
+    },
+    {
+      "id": "70196",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70087",
+      "name": "Savin Hill",
+      "latitude": 42.310603,
+      "longitude": -71.053678,
+      "location_type": 0
+    },
+    {
+      "id": "70272",
+      "name": "Valley Road",
+      "latitude": 42.268347,
+      "longitude": -71.081343,
+      "location_type": 0
+    },
+    {
+      "id": "70511",
+      "name": "Medford/Tufts",
+      "latitude": 42.408306,
+      "longitude": -71.11728,
+      "location_type": 0
+    },
+    {
+      "id": "70164",
+      "name": "Waban",
+      "latitude": 42.325695,
+      "longitude": -71.230476,
+      "location_type": 0
+    },
+    {
+      "id": "170140",
+      "name": "Amory Street",
+      "latitude": 42.350901,
+      "longitude": -71.114318,
+      "location_type": 0
+    },
+    {
+      "id": "70050",
+      "name": "Wood Island",
+      "latitude": 42.379671,
+      "longitude": -71.022783,
+      "location_type": 0
+    },
+    {
+      "id": "70175",
+      "name": "Reservoir",
+      "latitude": 42.335163,
+      "longitude": -71.148601,
+      "location_type": 0
+    },
+    {
+      "id": "70028",
+      "name": "Community College",
+      "latitude": 42.373622,
+      "longitude": -71.069533,
+      "location_type": 0
+    },
+    {
+      "id": "70019",
+      "name": "Chinatown",
+      "latitude": 42.352547,
+      "longitude": -71.062752,
+      "location_type": 0
+    },
+    {
+      "id": "70149",
+      "name": "Blandford Street",
+      "latitude": 42.349276,
+      "longitude": -71.100213,
+      "location_type": 0
+    },
+    {
+      "id": "70053",
+      "name": "Suffolk Downs",
+      "latitude": 42.390422,
+      "longitude": -70.997323,
+      "location_type": 0
+    },
+    {
+      "id": "70105",
+      "name": "Braintree",
+      "latitude": 42.207424,
+      "longitude": -71.001645,
+      "location_type": 0
+    },
+    {
+      "id": "70236",
+      "name": "Englewood Avenue",
+      "latitude": 42.337199,
+      "longitude": -71.144382,
+      "location_type": 0
+    },
+    {
+      "id": "70007",
+      "name": "Jackson Square",
+      "latitude": 42.323132,
+      "longitude": -71.099592,
+      "location_type": 0
+    },
+    {
+      "id": "70070",
+      "name": "Central",
+      "latitude": 42.365379,
+      "longitude": -71.103554,
+      "location_type": 0
+    },
+    {
+      "id": "70058",
+      "name": "Revere Beach",
+      "latitude": 42.407874,
+      "longitude": -70.992497,
+      "location_type": 0
+    },
+    {
+      "id": "70002",
+      "name": "Green Street",
+      "latitude": 42.309832,
+      "longitude": -71.108059,
+      "location_type": 0
+    },
+    {
+      "id": "70055",
+      "name": "Beachmont",
+      "latitude": 42.397219,
+      "longitude": -70.992647,
+      "location_type": 0
+    },
+    {
+      "id": "70261",
+      "name": "Ashmont",
+      "latitude": 42.283768,
+      "longitude": -71.063191,
+      "location_type": 0
+    },
+    {
+      "id": "70107",
+      "name": "Boston College",
+      "latitude": 42.34024,
+      "longitude": -71.166849,
+      "location_type": 0
+    },
+    {
+      "id": "70099",
+      "name": "Wollaston",
+      "latitude": 42.266762,
+      "longitude": -71.020542,
+      "location_type": 0
+    },
+    {
+      "id": "170137",
+      "name": "Babcock Street",
+      "latitude": 42.351695,
+      "longitude": -71.120257,
+      "location_type": 0
+    },
+    {
+      "id": "70838",
+      "name": "Bowdoin",
+      "latitude": 42.361365,
+      "longitude": -71.062037,
+      "location_type": 0
+    },
+    {
+      "id": "170136",
+      "name": "Babcock Street",
+      "latitude": 42.351538,
+      "longitude": -71.119553,
+      "location_type": 0
+    },
+    {
+      "id": "70509",
+      "name": "Ball Square",
+      "latitude": 42.40038,
+      "longitude": -71.111331,
+      "location_type": 0
+    },
+    {
+      "id": "70080",
+      "name": "South Station",
+      "latitude": 42.352271,
+      "longitude": -71.055242,
+      "location_type": 0
+    },
+    {
+      "id": "70514",
+      "name": "East Somerville",
+      "latitude": 42.379624,
+      "longitude": -71.086829,
+      "location_type": 0
+    },
+    {
+      "id": "70199",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70085",
+      "name": "JFK/UMass",
+      "latitude": 42.320632,
+      "longitude": -71.052514,
+      "location_type": 0
+    },
+    {
+      "id": "70071",
+      "name": "Kendall/MIT",
+      "latitude": 42.362355,
+      "longitude": -71.085605,
+      "location_type": 0
+    },
+    {
+      "id": "70145",
+      "name": "Boston University Central",
+      "latitude": 42.350148,
+      "longitude": -71.107455,
+      "location_type": 0
+    },
+    {
+      "id": "70016",
+      "name": "Tufts Medical Center",
+      "latitude": 42.349662,
+      "longitude": -71.063917,
+      "location_type": 0
+    },
+    {
+      "id": "70167",
+      "name": "Eliot",
+      "latitude": 42.319214,
+      "longitude": -71.216949,
+      "location_type": 0
+    },
+    {
+      "id": "70146",
+      "name": "Boston University East",
+      "latitude": 42.349659,
+      "longitude": -71.103989,
+      "location_type": 0
+    },
+    {
+      "id": "70052",
+      "name": "Orient Heights",
+      "latitude": 42.386842,
+      "longitude": -71.004767,
+      "location_type": 0
+    },
+    {
+      "id": "70260",
+      "name": "Heath Street",
+      "latitude": 42.328316,
+      "longitude": -71.110252,
+      "location_type": 0
+    },
+    {
+      "id": "70079",
+      "name": "South Station",
+      "latitude": 42.352271,
+      "longitude": -71.055242,
+      "location_type": 0
+    },
+    {
+      "id": "70172",
+      "name": "Chestnut Hill",
+      "latitude": 42.326799,
+      "longitude": -71.164146,
+      "location_type": 0
+    },
+    {
+      "id": "70219",
+      "name": "Coolidge Corner",
+      "latitude": 42.342274,
+      "longitude": -71.120915,
+      "location_type": 0
+    },
+    {
+      "id": "70505",
+      "name": "Gilman Square",
+      "latitude": 42.388043,
+      "longitude": -71.096956,
+      "location_type": 0
+    },
+    {
+      "id": "70148",
+      "name": "Blandford Street",
+      "latitude": 42.349165,
+      "longitude": -71.099821,
+      "location_type": 0
+    },
+    {
+      "id": "70086",
+      "name": "JFK/UMass",
+      "latitude": 42.320637,
+      "longitude": -71.052473,
+      "location_type": 0
+    },
+    {
+      "id": "70011",
+      "name": "Ruggles",
+      "latitude": 42.336451,
+      "longitude": -71.089635,
+      "location_type": 0
+    },
+    {
+      "id": "70240",
+      "name": "Prudential",
+      "latitude": 42.34557,
+      "longitude": -71.081696,
+      "location_type": 0
+    },
+    {
+      "id": "70254",
+      "name": "Mission Park",
+      "latitude": 42.333092,
+      "longitude": -71.10968,
+      "location_type": 0
+    },
+    {
+      "id": "70156",
+      "name": "Arlington",
+      "latitude": 42.351902,
+      "longitude": -71.070893,
+      "location_type": 0
+    },
+    {
+      "id": "70245",
+      "name": "Museum of Fine Arts",
+      "latitude": 42.337875,
+      "longitude": -71.09524,
+      "location_type": 0
+    },
+    {
+      "id": "70106",
+      "name": "Boston College",
+      "latitude": 42.340149,
+      "longitude": -71.167029,
+      "location_type": 0
+    },
+    {
+      "id": "70018",
+      "name": "Chinatown",
+      "latitude": 42.352547,
+      "longitude": -71.062752,
+      "location_type": 0
+    },
+    {
+      "id": "70124",
+      "name": "Warren Street",
+      "latitude": 42.348285,
+      "longitude": -71.140436,
+      "location_type": 0
+    },
+    {
+      "id": "70126",
+      "name": "Allston Street",
+      "latitude": 42.348649,
+      "longitude": -71.137881,
+      "location_type": 0
+    },
+    {
+      "id": "70168",
+      "name": "Newton Highlands",
+      "latitude": 42.322738,
+      "longitude": -71.205082,
+      "location_type": 0
+    },
+    {
+      "id": "70044",
+      "name": "Aquarium",
+      "latitude": 42.359784,
+      "longitude": -71.051652,
+      "location_type": 0
+    },
+    {
+      "id": "70241",
+      "name": "Symphony",
+      "latitude": 42.342687,
+      "longitude": -71.085056,
+      "location_type": 0
+    },
+    {
+      "id": "71150",
+      "name": "Kenmore",
+      "latitude": 42.348949,
+      "longitude": -71.095169,
+      "location_type": 0
+    },
+    {
+      "id": "70104",
+      "name": "Quincy Adams",
+      "latitude": 42.233391,
+      "longitude": -71.007153,
+      "location_type": 0
+    },
+    {
+      "id": "70046",
+      "name": "Maverick",
+      "latitude": 42.3691186,
+      "longitude": -71.0395296,
+      "location_type": 0
+    },
+    {
+      "id": "70257",
+      "name": "Back of the Hill",
+      "latitude": 42.329369,
+      "longitude": -71.111046,
+      "location_type": 0
+    },
+    {
+      "id": "70014",
+      "name": "Back Bay",
+      "latitude": 42.34735,
+      "longitude": -71.075727,
+      "location_type": 0
+    },
+    {
+      "id": "70033",
+      "name": "Wellington",
+      "latitude": 42.401507,
+      "longitude": -71.07715,
+      "location_type": 0
+    },
+    {
+      "id": "70051",
+      "name": "Orient Heights",
+      "latitude": 42.386909,
+      "longitude": -71.004809,
+      "location_type": 0
+    },
+    {
+      "id": "70178",
+      "name": "Brookline Hills",
+      "latitude": 42.331293,
+      "longitude": -71.126406,
+      "location_type": 0
+    },
+    {
+      "id": "70130",
+      "name": "Harvard Avenue",
+      "latitude": 42.350263,
+      "longitude": -71.131298,
+      "location_type": 0
+    },
+    {
+      "id": "70068",
+      "name": "Harvard",
+      "latitude": 42.374663,
+      "longitude": -71.118814,
+      "location_type": 0
+    },
+    {
+      "id": "70169",
+      "name": "Newton Highlands",
+      "latitude": 42.32253,
+      "longitude": -71.205421,
+      "location_type": 0
+    },
+    {
+      "id": "70234",
+      "name": "Dean Road",
+      "latitude": 42.337628,
+      "longitude": -71.142309,
+      "location_type": 0
+    },
+    {
+      "id": "70012",
+      "name": "Massachusetts Avenue",
+      "latitude": 42.340927,
+      "longitude": -71.084188,
+      "location_type": 0
+    },
+    {
+      "id": "70211",
+      "name": "Saint Mary's Street",
+      "latitude": 42.345884,
+      "longitude": -71.107697,
+      "location_type": 0
+    },
+    {
+      "id": "70048",
+      "name": "Airport",
+      "latitude": 42.374262,
+      "longitude": -71.030395,
+      "location_type": 0
+    },
+    {
+      "id": "70066",
+      "name": "Porter",
+      "latitude": 42.3884,
+      "longitude": -71.119149,
+      "location_type": 0
+    },
+    {
+      "id": "70114",
+      "name": "Chiswick Road",
+      "latitude": 42.340808,
+      "longitude": -71.150633,
+      "location_type": 0
+    },
+    {
+      "id": "70220",
+      "name": "Coolidge Corner",
+      "latitude": 42.342028,
+      "longitude": -71.121685,
+      "location_type": 0
+    },
+    {
+      "id": "70015",
+      "name": "Back Bay",
+      "latitude": 42.34735,
+      "longitude": -71.075727,
+      "location_type": 0
+    },
+    {
+      "id": "70183",
+      "name": "Longwood",
+      "latitude": 42.341571,
+      "longitude": -71.110147,
+      "location_type": 0
+    },
+    {
+      "id": "70256",
+      "name": "Riverway",
+      "latitude": 42.331871,
+      "longitude": -71.111961,
+      "location_type": 0
+    },
+    {
+      "id": "70064",
+      "name": "Davis",
+      "latitude": 42.39674,
+      "longitude": -71.121815,
+      "location_type": 0
+    },
+    {
+      "id": "70100",
+      "name": "Wollaston",
+      "latitude": 42.266788,
+      "longitude": -71.020457,
+      "location_type": 0
+    },
+    {
+      "id": "70201",
+      "name": "Government Center",
+      "latitude": 42.359705,
+      "longitude": -71.059215,
+      "location_type": 0
+    },
+    {
+      "id": "70125",
+      "name": "Warren Street",
+      "latitude": 42.348819,
+      "longitude": -71.140051,
+      "location_type": 0
+    },
+    {
+      "id": "70092",
+      "name": "Shawmut",
+      "latitude": 42.2931258,
+      "longitude": -71.065738,
+      "location_type": 0
+    },
+    {
+      "id": "70215",
+      "name": "Kent Street",
+      "latitude": 42.344117,
+      "longitude": -71.114097,
+      "location_type": 0
+    },
+    {
+      "id": "70054",
+      "name": "Suffolk Downs",
+      "latitude": 42.39061,
+      "longitude": -70.99703,
+      "location_type": 0
+    },
+    {
+      "id": "70005",
+      "name": "Stony Brook",
+      "latitude": 42.317062,
+      "longitude": -71.104248,
+      "location_type": 0
+    },
+    {
+      "id": "70003",
+      "name": "Green Street",
+      "latitude": 42.309796,
+      "longitude": -71.107988,
+      "location_type": 0
+    },
+    {
+      "id": "70208",
+      "name": "Science Park/West End",
+      "latitude": 42.366664,
+      "longitude": -71.067666,
+      "location_type": 0
+    },
+    {
+      "id": "70117",
+      "name": "Sutherland Road",
+      "latitude": 42.341577,
+      "longitude": -71.146607,
+      "location_type": 0
+    },
+    {
+      "id": "70004",
+      "name": "Stony Brook",
+      "latitude": 42.317062,
+      "longitude": -71.104248,
+      "location_type": 0
+    },
+    {
+      "id": "70008",
+      "name": "Roxbury Crossing",
+      "latitude": 42.330671,
+      "longitude": -71.096121,
+      "location_type": 0
+    },
+    {
+      "id": "70198",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70075",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70026",
+      "name": "North Station",
+      "latitude": 42.36528,
+      "longitude": -71.060205,
+      "location_type": 0
+    },
+    {
+      "id": "70082",
+      "name": "Broadway",
+      "latitude": 42.342622,
+      "longitude": -71.056967,
+      "location_type": 0
+    },
+    {
+      "id": "70069",
+      "name": "Central",
+      "latitude": 42.365304,
+      "longitude": -71.103621,
+      "location_type": 0
+    },
+    {
+      "id": "70214",
+      "name": "Hawes Street",
+      "latitude": 42.344867,
+      "longitude": -71.111157,
+      "location_type": 0
+    },
+    {
+      "id": "70180",
+      "name": "Brookline Village",
+      "latitude": 42.332614,
+      "longitude": -71.116751,
+      "location_type": 0
+    },
+    {
+      "id": "70252",
+      "name": "Fenwood Road",
+      "latitude": 42.333706,
+      "longitude": -71.105583,
+      "location_type": 0
+    },
+    {
+      "id": "70074",
+      "name": "Charles/MGH",
+      "latitude": 42.361263,
+      "longitude": -71.071602,
+      "location_type": 0
+    },
+    {
+      "id": "170141",
+      "name": "Amory Street",
+      "latitude": 42.351066,
+      "longitude": -71.115027,
+      "location_type": 0
+    },
+    {
+      "id": "70232",
+      "name": "Tappan Street",
+      "latitude": 42.338567,
+      "longitude": -71.13819,
+      "location_type": 0
+    },
+    {
+      "id": "70255",
+      "name": "Riverway",
+      "latitude": 42.331391,
+      "longitude": -71.111925,
+      "location_type": 0
+    },
+    {
+      "id": "70076",
+      "name": "Park Street",
+      "latitude": 42.3563946,
+      "longitude": -71.0624242,
+      "location_type": 0
+    },
+    {
+      "id": "70049",
+      "name": "Wood Island",
+      "latitude": 42.37974,
+      "longitude": -71.022818,
+      "location_type": 0
+    },
+    {
+      "id": "70237",
+      "name": "Cleveland Circle",
+      "latitude": 42.336216,
+      "longitude": -71.149201,
+      "location_type": 0
+    },
+    {
+      "id": "70171",
+      "name": "Newton Centre",
+      "latitude": 42.3294,
+      "longitude": -71.192622,
+      "location_type": 0
+    },
+    {
+      "id": "70228",
+      "name": "Fairbanks Street",
+      "latitude": 42.339644,
+      "longitude": -71.131078,
+      "location_type": 0
+    },
+    {
+      "id": "70227",
+      "name": "Fairbanks Street",
+      "latitude": 42.33969,
+      "longitude": -71.131228,
+      "location_type": 0
+    },
+    {
+      "id": "70158",
+      "name": "Boylston",
+      "latitude": 42.352531,
+      "longitude": -71.064682,
+      "location_type": 0
+    }
+  ]
+}

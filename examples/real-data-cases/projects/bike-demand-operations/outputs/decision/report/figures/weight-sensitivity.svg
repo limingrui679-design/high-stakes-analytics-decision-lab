@@ -40,67 +40,69 @@
 <circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
 <line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
 <line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
-<text x="449.3" y="140.0" class="small" text-anchor="middle">Robust Optimized</text>
+<text x="449.3" y="140.0" class="small" text-anchor="middle">Top 25 Station Hours</text>
 <text x="449.3" y="174.0" class="eyebrow" text-anchor="middle" style="fill:#4E7D32">BASELINE PREFERENCE</text>
-<text x="736.0" y="140.0" class="small" text-anchor="middle">Demand Proportional</text>
-<text x="1022.7" y="140.0" class="small" text-anchor="middle">Equal Baseline</text>
+<text x="736.0" y="140.0" class="small" text-anchor="middle">Top 10 Station Hours</text>
+<text x="1022.7" y="140.0" class="small" text-anchor="middle">Baseline: Monitoring Only</text>
 <rect x="30.0" y="185.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="212.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
-<text x="76.0" y="210.0" class="label" text-anchor="start">↓ Unmet demand</text>
-<rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.605</text>
-<rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.606</text>
-<text x="870.3" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="884.3" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.535</text>
+<text x="76.0" y="210.0" class="label" text-anchor="start">↓ Modeled residual imbalance</text>
+<rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.490</text>
+<text x="583.7" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.446</text>
+<rect x="884.3" y="194.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.451</text>
 <text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#4E7D32">↑</text>
-<text x="76.0" y="272.0" class="label" text-anchor="start">↑ Unmet demand</text>
-<rect x="311.0" y="256.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.595</text>
+<text x="76.0" y="272.0" class="label" text-anchor="start">↑ Modeled residual imbalance</text>
+<rect x="311.0" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.378</text>
 <text x="583.7" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="256.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.589</text>
+<rect x="597.7" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.325</text>
 <rect x="884.3" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.473</text>
+<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.313</text>
 <rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
-<text x="76.0" y="334.0" class="label" text-anchor="start">↓ Wet-day unmet demand</text>
-<rect x="311.0" y="318.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.592</text>
+<text x="76.0" y="334.0" class="label" text-anchor="start">↓ Station-hours with residual</text>
+<text x="76.0" y="349.0" class="label" text-anchor="start">imbalance</text>
+<rect x="311.0" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.421</text>
 <text x="583.7" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="318.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.592</text>
-<rect x="884.3" y="318.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.513</text>
+<rect x="597.7" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.368</text>
+<rect x="884.3" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.365</text>
 <text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#4E7D32">↑</text>
-<text x="76.0" y="396.0" class="label" text-anchor="start">↑ Wet-day unmet demand</text>
-<rect x="311.0" y="380.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.609</text>
+<text x="76.0" y="396.0" class="label" text-anchor="start">↑ Station-hours with residual</text>
+<text x="76.0" y="411.0" class="label" text-anchor="start">imbalance</text>
+<rect x="311.0" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.450</text>
 <text x="583.7" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="380.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.605</text>
-<rect x="884.3" y="380.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.495</text>
+<rect x="597.7" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.408</text>
+<rect x="884.3" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.404</text>
 <rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
-<text x="76.0" y="458.0" class="label" text-anchor="start">↓ Shift imbalance</text>
-<rect x="311.0" y="442.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.604</text>
+<text x="76.0" y="458.0" class="label" text-anchor="start">↓ Allocation concentration</text>
+<rect x="311.0" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.398</text>
 <text x="583.7" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.597</text>
+<rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.350</text>
 <rect x="884.3" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.469</text>
+<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.339</text>
 <text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#4E7D32">↑</text>
-<text x="76.0" y="520.0" class="label" text-anchor="start">↑ Shift imbalance</text>
-<rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.596</text>
-<rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
-<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.600</text>
-<text x="870.3" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="884.3" y="504.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.550</text>
+<text x="76.0" y="520.0" class="label" text-anchor="start">↑ Allocation concentration</text>
+<rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#E8F2DF" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.482</text>
+<text x="583.7" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
+<rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.432</text>
+<rect x="884.3" y="504.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
+<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.439</text>
 <text x="48.0" y="584.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>
 <line x1="36" y1="576.0" x2="1164" y2="576.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="598.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

@@ -1,11 +1,11 @@
-# R6C · Privacy-Preserving Complaint Monitoring and Negative Model Validation
+# R6C · Human-in-the-Loop Complaint Triage Information System
 
-**Skill coverage:** privacy-preserving administrative-data analysis, rare-event validation, model-risk gates, and time-aware monitoring  
-**Decision boundary:** determine whether a public-data ranking model deserves further consideration—not rank consumers, firms, jurisdictions, or complaints.
+**Skill coverage:** privacy-preserving administrative-data analysis, time-aware monitoring, auditable triage queues, rare-event validation, and model-risk gates
+**Decision boundary:** support manual evidence review and determine whether a public-data ranking model deserves further consideration—not automate sanctions or rank consumers, firms, jurisdictions, or complaint merit.
 
 ## Analytical question
 
-Do intake-time public fields provide reproducible later-period ranking gain for untimely responses, or should the ranking model be rejected while retaining the privacy and monitoring design?
+Can a privacy-minimized information system surface missing evidence, workflow delay, and emerging issue patterns for human review; do intake-time fields provide enough later-period ranking gain to support even a bounded triage aid?
 
 ## Evidence and methods
 

@@ -34,8 +34,8 @@ class RealPortfolioContractTests(unittest.TestCase):
             (PROJECT_ROOT / "project-catalog.json").read_text(encoding="utf-8")
         )
 
-    def test_public_catalog_contains_only_ten_real_projects(self) -> None:
-        self.assertEqual(self.catalog["project_count"], 10)
+    def test_public_catalog_contains_fifteen_real_projects(self) -> None:
+        self.assertEqual(self.catalog["project_count"], 15)
         self.assertEqual(
             self.catalog["public_project_type"],
             "real_world_research_project",
@@ -46,7 +46,7 @@ class RealPortfolioContractTests(unittest.TestCase):
         )
         self.assertEqual(
             len({item["id"] for item in self.catalog["projects"]}),
-            10,
+            15,
         )
 
     def test_every_project_has_real_source_and_report_contract(self) -> None:
@@ -190,26 +190,20 @@ class RealPortfolioContractTests(unittest.TestCase):
         self.assertEqual(routed_ids, real_ids)
 
     def test_replacement_cases_enforce_honest_claim_boundaries(self) -> None:
-        portfolio = json.loads(
+        filing_review = json.loads(
             (
                 PROJECT_ROOT
-                / "regime-aware-multi-asset-portfolio/outputs/results.json"
+                / "sec-nport-filing-review/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(portfolio["data"]["price_rows"], 2766)
-        adaptive = portfolio["strategy_metrics"][
-            "walk-forward inverse-volatility"
-        ]
-        equal_weight = portfolio["strategy_metrics"][
-            "equal-weight benchmark"
-        ]
-        self.assertLess(
-            adaptive["daily_expected_shortfall95_loss"],
-            equal_weight["daily_expected_shortfall95_loss"],
+        self.assertEqual(filing_review["data"]["rows"], 11747)
+        self.assertEqual(
+            filing_review["decision_support"]["status"],
+            "targeted_filing_review_only",
         )
-        self.assertGreater(
-            adaptive["maximum_drawdown"],
-            equal_weight["maximum_drawdown"],
+        self.assertEqual(
+            filing_review["decision_options"]["review-top-10%"]["high_risk_capture"],
+            1.0,
         )
 
         complaints = json.loads(
@@ -270,25 +264,29 @@ class RealPortfolioContractTests(unittest.TestCase):
         self.assertEqual(case_metrics["Filtered transactions"], "12,399")
         self.assertEqual(case_metrics["Break-even cap rate at 8.5% debt"], "7.5%")
 
-    def test_portfolio_and_real_estate_numerical_properties(self) -> None:
-        portfolio = json.loads(
+    def test_filing_review_and_real_estate_numerical_properties(self) -> None:
+        filing_review = json.loads(
             (
                 PROJECT_ROOT
-                / "regime-aware-multi-asset-portfolio/outputs/results.json"
+                / "sec-nport-filing-review/outputs/results.json"
             ).read_text(encoding="utf-8")
         )
-        probabilities = portfolio[
-            "probability_best_shared_block_bootstrap"
-        ]["probability_best"]
-        self.assertAlmostEqual(sum(probabilities.values()), 1.0)
-        latest_weights = portfolio["latest_walk_forward_weights"]
-        self.assertAlmostEqual(
-            sum(latest_weights[symbol] for symbol in ("SPY", "TLT", "VNQ", "GLD", "BIL")),
-            1.0,
-        )
-        for symbol in ("SPY", "TLT", "VNQ", "GLD", "BIL"):
-            self.assertGreaterEqual(latest_weights[symbol], 0.05 - 1e-9)
-            self.assertLessEqual(latest_weights[symbol], 0.35 + 1e-9)
+        options = filing_review["decision_options"]
+        shares = [
+            options[name]["review_share"]
+            for name in ("review-top-5%", "review-top-10%", "review-top-20%")
+        ]
+        captures = [
+            options[name]["high_risk_capture"]
+            for name in ("review-top-5%", "review-top-10%", "review-top-20%")
+        ]
+        scores = [
+            options[name]["average_review_score"]
+            for name in ("review-top-5%", "review-top-10%", "review-top-20%")
+        ]
+        self.assertEqual(shares, sorted(shares))
+        self.assertEqual(captures, sorted(captures))
+        self.assertEqual(scores, sorted(scores, reverse=True))
 
         real_estate = json.loads(
             (
@@ -320,6 +318,7 @@ class RealPortfolioContractTests(unittest.TestCase):
             "portfolio_spatial.py",
             "portfolio_asset_realestate.py",
             "portfolio_reporting.py",
+            "portfolio_tailored.py",
         ]
         for name in modules:
             with self.subTest(module=name):

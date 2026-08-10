@@ -1,88 +1,255 @@
 {
-  "portfolio_version": "8.0.0",
-  "verified_on": "2026-07-30",
+  "portfolio_version": "9.0.0",
+  "verified_on": "2026-08-10",
   "public_project_type": "real_world_research_project",
-  "project_count": 10,
+  "project_count": 15,
   "projects": [
     {
-      "id": "population-health-survival",
-      "code": "R1",
-      "title": "Heart-Failure Follow-up Risk and Survival",
-      "analytics": ["descriptive", "inferential", "survival", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["biostatistics", "population health", "survival analysis"]
-    },
-    {
-      "id": "behavioral-reading-experiment",
-      "code": "R2",
-      "title": "Pseudoword Reading: Repeated-Measures Behavioral Inference",
-      "analytics": ["descriptive", "inferential", "experimental-design", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["statistics", "behavioral science", "repeated measures"]
-    },
-    {
-      "id": "census-income-ai",
-      "code": "R3",
-      "title": "End-to-End Census-Income AI Validation",
-      "analytics": ["descriptive", "predictive", "responsible-ai"],
-      "decision_analysis": "not_for_consequential_action",
-      "method_domains": ["artificial intelligence", "model validation", "responsible AI"]
-    },
-    {
       "id": "bike-demand-operations",
-      "code": "R4",
-      "title": "Bike-Demand Forecasting and Robust Service Allocation",
-      "analytics": ["descriptive", "predictive", "prescriptive", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["operations research", "systems engineering", "decision analysis"]
+      "code": "R01",
+      "title": "Jersey City Bike Demand and Rebalancing Evidence",
+      "analytics": [
+        "descriptive",
+        "predictive",
+        "prescriptive",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "operations research",
+        "service operations",
+        "forecasting"
+      ]
+    },
+    {
+      "id": "cross-city-311-shift",
+      "code": "R02",
+      "title": "Cross-City 311 Distribution Shift and Transfer Gate",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "urban analytics",
+        "distribution shift",
+        "information systems"
+      ]
     },
     {
       "id": "bank-marketing-response",
-      "code": "R5",
-      "title": "Bank Marketing Response and Capacity Planning",
-      "analytics": ["descriptive", "predictive", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["business analytics", "marketing analytics", "capacity planning"]
+      "code": "R03",
+      "title": "Capacity-Constrained Marketing Pilot",
+      "analytics": [
+        "descriptive",
+        "predictive",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "business analytics",
+        "causal pilot design",
+        "capacity planning"
+      ]
+    },
+    {
+      "id": "census-income-ai",
+      "code": "R04",
+      "title": "ACS Employment AI Temporal Transport and Audit",
+      "analytics": [
+        "descriptive",
+        "predictive",
+        "responsible-ai"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "artificial intelligence",
+        "responsible AI",
+        "temporal validation"
+      ]
     },
     {
       "id": "treasury-risk-engineering",
-      "code": "R6A",
-      "title": "Treasury Yield-Curve Portfolio Risk Engineering",
-      "analytics": ["descriptive", "risk", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["financial risk engineering", "tail risk", "backtesting"]
-    },
-    {
-      "id": "regime-aware-multi-asset-portfolio",
-      "code": "R6B",
-      "title": "Regime-Aware Multi-Asset Portfolio Construction",
-      "analytics": ["descriptive", "diagnostic", "predictive", "risk", "decision"],
-      "decision_analysis": "research_only_paper_portfolio",
-      "method_domains": ["asset allocation", "financial risk", "walk-forward validation"]
+      "code": "R05",
+      "title": "Treasury Curve and Tail-Risk Decision Engine",
+      "analytics": [
+        "descriptive",
+        "risk",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "financial risk engineering",
+        "yield curves",
+        "tail risk"
+      ]
     },
     {
       "id": "cfpb-fintech-complaint-operations",
-      "code": "R6C",
-      "title": "Privacy-Preserving Complaint Monitoring and Negative Model Validation",
-      "analytics": ["descriptive", "predictive", "negative-validation"],
-      "decision_analysis": "do_not_deploy_ranking_model",
-      "method_domains": ["financial technology", "model risk", "privacy engineering"]
+      "code": "R06",
+      "title": "Human-in-the-Loop Complaint Triage Information System",
+      "analytics": [
+        "descriptive",
+        "predictive",
+        "negative-validation"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "financial technology",
+        "human-in-the-loop systems",
+        "model risk"
+      ]
     },
     {
       "id": "commercial-real-estate-risk",
-      "code": "R7",
-      "title": "Commercial Real Estate Transactions and Regeneration Risk",
-      "analytics": ["descriptive", "diagnostic", "scenario", "decision"],
-      "decision_analysis": "property_level_diligence_only",
-      "method_domains": ["real-estate finance", "transaction analytics", "regeneration screening"]
+      "code": "R07",
+      "title": "Commercial Real Estate Diligence Decision Product",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "scenario",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "real-estate finance",
+        "transaction analytics",
+        "diligence"
+      ]
+    },
+    {
+      "id": "wildfire-mitigation-under-uncertainty",
+      "code": "R08",
+      "title": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "decision analysis",
+        "robust optimization",
+        "climate risk"
+      ]
+    },
+    {
+      "id": "sec-nport-filing-review",
+      "code": "R09",
+      "title": "SEC N-PORT Liquidity and Crowding Filing Review",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "predictive",
+        "risk",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "regulatory filings",
+        "liquidity risk",
+        "review prioritization"
+      ]
+    },
+    {
+      "id": "social-norm-field-experiment",
+      "code": "R10",
+      "title": "Social-Norm Field Experiment with Household-Clustered Inference",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "field experiments",
+        "behavioral science",
+        "clustered inference"
+      ]
+    },
+    {
+      "id": "population-health-survival",
+      "code": "R11",
+      "title": "Population Health Risk Transport Across NHIS Cohorts",
+      "analytics": [
+        "descriptive",
+        "inferential",
+        "survival",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "population health",
+        "survey methods",
+        "mortality prediction"
+      ]
+    },
+    {
+      "id": "opportunity-zone-policy-evaluation",
+      "code": "R12",
+      "title": "Opportunity Zone One-Year Policy Evidence Screen",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "public policy",
+        "program evaluation",
+        "urban economics"
+      ]
+    },
+    {
+      "id": "behavioral-reading-experiment",
+      "code": "R13",
+      "title": "Small-Sample Repeated-Measures Inference",
+      "analytics": [
+        "descriptive",
+        "inferential",
+        "experimental-design",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "statistics",
+        "repeated measures",
+        "behavioral science"
+      ]
+    },
+    {
+      "id": "nhanes-population-transportability",
+      "code": "R14",
+      "title": "NHANES Mortality Transportability and Population Inequality",
+      "analytics": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "biostatistics",
+        "transportability",
+        "health inequality"
+      ]
     },
     {
       "id": "spatial-equity-planning",
-      "code": "R8",
-      "title": "Spatial Equity and Service-Hub Planning",
-      "analytics": ["descriptive", "spatial", "prescriptive", "decision"],
-      "decision_analysis": "embedded",
-      "method_domains": ["urban planning", "spatial analytics", "location allocation"]
+      "code": "R15",
+      "title": "Spatial Equity Planning with Transit and Site-Evidence Gates",
+      "analytics": [
+        "descriptive",
+        "spatial",
+        "prescriptive",
+        "decision"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "urban planning",
+        "spatial analytics",
+        "transit equity"
+      ]
     }
   ],
   "synthetic_fixture_policy": {

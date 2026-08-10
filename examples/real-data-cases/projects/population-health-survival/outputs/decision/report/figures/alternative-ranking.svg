@@ -55,29 +55,29 @@
 <rect x="30.0" y="132.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <circle cx="58" cy="160" r="17" fill="#008C82"/>
 <text x="58.0" y="165.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
-<text x="86.0" y="156.0" class="section" text-anchor="start">Dual Marker Triage</text>
-<rect x="366" y="145" width="519.1" height="30" rx="7" fill="#008C82" stroke="#006E67" stroke-width="2"/>
-<text x="875.1" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">68.7</text>
+<text x="86.0" y="156.0" class="section" text-anchor="start">Top 20% Review</text>
+<rect x="366" y="145" width="577.0" height="30" rx="7" fill="#008C82" stroke="#006E67" stroke-width="2"/>
+<text x="933.0" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">76.3</text>
 <rect x="86.0" y="180.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="199.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 86% · U95 0.00%</text>
+<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 25% · U95 0.00%</text>
 <circle cx="58" cy="248" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="253.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">2</text>
-<text x="86.0" y="244.0" class="label" text-anchor="start">Ejection Triage</text>
-<rect x="366" y="233" width="477.5" height="30" rx="7" fill="#DDF5F2" stroke="#008C82" stroke-width="1"/>
-<text x="833.5" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">63.2</text>
+<text x="86.0" y="244.0" class="label" text-anchor="start">Top 30% Review</text>
+<rect x="366" y="233" width="575.3" height="30" rx="7" fill="#DDF5F2" stroke="#008C82" stroke-width="1"/>
+<text x="931.3" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">76.1</text>
 <rect x="86.0" y="268.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="287.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 10% · U95 0.00%</text>
+<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 75% · U95 0.00%</text>
 <rect x="30.0" y="308.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <circle cx="58" cy="336" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="341.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
-<text x="86.0" y="332.0" class="label" text-anchor="start">Current Age Rule</text>
-<rect x="366" y="321" width="467.7" height="30" rx="7" fill="#DDF5F2" stroke="#008C82" stroke-width="1"/>
-<text x="823.7" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">61.9</text>
+<text x="86.0" y="332.0" class="label" text-anchor="start">Baseline: Top 10% Review</text>
+<rect x="366" y="321" width="531.4" height="30" rx="7" fill="#DDF5F2" stroke="#008C82" stroke-width="1"/>
+<text x="887.4" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">70.3</text>
 <rect x="86.0" y="356.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="375.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 4% · U95 0.00%</text>
+<text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 0% · U95 0.00%</text>
 <line x1="36" y1="438.0" x2="1164" y2="438.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="460.0" class="footnote" text-anchor="start">Source: decision-results.json</text>
 <text x="1158.0" y="460.0" class="footnote" text-anchor="end">Synthetic demonstration · values shown directly</text>

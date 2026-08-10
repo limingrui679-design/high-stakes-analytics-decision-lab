@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "name": "samadult2016.zip",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/nchs/datasets/NHIS/2016/samadultcsv.zip",
+      "sha256": "49c635bf5c3612e9ac255ac8203bc1019c2df49d06709beaf4ee783e9dc0fd23",
+      "bytes": 4508868
+    },
+    {
+      "name": "mort2016.dat",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/NCHS/datalinkage/linked_mortality/NHIS_2016_MORT_2019_PUBLIC.dat",
+      "sha256": "d98275e02509c886320b678dcb7a3050dc99dc7392a3f504cecf9522db8c47a6",
+      "bytes": 1737212
+    },
+    {
+      "name": "samadult2017.zip",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/nchs/datasets/NHIS/2017/samadultcsv.zip",
+      "sha256": "4475d0e828c12d24c0d98d550751d8eb26723fd40b1ab9321fc9c3ab0fbef057",
+      "bytes": 3575026
+    },
+    {
+      "name": "mort2017.dat",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/NCHS/datalinkage/linked_mortality/NHIS_2017_MORT_2019_PUBLIC.dat",
+      "sha256": "db28e9c610f625e97af66fbdeeb7c80f1ad1909e32fc91a0535125d723821c2c",
+      "bytes": 1404129
+    }
+  ]
+}

@@ -53,9 +53,9 @@
 <text x="48.0" y="209.0" class="section" text-anchor="start">Baseline: Meaningful Only</text>
 <rect x="48.0" y="218.0" width="82.0" height="28.0" rx="14" fill="#C69214" stroke="none" stroke-width="1"/>
 <text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
-<text x="290.0" y="206.0" class="value" text-anchor="start">12</text>
+<text x="290.0" y="206.0" class="value" text-anchor="start">13</text>
 <rect x="290.0" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="219.0" width="32.8" height="8.0" rx="4.0" fill="#C69214"/>
+<rect x="290.0" y="219.0" width="33.7" height="8.0" rx="4.0" fill="#C69214"/>
 <text x="290.0" y="241.0" class="small" text-anchor="start">trade-off</text>
 <text x="586.7" y="206.0" class="value" text-anchor="start">83</text>
 <rect x="586.7" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
@@ -69,25 +69,25 @@
 <text x="48.0" y="285.0" class="label" text-anchor="start">Pseudoword Only</text>
 <text x="290.0" y="282.0" class="value" text-anchor="start">19</text>
 <rect x="290.0" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="295.0" width="51.2" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="295.0" width="51.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="317.0" class="small" text-anchor="start">trade-off</text>
 <text x="586.7" y="282.0" class="value" text-anchor="start">75</text>
 <rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="295.0" width="199.0" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="295.0" width="198.9" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="317.0" class="small" text-anchor="start">higher value</text>
 <text x="883.3" y="282.0" class="value" text-anchor="start">81</text>
 <rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="295.0" width="215.7" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="883.3" y="295.0" width="215.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="883.3" y="317.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="48.0" y="361.0" class="label" text-anchor="start">Combined Protocol</text>
 <text x="290.0" y="358.0" class="value" text-anchor="start">30</text>
 <rect x="290.0" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="371.0" width="79.4" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="371.0" width="78.3" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="393.0" class="small" text-anchor="start">trade-off</text>
 <text x="586.7" y="358.0" class="value" text-anchor="start">25</text>
 <rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="371.0" width="65.7" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="371.0" width="65.6" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="393.0" class="small" text-anchor="start">trade-off</text>
 <text x="883.3" y="358.0" class="value" text-anchor="start">68</text>
 <rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>

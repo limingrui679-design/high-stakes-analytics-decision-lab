@@ -1,0 +1,21 @@
+{
+  "grain": "NHANES adult linked to 36-month mortality follow-up",
+  "primary_key": [
+    "cohort",
+    "seqn"
+  ],
+  "fields": {
+    "seqn": "seqn",
+    "cohort": "cohort",
+    "age": "age",
+    "sex": "sex",
+    "race_ethnicity": "race ethnicity",
+    "poverty_income_ratio": "poverty income ratio",
+    "exam_weight": "exam weight",
+    "stratum": "stratum",
+    "psu": "psu",
+    "followup_months": "followup months",
+    "death_within_36_months": "death within 36 months"
+  },
+  "target": "death_within_36_months"
+}

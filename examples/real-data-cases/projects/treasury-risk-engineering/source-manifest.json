@@ -3,6 +3,7 @@
   "project_id": "treasury-risk-engineering",
   "source_id": "us-treasury-daily-par-yield-2020-2025",
   "title": "Daily Treasury Par Yield Curve Rates",
+  "project_title": "Treasury Curve and Tail-Risk Decision Engine",
   "publisher": "U.S. Department of the Treasury",
   "landing_page": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
   "download_url_template": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/{year}/all?type=daily_treasury_yield_curve&field_tdr_date_value={year}&page&_format=csv",

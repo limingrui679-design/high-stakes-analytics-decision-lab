@@ -1,38 +1,36 @@
-# Consequential-Use Decision: Census-Income Benchmark
+# Consequential-Use Decision: ACS Employment Transport Audit
 
 ## Technical summary
 
-**Decision: Do not deploy this model for eligibility, credit, employment, or another consequential decision; retain it as a historical benchmark.**
+**Decision: Do not use the model for hiring, eligibility, credit, benefits, or another consequential action.**
 
-The sparse logistic benchmark separates the historical independent test set well (AUC 0.905) and has a Brier score of 0.102. Those metrics do not establish transport, acceptable group error, a valid local target, recourse, or benefit in a real workflow.
+The 2019 grouped-rate model reaches a 2023 survey-weighted AUC of 0.640 and Brier score of 0.158. These results document temporal transport behavior; they do not establish a valid decision target, individual benefit, recourse, or operational authorization.
 
 ![Decision outcome and evidence](figures/decision-summary.svg)
 
-The decision separates model benchmarking from deployment authority. A strong historical test result is useful evidence about the code path, not evidence that a contemporary institution should act on the scores.
+A temporal test and protected-attribute audit are evidence about model limits, not permission to act on person-level scores.
 
-## The independent benchmark is strong enough for method comparison—not use
+## Temporal performance is documented without upgrading the use claim
 
-The sparse logistic model improves AUC and probability error relative to the mixed naive-Bayes baseline. The chart is a model-comparison result on the independent source test; it is not a benefit estimate.
+The performance view reports the held-out 2023 result and keeps probability error visible beside ranking discrimination.
 
-![Independent-test comparison of majority, naive Bayes, and sparse logistic models](../../figures/model-comparison.svg)
+![Bar chart of temporal AUC and one minus Brier score](../../figures/temporal-performance.svg)
 
-The comparison supports retaining the model as a reproducible benchmark. It does not resolve target validity, contemporary transport, intervention effects, or the cost of errors.
+The metrics support model auditing only.
 
-| Model or baseline | Metric | Independent-test result |
+| Metric | 2023 result | Permitted interpretation |
 |---|---|---|
-| Majority baseline | Accuracy | 0.764 |
-| Mixed naive Bayes | AUC | 0.891 |
-| Mixed naive Bayes | Brier score | 0.141 |
-| Sparse logistic | AUC | 0.905 |
-| Sparse logistic | Brier score | 0.102 |
+| AUC | 0.640 | Temporal ranking discrimination |
+| Brier score | 0.158 | Temporal probability error |
+| Employment rate | 75.9% | Survey-weighted descriptive outcome |
 
-## Calibration and subgroup errors prevent a single aggregate score from carrying the decision
+## Calibration and audit slices control the boundary
 
-Calibration is broadly informative at the benchmark level, while subgroup false-positive rates vary sharply. The group comparison is descriptive because the benchmark does not define a legitimate institutional action or acceptable-error policy.
+Calibration compares predicted and observed rates in the later cohort; protected fields remain outside model inputs.
 
-![False-positive rates across sex and race groups](../../figures/subgroup-fpr.svg)
+![Predicted versus observed employment calibration in 2023](../../figures/calibration.svg)
 
-The figure shows why aggregate AUC cannot substitute for an impact assessment. Small groups also carry wider sampling uncertainty, and the historical labels embed a social and economic context that may not transport.
+Population-period calibration does not establish person-level decision validity.
 
 ## The evidence gates determine the terminal decision
 
@@ -42,54 +40,52 @@ override a block or missing requirement on another.
 
 ![Case-specific decision evidence gates](figures/decision-path.svg)
 
-The terminal status is **not_authorized_for_consequential_use**. This status follows from the
+The terminal status is **do_not_use_for_consequential_action**. This status follows from the
 case-specific evidence contract; it is not a generic caution added after the
 analysis.
 
-## A real deployment would require a new validation contract
+## The case terminates in non-deployment
 
-The next study must begin from a specific decision and population, not from the availability of this benchmark label.
+Passing an engineering validation step is necessary but insufficient for a consequential system.
 
-| Required element | Current status | Evidence needed |
+| Gate family | Observed state | Decision effect |
 |---|---|---|
-| Current local population | Absent | Representative, dated local sample |
-| Decision-valid target | Absent | Owner-approved outcome and exclusion rules |
-| Threshold and error costs | Absent | Pre-registered utility and harm contract |
-| Prospective performance | Absent | Locked future-period or external validation |
-| Recourse and monitoring | Absent | Human review, appeal, drift, and incident plan |
+| Temporal test | Completed | Supports auditing |
+| Valid target and benefit | Absent | Blocks use |
+| Authorization | Absent | Blocks use |
 
 ## What is permitted now—and what is not
 
 ### Supported uses
 
-- Reproduce the historical benchmark and compare transparent methods.
-- Study calibration, subgroup errors, drift checks, and abnormal-input behavior.
-- Use the project as a template for a newly scoped validation study.
+- Reproduce the survey-weighted benchmark.
+- Audit temporal calibration and subgroup performance.
+- Use the case to demonstrate a negative deployment decision.
 
 ### Unsupported uses
 
-- Use scores for eligibility, credit, employment, or resource access.
-- Treat historical income labels as a causal or normative target.
-- Represent AUC or accuracy as evidence of institutional benefit or fairness.
+- Rank people for hiring, benefits, credit, or eligibility.
+- Interpret employment prediction as merit or suitability.
+- Use aggregate audit results to infer individual causation.
 
 ## Scope, source, and metric boundary
 
-- **Source:** [Adult / Census Income](https://archive.ics.uci.edu/dataset/2/adult)
-- **Publisher:** UCI Machine Learning Repository
-- **Version:** UCI static archive snapshot; files timestamped 2023-05-22
-- **Accessed:** 2026-07-27
-- **Analytical grain:** one Census-derived person record meeting the dataset extraction rules
-- **Prepared rows:** 48,842
-- **Adaptive route:** descriptive → predictive → deployment decision
+- **Source:** [ACS Employment AI Temporal Transport and Audit](https://www.census.gov/programs-surveys/acs/microdata.html)
+- **Publisher:** U.S. Census Bureau
+- **Version:** Rhode Island ACS 1-year PUMS person files, 2019 and 2023
+- **Accessed:** 2026-08-10
+- **Analytical grain:** one working-age ACS PUMS person record
+- **Prepared rows:** 12,469
+- **Adaptive route:** survey-weighted modeling → temporal validation → non-deployment
 - **Main analytical report:** [Open report](../../report.md)
 - **Machine-readable analytical results:** [Open results](../../results.json)
 
 ## Decision method and validation logic
 
-- Select model and threshold without using the independent source test.
-- Compare majority, mixed naive-Bayes, and sparse logistic benchmarks.
-- Review discrimination, Brier score, calibration, subgroup errors, drift, and abnormal-input behavior separately.
-- Apply contemporary-use, impact, recourse, and authorization gates after predictive validation.
+- Use 2019 only for model construction.
+- Evaluate on survey-weighted 2023 records.
+- Reserve protected attributes for audit slices.
+- Terminate at non-deployment when use-validity evidence is absent.
 
 The terminal decision is produced after the analytical evidence is reviewed
 against case-specific gates. A missing capability, treatment effect, approval,
@@ -98,33 +94,33 @@ favorable value.
 
 ## Limitations, uncertainty, and reversal conditions
 
-**Claim boundary.** Benchmark classification only; not validated for eligibility, credit, employment, or other consequential decisions.
+**Claim boundary.** ACS PUMS temporal benchmark only; no consequential action is authorized.
 
 The decision should be reconsidered only if new evidence changes one of these
 conditions:
 
-- A newly scoped, contemporary and representative dataset supports the exact decision target.
-- A locked prospective evaluation meets owner-approved performance and subgroup-error gates.
-- A reviewed workflow supplies recourse, monitoring, human authority, and incident controls.
+- A current external population reproduces calibration and subgroup performance.
+- A real decision owner supplies a lawful, valid target and governance review.
+- Protected-class audit and error-cost review support a bounded use.
 
 ## Recommended next steps
 
-1. Define the proposed decision, affected population, target, exclusions, and non-model baseline.
-2. Pre-register discrimination, calibration, subgroup-error, and abstention gates before fitting.
-3. Validate on a dated external or prospective cohort and document recourse and monitoring.
+1. Validate only against a lawful, decision-specific target.
+2. Pre-register benefit, harm, calibration, and subgroup gates.
+3. Obtain independent governance and domain review before any pilot.
 
 ## Further questions
 
-- What real decision—if any—would justify predicting this target?
-- Which errors create the greatest burden, and who has authority to set the trade-off?
-- What evidence would demonstrate benefit over a non-model workflow?
+- What real decision outcome would be valid and lawful?
+- What recourse would a person have?
+- Which subgroup errors would be unacceptable?
 
 ## Reproducibility
 
 - Decision result: [`decision-results.json`](decision-results.json)
 - Decision chart map: [`figures/chart-map.json`](figures/chart-map.json)
 - Source manifest: [`../../../source-manifest.json`](../../../source-manifest.json)
-- Analytical result SHA-256: `a171a55231988fb6d5d2a518c093168e7fed4fea28603c2db39de870f2f4f23f`
+- Analytical result SHA-256: `14defa73c244c50a1a6ddc4fac3059c6c84d4d835523980404b18b8a51c21ce3`
 
 The report is generated from the committed analytical result and source
 manifest. It does not upgrade the permitted use of the underlying evidence.

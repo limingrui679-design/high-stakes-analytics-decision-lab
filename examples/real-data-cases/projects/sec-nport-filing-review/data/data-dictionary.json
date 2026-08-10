@@ -1,0 +1,19 @@
+{
+  "grain": "one Form N-PORT fund filing snapshot",
+  "primary_key": "accession_number",
+  "fields": {
+    "accession_number": "accession number",
+    "report_date": "report date",
+    "series_id": "series id",
+    "series_name": "series name",
+    "registrant_name": "registrant name",
+    "net_assets": "net assets",
+    "holding_count": "holding count",
+    "top10_concentration": "top10 concentration",
+    "restricted_share": "restricted share",
+    "fair_value_level3_share": "fair value level3 share",
+    "cash_like_share": "cash like share",
+    "crowded_security_share": "crowded security share",
+    "three_month_redemption_share": "three month redemption share"
+  }
+}

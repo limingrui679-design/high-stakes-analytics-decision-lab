@@ -1,19 +1,15 @@
-# R8 · Spatial Equity and Service-Hub Planning
+# Spatial Equity Planning with Transit and Site-Evidence Gates
 
-**Portfolio role:** urban planning, spatial policy, public analytics, and location allocation  
-**Decision boundary:** pre-feasibility screening for local review—not a siting or funding decision.
+**Analytical question:** Which tract-level service-hub priorities merit local review after observed rapid-transit proximity is added?
 
-## Analytical question
-
-How spatially clustered is tract-level need in Massachusetts, and how do poverty-, transit-, and composite-priority strategies compare when selecting five candidate service hubs?
+**Decision boundary:** No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.
 
 ## Evidence and methods
 
-- Official 2019–2023 ACS five-year tract tables and 2023 Census Gazetteer points.
-- Reproducible poverty, transit, and rent-to-income proxy definitions.
-- Five-nearest-neighbor Moran’s I.
-- Greedy maximum coverage under a common hub count and ten-kilometre radius.
-- Tract bootstrap for strategy metrics.
+- Source: U.S. Census Bureau and Massachusetts Bay Transportation Authority — 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.
+- Analytical grain: one Massachusetts census tract.
+- Methods: ACS need indicators, Moran's I, heuristic location allocation, bootstrap sensitivity, and nearest-MBTA-stop distance.
+- Every bundled raw or minimized source file is hash-locked in `source-manifest.json`.
 
 ## Reproduce
 
@@ -24,14 +20,8 @@ python3 analyze.py
 python3 build_decision_case.py
 ```
 
-Inspect the [technical report](outputs/report.md), [map and figures](outputs/figures), [results](outputs/results.json), [value judgments](config.json), and [source manifest](source-manifest.json).
-
-## Transferable methods
-
-The case demonstrates rate construction, spatial clustering, need-weighted
-location allocation, and sensitivity to radius, weights, uncertainty, and
-geographic aggregation.
+Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
 
 ## Non-negotiable limitation
 
-Centroid straight-line distances are not travel times; ACS estimates have sampling error; weights express unelicited value judgments. Local network, capacity, parcel, and stakeholder evidence is required.
+No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.

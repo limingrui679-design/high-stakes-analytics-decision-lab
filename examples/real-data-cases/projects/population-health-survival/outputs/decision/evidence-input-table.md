@@ -7,6 +7,6 @@
 | Adverse-transfer scenario | portfolio-author-governance-assumptions | stress assumption | Exploratory only | Not an estimated forecast probability |
 | Shared-factor loadings | portfolio-author-governance-assumptions | dependence assumption | Exploratory only | Stress-tests correlation; not empirically estimated |
 
-Official source: Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R
+Official source: U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.
 
 The only approval recorded here is the repository author's self-review for exploratory demonstration. It is not institutional or operational approval.

@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0",
+  "project_id": "sec-nport-filing-review",
+  "decision_use": "exploratory",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is sec-nport-2025q4-minimized-fund-risk.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.review_shares",
+      "label": "review shares",
+      "value_or_distribution": [
+        0.05,
+        0.1,
+        0.2
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for review_shares; source dataset is sec-nport-2025q4-minimized-fund-risk.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation."
+    },
+    {
+      "parameter_path": "config.parameters.high_risk_reference_share",
+      "label": "high risk reference share",
+      "value_or_distribution": 0.1,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for high_risk_reference_share; source dataset is sec-nport-2025q4-minimized-fund-risk.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation."
+    },
+    {
+      "parameter_path": "config.parameters.score_rule",
+      "label": "score rule",
+      "value_or_distribution": "equal_weight_percentile_mean",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for score_rule; source dataset is sec-nport-2025q4-minimized-fund-risk.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation."
+    }
+  ],
+  "coverage": {
+    "configured_parameter_count": 4,
+    "resolved_parameter_count": 4,
+    "source_coverage_rate": 1.0,
+    "independent_domain_review_rate": 0.0
+  },
+  "coverage_boundary": "Complete traceability does not imply external approval or strong evidence. All records remain exploratory and independently unreviewed."
+}

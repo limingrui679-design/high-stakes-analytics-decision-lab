@@ -1,0 +1,22 @@
+{
+  "project_id": "sec-nport-filing-review",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "review_shares": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "high_risk_reference_share": 0.1,
+    "score_rule": "equal_weight_percentile_mean"
+  },
+  "parameter_register": [
+    {
+      "parameter": "review_shares/high_risk_reference_share/score_rule",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation."
+    }
+  ]
+}

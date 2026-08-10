@@ -428,6 +428,40 @@
       }
     }
   },
+  "human_in_the_loop_system": {
+    "decision_owner": "human complaint-operations reviewer",
+    "automation_status": "aggregate_monitoring_only",
+    "individual_ranking_signal": "available only as retained validation evidence; suppressed from the review queue because the deployment gate failed",
+    "queue_lanes": {
+      "aggregate_trend_monitoring": 12180,
+      "workflow_delay_review": 1354
+    },
+    "lane_rule": {
+      "metadata_completion_review": "state or sub-issue is missing in the privacy-minimized public record",
+      "workflow_delay_review": "CFPB intake-to-company transmission exceeds the illustrative 24-hour monitoring marker",
+      "aggregate_trend_monitoring": "no individual escalation; retain only in aggregate issue and volume monitoring"
+    },
+    "manual_actions": [
+      "inspect source metadata and request missing evidence",
+      "review workflow handoff timing without inferring complaint merit",
+      "record an override reason and the evidence consulted",
+      "close or redirect the review without automated sanctions"
+    ],
+    "forbidden_uses": [
+      "automated complaint-merit decision",
+      "consumer or company quality ranking",
+      "regulatory-compliance finding",
+      "sanction or benefit eligibility decision"
+    ],
+    "audit_log_fields": [
+      "review_lane",
+      "source_version",
+      "evidence_consulted",
+      "human_disposition",
+      "override_reason",
+      "review_timestamp"
+    ]
+  },
   "privacy_design": "Narratives, company names, ZIP codes, tags, and public-response text were excluded before repository storage.",
   "claim_boundary": "The timely indicator is not complaint merit, consumer harm, resolution quality, company quality, or regulatory compliance. Weak ranking performance cannot be rescued by privacy or validation discipline; those are separate contributions.",
   "provenance": {
@@ -439,7 +473,7 @@
     "raw_sha256": {
       "cfpb-digital-payments-2022-sanitized.csv": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
     },
-    "config_sha256": "316482e52251ff05ac1f2eb2fb96e98ca0d2672fc117a9dc0416090446145003"
+    "config_sha256": "293d3152906115a9c2c1a30a7ff4af5679651f81dc81ac3731d57f6e9bbd2c10"
   },
   "parameter_register": [
     {
@@ -795,6 +829,41 @@
       ],
       "evidence_strength": "assumed",
       "notes": "These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation."
+    },
+    {
+      "parameter_path": "config.parameters.workflow_delay_hours",
+      "label": "workflow delay hours",
+      "value_or_distribution": 24,
+      "unit": "configuration value",
+      "uncertainty_type": "scenario",
+      "source_id": "analyst-workflow-monitoring-scenario",
+      "source_fact": "Registered project configuration for workflow_delay_hours; source dataset is cfpb-ccdb-digital-payments-2022.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "The 24-hour marker is an illustrative monitoring lane, not a CFPB service-level requirement or evidence of untimely company response."
     },
     {
       "parameter_path": "derived.timely",

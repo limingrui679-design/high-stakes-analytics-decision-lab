@@ -55,28 +55,28 @@
 <text x="342.0" y="126.0" class="small" text-anchor="start">P05</text>
 <text x="1034.0" y="126.0" class="small" text-anchor="end">P95</text>
 <rect x="30.0" y="150.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="180.0" class="section" text-anchor="start">Dual Marker Triage</text>
-<rect x="782.2" y="169.0" width="90.2" height="14" rx="7" fill="#DDF5F2"/>
-<line x1="782.2" y1="176" x2="872.5" y2="176" stroke="#008C82" stroke-width="2"/>
-<circle cx="830.5" cy="176" r="8" fill="#008C82" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 778.9 168.0 L 786.9 176.0 L 778.9 184.0 L 770.9 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.706</text>
-<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.631</text>
-<text x="48.0" y="252.0" class="label" text-anchor="start">Ejection Triage</text>
-<rect x="746.4" y="241.0" width="86.4" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="746.4" y1="248" x2="832.8" y2="248" stroke="#263449" stroke-width="2"/>
-<circle cx="791.0" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 742.1 240.0 L 750.1 248.0 L 742.1 256.0 L 734.1 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.649</text>
-<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.578</text>
+<text x="48.0" y="180.0" class="section" text-anchor="start">Top 20% Review</text>
+<rect x="859.3" y="169.0" width="19.3" height="14" rx="7" fill="#DDF5F2"/>
+<line x1="859.3" y1="176" x2="878.6" y2="176" stroke="#008C82" stroke-width="2"/>
+<circle cx="873.8" cy="176" r="8" fill="#008C82" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 859.3 168.0 L 867.3 176.0 L 859.3 184.0 L 851.3 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.768</text>
+<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.748</text>
+<text x="48.0" y="252.0" class="label" text-anchor="start">Top 30% Review</text>
+<rect x="855.3" y="241.0" width="23.5" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="855.3" y1="248" x2="878.8" y2="248" stroke="#263449" stroke-width="2"/>
+<circle cx="873.0" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 855.3 240.0 L 863.3 248.0 L 855.3 256.0 L 847.3 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.767</text>
+<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.742</text>
 <rect x="30.0" y="294.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="324.0" class="label" text-anchor="start">Current Age Rule</text>
-<rect x="737.5" y="313.0" width="83.6" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="737.5" y1="320" x2="821.1" y2="320" stroke="#263449" stroke-width="2"/>
-<circle cx="782.3" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 734.2 312.0 L 742.2 320.0 L 734.2 328.0 L 726.2 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.636</text>
-<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.567</text>
+<text x="48.0" y="324.0" class="label" text-anchor="start">Baseline: Top 10% Review</text>
+<rect x="821.2" y="313.0" width="12.9" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="821.2" y1="320" x2="834.1" y2="320" stroke="#263449" stroke-width="2"/>
+<circle cx="830.8" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 821.2 312.0 L 829.2 320.0 L 821.2 328.0 L 813.2 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.706</text>
+<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.692</text>
 <text x="342.0" y="420.0" class="small" text-anchor="start">● expected utility   ◆ worst-decile average   band = P05–P95</text>
 <line x1="36" y1="414.0" x2="1164" y2="414.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="436.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

@@ -1,4 +1,4 @@
-# Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service: analytical project
+# Human-in-the-Loop Complaint Triage Information System: analytical project
 
 > **Bottom line:** The later-period ranking model fails the deployment gate: AUC is weak and top-capacity lift is not reliably above random review. The defensible contribution is the privacy-preserving data contract, calendar validation, and explicit negative result.
 
@@ -75,6 +75,25 @@ The November–December period remains separate from model and calibrator choice
 
 > **Interpretation boundary:** Probability calibration cannot compensate for weak ranking or an outcome with limited decision meaning.
 
+## Human-in-the-loop system contract
+
+The validated analytical endpoint is translated into an auditable workflow without overriding the negative model result.
+
+| System element | Recorded design |
+|---|---|
+| Decision owner | human complaint-operations reviewer |
+| Automation status | `aggregate_monitoring_only` |
+| Individual model signal | available only as retained validation evidence; suppressed from the review queue because the deployment gate failed |
+
+### Review lanes from observed workflow fields
+
+| Review lane | Records | Rule |
+|---|---:|---|
+| `aggregate_trend_monitoring` | 12,180 | no individual escalation; retain only in aggregate issue and volume monitoring |
+| `workflow_delay_review` | 1,354 | CFPB intake-to-company transmission exceeds the illustrative 24-hour monitoring marker |
+
+The lane counts are workflow observations. They are not findings about complaint merit, consumer harm, company quality, or compliance. The complete machine-readable contract is in [`system-contract.json`](system-contract.json).
+
 ## Methodology
 
 Privacy-minimized administrative data, calendar train/validation/test split, rare-outcome AUC/Brier/calibration, cumulative gain, capacity lift versus random review, day-block bootstrap, label-permutation null benchmark, subgroup diagnostics, and explicit non-deployment gates.
@@ -111,7 +130,7 @@ Observed late-response rates identify where definitions and process review may b
 
 ## Parameter provenance and review
 
-11 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
+12 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
 
 <details>
 <summary><strong>Open the complete parameter-level source and review register</strong></summary>
@@ -128,6 +147,7 @@ Observed late-response rates identify where definitions and process review may b
 | config.parameters.permutation_samples | 500 | none | negative-validation-protocol | provisional_self_review | not_assigned | Permutation inference benchmarks ranking signal against label exchangeability; it does not establish transport. |
 | config.parameters.minimum_deployment_auc | 0.65 | none | analyst-deployment-gate | provisional_self_review | not_assigned | These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation. |
 | config.parameters.minimum_deployment_lift | 1.2 | none | analyst-deployment-gate | provisional_self_review | not_assigned | These are repository demonstration gates, not CFPB, regulatory, or company standards; passing them would still require prospective validation. |
+| config.parameters.workflow_delay_hours | 24 | scenario | analyst-workflow-monitoring-scenario | provisional_self_review | not_assigned | The 24-hour marker is an illustrative monitoring lane, not a CFPB service-level requirement or evidence of untimely company response. |
 | derived.timely | derived or source-defined field | none | cfpb-field-definition | provisional_self_review | not_assigned | A timely-response flag is not a measure of complaint merit, consumer harm, resolution quality, or regulatory compliance. |
 
 </details>
@@ -181,6 +201,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `cfpb-fintech-complaint-operations`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `5d73ce3abc222a74751c8a1fcf3a27a1c95a0deb17bcc327cfd2d7197c738df1`
+- Result SHA-256: `aa0ecb2076431be2f9b9da5223e24cb87e1eba1f9324e8d2cedfc61cac8e9cdd`
 
 </details>

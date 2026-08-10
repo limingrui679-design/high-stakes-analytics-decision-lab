@@ -1,30 +1,33 @@
 {
   "schema_version": "1.0",
   "project_id": "bike-demand-operations",
-  "source_id": "uci-bike-sharing-275",
-  "title": "Bike Sharing",
-  "publisher": "UCI Machine Learning Repository",
-  "landing_page": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
-  "doi": "10.24432/C5W894",
-  "download_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
-  "version": "2011-2012 Capital Bikeshare hourly snapshot",
-  "accessed_at": "2026-07-27",
-  "license": "CC BY 4.0",
-  "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "redistribution": "Permitted with attribution",
-  "expected_rows": 17379,
-  "grain": "one observed hour in the Capital Bikeshare system",
+  "source_id": "citibike-jc-2021-derived-station-hour",
+  "title": "Jersey City Bike Demand and Rebalancing Evidence",
+  "project_title": "Jersey City Bike Demand and Rebalancing Evidence",
+  "publisher": "Citi Bike",
+  "landing_page": "https://citibikenyc.com/system-data",
+  "version": "Jersey City trip history, January-December 2021; derived station-hour aggregate",
+  "accessed_at": "2026-08-10",
+  "license": "Citi Bike Data Use Policy",
+  "license_url": "https://citibikenyc.com/data-use-policy",
+  "redistribution": "Only the derived station-hour aggregate is stored; source trip archives are not redistributed.",
+  "expected_rows": 17906,
+  "grain": "one station-hour-month aggregate",
   "raw_files": [
     {
-      "path": "data/raw/uci-bike-sharing.zip",
-      "sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401"
+      "path": "data/raw/citibike-jc-2021-station-hour.csv",
+      "sha256": "e34022dc61250b3a5e499fa429570a87104cec0985caeaa5980a5b2206e45524"
+    },
+    {
+      "path": "data/raw/citibike-jc-2021-station-hour.source-lock.json",
+      "sha256": "85d43b52e3f44a308aa72280726e4a0a28cb77197f634f2548b7c88168035eeb"
     }
   ],
   "privacy_review": {
     "contains_direct_identifiers": false,
     "contains_sensitive_attributes": false,
-    "treatment": "Aggregate operational records only.",
-    "status": "approved_for_public_analysis"
+    "treatment": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
+    "status": "approved_for_public_minimized_analysis"
   },
-  "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894"
+  "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate."
 }

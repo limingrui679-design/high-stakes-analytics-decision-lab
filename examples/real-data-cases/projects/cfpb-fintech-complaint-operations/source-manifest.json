@@ -3,6 +3,7 @@
   "project_id": "cfpb-fintech-complaint-operations",
   "source_id": "cfpb-ccdb-digital-payments-2022",
   "title": "Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service",
+  "project_title": "Human-in-the-Loop Complaint Triage Information System",
   "publisher": "Consumer Financial Protection Bureau",
   "landing_page": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
   "api_documentation": "https://cfpb.github.io/ccdb5-api/documentation/",

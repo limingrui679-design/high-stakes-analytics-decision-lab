@@ -1,0 +1,29 @@
+{
+  "project_id": "nhanes-population-transportability",
+  "charts": [
+    {
+      "path": "figures/cohort-mortality.svg",
+      "question": "Cross-cohort mortality",
+      "supported_finding": "Both cohorts use the same 36-month horizon.",
+      "interpretation_boundary": "Cohort differences are not causal.",
+      "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/income-gradient.svg",
+      "question": "Income gradient",
+      "supported_finding": "Survey-weighted mortality is stratified by PIR.",
+      "interpretation_boundary": "The gradient is descriptive inequality evidence.",
+      "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/transport-calibration.svg",
+      "question": "Transport calibration",
+      "supported_finding": "Earlier age/sex cells are tested later.",
+      "interpretation_boundary": "This is not a clinical model.",
+      "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

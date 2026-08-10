@@ -60,7 +60,7 @@ PROJECTS_WITH_CASES = {
     "behavioral-reading-experiment",
     "bike-demand-operations",
     "treasury-risk-engineering",
-    "regime-aware-multi-asset-portfolio",
+    "sec-nport-filing-review",
     "commercial-real-estate-risk",
     "spatial-equity-planning",
 }
@@ -177,6 +177,10 @@ def _stream_filter_census(url: str, target: Path) -> None:
 def _refresh_spatial(project_root: Path, manifest: dict[str, Any]) -> None:
     expected = {Path(item["path"]).name: item for item in manifest["raw_files"]}
     tables = ("b01003", "b17001", "b19013", "b08301", "b25064")
+    refreshed_names = {
+        *(f"acs-{table}-ma.dat" for table in tables),
+        "2023_Gaz_tracts_national.zip",
+    }
     with tempfile.TemporaryDirectory(prefix="hsdl-census-") as directory:
         temporary_root = Path(directory)
         for table in tables:
@@ -189,14 +193,15 @@ def _refresh_spatial(project_root: Path, manifest: dict[str, Any]) -> None:
             manifest["geography_url"],
             temporary_root / "2023_Gaz_tracts_national.zip",
         )
-        for name, item in expected.items():
+        for name in refreshed_names:
+            item = expected[name]
             observed = sha256(temporary_root / name)
             if observed != item["sha256"]:
                 raise ValueError(
                     f"Census source version changed for {name}: "
                     f"expected {item['sha256']}, observed {observed}."
                 )
-        for name in expected:
+        for name in refreshed_names:
             shutil.copy2(temporary_root / name, project_root / "data" / "raw" / name)
 
 
@@ -324,7 +329,7 @@ def download_project(project_root: Path, *, refresh: bool = False) -> dict[str, 
             _refresh_spatial(project_root, manifest)
         elif manifest["project_id"] == "cfpb-fintech-complaint-operations":
             _refresh_cfpb(project_root, manifest)
-        elif manifest["project_id"] == "regime-aware-multi-asset-portfolio":
+        elif manifest["project_id"] == "sec-nport-filing-review":
             _refresh_multi_asset_snapshot(project_root, manifest)
         else:
             _refresh_generic(project_root, manifest)

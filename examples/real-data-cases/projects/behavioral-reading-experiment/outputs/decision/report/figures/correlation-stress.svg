@@ -47,9 +47,9 @@
 <text x="58.0" y="294.0" class="eyebrow" text-anchor="start">P(BEST)</text>
 <text x="362.0" y="298.0" class="value" text-anchor="end">50%</text>
 <rect x="58.0" y="310.0" width="304.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="58.0" y="310.0" width="152.9" height="10.0" rx="5.0" fill="#C69214"/>
+<rect x="58.0" y="310.0" width="152.3" height="10.0" rx="5.0" fill="#C69214"/>
 <text x="58.0" y="356.0" class="eyebrow" text-anchor="start">CVaR10</text>
-<text x="362.0" y="358.0" class="value" text-anchor="end">0.454</text>
+<text x="362.0" y="358.0" class="value" text-anchor="end">0.455</text>
 <text x="58.0" y="397.0" class="eyebrow" text-anchor="start">BREACH U95</text>
 <text x="362.0" y="399.0" class="value" text-anchor="end">0.0%</text>
 <rect x="58.0" y="414.0" width="116.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
@@ -61,9 +61,9 @@
 <text x="440.0" y="294.0" class="eyebrow" text-anchor="start">P(BEST)</text>
 <text x="744.0" y="298.0" class="value" text-anchor="end">51%</text>
 <rect x="440.0" y="310.0" width="304.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="440.0" y="310.0" width="155.4" height="10.0" rx="5.0" fill="#C69214"/>
+<rect x="440.0" y="310.0" width="153.6" height="10.0" rx="5.0" fill="#C69214"/>
 <text x="440.0" y="356.0" class="eyebrow" text-anchor="start">CVaR10</text>
-<text x="744.0" y="358.0" class="value" text-anchor="end">0.453</text>
+<text x="744.0" y="358.0" class="value" text-anchor="end">0.455</text>
 <text x="440.0" y="397.0" class="eyebrow" text-anchor="start">BREACH U95</text>
 <text x="744.0" y="399.0" class="value" text-anchor="end">0.0%</text>
 <rect x="440.0" y="414.0" width="116.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
@@ -75,9 +75,9 @@
 <text x="822.0" y="294.0" class="eyebrow" text-anchor="start">P(BEST)</text>
 <text x="1126.0" y="298.0" class="value" text-anchor="end">51%</text>
 <rect x="822.0" y="310.0" width="304.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="822.0" y="310.0" width="155.8" height="10.0" rx="5.0" fill="#C69214"/>
+<rect x="822.0" y="310.0" width="155.0" height="10.0" rx="5.0" fill="#C69214"/>
 <text x="822.0" y="356.0" class="eyebrow" text-anchor="start">CVaR10</text>
-<text x="1126.0" y="358.0" class="value" text-anchor="end">0.453</text>
+<text x="1126.0" y="358.0" class="value" text-anchor="end">0.454</text>
 <text x="822.0" y="397.0" class="eyebrow" text-anchor="start">BREACH U95</text>
 <text x="1126.0" y="399.0" class="value" text-anchor="end">0.0%</text>
 <rect x="822.0" y="414.0" width="116.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>

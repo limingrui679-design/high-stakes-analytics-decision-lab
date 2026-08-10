@@ -7,6 +7,6 @@
 | Adverse-transfer scenario | portfolio-author-governance-assumptions | stress assumption | Exploratory only | Not an estimated forecast probability |
 | Shared-factor loadings | portfolio-author-governance-assumptions | dependence assumption | Exploratory only | Stress-tests correlation; not empirically estimated |
 
-Official source: U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.
+Official source: U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.
 
 The only approval recorded here is the repository author's self-review for exploratory demonstration. It is not institutional or operational approval.

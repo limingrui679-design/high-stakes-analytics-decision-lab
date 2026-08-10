@@ -1,0 +1,29 @@
+{
+  "project_id": "wildfire-mitigation-under-uncertainty",
+  "charts": [
+    {
+      "path": "figures/annual-observed-acres.svg",
+      "question": "Observed mapped acres",
+      "supported_finding": "The historical sequence includes an explicitly partial 2025.",
+      "interpretation_boundary": "Mapped acres are not damages or preventable acres.",
+      "source_id": "calfire-historic-fire-perimeters-2000-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/recent-unit-exposure.svg",
+      "question": "Recent unit exposure",
+      "supported_finding": "Unit IDs are ranked by observed 2020-2024 acres.",
+      "interpretation_boundary": "Exposure is not mitigation effectiveness.",
+      "source_id": "calfire-historic-fire-perimeters-2000-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/scenario-regret.svg",
+      "question": "Allocation regret",
+      "supported_finding": "Strategies are stressed across three observed-exposure scenarios.",
+      "interpretation_boundary": "Regret is a modeled alignment proxy.",
+      "source_id": "calfire-historic-fire-perimeters-2000-2025",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

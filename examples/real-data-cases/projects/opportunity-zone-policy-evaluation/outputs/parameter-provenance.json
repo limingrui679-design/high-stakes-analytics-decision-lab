@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "project_id": "opportunity-zone-policy-evaluation",
+  "decision_use": "exploratory",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.pre_year",
+      "label": "pre year",
+      "value_or_distribution": 2018,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for pre_year; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.post_year",
+      "label": "post year",
+      "value_or_distribution": 2019,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for post_year; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.matching_fields",
+      "label": "matching fields",
+      "value_or_distribution": [
+        "poverty",
+        "income",
+        "jobs",
+        "unemployment"
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for matching_fields; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    }
+  ],
+  "coverage": {
+    "configured_parameter_count": 5,
+    "resolved_parameter_count": 5,
+    "source_coverage_rate": 1.0,
+    "independent_domain_review_rate": 0.0
+  },
+  "coverage_boundary": "Complete traceability does not imply external approval or strong evidence. All records remain exploratory and independently unreviewed."
+}

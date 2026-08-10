@@ -109,9 +109,9 @@ def hero_svg() -> str:
     ]
 
     metrics = [
-        ("10", "REAL-DATA PROJECTS", TEAL),
-        ("20", "INTELLIGENCE PRODUCTS", VIOLET),
-        ("104+", "ACCESSIBLE FIGURES", GOLD),
+        ("15", "REAL-DATA PROJECTS", TEAL),
+        ("25", "INTELLIGENCE PRODUCTS", VIOLET),
+        ("119", "ACCESSIBLE FIGURES", GOLD),
         ("04", "ADAPTIVE ROUTES", CORAL),
     ]
     for index, (value, label, color) in enumerate(metrics):

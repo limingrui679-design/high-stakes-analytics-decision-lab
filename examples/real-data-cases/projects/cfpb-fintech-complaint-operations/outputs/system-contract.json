@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "project_id": "cfpb-fintech-complaint-operations",
+  "decision_owner": "human complaint-operations reviewer",
+  "automation_status": "aggregate_monitoring_only",
+  "individual_ranking_signal": "available only as retained validation evidence; suppressed from the review queue because the deployment gate failed",
+  "queue_lanes": {
+    "aggregate_trend_monitoring": 12180,
+    "workflow_delay_review": 1354
+  },
+  "lane_rule": {
+    "metadata_completion_review": "state or sub-issue is missing in the privacy-minimized public record",
+    "workflow_delay_review": "CFPB intake-to-company transmission exceeds the illustrative 24-hour monitoring marker",
+    "aggregate_trend_monitoring": "no individual escalation; retain only in aggregate issue and volume monitoring"
+  },
+  "manual_actions": [
+    "inspect source metadata and request missing evidence",
+    "review workflow handoff timing without inferring complaint merit",
+    "record an override reason and the evidence consulted",
+    "close or redirect the review without automated sanctions"
+  ],
+  "forbidden_uses": [
+    "automated complaint-merit decision",
+    "consumer or company quality ranking",
+    "regulatory-compliance finding",
+    "sanction or benefit eligibility decision"
+  ],
+  "audit_log_fields": [
+    "review_lane",
+    "source_version",
+    "evidence_consulted",
+    "human_disposition",
+    "override_reason",
+    "review_timestamp"
+  ],
+  "evidence_boundary": "Queue membership is a workflow observation, not complaint merit, consumer harm, company quality, or regulatory noncompliance."
+}

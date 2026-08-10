@@ -55,14 +55,14 @@
 <line x1="891.8" y1="132" x2="891.8" y2="360" stroke="#B33A3A" stroke-width="2.5" stroke-dasharray="6 5"/>
 <text x="891.8" y="126.0" class="small" text-anchor="middle" style="fill:#B33A3A">risk tolerance 10.0%</text>
 <rect x="30.0" y="149.0" width="1134.0" height="56.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="178.0" class="section" text-anchor="start">Dual Marker Triage</text>
+<text x="48.0" y="178.0" class="section" text-anchor="start">Top 20% Review</text>
 <line x1="354.0" y1="174" x2="354.0" y2="174" stroke="#008C82" stroke-width="5" stroke-linecap="round"/>
 <circle cx="354.0" cy="174" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
 <path d="M 354.0 165.0 L 363.0 174.0 L 354.0 183.0 L 345.0 174.0 Z" fill="#008C82" stroke="#0B1F3A" stroke-width="1"/>
 <text x="368.0" y="162.0" class="mono" text-anchor="start">observed 0.0% · U95 0.00%</text>
 <rect x="1088.0" y="160.0" width="62.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="1119.0" y="179.0" class="pill" text-anchor="middle" style="fill:#26734D">PASS</text>
-<text x="48.0" y="250.0" class="label" text-anchor="start">Ejection Triage</text>
+<text x="48.0" y="250.0" class="label" text-anchor="start">Top 30% Review</text>
 <line x1="354.0" y1="246" x2="354.0" y2="246" stroke="#008C82" stroke-width="5" stroke-linecap="round"/>
 <circle cx="354.0" cy="246" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
 <path d="M 354.0 237.0 L 363.0 246.0 L 354.0 255.0 L 345.0 246.0 Z" fill="#008C82" stroke="#0B1F3A" stroke-width="1"/>
@@ -70,7 +70,7 @@
 <rect x="1088.0" y="232.0" width="62.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="1119.0" y="251.0" class="pill" text-anchor="middle" style="fill:#26734D">PASS</text>
 <rect x="30.0" y="293.0" width="1134.0" height="56.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="322.0" class="label" text-anchor="start">Current Age Rule</text>
+<text x="48.0" y="322.0" class="label" text-anchor="start">Baseline: Top 10% Review</text>
 <line x1="354.0" y1="318" x2="354.0" y2="318" stroke="#008C82" stroke-width="5" stroke-linecap="round"/>
 <circle cx="354.0" cy="318" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
 <path d="M 354.0 309.0 L 363.0 318.0 L 354.0 327.0 L 345.0 318.0 Z" fill="#008C82" stroke="#0B1F3A" stroke-width="1"/>

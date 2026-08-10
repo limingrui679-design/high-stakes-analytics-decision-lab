@@ -2,11 +2,19 @@
   "project_id": "spatial-equity-planning",
   "charts": [
     {
+      "path": "figures/mbta-access-gap.svg",
+      "question": "Observed MBTA access gap",
+      "supported_finding": "Actual rapid-transit stop coordinates supplement ACS need indicators.",
+      "interpretation_boundary": "Straight-line proximity does not replace network or site feasibility.",
+      "source_id": "census-acs-2023-ma-tracts-mbta-stops",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
       "path": "figures/need-map.svg",
       "question": "Need is spatially clustered rather than randomly scattered",
       "supported_finding": "The tract map and Moran’s I place candidate hubs inside the observed geography of composite need.",
       "interpretation_boundary": "Tract centroids and straight-line distance are planning-screen approximations.",
-      "source_id": "census-acs-2023-ma-tracts",
+      "source_id": "census-acs-2023-ma-tracts-mbta-stops",
       "palette_policy": "single-root preferred; non-color labels retained"
     },
     {
@@ -14,7 +22,7 @@
       "question": "Service assumptions can reverse the apparent advantage",
       "supported_finding": "Radius, need-weight, and coarse-grid sensitivity reveal dependence on spatial scale and access assumptions.",
       "interpretation_boundary": "Travel networks, capacity, ACS margins of error, and local site feasibility remain outside the screen.",
-      "source_id": "census-acs-2023-ma-tracts",
+      "source_id": "census-acs-2023-ma-tracts-mbta-stops",
       "palette_policy": "single-root preferred; non-color labels retained"
     },
     {
@@ -22,7 +30,7 @@
       "question": "Composite allocation balances multiple dimensions of need",
       "supported_finding": "Every strategy uses the same hub count and radius before population and need coverage are compared.",
       "interpretation_boundary": "Weights encode a planning priority and require local stakeholder review.",
-      "source_id": "census-acs-2023-ma-tracts",
+      "source_id": "census-acs-2023-ma-tracts-mbta-stops",
       "palette_policy": "single-root preferred; non-color labels retained"
     }
   ]

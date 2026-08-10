@@ -1,21 +1,21 @@
 # Which reading-assessment protocol should advance to a larger preregistered validation study
 
-*Behavioral science and experimental design · Next validation study · 10,000 modeled simulations*
+*Behavioral science and experimental design · Next validation study · 3,000 modeled simulations*
 
 ## Executive Summary
 
-- **Provisional preference — Baseline: Meaningful Only.** It is the highest-ranked feasible option, with decision value score **50.0/100** and a modeled **50% probability of being best among decision-feasible alternatives**.
-- **The lead is narrow rather than absolute.** It leads the next feasible option, Pseudoword Only, by **0.006 utility points**.
+- **Provisional preference — Baseline: Meaningful Only.** It is the highest-ranked feasible option, with decision value score **50.2/100** and a modeled **51% probability of being best among decision-feasible alternatives**.
+- **The lead is narrow rather than absolute.** It leads the next feasible option, Pseudoword Only, by **0.007 utility points**.
 - **Modeled robustness is 77/100.** The option remains preferred in **67%** of two-sided weight stresses and **100%** of probability-weighted scenario comparisons.
-- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+0.6%** and CVaR10 by **-0.001**; the ×1.35 loading stress does not change the modeled winner.
-- **Constraint-breach evidence — 0/10,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
+- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+0.4%** and CVaR10 by **-0.001**; the ×1.35 loading stress does not change the modeled winner.
+- **Constraint-breach evidence — 0/3,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
 - **Decision status — Provisional—validate before action.** The current blockers are: the winner is sensitive to criterion weights; evidence is not labeled for operational use.
 - **Evidence boundary.** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
 - **Parameter lineage.** 48/48 governed parameters have a resolved source and approval-chain reference.
 
 ![Decision summary](figures/decision-scorecard.svg)
 
-**Decision owner:** Hypothetical domain review panel; no real owner authorization  
+**Decision owner:** Hypothetical domain review panel; no real owner authorization
 **Decision question:** Which reading-assessment protocol should advance to a larger preregistered validation study?
 
 ## Decision status and modeled robustness
@@ -50,7 +50,7 @@ Each cell below places an outcome on its declared worst-to-best reference scale.
 
 ## Downside risk remains visible behind the average
 
-**Baseline: Meaningful Only has expected utility 0.515, but its worst-decile average falls to 0.454.** The widest criterion-level uncertainty for this option is associated with **Standardized group separation**, making it a priority for further evidence collection.
+**Baseline: Meaningful Only has expected utility 0.517, but its worst-decile average falls to 0.455.** The widest criterion-level uncertainty for this option is associated with **Standardized group separation**, making it a priority for further evidence collection.
 
 ![Utility uncertainty and downside](figures/utility-uncertainty.svg)
 
@@ -58,7 +58,7 @@ The interval chart prevents a precise-looking average from obscuring overlap amo
 
 ## Shared shocks change the uncertainty question
 
-**The declared factor model gives Baseline: Meaningful Only P(best) 50%, versus 50% under independent residuals and 51% under the stronger correlation stress.** Its CVaR10 moves from 0.454 independently to 0.454 under declared dependence and 0.453 under stress.
+**The declared factor model gives Baseline: Meaningful Only P(best) 51%, versus 50% under independent residuals and 51% under the stronger correlation stress.** Its CVaR10 moves from 0.455 independently to 0.455 under declared dependence and 0.454 under stress.
 
 ![Correlation and tail-risk stress](figures/correlation-stress.svg)
 
@@ -66,7 +66,7 @@ The three states use matched seeds, stratified scenario counts, and the same mar
 
 ## Scenario tests show when the preferred option is most exposed
 
-**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.478.** The same feasible alternative remains ahead in every modeled scenario.
+**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.479.** The same feasible alternative remains ahead in every modeled scenario.
 
 ![Scenario performance](figures/scenario-performance.svg)
 
@@ -117,9 +117,9 @@ This test both increases and decreases each criterion weight while preserving ri
 
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
-| 1 | Baseline: Meaningful Only | Yes | 50.0 | 0.515 | 0.454 | 50.3% | 50.3% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Pseudoword Only | Yes | 49.4 | 0.516 | 0.429 | 48.4% | 48.4% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 3 | Combined Protocol | Yes | 35.1 | 0.379 | 0.267 | 1.4% | 1.4% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 1 | Baseline: Meaningful Only | Yes | 50.2 | 0.517 | 0.455 | 50.5% | 50.5% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Pseudoword Only | Yes | 49.5 | 0.517 | 0.429 | 48.7% | 48.7% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 3 | Combined Protocol | Yes | 34.9 | 0.377 | 0.265 | 0.8% | 0.8% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
 
 ### Readiness checks
 
@@ -144,33 +144,33 @@ No hard constraints were supplied.
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Standardized group separation | 45.0% | 0.248 standardized difference | 0.024 standardized difference–0.579 standardized difference | 0.124 | 0.0% |
-| Assessment burden | 30.0% | 226.6 mean fixation duration | 215.6 mean fixation duration–244.0 mean fixation duration | 0.830 | 0.0% |
-| Measurement stability | 25.0% | 0.843 index | 0.777 index–0.89 index | 0.843 | 0.0% |
+| Standardized group separation | 45.0% | 0.255 standardized difference | 0.025 standardized difference–0.581 standardized difference | 0.127 | 0.0% |
+| Assessment burden | 30.0% | 226.6 mean fixation duration | 215.7 mean fixation duration–244.2 mean fixation duration | 0.830 | 0.0% |
+| Measurement stability | 25.0% | 0.844 index | 0.777 index–0.891 index | 0.844 | 0.0% |
 
 #### Pseudoword Only
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Standardized group separation | 45.0% | 0.387 standardized difference | 0.03 standardized difference–0.823 standardized difference | 0.193 | 0.0% |
-| Assessment burden | 30.0% | 261.7 mean fixation duration | 248.1 mean fixation duration–282.4 mean fixation duration | 0.752 | 0.0% |
-| Measurement stability | 25.0% | 0.815 index | 0.749 index–0.868 index | 0.815 | 0.0% |
+| Standardized group separation | 45.0% | 0.389 standardized difference | 0.03 standardized difference–0.815 standardized difference | 0.195 | 0.0% |
+| Assessment burden | 30.0% | 261.8 mean fixation duration | 248.1 mean fixation duration–282.5 mean fixation duration | 0.752 | 0.0% |
+| Measurement stability | 25.0% | 0.814 index | 0.747 index–0.868 index | 0.814 | 0.0% |
 
 #### Combined Protocol
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Standardized group separation | 45.0% | 0.6 standardized difference | 0.157 standardized difference–1.054 standardized difference | 0.300 | 0.0% |
-| Assessment burden | 30.0% | 488.3 mean fixation duration | 464.4 mean fixation duration–528.3 mean fixation duration | 0.248 | 0.0% |
-| Measurement stability | 25.0% | 0.679 index | 0.616 index–0.729 index | 0.679 | 0.0% |
+| Standardized group separation | 45.0% | 0.592 standardized difference | 0.157 standardized difference–1.05 standardized difference | 0.296 | 0.0% |
+| Assessment burden | 30.0% | 488.5 mean fixation duration | 464.4 mean fixation duration–528.1 mean fixation duration | 0.248 | 0.0% |
+| Measurement stability | 25.0% | 0.679 index | 0.617 index–0.729 index | 0.679 | 0.0% |
 
 ### Correlation sensitivity
 
 | Dependence state | Modeled winner | Recommended option P(best) | CVaR10 | Breach U95 |
 |---|---|---:|---:|---:|
-| Independent residuals | Baseline: Meaningful Only | 49.6% | 0.454 | 0.00% |
-| Declared factor model | Baseline: Meaningful Only | 50.3% | 0.454 | 0.00% |
-| Loading stress ×1.35 | Baseline: Meaningful Only | 50.5% | 0.453 | 0.00% |
+| Independent residuals | Baseline: Meaningful Only | 50.1% | 0.455 | 0.00% |
+| Declared factor model | Baseline: Meaningful Only | 50.5% | 0.455 | 0.00% |
+| Loading stress ×1.35 | Baseline: Meaningful Only | 51.0% | 0.454 | 0.00% |
 
 ### Parameter provenance and approval
 
@@ -185,8 +185,8 @@ Coverage: **48/48 parameters sourced** and **48/48 approved for the declared use
 - Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56
 - projects/behavioral-reading-experiment/outputs/results.json
 - Engine version: `7.0.0`
-- Samples: `10000`
-- Random seed: `20260727`
+- Samples: `3000`
+- Random seed: `20260810`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
 - Case SHA-256: `a6ddb1ff59e3b854a0fbf35e06aa6ff7f7ea625ca7d8ce9891fe79f8037fbb1e`
 

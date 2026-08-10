@@ -55,26 +55,26 @@
 <rect x="30.0" y="132.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <circle cx="58" cy="160" r="17" fill="#4E7D32"/>
 <text x="58.0" y="165.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
-<text x="86.0" y="156.0" class="section" text-anchor="start">Robust Optimized</text>
-<rect x="366" y="145" width="453.6" height="30" rx="7" fill="#4E7D32" stroke="#355B20" stroke-width="2"/>
-<text x="809.6" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">60.0</text>
+<text x="86.0" y="156.0" class="section" text-anchor="start">Top 25 Station Hours</text>
+<rect x="366" y="145" width="328.8" height="30" rx="7" fill="#4E7D32" stroke="#355B20" stroke-width="2"/>
+<text x="684.8" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">43.5</text>
 <rect x="86.0" y="180.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="199.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 55% · U95 0.00%</text>
+<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 100% · U95 0.00%</text>
 <circle cx="58" cy="248" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="253.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">2</text>
-<text x="86.0" y="244.0" class="label" text-anchor="start">Demand Proportional</text>
-<rect x="366" y="233" width="452.2" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
-<text x="808.2" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">59.8</text>
+<text x="86.0" y="244.0" class="label" text-anchor="start">Top 10 Station Hours</text>
+<rect x="366" y="233" width="292.1" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
+<text x="648.1" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">38.6</text>
 <rect x="86.0" y="268.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="287.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 45% · U95 0.00%</text>
+<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 0% · U95 0.00%</text>
 <rect x="30.0" y="308.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <circle cx="58" cy="336" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="341.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
-<text x="86.0" y="332.0" class="label" text-anchor="start">Equal Baseline</text>
-<rect x="366" y="321" width="381.5" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
-<text x="737.5" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">50.5</text>
+<text x="86.0" y="332.0" class="label" text-anchor="start">Baseline: Monitoring Only</text>
+<rect x="366" y="321" width="289.9" height="30" rx="7" fill="#E8F2DF" stroke="#4E7D32" stroke-width="1"/>
+<text x="645.9" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">38.3</text>
 <rect x="86.0" y="356.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="375.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
 <text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 0% · U95 0.00%</text>

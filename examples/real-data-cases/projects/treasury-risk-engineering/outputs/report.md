@@ -1,4 +1,4 @@
-# Daily Treasury Par Yield Curve Rates: analytical project
+# Treasury Curve and Tail-Risk Decision Engine: analytical project
 
 > **Bottom line:** Longer-duration allocations offer different carry/risk trade-offs and materially larger historical tail losses; the short portfolio remains the risk reference.
 

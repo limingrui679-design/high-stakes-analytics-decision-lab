@@ -56,11 +56,11 @@
 <circle cx="58" cy="160" r="17" fill="#D85B43"/>
 <text x="58.0" y="165.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">1</text>
 <text x="86.0" y="156.0" class="section" text-anchor="start">Baseline: Poverty Priority</text>
-<rect x="366" y="145" width="519.8" height="30" rx="7" fill="#D85B43" stroke="#A63C2A" stroke-width="2"/>
-<text x="875.8" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">68.8</text>
+<rect x="366" y="145" width="520.1" height="30" rx="7" fill="#D85B43" stroke="#A63C2A" stroke-width="2"/>
+<text x="876.1" y="165.0" class="value" text-anchor="end" style="fill:#FFFFFF">68.8</text>
 <rect x="86.0" y="180.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="199.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 84% · U95 0.00%</text>
+<text x="174.0" y="199.0" class="small" text-anchor="start">P(best) 86% · U95 0.00%</text>
 <circle cx="58" cy="248" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="253.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">2</text>
 <text x="86.0" y="244.0" class="label" text-anchor="start">Composite Equity</text>
@@ -68,13 +68,13 @@
 <text x="861.3" y="253.0" class="value" text-anchor="end" style="fill:#0B1324">66.8</text>
 <rect x="86.0" y="268.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="287.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
-<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 16% · U95 0.00%</text>
+<text x="174.0" y="287.0" class="small" text-anchor="start">P(best) 14% · U95 0.00%</text>
 <rect x="30.0" y="308.0" width="1134.0" height="72.0" rx="9" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <circle cx="58" cy="336" r="17" fill="#0B1F3A"/>
 <text x="58.0" y="341.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">3</text>
 <text x="86.0" y="332.0" class="label" text-anchor="start">Transit Priority</text>
-<rect x="366" y="321" width="374.6" height="30" rx="7" fill="#FCE7E2" stroke="#D85B43" stroke-width="1"/>
-<text x="730.6" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">49.5</text>
+<rect x="366" y="321" width="375.0" height="30" rx="7" fill="#FCE7E2" stroke="#D85B43" stroke-width="1"/>
+<text x="731.0" y="341.0" class="value" text-anchor="end" style="fill:#0B1324">49.6</text>
 <rect x="86.0" y="356.0" width="76.0" height="28.0" rx="14" fill="#E3F3EA" stroke="none" stroke-width="1"/>
 <text x="124.0" y="375.0" class="pill" text-anchor="middle" style="fill:#26734D">FEASIBLE</text>
 <text x="174.0" y="375.0" class="small" text-anchor="start">P(best) 0% · U95 0.00%</text>

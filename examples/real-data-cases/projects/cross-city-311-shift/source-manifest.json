@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "project_id": "cross-city-311-shift",
+  "source_id": "chicago-nyc-311-2022-2023",
+  "title": "Cross-City 311 Distribution Shift and Transfer Gate",
+  "project_title": "Cross-City 311 Distribution Shift and Transfer Gate",
+  "publisher": "City of Chicago and City of New York",
+  "landing_page": "https://data.cityofchicago.org/Service-Requests/311-Service-Requests-Request-and-Response-Times/v6vf-nfxy",
+  "version": "Daily source-category aggregates, 2022-2023",
+  "accessed_at": "2026-08-10",
+  "license": "Municipal open-data terms",
+  "license_url": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+  "redistribution": "Official API aggregates; local source definitions remain controlling.",
+  "expected_rows": 8760,
+  "grain": "one city-day-audited service-family aggregate",
+  "raw_files": [
+    {
+      "path": "data/raw/cross-city-311-daily.csv",
+      "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Administrative shift audit only; requests are not latent need or service quality.",
+    "status": "approved_for_public_minimized_analysis"
+  },
+  "citation": "City of Chicago and City of New York. Daily source-category aggregates, 2022-2023.",
+  "additional_sources": [
+    "https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9"
+  ]
+}

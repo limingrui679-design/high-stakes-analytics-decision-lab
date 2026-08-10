@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-28T10:05:59.976799+00:00",
+    "generated_at": "2026-08-10T12:57:43.535505+00:00",
     "case_id": "real-treasury-risk-engineering",
     "case_hash_sha256": "560e97bcaec27b9bfed1206430146a2f237a641d666148a2fd512dae7ff98d36",
-    "samples": 10000,
-    "seed": 20260727,
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -35,14 +35,14 @@
       "short-baseline"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.029384835412279986,
+    "utility_margin": 0.029164894208718817,
     "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 90.78699999999999,
+    "robustness_score": 90.55,
     "robustness_components": {
       "probability_best": {
-        "value": 0.6929,
+        "value": 0.685,
         "weight": 0.3
       },
       "weight_stability": {
@@ -173,14 +173,14 @@
       "alternative_id": "short-baseline",
       "label": "Short Baseline",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.8081397908621875,
-      "utility_p05": 0.7792696811318182,
-      "utility_p95": 0.8398595493136363,
-      "cvar10": 0.7775479844683173,
-      "risk_adjusted_utility": 0.8004918392637199,
-      "value_score": 80.049183926372,
+      "expected_utility": 0.8077314135587266,
+      "utility_p05": 0.7779963477840909,
+      "utility_p95": 0.8391286883522728,
+      "cvar10": 0.7761520689493187,
+      "risk_adjusted_utility": 0.7998365774063746,
+      "value_score": 79.98365774063745,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -192,26 +192,26 @@
         "annualized_mean_return": {
           "label": "Historical annualized return",
           "unit": "return fraction",
-          "mean": 0.014906110645360059,
-          "normalized_score": 0.522300502933455,
+          "mean": 0.014678948736533358,
+          "normalized_score": 0.5212679488024246,
           "scale_clipping_rate": 0.0,
-          "p05": -0.00476104,
-          "p95": 0.03722234
+          "p05": -0.005714450000000001,
+          "p95": 0.03713054
         },
         "expected_shortfall95_loss": {
           "label": "Historical ES95 loss",
           "unit": "daily loss fraction",
-          "mean": 0.004472011980240018,
-          "normalized_score": 0.9440998502470009,
+          "mean": 0.00448151564640002,
+          "normalized_score": 0.9439810544200038,
           "scale_clipping_rate": 0.0,
-          "p05": 0.00405402,
-          "p95": 0.0049522023
+          "p05": 0.00406548,
+          "p95": 0.004952145600000001
         },
         "worst_day_loss": {
           "label": "Worst historical day",
           "unit": "daily loss fraction",
-          "mean": 0.009358117051600645,
-          "normalized_score": 0.9064188294840327,
+          "mean": 0.009376178228400402,
+          "normalized_score": 0.9062382177159751,
           "scale_clipping_rate": 0.0,
           "p05": 0.0068184396,
           "p95": 0.010991106
@@ -220,26 +220,26 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.8095334576448476,
-          "p05": 0.7799746809943182,
-          "p95": 0.8405515811647727,
-          "cvar10": 0.7785995553530314,
-          "risk_adjusted_utility": 0.8017999820718935,
-          "sample_count": 7500
+          "mean": 0.8091027149128792,
+          "p05": 0.7788213338920454,
+          "p95": 0.8397556174147728,
+          "cvar10": 0.777046504656566,
+          "risk_adjusted_utility": 0.8010886623488009,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.8039587905141979,
-          "p05": 0.7763435552125,
-          "p95": 0.8328960197738636,
-          "cvar10": 0.7749103761751818,
-          "risk_adjusted_utility": 0.7966966869294438,
-          "sample_count": 2500
+          "mean": 0.803617509496272,
+          "p05": 0.7758674456363637,
+          "p95": 0.8339690372875,
+          "cvar10": 0.7743013151581818,
+          "risk_adjusted_utility": 0.7962884609117494,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.6929,
-      "probability_best_unconstrained": 0.6929,
+      "probability_best": 0.685,
+      "probability_best_unconstrained": 0.685,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -247,14 +247,14 @@
       "alternative_id": "intermediate",
       "label": "Intermediate",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7818329243816093,
-      "utility_p05": 0.7417997978420455,
-      "utility_p95": 0.8230218021306819,
-      "cvar10": 0.7389292422609317,
-      "risk_adjusted_utility": 0.7711070038514399,
-      "value_score": 77.110700385144,
+      "expected_utility": 0.7812470443594247,
+      "utility_p05": 0.7421986168181818,
+      "utility_p95": 0.8197052193965909,
+      "cvar10": 0.7389455997123489,
+      "risk_adjusted_utility": 0.7706716831976558,
+      "value_score": 77.06716831976557,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -266,26 +266,26 @@
         "annualized_mean_return": {
           "label": "Historical annualized return",
           "unit": "return fraction",
-          "mean": 0.010322395395800073,
-          "normalized_score": 0.5014654336172729,
+          "mean": 0.009958718407333325,
+          "normalized_score": 0.4998123563969678,
           "scale_clipping_rate": 0.0,
-          "p05": -0.018129932199999983,
-          "p95": 0.03718714
+          "p05": -0.01847791,
+          "p95": 0.03677078
         },
         "expected_shortfall95_loss": {
           "label": "Historical ES95 loss",
           "unit": "daily loss fraction",
-          "mean": 0.006438450564279953,
-          "normalized_score": 0.9195193679464947,
+          "mean": 0.00643551900106667,
+          "normalized_score": 0.9195560124866627,
           "scale_clipping_rate": 0.0,
-          "p05": 0.00587065,
+          "p05": 0.0058715335000000006,
           "p95": 0.00716444
         },
         "worst_day_loss": {
           "label": "Worst historical day",
           "unit": "daily loss fraction",
-          "mean": 0.012956168511800441,
-          "normalized_score": 0.8704383148820112,
+          "mean": 0.012998747271466778,
+          "normalized_score": 0.8700125272853418,
           "scale_clipping_rate": 0.0,
           "p05": 0.00962768,
           "p95": 0.0151365564
@@ -294,26 +294,26 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7834182191662892,
-          "p05": 0.7431759303977274,
-          "p95": 0.8246091183806818,
-          "cvar10": 0.7400164700219696,
-          "risk_adjusted_utility": 0.7725677818802092,
-          "sample_count": 7500
+          "mean": 0.7825155665255046,
+          "p05": 0.7435346287215908,
+          "p95": 0.8217439692329546,
+          "cvar10": 0.7403942743333338,
+          "risk_adjusted_utility": 0.7719852434774619,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.7770770400275642,
-          "p05": 0.7384595325727272,
-          "p95": 0.8149996098556819,
-          "cvar10": 0.7364272439355452,
-          "risk_adjusted_utility": 0.7669145910045594,
-          "sample_count": 2500
+          "mean": 0.7774414778611816,
+          "p05": 0.73930231225,
+          "p95": 0.8155763087431818,
+          "cvar10": 0.7348986759800001,
+          "risk_adjusted_utility": 0.7668057773908862,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.1459,
-      "probability_best_unconstrained": 0.1459,
+      "probability_best": 0.14533333333333334,
+      "probability_best_unconstrained": 0.14533333333333334,
       "pareto_efficient": false,
       "pareto_efficient_unconstrained": false
     },
@@ -321,14 +321,14 @@
       "alternative_id": "barbell",
       "label": "Barbell",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.777382150528293,
-      "utility_p05": 0.7365416277931818,
-      "utility_p95": 0.8236020234659092,
-      "cvar10": 0.7339017874741816,
-      "risk_adjusted_utility": 0.7665120597647651,
-      "value_score": 76.6512059764765,
+      "expected_utility": 0.7781019416573786,
+      "utility_p05": 0.7368209400568182,
+      "utility_p95": 0.8239729945454545,
+      "cvar10": 0.7348983108007578,
+      "risk_adjusted_utility": 0.7673010339432234,
+      "value_score": 76.73010339432234,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -340,26 +340,26 @@
         "annualized_mean_return": {
           "label": "Historical annualized return",
           "unit": "return fraction",
-          "mean": 0.007951344773080056,
-          "normalized_score": 0.49068793078672945,
+          "mean": 0.008513711740533354,
+          "normalized_score": 0.49324414427515034,
           "scale_clipping_rate": 0.0,
           "p05": -0.02060876,
-          "p95": 0.04149576445999978
+          "p95": 0.041480306800000005
         },
         "expected_shortfall95_loss": {
           "label": "Historical ES95 loss",
           "unit": "daily loss fraction",
-          "mean": 0.006352559172360001,
-          "normalized_score": 0.9205930103454948,
+          "mean": 0.006358956271200014,
+          "normalized_score": 0.9205130466099997,
           "scale_clipping_rate": 0.0,
-          "p05": 0.00579387,
-          "p95": 0.007006446
+          "p05": 0.00580145,
+          "p95": 0.007031834099999995
         },
         "worst_day_loss": {
           "label": "Worst historical day",
           "unit": "daily loss fraction",
-          "mean": 0.013636433345279031,
-          "normalized_score": 0.8636356665471688,
+          "mean": 0.013640869039866867,
+          "normalized_score": 0.8635913096013564,
           "scale_clipping_rate": 0.0,
           "p05": 0.00970666,
           "p95": 0.015398866800000001
@@ -368,26 +368,26 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7787283419795425,
-          "p05": 0.7377213250568182,
-          "p95": 0.8260966357386365,
-          "cvar10": 0.7349795374166674,
-          "risk_adjusted_utility": 0.7677911408388238,
-          "sample_count": 7500
+          "mean": 0.7796326538505037,
+          "p05": 0.7373822792613638,
+          "p95": 0.8266812378977273,
+          "cvar10": 0.7358408692803029,
+          "risk_adjusted_utility": 0.7686847077079535,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.773343576174536,
-          "p05": 0.7338445563659091,
-          "p95": 0.8171856116943181,
-          "cvar10": 0.7310641174578184,
-          "risk_adjusted_utility": 0.7627737114953566,
-          "sample_count": 2500
+          "mean": 0.7735098050780004,
+          "p05": 0.7344859557693182,
+          "p95": 0.8165922826579546,
+          "cvar10": 0.7330266320100006,
+          "risk_adjusted_utility": 0.7633890118110005,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.1253,
-      "probability_best_unconstrained": 0.1253,
+      "probability_best": 0.134,
+      "probability_best_unconstrained": 0.134,
       "pareto_efficient": false,
       "pareto_efficient_unconstrained": false
     },
@@ -395,14 +395,14 @@
       "alternative_id": "long-duration",
       "label": "Long Duration",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7456474814828432,
-      "utility_p05": 0.6888523601352273,
-      "utility_p95": 0.8044542781250001,
-      "cvar10": 0.6850520848810226,
-      "risk_adjusted_utility": 0.7304986323323881,
-      "value_score": 73.04986323323881,
+      "expected_utility": 0.7457770103777028,
+      "utility_p05": 0.6882821377397726,
+      "utility_p95": 0.8041435540624999,
+      "cvar10": 0.6846749623393185,
+      "risk_adjusted_utility": 0.7305014983681067,
+      "value_score": 73.05014983681068,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -414,54 +414,54 @@
         "annualized_mean_return": {
           "label": "Historical annualized return",
           "unit": "return fraction",
-          "mean": 0.00426364406344001,
-          "normalized_score": 0.47392565483381915,
+          "mean": 0.004303514557333331,
+          "normalized_score": 0.47410688435151843,
           "scale_clipping_rate": 0.0,
-          "p05": -0.03725354,
+          "p05": -0.03727182,
           "p95": 0.04551044
         },
         "expected_shortfall95_loss": {
           "label": "Historical ES95 loss",
           "unit": "daily loss fraction",
-          "mean": 0.008900829823199966,
-          "normalized_score": 0.888739627209997,
+          "mean": 0.008902770119600051,
+          "normalized_score": 0.8887153735050023,
           "scale_clipping_rate": 0.0,
           "p05": 0.00807839,
-          "p95": 0.009888318
+          "p95": 0.009922176
         },
         "worst_day_loss": {
           "label": "Worst historical day",
           "unit": "daily loss fraction",
-          "mean": 0.018585218884720433,
-          "normalized_score": 0.8141478111527416,
+          "mean": 0.018550789201999898,
+          "normalized_score": 0.8144921079799892,
           "scale_clipping_rate": 0.0,
-          "p05": 0.013062399999999998,
+          "p05": 0.0130624,
           "p95": 0.0205098048
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7477309888978008,
-          "p05": 0.6897246298863636,
-          "p95": 0.8058823335227273,
-          "cvar10": 0.6860593815856062,
-          "risk_adjusted_utility": 0.7323130870697521,
-          "sample_count": 7500
+          "mean": 0.7480392322022718,
+          "p05": 0.6894305900852273,
+          "p95": 0.8057631866477273,
+          "cvar10": 0.6859558377575754,
+          "risk_adjusted_utility": 0.7325183835910977,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.7393969592379723,
-          "p05": 0.686424885809091,
-          "p95": 0.7926029867602273,
-          "cvar10": 0.6824499560093632,
-          "risk_adjusted_utility": 0.7251602084308201,
-          "sample_count": 2500
+          "mean": 0.7389903449039992,
+          "p05": 0.6844144997909092,
+          "p95": 0.7911296321329545,
+          "cvar10": 0.6817980090854546,
+          "risk_adjusted_utility": 0.724692260949363,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.0359,
-      "probability_best_unconstrained": 0.0359,
+      "probability_best": 0.035666666666666666,
+      "probability_best_unconstrained": 0.035666666666666666,
       "pareto_efficient": false,
       "pareto_efficient_unconstrained": false
     }
@@ -474,31 +474,31 @@
       "factor": 0.6666666666666666,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.8339693567522042,
-        "intermediate": 0.8047300097339519,
-        "barbell": 0.8009609149164026,
-        "long-duration": 0.7643827138632022
+        "short-baseline": 0.8334515199763675,
+        "intermediate": 0.8044164393763306,
+        "barbell": 0.8015412119889243,
+        "long-duration": 0.7644037590079364
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.8398997117431575,
-          "cvar10": 0.8161782917793444,
-          "risk_adjusted_utility": 0.8339693567522042
+          "expected_utility": 0.8395606874205382,
+          "cvar10": 0.8151240176438552,
+          "risk_adjusted_utility": 0.8334515199763675
         },
         "intermediate": {
-          "expected_utility": 0.8129848677998651,
-          "cvar10": 0.7799654355362122,
-          "risk_adjusted_utility": 0.8047300097339519
+          "expected_utility": 0.8125175652441421,
+          "cvar10": 0.7801130617728959,
+          "risk_adjusted_utility": 0.8044164393763306
         },
         "barbell": {
-          "expected_utility": 0.8092370638329138,
-          "cvar10": 0.776132468166869,
-          "risk_adjusted_utility": 0.8009609149164026
+          "expected_utility": 0.8097528080331841,
+          "cvar10": 0.7769064238561448,
+          "risk_adjusted_utility": 0.8015412119889243
         },
         "long-duration": {
-          "expected_utility": 0.7758387955549599,
-          "cvar10": 0.7300144687879291,
-          "risk_adjusted_utility": 0.7643827138632022
+          "expected_utility": 0.7759625799361712,
+          "cvar10": 0.729727296223232,
+          "risk_adjusted_utility": 0.7644037590079364
         }
       }
     },
@@ -509,31 +509,31 @@
       "factor": 1.5,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.7611427531129189,
-        "intermediate": 0.7315604261629687,
-        "barbell": 0.7260031917249288,
-        "long-duration": 0.6906733506527101
+        "short-baseline": 0.7603413284984857,
+        "intermediate": 0.7309734775308013,
+        "barbell": 0.7270471532077335,
+        "long-duration": 0.6906484745634246
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.7708564054801765,
-          "cvar10": 0.7320017960111458,
-          "risk_adjusted_utility": 0.7611427531129189
+          "expected_utility": 0.7703666138079063,
+          "cvar10": 0.730265472570224,
+          "risk_adjusted_utility": 0.7603413284984857
         },
         "intermediate": {
-          "expected_utility": 0.745263251673214,
-          "cvar10": 0.6904519496322327,
-          "risk_adjusted_utility": 0.7315604261629687
+          "expected_utility": 0.7445381720164964,
+          "cvar10": 0.690279394073716,
+          "risk_adjusted_utility": 0.7309734775308013
         },
         "barbell": {
-          "expected_utility": 0.7399872523011303,
-          "cvar10": 0.6840510099963242,
-          "risk_adjusted_utility": 0.7260031917249288
+          "expected_utility": 0.7409465767814357,
+          "cvar10": 0.6853488824866268,
+          "risk_adjusted_utility": 0.7270471532077335
         },
         "long-duration": {
-          "expected_utility": 0.710205504093844,
-          "cvar10": 0.6320768903293085,
-          "risk_adjusted_utility": 0.6906733506527101
+          "expected_utility": 0.7103417765482024,
+          "cvar10": 0.631568568609091,
+          "risk_adjusted_utility": 0.6906484745634246
         }
       }
     },
@@ -544,31 +544,31 @@
       "factor": 0.6666666666666666,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.7752005445615668,
-        "intermediate": 0.7449904792744468,
-        "barbell": 0.7393729999176333,
-        "long-duration": 0.7026576591280754
+        "short-baseline": 0.7744520883299199,
+        "intermediate": 0.7444495031962644,
+        "barbell": 0.7403183324559452,
+        "long-duration": 0.7026726725533291
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.7841468392060461,
-          "cvar10": 0.748361660628129,
-          "risk_adjusted_utility": 0.7752005445615668
+          "expected_utility": 0.7836873592890911,
+          "cvar10": 0.7467462754524061,
+          "risk_adjusted_utility": 0.7744520883299199
         },
         "intermediate": {
-          "expected_utility": 0.7575353166936829,
-          "cvar10": 0.7073559670167388,
-          "risk_adjusted_utility": 0.7449904792744468
+          "expected_utility": 0.7568395793957917,
+          "cvar10": 0.7072792745976825,
+          "risk_adjusted_utility": 0.7444495031962644
         },
         "barbell": {
-          "expected_utility": 0.7521096458546694,
-          "cvar10": 0.7011630621065248,
-          "risk_adjusted_utility": 0.7393729999176333
+          "expected_utility": 0.7529705701951523,
+          "cvar10": 0.702361619238324,
+          "risk_adjusted_utility": 0.7403183324559452
         },
         "long-duration": {
-          "expected_utility": 0.7203959263545282,
-          "cvar10": 0.649442857448717,
-          "risk_adjusted_utility": 0.7026576591280754
+          "expected_utility": 0.7205525933552409,
+          "cvar10": 0.6490329101475936,
+          "risk_adjusted_utility": 0.7026726725533291
         }
       }
     },
@@ -579,31 +579,31 @@
       "factor": 1.5,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.8268055765855357,
-        "intermediate": 0.798274772675749,
-        "barbell": 0.7947433204497066,
-        "long-duration": 0.7594569133148479
+        "short-baseline": 0.8262515578827357,
+        "intermediate": 0.7979499930273191,
+        "barbell": 0.7953745085181767,
+        "long-duration": 0.7594476937997545
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.83311204666756,
-          "cvar10": 0.8078861663394626,
-          "risk_adjusted_utility": 0.8268055765855357
+          "expected_utility": 0.8327568577985537,
+          "cvar10": 0.8067356581352819,
+          "risk_adjusted_utility": 0.8262515578827357
         },
         "intermediate": {
-          "expected_utility": 0.8071222711588284,
-          "cvar10": 0.7717322772265107,
-          "risk_adjusted_utility": 0.798274772675749
+          "expected_utility": 0.8066507323827972,
+          "cvar10": 0.7718477749608846,
+          "risk_adjusted_utility": 0.7979499930273191
         },
         "barbell": {
-          "expected_utility": 0.8036861860049244,
-          "cvar10": 0.7679147237840533,
-          "risk_adjusted_utility": 0.7947433204497066
+          "expected_utility": 0.8042590833833678,
+          "cvar10": 0.7687207839226035,
+          "risk_adjusted_utility": 0.7953745085181767
         },
         "long-duration": {
-          "expected_utility": 0.7719297123306877,
-          "cvar10": 0.7220385162673282,
-          "risk_adjusted_utility": 0.7594569133148479
+          "expected_utility": 0.772030995441901,
+          "cvar10": 0.721697788873315,
+          "risk_adjusted_utility": 0.7594476937997545
         }
       }
     },
@@ -614,31 +614,31 @@
       "factor": 0.6666666666666666,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.7910343914707749,
-        "intermediate": 0.7622540702227854,
-        "barbell": 0.7578031421222289,
-        "long-duration": 0.723009889476945
+        "short-baseline": 0.7903444551336793,
+        "intermediate": 0.7617894690873469,
+        "barbell": 0.7586573746761752,
+        "long-duration": 0.7229805422688924
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.7992053328056556,
-          "cvar10": 0.7665215674661329,
-          "risk_adjusted_utility": 0.7910343914707749
+          "expected_utility": 0.7987762495444285,
+          "cvar10": 0.7650490719014321,
+          "risk_adjusted_utility": 0.7903444551336793
         },
         "intermediate": {
-          "expected_utility": 0.7737778888815705,
-          "cvar10": 0.7276826142464297,
-          "risk_adjusted_utility": 0.7622540702227854
+          "expected_utility": 0.7731774550025231,
+          "cvar10": 0.7276255113418182,
+          "risk_adjusted_utility": 0.7617894690873469
         },
         "barbell": {
-          "expected_utility": 0.7695409217993048,
-          "cvar10": 0.722589803091001,
-          "risk_adjusted_utility": 0.7578031421222289
+          "expected_utility": 0.7703301809352033,
+          "cvar10": 0.7236389558990908,
+          "risk_adjusted_utility": 0.7586573746761752
         },
         "long-duration": {
-          "expected_utility": 0.7394201787855766,
-          "cvar10": 0.67377902155105,
-          "risk_adjusted_utility": 0.723009889476945
+          "expected_utility": 0.7395301833229494,
+          "cvar10": 0.6733316191067215,
+          "risk_adjusted_utility": 0.7229805422688924
         }
       }
     },
@@ -649,31 +649,31 @@
       "factor": 1.5,
       "winner": "short-baseline",
       "scores": {
-        "short-baseline": 0.8120144968912144,
-        "intermediate": 0.7818782923916796,
-        "barbell": 0.7771164880431581,
-        "long-duration": 0.7396332163286761
+        "short-baseline": 0.8114134247972007,
+        "intermediate": 0.7814813605714239,
+        "barbell": 0.7778263867247772,
+        "long-duration": 0.739672955565539
       },
       "score_details": {
         "short-baseline": {
-          "expected_utility": 0.819059684042387,
-          "cvar10": 0.7908789354376967,
-          "risk_adjusted_utility": 0.8120144968912144
+          "expected_utility": 0.8186766140206446,
+          "cvar10": 0.7896238571268687,
+          "risk_adjusted_utility": 0.8114134247972007
         },
         "intermediate": {
-          "expected_utility": 0.7916779677705428,
-          "cvar10": 0.7524792662550903,
-          "risk_adjusted_utility": 0.7818782923916796
+          "expected_utility": 0.7911098757956361,
+          "cvar10": 0.7525958148987875,
+          "risk_adjusted_utility": 0.7814813605714239
         },
         "barbell": {
-          "expected_utility": 0.7869658745303929,
-          "cvar10": 0.7475683285814538,
-          "risk_adjusted_utility": 0.7771164880431581
+          "expected_utility": 0.7876007603178174,
+          "cvar10": 0.7485032659456564,
+          "risk_adjusted_utility": 0.7778263867247772
         },
         "long-duration": {
-          "expected_utility": 0.7532586292239516,
-          "cvar10": 0.6987569776428493,
-          "risk_adjusted_utility": 0.7396332163286761
+          "expected_utility": 0.7534120212224025,
+          "cvar10": 0.6984557585949487,
+          "risk_adjusted_utility": 0.739672955565539
         }
       }
     }
@@ -709,40 +709,40 @@
       ],
       "alternatives": {
         "short-baseline": {
-          "expected_utility": 0.8081283776465557,
-          "cvar10": 0.7779283650278406,
-          "risk_adjusted_utility": 0.8005783744918769,
+          "expected_utility": 0.8078222215879528,
+          "cvar10": 0.7763830910662121,
+          "risk_adjusted_utility": 0.7999624389575176,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.6746
+          "probability_best": 0.6726666666666666
         },
         "intermediate": {
-          "expected_utility": 0.7818520111431841,
-          "cvar10": 0.7394837855289332,
-          "risk_adjusted_utility": 0.7712599547396214,
+          "expected_utility": 0.7812877638719754,
+          "cvar10": 0.7388922489573485,
+          "risk_adjusted_utility": 0.7706888851433187,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1515
+          "probability_best": 0.151
         },
         "barbell": {
-          "expected_utility": 0.7774650976065086,
-          "cvar10": 0.7346537908063177,
-          "risk_adjusted_utility": 0.7667622709064609,
+          "expected_utility": 0.7782850444940236,
+          "cvar10": 0.7356329286834093,
+          "risk_adjusted_utility": 0.76762201554137,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1352
+          "probability_best": 0.137
         },
         "long-duration": {
-          "expected_utility": 0.745761997346923,
-          "cvar10": 0.6858037184214326,
-          "risk_adjusted_utility": 0.7307724276155504,
+          "expected_utility": 0.7459280797146132,
+          "cvar10": 0.6862295428584085,
+          "risk_adjusted_utility": 0.7310034455005621,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0387
+          "probability_best": 0.03933333333333333
         }
       }
     },
@@ -762,40 +762,40 @@
       ],
       "alternatives": {
         "short-baseline": {
-          "expected_utility": 0.8081397908621875,
-          "cvar10": 0.7775479844683173,
-          "risk_adjusted_utility": 0.8004918392637199,
+          "expected_utility": 0.8077314135587266,
+          "cvar10": 0.7761520689493187,
+          "risk_adjusted_utility": 0.7998365774063746,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.6929
+          "probability_best": 0.685
         },
         "intermediate": {
-          "expected_utility": 0.7818329243816093,
-          "cvar10": 0.7389292422609317,
-          "risk_adjusted_utility": 0.7711070038514399,
+          "expected_utility": 0.7812470443594247,
+          "cvar10": 0.7389455997123489,
+          "risk_adjusted_utility": 0.7706716831976558,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1459
+          "probability_best": 0.14533333333333334
         },
         "barbell": {
-          "expected_utility": 0.777382150528293,
-          "cvar10": 0.7339017874741816,
-          "risk_adjusted_utility": 0.7665120597647651,
+          "expected_utility": 0.7781019416573786,
+          "cvar10": 0.7348983108007578,
+          "risk_adjusted_utility": 0.7673010339432234,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1253
+          "probability_best": 0.134
         },
         "long-duration": {
-          "expected_utility": 0.7456474814828432,
-          "cvar10": 0.6850520848810226,
-          "risk_adjusted_utility": 0.7304986323323881,
+          "expected_utility": 0.7457770103777028,
+          "cvar10": 0.6846749623393185,
+          "risk_adjusted_utility": 0.7305014983681067,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0359
+          "probability_best": 0.035666666666666666
         }
       }
     },
@@ -815,40 +815,40 @@
       ],
       "alternatives": {
         "short-baseline": {
-          "expected_utility": 0.808096725605258,
-          "cvar10": 0.7769853682916364,
-          "risk_adjusted_utility": 0.8003188862768527,
+          "expected_utility": 0.8077095361610164,
+          "cvar10": 0.7760638626632576,
+          "risk_adjusted_utility": 0.7997981177865767,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.7079
+          "probability_best": 0.6963333333333334
         },
         "intermediate": {
-          "expected_utility": 0.7818093607391751,
-          "cvar10": 0.7383694152544551,
-          "risk_adjusted_utility": 0.770949374367995,
+          "expected_utility": 0.7811830086621283,
+          "cvar10": 0.7385653677876514,
+          "risk_adjusted_utility": 0.7705285984435091,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1399
+          "probability_best": 0.14266666666666666
         },
         "barbell": {
-          "expected_utility": 0.7773620953051278,
-          "cvar10": 0.7335692890842264,
-          "risk_adjusted_utility": 0.7664138937499024,
+          "expected_utility": 0.7780080477217568,
+          "cvar10": 0.7344598685887872,
+          "risk_adjusted_utility": 0.7671210029385144,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1201
+          "probability_best": 0.127
         },
         "long-duration": {
-          "expected_utility": 0.7456106242814615,
-          "cvar10": 0.6843590059037039,
-          "risk_adjusted_utility": 0.7302977196870222,
+          "expected_utility": 0.7456913695144252,
+          "cvar10": 0.683918871274697,
+          "risk_adjusted_utility": 0.7302482449544931,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0321
+          "probability_best": 0.034
         }
       }
     },
@@ -858,32 +858,32 @@
       {
         "left_alternative": "short-baseline",
         "right_alternative": "intermediate",
-        "correlation": 0.12737702316729685
+        "correlation": 0.11640077672313902
       },
       {
         "left_alternative": "short-baseline",
         "right_alternative": "barbell",
-        "correlation": 0.11857142306431238
+        "correlation": 0.13228484859354092
       },
       {
         "left_alternative": "short-baseline",
         "right_alternative": "long-duration",
-        "correlation": 0.1076630066855765
+        "correlation": 0.10347224773246527
       },
       {
         "left_alternative": "intermediate",
         "right_alternative": "barbell",
-        "correlation": 0.10486879189676358
+        "correlation": 0.09043041992446482
       },
       {
         "left_alternative": "intermediate",
         "right_alternative": "long-duration",
-        "correlation": 0.11456831650796233
+        "correlation": 0.13850401445478677
       },
       {
         "left_alternative": "barbell",
         "right_alternative": "long-duration",
-        "correlation": 0.1114701801384272
+        "correlation": 0.15092281776012845
       }
     ]
   },

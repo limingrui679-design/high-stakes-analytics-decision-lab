@@ -1,12 +1,19 @@
 {
-  "grain": "patient follow-up",
-  "primary_key": null,
+  "grain": "NHIS sampled adult linked to public mortality status",
+  "primary_key": "publicid",
   "fields": {
-    "age": "age in years",
-    "ejection_fraction": "percentage of blood leaving the heart per contraction",
-    "serum_creatinine": "serum creatinine, mg/dL",
-    "time": "follow-up time in days",
-    "DEATH_EVENT": "death observed during follow-up (1/0)",
-    "sex": "binary coding supplied by the source; interpretation limited"
-  }
+    "publicid": "publicid",
+    "cohort_year": "cohort year",
+    "age": "age",
+    "sex": "sex",
+    "race": "race",
+    "survey_weight": "survey weight",
+    "hypertension": "hypertension",
+    "diabetes": "diabetes",
+    "ever_smoked": "ever smoked",
+    "current_smoking": "current smoking",
+    "death_within_two_years": "death within two years"
+  },
+  "target": "death_within_two_years",
+  "claim_boundary": "Survey-linked observational prediction; no diagnosis, treatment, or individual clinical recommendation."
 }

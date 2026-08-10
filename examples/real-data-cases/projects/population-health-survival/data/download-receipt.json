@@ -1,14 +1,19 @@
 {
   "project_id": "population-health-survival",
-  "source_id": "uci-heart-failure-519",
-  "verified_at": "2026-07-31T02:38:35.378131+08:00",
+  "source_id": "cdc-nhis-2016-2017-linked-mortality",
+  "verified_at": "2026-08-10T20:55:51.589266+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
     {
-      "path": "data/raw/uci-heart-failure.zip",
-      "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7",
-      "bytes": 12421
+      "path": "data/raw/nhis-2016-2017-linked-mortality-extract.csv",
+      "sha256": "ef2a7d308ebe9020d1d2bb53ef98115b9a60dbacacc1697c136512e8646d947a",
+      "bytes": 3447056
+    },
+    {
+      "path": "data/raw/nhis-2016-2017-linked-mortality-extract.source-lock.json",
+      "sha256": "7e660b86cddc42955e56d77842eadda11cd7e5c2dd8331fa7416a8adccb3dcd7",
+      "bytes": 1070
     }
   ]
 }

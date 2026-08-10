@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "opportunity-zone-policy-evaluation",
+  "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
+  "title": "Opportunity Zone One-Year Policy Evidence Screen",
+  "project_title": "Opportunity Zone One-Year Policy Evidence Screen",
+  "publisher": "CDFI Fund and U.S. Census Bureau",
+  "landing_page": "https://www.cdfifund.gov/opportunity-zones",
+  "version": "2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel",
+  "accessed_at": "2026-08-10",
+  "license": "U.S. Government public data",
+  "license_url": "https://www.cdfifund.gov/opportunity-zones",
+  "redistribution": "Public federal data; source workbook and national tables are minimized to a tract panel.",
+  "expected_rows": 2956,
+  "grain": "one Massachusetts tract-year row",
+  "raw_files": [
+    {
+      "path": "data/raw/massachusetts-qoz-tract-panel.csv",
+      "sha256": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae"
+    },
+    {
+      "path": "data/raw/massachusetts-qoz-tract-panel.source-lock.json",
+      "sha256": "20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+    "status": "approved_for_public_minimized_analysis"
+  },
+  "citation": "CDFI Fund and U.S. Census Bureau. 2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel."
+}

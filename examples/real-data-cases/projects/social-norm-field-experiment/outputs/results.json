@@ -1,0 +1,251 @@
+{
+  "project_id": "social-norm-field-experiment",
+  "data": {
+    "aggregate_rows": 10,
+    "source_individuals": 344084
+  },
+  "study_design": {
+    "design": "household-randomized field experiment",
+    "estimand": "individual-level intent-to-treat difference in turnout",
+    "variance": "OLS sandwich variance clustered by household",
+    "repository_storage": "non-identifying aggregates only"
+  },
+  "turnout_rates": {
+    "Civic Duty": 0.31453765241509235,
+    "Control": 0.2966383083302395,
+    "Hawthorne": 0.3223746204585907,
+    "Neighbors": 0.3779482212507526,
+    "Self": 0.3451514992935266
+  },
+  "intent_to_treat": {
+    "Civic Duty": {
+      "treatment": "Civic Duty",
+      "control": "Control",
+      "treated_individuals": 38218,
+      "control_individuals": 191243,
+      "household_clusters": 120000,
+      "treated_turnout_rate": 0.31453765241509235,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.01789934408485283,
+      "household_cluster_robust_standard_error": 0.0032366193606381015,
+      "confidence_interval_95": [
+        0.011555570138002152,
+        0.02424311803170351
+      ]
+    },
+    "Hawthorne": {
+      "treatment": "Hawthorne",
+      "control": "Control",
+      "treated_individuals": 38204,
+      "control_individuals": 191243,
+      "household_clusters": 120001,
+      "treated_turnout_rate": 0.3223746204585907,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.025736312128351202,
+      "household_cluster_robust_standard_error": 0.0032578857405514993,
+      "confidence_interval_95": [
+        0.019350856076870263,
+        0.032121768179832144
+      ]
+    },
+    "Neighbors": {
+      "treatment": "Neighbors",
+      "control": "Control",
+      "treated_individuals": 38201,
+      "control_individuals": 191243,
+      "household_clusters": 119999,
+      "treated_turnout_rate": 0.3779482212507526,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.0813099129205131,
+      "household_cluster_robust_standard_error": 0.0033695474210769303,
+      "confidence_interval_95": [
+        0.0747055999752023,
+        0.08791422586582388
+      ]
+    },
+    "Self": {
+      "treatment": "Self",
+      "control": "Control",
+      "treated_individuals": 38218,
+      "control_individuals": 191243,
+      "household_clusters": 119999,
+      "treated_turnout_rate": 0.3451514992935266,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.0485131909632871,
+      "household_cluster_robust_standard_error": 0.003300012245704015,
+      "confidence_interval_95": [
+        0.04204516696170723,
+        0.05498121496486697
+      ]
+    }
+  },
+  "decision_support": {
+    "status": "observed_field_effect_no_new_campaign_authorization",
+    "reversal_conditions": [
+      "A replication in the intended population fails to reproduce the effect.",
+      "Ethics or legal review rejects the intervention content.",
+      "Household clustering or interference assumptions require a different estimand."
+    ]
+  },
+  "headline_metrics": [
+    "Source individuals analyzed: 344,084",
+    "Largest observed ITT: Neighbors 8.1%",
+    "Household-clustered 95% interval: 7.5% to 8.8%",
+    "Causal scope: the randomized experiment only"
+  ],
+  "provenance": {
+    "source_id": "yale-isps-d001-terms-compliant-aggregate",
+    "citation": "Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference.",
+    "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
+    "license": "Yale ISPS data terms of use",
+    "accessed_at": "2026-08-10",
+    "raw_sha256": {
+      "terms-compliant-treatment-aggregate.csv": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6",
+      "cluster-robust-itt.json": "63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61",
+      "external-source-lock.json": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+    },
+    "config_sha256": "4e41e98b902f9ab0dbd5146c79e258eed8adcab1968fedac69c7bcff73bd7f19"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is yale-isps-d001-terms-compliant-aggregate.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.confidence_level",
+      "label": "confidence level",
+      "value_or_distribution": 0.95,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for confidence_level; source dataset is yale-isps-d001-terms-compliant-aggregate.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Causal scope is the historical randomized experiment; no new campaign authorization."
+    },
+    {
+      "parameter_path": "config.parameters.cluster_unit",
+      "label": "cluster unit",
+      "value_or_distribution": "household",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for cluster_unit; source dataset is yale-isps-d001-terms-compliant-aggregate.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Causal scope is the historical randomized experiment; no new campaign authorization."
+    },
+    {
+      "parameter_path": "config.parameters.primary_outcome",
+      "label": "primary outcome",
+      "value_or_distribution": "voted",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for primary_outcome; source dataset is yale-isps-d001-terms-compliant-aggregate.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Causal scope is the historical randomized experiment; no new campaign authorization."
+    }
+  ]
+}

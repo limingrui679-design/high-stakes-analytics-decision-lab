@@ -1,0 +1,20 @@
+{
+  "grain": "Massachusetts tract-year panel row",
+  "primary_key": [
+    "geoid",
+    "year"
+  ],
+  "fields": {
+    "geoid": "geoid",
+    "year": "year",
+    "qoz_2018": "qoz 2018",
+    "population": "population",
+    "poverty_universe": "poverty universe",
+    "poverty_count": "poverty count",
+    "median_household_income": "median household income",
+    "median_gross_rent": "median gross rent",
+    "civilian_labor_force": "civilian labor force",
+    "unemployed": "unemployed",
+    "workplace_jobs": "workplace jobs"
+  }
+}

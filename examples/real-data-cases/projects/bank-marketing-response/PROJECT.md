@@ -1,11 +1,11 @@
-# R5 · Bank Marketing Response and Capacity Planning
+# R5 · Capacity-Constrained Marketing Pilot
 
 **Portfolio role:** business analytics, marketing analytics, statistics, and decision analysis  
 **Decision boundary:** compare which records to review under a fixed contact capacity—not claim causal campaign lift, customer value, or profitability.
 
 ## Analytical question
 
-Can pre-contact information improve held-out response concentration, and how stable is that improvement when campaign-period dependence and capacity constraints are respected?
+Can pre-contact information improve held-out response concentration under a fixed outreach capacity, and is the evidence strong enough to justify a randomized pilot rather than broad deployment?
 
 ## Evidence and methods
 

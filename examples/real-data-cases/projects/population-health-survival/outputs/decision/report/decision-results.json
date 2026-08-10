@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-30T18:38:47.390421+00:00",
+    "generated_at": "2026-08-10T12:57:17.169541+00:00",
     "case_id": "real-population-health-survival",
-    "case_hash_sha256": "9c2215f0017eefaaaf248aa7b58ff385d44dd640cfe3bcdf442257520633ba90",
-    "samples": 10000,
-    "seed": 20260726,
+    "case_hash_sha256": "8526fe9a41beeb246509a268cb305e8dc6a5c3f4c4dc2ff3e810e2b858277a18",
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -16,44 +16,44 @@
     "owner": "Hypothetical domain review panel; no real owner authorization",
     "question": "Which follow-up triage rule should advance to prospective clinical validation?",
     "time_horizon": "Prospective pilot design; no clinical deployment",
-    "recommendation": "dual-marker-triage",
+    "recommendation": "top-20%-review",
     "recommendation_available": true,
     "decision_ready": false,
     "decision_status": "provisional",
     "decision_status_label": "Provisional—validate before action",
     "decision_use": "exploratory",
     "ranking": [
-      "dual-marker-triage",
-      "ejection-triage",
-      "current-age-rule"
+      "top-20%-review",
+      "top-30%-review",
+      "baseline-top-10%-review"
     ],
     "pareto_frontier": [
-      "dual-marker-triage",
-      "ejection-triage",
-      "current-age-rule"
+      "top-20%-review",
+      "top-30%-review",
+      "baseline-top-10%-review"
     ],
     "pareto_frontier_unconstrained": [
-      "current-age-rule",
-      "ejection-triage",
-      "dual-marker-triage"
+      "baseline-top-10%-review",
+      "top-20%-review",
+      "top-30%-review"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.055033835677999576,
-    "weight_sensitivity_stability": 1.0,
-    "scenario_stability_probability_weighted": 1.0,
-    "scenario_stability_count": 1.0,
-    "robustness_score": 95.65299999999999,
+    "utility_margin": 0.002306322427535812,
+    "weight_sensitivity_stability": 0.5,
+    "scenario_stability_probability_weighted": 0.25,
+    "scenario_stability_count": 0.5,
+    "robustness_score": 46.25,
     "robustness_components": {
       "probability_best": {
-        "value": 0.8551,
+        "value": 0.25,
         "weight": 0.3
       },
       "weight_stability": {
-        "value": 1.0,
+        "value": 0.5,
         "weight": 0.25
       },
       "scenario_stability": {
-        "value": 1.0,
+        "value": 0.25,
         "weight": 0.25
       },
       "constraint_headroom": {
@@ -69,15 +69,18 @@
     },
     "readiness_checks": {
       "feasible_alternative": true,
-      "probability_best": true,
-      "weight_stability": true,
-      "scenario_stability": true,
+      "probability_best": false,
+      "weight_stability": false,
+      "scenario_stability": false,
       "scale_clipping": true,
       "parameter_provenance": true,
       "approval_scope": true,
       "operational_evidence": false
     },
     "blocking_reasons": [
+      "modeled preference separation is below threshold",
+      "the winner is sensitive to criterion weights",
+      "the winner changes across material scenarios",
       "evidence is not labeled for operational use"
     ],
     "max_constraint_violation_rate": 0.1,
@@ -155,35 +158,35 @@
       "label": "Observed evidence base",
       "probability": 0.75,
       "winners": [
-        "dual-marker-triage"
+        "top-30%-review"
       ],
-      "winner": "dual-marker-triage",
-      "recommended_option_wins": true
+      "winner": "top-30%-review",
+      "recommended_option_wins": false
     },
     {
       "scenario_id": "adverse-transfer",
       "label": "Adverse transfer to a new setting",
       "probability": 0.25,
       "winners": [
-        "dual-marker-triage"
+        "top-20%-review"
       ],
-      "winner": "dual-marker-triage",
+      "winner": "top-20%-review",
       "recommended_option_wins": true
     }
   ],
   "alternatives": {
-    "current-age-rule": {
-      "alternative_id": "current-age-rule",
-      "label": "Current Age Rule",
+    "baseline-top-10%-review": {
+      "alternative_id": "baseline-top-10%-review",
+      "label": "Baseline: Top 10% Review",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6359613867575993,
-      "utility_p05": 0.5712548005,
-      "utility_p95": 0.6912877424999999,
-      "cvar10": 0.5667158126160001,
-      "risk_adjusted_utility": 0.6186499932221995,
-      "value_score": 61.86499932221995,
+      "expected_utility": 0.7064089774899694,
+      "utility_p05": 0.6924503884600001,
+      "utility_p95": 0.7110618405,
+      "cvar10": 0.6924503884600023,
+      "risk_adjusted_utility": 0.7029193302324777,
+      "value_score": 70.29193302324776,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -195,69 +198,69 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.50760347336,
-          "normalized_score": 0.50760347336,
+          "mean": 0.4287009902000087,
+          "normalized_score": 0.4287009902000087,
           "scale_clipping_rate": 0.0,
-          "p05": 0.410526,
-          "p95": 0.597826
+          "p05": 0.40245399080000005,
+          "p95": 0.43744999
         },
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.39421371956800155,
-          "normalized_score": 0.605786280431995,
+          "mean": 0.10197281700000163,
+          "normalized_score": 0.898027183000021,
           "scale_clipping_rate": 0.0,
-          "p05": 0.337793,
-          "p95": 0.448161
+          "p05": 0.09997335,
+          "p95": 0.10797121800000001
         },
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.04839212076799936,
-          "normalized_score": 0.9032157584639976,
+          "mean": 0.011829245999999339,
+          "normalized_score": 0.9763415080000625,
           "scale_clipping_rate": 0.0,
-          "p05": 0.003573,
-          "p95": 0.122984
+          "p05": 0.0115973,
+          "p95": 0.012525084
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6433547055866637,
-          "p05": 0.5832512725,
-          "p95": 0.695290515,
-          "cvar10": 0.5779413018666668,
-          "risk_adjusted_utility": 0.6270013546566645,
-          "sample_count": 7500
+          "mean": 0.7110618404999688,
+          "p05": 0.7110618405,
+          "p95": 0.7110618405,
+          "cvar10": 0.7110618404999994,
+          "risk_adjusted_utility": 0.7110618404999764,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6137814302704019,
-          "p05": 0.5539600936000001,
-          "p95": 0.6665327155,
-          "cvar10": 0.5494790307520002,
-          "risk_adjusted_utility": 0.5977058303908015,
-          "sample_count": 2500
+          "mean": 0.6924503884599882,
+          "p05": 0.6924503884600001,
+          "p95": 0.6924503884600001,
+          "cvar10": 0.6924503884600007,
+          "risk_adjusted_utility": 0.6924503884599913,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.0447,
-      "probability_best_unconstrained": 0.0447,
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
-    "ejection-triage": {
-      "alternative_id": "ejection-triage",
-      "label": "Ejection Triage",
+    "top-20%-review": {
+      "alternative_id": "top-20%-review",
+      "label": "Top 20% Review",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6491027490679999,
-      "utility_p05": 0.5838401017,
-      "utility_p95": 0.7084924699999999,
-      "cvar10": 0.5789397075040004,
-      "risk_adjusted_utility": 0.6315619886770001,
-      "value_score": 63.156198867700006,
+      "expected_utility": 0.7684452297400343,
+      "utility_p05": 0.74755160596,
+      "utility_p95": 0.7754097709999999,
+      "cvar10": 0.7475516059600045,
+      "risk_adjusted_utility": 0.7632218237950268,
+      "value_score": 76.32218237950268,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -269,69 +272,69 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.517269502976001,
-          "normalized_score": 0.517269502976001,
+          "mean": 0.6246267747999682,
+          "normalized_score": 0.6246267747999682,
           "scale_clipping_rate": 0.0,
-          "p05": 0.431579,
-          "p95": 0.602151
+          "p05": 0.5863843192,
+          "p95": 0.63737426
         },
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.3182597661639985,
-          "normalized_score": 0.6817402338360099,
+          "mean": 0.20398446540000328,
+          "normalized_score": 0.79601553460005,
           "scale_clipping_rate": 0.0,
-          "p05": 0.274247,
-          "p95": 0.36481644
+          "p05": 0.19998477,
+          "p95": 0.21598355160000002
         },
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.07638119484399887,
-          "normalized_score": 0.8472376103120023,
+          "mean": 0.002882958599999954,
+          "normalized_score": 0.9942340828000293,
           "scale_clipping_rate": 0.0,
-          "p05": 0.006157,
-          "p95": 0.1564532439999996
+          "p05": 0.00282643,
+          "p95": 0.0030525444
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6562371591533331,
-          "p05": 0.59542535,
-          "p95": 0.7121544900000001,
-          "cvar10": 0.5905388869999999,
-          "risk_adjusted_utility": 0.6398125911149999,
-          "sample_count": 7500
+          "mean": 0.7754097710000466,
+          "p05": 0.775409771,
+          "p95": 0.775409771,
+          "cvar10": 0.7754097709999997,
+          "risk_adjusted_utility": 0.7754097710000349,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6276995188119994,
-          "p05": 0.5658055615,
-          "p95": 0.6848113735,
-          "cvar10": 0.561202716592,
-          "risk_adjusted_utility": 0.6110753182569996,
-          "sample_count": 2500
+          "mean": 0.7475516059599939,
+          "p05": 0.74755160596,
+          "p95": 0.74755160596,
+          "cvar10": 0.7475516059599988,
+          "risk_adjusted_utility": 0.7475516059599951,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.1002,
-      "probability_best_unconstrained": 0.1002,
+      "probability_best": 0.25,
+      "probability_best_unconstrained": 0.25,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
-    "dual-marker-triage": {
-      "alternative_id": "dual-marker-triage",
-      "label": "Dual Marker Triage",
+    "top-30%-review": {
+      "alternative_id": "top-30%-review",
+      "label": "Top 30% Review",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7053140922499993,
-      "utility_p05": 0.6352824119,
-      "utility_p95": 0.76560608,
-      "cvar10": 0.6304410206700007,
-      "risk_adjusted_utility": 0.6865958243549997,
-      "value_score": 68.65958243549997,
+      "expected_utility": 0.7672830717099886,
+      "utility_p05": 0.74181279034,
+      "utility_p95": 0.7757731655,
+      "cvar10": 0.7418127903399981,
+      "risk_adjusted_utility": 0.760915501367491,
+      "value_score": 76.09155013674909,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -343,54 +346,54 @@
         "high_risk_capture": {
           "label": "Observed event capture",
           "unit": "share",
-          "mean": 0.7256887240719985,
-          "normalized_score": 0.7256887240719985,
+          "mean": 0.7080803309999748,
+          "normalized_score": 0.7080803309999748,
           "scale_clipping_rate": 0.0,
-          "p05": 0.6461905200000001,
-          "p95": 0.808081
+          "p05": 0.664728474,
+          "p95": 0.72253095
         },
         "workload_share": {
           "label": "Follow-up workload",
           "unit": "share",
-          "mean": 0.43446850902800205,
-          "normalized_score": 0.5655314909719912,
+          "mean": 0.30599611380000463,
+          "normalized_score": 0.6940038861999946,
           "scale_clipping_rate": 0.0,
-          "p05": 0.381271,
-          "p95": 0.488294
+          "p05": 0.29999619,
+          "p95": 0.3239958852
         },
         "sex_selection_gap": {
           "label": "Recorded-sex selection gap",
           "unit": "absolute share",
-          "mean": 0.08181056174799933,
-          "normalized_score": 0.8363788765039913,
+          "mean": 0.019108486200000316,
+          "normalized_score": 0.9617830276000388,
           "scale_clipping_rate": 0.0,
-          "p05": 0.009979,
-          "p95": 0.18153180000000002
+          "p05": 0.01873381,
+          "p95": 0.0202325148
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7151248081133326,
-          "p05": 0.652800335,
-          "p95": 0.7700507550000001,
-          "cvar10": 0.6486303802666674,
-          "risk_adjusted_utility": 0.6985012011516663,
-          "sample_count": 7500
+          "mean": 0.7757731654999759,
+          "p05": 0.7757731655,
+          "p95": 0.7757731655,
+          "cvar10": 0.7757731654999989,
+          "risk_adjusted_utility": 0.7757731654999817,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6758819446599994,
-          "p05": 0.6115024981,
-          "p95": 0.732143827,
-          "cvar10": 0.6068829170799998,
-          "risk_adjusted_utility": 0.6586321877649994,
-          "sample_count": 2500
+          "mean": 0.7418127903400052,
+          "p05": 0.74181279034,
+          "p95": 0.74181279034,
+          "cvar10": 0.7418127903399994,
+          "risk_adjusted_utility": 0.7418127903400038,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.8551,
-      "probability_best_unconstrained": 0.8551,
+      "probability_best": 0.75,
+      "probability_best_unconstrained": 0.75,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     }
@@ -401,27 +404,27 @@
       "label": "↓ Observed event capture",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "dual-marker-triage",
+      "winner": "top-20%-review",
       "scores": {
-        "dual-marker-triage": 0.6822069608651764,
-        "ejection-triage": 0.654337104803764,
-        "current-age-rule": 0.6413710248284719
+        "top-20%-review": 0.7893669407764662,
+        "top-30%-review": 0.7721519368882427,
+        "baseline-top-10%-review": 0.7524687578587891
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.7017185689872942,
-          "cvar10": 0.6236721364988229,
-          "risk_adjusted_utility": 0.6822069608651764
+        "top-20%-review": {
+          "expected_utility": 0.7938249570823459,
+          "cvar10": 0.775992891858827,
+          "risk_adjusted_utility": 0.7893669407764662
         },
-        "ejection-triage": {
-          "expected_utility": 0.6723674395548227,
-          "cvar10": 0.6002461005505878,
-          "risk_adjusted_utility": 0.654337104803764
+        "top-30%-review": {
+          "expected_utility": 0.7777306141882441,
+          "cvar10": 0.7554159049882384,
+          "risk_adjusted_utility": 0.7721519368882427
         },
-        "current-age-rule": {
-          "expected_utility": 0.6586127832395313,
-          "cvar10": 0.5896457495952934,
-          "risk_adjusted_utility": 0.6413710248284719
+        "baseline-top-10%-review": {
+          "expected_utility": 0.755416269364659,
+          "cvar10": 0.7436262233411793,
+          "risk_adjusted_utility": 0.7524687578587891
         }
       }
     },
@@ -430,27 +433,27 @@
       "label": "↑ Observed event capture",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "dual-marker-triage",
+      "winner": "top-30%-review",
       "scores": {
-        "dual-marker-triage": 0.6906663443748161,
-        "ejection-triage": 0.6073813922093465,
-        "current-age-rule": 0.5943899069201612
+        "top-20%-review": 0.736009559181617,
+        "top-30%-review": 0.7492204358255115,
+        "baseline-top-10%-review": 0.6513474769887988
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.7090563715642445,
-          "cvar10": 0.6354962628065308,
-          "risk_adjusted_utility": 0.6906663443748161
+        "top-20%-review": {
+          "expected_utility": 0.742029595159162,
+          "cvar10": 0.7179494512489822,
+          "risk_adjusted_utility": 0.736009559181617
         },
-        "ejection-triage": {
-          "expected_utility": 0.624888479377632,
-          "cvar10": 0.55486013070449,
-          "risk_adjusted_utility": 0.6073813922093465
+        "top-30%-review": {
+          "expected_utility": 0.7564090989265319,
+          "cvar10": 0.7276544465224501,
+          "risk_adjusted_utility": 0.7492204358255115
         },
-        "current-age-rule": {
-          "expected_utility": 0.612385443480487,
-          "cvar10": 0.5404032972391839,
-          "risk_adjusted_utility": 0.5943899069201612
+        "baseline-top-10%-review": {
+          "expected_utility": 0.6554013879877857,
+          "cvar10": 0.639185743991838,
+          "risk_adjusted_utility": 0.6513474769887988
         }
       }
     },
@@ -459,27 +462,27 @@
       "label": "↓ Follow-up workload",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "dual-marker-triage",
+      "winner": "top-30%-review",
       "scores": {
-        "dual-marker-triage": 0.7007942482662216,
-        "ejection-triage": 0.6265346093725557,
-        "current-age-rule": 0.6207581058508878
+        "top-20%-review": 0.7599113861000025,
+        "top-30%-review": 0.7688501189250374,
+        "baseline-top-10%-review": 0.6814073021749816
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.7208454923919991,
-          "cvar10": 0.640640515888889,
-          "risk_adjusted_utility": 0.7007942482662216
+        "top-20%-review": {
+          "expected_utility": 0.7653818625333361,
+          "cvar10": 0.7434999568000019,
+          "risk_adjusted_utility": 0.7599113861000025
         },
-        "ejection-triage": {
-          "expected_utility": 0.645476361871556,
-          "cvar10": 0.5697093518755549,
-          "risk_adjusted_utility": 0.6265346093725557
+        "top-30%-review": {
+          "expected_utility": 0.7754252034333818,
+          "cvar10": 0.749124865400004,
+          "risk_adjusted_utility": 0.7688501189250374
         },
-        "current-age-rule": {
-          "expected_utility": 0.6393141763493319,
-          "cvar10": 0.5650898943555556,
-          "risk_adjusted_utility": 0.6207581058508878
+        "baseline-top-10%-review": {
+          "expected_utility": 0.6851180657666416,
+          "cvar10": 0.6702750114000013,
+          "risk_adjusted_utility": 0.6814073021749816
         }
       }
     },
@@ -488,27 +491,27 @@
       "label": "↑ Follow-up workload",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "dual-marker-triage",
+      "winner": "top-20%-review",
       "scores": {
-        "dual-marker-triage": 0.6697841595068255,
-        "ejection-triage": 0.6373439249848257,
-        "current-age-rule": 0.6159988083124347
+        "top-20%-review": 0.7671079897847944,
+        "top-30%-review": 0.751600950321721,
+        "baseline-top-10%-review": 0.7281725805608673
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.687081579039825,
-          "cvar10": 0.6178919009078266,
-          "risk_adjusted_utility": 0.6697841595068255
+        "top-20%-review": {
+          "expected_utility": 0.7720413564608871,
+          "cvar10": 0.7523078897565165,
+          "risk_adjusted_utility": 0.7671079897847944
         },
-        "ejection-triage": {
-          "expected_utility": 0.6533598122986083,
-          "cvar10": 0.5892962630434782,
-          "risk_adjusted_utility": 0.6373439249848257
+        "top-30%-review": {
+          "expected_utility": 0.7577249170782349,
+          "cvar10": 0.7332290500521796,
+          "risk_adjusted_utility": 0.751600950321721
         },
-        "current-age-rule": {
-          "expected_utility": 0.632025503323826,
-          "cvar10": 0.5679187232782609,
-          "risk_adjusted_utility": 0.6159988083124347
+        "baseline-top-10%-review": {
+          "expected_utility": 0.7314026564695638,
+          "cvar10": 0.7184823528347777,
+          "risk_adjusted_utility": 0.7281725805608673
         }
       }
     },
@@ -517,27 +520,27 @@
       "label": "↓ Recorded-sex selection gap",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "dual-marker-triage",
+      "winner": "top-30%-review",
       "scores": {
-        "dual-marker-triage": 0.6761833970752718,
-        "ejection-triage": 0.6149089849794547,
-        "current-age-rule": 0.5949076976900374
+        "top-20%-review": 0.7422284177854604,
+        "top-30%-review": 0.7427059093736658,
+        "baseline-top-10%-review": 0.678094397617265
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.6933991118632713,
-          "cvar10": 0.6245362527112731,
-          "risk_adjusted_utility": 0.6761833970752718
+        "top-20%-review": {
+          "expected_utility": 0.747918970370918,
+          "cvar10": 0.7251567600290877,
+          "risk_adjusted_utility": 0.7422284177854604
         },
-        "ejection-triage": {
-          "expected_utility": 0.6310904889549094,
-          "cvar10": 0.5663644730530908,
-          "risk_adjusted_utility": 0.6149089849794547
+        "top-30%-review": {
+          "expected_utility": 0.7496012575382216,
+          "cvar10": 0.7220198648799981,
+          "risk_adjusted_utility": 0.7427059093736658
         },
-        "current-age-rule": {
-          "expected_utility": 0.6116655347842922,
-          "cvar10": 0.5446341864072731,
-          "risk_adjusted_utility": 0.5949076976900374
+        "baseline-top-10%-review": {
+          "expected_utility": 0.6818696565345335,
+          "cvar10": 0.6667686208654596,
+          "risk_adjusted_utility": 0.678094397617265
         }
       }
     },
@@ -546,27 +549,27 @@
       "label": "↑ Recorded-sex selection gap",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "dual-marker-triage",
+      "winner": "top-20%-review",
       "scores": {
-        "dual-marker-triage": 0.6986436189366674,
-        "ejection-triage": 0.6513616035619987,
-        "current-age-rule": 0.6469409568477354
+        "top-20%-review": 0.7888804311400249,
+        "top-30%-review": 0.7831716693599942,
+        "baseline-top-10%-review": 0.7332609145399795
       },
       "score_details": {
-        "dual-marker-triage": {
-          "expected_utility": 0.7198768460560007,
-          "cvar10": 0.6349439375786675,
-          "risk_adjusted_utility": 0.6986436189366674
+        "top-20%-review": {
+          "expected_utility": 0.7935328800800346,
+          "cvar10": 0.7749230843199958,
+          "risk_adjusted_utility": 0.7888804311400249
         },
-        "ejection-triage": {
-          "expected_utility": 0.6711177336506648,
-          "cvar10": 0.592093213296,
-          "risk_adjusted_utility": 0.6513616035619987
+        "top-30%-review": {
+          "expected_utility": 0.7888941779199938,
+          "cvar10": 0.7660041436799949,
+          "risk_adjusted_utility": 0.7831716693599942
         },
-        "current-age-rule": {
-          "expected_utility": 0.6656563169472026,
-          "cvar10": 0.5907948765493339,
-          "risk_adjusted_utility": 0.6469409568477354
+        "baseline-top-10%-review": {
+          "expected_utility": 0.7364014808799721,
+          "cvar10": 0.7238392155200015,
+          "risk_adjusted_utility": 0.7332609145399795
         }
       }
     }
@@ -587,128 +590,128 @@
     ],
     "stress_multiplier": 1.35,
     "independent_baseline": {
-      "recommendation": "dual-marker-triage",
+      "recommendation": "top-20%-review",
       "ranking": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "feasible_alternatives": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "alternatives": {
-        "current-age-rule": {
-          "expected_utility": 0.6360052000001989,
-          "cvar10": 0.5704979491319995,
-          "risk_adjusted_utility": 0.6196283872831491,
+        "baseline-top-10%-review": {
+          "expected_utility": 0.7064089774899694,
+          "cvar10": 0.6924503884600023,
+          "risk_adjusted_utility": 0.7029193302324777,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.049
+          "probability_best": 0.0
         },
-        "ejection-triage": {
-          "expected_utility": 0.6491819342095998,
-          "cvar10": 0.5825845023039998,
-          "risk_adjusted_utility": 0.6325325762331998,
+        "top-20%-review": {
+          "expected_utility": 0.7684452297400343,
+          "cvar10": 0.7475516059600045,
+          "risk_adjusted_utility": 0.7632218237950268,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1107
+          "probability_best": 0.25
         },
-        "dual-marker-triage": {
-          "expected_utility": 0.705359674509399,
-          "cvar10": 0.6336281319920009,
-          "risk_adjusted_utility": 0.6874267888800494,
+        "top-30%-review": {
+          "expected_utility": 0.7672830717099886,
+          "cvar10": 0.7418127903399981,
+          "risk_adjusted_utility": 0.760915501367491,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8403
+          "probability_best": 0.75
         }
       }
     },
     "declared_correlation": {
-      "recommendation": "dual-marker-triage",
+      "recommendation": "top-20%-review",
       "ranking": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "feasible_alternatives": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "alternatives": {
-        "current-age-rule": {
-          "expected_utility": 0.6359613867575993,
-          "cvar10": 0.5667158126160001,
-          "risk_adjusted_utility": 0.6186499932221995,
+        "baseline-top-10%-review": {
+          "expected_utility": 0.7064089774899694,
+          "cvar10": 0.6924503884600023,
+          "risk_adjusted_utility": 0.7029193302324777,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0447
+          "probability_best": 0.0
         },
-        "ejection-triage": {
-          "expected_utility": 0.6491027490679999,
-          "cvar10": 0.5789397075040004,
-          "risk_adjusted_utility": 0.6315619886770001,
+        "top-20%-review": {
+          "expected_utility": 0.7684452297400343,
+          "cvar10": 0.7475516059600045,
+          "risk_adjusted_utility": 0.7632218237950268,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1002
+          "probability_best": 0.25
         },
-        "dual-marker-triage": {
-          "expected_utility": 0.7053140922499993,
-          "cvar10": 0.6304410206700007,
-          "risk_adjusted_utility": 0.6865958243549997,
+        "top-30%-review": {
+          "expected_utility": 0.7672830717099886,
+          "cvar10": 0.7418127903399981,
+          "risk_adjusted_utility": 0.760915501367491,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8551
+          "probability_best": 0.75
         }
       }
     },
     "correlation_stress": {
-      "recommendation": "dual-marker-triage",
+      "recommendation": "top-20%-review",
       "ranking": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "feasible_alternatives": [
-        "dual-marker-triage",
-        "ejection-triage",
-        "current-age-rule"
+        "top-20%-review",
+        "top-30%-review",
+        "baseline-top-10%-review"
       ],
       "alternatives": {
-        "current-age-rule": {
-          "expected_utility": 0.6359499503741998,
-          "cvar10": 0.5638153328879991,
-          "risk_adjusted_utility": 0.6179162960026496,
+        "baseline-top-10%-review": {
+          "expected_utility": 0.7064089774899694,
+          "cvar10": 0.6924503884600023,
+          "risk_adjusted_utility": 0.7029193302324777,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0405
+          "probability_best": 0.0
         },
-        "ejection-triage": {
-          "expected_utility": 0.6490840153678005,
-          "cvar10": 0.5763028090079996,
-          "risk_adjusted_utility": 0.6308887137778503,
+        "top-20%-review": {
+          "expected_utility": 0.7684452297400343,
+          "cvar10": 0.7475516059600045,
+          "risk_adjusted_utility": 0.7632218237950268,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0932
+          "probability_best": 0.25
         },
-        "dual-marker-triage": {
-          "expected_utility": 0.7052972915448001,
-          "cvar10": 0.6279091147019995,
-          "risk_adjusted_utility": 0.6859502473340999,
+        "top-30%-review": {
+          "expected_utility": 0.7672830717099886,
+          "cvar10": 0.7418127903399981,
+          "risk_adjusted_utility": 0.760915501367491,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8663
+          "probability_best": 0.75
         }
       }
     },
@@ -716,19 +719,19 @@
     "recommendation_changed_under_stress": false,
     "realized_pairwise_utility_correlations": [
       {
-        "left_alternative": "current-age-rule",
-        "right_alternative": "ejection-triage",
-        "correlation": 0.2762875612209116
+        "left_alternative": "baseline-top-10%-review",
+        "right_alternative": "top-20%-review",
+        "correlation": 0.9999999999999915
       },
       {
-        "left_alternative": "current-age-rule",
-        "right_alternative": "dual-marker-triage",
-        "correlation": 0.2979596267631498
+        "left_alternative": "baseline-top-10%-review",
+        "right_alternative": "top-30%-review",
+        "correlation": 0.9999999999999128
       },
       {
-        "left_alternative": "ejection-triage",
-        "right_alternative": "dual-marker-triage",
-        "correlation": 0.28531984348146483
+        "left_alternative": "top-20%-review",
+        "right_alternative": "top-30%-review",
+        "correlation": 0.9999999999999912
       }
     ]
   },
@@ -743,9 +746,9 @@
     "sources": [
       {
         "id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
-        "as_of": "2026-07-27",
+        "as_of": "2026-08-10",
         "owner": "Original publisher and repository analysis author",
         "approved_decision_uses": [
           "exploratory"
@@ -958,7 +961,7 @@
         "path": "alternatives[0].metrics.high_risk_capture.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -974,10 +977,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.high_risk_capture.values",
+        "path": "alternatives[0].metrics.high_risk_capture.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -996,7 +999,7 @@
         "path": "alternatives[0].metrics.high_risk_capture.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1015,7 +1018,7 @@
         "path": "alternatives[0].metrics.workload_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1031,10 +1034,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.workload_share.values",
+        "path": "alternatives[0].metrics.workload_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1053,7 +1056,7 @@
         "path": "alternatives[0].metrics.workload_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1072,7 +1075,7 @@
         "path": "alternatives[0].metrics.sex_selection_gap.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1088,10 +1091,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.sex_selection_gap.values",
+        "path": "alternatives[0].metrics.sex_selection_gap.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1110,7 +1113,7 @@
         "path": "alternatives[0].metrics.sex_selection_gap.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1129,7 +1132,7 @@
         "path": "alternatives[1].metrics.high_risk_capture.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1145,10 +1148,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.high_risk_capture.values",
+        "path": "alternatives[1].metrics.high_risk_capture.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1167,7 +1170,7 @@
         "path": "alternatives[1].metrics.high_risk_capture.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1186,7 +1189,7 @@
         "path": "alternatives[1].metrics.workload_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1202,10 +1205,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.workload_share.values",
+        "path": "alternatives[1].metrics.workload_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1224,7 +1227,7 @@
         "path": "alternatives[1].metrics.workload_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1243,7 +1246,7 @@
         "path": "alternatives[1].metrics.sex_selection_gap.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1259,10 +1262,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.sex_selection_gap.values",
+        "path": "alternatives[1].metrics.sex_selection_gap.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1281,7 +1284,7 @@
         "path": "alternatives[1].metrics.sex_selection_gap.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1300,7 +1303,7 @@
         "path": "alternatives[2].metrics.high_risk_capture.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1316,10 +1319,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.high_risk_capture.values",
+        "path": "alternatives[2].metrics.high_risk_capture.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1338,7 +1341,7 @@
         "path": "alternatives[2].metrics.high_risk_capture.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1357,7 +1360,7 @@
         "path": "alternatives[2].metrics.workload_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1373,10 +1376,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.workload_share.values",
+        "path": "alternatives[2].metrics.workload_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1395,7 +1398,7 @@
         "path": "alternatives[2].metrics.workload_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1414,7 +1417,7 @@
         "path": "alternatives[2].metrics.sex_selection_gap.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1430,10 +1433,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.sex_selection_gap.values",
+        "path": "alternatives[2].metrics.sex_selection_gap.value",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1452,7 +1455,7 @@
         "path": "alternatives[2].metrics.sex_selection_gap.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "population-health-survival-analysis-output",
-        "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1705,88 +1708,88 @@
       "none": "A fixed modeled quantity with no sampled marginal variation."
     },
     "counts": {
-      "none": 0,
-      "parameter": 9,
+      "none": 9,
+      "parameter": 0,
       "process": 0,
       "scenario": 0
     },
     "records": [
       {
         "path": "alternatives[0].metrics.high_risk_capture",
-        "alternative_id": "current-age-rule",
+        "alternative_id": "baseline-top-10%-review",
         "criterion_id": "high_risk_capture",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[0].metrics.workload_share",
-        "alternative_id": "current-age-rule",
+        "alternative_id": "baseline-top-10%-review",
         "criterion_id": "workload_share",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[0].metrics.sex_selection_gap",
-        "alternative_id": "current-age-rule",
+        "alternative_id": "baseline-top-10%-review",
         "criterion_id": "sex_selection_gap",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[1].metrics.high_risk_capture",
-        "alternative_id": "ejection-triage",
+        "alternative_id": "top-20%-review",
         "criterion_id": "high_risk_capture",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[1].metrics.workload_share",
-        "alternative_id": "ejection-triage",
+        "alternative_id": "top-20%-review",
         "criterion_id": "workload_share",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[1].metrics.sex_selection_gap",
-        "alternative_id": "ejection-triage",
+        "alternative_id": "top-20%-review",
         "criterion_id": "sex_selection_gap",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[2].metrics.high_risk_capture",
-        "alternative_id": "dual-marker-triage",
+        "alternative_id": "top-30%-review",
         "criterion_id": "high_risk_capture",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[2].metrics.workload_share",
-        "alternative_id": "dual-marker-triage",
+        "alternative_id": "top-30%-review",
         "criterion_id": "workload_share",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
         "path": "alternatives[2].metrics.sex_selection_gap",
-        "alternative_id": "dual-marker-triage",
+        "alternative_id": "top-30%-review",
         "criterion_id": "sex_selection_gap",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       }
     ]
   },
   "evidence": {
     "type": "source-backed exploratory project evidence",
     "decision_use": "exploratory",
-    "as_of": "2026-07-27",
+    "as_of": "2026-08-10",
     "sources": [
-      "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R",
+      "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.",
       "projects/population-health-survival/outputs/results.json"
     ],
     "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
     "limitations": [
-      "Small observational cohort; selection and treatment information are incomplete; thresholds were not prospectively registered.",
+      "Public linked mortality is observational and uses public-use linkage fields; the simple score is not a diagnostic model and variance estimates do not replace a full complex-survey analysis.",
       "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
     ]
   },

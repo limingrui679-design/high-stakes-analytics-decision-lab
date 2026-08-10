@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-30T18:39:26.774046+00:00",
+    "generated_at": "2026-08-10T12:57:53.628415+00:00",
     "case_id": "real-spatial-equity-planning",
-    "case_hash_sha256": "b415e08e6d44ff656cac03f2e454798d876b19bb6a6cecb5578623dfd60ab6e9",
-    "samples": 10000,
-    "seed": 20260726,
+    "case_hash_sha256": "42eac429bfe2581fb6c055cbbcf6b6e067308345715450f48b207853409d8a1f",
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -34,14 +34,14 @@
       "baseline-poverty-priority"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.019660409890365327,
+    "utility_margin": 0.01958662468482497,
     "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 95.416,
+    "robustness_score": 95.66999999999999,
     "robustness_components": {
       "probability_best": {
-        "value": 0.8472,
+        "value": 0.8556666666666667,
         "weight": 0.3
       },
       "weight_stability": {
@@ -172,14 +172,14 @@
       "alternative_id": "baseline-poverty-priority",
       "label": "Baseline: Poverty Priority",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7009568048616243,
-      "utility_p05": 0.6499056751216,
-      "utility_p95": 0.73421125314,
-      "cvar10": 0.6484378526642646,
-      "risk_adjusted_utility": 0.6878270668122843,
-      "value_score": 68.78270668122843,
+      "expected_utility": 0.70123170602701,
+      "utility_p05": 0.6497368549488001,
+      "utility_p95": 0.73538003425,
+      "cvar10": 0.6481705973796005,
+      "risk_adjusted_utility": 0.6879664288651577,
+      "value_score": 68.79664288651577,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -191,54 +191,54 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.7677027599475992,
-          "normalized_score": 0.7677027599475992,
+          "mean": 0.7686791996826687,
+          "normalized_score": 0.7686791996826687,
           "scale_clipping_rate": 0.0,
-          "p05": 0.707138036,
+          "p05": 0.7081682520000001,
           "p95": 0.8102524
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.6706109635227947,
-          "normalized_score": 0.6706109635227947,
+          "mean": 0.6701929406546668,
+          "normalized_score": 0.6701929406546668,
           "scale_clipping_rate": 0.0,
-          "p05": 0.604313592,
-          "p95": 0.7257916
+          "p05": 0.6041230599999999,
+          "p95": 0.7263319
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 19.805818586944216,
-          "normalized_score": 0.6038836282611093,
+          "mean": 19.810365764830646,
+          "normalized_score": 0.6037926847033865,
           "scale_clipping_rate": 0.0,
-          "p05": 18.9386495,
-          "p95": 21.288581352
+          "p05": 18.9465707,
+          "p95": 21.285141665399998
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7143331250151482,
-          "p05": 0.69035178174,
-          "p95": 0.7361470103100001,
-          "cvar10": 0.6890913452293328,
-          "risk_adjusted_utility": 0.7080226800686944,
-          "sample_count": 7500
+          "mean": 0.7146598211787552,
+          "p05": 0.69071559844,
+          "p95": 0.73720749997,
+          "cvar10": 0.6891667875244438,
+          "risk_adjusted_utility": 0.7082865627651773,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.660827844401049,
-          "p05": 0.6399576299984001,
-          "p95": 0.6807122199960001,
-          "cvar10": 0.6382980119174401,
-          "risk_adjusted_utility": 0.6551953862801467,
-          "sample_count": 2500
+          "mean": 0.6609473605717758,
+          "p05": 0.6387328024651999,
+          "p95": 0.6820535666248,
+          "cvar10": 0.63724994612768,
+          "risk_adjusted_utility": 0.6550230069607519,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.8472,
-      "probability_best_unconstrained": 0.8472,
+      "probability_best": 0.8556666666666667,
+      "probability_best_unconstrained": 0.8556666666666667,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -246,14 +246,14 @@
       "alternative_id": "transit-priority",
       "label": "Transit Priority",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5074626103032246,
-      "utility_p05": 0.4612045728859999,
-      "utility_p95": 0.54377827545,
-      "cvar10": 0.45961895061883173,
-      "risk_adjusted_utility": 0.4955016953821264,
-      "value_score": 49.55016953821264,
+      "expected_utility": 0.5078876101075404,
+      "utility_p05": 0.4628014034908,
+      "utility_p95": 0.5423114965499999,
+      "cvar10": 0.4606645200616269,
+      "risk_adjusted_utility": 0.496081837596062,
+      "value_score": 49.6081837596062,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -265,49 +265,49 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.6192036137843993,
-          "normalized_score": 0.6192036137843993,
+          "mean": 0.6200308539706658,
+          "normalized_score": 0.6200308539706658,
           "scale_clipping_rate": 0.0,
-          "p05": 0.562270788,
-          "p95": 0.6697264
+          "p05": 0.561474436,
+          "p95": 0.6677424
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.40871840614360083,
-          "normalized_score": 0.40871840614360083,
+          "mean": 0.4087866586213348,
+          "normalized_score": 0.4087866586213348,
           "scale_clipping_rate": 0.0,
-          "p05": 0.35241363600000003,
-          "p95": 0.4693328
+          "p05": 0.35239834100000006,
+          "p95": 0.4632886
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 28.557614512503864,
-          "normalized_score": 0.4288477097499291,
+          "mean": 28.550401174181406,
+          "normalized_score": 0.42899197651637233,
           "scale_clipping_rate": 0.0,
-          "p05": 27.2295081,
+          "p05": 27.2274301,
           "p95": 30.706639812000002
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5182983960898682,
-          "p05": 0.49067820763,
-          "p95": 0.54601777013,
-          "cvar10": 0.4891641585381329,
-          "risk_adjusted_utility": 0.5110148367019344,
-          "sample_count": 7500
+          "mean": 0.5187251622167102,
+          "p05": 0.49250304286,
+          "p95": 0.5452325569300001,
+          "cvar10": 0.4907336459075552,
+          "risk_adjusted_utility": 0.5117272831394214,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.47495525294330265,
-          "p05": 0.4493988208268,
-          "p95": 0.5015012791051999,
-          "cvar10": 0.4478619968589439,
-          "risk_adjusted_utility": 0.46818193892221294,
-          "sample_count": 2500
+          "mean": 0.47537495378003214,
+          "p05": 0.45073469247160003,
+          "p95": 0.4999772665416,
+          "cvar10": 0.4491322625841068,
+          "risk_adjusted_utility": 0.4688142809810508,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -320,14 +320,14 @@
       "alternative_id": "composite-equity",
       "label": "Composite Equity",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6816153125068385,
-      "utility_p05": 0.6292473534884002,
-      "utility_p95": 0.7180137556999999,
-      "cvar10": 0.6278206901671606,
-      "risk_adjusted_utility": 0.668166656921919,
-      "value_score": 66.8166656921919,
+      "expected_utility": 0.6816524589990481,
+      "utility_p05": 0.6304279775820001,
+      "utility_p95": 0.71815282992,
+      "cvar10": 0.6285618397241866,
+      "risk_adjusted_utility": 0.6683798041803327,
+      "value_score": 66.83798041803327,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -339,54 +339,54 @@
         "need_coverage": {
           "label": "Need-weighted coverage",
           "unit": "share",
-          "mean": 0.7645203665439954,
-          "normalized_score": 0.7645203665439954,
+          "mean": 0.7641371418093319,
+          "normalized_score": 0.7641371418093319,
           "scale_clipping_rate": 0.0,
-          "p05": 0.701909032,
-          "p95": 0.8108721
+          "p05": 0.702313372,
+          "p95": 0.8103994
         },
         "high_poverty_coverage": {
           "label": "High-poverty population coverage",
           "unit": "share",
-          "mean": 0.643077405314003,
-          "normalized_score": 0.643077405314003,
+          "mean": 0.6435222003120004,
+          "normalized_score": 0.6435222003120004,
           "scale_clipping_rate": 0.0,
-          "p05": 0.5753954160000001,
-          "p95": 0.703383
+          "p05": 0.576403184,
+          "p95": 0.7041736000000001
         },
         "population_weighted_distance_km": {
           "label": "Population-weighted distance",
           "unit": "km",
-          "mean": 21.873986074465908,
-          "normalized_score": 0.5625202785106852,
+          "mean": 21.860506231087975,
+          "normalized_score": 0.5627898753782394,
           "scale_clipping_rate": 0.0,
-          "p05": 20.8018655,
-          "p95": 23.575432536
+          "p05": 20.7362142,
+          "p95": 23.546651832000002
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6949181258148798,
-          "p05": 0.6698031898000001,
-          "p95": 0.7202650624,
-          "cvar10": 0.6683964492829333,
-          "risk_adjusted_utility": 0.6882877066818931,
-          "sample_count": 7500
+          "mean": 0.6949826177993772,
+          "p05": 0.6699644351,
+          "p95": 0.72039028388,
+          "cvar10": 0.6683133234711108,
+          "risk_adjusted_utility": 0.6883152942173106,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6417068725827101,
-          "p05": 0.6190930525759999,
-          "p95": 0.6649205918272001,
-          "cvar10": 0.617491314113632,
-          "risk_adjusted_utility": 0.6356529829654406,
-          "sample_count": 2500
+          "mean": 0.6416619825980585,
+          "p05": 0.6190006933976,
+          "p95": 0.6641921345520001,
+          "cvar10": 0.6181307845091201,
+          "risk_adjusted_utility": 0.6357791830758239,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.1528,
-      "probability_best_unconstrained": 0.1528,
+      "probability_best": 0.14433333333333334,
+      "probability_best_unconstrained": 0.14433333333333334,
       "pareto_efficient": false,
       "pareto_efficient_unconstrained": false
     }
@@ -399,25 +399,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6762455582105746,
-        "composite-equity": 0.653685889457325,
-        "transit-priority": 0.4759580117562922
+        "baseline-poverty-priority": 0.6762175952091891,
+        "composite-equity": 0.6539814437084825,
+        "transit-priority": 0.4765202372295808
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.6891781069052744,
-          "cvar10": 0.6374479121264753,
-          "risk_adjusted_utility": 0.6762455582105746
+          "expected_utility": 0.6893292071465997,
+          "cvar10": 0.636882759396957,
+          "risk_adjusted_utility": 0.6762175952091891
         },
         "composite-equity": {
-          "expected_utility": 0.6669850088532208,
-          "cvar10": 0.6137885312696377,
-          "risk_adjusted_utility": 0.653685889457325
+          "expected_utility": 0.6670963385031166,
+          "cvar10": 0.6146367593245805,
+          "risk_adjusted_utility": 0.6539814437084825
         },
         "transit-priority": {
-          "expected_utility": 0.48774360968890096,
-          "cvar10": 0.440601217958466,
-          "risk_adjusted_utility": 0.4759580117562922
+          "expected_utility": 0.4880976258964031,
+          "cvar10": 0.44178807122911384,
+          "risk_adjusted_utility": 0.4765202372295808
         }
       }
     },
@@ -428,25 +428,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6997728215886839,
-        "composite-equity": 0.6831352937923761,
-        "transit-priority": 0.5157086087945212
+        "baseline-poverty-priority": 0.7001019388706132,
+        "composite-equity": 0.6832525430498915,
+        "transit-priority": 0.5163136047069741
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7132162659998637,
-          "cvar10": 0.6594424883551447,
-          "risk_adjusted_utility": 0.6997728215886839
+          "expected_utility": 0.7136200211882533,
+          "cvar10": 0.6595476919176929,
+          "risk_adjusted_utility": 0.7001019388706132
         },
         "composite-equity": {
-          "expected_utility": 0.6968427714116239,
-          "cvar10": 0.6420128609346328,
-          "risk_adjusted_utility": 0.6831352937923761
+          "expected_utility": 0.6968027068621611,
+          "cvar10": 0.6426020516130829,
+          "risk_adjusted_utility": 0.6832525430498915
         },
         "transit-priority": {
-          "expected_utility": 0.5279864680854796,
-          "cvar10": 0.4788750309216459,
-          "risk_adjusted_utility": 0.5157086087945212
+          "expected_utility": 0.5284853487762793,
+          "cvar10": 0.47979837249905843,
+          "risk_adjusted_utility": 0.5163136047069741
         }
       }
     },
@@ -457,25 +457,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6920659987214093,
-        "composite-equity": 0.673507992219994,
-        "transit-priority": 0.5084688099994588
+        "baseline-poverty-priority": 0.692371326040624,
+        "composite-equity": 0.6736459965560808,
+        "transit-priority": 0.5090447511432122
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.704964746170523,
-          "cvar10": 0.6533697563740684,
-          "risk_adjusted_utility": 0.6920659987214093
+          "expected_utility": 0.7053311656044915,
+          "cvar10": 0.6534918073490217,
+          "risk_adjusted_utility": 0.692371326040624
         },
         "composite-equity": {
-          "expected_utility": 0.686705224777589,
-          "cvar10": 0.6339162945472093,
-          "risk_adjusted_utility": 0.673507992219994
+          "expected_utility": 0.6866885309011089,
+          "cvar10": 0.6345183935209966,
+          "risk_adjusted_utility": 0.6736459965560808
         },
         "transit-priority": {
-          "expected_utility": 0.5205042976450617,
-          "cvar10": 0.47236234706265023,
-          "risk_adjusted_utility": 0.5084688099994588
+          "expected_utility": 0.5209764150208128,
+          "cvar10": 0.4732497595104103,
+          "risk_adjusted_utility": 0.5090447511432122
         }
       }
     },
@@ -486,25 +486,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6829335302801812,
-        "composite-equity": 0.6620263851586619,
-        "transit-priority": 0.4807289367432861
+        "baseline-poverty-priority": 0.6828906456438227,
+        "composite-equity": 0.662321012108848,
+        "transit-priority": 0.4812938968988441
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.6964372114707369,
-          "cvar10": 0.6424224867085143,
-          "risk_adjusted_utility": 0.6829335302801812
+          "expected_utility": 0.6966089111843197,
+          "cvar10": 0.6417358490223319,
+          "risk_adjusted_utility": 0.6828906456438227
         },
         "composite-equity": {
-          "expected_utility": 0.675875624201519,
-          "cvar10": 0.6204786680300903,
-          "risk_adjusted_utility": 0.6620263851586619
+          "expected_utility": 0.6759734843009775,
+          "cvar10": 0.6213635955324596,
+          "risk_adjusted_utility": 0.662321012108848
         },
         "transit-priority": {
-          "expected_utility": 0.4927560267049851,
-          "cvar10": 0.44464766685818924,
-          "risk_adjusted_utility": 0.4807289367432861
+          "expected_utility": 0.4931278939287435,
+          "cvar10": 0.4457919058091459,
+          "risk_adjusted_utility": 0.4812938968988441
         }
       }
     },
@@ -515,25 +515,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.6942654150029225,
-        "composite-equity": 0.6762041214196328,
-        "transit-priority": 0.5009024687055568
+        "baseline-poverty-priority": 0.6944065638241453,
+        "composite-equity": 0.6764074847066365,
+        "transit-priority": 0.5014937935761659
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.707890603190229,
-          "cvar10": 0.653389850441003,
-          "risk_adjusted_utility": 0.6942654150029225
+          "expected_utility": 0.7081916361215557,
+          "cvar10": 0.6530513469319142,
+          "risk_adjusted_utility": 0.6944065638241453
         },
         "composite-equity": {
-          "expected_utility": 0.6901221006494208,
-          "cvar10": 0.6344501837302687,
-          "risk_adjusted_utility": 0.6762041214196328
+          "expected_utility": 0.6901426435433913,
+          "cvar10": 0.635202008196372,
+          "risk_adjusted_utility": 0.6764074847066365
         },
         "transit-priority": {
-          "expected_utility": 0.5130779603427483,
-          "cvar10": 0.46437599379398214,
-          "risk_adjusted_utility": 0.5009024687055568
+          "expected_utility": 0.51352301250691,
+          "cvar10": 0.4654061367839333,
+          "risk_adjusted_utility": 0.5014937935761659
         }
       }
     },
@@ -544,25 +544,25 @@
       "factor": 1.5,
       "winner": "baseline-poverty-priority",
       "scores": {
-        "baseline-poverty-priority": 0.679625644027734,
-        "composite-equity": 0.6579279076025962,
-        "transit-priority": 0.48860483161424495
+        "baseline-poverty-priority": 0.6797621201145797,
+        "composite-equity": 0.6581553863950128,
+        "transit-priority": 0.4891625080940209
       },
       "score_details": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.692131970625214,
-          "cvar10": 0.6421066642352938,
-          "risk_adjusted_utility": 0.679625644027734
+          "expected_utility": 0.6923736131794075,
+          "cvar10": 0.6419276409200965,
+          "risk_adjusted_utility": 0.6797621201145797
         },
         "composite-equity": {
-          "expected_utility": 0.6707884912344629,
-          "cvar10": 0.6193461567069961,
-          "risk_adjusted_utility": 0.6579279076025962
+          "expected_utility": 0.6708467695789747,
+          "cvar10": 0.620081236843127,
+          "risk_adjusted_utility": 0.6581553863950128
         },
         "transit-priority": {
-          "expected_utility": 0.5003158011620162,
-          "cvar10": 0.45347192297093103,
-          "risk_adjusted_utility": 0.48860483161424495
+          "expected_utility": 0.5007152797810703,
+          "cvar10": 0.45450419303287265,
+          "risk_adjusted_utility": 0.4891625080940209
         }
       }
     }
@@ -596,31 +596,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7010063483027479,
-          "cvar10": 0.6489669193068716,
-          "risk_adjusted_utility": 0.6879964910537788,
+          "expected_utility": 0.701200781607549,
+          "cvar10": 0.64852881166968,
+          "risk_adjusted_utility": 0.6880327891230817,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8371
+          "probability_best": 0.8423333333333334
         },
         "transit-priority": {
-          "expected_utility": 0.5075122658530542,
-          "cvar10": 0.46036217086141595,
-          "risk_adjusted_utility": 0.4957247421051446,
+          "expected_utility": 0.5078520954555235,
+          "cvar10": 0.46090231989541297,
+          "risk_adjusted_utility": 0.49611465156549583,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.6816657541800918,
-          "cvar10": 0.628335908817,
-          "risk_adjusted_utility": 0.6683332928393189,
+          "expected_utility": 0.6815865292878956,
+          "cvar10": 0.6287960802520268,
+          "risk_adjusted_utility": 0.6683889170289284,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1629
+          "probability_best": 0.15766666666666668
         }
       }
     },
@@ -638,31 +638,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.7009568048616243,
-          "cvar10": 0.6484378526642646,
-          "risk_adjusted_utility": 0.6878270668122843,
+          "expected_utility": 0.70123170602701,
+          "cvar10": 0.6481705973796005,
+          "risk_adjusted_utility": 0.6879664288651577,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8472
+          "probability_best": 0.8556666666666667
         },
         "transit-priority": {
-          "expected_utility": 0.5074626103032246,
-          "cvar10": 0.45961895061883173,
-          "risk_adjusted_utility": 0.4955016953821264,
+          "expected_utility": 0.5078876101075404,
+          "cvar10": 0.4606645200616269,
+          "risk_adjusted_utility": 0.496081837596062,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.6816153125068385,
-          "cvar10": 0.6278206901671606,
-          "risk_adjusted_utility": 0.668166656921919,
+          "expected_utility": 0.6816524589990481,
+          "cvar10": 0.6285618397241866,
+          "risk_adjusted_utility": 0.6683798041803327,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1528
+          "probability_best": 0.14433333333333334
         }
       }
     },
@@ -680,31 +680,31 @@
       ],
       "alternatives": {
         "baseline-poverty-priority": {
-          "expected_utility": 0.700943873065262,
-          "cvar10": 0.6480228165108723,
-          "risk_adjusted_utility": 0.6877136089266646,
+          "expected_utility": 0.701239444744997,
+          "cvar10": 0.6478376021590929,
+          "risk_adjusted_utility": 0.687888984098521,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.8562
+          "probability_best": 0.8643333333333333
         },
         "transit-priority": {
-          "expected_utility": 0.5074533334604494,
-          "cvar10": 0.45903706949551987,
-          "risk_adjusted_utility": 0.49534926746921704,
+          "expected_utility": 0.507891314874146,
+          "cvar10": 0.4602783179627199,
+          "risk_adjusted_utility": 0.49598806564628944,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "composite-equity": {
-          "expected_utility": 0.68159898409343,
-          "cvar10": 0.6273607303575918,
-          "risk_adjusted_utility": 0.6680394206594704,
+          "expected_utility": 0.6816589788204526,
+          "cvar10": 0.628195474099574,
+          "risk_adjusted_utility": 0.6682931026402329,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.1438
+          "probability_best": 0.13566666666666666
         }
       }
     },
@@ -714,17 +714,17 @@
       {
         "left_alternative": "baseline-poverty-priority",
         "right_alternative": "transit-priority",
-        "correlation": 0.7041571632625688
+        "correlation": 0.7046490163230509
       },
       {
         "left_alternative": "baseline-poverty-priority",
         "right_alternative": "composite-equity",
-        "correlation": 0.7622780917810803
+        "correlation": 0.7646012660979463
       },
       {
         "left_alternative": "transit-priority",
         "right_alternative": "composite-equity",
-        "correlation": 0.6857434402188005
+        "correlation": 0.6989967956090479
       }
     ]
   },
@@ -739,9 +739,9 @@
     "sources": [
       {
         "id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
-        "as_of": "2026-07-27",
+        "as_of": "2026-08-10",
         "owner": "Original publisher and repository analysis author",
         "approved_decision_uses": [
           "exploratory"
@@ -954,7 +954,7 @@
         "path": "alternatives[0].metrics.need_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -973,7 +973,7 @@
         "path": "alternatives[0].metrics.need_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -992,7 +992,7 @@
         "path": "alternatives[0].metrics.need_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1011,7 +1011,7 @@
         "path": "alternatives[0].metrics.high_poverty_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1030,7 +1030,7 @@
         "path": "alternatives[0].metrics.high_poverty_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1049,7 +1049,7 @@
         "path": "alternatives[0].metrics.high_poverty_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1068,7 +1068,7 @@
         "path": "alternatives[0].metrics.population_weighted_distance_km.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1087,7 +1087,7 @@
         "path": "alternatives[0].metrics.population_weighted_distance_km.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1106,7 +1106,7 @@
         "path": "alternatives[0].metrics.population_weighted_distance_km.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1125,7 +1125,7 @@
         "path": "alternatives[1].metrics.need_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1144,7 +1144,7 @@
         "path": "alternatives[1].metrics.need_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1163,7 +1163,7 @@
         "path": "alternatives[1].metrics.need_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1182,7 +1182,7 @@
         "path": "alternatives[1].metrics.high_poverty_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1201,7 +1201,7 @@
         "path": "alternatives[1].metrics.high_poverty_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1220,7 +1220,7 @@
         "path": "alternatives[1].metrics.high_poverty_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1239,7 +1239,7 @@
         "path": "alternatives[1].metrics.population_weighted_distance_km.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1258,7 +1258,7 @@
         "path": "alternatives[1].metrics.population_weighted_distance_km.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1277,7 +1277,7 @@
         "path": "alternatives[1].metrics.population_weighted_distance_km.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1296,7 +1296,7 @@
         "path": "alternatives[2].metrics.need_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1315,7 +1315,7 @@
         "path": "alternatives[2].metrics.need_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1334,7 +1334,7 @@
         "path": "alternatives[2].metrics.need_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1353,7 +1353,7 @@
         "path": "alternatives[2].metrics.high_poverty_coverage.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1372,7 +1372,7 @@
         "path": "alternatives[2].metrics.high_poverty_coverage.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1391,7 +1391,7 @@
         "path": "alternatives[2].metrics.high_poverty_coverage.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1410,7 +1410,7 @@
         "path": "alternatives[2].metrics.population_weighted_distance_km.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1429,7 +1429,7 @@
         "path": "alternatives[2].metrics.population_weighted_distance_km.values",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1448,7 +1448,7 @@
         "path": "alternatives[2].metrics.population_weighted_distance_km.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1775,14 +1775,14 @@
   "evidence": {
     "type": "source-backed exploratory project evidence",
     "decision_use": "exploratory",
-    "as_of": "2026-07-27",
+    "as_of": "2026-08-10",
     "sources": [
-      "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.",
+      "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.",
       "projects/spatial-equity-planning/outputs/results.json"
     ],
     "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
     "limitations": [
-      "Straight-line distance and tract centroids are planning-screen approximations; ACS margins of error and service capacity require local review.",
+      "Tract internal points and straight-line distance are planning screens; land availability, ownership, zoning, travel networks, capacity, cost, and community consent are missing.",
       "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
     ]
   },

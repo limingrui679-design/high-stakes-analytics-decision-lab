@@ -2,6 +2,7 @@
   "schema_version": "1.0",
   "project_id": "commercial-real-estate-risk",
   "title": "Commercial Real Estate Transactions and Regeneration Risk",
+  "project_title": "Commercial Real Estate Diligence Decision Product",
   "source_id": "nyc-dof-annualized-property-sales-w2pb-icbu",
   "publisher": "New York City Department of Finance via NYC Open Data",
   "landing_page": "https://data.cityofnewyork.us/City-Government/NYC-Citywide-Annualized-Calendar-Sales-Update/w2pb-icbu/about_data",

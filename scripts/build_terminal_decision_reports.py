@@ -265,6 +265,73 @@ def gate_svg(spec: dict[str, Any], manifest: dict[str, Any]) -> str:
 
 
 def census_spec(result: dict[str, Any]) -> dict[str, Any]:
+    if "temporal_test" in result:
+        test = result["temporal_test"]
+        gate = result["deployment_gate"]
+        cohorts = result["cohort_employment_rates"]
+        return {
+            "project_id": "census-income-ai",
+            "title": "Consequential-Use Decision: ACS Employment Transport Audit",
+            "domain": "Responsible AI",
+            "route": ["survey-weighted modeling", "temporal validation", "non-deployment"],
+            "status": gate["status"],
+            "status_label": "NO CONSEQUENTIAL USE",
+            "decision": "Do not use the model for hiring, eligibility, credit, benefits, or another consequential action.",
+            "summary": (
+                f"The 2019 grouped-rate model reaches a 2023 survey-weighted AUC "
+                f"of {decimal(test['auc'])} and Brier score of "
+                f"{decimal(test['brier'])}. These results document temporal "
+                "transport behavior; they do not establish a valid decision target, "
+                "individual benefit, recourse, or operational authorization."
+            ),
+            "summary_interpretation": "A temporal test and protected-attribute audit are evidence about model limits, not permission to act on person-level scores.",
+            "visual_subtitle": "Rhode Island ACS PUMS · 2019 development · 2023 test",
+            "metrics": [
+                {"label": "2023 temporal AUC", "value": decimal(test["auc"]), "context": "Survey-weighted temporal test."},
+                {"label": "2023 Brier score", "value": decimal(test["brier"]), "context": "Survey-weighted probability error."},
+                {"label": "2023 analyzed rows", "value": f"{result['data']['test_rows']:,}", "context": "Working-age Rhode Island PUMS records."},
+            ],
+            "gates": [
+                {"label": "Held-out temporal evaluation", "status": "PASS", "detail": "The 2023 cohort was not used to construct 2019 grouped rates."},
+                {"label": "Protected attributes excluded from model inputs", "status": "PASS", "detail": "Sex, race, and Hispanic origin are audit-only fields."},
+                {"label": "Valid consequential target and workflow benefit", "status": "BLOCK", "detail": "Current employment status is not suitability, merit, or individual benefit."},
+                {"label": "Recourse, harm, and legal governance", "status": "REQUIRED", "detail": "No real decision owner supplied these controls."},
+                {"label": "Operational authorization", "status": "BLOCK", "detail": "The project explicitly prohibits consequential use."},
+            ],
+            "gate_subtitle": "Temporal validation passes; use-validity and authorization gates do not",
+            "evidence_heading": "Temporal performance is documented without upgrading the use claim",
+            "evidence_intro": "The performance view reports the held-out 2023 result and keeps probability error visible beside ranking discrimination.",
+            "primary_figure": "temporal-performance.svg",
+            "primary_alt": "Bar chart of temporal AUC and one minus Brier score",
+            "primary_interpretation": "The metrics support model auditing only.",
+            "evidence_headers": ["Metric", "2023 result", "Permitted interpretation"],
+            "evidence_rows": [
+                ["AUC", decimal(test["auc"]), "Temporal ranking discrimination"],
+                ["Brier score", decimal(test["brier"]), "Temporal probability error"],
+                ["Employment rate", pct(cohorts["2023"]), "Survey-weighted descriptive outcome"],
+            ],
+            "secondary_heading": "Calibration and audit slices control the boundary",
+            "secondary_intro": "Calibration compares predicted and observed rates in the later cohort; protected fields remain outside model inputs.",
+            "secondary_figure": "calibration.svg",
+            "secondary_alt": "Predicted versus observed employment calibration in 2023",
+            "secondary_interpretation": "Population-period calibration does not establish person-level decision validity.",
+            "case_heading": "The case terminates in non-deployment",
+            "case_intro": "Passing an engineering validation step is necessary but insufficient for a consequential system.",
+            "case_headers": ["Gate family", "Observed state", "Decision effect"],
+            "case_rows": [
+                ["Temporal test", "Completed", "Supports auditing"],
+                ["Valid target and benefit", "Absent", "Blocks use"],
+                ["Authorization", "Absent", "Blocks use"],
+            ],
+            "allowed": ["Reproduce the survey-weighted benchmark.", "Audit temporal calibration and subgroup performance.", "Use the case to demonstrate a negative deployment decision."],
+            "prohibited": ["Rank people for hiring, benefits, credit, or eligibility.", "Interpret employment prediction as merit or suitability.", "Use aggregate audit results to infer individual causation."],
+            "boundary": "ACS PUMS temporal benchmark only; no consequential action is authorized.",
+            "reversals": gate["reversal_conditions"],
+            "next_steps": ["Validate only against a lawful, decision-specific target.", "Pre-register benefit, harm, calibration, and subgroup gates.", "Obtain independent governance and domain review before any pilot."],
+            "questions": ["What real decision outcome would be valid and lawful?", "What recourse would a person have?", "Which subgroup errors would be unacceptable?"],
+            "case_specific": {"temporal_test": test, "deployment_gate": gate},
+            "methods": ["Use 2019 only for model construction.", "Evaluate on survey-weighted 2023 records.", "Reserve protected attributes for audit slices.", "Terminate at non-deployment when use-validity evidence is absent."],
+        }
     overall = result["overall"]
     naive = result["models"]["naive_bayes_baseline"]
     subgroup = result["subgroup_metrics"]

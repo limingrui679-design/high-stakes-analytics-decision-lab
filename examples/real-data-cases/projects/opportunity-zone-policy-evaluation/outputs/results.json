@@ -1,0 +1,264 @@
+{
+  "project_id": "opportunity-zone-policy-evaluation",
+  "data": {
+    "panel_rows": 2956,
+    "complete_tracts": 1460,
+    "qoz_tracts": 138,
+    "matched_control_tracts": 121
+  },
+  "study_design": {
+    "design": "one-year matched pre/post association screen",
+    "treatment": "2018 QOZ designation",
+    "period": "2018 to 2019",
+    "causal_status": "not identified; no parallel-trends evidence"
+  },
+  "matched_change_effects": {
+    "change_poverty": {
+      "matched_difference_in_change": 0.010548170154203429,
+      "bootstrap_95_interval": [
+        0.0023025749352452544,
+        0.019819178935105326
+      ]
+    },
+    "change_income": {
+      "matched_difference_in_change": 504.0869565217391,
+      "bootstrap_95_interval": [
+        -513.8317028985507,
+        1538.8740942028985
+      ]
+    },
+    "change_rent": {
+      "matched_difference_in_change": -4830925.152173913,
+      "bootstrap_95_interval": [
+        -14492788.399818841,
+        15.050724637681153
+      ]
+    },
+    "change_jobs": {
+      "matched_difference_in_change": 11.58695652173913,
+      "bootstrap_95_interval": [
+        -37.87463768115942,
+        62.16811594202896
+      ]
+    },
+    "change_unemployment": {
+      "matched_difference_in_change": 0.001652983480318107,
+      "bootstrap_95_interval": [
+        -0.004105864567927525,
+        0.008232008893248894
+      ]
+    }
+  },
+  "support_diagnostic": {
+    "unique_controls": 121,
+    "maximum_control_reuse": 3
+  },
+  "decision_support": {
+    "status": "associational_policy_screen_only",
+    "reversal_conditions": [
+      "A multi-year pre-period fails a parallel-trends diagnostic.",
+      "Alternative comparison groups reverse the change contrast.",
+      "Updated ACS or LODES vintages materially change tract outcomes."
+    ]
+  },
+  "headline_metrics": [
+    "Complete tract panels: 1,460",
+    "Designated QOZ tracts analyzed: 138",
+    "Unique matched controls: 121",
+    "Causal status: not identified"
+  ],
+  "provenance": {
+    "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
+    "citation": "CDFI Fund and U.S. Census Bureau. 2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel.",
+    "version": "2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel",
+    "license": "U.S. Government public data",
+    "accessed_at": "2026-08-10",
+    "raw_sha256": {
+      "massachusetts-qoz-tract-panel.csv": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae",
+      "massachusetts-qoz-tract-panel.source-lock.json": "20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be"
+    },
+    "config_sha256": "2968eb292c5350002baa70bbec0afe13bd9939d538d3e07c3c4fb7a04e4a6828"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.pre_year",
+      "label": "pre year",
+      "value_or_distribution": 2018,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for pre_year; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.post_year",
+      "label": "post year",
+      "value_or_distribution": 2019,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for post_year; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.bootstrap_samples",
+      "label": "bootstrap samples",
+      "value_or_distribution": 500,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for bootstrap_samples; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    },
+    {
+      "parameter_path": "config.parameters.matching_fields",
+      "label": "matching fields",
+      "value_or_distribution": [
+        "poverty",
+        "income",
+        "jobs",
+        "unemployment"
+      ],
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for matching_fields; source dataset is cdfi-acs-lodes-ma-qoz-2018-2019.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    }
+  ]
+}

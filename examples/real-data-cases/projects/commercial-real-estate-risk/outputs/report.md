@@ -1,4 +1,4 @@
-# Commercial Real Estate Transactions and Regeneration Risk: analytical project
+# Commercial Real Estate Diligence Decision Product: analytical project
 
 > **Bottom line:** Public sales records support a transaction-liquidity and price screen; financing scenarios can identify evidence needs, but property-level income, condition, leases, title, and loan terms are required before valuation or investment.
 
@@ -77,6 +77,18 @@ Break-even cap rates expose the NOI required by declared LTV, rate, amortization
 ![Debt cost changes the income hurdle](figures/financing-stress.svg)
 
 > **Interpretation boundary:** The source contains no lease-level NOI, expenses, occupancy, or property-specific loan terms.
+
+## Decision-product contract
+
+Terminal status: `targeted_diligence_only`. The same evidence is rendered differently for each role without changing the underlying numbers or claim boundary.
+
+| Reader | Evidence view | Permitted action |
+|---|---|---|
+| Analyst | segment-level transaction depth; robust price-per-square-foot summaries; source and filtering evidence | assemble a traceable property-level evidence request |
+| Risk Manager | financing stress scenarios; thin-market and dispersion flags; reversal conditions | prioritize diligence under declared assumptions |
+| Audit Reviewer | source manifest and raw hashes; filtering and parameter provenance; claim and redistribution boundaries | verify that every displayed claim resolves to public evidence |
+
+The complete role and evidence contract is in [`decision-product-contract.json`](decision-product-contract.json).
 
 ## Methodology
 
@@ -161,6 +173,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `commercial-real-estate-risk`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `a77ce226aca8a11c4e2961a65c7631c79a623f7c5e5c304796720e0d75c396de`
+- Result SHA-256: `97c1a96badf2dd1f88282b4536981705f457316b478df0497c97573b0a0ce321`
 
 </details>

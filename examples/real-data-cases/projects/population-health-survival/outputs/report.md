@@ -1,6 +1,6 @@
-# Heart Failure Clinical Records: analytical project
+# Population Health Risk Transport Across NHIS Cohorts: analytical project
 
-> **Bottom line:** Low ejection fraction is associated with a higher observed death-event rate, but the dataset supports triage-rule validation—not a treatment recommendation.
+> **Bottom line:** The 2016 NHIS risk cells show measurable but imperfect transport to 2017 linked mortality; the output supports population-risk validation, not individual clinical action.
 
 ## Executive Summary
 
@@ -10,44 +10,44 @@ This source-backed project connects the decision question to its data, validatio
 
 | Signal | Observed result |
 |---|---|
-| Observed death-event rate | 32.1% |
-| Observed 180-day survival | 65.4% |
-| Low-versus-higher ejection-fraction risk difference | 33.0% (bootstrap 95% interval 20.9% to 44.7%) |
-| Apparent Cox Harrell C-index | 0.731 |
+| 2017 temporal-test AUC | 0.846 |
+| 2017 weighted two-year mortality | 2.32% |
+| Linked adult records | 58,754 |
+| Terminal use | research triage validation only |
 
 ## Key findings with visual evidence
 
 The visual sequence is interleaved with source, design, and limitation notes so each result stays adjacent to the evidence that supports it.
 
-### Survival estimates retain censoring and the changing risk set
+### Linked mortality by cohort
 
-The Kaplan–Meier view shows the observed follow-up experience without treating every patient window as complete.
+Survey weights preserve the population-estimation target.
 
-![Survival estimates retain censoring and the changing risk set](figures/kaplan-meier.svg)
+![Linked mortality by cohort](figures/cohort-mortality.svg)
 
-> **Interpretation boundary:** Descriptive survival contrast; it does not identify a treatment effect.
+> **Interpretation boundary:** Observed association only.
 
 ## Scope, source, and metric definitions
 
 | Evidence contract | Recorded value |
 |---|---|
-| Source | Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R |
-| Version | UCI static archive snapshot; source file timestamp 2023-05-22 |
-| Accessed | 2026-07-27 |
-| License | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Analytical grain | one de-identified patient follow-up record |
-| Expected rows | 299 |
+| Source | U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality. |
+| Version | NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality |
+| Accessed | 2026-08-10 |
+| License | [U.S. Government public-use data](https://www.cdc.gov/nchs/data-linkage/mortality-public.htm) |
+| Analytical grain | one NHIS sampled adult linked to mortality status |
+| Expected rows | 58,754 |
 | Results | [`results.json`](results.json) |
 | Definitions | [`../data/data-dictionary.json`](../data/data-dictionary.json) |
 | Quality | [`../data/quality-report.json`](../data/quality-report.json) |
 
-### Adjusted associations remain estimates, not intervention effects
+### Age risk gradient
 
-The multivariable Cox model reports hazard-ratio direction and interval width alongside apparent discrimination.
+The later cohort shows the expected age pattern.
 
-![Adjusted associations remain estimates, not intervention effects](figures/cox-hazard-ratios.svg)
+![Age risk gradient](figures/age-gradient.svg)
 
-> **Interpretation boundary:** Observed associations remain vulnerable to omitted variables, treatment selection, and cohort transport.
+> **Interpretation boundary:** Age bands do not authorize individual triage.
 
 ## Research design and data quality
 
@@ -55,66 +55,54 @@ The multivariable Cox model reports hazard-ratio direction and interval width al
 
 | Design element | Project definition |
 |---|---|
-| Target Population | Patients represented by the source hospital cohort with heart failure and recorded follow-up |
-| Time Zero | source-defined start of follow-up |
-| Outcome | recorded death event during follow-up |
-| Estimand | association between baseline predictors and all-cause event hazard, plus absolute observed event risk by 180 days |
-| Inclusion | all 299 source records with nonmissing time and event |
-| Exclusion | none |
-| Causal Status | observational association; no treatment estimand |
+| Design | survey-linked observational temporal validation |
+| Development Cohort | NHIS 2016 |
+| Test Cohort | NHIS 2017 |
+| Estimand | survey-weighted two-year mortality association |
 
 ### Data-quality gate
 
 | Check | Result |
 |---|---|
-| Prepared shape | 299 rows × 13 columns |
+| Prepared shape | 58,754 rows × 11 columns |
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
-| Privacy review | approved_for_public_aggregate_analysis |
+| Privacy review | approved_for_public_minimized_analysis |
 | Quality disposition | **usable_with_documented_limitations** |
 
-### The absolute risk contrast is paired with resampling uncertainty
+### Temporal calibration
 
-Low ejection fraction is associated with a higher observed event rate, and the patient bootstrap shows how much that contrast moves.
+2016 risk cells are evaluated in 2017.
 
-![The absolute risk contrast is paired with resampling uncertainty](figures/ejection-risk.svg)
+![Temporal calibration](figures/temporal-calibration.svg)
 
-> **Interpretation boundary:** The threshold was not prospectively registered and must not be interpreted as a treatment rule.
+> **Interpretation boundary:** Apparent transport does not establish clinical validity.
 
 ## Methodology
 
-Kaplan–Meier survival estimation, multivariable Breslow-tie Cox regression, Schoenfeld-time diagnostics, apparent 180-day calibration, subgroup risk differences, patient bootstrap, and protocol capture/workload analysis.
+Survey-weighted cohort rates, pre-specified age/condition cells, temporal AUC, Brier score, calibration, and workload/capture protocol screens.
 
 All shipped metrics are regenerated by `prepare_data.py` and `analyze.py`. Random procedures use fixed seeds, and committed raw files are checked against the SHA-256 values in `source-manifest.json`.
 
-### Candidate follow-up protocols expose capture–workload trade-offs
-
-Protocol comparisons make the operational trade-off visible instead of presenting risk separation as a complete decision.
-
-![Candidate follow-up protocols expose capture–workload trade-offs](figures/protocol-comparison.svg)
-
-> **Interpretation boundary:** Prospective validation and clinical ownership are required before any protocol use.
-
 ## Parameter provenance and review
 
-5 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
+4 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
 
 <details>
 <summary><strong>Open the complete parameter-level source and review register</strong></summary>
 
 | Parameter path | Value or distribution | Uncertainty | Source | Approval | Reviewer | Boundary |
 |---|---|---|---|---|---|---|
-| config.analysis_seed | 20260727 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
-| config.parameters.ejection_fraction_threshold | 35 | none | analyst-protocol | provisional_self_review | not_assigned | Subgroup and candidate-rule definition; not a clinical threshold endorsement. |
-| config.parameters.age_triage_threshold | 65 | none | analyst-protocol | provisional_self_review | not_assigned | Comparator only. |
-| config.parameters.creatinine_triage_threshold | 1.5 | none | analyst-protocol | provisional_self_review | not_assigned | Candidate-rule definition only. |
-| config.parameters.bootstrap_repetitions | 2000 | none | analysis-protocol | provisional_self_review | not_assigned | Controls Monte Carlo precision, not evidence quality. |
+| config.analysis_seed | 20260810 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
+| config.parameters.development_cohort | 2016 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Population-risk validation only; no individual diagnosis, treatment, or clinical deployment. |
+| config.parameters.validation_cohort | 2017 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Population-risk validation only; no individual diagnosis, treatment, or clinical deployment. |
+| config.parameters.review_shares | [0.1, 0.2, 0.3] | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Population-risk validation only; no individual diagnosis, treatment, or clinical deployment. |
 
 </details>
 
 ## Limitations, uncertainty, and robustness
 
-Small observational cohort; selection and treatment information are incomplete; thresholds were not prospectively registered.
+Public linked mortality is observational and uses public-use linkage fields; the simple score is not a diagnostic model and variance estimates do not replace a full complex-survey analysis.
 
 Bootstrap or scenario stability remains conditional on the observed sample and declared assumptions; it does not upgrade exploratory evidence into operational authorization.
 
@@ -130,9 +118,9 @@ Bootstrap or scenario stability remains conditional on the observed sample and d
 
 The analysis can prioritize validation, diligence, or a bounded pilot; it is not itself permission to act. Reconsider the interpretation when:
 
-- A prospective or external validation reverses the observed ranking.
-- A missing local constraint changes feasibility or the outcome definition.
-- A domain owner rejects the analyst-defined threshold, scale, or trade-off.
+- A later linked cohort materially changes calibration.
+- Survey design review changes the weighting or variance treatment.
+- Clinical stakeholders reject the non-diagnostic triage endpoint.
 
 ## Conditional downstream decision layer
 
@@ -161,6 +149,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `population-health-survival`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `f3938193edb8041c492554bfff055ff562ed50176c42c0959e48441d44dbab2f`
+- Result SHA-256: `ace660115d200063ef948038371306352161cdc7d1b1cff12406c89c7fe5a8be`
 
 </details>

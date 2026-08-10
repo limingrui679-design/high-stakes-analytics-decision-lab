@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-30T18:38:35.244200+00:00",
+    "generated_at": "2026-08-10T12:57:46.854317+00:00",
     "case_id": "real-commercial-real-estate-risk",
     "case_hash_sha256": "0024c4e85aea39c0edfd1cb29fa44e72b388662dfa68435e95dcd33251e9a3b7",
-    "samples": 10000,
-    "seed": 20260726,
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -38,7 +38,7 @@
       "Queens"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.08923192988256723,
+    "utility_margin": 0.0892319298824753,
     "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
@@ -176,14 +176,14 @@
       "alternative_id": "baseline-Bronx",
       "label": "Baseline: Bronx",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5372990264300062,
+      "expected_utility": 0.5372990264300057,
       "utility_p05": 0.51237420122,
       "utility_p95": 0.5456073015,
-      "cvar10": 0.5123742012199948,
-      "risk_adjusted_utility": 0.5310678201275033,
-      "value_score": 53.10678201275033,
+      "cvar10": 0.5123742012200009,
+      "risk_adjusted_utility": 0.5310678201275045,
+      "value_score": 53.10678201275045,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -195,8 +195,8 @@
         "transaction_share": {
           "label": "Public transaction depth",
           "unit": "share",
-          "mean": 0.10520042259999346,
-          "normalized_score": 0.17533403766668068,
+          "mean": 0.10520042260000667,
+          "normalized_score": 0.17533403766666636,
           "scale_clipping_rate": 0.0,
           "p05": 0.0987595804,
           "p95": 0.10734737
@@ -204,8 +204,8 @@
         "price_dispersion_ratio": {
           "label": "Relative price dispersion",
           "unit": "MAD/median",
-          "mean": 0.4330064525999969,
-          "normalized_score": 0.7113290315998981,
+          "mean": 0.43300645260000364,
+          "normalized_score": 0.7113290315999672,
           "scale_clipping_rate": 0.0,
           "p05": 0.42451613,
           "p95": 0.4584774204
@@ -213,8 +213,8 @@
         "geocoded_share": {
           "label": "Approximate geography coverage",
           "unit": "share",
-          "mean": 0.9800000000000156,
-          "normalized_score": 0.9800000000000156,
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
           "scale_clipping_rate": 0.0,
           "p05": 0.92,
           "p95": 1.0
@@ -223,21 +223,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5456073014998989,
+          "mean": 0.5456073015000114,
           "p05": 0.5456073015,
           "p95": 0.5456073015,
-          "cvar10": 0.5456073015000085,
-          "risk_adjusted_utility": 0.5456073014999263,
-          "sample_count": 7500
+          "cvar10": 0.5456073014999989,
+          "risk_adjusted_utility": 0.5456073015000082,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.5123742012199997,
+          "mean": 0.5123742012199983,
           "p05": 0.51237420122,
           "p95": 0.51237420122,
-          "cvar10": 0.5123742012199985,
-          "risk_adjusted_utility": 0.5123742012199994,
-          "sample_count": 2500
+          "cvar10": 0.5123742012199991,
+          "risk_adjusted_utility": 0.5123742012199985,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -250,14 +250,14 @@
       "alternative_id": "Brooklyn",
       "label": "Brooklyn",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.7585452004101496,
+      "expected_utility": 0.7585452004100008,
       "utility_p05": 0.72146442014,
-      "utility_p95": 0.7709054605,
-      "cvar10": 0.7214644201400138,
-      "risk_adjusted_utility": 0.7492750053426156,
-      "value_score": 74.92750053426155,
+      "utility_p95": 0.7709054605000001,
+      "cvar10": 0.7214644201399966,
+      "risk_adjusted_utility": 0.7492750053424998,
+      "value_score": 74.92750053424999,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -269,8 +269,8 @@
         "transaction_share": {
           "label": "Public transaction depth",
           "unit": "share",
-          "mean": 0.3847600638000282,
-          "normalized_score": 0.6412667730000281,
+          "mean": 0.38476006380000166,
+          "normalized_score": 0.6412667729999969,
           "scale_clipping_rate": 0.0,
           "p05": 0.36120332520000004,
           "p95": 0.39261231
@@ -278,8 +278,8 @@
         "price_dispersion_ratio": {
           "label": "Relative price dispersion",
           "unit": "MAD/median",
-          "mean": 0.3751242372000111,
-          "normalized_score": 0.749917175200024,
+          "mean": 0.3751242371999953,
+          "normalized_score": 0.7499171752000008,
           "scale_clipping_rate": 0.0,
           "p05": 0.36776886,
           "p95": 0.3971903688
@@ -287,8 +287,8 @@
         "geocoded_share": {
           "label": "Approximate geography coverage",
           "unit": "share",
-          "mean": 0.9800000000000156,
-          "normalized_score": 0.9800000000000156,
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
           "scale_clipping_rate": 0.0,
           "p05": 0.92,
           "p95": 1.0
@@ -297,21 +297,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.7709054605001363,
+          "mean": 0.7709054604999902,
           "p05": 0.7709054605,
           "p95": 0.7709054605,
-          "cvar10": 0.7709054604999922,
-          "risk_adjusted_utility": 0.7709054605001002,
-          "sample_count": 7500
+          "cvar10": 0.7709054604999991,
+          "risk_adjusted_utility": 0.7709054604999924,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.7214644201399704,
+          "mean": 0.7214644201400106,
           "p05": 0.72146442014,
           "p95": 0.72146442014,
-          "cvar10": 0.7214644201399969,
-          "risk_adjusted_utility": 0.721464420139977,
-          "sample_count": 2500
+          "cvar10": 0.7214644201400003,
+          "risk_adjusted_utility": 0.721464420140008,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -324,14 +324,14 @@
       "alternative_id": "Manhattan",
       "label": "Manhattan",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5681312915000563,
+      "expected_utility": 0.5681312914999902,
       "utility_p05": 0.5390353010000001,
       "utility_p95": 0.577829955,
-      "cvar10": 0.5390353010000092,
-      "risk_adjusted_utility": 0.5608572938750445,
-      "value_score": 56.08572938750444,
+      "cvar10": 0.5390353010000015,
+      "risk_adjusted_utility": 0.5608572938749931,
+      "value_score": 56.085729387499306,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -343,8 +343,8 @@
         "transaction_share": {
           "label": "Public transaction depth",
           "unit": "share",
-          "mean": 0.17167191159997244,
-          "normalized_score": 0.2861198526666236,
+          "mean": 0.171671911600006,
+          "normalized_score": 0.2861198526666714,
           "scale_clipping_rate": 0.0,
           "p05": 0.1611613864,
           "p95": 0.17517542
@@ -352,8 +352,8 @@
         "price_dispersion_ratio": {
           "label": "Relative price dispersion",
           "unit": "MAD/median",
-          "mean": 0.5281132110000474,
-          "normalized_score": 0.6479245260000415,
+          "mean": 0.5281132110000243,
+          "normalized_score": 0.6479245260000194,
           "scale_clipping_rate": 0.0,
           "p05": 0.51775805,
           "p95": 0.559178694
@@ -361,8 +361,8 @@
         "geocoded_share": {
           "label": "Approximate geography coverage",
           "unit": "share",
-          "mean": 0.9800000000000156,
-          "normalized_score": 0.9800000000000156,
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
           "scale_clipping_rate": 0.0,
           "p05": 0.92,
           "p95": 1.0
@@ -371,21 +371,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.577829955000095,
+          "mean": 0.577829954999987,
           "p05": 0.577829955,
           "p95": 0.577829955,
-          "cvar10": 0.5778299550000102,
-          "risk_adjusted_utility": 0.5778299550000738,
-          "sample_count": 7500
+          "cvar10": 0.5778299549999988,
+          "risk_adjusted_utility": 0.5778299549999899,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.5390353010000113,
+          "mean": 0.5390353010000082,
           "p05": 0.5390353010000001,
           "p95": 0.5390353010000001,
-          "cvar10": 0.5390353009999993,
-          "risk_adjusted_utility": 0.5390353010000083,
-          "sample_count": 2500
+          "cvar10": 0.5390353009999991,
+          "risk_adjusted_utility": 0.539035301000006,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -398,14 +398,14 @@
       "alternative_id": "Queens",
       "label": "Queens",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6676872471200676,
+      "expected_utility": 0.667687247120032,
       "utility_p05": 0.63711056048,
       "utility_p95": 0.677879476,
-      "cvar10": 0.637110560479991,
-      "risk_adjusted_utility": 0.6600430754600484,
-      "value_score": 66.00430754600484,
+      "cvar10": 0.6371105604800018,
+      "risk_adjusted_utility": 0.6600430754600245,
+      "value_score": 66.00430754600245,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -417,8 +417,8 @@
         "transaction_share": {
           "label": "Public transaction depth",
           "unit": "share",
-          "mean": 0.2531607343999665,
-          "normalized_score": 0.4219345573332602,
+          "mean": 0.2531607344000042,
+          "normalized_score": 0.4219345573333378,
           "scale_clipping_rate": 0.0,
           "p05": 0.2376610976,
           "p95": 0.25832728
@@ -426,8 +426,8 @@
         "price_dispersion_ratio": {
           "label": "Relative price dispersion",
           "unit": "MAD/median",
-          "mean": 0.3359165183999647,
-          "normalized_score": 0.7760556544001465,
+          "mean": 0.3359165183999933,
+          "normalized_score": 0.7760556544000106,
           "scale_clipping_rate": 0.0,
           "p05": 0.32932992,
           "p95": 0.3556763136
@@ -435,8 +435,8 @@
         "geocoded_share": {
           "label": "Approximate geography coverage",
           "unit": "share",
-          "mean": 0.9800000000000156,
-          "normalized_score": 0.9800000000000156,
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
           "scale_clipping_rate": 0.0,
           "p05": 0.92,
           "p95": 1.0
@@ -445,21 +445,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.677879475999991,
+          "mean": 0.6778794760000258,
           "p05": 0.677879476,
           "p95": 0.677879476,
-          "cvar10": 0.6778794759999904,
-          "risk_adjusted_utility": 0.6778794759999909,
-          "sample_count": 7500
+          "cvar10": 0.6778794759999986,
+          "risk_adjusted_utility": 0.6778794760000191,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.6371105604800263,
+          "mean": 0.6371105604799939,
           "p05": 0.63711056048,
           "p95": 0.63711056048,
-          "cvar10": 0.63711056048,
-          "risk_adjusted_utility": 0.6371105604800198,
-          "sample_count": 2500
+          "cvar10": 0.6371105604799989,
+          "risk_adjusted_utility": 0.6371105604799951,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -472,14 +472,14 @@
       "alternative_id": "Staten Island",
       "label": "Staten Island",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5186084814199357,
+      "expected_utility": 0.5186084814200101,
       "utility_p05": 0.49618507268,
       "utility_p95": 0.526082951,
-      "cvar10": 0.4961850726800089,
-      "risk_adjusted_utility": 0.513002629234954,
-      "value_score": 51.300262923495396,
+      "cvar10": 0.49618507268000156,
+      "risk_adjusted_utility": 0.5130026292350081,
+      "value_score": 51.3002629235008,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -491,8 +491,8 @@
         "transaction_share": {
           "label": "Public transaction depth",
           "unit": "share",
-          "mean": 0.06520686759999912,
-          "normalized_score": 0.10867811266667066,
+          "mean": 0.06520686759999761,
+          "normalized_score": 0.10867811266667224,
           "scale_clipping_rate": 0.0,
           "p05": 0.06121461040000001,
           "p95": 0.06653762
@@ -500,8 +500,8 @@
         "price_dispersion_ratio": {
           "label": "Relative price dispersion",
           "unit": "MAD/median",
-          "mean": 0.37648334640002545,
-          "normalized_score": 0.7490111024000295,
+          "mean": 0.3764833464000149,
+          "normalized_score": 0.7490111024000052,
           "scale_clipping_rate": 0.0,
           "p05": 0.36910132,
           "p95": 0.39862942560000003
@@ -509,8 +509,8 @@
         "geocoded_share": {
           "label": "Approximate geography coverage",
           "unit": "share",
-          "mean": 0.9800000000000156,
-          "normalized_score": 0.9800000000000156,
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
           "scale_clipping_rate": 0.0,
           "p05": 0.92,
           "p95": 1.0
@@ -519,21 +519,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5260829509999199,
+          "mean": 0.526082951000016,
           "p05": 0.526082951,
           "p95": 0.526082951,
-          "cvar10": 0.5260829509999954,
-          "risk_adjusted_utility": 0.5260829509999387,
-          "sample_count": 7500
+          "cvar10": 0.5260829510000027,
+          "risk_adjusted_utility": 0.5260829510000127,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.4961850726799827,
+          "mean": 0.49618507268000495,
           "p05": 0.49618507268,
           "p95": 0.49618507268,
-          "cvar10": 0.49618507268000295,
-          "risk_adjusted_utility": 0.49618507267998774,
-          "sample_count": 2500
+          "cvar10": 0.4961850726799996,
+          "risk_adjusted_utility": 0.4961850726800036,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -551,37 +551,37 @@
       "factor": 0.6666666666666666,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.7700673947706578,
-        "Queens": 0.7032019048941979,
-        "Manhattan": 0.6101132044704941,
-        "baseline-Bronx": 0.59431796131172,
-        "Staten Island": 0.584647562835348
+        "Brooklyn": 0.7700673947705566,
+        "Queens": 0.7032019048941274,
+        "Manhattan": 0.6101132044706031,
+        "baseline-Bronx": 0.5943179613117479,
+        "Staten Island": 0.5846475628352681
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7792413934824418,
-          "cvar10": 0.7425453986353059,
-          "risk_adjusted_utility": 0.7700673947706578
+          "expected_utility": 0.7792413934823114,
+          "cvar10": 0.7425453986352925,
+          "risk_adjusted_utility": 0.7700673947705566
         },
         "Queens": {
-          "expected_utility": 0.7110553688471637,
-          "cvar10": 0.6796415130353005,
-          "risk_adjusted_utility": 0.7032019048941979
+          "expected_utility": 0.7110553688470704,
+          "cvar10": 0.6796415130352981,
+          "risk_adjusted_utility": 0.7032019048941274
         },
         "Manhattan": {
-          "expected_utility": 0.6178980159998726,
-          "cvar10": 0.5867587698823586,
-          "risk_adjusted_utility": 0.6101132044704941
+          "expected_utility": 0.6178980160000204,
+          "cvar10": 0.5867587698823515,
+          "risk_adjusted_utility": 0.6101132044706031
         },
         "baseline-Bronx": {
-          "expected_utility": 0.6011752009175871,
-          "cvar10": 0.5737462424941185,
-          "risk_adjusted_utility": 0.59431796131172
+          "expected_utility": 0.6011752009176244,
+          "cvar10": 0.573746242494118,
+          "risk_adjusted_utility": 0.5943179613117479
         },
         "Staten Island": {
-          "expected_utility": 0.5909491347294855,
-          "cvar10": 0.5657428471529354,
-          "risk_adjusted_utility": 0.584647562835348
+          "expected_utility": 0.5909491347293772,
+          "cvar10": 0.565742847152941,
+          "risk_adjusted_utility": 0.5846475628352681
         }
       }
     },
@@ -592,37 +592,37 @@
       "factor": 1.5,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.727633946958226,
-        "Queens": 0.6151226611510747,
-        "Manhattan": 0.509590937948986,
-        "baseline-Bronx": 0.46523604052758344,
-        "Staten Island": 0.4384334126305702
+        "Brooklyn": 0.727633946958135,
+        "Queens": 0.6151226611510124,
+        "Manhattan": 0.5095909379490018,
+        "baseline-Bronx": 0.46523604052756273,
+        "Staten Island": 0.4384334126306
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7370042647633502,
-          "cvar10": 0.6995229935428532,
-          "risk_adjusted_utility": 0.727633946958226
+          "expected_utility": 0.7370042647632258,
+          "cvar10": 0.6995229935428624,
+          "risk_adjusted_utility": 0.727633946958135
         },
         "Queens": {
-          "expected_utility": 0.6225489979755863,
-          "cvar10": 0.5928436506775401,
-          "risk_adjusted_utility": 0.6151226611510747
+          "expected_utility": 0.6225489979755009,
+          "cvar10": 0.5928436506775471,
+          "risk_adjusted_utility": 0.6151226611510124
         },
         "Manhattan": {
-          "expected_utility": 0.5163332721224576,
-          "cvar10": 0.4893639354285711,
-          "risk_adjusted_utility": 0.509590937948986
+          "expected_utility": 0.5163332721224786,
+          "cvar10": 0.48936393542857115,
+          "risk_adjusted_utility": 0.5095909379490018
         },
         "baseline-Bronx": {
-          "expected_utility": 0.47081566114697887,
-          "cvar10": 0.4484971786693972,
-          "risk_adjusted_utility": 0.46523604052758344
+          "expected_utility": 0.4708156611469551,
+          "cvar10": 0.4484971786693856,
+          "risk_adjusted_utility": 0.46523604052756273
         },
         "Staten Island": {
-          "expected_utility": 0.44331514838361935,
-          "cvar10": 0.4237882053714227,
-          "risk_adjusted_utility": 0.4384334126305702
+          "expected_utility": 0.4433151483836579,
+          "cvar10": 0.4237882053714264,
+          "risk_adjusted_utility": 0.4384334126306
         }
       }
     },
@@ -633,37 +633,37 @@
       "factor": 0.6666666666666666,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.7496122852026903,
-        "Queens": 0.6475187110444756,
-        "Manhattan": 0.5517584436944325,
-        "baseline-Bronx": 0.5115104812194656,
-        "Staten Island": 0.48718957812778185
+        "Brooklyn": 0.7496122852027779,
+        "Queens": 0.6475187110444606,
+        "Manhattan": 0.5517584436944544,
+        "baseline-Bronx": 0.5115104812194582,
+        "Staten Island": 0.4871895781277677
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7595038698776558,
-          "cvar10": 0.7199375311777936,
-          "risk_adjusted_utility": 0.7496122852026903
+          "expected_utility": 0.7595038698777781,
+          "cvar10": 0.7199375311777773,
+          "risk_adjusted_utility": 0.7496122852027779
         },
         "Queens": {
-          "expected_utility": 0.6556463129778172,
-          "cvar10": 0.623135905244451,
-          "risk_adjusted_utility": 0.6475187110444756
+          "expected_utility": 0.6556463129777989,
+          "cvar10": 0.6231359052444457,
+          "risk_adjusted_utility": 0.6475187110444606
         },
         "Manhattan": {
-          "expected_utility": 0.5592653765555409,
-          "cvar10": 0.5292376451111076,
-          "risk_adjusted_utility": 0.5517584436944325
+          "expected_utility": 0.5592653765555683,
+          "cvar10": 0.5292376451111125,
+          "risk_adjusted_utility": 0.5517584436944544
         },
         "baseline-Bronx": {
-          "expected_utility": 0.5179623591889201,
-          "cvar10": 0.4921548473111023,
-          "risk_adjusted_utility": 0.5115104812194656
+          "expected_utility": 0.5179623591889074,
+          "cvar10": 0.4921548473111106,
+          "risk_adjusted_utility": 0.5115104812194582
         },
         "Staten Island": {
-          "expected_utility": 0.49300819020000464,
-          "cvar10": 0.4697337419111134,
-          "risk_adjusted_utility": 0.48718957812778185
+          "expected_utility": 0.49300819019998593,
+          "cvar10": 0.46973374191111295,
+          "risk_adjusted_utility": 0.4871895781277677
         }
       }
     },
@@ -674,37 +674,37 @@
       "factor": 1.5,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.7488790681151292,
-        "Queens": 0.6747455902086359,
-        "Manhattan": 0.5715385527826151,
-        "baseline-Bronx": 0.5540264353674207,
-        "Staten Island": 0.54330490662179
+        "Brooklyn": 0.7488790681152201,
+        "Queens": 0.6747455902087125,
+        "Manhattan": 0.5715385527826164,
+        "baseline-Bronx": 0.5540264353673661,
+        "Staten Island": 0.5433049066217347
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7574198058172765,
-          "cvar10": 0.7232568550086873,
-          "risk_adjusted_utility": 0.7488790681151292
+          "expected_utility": 0.7574198058173961,
+          "cvar10": 0.7232568550086921,
+          "risk_adjusted_utility": 0.7488790681152201
         },
         "Queens": {
-          "expected_utility": 0.6818222567651383,
-          "cvar10": 0.6535155905391284,
-          "risk_adjusted_utility": 0.6747455902086359
+          "expected_utility": 0.6818222567652386,
+          "cvar10": 0.6535155905391343,
+          "risk_adjusted_utility": 0.6747455902087125
         },
         "Manhattan": {
-          "expected_utility": 0.578539104695664,
-          "cvar10": 0.5505368970434682,
-          "risk_adjusted_utility": 0.5715385527826151
+          "expected_utility": 0.5785391046956627,
+          "cvar10": 0.5505368970434776,
+          "risk_adjusted_utility": 0.5715385527826164
         },
         "baseline-Bronx": {
-          "expected_utility": 0.559998592321777,
-          "cvar10": 0.5361099645043521,
-          "risk_adjusted_utility": 0.5540264353674207
+          "expected_utility": 0.5599985923217063,
+          "cvar10": 0.5361099645043452,
+          "risk_adjusted_utility": 0.5540264353673661
         },
         "Staten Island": {
-          "expected_utility": 0.5486609972000696,
-          "cvar10": 0.5272366348869513,
-          "risk_adjusted_utility": 0.54330490662179
+          "expected_utility": 0.5486609971999942,
+          "cvar10": 0.5272366348869562,
+          "risk_adjusted_utility": 0.5433049066217347
         }
       }
     },
@@ -715,37 +715,37 @@
       "factor": 0.6666666666666666,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.7296636421918687,
-        "Queens": 0.6323197186836756,
-        "Manhattan": 0.5241170478637188,
-        "baseline-Bronx": 0.49161944013904657,
-        "Staten Island": 0.47191195916547746
+        "Brooklyn": 0.7296636421918077,
+        "Queens": 0.632319718683628,
+        "Manhattan": 0.5241170478636346,
+        "baseline-Bronx": 0.4916194401390976,
+        "Staten Island": 0.47191195916545636
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7384129459018898,
-          "cvar10": 0.7034157310618054,
-          "risk_adjusted_utility": 0.7296636421918687
+          "expected_utility": 0.738412945901803,
+          "cvar10": 0.703415731061822,
+          "risk_adjusted_utility": 0.7296636421918077
         },
         "Queens": {
-          "expected_utility": 0.639295178676413,
-          "cvar10": 0.6113933387054638,
-          "risk_adjusted_utility": 0.6323197186836756
+          "expected_utility": 0.6392951786763525,
+          "cvar10": 0.6113933387054545,
+          "risk_adjusted_utility": 0.632319718683628
         },
         "Manhattan": {
-          "expected_utility": 0.530688681636477,
-          "cvar10": 0.5044021465454445,
-          "risk_adjusted_utility": 0.5241170478637188
+          "expected_utility": 0.5306886816363604,
+          "cvar10": 0.5044021465454569,
+          "risk_adjusted_utility": 0.5241170478636346
         },
         "baseline-Bronx": {
-          "expected_utility": 0.49705348337812366,
-          "cvar10": 0.4753173104218152,
-          "risk_adjusted_utility": 0.49161944013904657
+          "expected_utility": 0.49705348337819155,
+          "cvar10": 0.47531731042181574,
+          "risk_adjusted_utility": 0.4916194401390976
         },
         "Staten Island": {
-          "expected_utility": 0.47666379791275887,
-          "cvar10": 0.45765644292363333,
-          "risk_adjusted_utility": 0.47191195916547746
+          "expected_utility": 0.47666379791272956,
+          "cvar10": 0.45765644292363666,
+          "risk_adjusted_utility": 0.47191195916545636
         }
       }
     },
@@ -756,37 +756,37 @@
       "factor": 1.5,
       "winner": "Brooklyn",
       "scores": {
-        "Brooklyn": 0.7732444491932505,
-        "Queens": 0.6939271781865852,
-        "Manhattan": 0.6057620389999724,
-        "baseline-Bronx": 0.5792825067799581,
-        "Staten Island": 0.5632245593199555
+        "Brooklyn": 0.773244449193345,
+        "Queens": 0.6939271781866794,
+        "Manhattan": 0.605762039000028,
+        "baseline-Bronx": 0.5792825067800113,
+        "Staten Island": 0.5632245593199955
       },
       "score_details": {
         "Brooklyn": {
-          "expected_utility": 0.7831512892532201,
-          "cvar10": 0.743523929013342,
-          "risk_adjusted_utility": 0.7732444491932505
+          "expected_utility": 0.7831512892533503,
+          "cvar10": 0.7435239290133289,
+          "risk_adjusted_utility": 0.773244449193345
         },
         "Queens": {
-          "expected_utility": 0.7023886641065565,
-          "cvar10": 0.6685427204266711,
-          "risk_adjusted_utility": 0.6939271781865852
+          "expected_utility": 0.7023886641066825,
+          "cvar10": 0.6685427204266697,
+          "risk_adjusted_utility": 0.6939271781866794
         },
         "Manhattan": {
-          "expected_utility": 0.6138944813332994,
-          "cvar10": 0.5813647119999914,
-          "risk_adjusted_utility": 0.6057620389999724
+          "expected_utility": 0.6138944813333702,
+          "cvar10": 0.5813647120000014,
+          "risk_adjusted_utility": 0.605762039000028
         },
         "baseline-Bronx": {
-          "expected_utility": 0.5864880234932792,
-          "cvar10": 0.5576659566399947,
-          "risk_adjusted_utility": 0.5792825067799581
+          "expected_utility": 0.5864880234933495,
+          "cvar10": 0.5576659566399965,
+          "risk_adjusted_utility": 0.5792825067800113
         },
         "Staten Island": {
-          "expected_utility": 0.5698742057066101,
-          "cvar10": 0.5432756201599919,
-          "risk_adjusted_utility": 0.5632245593199555
+          "expected_utility": 0.5698742057066609,
+          "cvar10": 0.5432756201599992,
+          "risk_adjusted_utility": 0.5632245593199955
         }
       }
     }
@@ -824,45 +824,45 @@
       ],
       "alternatives": {
         "baseline-Bronx": {
-          "expected_utility": 0.5372990264300062,
-          "cvar10": 0.5123742012199948,
-          "risk_adjusted_utility": 0.5310678201275033,
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Brooklyn": {
-          "expected_utility": 0.7585452004101496,
-          "cvar10": 0.7214644201400138,
-          "risk_adjusted_utility": 0.7492750053426156,
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 1.0
         },
         "Manhattan": {
-          "expected_utility": 0.5681312915000563,
-          "cvar10": 0.5390353010000092,
-          "risk_adjusted_utility": 0.5608572938750445,
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Queens": {
-          "expected_utility": 0.6676872471200676,
-          "cvar10": 0.637110560479991,
-          "risk_adjusted_utility": 0.6600430754600484,
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Staten Island": {
-          "expected_utility": 0.5186084814199357,
-          "cvar10": 0.4961850726800089,
-          "risk_adjusted_utility": 0.513002629234954,
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
@@ -888,45 +888,45 @@
       ],
       "alternatives": {
         "baseline-Bronx": {
-          "expected_utility": 0.5372990264300062,
-          "cvar10": 0.5123742012199948,
-          "risk_adjusted_utility": 0.5310678201275033,
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Brooklyn": {
-          "expected_utility": 0.7585452004101496,
-          "cvar10": 0.7214644201400138,
-          "risk_adjusted_utility": 0.7492750053426156,
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 1.0
         },
         "Manhattan": {
-          "expected_utility": 0.5681312915000563,
-          "cvar10": 0.5390353010000092,
-          "risk_adjusted_utility": 0.5608572938750445,
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Queens": {
-          "expected_utility": 0.6676872471200676,
-          "cvar10": 0.637110560479991,
-          "risk_adjusted_utility": 0.6600430754600484,
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Staten Island": {
-          "expected_utility": 0.5186084814199357,
-          "cvar10": 0.4961850726800089,
-          "risk_adjusted_utility": 0.513002629234954,
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
@@ -952,45 +952,45 @@
       ],
       "alternatives": {
         "baseline-Bronx": {
-          "expected_utility": 0.5372990264300062,
-          "cvar10": 0.5123742012199948,
-          "risk_adjusted_utility": 0.5310678201275033,
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Brooklyn": {
-          "expected_utility": 0.7585452004101496,
-          "cvar10": 0.7214644201400138,
-          "risk_adjusted_utility": 0.7492750053426156,
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 1.0
         },
         "Manhattan": {
-          "expected_utility": 0.5681312915000563,
-          "cvar10": 0.5390353010000092,
-          "risk_adjusted_utility": 0.5608572938750445,
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Queens": {
-          "expected_utility": 0.6676872471200676,
-          "cvar10": 0.637110560479991,
-          "risk_adjusted_utility": 0.6600430754600484,
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
         "Staten Island": {
-          "expected_utility": 0.5186084814199357,
-          "cvar10": 0.4961850726800089,
-          "risk_adjusted_utility": 0.513002629234954,
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
@@ -1004,52 +1004,52 @@
       {
         "left_alternative": "baseline-Bronx",
         "right_alternative": "Brooklyn",
-        "correlation": 1.0000000000000668
+        "correlation": 1.0000000000000895
       },
       {
         "left_alternative": "baseline-Bronx",
         "right_alternative": "Manhattan",
-        "correlation": 0.9999999999999989
+        "correlation": 0.9999999999999438
       },
       {
         "left_alternative": "baseline-Bronx",
         "right_alternative": "Queens",
-        "correlation": 0.9999999999998396
+        "correlation": 1.0000000000000215
       },
       {
         "left_alternative": "baseline-Bronx",
         "right_alternative": "Staten Island",
-        "correlation": 1.0000000000001357
+        "correlation": 0.9999999999999992
       },
       {
         "left_alternative": "Brooklyn",
         "right_alternative": "Manhattan",
-        "correlation": 0.9999999999998787
+        "correlation": 1.0000000000000684
       },
       {
         "left_alternative": "Brooklyn",
         "right_alternative": "Queens",
-        "correlation": 0.9999999999998278
+        "correlation": 1.0000000000000482
       },
       {
         "left_alternative": "Brooklyn",
         "right_alternative": "Staten Island",
-        "correlation": 1.0000000000001477
+        "correlation": 1.0000000000000113
       },
       {
         "left_alternative": "Manhattan",
         "right_alternative": "Queens",
-        "correlation": 0.9999999999997345
+        "correlation": 1.0000000000000355
       },
       {
         "left_alternative": "Manhattan",
         "right_alternative": "Staten Island",
-        "correlation": 1.00000000000013
+        "correlation": 1.0000000000000258
       },
       {
         "left_alternative": "Queens",
         "right_alternative": "Staten Island",
-        "correlation": 0.9999999999999283
+        "correlation": 1.0000000000000357
       }
     ]
   },

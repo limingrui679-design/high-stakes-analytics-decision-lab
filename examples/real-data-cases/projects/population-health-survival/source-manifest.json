@@ -1,30 +1,33 @@
 {
   "schema_version": "1.0",
   "project_id": "population-health-survival",
-  "source_id": "uci-heart-failure-519",
-  "title": "Heart Failure Clinical Records",
-  "publisher": "UCI Machine Learning Repository",
-  "landing_page": "https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records",
-  "doi": "10.24432/C5Z89R",
-  "download_url": "https://archive.ics.uci.edu/static/public/519/heart+failure+clinical+records.zip",
-  "version": "UCI static archive snapshot; source file timestamp 2023-05-22",
-  "accessed_at": "2026-07-27",
-  "license": "CC BY 4.0",
-  "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "redistribution": "Permitted with attribution",
-  "expected_rows": 299,
-  "grain": "one de-identified patient follow-up record",
+  "source_id": "cdc-nhis-2016-2017-linked-mortality",
+  "title": "Population Health Risk Transport Across NHIS Cohorts",
+  "project_title": "Population Health Risk Transport Across NHIS Cohorts",
+  "publisher": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics",
+  "landing_page": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+  "version": "NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality",
+  "accessed_at": "2026-08-10",
+  "license": "U.S. Government public-use data",
+  "license_url": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+  "redistribution": "Public-use minimized extract; NCHS linkage and disclosure rules remain controlling.",
+  "expected_rows": 58754,
+  "grain": "one NHIS sampled adult linked to mortality status",
   "raw_files": [
     {
-      "path": "data/raw/uci-heart-failure.zip",
-      "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7"
+      "path": "data/raw/nhis-2016-2017-linked-mortality-extract.csv",
+      "sha256": "ef2a7d308ebe9020d1d2bb53ef98115b9a60dbacacc1697c136512e8646d947a"
+    },
+    {
+      "path": "data/raw/nhis-2016-2017-linked-mortality-extract.source-lock.json",
+      "sha256": "7e660b86cddc42955e56d77842eadda11cd7e5c2dd8331fa7416a8adccb3dcd7"
     }
   ],
   "privacy_review": {
     "contains_direct_identifiers": false,
     "contains_sensitive_attributes": true,
-    "treatment": "Use only aggregate results; do not attempt re-identification.",
-    "status": "approved_for_public_aggregate_analysis"
+    "treatment": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+    "status": "approved_for_public_minimized_analysis"
   },
-  "citation": "Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R"
+  "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality."
 }

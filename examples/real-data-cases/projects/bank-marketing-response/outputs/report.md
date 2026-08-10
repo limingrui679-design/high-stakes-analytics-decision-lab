@@ -1,4 +1,4 @@
-# Bank Marketing: analytical project
+# Capacity-Constrained Marketing Pilot: analytical project
 
 > **Bottom line:** Pre-contact features concentrate observed term-deposit responses on the untouched final split, but only a randomized campaign can establish incremental lift or ROI.
 

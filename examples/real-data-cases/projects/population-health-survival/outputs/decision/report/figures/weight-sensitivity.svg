@@ -40,67 +40,67 @@
 <circle cx="1125" cy="58" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".7"/>
 <line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
 <line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
-<text x="449.3" y="140.0" class="small" text-anchor="middle">Dual Marker Triage</text>
+<text x="449.3" y="140.0" class="small" text-anchor="middle">Top 20% Review</text>
 <text x="449.3" y="174.0" class="eyebrow" text-anchor="middle" style="fill:#008C82">BASELINE PREFERENCE</text>
-<text x="736.0" y="140.0" class="small" text-anchor="middle">Ejection Triage</text>
-<text x="1022.7" y="140.0" class="small" text-anchor="middle">Current Age Rule</text>
+<text x="736.0" y="140.0" class="small" text-anchor="middle">Top 30% Review</text>
+<text x="1022.7" y="140.0" class="small" text-anchor="middle">Baseline: Top 10% Review</text>
 <rect x="30.0" y="185.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="212.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="210.0" class="label" text-anchor="start">↓ Observed event capture</text>
-<rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.682</text>
+<rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.789</text>
 <text x="583.7" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.654</text>
+<rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.772</text>
 <rect x="884.3" y="194.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.641</text>
+<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.752</text>
 <text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
 <text x="76.0" y="272.0" class="label" text-anchor="start">↑ Observed event capture</text>
-<rect x="311.0" y="256.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.691</text>
-<text x="583.7" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="256.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.607</text>
+<rect x="311.0" y="256.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.736</text>
+<rect x="597.7" y="256.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.749</text>
+<text x="870.3" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="256.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.594</text>
+<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.651</text>
 <rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="334.0" class="label" text-anchor="start">↓ Follow-up workload</text>
-<rect x="311.0" y="318.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.701</text>
-<text x="583.7" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="318.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.627</text>
+<rect x="311.0" y="318.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.760</text>
+<rect x="597.7" y="318.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#C69214" stroke-width="3"/>
+<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.769</text>
+<text x="870.3" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="318.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.621</text>
+<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.681</text>
 <text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
 <text x="76.0" y="396.0" class="label" text-anchor="start">↑ Follow-up workload</text>
-<rect x="311.0" y="380.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.670</text>
+<rect x="311.0" y="380.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.767</text>
 <text x="583.7" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="380.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.637</text>
+<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.752</text>
 <rect x="884.3" y="380.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.616</text>
+<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.728</text>
 <rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="458.0" class="label" text-anchor="start">↓ Recorded-sex selection gap</text>
-<rect x="311.0" y="442.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.676</text>
-<text x="583.7" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.615</text>
+<rect x="311.0" y="442.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
+<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.742</text>
+<rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
+<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.743</text>
+<text x="870.3" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="442.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.595</text>
+<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.678</text>
 <text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#008C82">↑</text>
 <text x="76.0" y="520.0" class="label" text-anchor="start">↑ Recorded-sex selection gap</text>
-<rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.699</text>
+<rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#C69214" stroke-width="3"/>
+<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.789</text>
 <text x="583.7" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
-<rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.651</text>
+<rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#008C82" stroke="#D9E2EC" stroke-width="1"/>
+<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#FFFFFF">0.783</text>
 <rect x="884.3" y="504.0" width="276.7" height="42.0" rx="7" fill="#DDF5F2" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.647</text>
+<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.733</text>
 <text x="48.0" y="584.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>
 <line x1="36" y1="576.0" x2="1164" y2="576.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="598.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

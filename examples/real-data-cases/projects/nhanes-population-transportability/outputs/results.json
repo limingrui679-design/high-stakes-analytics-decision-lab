@@ -1,0 +1,217 @@
+{
+  "project_id": "nhanes-population-transportability",
+  "data": {
+    "rows": 11820,
+    "development_rows": 5849,
+    "external_validation_rows": 5971
+  },
+  "study_design": {
+    "design": "survey-weighted cross-cohort transportability audit",
+    "development": "NHANES 2011-2012",
+    "validation": "NHANES 2015-2016",
+    "horizon": "36-month linked mortality"
+  },
+  "transport_validation": {
+    "auc": 0.8039134416014864,
+    "brier": 0.021547614686532584,
+    "calibration": [
+      {
+        "predicted": 0.002265221814221423,
+        "observed": 0.0019580321490138774,
+        "rows": 1492
+      },
+      {
+        "predicted": 0.008679487694747792,
+        "observed": 0.007115166293032964,
+        "rows": 1493
+      },
+      {
+        "predicted": 0.027100927840817923,
+        "observed": 0.022444658654641705,
+        "rows": 1493
+      },
+      {
+        "predicted": 0.0652809299262662,
+        "observed": 0.06733567098243969,
+        "rows": 1493
+      }
+    ]
+  },
+  "cohort_mortality": {
+    "2011-2012": 0.022959767283072384,
+    "2015-2016": 0.02280799863979848
+  },
+  "income_gradient": {
+    "PIR < 1": 0.04997161418064747,
+    "PIR 1-3": 0.026954949934752163,
+    "PIR >= 3": 0.01065344003817005
+  },
+  "decision_support": {
+    "status": "population_research_only",
+    "reversal_conditions": [
+      "A newer linked cohort changes transport calibration.",
+      "Complex-survey variance estimation changes uncertainty conclusions.",
+      "The intended population differs materially from NHANES coverage."
+    ]
+  },
+  "headline_metrics": [
+    "External-cohort AUC: 0.804",
+    "External-cohort Brier score: 0.022",
+    "Linked adults: 11,820",
+    "Terminal use: population research only"
+  ],
+  "provenance": {
+    "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+    "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHANES 2011-2012 and 2015-2016 demographics linked to 2019 mortality.",
+    "version": "NHANES 2011-2012 and 2015-2016 demographics linked to 2019 mortality",
+    "license": "U.S. Government public-use data",
+    "accessed_at": "2026-08-10",
+    "raw_sha256": {
+      "nhanes-36-month-mortality-cohorts.csv": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad",
+      "nhanes-36-month-mortality-cohorts.source-lock.json": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358"
+    },
+    "config_sha256": "67c3b0f4be172b697d129946be67dd75b6da3e7741768921bfa53679d41a68fb"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is cdc-nhanes-2011-2016-linked-mortality.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.development_cohort",
+      "label": "development cohort",
+      "value_or_distribution": "2011-2012",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for development_cohort; source dataset is cdc-nhanes-2011-2016-linked-mortality.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Population research only; no individual diagnosis or treatment."
+    },
+    {
+      "parameter_path": "config.parameters.validation_cohort",
+      "label": "validation cohort",
+      "value_or_distribution": "2015-2016",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for validation_cohort; source dataset is cdc-nhanes-2011-2016-linked-mortality.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Population research only; no individual diagnosis or treatment."
+    },
+    {
+      "parameter_path": "config.parameters.mortality_horizon_months",
+      "label": "mortality horizon months",
+      "value_or_distribution": 36,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for mortality_horizon_months; source dataset is cdc-nhanes-2011-2016-linked-mortality.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Population research only; no individual diagnosis or treatment."
+    }
+  ]
+}

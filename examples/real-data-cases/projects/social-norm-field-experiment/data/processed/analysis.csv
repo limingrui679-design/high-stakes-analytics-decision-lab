@@ -1,0 +1,11 @@
+treatment,prior_turnout_stratum,individuals,households,voters,turnout_rate
+Civic Duty,not_prior_primary_voter,22952,13588,5862,0.2554025793
+Civic Duty,prior_primary_voter,15266,10217,6159,0.4034455653
+Control,not_prior_primary_voter,114681,67986,27192,0.2371098961
+Control,prior_primary_voter,76562,51247,29538,0.3858049685
+Hawthorne,not_prior_primary_voter,22799,13555,5937,0.2604061582
+Hawthorne,prior_primary_voter,15405,10282,6379,0.4140863356
+Neighbors,not_prior_primary_voter,22666,13460,6945,0.3064060708
+Neighbors,prior_primary_voter,15535,10341,7493,0.4823302221
+Self,not_prior_primary_voter,22836,13529,6353,0.2782010860
+Self,prior_primary_voter,15382,10345,6838,0.4445455727

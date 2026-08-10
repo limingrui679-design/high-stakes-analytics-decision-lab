@@ -1,0 +1,73 @@
+{
+  "grain": "city-day-audited service-family aggregate",
+  "primary_key": [
+    "city",
+    "date",
+    "service_family"
+  ],
+  "ontology": {
+    "sanitation": [
+      "garbage",
+      "trash",
+      "waste",
+      "recycl",
+      "rodent",
+      "litter",
+      "sanitation"
+    ],
+    "transport_public_realm": [
+      "street",
+      "pothole",
+      "sidewalk",
+      "traffic",
+      "vehicle",
+      "alley",
+      "sign",
+      "light"
+    ],
+    "housing_buildings": [
+      "building",
+      "housing",
+      "heat",
+      "plumb",
+      "sewer",
+      "water",
+      "elevator"
+    ],
+    "noise": [
+      "noise"
+    ],
+    "information_administration": [
+      "information",
+      "general",
+      "request",
+      "complaint",
+      "service"
+    ]
+  },
+  "unmapped_policy": "Preserve unmatched source categories in `other`.",
+  "mapped_request_totals": {
+    "Chicago": {
+      "information_administration": 1840305,
+      "transport_public_realm": 504466,
+      "noise": 633990,
+      "other": 107105,
+      "sanitation": 302681,
+      "housing_buildings": 176320
+    },
+    "New York City": {
+      "other": 2868993,
+      "transport_public_realm": 1109511,
+      "housing_buildings": 1048437,
+      "information_administration": 239830,
+      "sanitation": 118300,
+      "noise": 1009612
+    }
+  },
+  "fields": {
+    "city": "city",
+    "date": "date",
+    "service_family": "service family",
+    "requests": "requests"
+  }
+}

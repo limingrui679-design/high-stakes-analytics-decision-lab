@@ -1,21 +1,21 @@
 # Which duration profile should remain in exploratory risk review under the historical evidence
 
-*Financial risk engineering · Historical-risk review only · 10,000 modeled simulations*
+*Financial risk engineering · Historical-risk review only · 3,000 modeled simulations*
 
 ## Executive Summary
 
-- **Provisional preference — Short Baseline.** It is the highest-ranked feasible option, with decision value score **80.0/100** and a modeled **69% probability of being best among decision-feasible alternatives**.
+- **Provisional preference — Short Baseline.** It is the highest-ranked feasible option, with decision value score **80.0/100** and a modeled **68% probability of being best among decision-feasible alternatives**.
 - **The lead is narrow rather than absolute.** It leads the next feasible option, Intermediate, by **0.029 utility points**.
 - **Modeled robustness is 91/100.** The option remains preferred in **100%** of two-sided weight stresses and **100%** of probability-weighted scenario comparisons.
-- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.5%** and CVaR10 by **-0.001**; the ×1.35 loading stress does not change the modeled winner.
-- **Constraint-breach evidence — 0/10,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
+- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.2%** and CVaR10 by **-0.000**; the ×1.35 loading stress does not change the modeled winner.
+- **Constraint-breach evidence — 0/3,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
 - **Decision status — Provisional—validate before action.** The current blockers are: evidence is not labeled for operational use.
 - **Evidence boundary.** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
 - **Parameter lineage.** 57/57 governed parameters have a resolved source and approval-chain reference.
 
 ![Decision summary](figures/decision-scorecard.svg)
 
-**Decision owner:** Hypothetical domain review panel; no real owner authorization  
+**Decision owner:** Hypothetical domain review panel; no real owner authorization
 **Decision question:** Which duration profile should remain in exploratory risk review under the historical evidence?
 
 ## Decision status and modeled robustness
@@ -50,7 +50,7 @@ Each cell below places an outcome on its declared worst-to-best reference scale.
 
 ## Downside risk remains visible behind the average
 
-**Short Baseline has expected utility 0.808, but its worst-decile average falls to 0.777.** The widest criterion-level uncertainty for this option is associated with **Historical annualized return**, making it a priority for further evidence collection.
+**Short Baseline has expected utility 0.808, but its worst-decile average falls to 0.776.** The widest criterion-level uncertainty for this option is associated with **Historical annualized return**, making it a priority for further evidence collection.
 
 ![Utility uncertainty and downside](figures/utility-uncertainty.svg)
 
@@ -58,7 +58,7 @@ The interval chart prevents a precise-looking average from obscuring overlap amo
 
 ## Shared shocks change the uncertainty question
 
-**The declared factor model gives Short Baseline P(best) 69%, versus 67% under independent residuals and 70% under the stronger correlation stress.** Its CVaR10 moves from 0.777 independently to 0.777 under declared dependence and 0.776 under stress.
+**The declared factor model gives Short Baseline P(best) 68%, versus 67% under independent residuals and 70% under the stronger correlation stress.** Its CVaR10 moves from 0.776 independently to 0.776 under declared dependence and 0.776 under stress.
 
 ![Correlation and tail-risk stress](figures/correlation-stress.svg)
 
@@ -66,7 +66,7 @@ The three states use matched seeds, stratified scenario counts, and the same mar
 
 ## Scenario tests show when the preferred option is most exposed
 
-**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.797.** The same feasible alternative remains ahead in every modeled scenario.
+**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.796.** The same feasible alternative remains ahead in every modeled scenario.
 
 ![Scenario performance](figures/scenario-performance.svg)
 
@@ -117,10 +117,10 @@ This test both increases and decreases each criterion weight while preserving ri
 
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
-| 1 | Short Baseline | Yes | 80.0 | 0.808 | 0.777 | 69.0% | 69.0% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Intermediate | Yes | 77.1 | 0.782 | 0.739 | 14.9% | 14.9% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
-| 3 | Barbell | Yes | 76.6 | 0.777 | 0.734 | 12.8% | 12.8% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
-| 4 | Long Duration | Yes | 73.1 | 0.746 | 0.685 | 3.4% | 3.4% | 0/10,000 observed; U95 0.00%; declared support excludes breach | No |
+| 1 | Short Baseline | Yes | 80.0 | 0.808 | 0.776 | 68.5% | 68.5% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Intermediate | Yes | 77.1 | 0.781 | 0.739 | 14.5% | 14.5% | 0/3,000 observed; U95 0.00%; declared support excludes breach | No |
+| 3 | Barbell | Yes | 76.7 | 0.778 | 0.735 | 13.4% | 13.4% | 0/3,000 observed; U95 0.00%; declared support excludes breach | No |
+| 4 | Long Duration | Yes | 73.1 | 0.746 | 0.685 | 3.6% | 3.6% | 0/3,000 observed; U95 0.00%; declared support excludes breach | No |
 
 ### Readiness checks
 
@@ -145,7 +145,7 @@ No hard constraints were supplied.
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Historical annualized return | 30.0% | 0.015 return fraction | -0.005 return fraction–0.037 return fraction | 0.522 | 0.0% |
+| Historical annualized return | 30.0% | 0.015 return fraction | -0.006 return fraction–0.037 return fraction | 0.521 | 0.0% |
 | Historical ES95 loss | 45.0% | 0.004 daily loss fraction | 0.004 daily loss fraction–0.005 daily loss fraction | 0.944 | 0.0% |
 | Worst historical day | 25.0% | 0.009 daily loss fraction | 0.007 daily loss fraction–0.011 daily loss fraction | 0.906 | 0.0% |
 
@@ -153,17 +153,17 @@ No hard constraints were supplied.
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Historical annualized return | 30.0% | 0.01 return fraction | -0.017 return fraction–0.037 return fraction | 0.501 | 0.0% |
-| Historical ES95 loss | 45.0% | 0.006 daily loss fraction | 0.006 daily loss fraction–0.007 daily loss fraction | 0.919 | 0.0% |
+| Historical annualized return | 30.0% | 0.01 return fraction | -0.018 return fraction–0.037 return fraction | 0.500 | 0.0% |
+| Historical ES95 loss | 45.0% | 0.006 daily loss fraction | 0.006 daily loss fraction–0.007 daily loss fraction | 0.920 | 0.0% |
 | Worst historical day | 25.0% | 0.013 daily loss fraction | 0.01 daily loss fraction–0.015 daily loss fraction | 0.870 | 0.0% |
 
 #### Barbell
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Historical annualized return | 30.0% | 0.008 return fraction | -0.021 return fraction–0.041 return fraction | 0.491 | 0.0% |
+| Historical annualized return | 30.0% | 0.009 return fraction | -0.021 return fraction–0.041 return fraction | 0.493 | 0.0% |
 | Historical ES95 loss | 45.0% | 0.006 daily loss fraction | 0.006 daily loss fraction–0.007 daily loss fraction | 0.921 | 0.0% |
-| Worst historical day | 25.0% | 0.014 daily loss fraction | 0.01 daily loss fraction–0.015 daily loss fraction | 0.863 | 0.0% |
+| Worst historical day | 25.0% | 0.014 daily loss fraction | 0.01 daily loss fraction–0.015 daily loss fraction | 0.864 | 0.0% |
 
 #### Long Duration
 
@@ -177,9 +177,9 @@ No hard constraints were supplied.
 
 | Dependence state | Modeled winner | Recommended option P(best) | CVaR10 | Breach U95 |
 |---|---|---:|---:|---:|
-| Independent residuals | Short Baseline | 67.5% | 0.777 | 0.00% |
-| Declared factor model | Short Baseline | 69.0% | 0.777 | 0.00% |
-| Loading stress ×1.35 | Short Baseline | 70.3% | 0.776 | 0.00% |
+| Independent residuals | Short Baseline | 67.3% | 0.776 | 0.00% |
+| Declared factor model | Short Baseline | 68.5% | 0.776 | 0.00% |
+| Loading stress ×1.35 | Short Baseline | 69.6% | 0.776 | 0.00% |
 
 ### Parameter provenance and approval
 
@@ -194,8 +194,8 @@ Coverage: **57/57 parameters sourced** and **57/57 approved for the declared use
 - U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.
 - projects/treasury-risk-engineering/outputs/results.json
 - Engine version: `7.0.0`
-- Samples: `10000`
-- Random seed: `20260726`
+- Samples: `3000`
+- Random seed: `20260810`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
 - Case SHA-256: `560e97bcaec27b9bfed1206430146a2f237a641d666148a2fd512dae7ff98d36`
 

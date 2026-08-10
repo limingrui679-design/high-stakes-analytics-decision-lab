@@ -1,32 +1,32 @@
 # Which follow-up triage rule should advance to prospective clinical validation
 
-*Population health and biostatistics · Prospective pilot design; no clinical deployment · 10,000 modeled simulations*
+*Population health and biostatistics · Prospective pilot design; no clinical deployment · 3,000 modeled simulations*
 
 ## Executive Summary
 
-- **Provisional preference — Dual Marker Triage.** It is the highest-ranked feasible option, with decision value score **68.7/100** and a modeled **86% probability of being best among decision-feasible alternatives**.
-- **The lead is meaningful rather than absolute.** It leads the next feasible option, Ejection Triage, by **0.056 utility points**.
-- **Modeled robustness is 96/100.** The option remains preferred in **100%** of two-sided weight stresses and **100%** of probability-weighted scenario comparisons.
-- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+1.4%** and CVaR10 by **-0.003**; the ×1.35 loading stress does not change the modeled winner.
-- **Constraint-breach evidence — 0/10,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
-- **Decision status — Provisional—validate before action.** The current blockers are: evidence is not labeled for operational use.
+- **Provisional preference — Top 20% Review.** It is the highest-ranked feasible option, with decision value score **76.3/100** and a modeled **25% probability of being best among decision-feasible alternatives**.
+- **The lead is narrow rather than absolute.** It leads the next feasible option, Top 30% Review, by **0.002 utility points**.
+- **Modeled robustness is 46/100.** The option remains preferred in **50%** of two-sided weight stresses and **25%** of probability-weighted scenario comparisons.
+- **Shared-shock sensitivity is explicit.** Relative to independent residuals, the declared factor model changes this option's P(best) by **+0.0%** and CVaR10 by **+0.000**; the ×1.35 loading stress does not change the modeled winner.
+- **Constraint-breach evidence — 0/3,000 observed; U95 0.00%; declared support excludes breach.** Feasibility uses the one-sided 95% upper bound against the **10.0% tolerance**; a zero event count is never presented as proof of zero real-world risk.
+- **Decision status — Provisional—validate before action.** The current blockers are: modeled preference separation is below threshold; the winner is sensitive to criterion weights; the winner changes across material scenarios; evidence is not labeled for operational use.
 - **Evidence boundary.** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
 - **Parameter lineage.** 48/48 governed parameters have a resolved source and approval-chain reference.
 
 ![Decision summary](figures/decision-scorecard.svg)
 
-**Decision owner:** Hypothetical domain review panel; no real owner authorization  
+**Decision owner:** Hypothetical domain review panel; no real owner authorization
 **Decision question:** Which follow-up triage rule should advance to prospective clinical validation?
 
 ## Decision status and modeled robustness
 
-**Status: Provisional—validate before action.** 7 of 8 configured readiness checks pass. The robustness score summarizes model behavior; it is not a posterior probability that the real-world decision is correct and cannot upgrade illustrative evidence into operational evidence.
+**Status: Provisional—validate before action.** 4 of 8 configured readiness checks pass. The robustness score summarizes model behavior; it is not a posterior probability that the real-world decision is correct and cannot upgrade illustrative evidence into operational evidence.
 
 ![Decision robustness profile](figures/robustness-profile.svg)
 
-## Dual Marker Triage leads on balanced value, not every dimension
+## Top 20% Review leads on balanced value, not every dimension
 
-**The preferred option earns its position through Observed event capture.** The comparison still exposes a trade-off on **Follow-up workload**, so the decision should be presented as a transparent compromise rather than a universal optimum.
+**The preferred option earns its position through Follow-up workload, Recorded-sex selection gap.** The comparison still exposes a trade-off on **Observed event capture**, so the decision should be presented as a transparent compromise rather than a universal optimum.
 
 ![Alternative ranking](figures/alternative-ranking.svg)
 
@@ -46,11 +46,11 @@ Each cell below places an outcome on its declared worst-to-best reference scale.
 
 ![Criterion scorecard](figures/criterion-scorecard.svg)
 
-**The decision is therefore driven by an explicit value model.** A stakeholder who places substantially more weight on Follow-up workload may reasonably prefer another option; the two-sided weight-sensitivity section tests that possibility directly. The preferred option clips **0.0%** of criterion draws at the declared reference-scale bounds.
+**The decision is therefore driven by an explicit value model.** A stakeholder who places substantially more weight on Observed event capture may reasonably prefer another option; the two-sided weight-sensitivity section tests that possibility directly. The preferred option clips **0.0%** of criterion draws at the declared reference-scale bounds.
 
 ## Downside risk remains visible behind the average
 
-**Dual Marker Triage has expected utility 0.706, but its worst-decile average falls to 0.631.** The widest criterion-level uncertainty for this option is associated with **Recorded-sex selection gap**, making it a priority for further evidence collection.
+**Top 20% Review has expected utility 0.768, but its worst-decile average falls to 0.748.** The widest criterion-level uncertainty for this option is associated with **Observed event capture**, making it a priority for further evidence collection.
 
 ![Utility uncertainty and downside](figures/utility-uncertainty.svg)
 
@@ -58,7 +58,7 @@ The interval chart prevents a precise-looking average from obscuring overlap amo
 
 ## Shared shocks change the uncertainty question
 
-**The declared factor model gives Dual Marker Triage P(best) 86%, versus 84% under independent residuals and 87% under the stronger correlation stress.** Its CVaR10 moves from 0.634 independently to 0.631 under declared dependence and 0.629 under stress.
+**The declared factor model gives Top 20% Review P(best) 25%, versus 25% under independent residuals and 25% under the stronger correlation stress.** Its CVaR10 moves from 0.748 independently to 0.748 under declared dependence and 0.748 under stress.
 
 ![Correlation and tail-risk stress](figures/correlation-stress.svg)
 
@@ -66,19 +66,19 @@ The three states use matched seeds, stratified scenario counts, and the same mar
 
 ## Scenario tests show when the preferred option is most exposed
 
-**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.660.** The same feasible alternative remains ahead in every modeled scenario.
+**The weakest modeled environment is Adverse transfer to a new setting, where the preferred option's risk-adjusted utility is 0.748.** At least one scenario changes the leading feasible alternative: Observed evidence base favors Top 30% Review.
 
 ![Scenario performance](figures/scenario-performance.svg)
 
-The preferred option leads in **100%** of the probability-weighted scenario comparison. Scenario probabilities are assumptions, not forecasts with guaranteed calibration. They are useful because they reveal which external conditions deserve monitoring and which contingency plans should be prepared before implementation.
+The preferred option leads in **25%** of the probability-weighted scenario comparison. Scenario probabilities are assumptions, not forecasts with guaranteed calibration. They are useful because they reveal which external conditions deserve monitoring and which contingency plans should be prepared before implementation.
 
 ## Distributional effects remain an evidence gap
 
 **No group-level outcomes were supplied for this case.** Before operational use, the analysis should add affected groups, absolute outcomes, disparity measures, and a qualitative review of harms that cannot be reduced to a numeric parity ratio.
 
-## The result is stable to stakeholder priorities
+## The result is sensitive to stakeholder priorities
 
-**The baseline choice survives 100% of local weight stresses.** No single criterion emphasis changes the preferred feasible alternative.
+**The baseline choice survives 50% of local weight stresses.** The following weight perturbation changes the winner: ↑ Observed event capture → Top 30% Review; ↓ Follow-up workload → Top 30% Review; ↓ Recorded-sex selection gap → Top 30% Review.
 
 ![Weight sensitivity](figures/weight-sensitivity.svg)
 
@@ -86,8 +86,8 @@ This test both increases and decreases each criterion weight while preserving ri
 
 ## Recommended next steps
 
-1. **Resolve the failed readiness checks before acting.** evidence is not labeled for operational use.
-2. **Reduce uncertainty in Recorded-sex selection gap.** Validate or replace the widest uncertainty input using experimental, quasi-experimental, observational, or engineering evidence appropriate to the domain.
+1. **Resolve the failed readiness checks before acting.** modeled preference separation is below threshold; the winner is sensitive to criterion weights; the winner changes across material scenarios; evidence is not labeled for operational use.
+2. **Reduce uncertainty in Observed event capture.** Validate or replace the widest uncertainty input using experimental, quasi-experimental, observational, or engineering evidence appropriate to the domain.
 3. **Monitor the Adverse transfer to a new setting trigger.** Specify leading indicators and a contingency response before rollout.
 4. **Review distributional impacts with affected stakeholders.** Examine absolute group outcomes alongside disparity measures and document unresolved normative choices.
 
@@ -101,13 +101,13 @@ This test both increases and decreases each criterion weight while preserving ri
 ## Caveats and assumptions
 
 - **Evidence type:** source-backed exploratory project evidence
-- **Evidence as of:** 2026-07-27
+- **Evidence as of:** 2026-08-10
 - **Permitted decision use:** exploratory
 - **Causal status:** No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.
 - **Dependence model:** latent_factor_gaussian_copula with 1 declared shared factor(s); the loading stress is ×1.35. Copula choice and loadings remain assumptions.
 - **Parameter provenance:** 100% source coverage and 100% approval coverage for the declared decision use. Approval for exploratory use is not operational approval.
 - **Zero-breach interpretation:** zero simulated events means either no event was observed in the finite run or the declared bounded input support excludes a breach. Neither statement establishes zero real-world risk.
-- Small observational cohort; selection and treatment information are incomplete; thresholds were not prospectively registered.
+- Public linked mortality is observational and uses public-use linkage fields; the simple score is not a diagnostic model and variance estimates do not replace a full complex-survey analysis.
 - Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval.
 
 <details>
@@ -117,18 +117,18 @@ This test both increases and decreases each criterion weight while preserving ri
 
 | Rank | Alternative | Feasible | Value score | Expected utility | CVaR10 | P(best feasible) | P(best all) | Breach evidence | Feasible Pareto |
 |---:|---|:---:|---:|---:|---:|---:|---:|---|:---:|
-| 1 | Dual Marker Triage | Yes | 68.7 | 0.706 | 0.631 | 85.8% | 85.8% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 2 | Ejection Triage | Yes | 63.1 | 0.649 | 0.578 | 9.9% | 9.9% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
-| 3 | Current Age Rule | Yes | 61.9 | 0.636 | 0.567 | 4.4% | 4.4% | 0/10,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 1 | Top 20% Review | Yes | 76.3 | 0.768 | 0.748 | 25.0% | 25.0% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 2 | Top 30% Review | Yes | 76.1 | 0.767 | 0.742 | 75.0% | 75.0% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
+| 3 | Baseline: Top 10% Review | Yes | 70.3 | 0.706 | 0.692 | 0.0% | 0.0% | 0/3,000 observed; U95 0.00%; declared support excludes breach | Yes |
 
 ### Readiness checks
 
 | Check | Result |
 |---|:---:|
 | Feasible Alternative | Pass |
-| Probability Best | Pass |
-| Weight Stability | Pass |
-| Scenario Stability | Pass |
+| Probability Best | Fail |
+| Weight Stability | Fail |
+| Scenario Stability | Fail |
 | Scale Clipping | Pass |
 | Parameter Provenance | Pass |
 | Approval Scope | Pass |
@@ -140,37 +140,37 @@ No hard constraints were supplied.
 
 ### Criterion outcomes
 
-#### Dual Marker Triage
+#### Top 20% Review
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Observed event capture | 45.0% | 0.726 share | 0.646 share–0.808 share | 0.726 | 0.0% |
-| Follow-up workload | 30.0% | 0.434 share | 0.381 share–0.488 share | 0.566 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.081 absolute share | 0.009 absolute share–0.183 absolute share | 0.838 | 0.0% |
+| Observed event capture | 45.0% | 0.625 share | 0.586 share–0.637 share | 0.625 | 0.0% |
+| Follow-up workload | 30.0% | 0.204 share | 0.2 share–0.216 share | 0.796 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.003 absolute share | 0.003 absolute share–0.003 absolute share | 0.994 | 0.0% |
 
-#### Ejection Triage
-
-| Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
-|---|---:|---:|---:|---:|---:|
-| Observed event capture | 45.0% | 0.518 share | 0.432 share–0.602 share | 0.518 | 0.0% |
-| Follow-up workload | 30.0% | 0.318 share | 0.271 share–0.365 share | 0.682 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.078 absolute share | 0.006 absolute share–0.158 absolute share | 0.844 | 0.0% |
-
-#### Current Age Rule
+#### Top 30% Review
 
 | Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
 |---|---:|---:|---:|---:|---:|
-| Observed event capture | 45.0% | 0.508 share | 0.412 share–0.598 share | 0.508 | 0.0% |
-| Follow-up workload | 30.0% | 0.393 share | 0.338 share–0.448 share | 0.607 | 0.0% |
-| Recorded-sex selection gap | 25.0% | 0.048 absolute share | 0.004 absolute share–0.122 absolute share | 0.903 | 0.0% |
+| Observed event capture | 45.0% | 0.708 share | 0.665 share–0.723 share | 0.708 | 0.0% |
+| Follow-up workload | 30.0% | 0.306 share | 0.3 share–0.324 share | 0.694 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.019 absolute share | 0.019 absolute share–0.02 absolute share | 0.962 | 0.0% |
+
+#### Baseline: Top 10% Review
+
+| Criterion | Weight | Mean | P05–P95 | Normalized score | Scale clipping |
+|---|---:|---:|---:|---:|---:|
+| Observed event capture | 45.0% | 0.429 share | 0.402 share–0.437 share | 0.429 | 0.0% |
+| Follow-up workload | 30.0% | 0.102 share | 0.1 share–0.108 share | 0.898 | 0.0% |
+| Recorded-sex selection gap | 25.0% | 0.012 absolute share | 0.012 absolute share–0.013 absolute share | 0.976 | 0.0% |
 
 ### Correlation sensitivity
 
 | Dependence state | Modeled winner | Recommended option P(best) | CVaR10 | Breach U95 |
 |---|---|---:|---:|---:|
-| Independent residuals | Dual Marker Triage | 84.4% | 0.634 | 0.00% |
-| Declared factor model | Dual Marker Triage | 85.8% | 0.631 | 0.00% |
-| Loading stress ×1.35 | Dual Marker Triage | 86.8% | 0.629 | 0.00% |
+| Independent residuals | Top 20% Review | 25.0% | 0.748 | 0.00% |
+| Declared factor model | Top 20% Review | 25.0% | 0.748 | 0.00% |
+| Loading stress ×1.35 | Top 20% Review | 25.0% | 0.748 | 0.00% |
 
 ### Parameter provenance and approval
 
@@ -182,13 +182,13 @@ Coverage: **48/48 parameters sourced** and **48/48 approved for the declared use
 | `portfolio-author-governance-assumptions` | analyst_judgment_not_externally_approved | Repository analysis author | exploratory | 1. self_review (approved) |
 ### Sources and reproducibility
 
-- Heart Failure Clinical Records [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5Z89R
+- U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality.
 - projects/population-health-survival/outputs/results.json
 - Engine version: `7.0.0`
-- Samples: `10000`
-- Random seed: `20260727`
+- Samples: `3000`
+- Random seed: `20260810`
 - Sampling design: Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals.
-- Case SHA-256: `9c2215f0017eefaaaf248aa7b58ff385d44dd640cfe3bcdf442257520633ba90`
+- Case SHA-256: `8526fe9a41beeb246509a268cb305e8dc6a5c3f4c4dc2ff3e810e2b858277a18`
 
 ### Decision notes
 

@@ -1,4 +1,4 @@
-# R2 · Pseudoword Reading: A Repeated-Measures Behavioral Study
+# R2 · Small-Sample Repeated-Measures Inference
 
 **Portfolio role:** advanced statistics, behavioral science, and experimental reasoning  
 **Decision boundary:** prioritize a protocol for a larger preregistered validation study—not diagnose readers or infer educational outcomes.

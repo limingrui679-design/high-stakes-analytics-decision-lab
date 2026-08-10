@@ -1,0 +1,24 @@
+{
+  "project_id": "opportunity-zone-policy-evaluation",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "pre_year": 2018,
+    "post_year": 2019,
+    "bootstrap_samples": 500,
+    "matching_fields": [
+      "poverty",
+      "income",
+      "jobs",
+      "unemployment"
+    ]
+  },
+  "parameter_register": [
+    {
+      "parameter": "pre_year/post_year/bootstrap_samples/matching_fields",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Associational one-year screen; no causal effect because parallel trends are unavailable."
+    }
+  ]
+}

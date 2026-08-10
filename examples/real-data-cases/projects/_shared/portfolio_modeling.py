@@ -1955,6 +1955,75 @@ def analyze_cfpb(project_root: Path) -> dict[str, Any]:
             "complaints": len(product_rows),
             "late_response_rate": mean(labels),
         }
+    workflow_delay_hours = float(
+        config["parameters"]["workflow_delay_hours"]
+    )
+    queue_lanes = Counter()
+    for row in rows:
+        metadata_gap = any(
+            is_missing_value(row[field])
+            for field in ("state", "sub_issue")
+        )
+        workflow_delay = float(row["transmission_hours"]) > workflow_delay_hours
+        if metadata_gap:
+            queue_lanes["metadata_completion_review"] += 1
+        elif workflow_delay:
+            queue_lanes["workflow_delay_review"] += 1
+        else:
+            queue_lanes["aggregate_trend_monitoring"] += 1
+    human_in_the_loop_system = {
+        "decision_owner": "human complaint-operations reviewer",
+        "automation_status": "aggregate_monitoring_only",
+        "individual_ranking_signal": (
+            "available only as retained validation evidence; suppressed from "
+            "the review queue because the deployment gate failed"
+        ),
+        "queue_lanes": dict(sorted(queue_lanes.items())),
+        "lane_rule": {
+            "metadata_completion_review": (
+                "state or sub-issue is missing in the privacy-minimized public record"
+            ),
+            "workflow_delay_review": (
+                f"CFPB intake-to-company transmission exceeds the illustrative "
+                f"{workflow_delay_hours:.0f}-hour monitoring marker"
+            ),
+            "aggregate_trend_monitoring": (
+                "no individual escalation; retain only in aggregate issue and volume monitoring"
+            ),
+        },
+        "manual_actions": [
+            "inspect source metadata and request missing evidence",
+            "review workflow handoff timing without inferring complaint merit",
+            "record an override reason and the evidence consulted",
+            "close or redirect the review without automated sanctions",
+        ],
+        "forbidden_uses": [
+            "automated complaint-merit decision",
+            "consumer or company quality ranking",
+            "regulatory-compliance finding",
+            "sanction or benefit eligibility decision",
+        ],
+        "audit_log_fields": [
+            "review_lane",
+            "source_version",
+            "evidence_consulted",
+            "human_disposition",
+            "override_reason",
+            "review_timestamp",
+        ],
+    }
+    write_json(
+        project_root / "outputs/system-contract.json",
+        {
+            "schema_version": "1.0",
+            "project_id": "cfpb-fintech-complaint-operations",
+            **human_in_the_loop_system,
+            "evidence_boundary": (
+                "Queue membership is a workflow observation, not complaint merit, "
+                "consumer harm, company quality, or regulatory noncompliance."
+            ),
+        },
+    )
     subgroup = {}
     for product in sorted({row["sub_product"] for row in test}):
         indices = [
@@ -2034,6 +2103,7 @@ def analyze_cfpb(project_root: Path) -> dict[str, Any]:
         "monthly_operations": monthly,
         "sub_product_operations": by_product,
         "subgroup_metrics": subgroup,
+        "human_in_the_loop_system": human_in_the_loop_system,
         "privacy_design": (
             "Narratives, company names, ZIP codes, tags, and public-response text "
             "were excluded before repository storage."

@@ -1,4 +1,4 @@
-# Evidence input table: Which time-block resource allocation should be piloted for system-level service planning
+# Evidence input table: Which fixed-budget station-hour rebalancing scenario should advance to a bounded operations pilot
 
 | Input family | Source ID | Evidence class | Approved use | Boundary |
 |---|---|---|---|---|
@@ -7,6 +7,6 @@
 | Adverse-transfer scenario | portfolio-author-governance-assumptions | stress assumption | Exploratory only | Not an estimated forecast probability |
 | Shared-factor loadings | portfolio-author-governance-assumptions | dependence assumption | Exploratory only | Stress-tests correlation; not empirically estimated |
 
-Official source: Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894
+Official source: Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.
 
 The only approval recorded here is the repository author's self-review for exploratory demonstration. It is not institutional or operational approval.

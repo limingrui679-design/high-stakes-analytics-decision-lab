@@ -1,0 +1,29 @@
+{
+  "project_id": "sec-nport-filing-review",
+  "charts": [
+    {
+      "path": "figures/review-capacity.svg",
+      "question": "Review capacity trade-off",
+      "supported_finding": "Thresholds determine workload and internal high-score capture.",
+      "interpretation_boundary": "Selection triggers filing review only.",
+      "source_id": "sec-nport-2025q4-minimized-fund-risk",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/review-score-deciles.svg",
+      "question": "Transparent score deciles",
+      "supported_finding": "Every score component is percentile-based.",
+      "interpretation_boundary": "The composite is analyst-defined.",
+      "source_id": "sec-nport-2025q4-minimized-fund-risk",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/risk-indicator-p90.svg",
+      "question": "N-PORT indicator tails",
+      "supported_finding": "Observed filing distributions define review signals.",
+      "interpretation_boundary": "Indicators are not expected returns.",
+      "source_id": "sec-nport-2025q4-minimized-fund-risk",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

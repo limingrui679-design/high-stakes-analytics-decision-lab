@@ -1,0 +1,2502 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-08-10T12:57:48.405182+00:00",
+    "case_id": "real-commercial-real-estate-risk",
+    "case_hash_sha256": "0024c4e85aea39c0edfd1cb29fa44e72b388662dfa68435e95dcd33251e9a3b7",
+    "samples": 3000,
+    "seed": 20260810,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which borough market should advance first to property-level commercial real-estate diligence",
+    "domain": "Real-estate finance and market screening",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which borough market should advance first to property-level commercial real-estate diligence?",
+    "time_horizon": "Pre-acquisition evidence collection only",
+    "recommendation": "Brooklyn",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "Brooklyn",
+      "Queens",
+      "Manhattan",
+      "baseline-Bronx",
+      "Staten Island"
+    ],
+    "pareto_frontier": [
+      "Brooklyn",
+      "Queens"
+    ],
+    "pareto_frontier_unconstrained": [
+      "Brooklyn",
+      "Queens"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.0892319298824753,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 100.0,
+    "robustness_components": {
+      "probability_best": {
+        "value": 1.0,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "transaction_share",
+      "label": "Public transaction depth",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 0.6
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "price_dispersion_ratio",
+      "label": "Relative price dispersion",
+      "direction": "minimize",
+      "weight": 0.3,
+      "unit": "MAD/median",
+      "scale": {
+        "worst": 1.5,
+        "best": 0
+      },
+      "normalized_weight": 0.3
+    },
+    {
+      "id": "geocoded_share",
+      "label": "Approximate geography coverage",
+      "direction": "maximize",
+      "weight": 0.25,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.25
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "transaction_share": {
+            "multiply": 0.92
+          },
+          "price_dispersion_ratio": {
+            "multiply": 1.08
+          },
+          "geocoded_share": {
+            "multiply": 0.92
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "Brooklyn"
+      ],
+      "winner": "Brooklyn",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "Brooklyn"
+      ],
+      "winner": "Brooklyn",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "baseline-Bronx": {
+      "alternative_id": "baseline-Bronx",
+      "label": "Baseline: Bronx",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5372990264300057,
+      "utility_p05": 0.51237420122,
+      "utility_p95": 0.5456073015,
+      "cvar10": 0.5123742012200009,
+      "risk_adjusted_utility": 0.5310678201275045,
+      "value_score": 53.10678201275045,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "transaction_share": {
+          "label": "Public transaction depth",
+          "unit": "share",
+          "mean": 0.10520042260000667,
+          "normalized_score": 0.17533403766666636,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.0987595804,
+          "p95": 0.10734737
+        },
+        "price_dispersion_ratio": {
+          "label": "Relative price dispersion",
+          "unit": "MAD/median",
+          "mean": 0.43300645260000364,
+          "normalized_score": 0.7113290315999672,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.42451613,
+          "p95": 0.4584774204
+        },
+        "geocoded_share": {
+          "label": "Approximate geography coverage",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.5456073015000114,
+          "p05": 0.5456073015,
+          "p95": 0.5456073015,
+          "cvar10": 0.5456073014999989,
+          "risk_adjusted_utility": 0.5456073015000082,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.5123742012199983,
+          "p05": 0.51237420122,
+          "p95": 0.51237420122,
+          "cvar10": 0.5123742012199991,
+          "risk_adjusted_utility": 0.5123742012199985,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    },
+    "Brooklyn": {
+      "alternative_id": "Brooklyn",
+      "label": "Brooklyn",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7585452004100008,
+      "utility_p05": 0.72146442014,
+      "utility_p95": 0.7709054605000001,
+      "cvar10": 0.7214644201399966,
+      "risk_adjusted_utility": 0.7492750053424998,
+      "value_score": 74.92750053424999,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "transaction_share": {
+          "label": "Public transaction depth",
+          "unit": "share",
+          "mean": 0.38476006380000166,
+          "normalized_score": 0.6412667729999969,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.36120332520000004,
+          "p95": 0.39261231
+        },
+        "price_dispersion_ratio": {
+          "label": "Relative price dispersion",
+          "unit": "MAD/median",
+          "mean": 0.3751242371999953,
+          "normalized_score": 0.7499171752000008,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.36776886,
+          "p95": 0.3971903688
+        },
+        "geocoded_share": {
+          "label": "Approximate geography coverage",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7709054604999902,
+          "p05": 0.7709054605,
+          "p95": 0.7709054605,
+          "cvar10": 0.7709054604999991,
+          "risk_adjusted_utility": 0.7709054604999924,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.7214644201400106,
+          "p05": 0.72146442014,
+          "p95": 0.72146442014,
+          "cvar10": 0.7214644201400003,
+          "risk_adjusted_utility": 0.721464420140008,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 1.0,
+      "probability_best_unconstrained": 1.0,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "Manhattan": {
+      "alternative_id": "Manhattan",
+      "label": "Manhattan",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5681312914999902,
+      "utility_p05": 0.5390353010000001,
+      "utility_p95": 0.577829955,
+      "cvar10": 0.5390353010000015,
+      "risk_adjusted_utility": 0.5608572938749931,
+      "value_score": 56.085729387499306,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "transaction_share": {
+          "label": "Public transaction depth",
+          "unit": "share",
+          "mean": 0.171671911600006,
+          "normalized_score": 0.2861198526666714,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.1611613864,
+          "p95": 0.17517542
+        },
+        "price_dispersion_ratio": {
+          "label": "Relative price dispersion",
+          "unit": "MAD/median",
+          "mean": 0.5281132110000243,
+          "normalized_score": 0.6479245260000194,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.51775805,
+          "p95": 0.559178694
+        },
+        "geocoded_share": {
+          "label": "Approximate geography coverage",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.577829954999987,
+          "p05": 0.577829955,
+          "p95": 0.577829955,
+          "cvar10": 0.5778299549999988,
+          "risk_adjusted_utility": 0.5778299549999899,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.5390353010000082,
+          "p05": 0.5390353010000001,
+          "p95": 0.5390353010000001,
+          "cvar10": 0.5390353009999991,
+          "risk_adjusted_utility": 0.539035301000006,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    },
+    "Queens": {
+      "alternative_id": "Queens",
+      "label": "Queens",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.667687247120032,
+      "utility_p05": 0.63711056048,
+      "utility_p95": 0.677879476,
+      "cvar10": 0.6371105604800018,
+      "risk_adjusted_utility": 0.6600430754600245,
+      "value_score": 66.00430754600245,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "transaction_share": {
+          "label": "Public transaction depth",
+          "unit": "share",
+          "mean": 0.2531607344000042,
+          "normalized_score": 0.4219345573333378,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.2376610976,
+          "p95": 0.25832728
+        },
+        "price_dispersion_ratio": {
+          "label": "Relative price dispersion",
+          "unit": "MAD/median",
+          "mean": 0.3359165183999933,
+          "normalized_score": 0.7760556544000106,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.32932992,
+          "p95": 0.3556763136
+        },
+        "geocoded_share": {
+          "label": "Approximate geography coverage",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.6778794760000258,
+          "p05": 0.677879476,
+          "p95": 0.677879476,
+          "cvar10": 0.6778794759999986,
+          "risk_adjusted_utility": 0.6778794760000191,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.6371105604799939,
+          "p05": 0.63711056048,
+          "p95": 0.63711056048,
+          "cvar10": 0.6371105604799989,
+          "risk_adjusted_utility": 0.6371105604799951,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "Staten Island": {
+      "alternative_id": "Staten Island",
+      "label": "Staten Island",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.5186084814200101,
+      "utility_p05": 0.49618507268,
+      "utility_p95": 0.526082951,
+      "cvar10": 0.49618507268000156,
+      "risk_adjusted_utility": 0.5130026292350081,
+      "value_score": 51.3002629235008,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "transaction_share": {
+          "label": "Public transaction depth",
+          "unit": "share",
+          "mean": 0.06520686759999761,
+          "normalized_score": 0.10867811266667224,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.06121461040000001,
+          "p95": 0.06653762
+        },
+        "price_dispersion_ratio": {
+          "label": "Relative price dispersion",
+          "unit": "MAD/median",
+          "mean": 0.3764833464000149,
+          "normalized_score": 0.7490111024000052,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.36910132,
+          "p95": 0.39862942560000003
+        },
+        "geocoded_share": {
+          "label": "Approximate geography coverage",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.526082951000016,
+          "p05": 0.526082951,
+          "p95": 0.526082951,
+          "cvar10": 0.5260829510000027,
+          "risk_adjusted_utility": 0.5260829510000127,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.49618507268000495,
+          "p05": 0.49618507268,
+          "p95": 0.49618507268,
+          "cvar10": 0.4961850726799996,
+          "risk_adjusted_utility": 0.4961850726800036,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "transaction_share",
+      "label": "↓ Public transaction depth",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.7700673947705566,
+        "Queens": 0.7032019048941274,
+        "Manhattan": 0.6101132044706031,
+        "baseline-Bronx": 0.5943179613117479,
+        "Staten Island": 0.5846475628352681
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.7792413934823114,
+          "cvar10": 0.7425453986352925,
+          "risk_adjusted_utility": 0.7700673947705566
+        },
+        "Queens": {
+          "expected_utility": 0.7110553688470704,
+          "cvar10": 0.6796415130352981,
+          "risk_adjusted_utility": 0.7032019048941274
+        },
+        "Manhattan": {
+          "expected_utility": 0.6178980160000204,
+          "cvar10": 0.5867587698823515,
+          "risk_adjusted_utility": 0.6101132044706031
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.6011752009176244,
+          "cvar10": 0.573746242494118,
+          "risk_adjusted_utility": 0.5943179613117479
+        },
+        "Staten Island": {
+          "expected_utility": 0.5909491347293772,
+          "cvar10": 0.565742847152941,
+          "risk_adjusted_utility": 0.5846475628352681
+        }
+      }
+    },
+    {
+      "criterion": "transaction_share",
+      "label": "↑ Public transaction depth",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.727633946958135,
+        "Queens": 0.6151226611510124,
+        "Manhattan": 0.5095909379490018,
+        "baseline-Bronx": 0.46523604052756273,
+        "Staten Island": 0.4384334126306
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.7370042647632258,
+          "cvar10": 0.6995229935428624,
+          "risk_adjusted_utility": 0.727633946958135
+        },
+        "Queens": {
+          "expected_utility": 0.6225489979755009,
+          "cvar10": 0.5928436506775471,
+          "risk_adjusted_utility": 0.6151226611510124
+        },
+        "Manhattan": {
+          "expected_utility": 0.5163332721224786,
+          "cvar10": 0.48936393542857115,
+          "risk_adjusted_utility": 0.5095909379490018
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.4708156611469551,
+          "cvar10": 0.4484971786693856,
+          "risk_adjusted_utility": 0.46523604052756273
+        },
+        "Staten Island": {
+          "expected_utility": 0.4433151483836579,
+          "cvar10": 0.4237882053714264,
+          "risk_adjusted_utility": 0.4384334126306
+        }
+      }
+    },
+    {
+      "criterion": "price_dispersion_ratio",
+      "label": "↓ Relative price dispersion",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.7496122852027779,
+        "Queens": 0.6475187110444606,
+        "Manhattan": 0.5517584436944544,
+        "baseline-Bronx": 0.5115104812194582,
+        "Staten Island": 0.4871895781277677
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.7595038698777781,
+          "cvar10": 0.7199375311777773,
+          "risk_adjusted_utility": 0.7496122852027779
+        },
+        "Queens": {
+          "expected_utility": 0.6556463129777989,
+          "cvar10": 0.6231359052444457,
+          "risk_adjusted_utility": 0.6475187110444606
+        },
+        "Manhattan": {
+          "expected_utility": 0.5592653765555683,
+          "cvar10": 0.5292376451111125,
+          "risk_adjusted_utility": 0.5517584436944544
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.5179623591889074,
+          "cvar10": 0.4921548473111106,
+          "risk_adjusted_utility": 0.5115104812194582
+        },
+        "Staten Island": {
+          "expected_utility": 0.49300819019998593,
+          "cvar10": 0.46973374191111295,
+          "risk_adjusted_utility": 0.4871895781277677
+        }
+      }
+    },
+    {
+      "criterion": "price_dispersion_ratio",
+      "label": "↑ Relative price dispersion",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.7488790681152201,
+        "Queens": 0.6747455902087125,
+        "Manhattan": 0.5715385527826164,
+        "baseline-Bronx": 0.5540264353673661,
+        "Staten Island": 0.5433049066217347
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.7574198058173961,
+          "cvar10": 0.7232568550086921,
+          "risk_adjusted_utility": 0.7488790681152201
+        },
+        "Queens": {
+          "expected_utility": 0.6818222567652386,
+          "cvar10": 0.6535155905391343,
+          "risk_adjusted_utility": 0.6747455902087125
+        },
+        "Manhattan": {
+          "expected_utility": 0.5785391046956627,
+          "cvar10": 0.5505368970434776,
+          "risk_adjusted_utility": 0.5715385527826164
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.5599985923217063,
+          "cvar10": 0.5361099645043452,
+          "risk_adjusted_utility": 0.5540264353673661
+        },
+        "Staten Island": {
+          "expected_utility": 0.5486609971999942,
+          "cvar10": 0.5272366348869562,
+          "risk_adjusted_utility": 0.5433049066217347
+        }
+      }
+    },
+    {
+      "criterion": "geocoded_share",
+      "label": "↓ Approximate geography coverage",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.7296636421918077,
+        "Queens": 0.632319718683628,
+        "Manhattan": 0.5241170478636346,
+        "baseline-Bronx": 0.4916194401390976,
+        "Staten Island": 0.47191195916545636
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.738412945901803,
+          "cvar10": 0.703415731061822,
+          "risk_adjusted_utility": 0.7296636421918077
+        },
+        "Queens": {
+          "expected_utility": 0.6392951786763525,
+          "cvar10": 0.6113933387054545,
+          "risk_adjusted_utility": 0.632319718683628
+        },
+        "Manhattan": {
+          "expected_utility": 0.5306886816363604,
+          "cvar10": 0.5044021465454569,
+          "risk_adjusted_utility": 0.5241170478636346
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.49705348337819155,
+          "cvar10": 0.47531731042181574,
+          "risk_adjusted_utility": 0.4916194401390976
+        },
+        "Staten Island": {
+          "expected_utility": 0.47666379791272956,
+          "cvar10": 0.45765644292363666,
+          "risk_adjusted_utility": 0.47191195916545636
+        }
+      }
+    },
+    {
+      "criterion": "geocoded_share",
+      "label": "↑ Approximate geography coverage",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "Brooklyn",
+      "scores": {
+        "Brooklyn": 0.773244449193345,
+        "Queens": 0.6939271781866794,
+        "Manhattan": 0.605762039000028,
+        "baseline-Bronx": 0.5792825067800113,
+        "Staten Island": 0.5632245593199955
+      },
+      "score_details": {
+        "Brooklyn": {
+          "expected_utility": 0.7831512892533503,
+          "cvar10": 0.7435239290133289,
+          "risk_adjusted_utility": 0.773244449193345
+        },
+        "Queens": {
+          "expected_utility": 0.7023886641066825,
+          "cvar10": 0.6685427204266697,
+          "risk_adjusted_utility": 0.6939271781866794
+        },
+        "Manhattan": {
+          "expected_utility": 0.6138944813333702,
+          "cvar10": 0.5813647120000014,
+          "risk_adjusted_utility": 0.605762039000028
+        },
+        "baseline-Bronx": {
+          "expected_utility": 0.5864880234933495,
+          "cvar10": 0.5576659566399965,
+          "risk_adjusted_utility": 0.5792825067800113
+        },
+        "Staten Island": {
+          "expected_utility": 0.5698742057066609,
+          "cvar10": 0.5432756201599992,
+          "risk_adjusted_utility": 0.5632245593199955
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "transaction_share": -0.28,
+          "price_dispersion_ratio": 0.28,
+          "geocoded_share": -0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "Brooklyn",
+      "ranking": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "feasible_alternatives": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "alternatives": {
+        "baseline-Bronx": {
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Brooklyn": {
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "Manhattan": {
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Queens": {
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Staten Island": {
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "Brooklyn",
+      "ranking": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "feasible_alternatives": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "alternatives": {
+        "baseline-Bronx": {
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Brooklyn": {
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "Manhattan": {
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Queens": {
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Staten Island": {
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "Brooklyn",
+      "ranking": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "feasible_alternatives": [
+        "Brooklyn",
+        "Queens",
+        "Manhattan",
+        "baseline-Bronx",
+        "Staten Island"
+      ],
+      "alternatives": {
+        "baseline-Bronx": {
+          "expected_utility": 0.5372990264300057,
+          "cvar10": 0.5123742012200009,
+          "risk_adjusted_utility": 0.5310678201275045,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Brooklyn": {
+          "expected_utility": 0.7585452004100008,
+          "cvar10": 0.7214644201399966,
+          "risk_adjusted_utility": 0.7492750053424998,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "Manhattan": {
+          "expected_utility": 0.5681312914999902,
+          "cvar10": 0.5390353010000015,
+          "risk_adjusted_utility": 0.5608572938749931,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Queens": {
+          "expected_utility": 0.667687247120032,
+          "cvar10": 0.6371105604800018,
+          "risk_adjusted_utility": 0.6600430754600245,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "Staten Island": {
+          "expected_utility": 0.5186084814200101,
+          "cvar10": 0.49618507268000156,
+          "risk_adjusted_utility": 0.5130026292350081,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "baseline-Bronx",
+        "right_alternative": "Brooklyn",
+        "correlation": 1.0000000000000895
+      },
+      {
+        "left_alternative": "baseline-Bronx",
+        "right_alternative": "Manhattan",
+        "correlation": 0.9999999999999438
+      },
+      {
+        "left_alternative": "baseline-Bronx",
+        "right_alternative": "Queens",
+        "correlation": 1.0000000000000215
+      },
+      {
+        "left_alternative": "baseline-Bronx",
+        "right_alternative": "Staten Island",
+        "correlation": 0.9999999999999992
+      },
+      {
+        "left_alternative": "Brooklyn",
+        "right_alternative": "Manhattan",
+        "correlation": 1.0000000000000684
+      },
+      {
+        "left_alternative": "Brooklyn",
+        "right_alternative": "Queens",
+        "correlation": 1.0000000000000482
+      },
+      {
+        "left_alternative": "Brooklyn",
+        "right_alternative": "Staten Island",
+        "correlation": 1.0000000000000113
+      },
+      {
+        "left_alternative": "Manhattan",
+        "right_alternative": "Queens",
+        "correlation": 1.0000000000000355
+      },
+      {
+        "left_alternative": "Manhattan",
+        "right_alternative": "Staten Island",
+        "correlation": 1.0000000000000258
+      },
+      {
+        "left_alternative": "Queens",
+        "right_alternative": "Staten Island",
+        "correlation": 1.0000000000000357
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 66,
+      "parameters_with_resolved_source": 66,
+      "parameters_approved_for_declared_use": 66,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-07-30",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.transaction_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.transaction_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.transaction_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.price_dispersion_ratio.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.price_dispersion_ratio.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.price_dispersion_ratio.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.geocoded_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.geocoded_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.geocoded_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.transaction_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.transaction_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.transaction_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.price_dispersion_ratio.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.price_dispersion_ratio.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.price_dispersion_ratio.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.geocoded_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.geocoded_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.geocoded_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.transaction_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.transaction_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.transaction_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.price_dispersion_ratio.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.price_dispersion_ratio.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.price_dispersion_ratio.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.geocoded_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.geocoded_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.geocoded_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.transaction_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.transaction_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.transaction_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.price_dispersion_ratio.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.price_dispersion_ratio.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.price_dispersion_ratio.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.geocoded_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.geocoded_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[3].metrics.geocoded_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.transaction_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.transaction_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.transaction_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.price_dispersion_ratio.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.price_dispersion_ratio.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.price_dispersion_ratio.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.geocoded_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.geocoded_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[4].metrics.geocoded_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "commercial-real-estate-risk-analysis-output",
+        "citation": "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.transaction_share.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.price_dispersion_ratio.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.geocoded_share.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.transaction_share",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.price_dispersion_ratio",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.geocoded_share",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 15,
+      "parameter": 0,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.transaction_share",
+        "alternative_id": "baseline-Bronx",
+        "criterion_id": "transaction_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[0].metrics.price_dispersion_ratio",
+        "alternative_id": "baseline-Bronx",
+        "criterion_id": "price_dispersion_ratio",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[0].metrics.geocoded_share",
+        "alternative_id": "baseline-Bronx",
+        "criterion_id": "geocoded_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.transaction_share",
+        "alternative_id": "Brooklyn",
+        "criterion_id": "transaction_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.price_dispersion_ratio",
+        "alternative_id": "Brooklyn",
+        "criterion_id": "price_dispersion_ratio",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.geocoded_share",
+        "alternative_id": "Brooklyn",
+        "criterion_id": "geocoded_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.transaction_share",
+        "alternative_id": "Manhattan",
+        "criterion_id": "transaction_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.price_dispersion_ratio",
+        "alternative_id": "Manhattan",
+        "criterion_id": "price_dispersion_ratio",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.geocoded_share",
+        "alternative_id": "Manhattan",
+        "criterion_id": "geocoded_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[3].metrics.transaction_share",
+        "alternative_id": "Queens",
+        "criterion_id": "transaction_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[3].metrics.price_dispersion_ratio",
+        "alternative_id": "Queens",
+        "criterion_id": "price_dispersion_ratio",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[3].metrics.geocoded_share",
+        "alternative_id": "Queens",
+        "criterion_id": "geocoded_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[4].metrics.transaction_share",
+        "alternative_id": "Staten Island",
+        "criterion_id": "transaction_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[4].metrics.price_dispersion_ratio",
+        "alternative_id": "Staten Island",
+        "criterion_id": "price_dispersion_ratio",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[4].metrics.geocoded_share",
+        "alternative_id": "Staten Island",
+        "criterion_id": "geocoded_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-07-30",
+    "sources": [
+      "New York City Department of Finance, NYC Citywide Annualized Calendar Sales Update",
+      "projects/commercial-real-estate-risk/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "The source does not establish arm's-length status, lease income, operating expenses, occupancy, property condition, appraisal value, zoning feasibility, financing availability, or causal regeneration effects.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

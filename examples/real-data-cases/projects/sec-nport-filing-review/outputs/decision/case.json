@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.3",
+  "case_id": "real-sec-nport-filing-review",
+  "title": "Which transparent N-PORT review threshold should advance to analyst filing review",
+  "domain": "Regulatory filing analytics and financial risk",
+  "decision_owner": "Hypothetical domain review panel; no real owner authorization",
+  "decision_question": "Which transparent N-PORT review threshold should advance to analyst filing review?",
+  "time_horizon": "Targeted filing review only",
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-08-10",
+    "sources": [
+      "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.",
+      "projects/sec-nport-filing-review/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "N-PORT fields are reported snapshots and may be amended; the composite is an analyst screen, not SEC risk classification, investor suitability, or expected performance.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "criteria": [
+    {
+      "id": "high_risk_capture",
+      "label": "Internal high-score capture",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      }
+    },
+    {
+      "id": "review_share",
+      "label": "Filing-review workload",
+      "direction": "minimize",
+      "weight": 0.35,
+      "unit": "share",
+      "scale": {
+        "worst": 1,
+        "best": 0
+      }
+    },
+    {
+      "id": "average_review_score",
+      "label": "Average selected review score",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "percentile index",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      }
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "baseline-review-top-5%",
+      "label": "Baseline: Review Top 5%",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "high_risk_capture": {
+          "distribution": "fixed",
+          "value": 0.5,
+          "uncertainty_type": "none"
+        },
+        "review_share": {
+          "distribution": "fixed",
+          "value": 0.04997021,
+          "uncertainty_type": "none"
+        },
+        "average_review_score": {
+          "distribution": "fixed",
+          "value": 0.76027643,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "review-top-10%",
+      "label": "Review Top 10%",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "high_risk_capture": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        },
+        "review_share": {
+          "distribution": "fixed",
+          "value": 0.09994041,
+          "uncertainty_type": "none"
+        },
+        "average_review_score": {
+          "distribution": "fixed",
+          "value": 0.7216356,
+          "uncertainty_type": "none"
+        }
+      }
+    },
+    {
+      "id": "review-top-20%",
+      "label": "Review Top 20%",
+      "description": "Candidate derived from the source-backed project output.",
+      "metrics": {
+        "high_risk_capture": {
+          "distribution": "fixed",
+          "value": 1.0,
+          "uncertainty_type": "none"
+        },
+        "review_share": {
+          "distribution": "fixed",
+          "value": 0.19996595,
+          "uncertainty_type": "none"
+        },
+        "average_review_score": {
+          "distribution": "fixed",
+          "value": 0.67535874,
+          "uncertainty_type": "none"
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "high_risk_capture": {
+            "multiply": 0.92
+          },
+          "review_share": {
+            "multiply": 1.08
+          },
+          "average_review_score": {
+            "multiply": 0.92
+          }
+        }
+      }
+    }
+  ],
+  "uncertainty_model": {
+    "method": "latent_factor_gaussian_copula",
+    "stress_multiplier": 1.35,
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "high_risk_capture": -0.28,
+          "review_share": 0.28,
+          "average_review_score": -0.28
+        }
+      }
+    ]
+  },
+  "parameter_governance": {
+    "sources": [
+      {
+        "id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-08-10",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "rules": [
+      {
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output"
+      },
+      {
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "constraint_threshold",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions"
+      },
+      {
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions"
+      }
+    ]
+  },
+  "constraints": [],
+  "risk_aversion": 0.25,
+  "max_constraint_violation_rate": 0.1,
+  "sensitivity_weight_multiplier": 1.5,
+  "readiness_thresholds": {
+    "minimum_probability_best": 0.5,
+    "minimum_weight_stability": 0.75,
+    "minimum_scenario_stability": 0.75,
+    "maximum_scale_clipping_rate": 0.05
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

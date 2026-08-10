@@ -1,0 +1,279 @@
+{
+  "project_id": "wildfire-mitigation-under-uncertainty",
+  "data": {
+    "rows": 8892,
+    "valid_area_records": 8892,
+    "partial_year": 2025
+  },
+  "study_design": {
+    "design": "robust allocation stress test over observed exposure scenarios",
+    "outcome": "alignment with mapped historical exposure",
+    "not_estimated": "fires or acres prevented"
+  },
+  "observed_exposure": {
+    "annual_acres": {
+      "2025": 508348.46371124487,
+      "2024": 1011222.0440484164,
+      "2023": 343564.4035978901,
+      "2022": 322672.8709534802,
+      "2021": 2512593.924141699,
+      "2020": 4182275.834220997,
+      "2019": 279837.0681414999,
+      "2018": 1583620.4959568093,
+      "2017": 1425473.9991132526,
+      "2016": 552966.6782290301,
+      "2015": 789220.3485679445,
+      "2014": 554656.1740567299,
+      "2013": 569382.5422095299,
+      "2012": 848661.3552360395,
+      "2011": 202452.94374909595,
+      "2010": 101056.03089449997,
+      "2009": 435825.4328373996,
+      "2008": 1382709.7306945405,
+      "2007": 1031803.2853500388,
+      "2006": 748169.7963508005,
+      "2005": 231112.47332309972,
+      "2004": 274351.36453060014,
+      "2003": 968718.9965837802,
+      "2002": 963901.2653217706,
+      "2001": 246964.18139867004,
+      "2000": 245221.4919103999
+    },
+    "tail_cutoff_acres": 1648.3927000000017
+  },
+  "decision_options": {
+    "frequency": {
+      "worst_case_regret": 0.6277984284586771,
+      "minimum_scenario_alignment": 0.37220157154132316,
+      "allocation_concentration": 0.026077009470651048,
+      "scenario_alignment": {
+        "historical_acres": 0.6083053359913427,
+        "recent_acres": 0.37220157154132316,
+        "tail_acres": 0.5323408970431482
+      }
+    },
+    "recent_acres": {
+      "worst_case_regret": 0.26127040895915976,
+      "minimum_scenario_alignment": 0.5075421299020356,
+      "allocation_concentration": 0.07006405449191246,
+      "scenario_alignment": {
+        "historical_acres": 0.5075421299020356,
+        "recent_acres": 1.0000000000000002,
+        "tail_acres": 0.7083604997719669
+      }
+    },
+    "robust_blend": {
+      "worst_case_regret": 0.26128509975387626,
+      "minimum_scenario_alignment": 0.738714900246124,
+      "allocation_concentration": 0.03891462354715797,
+      "scenario_alignment": {
+        "historical_acres": 0.7688125388611954,
+        "recent_acres": 0.738714900246124,
+        "tail_acres": 0.9635363306881253
+      }
+    }
+  },
+  "decision_support": {
+    "status": "evidence_request_before_mitigation_allocation",
+    "lowest_regret_option": "recent_acres",
+    "reversal_conditions": [
+      "Local prevention effectiveness estimates become available.",
+      "Unit boundaries or 2025 perimeter records are materially revised.",
+      "Feasibility, ecology, or community constraints rule out the modeled allocation."
+    ]
+  },
+  "headline_metrics": [
+    "Valid mapped perimeters: 8,892",
+    "90th-percentile perimeter size: 1,648 acres",
+    "Lowest-regret proxy allocation: recent acres",
+    "Terminal status: request effectiveness and feasibility evidence"
+  ],
+  "provenance": {
+    "source_id": "calfire-historic-fire-perimeters-2000-2025",
+    "citation": "California Department of Forestry and Fire Protection. California Historic Fire Perimeters feature service, filtered to 2000-2025.",
+    "version": "California Historic Fire Perimeters feature service, filtered to 2000-2025",
+    "license": "California open data / public information",
+    "accessed_at": "2026-08-10",
+    "raw_sha256": {
+      "calfire-fire-perimeters-2000-2025.csv": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75"
+    },
+    "config_sha256": "595a357121b478f2abdadc7aa02e4b43aa5904621b01652eddf6e317a611be84"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is calfire-historic-fire-perimeters-2000-2025.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.history_start",
+      "label": "history start",
+      "value_or_distribution": 2000,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for history_start; source dataset is calfire-historic-fire-perimeters-2000-2025.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence."
+    },
+    {
+      "parameter_path": "config.parameters.recent_start",
+      "label": "recent start",
+      "value_or_distribution": 2020,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for recent_start; source dataset is calfire-historic-fire-perimeters-2000-2025.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence."
+    },
+    {
+      "parameter_path": "config.parameters.recent_end",
+      "label": "recent end",
+      "value_or_distribution": 2024,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for recent_end; source dataset is calfire-historic-fire-perimeters-2000-2025.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence."
+    },
+    {
+      "parameter_path": "config.parameters.tail_quantile",
+      "label": "tail quantile",
+      "value_or_distribution": 0.9,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for tail_quantile; source dataset is calfire-historic-fire-perimeters-2000-2025.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence."
+    }
+  ]
+}

@@ -1,13 +1,20 @@
 {
-  "grain": "observed system-hour",
-  "primary_key": "instant",
+  "grain": "Jersey City station-hour-month",
+  "primary_key": [
+    "month",
+    "hour",
+    "station_id"
+  ],
   "fields": {
-    "dteday": "calendar date",
-    "hr": "hour, 0-23",
-    "workingday": "1 when neither weekend nor holiday",
-    "weathersit": "weather severity category, 1-4",
-    "casual": "casual rental count",
-    "registered": "registered rental count",
-    "cnt": "total rentals"
-  }
+    "month": "month",
+    "hour": "hour",
+    "station_id": "station id",
+    "station_name": "station name",
+    "latitude": "latitude",
+    "longitude": "longitude",
+    "observed_days": "observed days",
+    "pickups": "pickups",
+    "returns": "returns"
+  },
+  "modeled_quantity_boundary": "Residual imbalance is a planning scenario derived from observed pickups and returns, not an observed service improvement."
 }

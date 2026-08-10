@@ -2,35 +2,27 @@
   "project_id": "population-health-survival",
   "charts": [
     {
-      "path": "figures/cox-hazard-ratios.svg",
-      "question": "Adjusted associations remain estimates, not intervention effects",
-      "supported_finding": "The multivariable Cox model reports hazard-ratio direction and interval width alongside apparent discrimination.",
-      "interpretation_boundary": "Observed associations remain vulnerable to omitted variables, treatment selection, and cohort transport.",
-      "source_id": "uci-heart-failure-519",
+      "path": "figures/age-gradient.svg",
+      "question": "Age risk gradient",
+      "supported_finding": "The later cohort shows the expected age pattern.",
+      "interpretation_boundary": "Age bands do not authorize individual triage.",
+      "source_id": "cdc-nhis-2016-2017-linked-mortality",
       "palette_policy": "single-root preferred; non-color labels retained"
     },
     {
-      "path": "figures/ejection-risk.svg",
-      "question": "The absolute risk contrast is paired with resampling uncertainty",
-      "supported_finding": "Low ejection fraction is associated with a higher observed event rate, and the patient bootstrap shows how much that contrast moves.",
-      "interpretation_boundary": "The threshold was not prospectively registered and must not be interpreted as a treatment rule.",
-      "source_id": "uci-heart-failure-519",
+      "path": "figures/cohort-mortality.svg",
+      "question": "Linked mortality by cohort",
+      "supported_finding": "Survey weights preserve the population-estimation target.",
+      "interpretation_boundary": "Observed association only.",
+      "source_id": "cdc-nhis-2016-2017-linked-mortality",
       "palette_policy": "single-root preferred; non-color labels retained"
     },
     {
-      "path": "figures/kaplan-meier.svg",
-      "question": "Survival estimates retain censoring and the changing risk set",
-      "supported_finding": "The Kaplan–Meier view shows the observed follow-up experience without treating every patient window as complete.",
-      "interpretation_boundary": "Descriptive survival contrast; it does not identify a treatment effect.",
-      "source_id": "uci-heart-failure-519",
-      "palette_policy": "single-root preferred; non-color labels retained"
-    },
-    {
-      "path": "figures/protocol-comparison.svg",
-      "question": "Candidate follow-up protocols expose capture–workload trade-offs",
-      "supported_finding": "Protocol comparisons make the operational trade-off visible instead of presenting risk separation as a complete decision.",
-      "interpretation_boundary": "Prospective validation and clinical ownership are required before any protocol use.",
-      "source_id": "uci-heart-failure-519",
+      "path": "figures/temporal-calibration.svg",
+      "question": "Temporal calibration",
+      "supported_finding": "2016 risk cells are evaluated in 2017.",
+      "interpretation_boundary": "Apparent transport does not establish clinical validity.",
+      "source_id": "cdc-nhis-2016-2017-linked-mortality",
       "palette_policy": "single-root preferred; non-color labels retained"
     }
   ]

@@ -56,32 +56,32 @@
 <text x="1034.0" y="126.0" class="small" text-anchor="end">P95</text>
 <rect x="30.0" y="150.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="180.0" class="section" text-anchor="start">Short Baseline</text>
-<rect x="881.3" y="169.0" width="41.9" height="14" rx="7" fill="#EEEAFE"/>
-<line x1="881.3" y1="176" x2="923.2" y2="176" stroke="#7257D9" stroke-width="2"/>
-<circle cx="901.2" cy="176" r="8" fill="#7257D9" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 880.1 168.0 L 888.1 176.0 L 880.1 184.0 L 872.1 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<rect x="880.4" y="169.0" width="42.3" height="14" rx="7" fill="#EEEAFE"/>
+<line x1="880.4" y1="176" x2="922.7" y2="176" stroke="#7257D9" stroke-width="2"/>
+<circle cx="901.0" cy="176" r="8" fill="#7257D9" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 879.1 168.0 L 887.1 176.0 L 879.1 184.0 L 871.1 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
 <text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.808</text>
-<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.778</text>
+<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.776</text>
 <text x="48.0" y="252.0" class="label" text-anchor="start">Intermediate</text>
-<rect x="855.3" y="241.0" width="56.2" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="855.3" y1="248" x2="911.5" y2="248" stroke="#263449" stroke-width="2"/>
-<circle cx="883.0" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 853.3 240.0 L 861.3 248.0 L 853.3 256.0 L 845.3 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.782</text>
+<rect x="855.6" y="241.0" width="53.6" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="855.6" y1="248" x2="909.2" y2="248" stroke="#263449" stroke-width="2"/>
+<circle cx="882.6" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 853.4 240.0 L 861.4 248.0 L 853.4 256.0 L 845.4 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.781</text>
 <text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.739</text>
 <rect x="30.0" y="294.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="324.0" class="label" text-anchor="start">Barbell</text>
-<rect x="851.7" y="313.0" width="60.2" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="851.7" y1="320" x2="911.9" y2="320" stroke="#263449" stroke-width="2"/>
-<circle cx="879.9" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 849.9 312.0 L 857.9 320.0 L 849.9 328.0 L 841.9 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.777</text>
-<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.734</text>
+<rect x="851.9" y="313.0" width="60.3" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="851.9" y1="320" x2="912.2" y2="320" stroke="#263449" stroke-width="2"/>
+<circle cx="880.4" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 850.5 312.0 L 858.5 320.0 L 850.5 328.0 L 842.5 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.778</text>
+<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.735</text>
 <text x="48.0" y="396.0" class="label" text-anchor="start">Long Duration</text>
-<rect x="818.7" y="385.0" width="80.0" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="818.7" y1="392" x2="898.7" y2="392" stroke="#263449" stroke-width="2"/>
-<circle cx="858.0" cy="392" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 816.1 384.0 L 824.1 392.0 L 816.1 400.0 L 808.1 392.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<rect x="818.3" y="385.0" width="80.2" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="818.3" y1="392" x2="898.5" y2="392" stroke="#263449" stroke-width="2"/>
+<circle cx="858.1" cy="392" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 815.8 384.0 L 823.8 392.0 L 815.8 400.0 L 807.8 392.0 Z" fill="#C69214" stroke="#0B1F3A"/>
 <text x="1052.0" y="387.0" class="mono" text-anchor="start">mean 0.746</text>
 <text x="1052.0" y="407.0" class="small" text-anchor="start">CVaR10 0.685</text>
 <text x="342.0" y="492.0" class="small" text-anchor="start">● expected utility   ◆ worst-decile average   band = P05–P95</text>

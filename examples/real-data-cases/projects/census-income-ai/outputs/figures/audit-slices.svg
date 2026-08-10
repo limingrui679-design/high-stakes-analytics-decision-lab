@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="540" viewBox="0 0 1000 540" role="img" aria-labelledby="title desc">
+<title id="title">Protected-attribute audit slices</title>
+<desc id="desc">2023 weighted employment rates; attributes excluded from model inputs. Source: U.S. Census Bureau ACS PUMS, Rhode Island 2019 and 2023</desc>
+<defs>
+  <pattern id="microGrid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
+  </pattern>
+</defs>
+<rect width="1000" height="540" fill="#F3F6FA"/>
+<rect width="1000" height="102" fill="#0B1F3A"/>
+<rect width="1000" height="102" fill="url(#microGrid)"/>
+<rect width="8" height="102" fill="#246BFD"/>
+<circle cx="925" cy="50" r="30" fill="none" stroke="#246BFD" stroke-width="2" opacity=".9"/>
+<circle cx="925" cy="50" r="9" fill="#246BFD"/>
+<circle cx="925" cy="50" r="52" fill="none" stroke="#49627F" stroke-width="1" opacity=".55"/>
+<line x1="860" y1="50" x2="990" y2="50" stroke="#49627F" stroke-width="1"/>
+<line x1="925" y1="4" x2="925" y2="96" stroke="#49627F" stroke-width="1"/>
+<text x="42" y="24" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" letter-spacing="1.6" fill="#246BFD">EDITORIAL EVIDENCE · ANALYTICAL REPORT</text>
+<text x="42" y="55" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="25" font-weight="760" fill="#FFFFFF">Protected-attribute audit slices</text>
+<text x="42" y="82" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="13.5" fill="#C7D4E4">2023 weighted employment rates; attributes excluded from model inputs</text>
+<rect x="36" y="110" width="928" height="348" rx="18" fill="#07152A" opacity=".07"/>
+<rect x="32" y="104" width="936" height="350" rx="18" fill="#FFFFFF" stroke="#D9E2EC"/>
+<rect x="32" y="104" width="5" height="350" rx="2.5" fill="#246BFD"/>
+<rect x="45" y="112" width="74" height="8" rx="4" fill="#E8F0FF"/>
+<rect x="48" y="113.0" width="900" height="45.0" rx="9" fill="#FFFFFF"/><circle cx="64" cy="132.0" r="11" fill="#E8F0FF"/><text x="64" y="136.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="800" fill="#246BFD">01</text><text x="84" y="138.0" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="13.5" font-weight="650" fill="#0B1324">sex code 1</text><rect x="300" y="121.0" width="540" height="20" rx="10" fill="#D9E2EC" opacity=".52"/><rect x="300" y="121.0" width="540.0" height="20" rx="10" fill="#246BFD" opacity="1"/><rect x="856" y="118.0" width="78" height="26" rx="13" fill="#E8F0FF" stroke="#246BFD" stroke-opacity=".28"/><text x="895" y="136.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="800" fill="#0B1324">78.5%</text><rect x="48" y="175.0" width="900" height="45.0" rx="9" fill="#F8FAFC"/><circle cx="64" cy="194.0" r="11" fill="#E8F0FF"/><text x="64" y="198.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="9.5" font-weight="800" fill="#246BFD">02</text><text x="84" y="200.0" font-family="-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif" font-size="13.5" font-weight="650" fill="#0B1324">sex code 2</text><rect x="300" y="183.0" width="540" height="20" rx="10" fill="#D9E2EC" opacity=".52"/><rect x="300" y="183.0" width="504.2" height="20" rx="10" fill="#246BFD" opacity="0.78"/><rect x="856" y="180.0" width="78" height="26" rx="13" fill="#E8F0FF" stroke="#246BFD" stroke-opacity=".28"/><text x="895" y="198.0" text-anchor="middle" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="11.5" font-weight="800" fill="#0B1324">73.3%</text>
+<line x1="42" y1="485" x2="958" y2="485" stroke="#B9C6D5"/>
+<text x="42" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="10.5" fill="#617084">Source: U.S. Census Bureau ACS PUMS, Rhode Island 2019 and 2023</text>
+<text x="958" y="510" text-anchor="end" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="750" letter-spacing=".8" fill="#246BFD">SOURCE-TRACEABLE · CLAIM-BOUNDED</text>
+</svg>

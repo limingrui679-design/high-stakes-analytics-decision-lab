@@ -1,0 +1,67 @@
+{
+  "estimand": "individual-level intent-to-treat difference in turnout",
+  "variance_estimator": "OLS sandwich variance clustered by household",
+  "source_rows_used": 344084,
+  "effects": [
+    {
+      "treatment": "Civic Duty",
+      "control": "Control",
+      "treated_individuals": 38218,
+      "control_individuals": 191243,
+      "household_clusters": 120000,
+      "treated_turnout_rate": 0.31453765241509235,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.01789934408485283,
+      "household_cluster_robust_standard_error": 0.0032366193606381015,
+      "confidence_interval_95": [
+        0.011555570138002152,
+        0.02424311803170351
+      ]
+    },
+    {
+      "treatment": "Hawthorne",
+      "control": "Control",
+      "treated_individuals": 38204,
+      "control_individuals": 191243,
+      "household_clusters": 120001,
+      "treated_turnout_rate": 0.3223746204585907,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.025736312128351202,
+      "household_cluster_robust_standard_error": 0.0032578857405514993,
+      "confidence_interval_95": [
+        0.019350856076870263,
+        0.032121768179832144
+      ]
+    },
+    {
+      "treatment": "Neighbors",
+      "control": "Control",
+      "treated_individuals": 38201,
+      "control_individuals": 191243,
+      "household_clusters": 119999,
+      "treated_turnout_rate": 0.3779482212507526,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.0813099129205131,
+      "household_cluster_robust_standard_error": 0.0033695474210769303,
+      "confidence_interval_95": [
+        0.0747055999752023,
+        0.08791422586582388
+      ]
+    },
+    {
+      "treatment": "Self",
+      "control": "Control",
+      "treated_individuals": 38218,
+      "control_individuals": 191243,
+      "household_clusters": 119999,
+      "treated_turnout_rate": 0.3451514992935266,
+      "control_turnout_rate": 0.2966383083302395,
+      "intent_to_treat_difference": 0.0485131909632871,
+      "household_cluster_robust_standard_error": 0.003300012245704015,
+      "confidence_interval_95": [
+        0.04204516696170723,
+        0.05498121496486697
+      ]
+    }
+  ]
+}

@@ -2290,7 +2290,7 @@ def render_report(
                 "",
                 f"![Decision summary]({figures['decision_scorecard']})",
                 "",
-                f"**Decision owner:** {decision['owner']}  ",
+                f"**Decision owner:** {decision['owner']}",
                 f"**Decision question:** {decision['question']}",
                 "",
             ]

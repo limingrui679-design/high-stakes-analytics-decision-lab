@@ -1,44 +1,40 @@
 {
-  "rows": 299,
-  "columns": 13,
+  "rows": 58754,
+  "columns": 11,
   "column_names": [
+    "publicid",
+    "cohort_year",
     "age",
-    "anaemia",
-    "creatinine_phosphokinase",
-    "diabetes",
-    "ejection_fraction",
-    "high_blood_pressure",
-    "platelets",
-    "serum_creatinine",
-    "serum_sodium",
     "sex",
-    "smoking",
-    "time",
-    "DEATH_EVENT"
+    "race",
+    "survey_weight",
+    "hypertension",
+    "diabetes",
+    "ever_smoked",
+    "current_smoking",
+    "death_within_two_years"
   ],
   "missing_count_by_column": {
+    "publicid": 0,
+    "cohort_year": 0,
     "age": 0,
-    "anaemia": 0,
-    "creatinine_phosphokinase": 0,
-    "diabetes": 0,
-    "ejection_fraction": 0,
-    "high_blood_pressure": 0,
-    "platelets": 0,
-    "serum_creatinine": 0,
-    "serum_sodium": 0,
     "sex": 0,
-    "smoking": 0,
-    "time": 0,
-    "DEATH_EVENT": 0
+    "race": 0,
+    "survey_weight": 0,
+    "hypertension": 0,
+    "diabetes": 0,
+    "ever_smoked": 0,
+    "current_smoking": 0,
+    "death_within_two_years": 0
   },
   "duplicate_key_count": 0,
   "quality_status": "usable_with_documented_limitations",
-  "expected_rows": 299,
+  "expected_rows": 58754,
   "row_count_matches_manifest": true,
   "privacy_review": {
     "contains_direct_identifiers": false,
     "contains_sensitive_attributes": true,
-    "treatment": "Use only aggregate results; do not attempt re-identification.",
-    "status": "approved_for_public_aggregate_analysis"
+    "treatment": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+    "status": "approved_for_public_minimized_analysis"
   }
 }

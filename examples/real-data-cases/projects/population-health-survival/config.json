@@ -1,16 +1,22 @@
 {
   "project_id": "population-health-survival",
-  "analysis_seed": 20260727,
+  "analysis_seed": 20260810,
   "parameters": {
-    "ejection_fraction_threshold": 35,
-    "age_triage_threshold": 65,
-    "creatinine_triage_threshold": 1.5,
-    "bootstrap_repetitions": 2000
+    "development_cohort": 2016,
+    "validation_cohort": 2017,
+    "review_shares": [
+      0.1,
+      0.2,
+      0.3
+    ]
   },
   "parameter_register": [
-    {"parameter": "ejection_fraction_threshold", "source_id": "analyst-protocol", "status": "exploratory", "approved_by": "repository author self-review", "boundary": "Subgroup and candidate-rule definition; not a clinical threshold endorsement."},
-    {"parameter": "age_triage_threshold", "source_id": "analyst-protocol", "status": "exploratory", "approved_by": "repository author self-review", "boundary": "Comparator only."},
-    {"parameter": "creatinine_triage_threshold", "source_id": "analyst-protocol", "status": "exploratory", "approved_by": "repository author self-review", "boundary": "Candidate-rule definition only."},
-    {"parameter": "bootstrap_repetitions", "source_id": "analysis-protocol", "status": "reproducibility choice", "approved_by": "repository author self-review", "boundary": "Controls Monte Carlo precision, not evidence quality."}
+    {
+      "parameter": "development_cohort/validation_cohort/review_shares",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment."
+    }
   ]
 }

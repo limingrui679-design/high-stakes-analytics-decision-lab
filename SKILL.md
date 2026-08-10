@@ -321,20 +321,21 @@ assumption diagnosis, not evidence that real-world risk is impossible.
 
 ## Bundled real-data projects
 
-Use [the ten-project case index](examples/real-data-cases/README.md) when a
+Use [the fifteen-project case index](examples/real-data-cases/README.md) when a
 worked precedent would improve method selection or reporting. The bundle
-contains ten complete, reproducible projects across survival, repeated
-measures, responsible model validation, forecasting and allocation, marketing
-capacity, financial tail risk, peer financial diagnostics, negative model
-validation, public disclosure measurement, and spatial planning.
+contains fifteen complete, reproducible projects across operations, urban
+information systems, marketing, responsible AI, financial risk, fintech,
+real estate, wildfire decision analysis, regulatory filings, field
+experiments, population health, public policy, repeated measures,
+transportability, and spatial planning.
 
 Each project includes its reviewed raw source snapshot, source manifest and
 hashes, configuration, preparation and analysis code, Evidence Intelligence
 Report, all figures, machine-readable results, and an evidence-matched
 Decision Intelligence Brief. The Evidence Intelligence Report is the primary
-project record. All ten projects also have an independent Decision
-Intelligence Brief so the reader can inspect how the evidence is translated—or
-intentionally not translated—into action. Decision Intelligence Briefs may
+project record. A Decision Intelligence Brief is added only when a separate
+decision layer is justified; otherwise the analytical result itself records
+the bounded terminal status. Decision Intelligence Briefs may
 end in a bounded comparison, `do_not_deploy`, a randomized-pilot requirement,
 targeted diligence, or an evidence request. Use
 `examples/real-data-cases/cases.json` as the machine-readable case index.

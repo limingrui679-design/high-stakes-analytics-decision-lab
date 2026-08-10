@@ -1,0 +1,18 @@
+{
+  "project_id": "social-norm-field-experiment",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "confidence_level": 0.95,
+    "cluster_unit": "household",
+    "primary_outcome": "voted"
+  },
+  "parameter_register": [
+    {
+      "parameter": "confidence_level/cluster_unit/primary_outcome",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Causal scope is the historical randomized experiment; no new campaign authorization."
+    }
+  ]
+}

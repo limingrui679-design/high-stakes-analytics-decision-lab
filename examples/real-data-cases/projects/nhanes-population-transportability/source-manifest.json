@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "project_id": "nhanes-population-transportability",
+  "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+  "title": "NHANES Mortality Transportability and Population Inequality",
+  "project_title": "NHANES Mortality Transportability and Population Inequality",
+  "publisher": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics",
+  "landing_page": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+  "version": "NHANES 2011-2012 and 2015-2016 demographics linked to 2019 mortality",
+  "accessed_at": "2026-08-10",
+  "license": "U.S. Government public-use data",
+  "license_url": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+  "redistribution": "Public-use minimized cohort extract; NCHS linkage rules remain controlling.",
+  "expected_rows": 11820,
+  "grain": "one NHANES adult linked to 36-month mortality",
+  "raw_files": [
+    {
+      "path": "data/raw/nhanes-36-month-mortality-cohorts.csv",
+      "sha256": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad"
+    },
+    {
+      "path": "data/raw/nhanes-36-month-mortality-cohorts.source-lock.json",
+      "sha256": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Population research only; no individual diagnosis or treatment.",
+    "status": "approved_for_public_minimized_analysis"
+  },
+  "citation": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics. NHANES 2011-2012 and 2015-2016 demographics linked to 2019 mortality."
+}

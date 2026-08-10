@@ -1,205 +1,151 @@
 {
-  "schema_version": "1.0",
-  "case_count": 10,
-  "scope": "Ten reproducible real-data projects bundled with the Skill. Each project includes its reviewed source snapshot, source manifest, configuration, preparation and analysis code, Evidence Intelligence Report, all figures, machine-readable results, and an evidence-matched Decision Intelligence Brief.",
+  "schema_version": "2.0",
+  "case_count": 15,
+  "scope": "Fifteen school-neutral, reproducible real-data projects with one distinct substantive case per private application-program mapping.",
   "cases": [
     {
       "number": "01",
-      "id": "health-survival",
-      "project_id": "population-health-survival",
-      "title": "Heart-Failure Follow-up Risk and Survival",
-      "gallery_title": "Heart-Failure Follow-up and Survival",
-      "gallery_endpoint": "Prospective validation required",
-      "domain": "Population health",
-      "route": ["descriptive", "predictive", "prescriptive"],
-      "question": "How should censored follow-up evidence inform an illustrative triage-rule comparison without becoming a treatment claim?",
+      "id": "bike-demand-operations",
+      "project_id": "bike-demand-operations",
+      "title": "Jersey City Bike Demand and Rebalancing Evidence",
+      "gallery_title": "Jersey City Bike Demand and Rebalancing Evidence",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Operations Research",
+      "route": [
+        "descriptive",
+        "predictive",
+        "prescriptive"
+      ],
+      "question": "Can station-hour history improve held-out pickup forecasts, and which fixed-budget rebalancing scenario deserves a bounded operations pilot?",
       "source": {
-        "dataset": "Heart Failure Clinical Records",
-        "publisher": "UCI Machine Learning Repository",
-        "url": "https://doi.org/10.24432/C5Z89R",
-        "version": "UCI static archive snapshot; source file timestamp 2023-05-22",
-        "accessed_at": "2026-07-27",
-        "license": "CC BY 4.0",
-        "grain": "one de-identified patient follow-up record",
-        "prepared_rows": 299,
+        "dataset": "Jersey City Bike Demand and Rebalancing Evidence",
+        "publisher": "Citi Bike",
+        "url": "https://citibikenyc.com/system-data",
+        "version": "Jersey City trip history, January-December 2021; derived station-hour aggregate",
+        "accessed_at": "2026-08-10",
+        "license": "Citi Bike Data Use Policy",
+        "grain": "one station-hour-month aggregate",
+        "prepared_rows": 17906,
         "snapshot_files": [
           {
-            "name": "uci-heart-failure.zip",
-            "sha256": "f0739603e2f9573ffc7d509573cbf9bcb4cc889e4eea0f35a75bec68fc9163d7"
+            "name": "citibike-jc-2021-station-hour.csv",
+            "sha256": "e34022dc61250b3a5e499fa429570a87104cec0985caeaa5980a5b2206e45524"
+          },
+          {
+            "name": "citibike-jc-2021-station-hour.source-lock.json",
+            "sha256": "85d43b52e3f44a308aa72280726e4a0a28cb77197f634f2548b7c88168035eeb"
           }
         ]
       },
       "methods": [
-        "Kaplan-Meier survival",
-        "Breslow-tie Cox proportional hazards",
-        "180-day calibration",
-        "patient bootstrap",
-        "candidate protocol comparison"
+        "Temporal holdout",
+        "weighted MAE",
+        "observed pickup-return imbalance",
+        "and fixed-budget scenario comparison."
       ],
       "headline_metrics": [
-        {"label": "Observed death-event rate", "value": "32.1%"},
-        {"label": "Observed 180-day survival", "value": "65.4%"},
-        {"label": "Low-versus-higher ejection-fraction risk difference", "value": "33.0% (95% bootstrap interval 20.9%–44.7%)"},
-        {"label": "Apparent Cox Harrell C-index", "value": "0.731"}
+        {
+          "label": "Held-out station-hour MAE",
+          "value": "0.69 pickups/day"
+        },
+        {
+          "label": "Improvement vs hour-only baseline",
+          "value": "33.1%"
+        },
+        {
+          "label": "Observed station-hour-month rows",
+          "value": "17,906"
+        },
+        {
+          "label": "Rebalancing results",
+          "value": "modeled scenario only"
+        }
       ],
-      "result": "Low ejection fraction is associated with higher observed risk; censoring-aware analysis supports external triage validation, not a treatment recommendation.",
-      "terminal_output": "Illustrative triage comparison requiring prospective or external validation",
-      "boundary": "Small observational cohort, incomplete treatment information, analyst-defined thresholds, and no causal treatment estimand.",
-      "figure": "figures/01-survival.svg",
-      "figure_alt": "Multivariable Cox proportional-hazards estimates for the heart-failure cohort"
+      "result": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
+      "terminal_output": "claim-bounded decision review",
+      "boundary": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim.",
+      "figure": "figures/01-bike-demand-operations.svg",
+      "figure_alt": "Representative evidence figure for Jersey City Bike Demand and Rebalancing Evidence"
     },
     {
       "number": "02",
-      "id": "behavioral-repeated-measures",
-      "project_id": "behavioral-reading-experiment",
-      "title": "Pseudoword Reading: Repeated-Measures Inference",
-      "gallery_title": "Pseudoword Reading: Repeated Measures",
-      "gallery_endpoint": "Bounded behavioral inference",
-      "domain": "Behavioral science",
-      "route": ["descriptive", "inferential"],
-      "question": "How does passage type change eye-movement burden within the same participant, and how stable is the contrast across reader groups?",
+      "id": "cross-city-311-shift",
+      "project_id": "cross-city-311-shift",
+      "title": "Cross-City 311 Distribution Shift and Transfer Gate",
+      "gallery_title": "Cross-City 311 Distribution Shift and Transfer Gate",
+      "gallery_endpoint": "transfer refused",
+      "domain": "Urban Analytics",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "question": "Are city service-request distributions sufficiently comparable to transfer an analytical rule between Chicago and New York?",
       "source": {
-        "dataset": "Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading",
-        "publisher": "Harvard Dataverse",
-        "url": "https://doi.org/10.7910/DVN/3YCB56",
-        "version": "V1; file UNF:6:XJRpAtIOiQJZWyv7L3uj3A==",
-        "accessed_at": "2026-07-27",
-        "license": "CC0 1.0",
-        "grain": "one de-identified participant with repeated passage measures",
-        "prepared_rows": 57,
+        "dataset": "Cross-City 311 Distribution Shift and Transfer Gate",
+        "publisher": "City of Chicago and City of New York",
+        "url": "https://data.cityofchicago.org/Service-Requests/311-Service-Requests-Request-and-Response-Times/v6vf-nfxy",
+        "version": "Daily source-category aggregates, 2022-2023",
+        "accessed_at": "2026-08-10",
+        "license": "Municipal open-data terms",
+        "grain": "one city-day-audited service-family aggregate",
+        "prepared_rows": 8760,
         "snapshot_files": [
           {
-            "name": "pseudoword-passage-reading.tsv",
-            "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8"
+            "name": "cross-city-311-daily.csv",
+            "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
           }
         ]
       },
       "methods": [
-        "within-participant contrasts",
-        "participant bootstrap",
-        "sign-flip inference",
-        "Holm multiplicity correction",
-        "label permutation",
-        "minimum-detectable-effect sensitivity"
+        "Audited ontology",
+        "unmatched-category retention",
+        "total variation",
+        "Jensen-Shannon divergence",
+        "and transfer gating."
       ],
       "headline_metrics": [
-        {"label": "Complete participant pairs", "value": "57"},
-        {"label": "Mean paired fixation-duration difference", "value": "34.25 (95% bootstrap interval 25.87–43.35)"},
-        {"label": "Holm-adjusted sign-flip p-value", "value": "0.0003"},
-        {"label": "80% power design-sensitivity MDE", "value": "12.22"}
+        {
+          "label": "Cross-city 2023 total-variation distance",
+          "value": "58.1%"
+        },
+        {
+          "label": "Chicago mapped share",
+          "value": "96.9%"
+        },
+        {
+          "label": "New York mapped share",
+          "value": "52.6%"
+        },
+        {
+          "label": "Transfer gate",
+          "value": "refused"
+        }
       ],
-      "result": "Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.",
-      "terminal_output": "Bounded behavioral inference and future-study design target",
-      "boundary": "The public sample is small and does not establish downstream educational outcomes or an intervention effect.",
-      "figure": "figures/02-repeated-measures.svg",
-      "figure_alt": "Participant-level paired passage contrast with bootstrap uncertainty"
+      "result": "Administrative shift audit only; requests are not latent need or service quality.",
+      "terminal_output": "transfer refused",
+      "boundary": "Administrative shift audit only; requests are not latent need or service quality.",
+      "figure": "figures/02-cross-city-311-shift.svg",
+      "figure_alt": "Representative evidence figure for Cross-City 311 Distribution Shift and Transfer Gate"
     },
     {
       "number": "03",
-      "id": "responsible-model-validation",
-      "project_id": "census-income-ai",
-      "title": "End-to-End Census-Income Model Validation",
-      "gallery_title": "Census-Income Model Validation",
-      "gallery_endpoint": "Benchmark only · no deployment",
-      "domain": "Responsible AI",
-      "route": ["descriptive", "predictive"],
-      "question": "Does a benchmark classifier improve on simple baselines while remaining calibrated and acceptably stable across groups?",
-      "source": {
-        "dataset": "Adult / Census Income",
-        "publisher": "UCI Machine Learning Repository",
-        "url": "https://doi.org/10.24432/C5XW20",
-        "version": "UCI static archive snapshot; files timestamped 2023-05-22",
-        "accessed_at": "2026-07-27",
-        "license": "CC BY 4.0",
-        "grain": "one Census-derived person record meeting the dataset extraction rules",
-        "prepared_rows": 48842,
-        "snapshot_files": [
-          {
-            "name": "uci-adult.zip",
-            "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb"
-          }
-        ]
-      },
-      "methods": [
-        "majority and mixed-naive-Bayes baselines",
-        "sparse one-hot logistic regression",
-        "independent source test",
-        "calibration",
-        "subgroup error analysis",
-        "drift and abnormal-input diagnostics"
-      ],
-      "headline_metrics": [
-        {"label": "Independent-test AUC", "value": "0.905"},
-        {"label": "Independent-test Brier score", "value": "0.102"},
-        {"label": "Naive Bayes versus sparse-logistic AUC", "value": "0.891 versus 0.905"},
-        {"label": "Prepared records", "value": "48,842"}
-      ],
-      "result": "The sparse logistic model improves on the baselines, but calibration and subgroup errors prevent consequential reuse.",
-      "terminal_output": "Validated benchmark with an explicit non-deployment boundary",
-      "boundary": "Historical 1994 data, missing categories, social-structure shift, and no validation for a real eligibility decision.",
-      "figure": "figures/03-model-validation.svg",
-      "figure_alt": "Independent-test comparison of majority, naive Bayes, and sparse logistic models"
-    },
-    {
-      "number": "04",
-      "id": "forecast-allocation",
-      "project_id": "bike-demand-operations",
-      "title": "Bike-Demand Forecasting and Robust Allocation",
-      "gallery_title": "Bike-Demand Forecasting and Allocation",
-      "gallery_endpoint": "Bounded allocation recommendation",
-      "domain": "Operations research",
-      "route": ["descriptive", "predictive", "prescriptive"],
-      "question": "How should a fixed service resource be distributed across time blocks when demand is forecast out of time?",
-      "source": {
-        "dataset": "Bike Sharing",
-        "publisher": "UCI Machine Learning Repository",
-        "url": "https://doi.org/10.24432/C5W894",
-        "version": "2011–2012 Capital Bikeshare hourly snapshot",
-        "accessed_at": "2026-07-27",
-        "license": "CC BY 4.0",
-        "grain": "one observed hour in the Capital Bikeshare system",
-        "prepared_rows": 17379,
-        "snapshot_files": [
-          {
-            "name": "uci-bike-sharing.zip",
-            "sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401"
-          }
-        ]
-      },
-      "methods": [
-        "2011-to-2012 out-of-time forecast",
-        "exhaustive integer allocation",
-        "hard feasibility constraints",
-        "Pareto analysis",
-        "resource shadow value",
-        "perfect-information upper bound"
-      ],
-      "headline_metrics": [
-        {"label": "Forecast MAE improvement versus overall mean", "value": "38.3%"},
-        {"label": "Held-out robust-policy unmet share", "value": "20.5%"},
-        {"label": "Perfect-foresight upper-bound improvement", "value": "1.6%"},
-        {"label": "Feasible allocations evaluated", "value": "6,545"}
-      ],
-      "result": "A robust time-block allocation reduces modeled unmet demand out of time, while the perfect-information bound limits the value of further forecast improvement.",
-      "terminal_output": "Bounded allocation recommendation with reversal conditions",
-      "boundary": "System totals omit station imbalance, routing, labor, service time, and causal effects; resource units are illustrative scalers.",
-      "figure": "figures/04-forecast-allocation.svg",
-      "figure_alt": "Held-out unmet demand across feasible bike-service allocation strategies"
-    },
-    {
-      "number": "05",
-      "id": "marketing-capacity",
+      "id": "bank-marketing-response",
       "project_id": "bank-marketing-response",
-      "title": "Marketing Response and Capacity Planning",
-      "gallery_title": "Marketing Response and Capacity",
-      "gallery_endpoint": "Randomized campaign required",
-      "domain": "Business analytics",
-      "route": ["descriptive", "predictive", "prescriptive"],
+      "title": "Capacity-Constrained Marketing Pilot",
+      "gallery_title": "Capacity-Constrained Marketing Pilot",
+      "gallery_endpoint": "randomized pilot required",
+      "domain": "Business Analytics",
+      "route": [
+        "descriptive",
+        "predictive",
+        "prescriptive"
+      ],
       "question": "Can pre-contact information concentrate observed responses under a fixed outreach capacity without using post-contact leakage?",
       "source": {
         "dataset": "Bank Marketing",
         "publisher": "UCI Machine Learning Repository",
-        "url": "https://doi.org/10.24432/C5K306",
+        "url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
         "version": "UCI archive retrieved 2026-07-27; bank-additional-full.csv",
         "accessed_at": "2026-07-27",
         "license": "CC BY 4.0",
@@ -221,26 +167,104 @@
         "probability-best comparison"
       ],
       "headline_metrics": [
-        {"label": "Untouched-test AUC", "value": "0.650"},
-        {"label": "Untouched-test Brier score", "value": "0.210"},
-        {"label": "Top-5% observed response capture", "value": "7.4%"},
-        {"label": "Shared-block P(best)", "value": "59.0%"}
+        {
+          "label": "Untouched-test AUC",
+          "value": "0.650"
+        },
+        {
+          "label": "Untouched-test Brier score",
+          "value": "0.210"
+        },
+        {
+          "label": "Top-5% observed response capture",
+          "value": "7.4%"
+        },
+        {
+          "label": "Shared-block P(best)",
+          "value": "59.0%"
+        }
       ],
       "result": "Pre-contact features weakly concentrate observed responses; common campaign shocks are preserved across capacity options.",
-      "terminal_output": "Exploratory capacity comparison requiring a randomized campaign",
+      "terminal_output": "randomized pilot required",
       "boundary": "Observed response concentration is not incremental lift, causal treatment effect, profit, or return on outreach.",
-      "figure": "figures/05-capacity-planning.svg",
-      "figure_alt": "Held-out response capture across alternative marketing review capacities"
+      "figure": "figures/03-bank-marketing-response.svg",
+      "figure_alt": "Representative evidence figure for Capacity-Constrained Marketing Pilot"
     },
     {
-      "number": "06",
-      "id": "treasury-tail-risk",
+      "number": "04",
+      "id": "census-income-ai",
+      "project_id": "census-income-ai",
+      "title": "ACS Employment AI Temporal Transport and Audit",
+      "gallery_title": "ACS Employment AI Temporal Transport and Audit",
+      "gallery_endpoint": "do not use for consequential action",
+      "domain": "Artificial Intelligence",
+      "route": [
+        "descriptive",
+        "predictive"
+      ],
+      "question": "How well does a protected-attribute-excluded employment model developed on 2019 PUMS transport to 2023?",
+      "source": {
+        "dataset": "ACS Employment AI Temporal Transport and Audit",
+        "publisher": "U.S. Census Bureau",
+        "url": "https://www.census.gov/programs-surveys/acs/microdata.html",
+        "version": "Rhode Island ACS 1-year PUMS person files, 2019 and 2023",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government open data",
+        "grain": "one working-age ACS PUMS person record",
+        "prepared_rows": 12469,
+        "snapshot_files": [
+          {
+            "name": "acs2019-ri-person-pums.zip",
+            "sha256": "22eebb2e2654577708d1baaf611109dba696f334c105236d3b3708d95864d824"
+          },
+          {
+            "name": "acs2023-ri-person-pums.zip",
+            "sha256": "588cdc6059db4bcc6eb0add4722e6c75f5abe246ce59bf1cad83344966987819"
+          }
+        ]
+      },
+      "methods": [
+        "Survey-weighted grouped-rate model",
+        "temporal AUC/Brier/calibration",
+        "and protected-attribute audit slices."
+      ],
+      "headline_metrics": [
+        {
+          "label": "2023 temporal-test AUC",
+          "value": "0.640"
+        },
+        {
+          "label": "2023 weighted Brier score",
+          "value": "0.158"
+        },
+        {
+          "label": "2019/2023 analyzed people",
+          "value": "6,413 / 6,056"
+        },
+        {
+          "label": "Decision status",
+          "value": "no consequential use"
+        }
+      ],
+      "result": "No eligibility, hiring, credit, benefits, or other consequential action.",
+      "terminal_output": "do not use for consequential action",
+      "boundary": "No eligibility, hiring, credit, benefits, or other consequential action.",
+      "figure": "figures/04-census-income-ai.svg",
+      "figure_alt": "Representative evidence figure for ACS Employment AI Temporal Transport and Audit"
+    },
+    {
+      "number": "05",
+      "id": "treasury-risk-engineering",
       "project_id": "treasury-risk-engineering",
-      "title": "Treasury Yield-Curve Tail-Risk Engineering",
-      "gallery_title": "Treasury Yield-Curve Tail Risk",
-      "gallery_endpoint": "Risk-bounded comparison",
-      "domain": "Financial risk",
-      "route": ["descriptive", "predictive", "prescriptive"],
+      "title": "Treasury Curve and Tail-Risk Decision Engine",
+      "gallery_title": "Treasury Curve and Tail-Risk Decision Engine",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Financial Risk Engineering",
+      "route": [
+        "descriptive",
+        "predictive",
+        "prescriptive"
+      ],
       "question": "How do duration choices change historical tail loss, backtest behavior, and sensitivity to dependent market shocks?",
       "source": {
         "dataset": "Daily Treasury Par Yield Curve Rates",
@@ -252,12 +276,30 @@
         "grain": "one U.S. Treasury business-day yield curve",
         "prepared_rows": 1500,
         "snapshot_files": [
-          {"name": "treasury-2020.csv", "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"},
-          {"name": "treasury-2021.csv", "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"},
-          {"name": "treasury-2022.csv", "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"},
-          {"name": "treasury-2023.csv", "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"},
-          {"name": "treasury-2024.csv", "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"},
-          {"name": "treasury-2025.csv", "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"}
+          {
+            "name": "treasury-2020.csv",
+            "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"
+          },
+          {
+            "name": "treasury-2021.csv",
+            "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"
+          },
+          {
+            "name": "treasury-2022.csv",
+            "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"
+          },
+          {
+            "name": "treasury-2023.csv",
+            "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"
+          },
+          {
+            "name": "treasury-2024.csv",
+            "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"
+          },
+          {
+            "name": "treasury-2025.csv",
+            "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"
+          }
         ]
       },
       "methods": [
@@ -269,81 +311,50 @@
         "block bootstrap"
       ],
       "headline_metrics": [
-        {"label": "Short-baseline historical ES95 loss", "value": "0.4%"},
-        {"label": "Short-baseline rolling VaR exceedance rate", "value": "6.0%"},
-        {"label": "Kupiec coverage p approximation", "value": "0.114"},
-        {"label": "Daily yield curves", "value": "1,500"}
+        {
+          "label": "Short-baseline historical ES95 loss",
+          "value": "0.4%"
+        },
+        {
+          "label": "Short-baseline rolling VaR exceedance rate",
+          "value": "6.0%"
+        },
+        {
+          "label": "Kupiec coverage p approximation",
+          "value": "0.114"
+        },
+        {
+          "label": "Daily yield curves",
+          "value": "1,500"
+        }
       ],
       "result": "Longer-duration allocations show materially larger historical tail losses; the short allocation remains the risk reference.",
-      "terminal_output": "Risk-bounded duration comparison, not an investment instruction",
+      "terminal_output": "claim-bounded decision review",
       "boundary": "First-order duration omits convexity, security selection, costs, financing, taxes, liquidity, and future-regime uncertainty.",
-      "figure": "figures/06-tail-risk.svg",
-      "figure_alt": "Historical expected shortfall across illustrative Treasury duration allocations"
+      "figure": "figures/05-treasury-risk-engineering.svg",
+      "figure_alt": "Representative evidence figure for Treasury Curve and Tail-Risk Decision Engine"
     },
     {
-      "number": "07",
-      "id": "multi-asset-portfolio",
-      "project_id": "regime-aware-multi-asset-portfolio",
-      "title": "Regime-Aware Multi-Asset Portfolio Construction",
-      "gallery_title": "Regime-Aware Multi-Asset Allocation",
-      "gallery_endpoint": "Research-only paper portfolio",
-      "domain": "Asset allocation and financial risk",
-      "route": ["descriptive", "diagnostic", "predictive", "prescriptive"],
-      "question": "Can a transparent walk-forward allocation improve the historical risk-return trade-off without breaking turnover, tail-risk, or evidence constraints?",
-      "source": {
-        "dataset": "Reviewed ETF Adjusted-Price Snapshot",
-        "publisher": "Yahoo Finance",
-        "url": "https://finance.yahoo.com/",
-        "version": "2015-01-01 through 2025-12-31 request window",
-        "accessed_at": "2026-07-30",
-        "license": "Yahoo terms of service; upstream market-data rights remain separate",
-        "grain": "one common trading date across SPY, TLT, VNQ, GLD, and BIL",
-        "prepared_rows": 2766,
-        "snapshot_files": [
-          {
-            "name": "yahoo-adjusted-close-2015-2025.json",
-            "sha256": "8a29e3094f6280384bd98723f827b94de3f72538f80bd4beb8505413afe56546"
-          }
-        ]
-      },
-      "methods": [
-        "walk-forward inverse-volatility allocation",
-        "bounded monthly rebalancing",
-        "equal-weight and 60/40 benchmarks",
-        "turnover-cost sensitivity",
-        "historical drawdown and expected shortfall",
-        "shared month-block probability-best"
-      ],
-      "headline_metrics": [
-        {"label": "Walk-forward evaluation", "value": "2,513 trading days"},
-        {"label": "Adaptive annual return / volatility", "value": "6.9% / 7.1%"},
-        {"label": "Adaptive maximum drawdown", "value": "-16.6%"},
-        {"label": "Adaptive shared-block P(best)", "value": "0.8% for mean return"}
-      ],
-      "result": "The bounded adaptive rule reduced historical drawdown and tail loss relative to both benchmarks and had the highest return-to-volatility ratio, but it did not maximize sampled mean return.",
-      "terminal_output": "Prospective paper-portfolio validation; no investment instruction",
-      "boundary": "Provider terms apply; ETF histories omit future regimes, taxes, bid-ask spreads, impact, investor liabilities, capacity, and suitability.",
-      "figure": "figures/07-multi-asset.svg",
-      "figure_alt": "Walk-forward multi-asset portfolio growth beside equal-weight and 60/40 benchmarks"
-    },
-    {
-      "number": "08",
-      "id": "fintech-negative-validation",
+      "number": "06",
+      "id": "cfpb-fintech-complaint-operations",
       "project_id": "cfpb-fintech-complaint-operations",
-      "title": "Privacy-Preserving Complaint Monitoring and Negative Validation",
-      "gallery_title": "Complaint Monitoring: Negative Validation",
-      "gallery_endpoint": "DO NOT DEPLOY",
-      "domain": "Financial technology",
-      "route": ["descriptive", "predictive"],
+      "title": "Human-in-the-Loop Complaint Triage Information System",
+      "gallery_title": "Human-in-the-Loop Complaint Triage Information System",
+      "gallery_endpoint": "do not deploy",
+      "domain": "Financial Technology",
+      "route": [
+        "descriptive",
+        "predictive"
+      ],
       "question": "Does a privacy-minimized complaint model create reliable ranking gain over random review in a later calendar period?",
       "source": {
         "dataset": "Consumer Complaint Database: Money Transfer, Virtual Currency, or Money Service",
         "publisher": "Consumer Financial Protection Bureau",
         "url": "https://www.consumerfinance.gov/data-research/consumer-complaints/",
-        "version": "Closed 2022 UTC window; privacy-minimized extract created 2026-07-27",
+        "version": "Closed 2022 UTC date window; privacy-minimized extract created 2026-07-27",
         "accessed_at": "2026-07-27",
         "license": "CC0",
-        "grain": "one 2022 complaint for a money-transfer, virtual-currency, or money-service product",
+        "grain": "one CFPB complaint received in 2022 for a money-transfer, virtual-currency, or money-service product",
         "prepared_rows": 13534,
         "snapshot_files": [
           {
@@ -361,35 +372,51 @@
         "500-label-permutation null benchmark"
       ],
       "headline_metrics": [
-        {"label": "Later-period untimely-response prevalence", "value": "2.5%"},
-        {"label": "Later-period AUC", "value": "0.611 (95% block interval 0.539–0.697)"},
-        {"label": "Top-5% lift versus random", "value": "1.00 (95% interval 0.33–2.46)"},
-        {"label": "Decision", "value": "do_not_deploy"}
+        {
+          "label": "Later-period untimely-response prevalence",
+          "value": "2.5%"
+        },
+        {
+          "label": "Later-period AUC",
+          "value": "0.611 (95% block interval 0.539–0.697)"
+        },
+        {
+          "label": "Top-5% lift versus random",
+          "value": "1.00 (95% interval 0.33–2.46)"
+        },
+        {
+          "label": "Decision",
+          "value": "do_not_deploy"
+        }
       ],
       "result": "The model contains weak statistical signal but no reliable operational ranking gain at tested review capacities.",
-      "terminal_output": "do_not_deploy ranking model",
+      "terminal_output": "do not deploy",
       "boundary": "The timely flag is not complaint merit, harm, resolution quality, company quality, or compliance; the 2022 model may not transport.",
-      "figure": "figures/08-negative-validation.svg",
-      "figure_alt": "Held-out cumulative gain curve compared with random complaint review"
+      "figure": "figures/06-cfpb-fintech-complaint-operations.svg",
+      "figure_alt": "Representative evidence figure for Human-in-the-Loop Complaint Triage Information System"
     },
     {
-      "number": "09",
+      "number": "07",
       "id": "commercial-real-estate-risk",
       "project_id": "commercial-real-estate-risk",
-      "title": "Commercial Real Estate Transactions and Regeneration Risk",
-      "gallery_title": "Commercial Real Estate Risk Screen",
-      "gallery_endpoint": "Property-level diligence request",
-      "domain": "Real-estate finance and planning",
-      "route": ["descriptive", "diagnostic", "prescriptive"],
+      "title": "Commercial Real Estate Diligence Decision Product",
+      "gallery_title": "Commercial Real Estate Diligence Decision Product",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Real-Estate Finance",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "prescriptive"
+      ],
       "question": "Which borough/property-type segments have enough public transaction evidence for property-level diligence, and how do financing-rate assumptions change the income hurdle?",
       "source": {
-        "dataset": "NYC Citywide Annualized Calendar Sales Update",
-        "publisher": "New York City Department of Finance",
-        "url": "https://data.cityofnewyork.us/City-Government/NYC-Citywide-Annualized-Calendar-Sales-Update/w2pb-icbu",
-        "version": "Filtered 2021-2025 commercial-unit snapshot",
+        "dataset": "Commercial Real Estate Transactions and Regeneration Risk",
+        "publisher": "New York City Department of Finance via NYC Open Data",
+        "url": "https://data.cityofnewyork.us/City-Government/NYC-Citywide-Annualized-Calendar-Sales-Update/w2pb-icbu/about_data",
+        "version": "filtered 2021-2025 commercial-unit snapshot from dataset w2pb-icbu",
         "accessed_at": "2026-07-30",
         "license": "NYC Open Data Terms of Use",
-        "grain": "one filtered commercial-property sale record",
+        "grain": "one public NYC property-sale record before robust analytical filtering",
         "prepared_rows": 12399,
         "snapshot_files": [
           {
@@ -407,65 +434,560 @@
         "amortizing-debt break-even cap-rate scenarios"
       ],
       "headline_metrics": [
-        {"label": "Filtered transactions", "value": "12,399"},
-        {"label": "Observed segments", "value": "25"},
-        {"label": "Segments passing the public-data gate", "value": "20"},
-        {"label": "Break-even cap rate at 8.5% debt", "value": "7.5%"}
+        {
+          "label": "Filtered transactions",
+          "value": "12,399"
+        },
+        {
+          "label": "Observed segments",
+          "value": "25"
+        },
+        {
+          "label": "Segments passing the public-data gate",
+          "value": "20"
+        },
+        {
+          "label": "Break-even cap rate at 8.5% debt",
+          "value": "7.5%"
+        }
       ],
       "result": "Public transactions support a market-depth screen and financing evidence request, not property valuation or acquisition.",
-      "terminal_output": "Property-level lease, condition, title, zoning, and financing diligence",
+      "terminal_output": "claim-bounded decision review",
       "boundary": "The source does not establish arm's-length status, NOI, expenses, occupancy, condition, appraisal value, debt terms, or causal regeneration effects.",
-      "figure": "figures/09-real-estate.svg",
-      "figure_alt": "Commercial-property median transaction price per square foot across NYC boroughs"
+      "figure": "figures/07-commercial-real-estate-risk.svg",
+      "figure_alt": "Representative evidence figure for Commercial Real Estate Diligence Decision Product"
     },
     {
-      "number": "10",
-      "id": "spatial-service-planning",
-      "project_id": "spatial-equity-planning",
-      "title": "Spatial Equity and Service-Hub Planning",
-      "gallery_title": "Spatial Equity and Hub Planning",
-      "gallery_endpoint": "Planning-screen allocation",
-      "domain": "Urban planning",
-      "route": ["descriptive", "prescriptive"],
-      "question": "Where is need spatially clustered, and how do alternative hub strategies change modeled coverage under a fixed radius and capacity?",
+      "number": "08",
+      "id": "wildfire-mitigation-under-uncertainty",
+      "project_id": "wildfire-mitigation-under-uncertainty",
+      "title": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+      "gallery_title": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+      "gallery_endpoint": "evidence request before mitigation allocation",
+      "domain": "Decision Analysis",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "question": "Which exposure-weighted evidence-collection allocation is least fragile across historical, recent, and tail-fire scenarios?",
       "source": {
-        "dataset": "2019–2023 ACS 5-Year Estimates and 2023 Census Gazetteer",
-        "publisher": "U.S. Census Bureau",
-        "url": "https://www.census.gov/data/developers/data-sets/acs-5year/2023.html",
-        "version": "2019–2023 ACS 5-year estimates; 2023 Gazetteer",
-        "accessed_at": "2026-07-27",
-        "license": "U.S. Government work / Census open data",
-        "grain": "one Massachusetts 2020-vintage census tract",
-        "prepared_rows": 1620,
-        "analyzed_rows": 1597,
+        "dataset": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+        "publisher": "California Department of Forestry and Fire Protection",
+        "url": "https://www.arcgis.com/home/item.html?id=c3c10388e3b24cec8a954ba10458039d",
+        "version": "California Historic Fire Perimeters feature service, filtered to 2000-2025",
+        "accessed_at": "2026-08-10",
+        "license": "California open data / public information",
+        "grain": "one fire-perimeter record",
+        "prepared_rows": 8892,
         "snapshot_files": [
-          {"name": "acs-b01003-ma.dat", "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f"},
-          {"name": "acs-b17001-ma.dat", "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0"},
-          {"name": "acs-b19013-ma.dat", "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce"},
-          {"name": "acs-b08301-ma.dat", "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2"},
-          {"name": "acs-b25064-ma.dat", "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4"},
-          {"name": "2023_Gaz_tracts_national.zip", "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c"}
+          {
+            "name": "calfire-fire-perimeters-2000-2025.csv",
+            "sha256": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75"
+          }
         ]
       },
       "methods": [
-        "ACS rate construction",
-        "z-score composite need",
-        "five-nearest-neighbor Moran's I",
-        "greedy maximum coverage",
-        "radius and weight sensitivity",
-        "tract bootstrap"
+        "Observed exposure scenarios",
+        "allocation alignment",
+        "minimax regret",
+        "and evidence-request terminal gate."
       ],
       "headline_metrics": [
-        {"label": "Analyzed tracts", "value": "1,597"},
-        {"label": "Poverty-rate Moran's I", "value": "0.491"},
-        {"label": "Composite-plan need coverage", "value": "78.1%"},
-        {"label": "High-poverty population coverage", "value": "65.6%"}
+        {
+          "label": "Valid mapped perimeters",
+          "value": "8,892"
+        },
+        {
+          "label": "90th-percentile perimeter size",
+          "value": "1,648 acres"
+        },
+        {
+          "label": "Lowest-regret proxy allocation",
+          "value": "recent acres"
+        },
+        {
+          "label": "Terminal status",
+          "value": "request effectiveness and feasibility evidence"
+        }
       ],
-      "result": "Need is spatially clustered, and a composite allocation balances poverty, transit dependence, and housing pressure better than a single-indicator rule.",
-      "terminal_output": "Planning-screen allocation with radius, weight, and geography reversal tests",
-      "boundary": "Straight-line centroid distance and tract aggregates are screening approximations; travel time, site feasibility, capacity, and ACS uncertainty require local review.",
-      "figure": "figures/10-spatial-planning.svg",
-      "figure_alt": "Massachusetts tract-level need and selected service hubs"
+      "result": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+      "terminal_output": "evidence request before mitigation allocation",
+      "boundary": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+      "figure": "figures/08-wildfire-mitigation-under-uncertainty.svg",
+      "figure_alt": "Representative evidence figure for Wildfire Mitigation Evidence Allocation Under Uncertainty"
+    },
+    {
+      "number": "09",
+      "id": "sec-nport-filing-review",
+      "project_id": "sec-nport-filing-review",
+      "title": "SEC N-PORT Liquidity and Crowding Filing Review",
+      "gallery_title": "SEC N-PORT Liquidity and Crowding Filing Review",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Regulatory Filings",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "predictive",
+        "prescriptive"
+      ],
+      "question": "Which transparent concentration, liquidity, and redemption indicators should trigger targeted filing review?",
+      "source": {
+        "dataset": "SEC N-PORT Liquidity and Crowding Filing Review",
+        "publisher": "U.S. Securities and Exchange Commission",
+        "url": "https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets",
+        "version": "Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government public data",
+        "grain": "one fund filing snapshot",
+        "prepared_rows": 11747,
+        "snapshot_files": [
+          {
+            "name": "sec-nport-2025q4-fund-risk.csv",
+            "sha256": "3c45ae1e8815a5bffd9fa0f0d2e100eae37113d3074324713670b4f975144d73"
+          },
+          {
+            "name": "sec-nport-2025q4-fund-risk.source-lock.json",
+            "sha256": "c000a6bf8325b96f8b592cf09be99f634dc47fa095ac7b202c1cf86181c29c8a"
+          }
+        ]
+      },
+      "methods": [
+        "Filing extraction",
+        "percentile indicators",
+        "transparent composite score",
+        "and review-capacity trade-offs."
+      ],
+      "headline_metrics": [
+        {
+          "label": "Reviewed fund filings",
+          "value": "11,747"
+        },
+        {
+          "label": "Median top-10 holding concentration",
+          "value": "34.5%"
+        },
+        {
+          "label": "90th-percentile Level-3 share",
+          "value": "0.2%"
+        },
+        {
+          "label": "Terminal use",
+          "value": "targeted filing review only"
+        }
+      ],
+      "result": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
+      "terminal_output": "claim-bounded decision review",
+      "boundary": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
+      "figure": "figures/09-sec-nport-filing-review.svg",
+      "figure_alt": "Representative evidence figure for SEC N-PORT Liquidity and Crowding Filing Review"
+    },
+    {
+      "number": "10",
+      "id": "social-norm-field-experiment",
+      "project_id": "social-norm-field-experiment",
+      "title": "Social-Norm Field Experiment with Household-Clustered Inference",
+      "gallery_title": "Social-Norm Field Experiment with Household-Clustered Inference",
+      "gallery_endpoint": "observed field effect no new campaign authorization",
+      "domain": "Field Experiments",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "question": "What were the intent-to-treat turnout effects of randomized social-pressure mailings after household clustering?",
+      "source": {
+        "dataset": "Social-Norm Field Experiment with Household-Clustered Inference",
+        "publisher": "Yale Institution for Social and Policy Studies",
+        "url": "https://isps.yale.edu/research/data/d001",
+        "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
+        "accessed_at": "2026-08-10",
+        "license": "Yale ISPS data terms of use",
+        "grain": "one treatment by prior-turnout aggregate",
+        "prepared_rows": 10,
+        "snapshot_files": [
+          {
+            "name": "terms-compliant-treatment-aggregate.csv",
+            "sha256": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6"
+          },
+          {
+            "name": "cluster-robust-itt.json",
+            "sha256": "63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61"
+          },
+          {
+            "name": "external-source-lock.json",
+            "sha256": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+          }
+        ]
+      },
+      "methods": [
+        "Randomized-arm rates",
+        "household-clustered sandwich variance",
+        "95% intervals",
+        "and descriptive strata contrasts."
+      ],
+      "headline_metrics": [
+        {
+          "label": "Source individuals analyzed",
+          "value": "344,084"
+        },
+        {
+          "label": "Largest observed ITT",
+          "value": "Neighbors 8.1%"
+        },
+        {
+          "label": "Household-clustered 95% interval",
+          "value": "7.5% to 8.8%"
+        },
+        {
+          "label": "Causal scope",
+          "value": "the randomized experiment only"
+        }
+      ],
+      "result": "Causal scope is the historical randomized experiment; no new campaign authorization.",
+      "terminal_output": "observed field effect no new campaign authorization",
+      "boundary": "Causal scope is the historical randomized experiment; no new campaign authorization.",
+      "figure": "figures/10-social-norm-field-experiment.svg",
+      "figure_alt": "Representative evidence figure for Social-Norm Field Experiment with Household-Clustered Inference"
+    },
+    {
+      "number": "11",
+      "id": "population-health-survival",
+      "project_id": "population-health-survival",
+      "title": "Population Health Risk Transport Across NHIS Cohorts",
+      "gallery_title": "Population Health Risk Transport Across NHIS Cohorts",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Population Health",
+      "route": [
+        "descriptive",
+        "predictive",
+        "prescriptive"
+      ],
+      "question": "Do simple population-risk cells developed in NHIS 2016 retain discrimination and calibration in the 2017 linked-mortality cohort?",
+      "source": {
+        "dataset": "Population Health Risk Transport Across NHIS Cohorts",
+        "publisher": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics",
+        "url": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+        "version": "NHIS 2016 and 2017 Sample Adult files linked to 2019 public-use mortality",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government public-use data",
+        "grain": "one NHIS sampled adult linked to mortality status",
+        "prepared_rows": 58754,
+        "snapshot_files": [
+          {
+            "name": "nhis-2016-2017-linked-mortality-extract.csv",
+            "sha256": "ef2a7d308ebe9020d1d2bb53ef98115b9a60dbacacc1697c136512e8646d947a"
+          },
+          {
+            "name": "nhis-2016-2017-linked-mortality-extract.source-lock.json",
+            "sha256": "7e660b86cddc42955e56d77842eadda11cd7e5c2dd8331fa7416a8adccb3dcd7"
+          }
+        ]
+      },
+      "methods": [
+        "Survey weighting",
+        "temporal validation",
+        "AUC",
+        "Brier score",
+        "calibration",
+        "and bounded review protocols."
+      ],
+      "headline_metrics": [
+        {
+          "label": "2017 temporal-test AUC",
+          "value": "0.846"
+        },
+        {
+          "label": "2017 weighted two-year mortality",
+          "value": "2.32%"
+        },
+        {
+          "label": "Linked adult records",
+          "value": "58,754"
+        },
+        {
+          "label": "Terminal use",
+          "value": "research triage validation only"
+        }
+      ],
+      "result": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+      "terminal_output": "claim-bounded decision review",
+      "boundary": "Population-risk validation only; no individual diagnosis, treatment, or clinical deployment.",
+      "figure": "figures/11-population-health-survival.svg",
+      "figure_alt": "Representative evidence figure for Population Health Risk Transport Across NHIS Cohorts"
+    },
+    {
+      "number": "12",
+      "id": "opportunity-zone-policy-evaluation",
+      "project_id": "opportunity-zone-policy-evaluation",
+      "title": "Opportunity Zone One-Year Policy Evidence Screen",
+      "gallery_title": "Opportunity Zone One-Year Policy Evidence Screen",
+      "gallery_endpoint": "associational policy screen only",
+      "domain": "Public Policy",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "question": "How did selected tract outcomes change immediately after QOZ designation relative to observed-covariate matches?",
+      "source": {
+        "dataset": "Opportunity Zone One-Year Policy Evidence Screen",
+        "publisher": "CDFI Fund and U.S. Census Bureau",
+        "url": "https://www.cdfifund.gov/opportunity-zones",
+        "version": "2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government public data",
+        "grain": "one Massachusetts tract-year row",
+        "prepared_rows": 2956,
+        "snapshot_files": [
+          {
+            "name": "massachusetts-qoz-tract-panel.csv",
+            "sha256": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae"
+          },
+          {
+            "name": "massachusetts-qoz-tract-panel.source-lock.json",
+            "sha256": "20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be"
+          }
+        ]
+      },
+      "methods": [
+        "Panel linkage",
+        "nearest-neighbor matching",
+        "change contrasts",
+        "bootstrap intervals",
+        "and support diagnostics."
+      ],
+      "headline_metrics": [
+        {
+          "label": "Complete tract panels",
+          "value": "1,460"
+        },
+        {
+          "label": "Designated QOZ tracts analyzed",
+          "value": "138"
+        },
+        {
+          "label": "Unique matched controls",
+          "value": "121"
+        },
+        {
+          "label": "Causal status",
+          "value": "not identified"
+        }
+      ],
+      "result": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+      "terminal_output": "associational policy screen only",
+      "boundary": "Associational one-year screen; no causal effect because parallel trends are unavailable.",
+      "figure": "figures/12-opportunity-zone-policy-evaluation.svg",
+      "figure_alt": "Representative evidence figure for Opportunity Zone One-Year Policy Evidence Screen"
+    },
+    {
+      "number": "13",
+      "id": "behavioral-reading-experiment",
+      "project_id": "behavioral-reading-experiment",
+      "title": "Small-Sample Repeated-Measures Inference",
+      "gallery_title": "Small-Sample Repeated-Measures Inference",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Statistics",
+      "route": [
+        "descriptive",
+        "inferential"
+      ],
+      "question": "How does passage type change eye-movement burden within the same participant, and how stable is the contrast across reader groups?",
+      "source": {
+        "dataset": "Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading",
+        "publisher": "Harvard Dataverse",
+        "url": "https://doi.org/10.7910/DVN/3YCB56",
+        "version": "V1; file UNF:6:XJRpAtIOiQJZWyv7L3uj3A==",
+        "accessed_at": "2026-07-27",
+        "license": "CC0 1.0",
+        "grain": "one de-identified study participant with repeated passage measures",
+        "prepared_rows": 57,
+        "snapshot_files": [
+          {
+            "name": "pseudoword-passage-reading.tsv",
+            "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8"
+          }
+        ]
+      },
+      "methods": [
+        "within-participant contrasts",
+        "participant bootstrap",
+        "sign-flip inference",
+        "Holm multiplicity correction",
+        "label permutation",
+        "minimum-detectable-effect sensitivity"
+      ],
+      "headline_metrics": [
+        {
+          "label": "Complete participant pairs",
+          "value": "57"
+        },
+        {
+          "label": "Mean paired fixation-duration difference",
+          "value": "34.25 (95% bootstrap interval 25.87–43.35)"
+        },
+        {
+          "label": "Holm-adjusted sign-flip p-value",
+          "value": "0.0003"
+        },
+        {
+          "label": "80% power design-sensitivity MDE",
+          "value": "12.22"
+        }
+      ],
+      "result": "Pseudoword passages increase fixation-duration burden; paired analysis preserves the repeated-measures design and exposes group heterogeneity.",
+      "terminal_output": "claim-bounded decision review",
+      "boundary": "The public sample is small and does not establish downstream educational outcomes or an intervention effect.",
+      "figure": "figures/13-behavioral-reading-experiment.svg",
+      "figure_alt": "Representative evidence figure for Small-Sample Repeated-Measures Inference"
+    },
+    {
+      "number": "14",
+      "id": "nhanes-population-transportability",
+      "project_id": "nhanes-population-transportability",
+      "title": "NHANES Mortality Transportability and Population Inequality",
+      "gallery_title": "NHANES Mortality Transportability and Population Inequality",
+      "gallery_endpoint": "population research only",
+      "domain": "Biostatistics",
+      "route": [
+        "descriptive",
+        "diagnostic",
+        "decision"
+      ],
+      "question": "Do population mortality risk patterns transport between NHANES cohorts, and what inequality gradient remains visible?",
+      "source": {
+        "dataset": "NHANES Mortality Transportability and Population Inequality",
+        "publisher": "U.S. Centers for Disease Control and Prevention, National Center for Health Statistics",
+        "url": "https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+        "version": "NHANES 2011-2012 and 2015-2016 demographics linked to 2019 mortality",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government public-use data",
+        "grain": "one NHANES adult linked to 36-month mortality",
+        "prepared_rows": 11820,
+        "snapshot_files": [
+          {
+            "name": "nhanes-36-month-mortality-cohorts.csv",
+            "sha256": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad"
+          },
+          {
+            "name": "nhanes-36-month-mortality-cohorts.source-lock.json",
+            "sha256": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358"
+          }
+        ]
+      },
+      "methods": [
+        "Survey-weighted rates",
+        "cross-cohort AUC/Brier/calibration",
+        "and poverty-income-ratio gradients."
+      ],
+      "headline_metrics": [
+        {
+          "label": "External-cohort AUC",
+          "value": "0.804"
+        },
+        {
+          "label": "External-cohort Brier score",
+          "value": "0.022"
+        },
+        {
+          "label": "Linked adults",
+          "value": "11,820"
+        },
+        {
+          "label": "Terminal use",
+          "value": "population research only"
+        }
+      ],
+      "result": "Population research only; no individual diagnosis or treatment.",
+      "terminal_output": "population research only",
+      "boundary": "Population research only; no individual diagnosis or treatment.",
+      "figure": "figures/14-nhanes-population-transportability.svg",
+      "figure_alt": "Representative evidence figure for NHANES Mortality Transportability and Population Inequality"
+    },
+    {
+      "number": "15",
+      "id": "spatial-equity-planning",
+      "project_id": "spatial-equity-planning",
+      "title": "Spatial Equity Planning with Transit and Site-Evidence Gates",
+      "gallery_title": "Spatial Equity Planning with Transit and Site-Evidence Gates",
+      "gallery_endpoint": "claim-bounded decision review",
+      "domain": "Urban Planning",
+      "route": [
+        "descriptive",
+        "prescriptive"
+      ],
+      "question": "Which tract-level service-hub priorities merit local review after observed rapid-transit proximity is added?",
+      "source": {
+        "dataset": "Spatial Equity Planning with Transit and Site-Evidence Gates",
+        "publisher": "U.S. Census Bureau and Massachusetts Bay Transportation Authority",
+        "url": "https://www.census.gov/data/developers/data-sets/acs-5year/2023.html",
+        "version": "2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10",
+        "accessed_at": "2026-08-10",
+        "license": "U.S. Government open data and MBTA open data",
+        "grain": "one Massachusetts census tract",
+        "prepared_rows": 1620,
+        "snapshot_files": [
+          {
+            "name": "acs-b01003-ma.dat",
+            "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f"
+          },
+          {
+            "name": "acs-b17001-ma.dat",
+            "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0"
+          },
+          {
+            "name": "acs-b19013-ma.dat",
+            "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce"
+          },
+          {
+            "name": "acs-b08301-ma.dat",
+            "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2"
+          },
+          {
+            "name": "acs-b25064-ma.dat",
+            "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4"
+          },
+          {
+            "name": "2023_Gaz_tracts_national.zip",
+            "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c"
+          },
+          {
+            "name": "mbta-rapid-transit-stops.json",
+            "sha256": "22d2bfb9023dca4d261c149d1665e15f35d8f3e3406e947a60f34f327997ca6a"
+          }
+        ]
+      },
+      "methods": [
+        "ACS need indicators",
+        "Moran's I",
+        "heuristic location allocation",
+        "bootstrap sensitivity",
+        "and nearest-MBTA-stop distance."
+      ],
+      "headline_metrics": [
+        {
+          "label": "Analyzed Massachusetts tracts",
+          "value": "1,597"
+        },
+        {
+          "label": "MBTA rapid-transit stop records",
+          "value": "265"
+        },
+        {
+          "label": "High-poverty weighted nearest-stop distance",
+          "value": "40.65 km"
+        },
+        {
+          "label": "Site decision",
+          "value": "blocked pending land and feasibility evidence"
+        }
+      ],
+      "result": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
+      "terminal_output": "claim-bounded decision review",
+      "boundary": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
+      "figure": "figures/15-spatial-equity-planning.svg",
+      "figure_alt": "Representative evidence figure for Spatial Equity Planning with Transit and Site-Evidence Gates"
     }
   ]
 }

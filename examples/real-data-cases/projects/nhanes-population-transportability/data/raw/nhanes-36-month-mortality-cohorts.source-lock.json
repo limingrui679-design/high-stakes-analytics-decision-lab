@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "name": "DEMO_G.XPT",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2011/DataFiles/DEMO_G.xpt",
+      "sha256": "eaf0525d1952626885af3e935415a1f66ad62c18698080e7354789c125af252d",
+      "bytes": 3753760
+    },
+    {
+      "name": "NHANES_2011_2012_MORT_2019_PUBLIC.dat",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/NCHS/datalinkage/linked_mortality/NHANES_2011_2012_MORT_2019_PUBLIC.dat",
+      "sha256": "ff98b6c87172643426b1c6d20f76495592bebd618ea18f742d98a44b84456b30",
+      "bytes": 475574
+    },
+    {
+      "name": "DEMO_I.XPT",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2015/DataFiles/DEMO_I.xpt",
+      "sha256": "c9297c6c37ae8f78f29be9568fa2a03cf3b112616a39afee04030fc775a66a0d",
+      "bytes": 3756480
+    },
+    {
+      "name": "NHANES_2015_2016_MORT_2019_PUBLIC.dat",
+      "url": "https://ftp.cdc.gov/pub/health_statistics/NCHS/datalinkage/linked_mortality/NHANES_2015_2016_MORT_2019_PUBLIC.dat",
+      "sha256": "f392baaf9c20a4c75bc9936775ba956e64528fa5ada5102b08f86f64e41e84a0",
+      "bytes": 484288
+    }
+  ]
+}

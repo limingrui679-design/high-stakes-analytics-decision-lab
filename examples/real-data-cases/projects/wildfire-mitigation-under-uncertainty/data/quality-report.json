@@ -1,0 +1,38 @@
+{
+  "rows": 8892,
+  "columns": 10,
+  "column_names": [
+    "OBJECTID",
+    "YEAR_",
+    "AGENCY",
+    "UNIT_ID",
+    "FIRE_NAME",
+    "CAUSE",
+    "C_METHOD",
+    "OBJECTIVE",
+    "GIS_ACRES",
+    "GlobalID"
+  ],
+  "missing_count_by_column": {
+    "OBJECTID": 0,
+    "YEAR_": 0,
+    "AGENCY": 0,
+    "UNIT_ID": 12,
+    "FIRE_NAME": 51,
+    "CAUSE": 0,
+    "C_METHOD": 0,
+    "OBJECTIVE": 175,
+    "GIS_ACRES": 0,
+    "GlobalID": 0
+  },
+  "duplicate_key_count": 0,
+  "quality_status": "usable_with_documented_limitations",
+  "expected_rows": 8892,
+  "row_count_matches_manifest": true,
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+    "status": "approved_for_public_minimized_analysis"
+  }
+}

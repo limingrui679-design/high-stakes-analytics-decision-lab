@@ -3,6 +3,7 @@
   "project_id": "bank-marketing-response",
   "source_id": "uci-bank-marketing-222",
   "title": "Bank Marketing",
+  "project_title": "Capacity-Constrained Marketing Pilot",
   "publisher": "UCI Machine Learning Repository",
   "landing_page": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
   "doi": "10.24432/C5K306",

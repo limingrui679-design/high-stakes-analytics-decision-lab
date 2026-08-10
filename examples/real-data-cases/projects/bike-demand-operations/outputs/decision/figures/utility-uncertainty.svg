@@ -55,28 +55,28 @@
 <text x="342.0" y="126.0" class="small" text-anchor="start">P05</text>
 <text x="1034.0" y="126.0" class="small" text-anchor="end">P95</text>
 <rect x="30.0" y="150.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="180.0" class="section" text-anchor="start">Robust Optimized</text>
-<rect x="740.9" y="169.0" width="37.5" height="14" rx="7" fill="#E8F2DF"/>
-<line x1="740.9" y1="176" x2="778.3" y2="176" stroke="#4E7D32" stroke-width="2"/>
-<circle cx="763.0" cy="176" r="8" fill="#4E7D32" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 739.9 168.0 L 747.9 176.0 L 739.9 184.0 L 731.9 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.608</text>
-<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.575</text>
-<text x="48.0" y="252.0" class="label" text-anchor="start">Demand Proportional</text>
-<rect x="739.3" y="241.0" width="38.8" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="739.3" y1="248" x2="778.1" y2="248" stroke="#263449" stroke-width="2"/>
-<circle cx="761.9" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 738.1 240.0 L 746.1 248.0 L 738.1 256.0 L 730.1 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.607</text>
-<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.572</text>
+<text x="48.0" y="180.0" class="section" text-anchor="start">Top 25 Station Hours</text>
+<rect x="626.0" y="169.0" width="30.2" height="14" rx="7" fill="#E8F2DF"/>
+<line x1="626.0" y1="176" x2="656.2" y2="176" stroke="#4E7D32" stroke-width="2"/>
+<circle cx="648.7" cy="176" r="8" fill="#4E7D32" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 626.0 168.0 L 634.0 176.0 L 626.0 184.0 L 618.0 176.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="171.0" class="mono" text-anchor="start">mean 0.443</text>
+<text x="1052.0" y="191.0" class="small" text-anchor="start">CVaR10 0.410</text>
+<text x="48.0" y="252.0" class="label" text-anchor="start">Top 10 Station Hours</text>
+<rect x="591.0" y="241.0" width="32.8" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="591.0" y1="248" x2="623.8" y2="248" stroke="#263449" stroke-width="2"/>
+<circle cx="615.6" cy="248" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 591.0 240.0 L 599.0 248.0 L 591.0 256.0 L 583.0 248.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="243.0" class="mono" text-anchor="start">mean 0.395</text>
+<text x="1052.0" y="263.0" class="small" text-anchor="start">CVaR10 0.360</text>
 <rect x="30.0" y="294.0" width="1134.0" height="58.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
-<text x="48.0" y="324.0" class="label" text-anchor="start">Equal Baseline</text>
-<rect x="671.1" y="313.0" width="46.8" height="14" rx="7" fill="#E1E7EE"/>
-<line x1="671.1" y1="320" x2="718.0" y2="320" stroke="#263449" stroke-width="2"/>
-<circle cx="698.5" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
-<path d="M 670.0 312.0 L 678.0 320.0 L 670.0 328.0 L 662.0 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
-<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.515</text>
-<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.474</text>
+<text x="48.0" y="324.0" class="label" text-anchor="start">Baseline: Monitoring Only</text>
+<rect x="602.3" y="313.0" width="8.9" height="14" rx="7" fill="#E1E7EE"/>
+<line x1="602.3" y1="320" x2="611.2" y2="320" stroke="#263449" stroke-width="2"/>
+<circle cx="609.0" cy="320" r="8" fill="#263449" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M 602.3 312.0 L 610.3 320.0 L 602.3 328.0 L 594.3 320.0 Z" fill="#C69214" stroke="#0B1F3A"/>
+<text x="1052.0" y="315.0" class="mono" text-anchor="start">mean 0.386</text>
+<text x="1052.0" y="335.0" class="small" text-anchor="start">CVaR10 0.376</text>
 <text x="342.0" y="420.0" class="small" text-anchor="start">● expected utility   ◆ worst-decile average   band = P05–P95</text>
 <line x1="36" y1="414.0" x2="1164" y2="414.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="436.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

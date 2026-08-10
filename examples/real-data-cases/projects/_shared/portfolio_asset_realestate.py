@@ -73,7 +73,7 @@ def prepare_multi_asset(
         ["date", *ASSET_SYMBOLS],
     )
     dictionary = {
-        "project_id": "regime-aware-multi-asset-portfolio",
+        "project_id": "sec-nport-filing-review",
         "primary_key": "date",
         "fields": {
             "date": "common US trading date in ISO format",
@@ -556,7 +556,7 @@ def analyze_multi_asset(project_root: Path) -> dict[str, Any]:
         list(evidence_rows[0]),
     )
     return {
-        "project_id": "regime-aware-multi-asset-portfolio",
+        "project_id": "sec-nport-filing-review",
         "data": {
             "price_rows": len(source_rows),
             "evaluated_days": len(aligned_dates),
@@ -796,6 +796,57 @@ def analyze_real_estate(project_root: Path) -> dict[str, Any]:
         segment_stats,
         list(segment_stats[0]),
     )
+    decision_product_contract = {
+        "terminal_status": "targeted_diligence_only",
+        "stakeholder_views": {
+            "analyst": {
+                "primary_artifacts": [
+                    "segment-level transaction depth",
+                    "robust price-per-square-foot summaries",
+                    "source and filtering evidence",
+                ],
+                "permitted_action": "assemble a traceable property-level evidence request",
+            },
+            "risk_manager": {
+                "primary_artifacts": [
+                    "financing stress scenarios",
+                    "thin-market and dispersion flags",
+                    "reversal conditions",
+                ],
+                "permitted_action": "prioritize diligence under declared assumptions",
+            },
+            "audit_reviewer": {
+                "primary_artifacts": [
+                    "source manifest and raw hashes",
+                    "filtering and parameter provenance",
+                    "claim and redistribution boundaries",
+                ],
+                "permitted_action": "verify that every displayed claim resolves to public evidence",
+            },
+        },
+        "required_next_evidence": [
+            "property-level leases and net operating income",
+            "operating expenses and capital expenditure",
+            "physical condition and environmental review",
+            "title, zoning, and planning constraints",
+            "actual financing terms",
+        ],
+        "forbidden_outputs": [
+            "appraisal value",
+            "acquisition recommendation",
+            "credit approval",
+            "planning approval",
+            "causal regeneration claim",
+        ],
+    }
+    write_json(
+        project_root / "outputs/decision-product-contract.json",
+        {
+            "schema_version": "1.0",
+            "project_id": "commercial-real-estate-risk",
+            **decision_product_contract,
+        },
+    )
     return {
         "project_id": "commercial-real-estate-risk",
         "data": {
@@ -827,6 +878,7 @@ def analyze_real_estate(project_root: Path) -> dict[str, Any]:
                 "debt terms, property condition, or appraisal evidence."
             ),
         },
+        "decision_product_contract": decision_product_contract,
         "planning_delivery": {
             "status": "diligence_screen_only",
             "sufficiently_observed_segments": len(sufficiently_observed),

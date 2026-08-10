@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "project_id": "social-norm-field-experiment",
+  "source_id": "yale-isps-d001-terms-compliant-aggregate",
+  "title": "Social-Norm Field Experiment with Household-Clustered Inference",
+  "project_title": "Social-Norm Field Experiment with Household-Clustered Inference",
+  "publisher": "Yale Institution for Social and Policy Studies",
+  "landing_page": "https://isps.yale.edu/research/data/d001",
+  "version": "Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference",
+  "accessed_at": "2026-08-10",
+  "license": "Yale ISPS data terms of use",
+  "license_url": "https://isps.yale.edu/research/data/terms-of-use",
+  "redistribution": "Participant rows are not redistributed; only non-identifying aggregates and clustered statistics are stored.",
+  "expected_rows": 10,
+  "grain": "one treatment by prior-turnout aggregate",
+  "raw_files": [
+    {
+      "path": "data/raw/terms-compliant-treatment-aggregate.csv",
+      "sha256": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6"
+    },
+    {
+      "path": "data/raw/cluster-robust-itt.json",
+      "sha256": "63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61"
+    },
+    {
+      "path": "data/raw/external-source-lock.json",
+      "sha256": "eb0efd7d3d9c1c45592767cb869e558632118c7830f00d65ff3abfc3518f01e4"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": true,
+    "treatment": "Causal scope is the historical randomized experiment; no new campaign authorization.",
+    "status": "approved_for_public_minimized_analysis"
+  },
+  "citation": "Yale Institution for Social and Policy Studies. Gerber-Green-Larimer 2008 replication file; non-identifying aggregate and locally computed clustered inference."
+}

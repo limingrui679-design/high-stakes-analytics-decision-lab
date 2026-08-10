@@ -44,7 +44,7 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
   <a href="#messy-data-does-not-go-straight-into-a-model"><strong>Data gate</strong></a> ·
   <a href="#four-adaptive-analytical-routes"><strong>Four routes</strong></a> ·
   <a href="#two-intelligence-products-one-evidence-contract"><strong>Outputs</strong></a> ·
-  <a href="#real-projects-ten-complete-evidence-paths"><strong>Real projects</strong></a> ·
+  <a href="#real-projects-fifteen-complete-evidence-paths"><strong>Real projects</strong></a> ·
   <a href="#use"><strong>Use</strong></a>
 </p>
 
@@ -172,30 +172,36 @@ reversal conditions. It never replaces the Evidence Intelligence Report.
 | **Evidence Intelligence Report — primary** | What does the evidence establish? | Data contract, QA, methods, validation, material visual evidence, uncertainty, limitations, source lineage, reproducibility | Every real-data project |
 | **Decision Intelligence Brief — conditional** | What action, pilot, diligence, evidence request, or stop follows? | Decision status, evidence gates, alternatives, constraints, dependent shocks, tail risk, sensitivity, reversal conditions | When a decision layer is requested; it may correctly end in non-deployment or no recommendation |
 
-## Real projects: ten complete evidence paths
+## Real projects: fifteen complete evidence paths
 
 Every project ships a reviewed real-data snapshot, source manifest and hashes,
 download receipt, prepared-data quality report, configuration, runnable code,
-machine-readable results, an Evidence Intelligence Report, every analytical
-figure, and an independent Decision Intelligence Brief. The single landscape
-below shows the portfolio; the table opens each full report.
+machine-readable results, an Evidence Intelligence Report, and every analytical
+figure. A separate Decision Intelligence Brief is included only when a real
+decision layer is justified. The single landscape below shows the portfolio;
+the table opens each full report.
 
 <p align="center">
-  <img src="examples/real-data-cases/figures/case-landscape.svg" alt="Ten real-data cases and their evidence-matched analytical paths" width="92%">
+  <img src="examples/real-data-cases/figures/case-landscape.svg" alt="Fifteen real-data cases and their evidence-matched analytical paths" width="92%">
 </p>
 
 | Project | Evidence | Adaptive route | Open artifacts |
 |---|---:|---|---|
-| Heart-Failure Follow-up Risk and Survival | 299 patient records | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/population-health-survival/outputs/report.md) · [Figures](examples/real-data-cases/projects/population-health-survival/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/population-health-survival/outputs/decision/report/decision-report.md) |
-| Pseudoword Reading: Repeated-Measures Inference | 57 paired participants | descriptive → inferential | [Evidence](examples/real-data-cases/projects/behavioral-reading-experiment/outputs/report.md) · [Figures](examples/real-data-cases/projects/behavioral-reading-experiment/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/decision-report.md) |
-| End-to-End Census-Income Model Validation | 48,842 records | descriptive → predictive | [Evidence](examples/real-data-cases/projects/census-income-ai/outputs/report.md) · [Figures](examples/real-data-cases/projects/census-income-ai/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/census-income-ai/outputs/decision/report/decision-report.md) |
-| Bike-Demand Forecasting and Robust Allocation | 17,379 system-hours | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/bike-demand-operations/outputs/report.md) · [Figures](examples/real-data-cases/projects/bike-demand-operations/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-report.md) |
-| Marketing Response and Capacity Planning | 41,188 contacts | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/bank-marketing-response/outputs/report.md) · [Figures](examples/real-data-cases/projects/bank-marketing-response/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/decision-report.md) |
-| Treasury Yield-Curve Tail-Risk Engineering | 1,500 daily curves | descriptive → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/treasury-risk-engineering/outputs/report.md) · [Figures](examples/real-data-cases/projects/treasury-risk-engineering/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/decision-report.md) |
-| Regime-Aware Multi-Asset Portfolio Construction | 5 assets × 2,766 common trading dates | descriptive → diagnostic → predictive → prescriptive | [Evidence](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/report.md) · [Figures](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/regime-aware-multi-asset-portfolio/outputs/decision/report/decision-report.md) |
-| Complaint Monitoring and Negative Validation | 13,534 complaints | descriptive → predictive | [Evidence](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/report.md) · [Figures](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/chart-map.json) · [`do_not_deploy`](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md) |
-| Commercial Real Estate Transactions and Regeneration Risk | 12,399 filtered transactions | descriptive → diagnostic → prescriptive | [Evidence](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/report.md) · [Figures](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md) |
-| Spatial Equity and Service-Hub Planning | 1,597 analyzed tracts | descriptive → prescriptive | [Evidence](examples/real-data-cases/projects/spatial-equity-planning/outputs/report.md) · [Figures](examples/real-data-cases/projects/spatial-equity-planning/outputs/chart-map.json) · [Decision](examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/decision-report.md) |
+| Jersey City Bike Demand and Rebalancing Evidence | 17,906 station-hour-month rows | predictive → scenario | [Evidence](examples/real-data-cases/projects/bike-demand-operations/outputs/report.md) · [Decision](examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-report.md) |
+| Cross-City 311 Distribution Shift and Transfer Gate | 8,760 city-day-family rows | descriptive → transport gate | [Evidence](examples/real-data-cases/projects/cross-city-311-shift/outputs/report.md) · [Result](examples/real-data-cases/projects/cross-city-311-shift/outputs/results.json) |
+| Capacity-Constrained Marketing Pilot | 41,188 contacts | predictive → randomized-pilot requirement | [Evidence](examples/real-data-cases/projects/bank-marketing-response/outputs/report.md) · [Decision](examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/decision-report.md) |
+| ACS Employment AI Temporal Transport and Audit | 12,469 people | predictive → non-deployment | [Evidence](examples/real-data-cases/projects/census-income-ai/outputs/report.md) · [Decision](examples/real-data-cases/projects/census-income-ai/outputs/decision/report/decision-report.md) |
+| Treasury Curve and Tail-Risk Decision Engine | 1,500 daily curves | risk → decision | [Evidence](examples/real-data-cases/projects/treasury-risk-engineering/outputs/report.md) · [Decision](examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/decision-report.md) |
+| Human-in-the-Loop Complaint Triage Information System | 13,534 complaints | model-risk → `do_not_deploy` | [Evidence](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/report.md) · [Decision](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md) |
+| Commercial Real Estate Diligence Decision Product | 12,399 transactions | diagnostic → diligence | [Evidence](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/report.md) · [Decision](examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md) |
+| Wildfire Mitigation Evidence Allocation Under Uncertainty | 8,892 perimeters | robust scenarios → evidence request | [Evidence](examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/report.md) · [Result](examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/results.json) |
+| SEC N-PORT Liquidity and Crowding Filing Review | 11,747 fund filings | diagnostic → targeted review | [Evidence](examples/real-data-cases/projects/sec-nport-filing-review/outputs/report.md) · [Decision](examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/decision-report.md) |
+| Social-Norm Field Experiment with Household-Clustered Inference | 344,084 source individuals | randomized experiment → bounded inference | [Evidence](examples/real-data-cases/projects/social-norm-field-experiment/outputs/report.md) · [Result](examples/real-data-cases/projects/social-norm-field-experiment/outputs/results.json) |
+| Population Health Risk Transport Across NHIS Cohorts | 58,754 linked adults | temporal validation → prospective validation | [Evidence](examples/real-data-cases/projects/population-health-survival/outputs/report.md) · [Decision](examples/real-data-cases/projects/population-health-survival/outputs/decision/report/decision-report.md) |
+| Opportunity Zone One-Year Policy Evidence Screen | 2,956 tract-year rows | matched change → associational screen | [Evidence](examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/report.md) · [Result](examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/results.json) |
+| Small-Sample Repeated-Measures Inference | 57 paired participants | inferential → validation design | [Evidence](examples/real-data-cases/projects/behavioral-reading-experiment/outputs/report.md) · [Decision](examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/decision-report.md) |
+| NHANES Mortality Transportability and Population Inequality | 11,820 linked adults | transportability → population research | [Evidence](examples/real-data-cases/projects/nhanes-population-transportability/outputs/report.md) · [Result](examples/real-data-cases/projects/nhanes-population-transportability/outputs/results.json) |
+| Spatial Equity Planning with Transit and Site-Evidence Gates | 1,597 analyzed tracts | spatial planning → site-evidence gate | [Evidence](examples/real-data-cases/projects/spatial-equity-planning/outputs/report.md) · [Decision](examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/decision-report.md) |
 
 [Open the complete visual gallery, case cards, and report index](examples/real-data-cases/README.md).
 
@@ -223,8 +229,9 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 ```
 
 The installer detects supported agents and places the Skill in the appropriate
-global directory. The current CLI package declares Node.js 18 or later; direct
-Python workflows target Python 3.10 or later.
+global directory. The upstream `skills` CLI handles its own runtime discovery;
+direct repository workflows use standard-library Python and can be checked
+with the public verification command below.
 
 <details>
 <summary><strong>Runtime targeting, manual installation, and no-install use</strong></summary>
@@ -425,7 +432,7 @@ model-validation sections; a weak model may terminate with a deployment
 rejection; a disclosure case may request evidence rather than score unobserved
 capability.
 
-Rebuild the visual assets, terminal reports, and ten-project gallery:
+Rebuild the visual assets, terminal reports, and fifteen-project gallery:
 
 ```bash
 python3 scripts/build_readme_visuals.py
@@ -445,7 +452,7 @@ python3 -m unittest discover -s tests -v
 
 The 67 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
-routing, the decision engine, ten-project source hashes, the evidence
+routing, the decision engine, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
 package naming, links, and SVG accessibility.
 Synthetic files under `tests/fixtures/` are engineering fixtures only; they are
@@ -460,7 +467,7 @@ high-stakes-analytics-decision-lab/
 ├── LICENSE.txt
 ├── agents/
 ├── assets/                         # data/case contracts + README visuals
-├── examples/real-data-cases/       # ten complete reproducible projects
+├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
 └── tests/                          # complete 67-test standalone regression suite

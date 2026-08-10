@@ -1,0 +1,77 @@
+{
+  "qoz_workbook": {
+    "url": "https://www.cdfifund.gov/sites/cdfi/files/documents/designated-qozs.12.14.18.xlsx",
+    "sha256": "96b791f36d1065ab975196a4a545b6bb4ea4afaa6fdae865baf50c0e7b170891",
+    "bytes": 276974
+  },
+  "acs_years": [
+    2018,
+    2019
+  ],
+  "acs_files": [
+    {
+      "name": "acsdt5y2018-b01003.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2018/prototype/5YRData/acsdt5y2018-b01003.dat",
+      "sha256": "1bc4c419ab3b38ac2524feec03c4f1e535da10c0d8e240d4f76984ba2a4b11e8",
+      "bytes": 17180319
+    },
+    {
+      "name": "acsdt5y2018-b17001.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2018/prototype/5YRData/acsdt5y2018-b17001.dat",
+      "sha256": "0b3ffa5ffc385fb35de353d0ccd64d91e34ed7a0b4b96086482d5ca60cb8f027",
+      "bytes": 113283876
+    },
+    {
+      "name": "acsdt5y2018-b19013.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2018/prototype/5YRData/acsdt5y2018-b19013.dat",
+      "sha256": "56e4213d633be4f5690e7ad93ecf0514669dbcc11c9b377e3f40a6c85bbe6145",
+      "bytes": 16405813
+    },
+    {
+      "name": "acsdt5y2018-b25064.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2018/prototype/5YRData/acsdt5y2018-b25064.dat",
+      "sha256": "6399a046e4e4f04b30fc6428a2ef16870017f5b134e90843f44e802ee87efcae",
+      "bytes": 15431215
+    },
+    {
+      "name": "acsdt5y2018-b23025.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2018/prototype/5YRData/acsdt5y2018-b23025.dat",
+      "sha256": "27f8537452d806627d0002b621c6be37e3ab933d0e0fa25159fabf4ef57c86b4",
+      "bytes": 37314390
+    },
+    {
+      "name": "acsdt5y2019-b01003.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/prototype/5YRData/acsdt5y2019-b01003.dat",
+      "sha256": "70e30fd7fdcef3aba956b174baca16ab1dc7b1bd23902b77882abe87e51912da",
+      "bytes": 17185601
+    },
+    {
+      "name": "acsdt5y2019-b17001.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/prototype/5YRData/acsdt5y2019-b17001.dat",
+      "sha256": "b96e13c911caee1289f1a03a6d116406f3aeb3a027d625742db87b36599724d7",
+      "bytes": 113752643
+    },
+    {
+      "name": "acsdt5y2019-b19013.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/prototype/5YRData/acsdt5y2019-b19013.dat",
+      "sha256": "623266bf4541f2ab90c8541b0741aa509e2d612b0926de04fd58f0e08dffbc8f",
+      "bytes": 16449559
+    },
+    {
+      "name": "acsdt5y2019-b25064.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/prototype/5YRData/acsdt5y2019-b25064.dat",
+      "sha256": "23178fb81858c663859191d5649736b8de9c4c21ea6cfdb90445dc96e55a1616",
+      "bytes": 15497243
+    },
+    {
+      "name": "acsdt5y2019-b23025.dat",
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2019/prototype/5YRData/acsdt5y2019-b23025.dat",
+      "sha256": "03caf2ab9e112025db115d4cd9dc64435b0426f1f052b5a37e9a454a4975daa2",
+      "bytes": 37371884
+    }
+  ],
+  "lodes_years": [
+    2018,
+    2019
+  ]
+}

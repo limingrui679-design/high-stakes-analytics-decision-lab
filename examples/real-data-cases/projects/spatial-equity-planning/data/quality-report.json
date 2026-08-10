@@ -40,7 +40,7 @@
   "privacy_review": {
     "contains_direct_identifiers": false,
     "contains_sensitive_attributes": false,
-    "treatment": "Use published tract-level estimates and margins of error; suppress no individual-level inference.",
-    "status": "approved_for_public_aggregate_analysis"
+    "treatment": "No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.",
+    "status": "approved_for_public_minimized_analysis"
   }
 }

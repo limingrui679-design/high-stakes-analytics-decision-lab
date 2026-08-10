@@ -29,17 +29,43 @@ CASE_DIR = CASE_ROOT / "cases"
 FIGURE_DIR = CASE_ROOT / "figures"
 HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 PROJECT_FIGURES = {
-    "population-health-survival": "cox-hazard-ratios.svg",
+    "population-health-survival": "temporal-calibration.svg",
     "behavioral-reading-experiment": "paired-effect.svg",
-    "census-income-ai": "model-comparison.svg",
-    "bike-demand-operations": "allocation-unmet.svg",
+    "census-income-ai": "temporal-performance.svg",
+    "bike-demand-operations": "forecast-mae.svg",
+    "cross-city-311-shift": "within-city-shift.svg",
     "bank-marketing-response": "capacity-capture.svg",
     "treasury-risk-engineering": "expected-shortfall.svg",
-    "regime-aware-multi-asset-portfolio": "portfolio-growth.svg",
+    "sec-nport-filing-review": "risk-indicator-p90.svg",
     "cfpb-fintech-complaint-operations": "cumulative-gain.svg",
     "commercial-real-estate-risk": "borough-price-per-sqft.svg",
+    "wildfire-mitigation-under-uncertainty": "scenario-regret.svg",
+    "social-norm-field-experiment": "cluster-robust-itt.svg",
+    "opportunity-zone-policy-evaluation": "matched-change-effects.svg",
+    "nhanes-population-transportability": "transport-calibration.svg",
     "spatial-equity-planning": "need-map.svg",
 }
+
+
+def sync_representative_figures() -> None:
+    payload = json.loads(CASE_INDEX.read_text(encoding="utf-8"))
+    FIGURE_DIR.mkdir(parents=True, exist_ok=True)
+    expected = {Path(case["figure"]).name for case in payload.get("cases", [])}
+    for path in FIGURE_DIR.glob("*.svg"):
+        if path.name != "case-landscape.svg" and path.name not in expected:
+            path.unlink()
+    for case in payload.get("cases", []):
+        source = (
+            CASE_ROOT
+            / "projects"
+            / case["project_id"]
+            / "outputs"
+            / "figures"
+            / PROJECT_FIGURES[case["project_id"]]
+        )
+        target = CASE_ROOT / case["figure"]
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(source.read_bytes())
 
 
 def validate_local_links(markdown_path: Path) -> None:
@@ -62,11 +88,11 @@ def validate_local_links(markdown_path: Path) -> None:
 def load_cases() -> list[dict]:
     payload = json.loads(CASE_INDEX.read_text(encoding="utf-8"))
     cases = payload.get("cases", [])
-    if payload.get("case_count") != 10 or len(cases) != 10:
-        raise ValueError("The bundled real-data gallery must contain exactly ten cases.")
+    if payload.get("case_count") != 15 or len(cases) != 15:
+        raise ValueError("The bundled real-data gallery must contain exactly fifteen cases.")
     ids = [case.get("id") for case in cases]
     numbers = [case.get("number") for case in cases]
-    if len(set(ids)) != 10 or len(set(numbers)) != 10:
+    if len(set(ids)) != 15 or len(set(numbers)) != 15:
         raise ValueError("Case identifiers and display numbers must be unique.")
     for case in cases:
         required = {
@@ -182,24 +208,24 @@ def load_cases() -> list[dict]:
         )
         decision_result = decision_report.parent / "decision-results.json"
         decision_chart_map = decision_report.parent / "figures" / "chart-map.json"
-        for required_decision_path in (
-            decision_report,
-            decision_result,
-            decision_chart_map,
-        ):
-            if not required_decision_path.exists():
-                raise ValueError(
-                    f"{case['id']} is missing complete decision output: "
-                    f"{required_decision_path}"
-                )
-        decision_figures = sorted(
-            (decision_report.parent / "figures").glob("*.svg")
-        )
-        if len(decision_figures) < 2:
-            raise ValueError(
-                f"{case['id']} must bundle at least two decision-report figures."
+        if decision_report.exists():
+            for required_decision_path in (
+                decision_result,
+                decision_chart_map,
+            ):
+                if not required_decision_path.exists():
+                    raise ValueError(
+                        f"{case['id']} is missing complete decision output: "
+                        f"{required_decision_path}"
+                    )
+            decision_figures = sorted(
+                (decision_report.parent / "figures").glob("*.svg")
             )
-        validate_local_links(decision_report)
+            if len(decision_figures) < 2:
+                raise ValueError(
+                    f"{case['id']} must bundle at least two decision-report figures."
+                )
+            validate_local_links(decision_report)
     return cases
 
 
@@ -374,12 +400,12 @@ def gallery_svg(cases: list[dict]) -> str:
             )
         )
     return svg_document(
-        "Ten complete real-data projects, ten evidence-matched paths",
+        "Fifteen complete real-data projects, fifteen evidence-matched paths",
         "Complete projects span health, behavior, AI, operations, business, finance, policy, and spatial planning.",
         "\n".join(body),
-        height=900,
+        height=1380,
         description=(
-            "Ten numbered cards show each case domain, adaptive analytical route, "
+            "Fifteen numbered cards show each case domain, adaptive analytical route, "
             "one headline metric, and the evidence-matched terminal output."
         ),
         accent=CATEGORY_PALETTE[0],
@@ -398,13 +424,18 @@ def gallery_readme(cases: list[dict]) -> str:
             f"projects/{case['project_id']}/outputs/decision/report/"
             "decision-report.md"
         )
+        decision_path = CASE_ROOT / decision_report
+        terminal_link = (
+            f"[Decision]({decision_report})"
+            if decision_path.exists()
+            else f"[Terminal result](projects/{case['project_id']}/outputs/results.json)"
+        )
         evidence = case["headline_metrics"][0]
         rows.append(
             f"| {case['number']} · {case['title']} | "
             f"{case['domain']}<br>{evidence['label']}: {evidence['value']} | "
             f"{' → '.join(case['route'])} | "
-            f"[Evidence]({report}) · [Card]({link}) · "
-            f"[Decision]({decision_report}) |"
+            f"[Evidence]({report}) · [Card]({link}) · {terminal_link} |"
         )
     gallery_cells = []
     for index in range(0, len(cases), 2):
@@ -416,6 +447,12 @@ def gallery_readme(cases: list[dict]) -> str:
                 f"projects/{case['project_id']}/outputs/decision/report/"
                 "decision-report.md"
             )
+            decision_path = CASE_ROOT / decision_report
+            terminal_link = (
+                f'<a href="{decision_report}">Decision Intelligence Brief</a>'
+                if decision_path.exists()
+                else f'<a href="projects/{case["project_id"]}/outputs/results.json">Terminal result</a>'
+            )
             cells.append(
                 f"""<td width="50%">
   <a href="{report}">
@@ -425,15 +462,15 @@ def gallery_readme(cases: list[dict]) -> str:
   <br>{case['result']}
   <br><em>Boundary:</em> {case['boundary']}
   <br><a href="{link}">Case card</a> · <a href="{report}">Evidence Intelligence Report</a>
-  · <a href="{decision_report}">Decision Intelligence Brief</a>
+  · {terminal_link}
 </td>"""
             )
         gallery_cells.append("<tr>\n" + "\n".join(cells) + "\n</tr>")
-    return f"""# Ten Complete Real-Data Projects
+    return f"""# Fifteen Complete Real-Data Projects
 
 ## Technical summary
 
-The ten projects share one evidence spine but do not share one report template.
+The fifteen projects share one evidence spine but do not share one report template.
 Each route changes the methods, validation, figures, and valid endpoint.
 
 | Fixed across projects | Adapted to the case | Valid endpoints |
@@ -444,7 +481,7 @@ The **Evidence Intelligence Report** remains the primary product. A separate
 Decision Intelligence Brief appears only when a decision layer is justified.
 
 <p align="center">
-  <img src="figures/case-landscape.svg" alt="Ten real-data cases and their evidence-matched analytical paths" width="92%">
+  <img src="figures/case-landscape.svg" alt="Fifteen real-data cases and their evidence-matched analytical paths" width="92%">
 </p>
 
 The overview should be read as a routing map. It shows why some cases end in a
@@ -457,7 +494,7 @@ request, or an evidence request.
 ```text
 projects/
 ├── _shared/                 # shared standard-library analytical runtime
-├── project-catalog.json     # ten-project machine-readable index
+├── project-catalog.json     # fifteen-project machine-readable index
 └── <project-id>/
     ├── PROJECT.md
     ├── source-manifest.json
@@ -481,10 +518,10 @@ projects/
 ## Optional visual gallery
 
 The index above is the default reading path. Open the gallery only when a
-visual comparison across all ten projects is useful.
+visual comparison across all fifteen projects is useful.
 
 <details>
-<summary><strong>Open ten representative visuals and claim boundaries</strong></summary>
+<summary><strong>Open fifteen representative visuals and claim boundaries</strong></summary>
 
 <table>
 {chr(10).join(gallery_cells)}
@@ -521,9 +558,14 @@ and a new validation path.
 
 def main() -> int:
     build_terminal_reports(CASE_ROOT / "projects")
+    sync_representative_figures()
     cases = load_cases()
     CASE_DIR.mkdir(parents=True, exist_ok=True)
     FIGURE_DIR.mkdir(parents=True, exist_ok=True)
+    expected_cards = {card_filename(case) for case in cases}
+    for path in CASE_DIR.glob("*.md"):
+        if path.name not in expected_cards:
+            path.unlink()
     for case in cases:
         (CASE_DIR / card_filename(case)).write_text(
             case_card(case),

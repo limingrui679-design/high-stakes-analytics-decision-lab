@@ -19,11 +19,11 @@ ANALYZERS: dict[str, Callable[[Path], dict[str, Any]]] = {
     "commercial-real-estate-risk": analyze_real_estate,
     "spatial-equity-planning": analyze_spatial,
     "bank-marketing-response": analyze_bank_marketing,
-    "regime-aware-multi-asset-portfolio": analyze_multi_asset,
+    "sec-nport-filing-review": analyze_multi_asset,
     "cfpb-fintech-complaint-operations": analyze_cfpb,
 }
 
-PREPARERS["regime-aware-multi-asset-portfolio"] = prepare_multi_asset
+PREPARERS["sec-nport-filing-review"] = prepare_multi_asset
 PREPARERS["commercial-real-estate-risk"] = prepare_real_estate
 
 
@@ -79,7 +79,7 @@ REPORT_COPY = {
         "methods": "Source-order train/validation/test design, leakage-controlled mixed naive Bayes, AUC/Brier/calibration, capacity lift, subgroup checks, shared block bootstrap, and decision sensitivity.",
         "limits": "The source supplies order but not full dates, comes from one bank and campaign system, and is observational; response is not causal lift, value, or profit.",
     },
-    "regime-aware-multi-asset-portfolio": {
+    "sec-nport-filing-review": {
         "answer": "The walk-forward allocation is evaluated against equal-weight and 60/40 benchmarks under shared market histories, costs, drawdowns, and correlated stress; it is research evidence, not an investment mandate.",
         "findings": [
             "Every strategy is evaluated on the same post-lookback trading days and the adaptive allocation uses only trailing information at each monthly rebalance.",
@@ -123,7 +123,7 @@ REPORT_COPY = {
         "limits": "The source does not establish arm's-length status, lease income, operating expenses, occupancy, property condition, appraisal value, zoning feasibility, financing availability, or causal regeneration effects.",
     },
     "spatial-equity-planning": {
-        "answer": "Need is spatially clustered, and composite location allocation balances poverty, transit dependence, and housing pressure better than a single-indicator rule.",
+        "answer": "Need is spatially clustered, but the poverty-priority rule currently outperforms the composite rule on all three reported screening metrics; the composite result is retained as a transparent trade-off scenario, not labeled the winner.",
         "findings": [
             "Moran’s I quantifies local clustering rather than relying on the map alone.",
             "The location-allocation comparison uses a fixed hub count and radius across all strategies.",
@@ -242,7 +242,7 @@ VISUAL_COPY: dict[str, list[dict[str, str]]] = {
             "boundary": "Only a randomized campaign can establish incremental effect and ROI.",
         },
     ],
-    "regime-aware-multi-asset-portfolio": [
+    "sec-nport-filing-review": [
         {
             "file": "portfolio-growth.svg",
             "title": "Walk-forward growth remains benchmarked through time",
@@ -380,6 +380,8 @@ def _percent(value: float) -> str:
 
 
 def _headline_snapshot(result: dict[str, Any]) -> list[str]:
+    if result.get("headline_metrics"):
+        return [str(item) for item in result["headline_metrics"]]
     project_id = result["project_id"]
     if project_id == "population-health-survival":
         return [
@@ -456,7 +458,7 @@ def _headline_snapshot(result: dict[str, Any]) -> list[str]:
             ),
             f"Shared-block P(best): {_percent(option['probability_best'])}",
         ]
-    if project_id == "regime-aware-multi-asset-portfolio":
+    if project_id == "sec-nport-filing-review":
         adaptive = result["strategy_metrics"]["walk-forward inverse-volatility"]
         probabilities = result[
             "probability_best_shared_block_bootstrap"
@@ -626,7 +628,7 @@ def render_project_report(project_root: Path, result: dict[str, Any]) -> str:
     parameter_register = result.get("parameter_register", [])
     visuals = VISUAL_COPY[result["project_id"]]
     lines = [
-        f"# {manifest['title']}: analytical project",
+        f"# {manifest.get('project_title', manifest['title'])}: analytical project",
         "",
         f"> **Bottom line:** {copy['answer']}",
         "",
@@ -715,6 +717,72 @@ def render_project_report(project_root: Path, result: dict[str, Any]) -> str:
     )
     if len(visuals) > 2:
         _append_visual(lines, project_root, visuals[2])
+
+    human_system = result.get("human_in_the_loop_system")
+    if human_system:
+        lines.extend(
+            [
+                "## Human-in-the-loop system contract",
+                "",
+                "The validated analytical endpoint is translated into an auditable "
+                "workflow without overriding the negative model result.",
+                "",
+                "| System element | Recorded design |",
+                "|---|---|",
+                f"| Decision owner | {_md_cell(human_system['decision_owner'])} |",
+                f"| Automation status | `{human_system['automation_status']}` |",
+                f"| Individual model signal | {_md_cell(human_system['individual_ranking_signal'])} |",
+                "",
+                "### Review lanes from observed workflow fields",
+                "",
+                "| Review lane | Records | Rule |",
+                "|---|---:|---|",
+            ]
+        )
+        for lane, count in human_system["queue_lanes"].items():
+            lines.append(
+                f"| `{lane}` | {count:,} | "
+                f"{_md_cell(human_system['lane_rule'][lane])} |"
+            )
+        lines.extend(
+            [
+                "",
+                "The lane counts are workflow observations. They are not findings "
+                "about complaint merit, consumer harm, company quality, or compliance. "
+                "The complete machine-readable contract is in "
+                "[`system-contract.json`](system-contract.json).",
+                "",
+            ]
+        )
+
+    product_contract = result.get("decision_product_contract")
+    if product_contract:
+        lines.extend(
+            [
+                "## Decision-product contract",
+                "",
+                f"Terminal status: `{product_contract['terminal_status']}`. "
+                "The same evidence is rendered differently for each role without "
+                "changing the underlying numbers or claim boundary.",
+                "",
+                "| Reader | Evidence view | Permitted action |",
+                "|---|---|---|",
+            ]
+        )
+        for role, view in product_contract["stakeholder_views"].items():
+            lines.append(
+                f"| {role.replace('_', ' ').title()} | "
+                f"{_md_cell('; '.join(view['primary_artifacts']))} | "
+                f"{_md_cell(view['permitted_action'])} |"
+            )
+        lines.extend(
+            [
+                "",
+                "The complete role and evidence contract is in "
+                "[`decision-product-contract.json`](decision-product-contract.json).",
+                "",
+            ]
+        )
 
     lines.extend(
         [
@@ -1111,9 +1179,9 @@ def _criteria_for_project(project_id: str) -> list[dict[str, Any]]:
         ]
     if project_id == "bike-demand-operations":
         return [
-            {"id": "unmet_rate", "label": "Unmet demand", "direction": "minimize", "weight": 0.45, "unit": "share", "scale": {"worst": 0.5, "best": 0}},
-            {"id": "wet_unmet_rate", "label": "Wet-day unmet demand", "direction": "minimize", "weight": 0.35, "unit": "share", "scale": {"worst": 0.5, "best": 0}},
-            {"id": "shift_imbalance", "label": "Shift imbalance", "direction": "minimize", "weight": 0.20, "unit": "allocation range/total", "scale": {"worst": 0.75, "best": 0}},
+            {"id": "modeled_residual_imbalance", "label": "Modeled residual imbalance", "direction": "minimize", "weight": 0.45, "unit": "share", "scale": {"worst": 1, "best": 0}},
+            {"id": "unserved_station_hour_share", "label": "Station-hours with residual imbalance", "direction": "minimize", "weight": 0.35, "unit": "share", "scale": {"worst": 1, "best": 0}},
+            {"id": "allocation_concentration", "label": "Allocation concentration", "direction": "minimize", "weight": 0.20, "unit": "Herfindahl index", "scale": {"worst": 1, "best": 0}},
         ]
     if project_id == "treasury-risk-engineering":
         return [
@@ -1121,11 +1189,11 @@ def _criteria_for_project(project_id: str) -> list[dict[str, Any]]:
             {"id": "expected_shortfall95_loss", "label": "Historical ES95 loss", "direction": "minimize", "weight": 0.45, "unit": "daily loss fraction", "scale": {"worst": 0.08, "best": 0}},
             {"id": "worst_day_loss", "label": "Worst historical day", "direction": "minimize", "weight": 0.25, "unit": "daily loss fraction", "scale": {"worst": 0.10, "best": 0}},
         ]
-    if project_id == "regime-aware-multi-asset-portfolio":
+    if project_id == "sec-nport-filing-review":
         return [
-            {"id": "annualized_return", "label": "Historical annualized return", "direction": "maximize", "weight": 0.30, "unit": "return fraction", "scale": {"worst": -0.10, "best": 0.20}},
-            {"id": "daily_expected_shortfall95_loss", "label": "Historical daily ES95 loss", "direction": "minimize", "weight": 0.40, "unit": "loss fraction", "scale": {"worst": 0.10, "best": 0}},
-            {"id": "maximum_drawdown", "label": "Historical maximum drawdown", "direction": "maximize", "weight": 0.30, "unit": "return fraction", "scale": {"worst": -0.60, "best": 0}},
+            {"id": "high_risk_capture", "label": "Internal high-score capture", "direction": "maximize", "weight": 0.45, "unit": "share", "scale": {"worst": 0, "best": 1}},
+            {"id": "review_share", "label": "Filing-review workload", "direction": "minimize", "weight": 0.35, "unit": "share", "scale": {"worst": 1, "best": 0}},
+            {"id": "average_review_score", "label": "Average selected review score", "direction": "maximize", "weight": 0.20, "unit": "percentile index", "scale": {"worst": 0, "best": 1}},
         ]
     if project_id == "commercial-real-estate-risk":
         return [
@@ -1150,7 +1218,7 @@ def _case_options(project_id: str, result: dict[str, Any]) -> list[dict[str, Any
     elif project_id == "treasury-risk-engineering":
         source = result["portfolios"]
     elif project_id in {
-        "regime-aware-multi-asset-portfolio",
+        "sec-nport-filing-review",
         "commercial-real-estate-risk",
     }:
         source = result["decision_options"]
@@ -1203,19 +1271,19 @@ def _case_question(project_id: str) -> tuple[str, str, str]:
             "Next validation study",
         ),
         "bike-demand-operations": (
-            "Which time-block resource allocation should be piloted for system-level service planning?",
+            "Which fixed-budget station-hour rebalancing scenario should advance to a bounded operations pilot?",
             "Operations research and systems engineering",
-            "One planning year",
+            "Prospective operations pilot only",
         ),
         "treasury-risk-engineering": (
             "Which duration profile should remain in exploratory risk review under the historical evidence?",
             "Financial risk engineering",
             "Historical-risk review only",
         ),
-        "regime-aware-multi-asset-portfolio": (
-            "Which transparent portfolio rule should advance to a prospective paper-portfolio validation?",
-            "Asset allocation and financial risk",
-            "Research-only prospective validation",
+        "sec-nport-filing-review": (
+            "Which transparent N-PORT review threshold should advance to analyst filing review?",
+            "Regulatory filing analytics and financial risk",
+            "Targeted filing review only",
         ),
         "commercial-real-estate-risk": (
             "Which borough market should advance first to property-level commercial real-estate diligence?",

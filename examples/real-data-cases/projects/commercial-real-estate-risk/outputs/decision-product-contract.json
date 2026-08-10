@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project_id": "commercial-real-estate-risk",
+  "terminal_status": "targeted_diligence_only",
+  "stakeholder_views": {
+    "analyst": {
+      "primary_artifacts": [
+        "segment-level transaction depth",
+        "robust price-per-square-foot summaries",
+        "source and filtering evidence"
+      ],
+      "permitted_action": "assemble a traceable property-level evidence request"
+    },
+    "risk_manager": {
+      "primary_artifacts": [
+        "financing stress scenarios",
+        "thin-market and dispersion flags",
+        "reversal conditions"
+      ],
+      "permitted_action": "prioritize diligence under declared assumptions"
+    },
+    "audit_reviewer": {
+      "primary_artifacts": [
+        "source manifest and raw hashes",
+        "filtering and parameter provenance",
+        "claim and redistribution boundaries"
+      ],
+      "permitted_action": "verify that every displayed claim resolves to public evidence"
+    }
+  },
+  "required_next_evidence": [
+    "property-level leases and net operating income",
+    "operating expenses and capital expenditure",
+    "physical condition and environmental review",
+    "title, zoning, and planning constraints",
+    "actual financing terms"
+  ],
+  "forbidden_outputs": [
+    "appraisal value",
+    "acquisition recommendation",
+    "credit approval",
+    "planning approval",
+    "causal regeneration claim"
+  ]
+}

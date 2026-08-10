@@ -1,0 +1,1795 @@
+{
+  "metadata": {
+    "engine": "high-stakes-analytics-decision-lab",
+    "engine_version": "7.0.0",
+    "generated_at": "2026-08-10T13:04:09.687601+00:00",
+    "case_id": "real-sec-nport-filing-review",
+    "case_hash_sha256": "2a1abfef1f11e70a3281e9b7df2ef3707ce40f680175bc7ba879de44acd7c9a4",
+    "samples": 3000,
+    "seed": 20260810,
+    "warnings": [],
+    "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
+  },
+  "decision": {
+    "title": "Which transparent N-PORT review threshold should advance to analyst filing review",
+    "domain": "Regulatory filing analytics and financial risk",
+    "owner": "Hypothetical domain review panel; no real owner authorization",
+    "question": "Which transparent N-PORT review threshold should advance to analyst filing review?",
+    "time_horizon": "Targeted filing review only",
+    "recommendation": "review-top-10%",
+    "recommendation_available": true,
+    "decision_ready": false,
+    "decision_status": "provisional",
+    "decision_status_label": "Provisional—validate before action",
+    "decision_use": "exploratory",
+    "ranking": [
+      "review-top-10%",
+      "review-top-20%",
+      "baseline-review-top-5%"
+    ],
+    "pareto_frontier": [
+      "review-top-10%",
+      "baseline-review-top-5%"
+    ],
+    "pareto_frontier_unconstrained": [
+      "baseline-review-top-5%",
+      "review-top-10%"
+    ],
+    "probability_best_scope": "decision-feasible alternatives",
+    "utility_margin": 0.045165685845006354,
+    "weight_sensitivity_stability": 1.0,
+    "scenario_stability_probability_weighted": 1.0,
+    "scenario_stability_count": 1.0,
+    "robustness_score": 100.0,
+    "robustness_components": {
+      "probability_best": {
+        "value": 1.0,
+        "weight": 0.3
+      },
+      "weight_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "scenario_stability": {
+        "value": 1.0,
+        "weight": 0.25
+      },
+      "constraint_headroom": {
+        "value": 1.0,
+        "weight": 0.2
+      }
+    },
+    "readiness_thresholds": {
+      "minimum_probability_best": 0.5,
+      "minimum_weight_stability": 0.75,
+      "minimum_scenario_stability": 0.75,
+      "maximum_scale_clipping_rate": 0.05
+    },
+    "readiness_checks": {
+      "feasible_alternative": true,
+      "probability_best": true,
+      "weight_stability": true,
+      "scenario_stability": true,
+      "scale_clipping": true,
+      "parameter_provenance": true,
+      "approval_scope": true,
+      "operational_evidence": false
+    },
+    "blocking_reasons": [
+      "evidence is not labeled for operational use"
+    ],
+    "max_constraint_violation_rate": 0.1,
+    "feasibility_basis": "one-sided 95% upper confidence bound on simulated constraint-breach frequency",
+    "risk_aversion": 0.25
+  },
+  "criteria": [
+    {
+      "id": "high_risk_capture",
+      "label": "Internal high-score capture",
+      "direction": "maximize",
+      "weight": 0.45,
+      "unit": "share",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.45
+    },
+    {
+      "id": "review_share",
+      "label": "Filing-review workload",
+      "direction": "minimize",
+      "weight": 0.35,
+      "unit": "share",
+      "scale": {
+        "worst": 1,
+        "best": 0
+      },
+      "normalized_weight": 0.35
+    },
+    {
+      "id": "average_review_score",
+      "label": "Average selected review score",
+      "direction": "maximize",
+      "weight": 0.2,
+      "unit": "percentile index",
+      "scale": {
+        "worst": 0,
+        "best": 1
+      },
+      "normalized_weight": 0.2
+    }
+  ],
+  "constraints": [],
+  "scenarios": [
+    {
+      "id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "adjustments": {}
+    },
+    {
+      "id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "adjustments": {
+        "*": {
+          "high_risk_capture": {
+            "multiply": 0.92
+          },
+          "review_share": {
+            "multiply": 1.08
+          },
+          "average_review_score": {
+            "multiply": 0.92
+          }
+        }
+      }
+    }
+  ],
+  "scenario_analysis": [
+    {
+      "scenario_id": "observed-evidence",
+      "label": "Observed evidence base",
+      "probability": 0.75,
+      "winners": [
+        "review-top-10%"
+      ],
+      "winner": "review-top-10%",
+      "recommended_option_wins": true
+    },
+    {
+      "scenario_id": "adverse-transfer",
+      "label": "Adverse transfer to a new setting",
+      "probability": 0.25,
+      "winners": [
+        "review-top-10%"
+      ],
+      "winner": "review-top-10%",
+      "recommended_option_wins": true
+    }
+  ],
+  "alternatives": {
+    "baseline-review-top-5%": {
+      "alternative_id": "baseline-review-top-5%",
+      "label": "Baseline: Review Top 5%",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.7016748153100347,
+      "utility_p05": 0.67800212374,
+      "utility_p95": 0.7095657124999999,
+      "cvar10": 0.6780021237399954,
+      "risk_adjusted_utility": 0.6957566424175249,
+      "value_score": 69.57566424175249,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Internal high-score capture",
+          "unit": "share",
+          "mean": 0.49000000000000515,
+          "normalized_score": 0.49000000000000515,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.46,
+          "p95": 0.5
+        },
+        "review_share": {
+          "label": "Filing-review workload",
+          "unit": "share",
+          "mean": 0.05096961419999938,
+          "normalized_score": 0.9490303857999496,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.04997021,
+          "p95": 0.05396782680000001
+        },
+        "average_review_score": {
+          "label": "Average selected review score",
+          "unit": "percentile index",
+          "mean": 0.7450709013999786,
+          "normalized_score": 0.7450709013999786,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6994543156,
+          "p95": 0.76027643
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.7095657125000208,
+          "p05": 0.7095657124999999,
+          "p95": 0.7095657124999999,
+          "cvar10": 0.7095657124999972,
+          "risk_adjusted_utility": 0.7095657125000149,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.67800212373999,
+          "p05": 0.67800212374,
+          "p95": 0.67800212374,
+          "cvar10": 0.6780021237400005,
+          "risk_adjusted_utility": 0.6780021237399927,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "review-top-10%": {
+      "alternative_id": "review-top-10%",
+      "label": "Review Top 10%",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.8967618512300205,
+      "utility_p05": 0.8590034754200001,
+      "utility_p95": 0.9093479765000001,
+      "cvar10": 0.8590034754199978,
+      "risk_adjusted_utility": 0.8873222572775148,
+      "value_score": 88.73222572775148,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Internal high-score capture",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        },
+        "review_share": {
+          "label": "Filing-review workload",
+          "unit": "share",
+          "mean": 0.10193921819999335,
+          "normalized_score": 0.8980607818000251,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.09994041,
+          "p95": 0.1079356428
+        },
+        "average_review_score": {
+          "label": "Average selected review score",
+          "unit": "percentile index",
+          "mean": 0.7072028879999651,
+          "normalized_score": 0.7072028879999651,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6639047520000001,
+          "p95": 0.7216356
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.9093479764999737,
+          "p05": 0.9093479765000001,
+          "p95": 0.9093479765000001,
+          "cvar10": 0.9093479764999958,
+          "risk_adjusted_utility": 0.9093479764999792,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.8590034754200022,
+          "p05": 0.8590034754200001,
+          "p95": 0.8590034754200001,
+          "cvar10": 0.8590034754200015,
+          "risk_adjusted_utility": 0.859003475420002,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 1.0,
+      "probability_best_unconstrained": 1.0,
+      "pareto_efficient": true,
+      "pareto_efficient_unconstrained": true
+    },
+    "review-top-20%": {
+      "alternative_id": "review-top-20%",
+      "label": "Review Top 20%",
+      "description": "Candidate derived from the source-backed project output.",
+      "expected_utility": 0.8519824688900107,
+      "utility_p05": 0.81267887906,
+      "utility_p95": 0.8650836654999999,
+      "cvar10": 0.8126788790600015,
+      "risk_adjusted_utility": 0.8421565714325084,
+      "value_score": 84.21565714325084,
+      "constraint_violation_count": 0,
+      "constraint_sample_count": 3000,
+      "constraint_violation_rate": 0.0,
+      "constraint_violation_rate_upper_95": 0.0,
+      "constraint_support_status": "declared_support_excludes_breach",
+      "structural_breach_possible": false,
+      "constraint_diagnostics": [],
+      "feasible": true,
+      "overall_scale_clipping_rate": 0.0,
+      "criteria": {
+        "high_risk_capture": {
+          "label": "Internal high-score capture",
+          "unit": "share",
+          "mean": 0.9800000000000103,
+          "normalized_score": 0.9800000000000103,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.92,
+          "p95": 1.0
+        },
+        "review_share": {
+          "label": "Filing-review workload",
+          "unit": "share",
+          "mean": 0.20396526899999046,
+          "normalized_score": 0.796034730999992,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.19996595,
+          "p95": 0.215963226
+        },
+        "average_review_score": {
+          "label": "Average selected review score",
+          "unit": "percentile index",
+          "mean": 0.6618515652000388,
+          "normalized_score": 0.6618515652000388,
+          "scale_clipping_rate": 0.0,
+          "p05": 0.6213300408,
+          "p95": 0.67535874
+        }
+      },
+      "scenario_utility": {
+        "observed-evidence": {
+          "label": "Observed evidence base",
+          "mean": 0.8650836654999717,
+          "p05": 0.8650836654999999,
+          "p95": 0.8650836654999999,
+          "cvar10": 0.8650836655000017,
+          "risk_adjusted_utility": 0.8650836654999792,
+          "sample_count": 2250
+        },
+        "adverse-transfer": {
+          "label": "Adverse transfer to a new setting",
+          "mean": 0.8126788790599926,
+          "p05": 0.81267887906,
+          "p95": 0.81267887906,
+          "cvar10": 0.8126788790600012,
+          "risk_adjusted_utility": 0.8126788790599948,
+          "sample_count": 750
+        }
+      },
+      "group_impacts": {},
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
+    }
+  },
+  "weight_sensitivity": [
+    {
+      "criterion": "high_risk_capture",
+      "label": "↓ Internal high-score capture",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.8736144203264946,
+        "review-top-20%": 0.8204783193323453,
+        "baseline-review-top-5%": 0.7333901675500287
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.882072766152974,
+          "cvar10": 0.8482393828470564,
+          "risk_adjusted_utility": 0.8736144203264946
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8293911398705787,
+          "cvar10": 0.7937398577176453,
+          "risk_adjusted_utility": 0.8204783193323453
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7390291944823931,
+          "cvar10": 0.7164730867529356,
+          "risk_adjusted_utility": 0.7333901675500287
+        }
+      }
+    },
+    {
+      "criterion": "high_risk_capture",
+      "label": "↑ Internal high-score capture",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.9015895977775911,
+        "review-top-20%": 0.8647196501489607,
+        "baseline-review-top-5%": 0.6565870550347128
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.9120504908000521,
+          "cvar10": 0.870206918710208,
+          "risk_adjusted_utility": 0.9015895977775911
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8754958929714046,
+          "cvar10": 0.8323909216816286,
+          "risk_adjusted_utility": 0.8647196501489607
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.6627957676000258,
+          "cvar10": 0.6379609173387739,
+          "risk_adjusted_utility": 0.6565870550347128
+        }
+      }
+    },
+    {
+      "criterion": "review_share",
+      "label": "↓ Filing-review workload",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.8861019567377176,
+        "review-top-20%": 0.8486442942207328,
+        "baseline-review-top-5%": 0.662404390877391
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.8965902943622376,
+          "cvar10": 0.8546369438641578,
+          "risk_adjusted_utility": 0.8861019567377176
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8593717927622335,
+          "cvar10": 0.8164617985962306,
+          "risk_adjusted_utility": 0.8486442942207328
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.6690052116604196,
+          "cvar10": 0.6426019285283053,
+          "risk_adjusted_utility": 0.662404390877391
+        }
+      }
+    },
+    {
+      "criterion": "review_share",
+      "label": "↑ Filing-review workload",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.8886983408648673,
+        "review-top-20%": 0.8348406287138559,
+        "baseline-review-top-5%": 0.73336662819678
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.8969553089744345,
+          "cvar10": 0.8639274365361657,
+          "risk_adjusted_utility": 0.8886983408648673
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8436498270766316,
+          "cvar10": 0.8084130336255286,
+          "risk_adjusted_utility": 0.8348406287138559
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7385150066595376,
+          "cvar10": 0.717921492808507,
+          "risk_adjusted_utility": 0.73336662819678
+        }
+      }
+    },
+    {
+      "criterion": "average_review_score",
+      "label": "↓ Average selected review score",
+      "direction": "decrease",
+      "factor": 0.6666666666666666,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.9009611075115751,
+        "review-top-20%": 0.855759099099103,
+        "baseline-review-top-5%": 0.6930487772365911
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.910301777174955,
+          "cvar10": 0.8729390985214353,
+          "risk_adjusted_utility": 0.9009611075115751
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8655632477249928,
+          "cvar10": 0.8263466532214334,
+          "risk_adjusted_utility": 0.855759099099103
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.6985750948749783,
+          "cvar10": 0.6764698243214295,
+          "risk_adjusted_utility": 0.6930487772365911
+        }
+      }
+    },
+    {
+      "criterion": "average_review_score",
+      "label": "↑ Average selected review score",
+      "direction": "increase",
+      "factor": 1.5,
+      "winner": "review-top-10%",
+      "scores": {
+        "review-top-10%": 0.8699637206159151,
+        "review-top-20%": 0.8248442634931988,
+        "baseline-review-top-5%": 0.6992030162840613
+      },
+      "score_details": {
+        "review-top-10%": {
+          "expected_utility": 0.8795292182090978,
+          "cvar10": 0.8412672278363671,
+          "risk_adjusted_utility": 0.8699637206159151
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8346978412818395,
+          "cvar10": 0.7952835301272767,
+          "risk_adjusted_utility": 0.8248442634931988
+        },
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7056199140454145,
+          "cvar10": 0.679952323000002,
+          "risk_adjusted_utility": 0.6992030162840613
+        }
+      }
+    }
+  ],
+  "correlation_sensitivity": {
+    "method": "latent_factor_gaussian_copula",
+    "factors": [
+      {
+        "id": "shared-adverse-evidence-shock",
+        "label": "Shared adverse evidence shock",
+        "description": "A common latent shock moves empirical metrics across all alternatives.",
+        "loadings": {
+          "high_risk_capture": -0.28,
+          "review_share": 0.28,
+          "average_review_score": -0.28
+        }
+      }
+    ],
+    "stress_multiplier": 1.35,
+    "independent_baseline": {
+      "recommendation": "review-top-10%",
+      "ranking": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "feasible_alternatives": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "alternatives": {
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7016748153100347,
+          "cvar10": 0.6780021237399954,
+          "risk_adjusted_utility": 0.6957566424175249,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "review-top-10%": {
+          "expected_utility": 0.8967618512300205,
+          "cvar10": 0.8590034754199978,
+          "risk_adjusted_utility": 0.8873222572775148,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8519824688900107,
+          "cvar10": 0.8126788790600015,
+          "risk_adjusted_utility": 0.8421565714325084,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "declared_correlation": {
+      "recommendation": "review-top-10%",
+      "ranking": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "feasible_alternatives": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "alternatives": {
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7016748153100347,
+          "cvar10": 0.6780021237399954,
+          "risk_adjusted_utility": 0.6957566424175249,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "review-top-10%": {
+          "expected_utility": 0.8967618512300205,
+          "cvar10": 0.8590034754199978,
+          "risk_adjusted_utility": 0.8873222572775148,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8519824688900107,
+          "cvar10": 0.8126788790600015,
+          "risk_adjusted_utility": 0.8421565714325084,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "correlation_stress": {
+      "recommendation": "review-top-10%",
+      "ranking": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "feasible_alternatives": [
+        "review-top-10%",
+        "review-top-20%",
+        "baseline-review-top-5%"
+      ],
+      "alternatives": {
+        "baseline-review-top-5%": {
+          "expected_utility": 0.7016748153100347,
+          "cvar10": 0.6780021237399954,
+          "risk_adjusted_utility": 0.6957566424175249,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        },
+        "review-top-10%": {
+          "expected_utility": 0.8967618512300205,
+          "cvar10": 0.8590034754199978,
+          "risk_adjusted_utility": 0.8873222572775148,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 1.0
+        },
+        "review-top-20%": {
+          "expected_utility": 0.8519824688900107,
+          "cvar10": 0.8126788790600015,
+          "risk_adjusted_utility": 0.8421565714325084,
+          "constraint_violation_rate": 0.0,
+          "constraint_violation_rate_upper_95": 0.0,
+          "feasible": true,
+          "probability_best": 0.0
+        }
+      }
+    },
+    "recommendation_changed_vs_independent": false,
+    "recommendation_changed_under_stress": false,
+    "realized_pairwise_utility_correlations": [
+      {
+        "left_alternative": "baseline-review-top-5%",
+        "right_alternative": "review-top-10%",
+        "correlation": 1.0000000000000424
+      },
+      {
+        "left_alternative": "baseline-review-top-5%",
+        "right_alternative": "review-top-20%",
+        "correlation": 0.9999999999999263
+      },
+      {
+        "left_alternative": "review-top-10%",
+        "right_alternative": "review-top-20%",
+        "correlation": 1.0000000000000393
+      }
+    ]
+  },
+  "parameter_provenance": {
+    "coverage": {
+      "parameters_required": 48,
+      "parameters_with_resolved_source": 48,
+      "parameters_approved_for_declared_use": 48,
+      "source_coverage_rate": 1.0,
+      "approval_coverage_rate": 1.0
+    },
+    "sources": [
+      {
+        "id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "as_of": "2026-08-10",
+        "owner": "Original publisher and repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "as_of": "2026-07-27",
+        "owner": "Repository analysis author",
+        "approved_decision_uses": [
+          "exploratory"
+        ],
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ]
+      }
+    ],
+    "records": [
+      {
+        "path": "criteria[0].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[0].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[1].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].weight",
+        "parameter_type": "criterion_weight",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.worst",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "criteria[2].scale.best",
+        "parameter_type": "criterion_scale",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.review_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.review_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.review_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.average_review_score.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.average_review_score.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[0].metrics.average_review_score.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.review_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.review_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.review_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.average_review_score.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.average_review_score.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[1].metrics.average_review_score.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.review_share.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.review_share.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.review_share.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.average_review_score.distribution",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.average_review_score.value",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "alternatives[2].metrics.average_review_score.uncertainty_type",
+        "parameter_type": "metric_distribution",
+        "source_id": "sec-nport-filing-review-analysis-output",
+        "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "source_type": "reproducible_project_output",
+        "owner": "Original publisher and repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "model_author",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory portfolio demonstration only"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[0].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].probability",
+        "parameter_type": "scenario_probability",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.high_risk_capture.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.review_share.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "scenarios[1].adjustments.*.average_review_score.multiply",
+        "parameter_type": "scenario_adjustment",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "risk_aversion",
+        "parameter_type": "risk_aversion",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "max_constraint_violation_rate",
+        "parameter_type": "maximum_violation_rate",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "sensitivity_weight_multiplier",
+        "parameter_type": "weight_sensitivity",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.stress_multiplier",
+        "parameter_type": "correlation_stress",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.high_risk_capture",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.review_share",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      },
+      {
+        "path": "uncertainty_model.factors[0].loadings.average_review_score",
+        "parameter_type": "correlation_loading",
+        "source_id": "portfolio-author-governance-assumptions",
+        "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
+        "source_type": "analyst_judgment_not_externally_approved",
+        "owner": "Repository analysis author",
+        "approval_chain": [
+          {
+            "sequence": 1,
+            "role": "self_review",
+            "actor": "Repository analysis author",
+            "status": "approved",
+            "date": "2026-07-27",
+            "scope": "Exploratory comparison; no institutional approval"
+          }
+        ],
+        "approved_for_declared_use": true
+      }
+    ]
+  },
+  "uncertainty_inventory": {
+    "definitions": {
+      "parameter": "Uncertainty in an estimated model input or population quantity.",
+      "process": "Irreducible or operational variation in realized outcomes.",
+      "scenario": "Conditional uncertainty represented by named future states.",
+      "none": "A fixed modeled quantity with no sampled marginal variation."
+    },
+    "counts": {
+      "none": 9,
+      "parameter": 0,
+      "process": 0,
+      "scenario": 0
+    },
+    "records": [
+      {
+        "path": "alternatives[0].metrics.high_risk_capture",
+        "alternative_id": "baseline-review-top-5%",
+        "criterion_id": "high_risk_capture",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[0].metrics.review_share",
+        "alternative_id": "baseline-review-top-5%",
+        "criterion_id": "review_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[0].metrics.average_review_score",
+        "alternative_id": "baseline-review-top-5%",
+        "criterion_id": "average_review_score",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.high_risk_capture",
+        "alternative_id": "review-top-10%",
+        "criterion_id": "high_risk_capture",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.review_share",
+        "alternative_id": "review-top-10%",
+        "criterion_id": "review_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[1].metrics.average_review_score",
+        "alternative_id": "review-top-10%",
+        "criterion_id": "average_review_score",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.high_risk_capture",
+        "alternative_id": "review-top-20%",
+        "criterion_id": "high_risk_capture",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.review_share",
+        "alternative_id": "review-top-20%",
+        "criterion_id": "review_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      },
+      {
+        "path": "alternatives[2].metrics.average_review_score",
+        "alternative_id": "review-top-20%",
+        "criterion_id": "average_review_score",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
+      }
+    ]
+  },
+  "evidence": {
+    "type": "source-backed exploratory project evidence",
+    "decision_use": "exploratory",
+    "as_of": "2026-08-10",
+    "sources": [
+      "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.",
+      "projects/sec-nport-filing-review/outputs/results.json"
+    ],
+    "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
+    "limitations": [
+      "N-PORT fields are reported snapshots and may be amended; the composite is an analyst screen, not SEC risk classification, investor suitability, or expected performance.",
+      "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
+    ]
+  },
+  "decision_notes": [
+    "The comparison selects a candidate for further review, not an operational action.",
+    "No institutional, clinical, financial, engineering, or policy approval is represented."
+  ]
+}

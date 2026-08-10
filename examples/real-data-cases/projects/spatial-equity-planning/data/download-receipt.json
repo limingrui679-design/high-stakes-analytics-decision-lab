@@ -1,7 +1,7 @@
 {
   "project_id": "spatial-equity-planning",
-  "source_id": "census-acs-2023-ma-tracts",
-  "verified_at": "2026-07-31T02:38:50.019926+08:00",
+  "source_id": "census-acs-2023-ma-tracts-mbta-stops",
+  "verified_at": "2026-08-10T20:55:58.042532+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
@@ -34,6 +34,11 @@
       "path": "data/raw/2023_Gaz_tracts_national.zip",
       "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c",
       "bytes": 2420572
+    },
+    {
+      "path": "data/raw/mbta-rapid-transit-stops.json",
+      "sha256": "22d2bfb9023dca4d261c149d1665e15f35d8f3e3406e947a60f34f327997ca6a",
+      "bytes": 39551
     }
   ]
 }

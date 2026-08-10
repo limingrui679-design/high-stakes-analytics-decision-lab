@@ -1,14 +1,19 @@
 {
   "project_id": "census-income-ai",
-  "source_id": "uci-adult-2",
-  "verified_at": "2026-07-31T02:38:05.365119+08:00",
+  "source_id": "census-acs-pums-ri-2019-2023",
+  "verified_at": "2026-08-10T20:54:58.457318+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
     {
-      "path": "data/raw/uci-adult.zip",
-      "sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
-      "bytes": 620237
+      "path": "data/raw/acs2019-ri-person-pums.zip",
+      "sha256": "22eebb2e2654577708d1baaf611109dba696f334c105236d3b3708d95864d824",
+      "bytes": 2050770
+    },
+    {
+      "path": "data/raw/acs2023-ri-person-pums.zip",
+      "sha256": "588cdc6059db4bcc6eb0add4722e6c75f5abe246ce59bf1cad83344966987819",
+      "bytes": 2060839
     }
   ]
 }

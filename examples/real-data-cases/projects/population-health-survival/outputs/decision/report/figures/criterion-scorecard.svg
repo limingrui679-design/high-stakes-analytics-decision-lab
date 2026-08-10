@@ -50,48 +50,48 @@
 <text x="1017.7" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Recorded-sex selection gap</text>
 <text x="1017.7" y="174.0" class="small" text-anchor="middle">weight 25%</text>
 <rect x="30.0" y="180.0" width="1134.0" height="68.0" rx="10" fill="#DDF5F2" stroke="#008C82" stroke-width="2"/>
-<text x="48.0" y="209.0" class="section" text-anchor="start">Dual Marker Triage</text>
+<text x="48.0" y="209.0" class="section" text-anchor="start">Top 20% Review</text>
 <rect x="48.0" y="218.0" width="82.0" height="28.0" rx="14" fill="#008C82" stroke="none" stroke-width="1"/>
 <text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
-<text x="290.0" y="206.0" class="value" text-anchor="start">73</text>
+<text x="290.0" y="206.0" class="value" text-anchor="start">62</text>
 <rect x="290.0" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="219.0" width="192.1" height="8.0" rx="4.0" fill="#008C82"/>
-<text x="290.0" y="241.0" class="small" text-anchor="start">higher value</text>
-<text x="586.7" y="206.0" class="value" text-anchor="start">57</text>
+<rect x="290.0" y="219.0" width="165.3" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="290.0" y="241.0" class="small" text-anchor="start">mid-range</text>
+<text x="586.7" y="206.0" class="value" text-anchor="start">80</text>
 <rect x="586.7" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="219.0" width="149.7" height="8.0" rx="4.0" fill="#008C82"/>
-<text x="586.7" y="241.0" class="small" text-anchor="start">mid-range</text>
-<text x="883.3" y="206.0" class="value" text-anchor="start">84</text>
+<rect x="586.7" y="219.0" width="210.7" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="586.7" y="241.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="206.0" class="value" text-anchor="start">99</text>
 <rect x="883.3" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="219.0" width="221.4" height="8.0" rx="4.0" fill="#008C82"/>
+<rect x="883.3" y="219.0" width="263.1" height="8.0" rx="4.0" fill="#008C82"/>
 <text x="883.3" y="241.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="256.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="48.0" y="285.0" class="label" text-anchor="start">Ejection Triage</text>
-<text x="290.0" y="282.0" class="value" text-anchor="start">52</text>
+<text x="48.0" y="285.0" class="label" text-anchor="start">Top 30% Review</text>
+<text x="290.0" y="282.0" class="value" text-anchor="start">71</text>
 <rect x="290.0" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="295.0" width="136.9" height="8.0" rx="4.0" fill="#263449"/>
-<text x="290.0" y="317.0" class="small" text-anchor="start">mid-range</text>
-<text x="586.7" y="282.0" class="value" text-anchor="start">68</text>
+<rect x="290.0" y="295.0" width="187.4" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="317.0" class="small" text-anchor="start">higher value</text>
+<text x="586.7" y="282.0" class="value" text-anchor="start">69</text>
 <rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="295.0" width="180.4" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="295.0" width="183.7" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="317.0" class="small" text-anchor="start">higher value</text>
-<text x="883.3" y="282.0" class="value" text-anchor="start">85</text>
+<text x="883.3" y="282.0" class="value" text-anchor="start">96</text>
 <rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="295.0" width="224.2" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="883.3" y="295.0" width="254.6" height="8.0" rx="4.0" fill="#263449"/>
 <text x="883.3" y="317.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="48.0" y="361.0" class="label" text-anchor="start">Current Age Rule</text>
-<text x="290.0" y="358.0" class="value" text-anchor="start">51</text>
+<text x="48.0" y="361.0" class="label" text-anchor="start">Baseline: Top 10% Review</text>
+<text x="290.0" y="358.0" class="value" text-anchor="start">43</text>
 <rect x="290.0" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="371.0" width="134.3" height="8.0" rx="4.0" fill="#263449"/>
-<text x="290.0" y="393.0" class="small" text-anchor="start">mid-range</text>
-<text x="586.7" y="358.0" class="value" text-anchor="start">61</text>
+<rect x="290.0" y="371.0" width="113.5" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="393.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="358.0" class="value" text-anchor="start">90</text>
 <rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="371.0" width="160.3" height="8.0" rx="4.0" fill="#263449"/>
-<text x="586.7" y="393.0" class="small" text-anchor="start">mid-range</text>
-<text x="883.3" y="358.0" class="value" text-anchor="start">90</text>
+<rect x="586.7" y="371.0" width="237.7" height="8.0" rx="4.0" fill="#263449"/>
+<text x="586.7" y="393.0" class="small" text-anchor="start">higher value</text>
+<text x="883.3" y="358.0" class="value" text-anchor="start">98</text>
 <rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="371.0" width="239.1" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="883.3" y="371.0" width="258.4" height="8.0" rx="4.0" fill="#263449"/>
 <text x="883.3" y="393.0" class="small" text-anchor="start">higher value</text>
 <line x1="36" y1="426.0" x2="1164" y2="426.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="448.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

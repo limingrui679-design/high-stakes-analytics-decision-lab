@@ -1,13 +1,15 @@
 {
   "schema_version": "1.0",
-  "purpose": "Machine-readable routing from transferable method domains to the ten real-data projects.",
+  "purpose": "Machine-readable routing from transferable method domains to the fifteen real-data projects.",
   "domains": [
     {
       "id": "statistical-inference",
       "label": "Statistical inference and study design",
       "project_ids": [
         "population-health-survival",
-        "behavioral-reading-experiment"
+        "behavioral-reading-experiment",
+        "social-norm-field-experiment",
+        "nhanes-population-transportability"
       ]
     },
     {
@@ -16,7 +18,9 @@
       "project_ids": [
         "census-income-ai",
         "bank-marketing-response",
-        "cfpb-fintech-complaint-operations"
+        "cfpb-fintech-complaint-operations",
+        "cross-city-311-shift",
+        "population-health-survival"
       ]
     },
     {
@@ -24,7 +28,8 @@
       "label": "Optimization and systems decisions",
       "project_ids": [
         "bike-demand-operations",
-        "spatial-equity-planning"
+        "spatial-equity-planning",
+        "wildfire-mitigation-under-uncertainty"
       ]
     },
     {
@@ -32,7 +37,7 @@
       "label": "Asset allocation, financial risk, and real-estate finance",
       "project_ids": [
         "treasury-risk-engineering",
-        "regime-aware-multi-asset-portfolio",
+        "sec-nport-filing-review",
         "commercial-real-estate-risk"
       ]
     },
@@ -42,7 +47,10 @@
       "project_ids": [
         "cfpb-fintech-complaint-operations",
         "commercial-real-estate-risk",
-        "spatial-equity-planning"
+        "spatial-equity-planning",
+        "cross-city-311-shift",
+        "wildfire-mitigation-under-uncertainty",
+        "opportunity-zone-policy-evaluation"
       ]
     },
     {

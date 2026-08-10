@@ -9,14 +9,14 @@
   "evidence": {
     "type": "source-backed exploratory project evidence",
     "decision_use": "exploratory",
-    "as_of": "2026-07-27",
+    "as_of": "2026-08-10",
     "sources": [
-      "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.",
+      "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.",
       "projects/spatial-equity-planning/outputs/results.json"
     ],
     "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
     "limitations": [
-      "Straight-line distance and tract centroids are planning-screen approximations; ACS margins of error and service capacity require local review.",
+      "Tract internal points and straight-line distance are planning screens; land availability, ownership, zoning, travel networks, capacity, cost, and community consent are missing.",
       "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
     ]
   },
@@ -2428,9 +2428,9 @@
     "sources": [
       {
         "id": "spatial-equity-planning-analysis-output",
-        "citation": "U.S. Census Bureau. 2019-2023 ACS 5-Year Estimates and 2023 Gazetteer Files.; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "U.S. Census Bureau and Massachusetts Bay Transportation Authority. 2019-2023 ACS tract estimates, 2023 Gazetteer, and MBTA rapid-transit stops accessed 2026-08-10.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
-        "as_of": "2026-07-27",
+        "as_of": "2026-08-10",
         "owner": "Original publisher and repository analysis author",
         "approved_decision_uses": [
           "exploratory"

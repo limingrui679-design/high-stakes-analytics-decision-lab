@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "project_id": "wildfire-mitigation-under-uncertainty",
+  "source_id": "calfire-historic-fire-perimeters-2000-2025",
+  "title": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+  "project_title": "Wildfire Mitigation Evidence Allocation Under Uncertainty",
+  "publisher": "California Department of Forestry and Fire Protection",
+  "landing_page": "https://www.arcgis.com/home/item.html?id=c3c10388e3b24cec8a954ba10458039d",
+  "version": "California Historic Fire Perimeters feature service, filtered to 2000-2025",
+  "accessed_at": "2026-08-10",
+  "license": "California open data / public information",
+  "license_url": "https://www.fire.ca.gov/what-we-do/fire-resource-assessment-program/gis-mapping-and-data-analytics",
+  "redistribution": "Official feature attributes; agency metadata and known completeness limits remain controlling.",
+  "expected_rows": 8892,
+  "grain": "one fire-perimeter record",
+  "raw_files": [
+    {
+      "path": "data/raw/calfire-fire-perimeters-2000-2025.csv",
+      "sha256": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75"
+    }
+  ],
+  "privacy_review": {
+    "contains_direct_identifiers": false,
+    "contains_sensitive_attributes": false,
+    "treatment": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence.",
+    "status": "approved_for_public_minimized_analysis"
+  },
+  "citation": "California Department of Forestry and Fire Protection. California Historic Fire Perimeters feature service, filtered to 2000-2025."
+}

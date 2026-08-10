@@ -1,0 +1,10 @@
+{
+  "dataset": "Yale ISPS D001 individual-level replication file",
+  "source_records": 344084,
+  "file_sha256": "5f39ccbb20b2e232495daa677f27ac109dcebda85124a43368606ee2343d5b02",
+  "file_bytes": 32744038,
+  "raw_redistribution": "prohibited_without_ISPS_permission",
+  "repository_storage": "non_identifying_aggregate_only",
+  "download_url": "https://isps-yard-aws-s3-bucket.s3.us-east-2.amazonaws.com/published/15d48af8-e38e-4dd0-ace9-62f90826963a/GerberGreenLarimer_APSR_2008_social_pressure.csv",
+  "terms_url": "https://isps.yale.edu/research/data/terms-of-use"
+}

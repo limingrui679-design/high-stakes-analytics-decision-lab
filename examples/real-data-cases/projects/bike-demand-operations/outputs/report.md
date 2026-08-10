@@ -1,6 +1,6 @@
-# Bike Sharing: analytical project
+# Jersey City Bike Demand and Rebalancing Evidence: analytical project
 
-> **Bottom line:** A robust time-block allocation reduces modeled unmet demand out of time, while the forecast benchmark quantifies how much predictable structure exists.
+> **Bottom line:** Station-hour history improves held-out pickup forecasts, while rebalancing outputs remain explicitly modeled scenarios because inventory, routing, labor, and dock-capacity data are absent.
 
 ## Executive Summary
 
@@ -10,44 +10,44 @@ This source-backed project connects the decision question to its data, validatio
 
 | Signal | Observed result |
 |---|---|
-| Forecast MAE improvement versus overall-mean baseline | 38.3% |
-| Held-out robust-policy unmet share | 20.5% |
-| Perfect-foresight upper-bound improvement | 1.6% |
-| Feasible integer allocations checked | 6,545 |
+| Held-out station-hour MAE | 0.69 pickups/day |
+| Improvement vs hour-only baseline | 33.1% |
+| Observed station-hour-month rows | 17,906 |
+| Rebalancing results | modeled scenario only |
 
 ## Key findings with visual evidence
 
 The visual sequence is interleaved with source, design, and limitation notes so each result stays adjacent to the evidence that supports it.
 
-### Demand structure is evaluated out of time
+### Held-out forecast error
 
-The forecast learns from 2011 and is evaluated on 2012, preserving the direction of operational time.
+Station-hour history is compared with an hour-only baseline.
 
-![Demand structure is evaluated out of time](figures/hourly-demand.svg)
+![Held-out forecast error](figures/forecast-mae.svg)
 
-> **Interpretation boundary:** System totals omit station imbalance, travel time, labor rules, and causal service response.
+> **Interpretation boundary:** Forecast accuracy is not service impact.
 
 ## Scope, source, and metric definitions
 
 | Evidence contract | Recorded value |
 |---|---|
-| Source | Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894 |
-| Version | 2011-2012 Capital Bikeshare hourly snapshot |
-| Accessed | 2026-07-27 |
-| License | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Analytical grain | one observed hour in the Capital Bikeshare system |
-| Expected rows | 17,379 |
+| Source | Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate. |
+| Version | Jersey City trip history, January-December 2021; derived station-hour aggregate |
+| Accessed | 2026-08-10 |
+| License | [Citi Bike Data Use Policy](https://citibikenyc.com/data-use-policy) |
+| Analytical grain | one station-hour-month aggregate |
+| Expected rows | 17,906 |
 | Results | [`results.json`](results.json) |
 | Definitions | [`../data/data-dictionary.json`](../data/data-dictionary.json) |
 | Quality | [`../data/quality-report.json`](../data/quality-report.json) |
 
-### Feasible allocations reveal an explicit service trade-off
+### Monthly observed demand
 
-Every candidate respects the same resource total and minimum block coverage before unmet demand is compared.
+Seasonality is visible before the holdout assessment.
 
-![Feasible allocations reveal an explicit service trade-off](figures/allocation-unmet.svg)
+![Monthly observed demand](figures/monthly-demand.svg)
 
-> **Interpretation boundary:** Modeled unmet demand is a planning quantity, not a measured service outcome under rollout.
+> **Interpretation boundary:** Trip records omit unmet demand.
 
 ## Research design and data quality
 
@@ -55,53 +55,55 @@ Every candidate respects the same resource total and minimum block coverage befo
 
 | Design element | Project definition |
 |---|---|
-| Claim class | Unit, time split, target, constraints, and claim class are defined in `results.json`; no causal estimand is claimed unless the design explicitly supports one. |
+| Design | station-hour temporal holdout |
+| Development Period | January-September 2021 |
+| Test Period | October-December 2021 |
+| Modeled Scenario | fixed daily rebalancing-unit budget |
 
 ### Data-quality gate
 
 | Check | Result |
 |---|---|
-| Prepared shape | 17,379 rows × 17 columns |
+| Prepared shape | 17,906 rows × 9 columns |
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
-| Privacy review | approved_for_public_analysis |
+| Privacy review | approved_for_public_minimized_analysis |
 | Quality disposition | **usable_with_documented_limitations** |
 
-### The value of additional capacity is not constant
+### Modeled imbalance scenarios
 
-Resource shadow values and the perfect-information upper bound show where learning or added capacity could matter.
+All options use one declared daily budget.
 
-![The value of additional capacity is not constant](figures/resource-shadow-value.svg)
+![Modeled imbalance scenarios](figures/modeled-imbalance.svg)
 
-> **Interpretation boundary:** The curve is conditional on the simplified demand and allocation model.
+> **Interpretation boundary:** These are modeled, not observed, outcomes.
 
 ## Methodology
 
-Segmented demand benchmark, out-of-time MAE, exhaustive integer allocation, binding-constraint checks, Pareto frontier, resource shadow values, perfect-information upper bound, weather stress, and shared day bootstrap.
+Station-hour-month aggregation, January-September development, October-December holdout, weighted MAE, observed pickup-return imbalance, and fixed-budget allocation scenarios.
 
 All shipped metrics are regenerated by `prepare_data.py` and `analyze.py`. Random procedures use fixed seeds, and committed raw files are checked against the SHA-256 values in `source-manifest.json`.
 
 ## Parameter provenance and review
 
-6 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
+5 configured or derived parameters are recorded with their source, uncertainty class, provisional approval, reviewer status, and use boundary.
 
 <details>
 <summary><strong>Open the complete parameter-level source and review register</strong></summary>
 
 | Parameter path | Value or distribution | Uncertainty | Source | Approval | Reviewer | Boundary |
 |---|---|---|---|---|---|---|
-| config.analysis_seed | 20260727 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
-| config.parameters.training_year | 2011 | none | time-split-protocol | provisional_self_review | not_assigned | Prevents random future-to-past leakage. |
-| config.parameters.test_year | 2012 | none | time-split-protocol | provisional_self_review | not_assigned | Prevents random future-to-past leakage. |
-| config.parameters.resource_units | 40 | scenario | analyst-capacity-scenario | provisional_self_review | not_assigned | Demonstration resource budget, not a Capital Bikeshare constraint. |
-| config.parameters.rentals_per_unit_per_block | 120 | scenario | analyst-capacity-scenario | provisional_self_review | not_assigned | Scaling assumption for policy comparison. |
-| config.parameters.minimum_units_per_six_hour_block | 2 | scenario | analyst-fairness-constraint | provisional_self_review | not_assigned | Coverage guardrail for demonstration. |
+| config.analysis_seed | 20260810 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
+| config.parameters.development_end | 2021-09 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim. |
+| config.parameters.test_start | 2021-10 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim. |
+| config.parameters.modeled_daily_rebalancing_units | 250 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim. |
+| config.parameters.review_station_hour_counts | [0, 10, 25] | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim. |
 
 </details>
 
 ## Limitations, uncertainty, and robustness
 
-System totals do not include station imbalances, travel times, labor rules, or causal service effects.
+Pickups minus returns is an imbalance proxy, not observed stockout demand; modeled residual imbalance is not an achieved service result.
 
 Bootstrap or scenario stability remains conditional on the observed sample and declared assumptions; it does not upgrade exploratory evidence into operational authorization.
 
@@ -117,9 +119,9 @@ Bootstrap or scenario stability remains conditional on the observed sample and d
 
 The analysis can prioritize validation, diligence, or a bounded pilot; it is not itself permission to act. Reconsider the interpretation when:
 
-- Station-level imbalance dominates system-block demand.
-- Unit capacity differs materially by block.
-- Labor, travel-time, or maintenance constraints invalidate feasibility.
+- Travel-time or truck-capacity constraints make the allocation infeasible.
+- A later seasonal holdout reverses the station-hour ranking.
+- Observed dock inventory invalidates pickups-minus-returns as an imbalance proxy.
 
 ## Conditional downstream decision layer
 
@@ -148,6 +150,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `bike-demand-operations`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `19a23e81e8221e22afc1f86e1570546a95a5300bcb7cd6242ab9f4d46a37c78d`
+- Result SHA-256: `300fd148b1dff467b88bb61eec07add554dd08276b003a77684243e5d87420ff`
 
 </details>

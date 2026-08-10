@@ -1,6 +1,6 @@
-# Adult / Census Income: analytical project
+# ACS Employment AI Temporal Transport and Audit: analytical project
 
-> **Bottom line:** The benchmark classifier improves on the majority baseline, but subgroup error rates and imperfect calibration make consequential reuse indefensible.
+> **Bottom line:** A 2019 ACS PUMS employment model is tested on 2023 Rhode Island records with protected attributes reserved for audit; it is not authorized for eligibility, hiring, or other consequential use.
 
 ## Executive Summary
 
@@ -10,44 +10,44 @@ This source-backed project connects the decision question to its data, validatio
 
 | Signal | Observed result |
 |---|---|
-| Independent-test AUC | 0.905 |
-| Independent-test Brier score | 0.102 |
-| Naive Bayes versus sparse-logistic AUC | 0.891 versus 0.905 |
-| Selected L2 | 0.0 |
+| 2023 temporal-test AUC | 0.640 |
+| 2023 weighted Brier score | 0.158 |
+| 2019/2023 analyzed people | 6,413 / 6,056 |
+| Decision status | no consequential use |
 
 ## Key findings with visual evidence
 
 The visual sequence is interleaved with source, design, and limitation notes so each result stays adjacent to the evidence that supports it.
 
-### The independent test supports benchmarking, not deployment
+### Temporal performance
 
-Sparse logistic performance is compared with majority and mixed-naive-Bayes baselines on the untouched source test.
+The 2023 cohort is untouched during model construction.
 
-![The independent test supports benchmarking, not deployment](figures/model-comparison.svg)
+![Temporal performance](figures/temporal-performance.svg)
 
-> **Interpretation boundary:** Historical test performance does not establish contemporary validity or institutional benefit.
+> **Interpretation boundary:** No consequential use is authorized.
 
 ## Scope, source, and metric definitions
 
 | Evidence contract | Recorded value |
 |---|---|
-| Source | Becker, B. & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20 |
-| Version | UCI static archive snapshot; files timestamped 2023-05-22 |
-| Accessed | 2026-07-27 |
-| License | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
-| Analytical grain | one Census-derived person record meeting the dataset extraction rules |
-| Expected rows | 48,842 |
+| Source | U.S. Census Bureau. Rhode Island ACS 1-year PUMS person files, 2019 and 2023. |
+| Version | Rhode Island ACS 1-year PUMS person files, 2019 and 2023 |
+| Accessed | 2026-08-10 |
+| License | [U.S. Government open data](https://www.census.gov/about/policies/open-gov/open-data.html) |
+| Analytical grain | one working-age ACS PUMS person record |
+| Expected rows | 12,469 |
 | Results | [`results.json`](results.json) |
 | Definitions | [`../data/data-dictionary.json`](../data/data-dictionary.json) |
 | Quality | [`../data/quality-report.json`](../data/quality-report.json) |
 
-### Aggregate discrimination does not describe subgroup error
+### 2023 calibration
 
-Sex- and race-stratified false-positive rates expose heterogeneity hidden by a single AUC.
+Predicted and survey-weighted observed rates are compared.
 
-![Aggregate discrimination does not describe subgroup error](figures/subgroup-fpr.svg)
+![2023 calibration](figures/calibration.svg)
 
-> **Interpretation boundary:** These are descriptive error diagnostics; they are not a complete fairness or impact assessment.
+> **Interpretation boundary:** Calibration is population- and period-specific.
 
 ## Research design and data quality
 
@@ -55,29 +55,32 @@ Sex- and race-stratified false-positive rates expose heterogeneity hidden by a s
 
 | Design element | Project definition |
 |---|---|
-| Claim class | Unit, time split, target, constraints, and claim class are defined in `results.json`; no causal estimand is claimed unless the design explicitly supports one. |
+| Design | survey-weighted temporal transport test |
+| Model Inputs | age band, education band, worker class, PUMA |
+| Audit Only Fields | sex, race, Hispanic origin |
+| Target | current employment status |
 
 ### Data-quality gate
 
 | Check | Result |
 |---|---|
-| Prepared shape | 48,842 rows × 16 columns |
+| Prepared shape | 12,469 rows × 12 columns |
 | Duplicate primary keys | 0 |
-| Missing values under declared tokens | 6,465 |
-| Privacy review | approved_for_public_benchmark_analysis |
+| Missing values under declared tokens | 0 |
+| Privacy review | approved_for_public_minimized_analysis |
 | Quality disposition | **usable_with_documented_limitations** |
 
-### Probability quality is evaluated separately from ranking
+### Protected-attribute audit
 
-Calibration shows whether predicted probabilities align with observed frequencies across the historical test sample.
+Audit fields remain outside model inputs.
 
-![Probability quality is evaluated separately from ranking](figures/calibration.svg)
+![Protected-attribute audit](figures/audit-slices.svg)
 
-> **Interpretation boundary:** Calibration in this archive cannot validate a future population, target, threshold, or workflow.
+> **Interpretation boundary:** Displayed differences are not causal explanations.
 
 ## Methodology
 
-Majority and mixed-naive-Bayes baselines, sparse one-hot logistic regression, internal hyperparameter selection, independent source test, validation-only cost threshold, calibration, drift, subgroup, and abnormal-input diagnostics.
+Survey-weighted grouped-rate model, temporal AUC/Brier/calibration, cohort drift, and sex/race audit slices excluded from model inputs.
 
 All shipped metrics are regenerated by `prepare_data.py` and `analyze.py`. Random procedures use fixed seeds, and committed raw files are checked against the SHA-256 values in `source-manifest.json`.
 
@@ -90,17 +93,17 @@ All shipped metrics are regenerated by `prepare_data.py` and `analyze.py`. Rando
 
 | Parameter path | Value or distribution | Uncertainty | Source | Approval | Reviewer | Boundary |
 |---|---|---|---|---|---|---|
-| config.analysis_seed | 20260727 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
-| config.parameters.decision_threshold | 0.5 | none | analysis-protocol | provisional_self_review | not_assigned | Not optimized for or authorized in any real decision. |
-| config.parameters.calibration_bins | 10 | none | analysis-protocol | provisional_self_review | not_assigned | Bins with no observations are omitted. |
-| config.parameters.train_split | adult.data | none | uci-source-split | provisional_self_review | not_assigned | Final metrics use only the held-out test split. |
-| config.parameters.test_split | adult.test | none | uci-source-split | provisional_self_review | not_assigned | Final metrics use only the held-out test split. |
+| config.analysis_seed | 20260810 | none | analysis-protocol | provisional_self_review | not_assigned | Computational setting; it does not increase evidence quality. |
+| config.parameters.development_year | 2019 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | No eligibility, hiring, credit, benefits, or other consequential action. |
+| config.parameters.test_year | 2023 | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | No eligibility, hiring, credit, benefits, or other consequential action. |
+| config.parameters.model_fields | ['age_band', 'education_band', 'worker_class', 'puma'] | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | No eligibility, hiring, credit, benefits, or other consequential action. |
+| config.parameters.audit_only_fields | ['sex', 'race', 'hispanic_origin'] | none | case-specific-analysis-protocol | provisional_self_review | not_assigned | No eligibility, hiring, credit, benefits, or other consequential action. |
 
 </details>
 
 ## Limitations, uncertainty, and robustness
 
-1994 Census-derived data, missing categories, historical social structure, and no validation for any real eligibility decision.
+Employment status is not suitability or merit; PUMS is a survey sample, the model is deliberately simple, and no real decision owner or lawful use has validated it.
 
 Bootstrap or scenario stability remains conditional on the observed sample and declared assumptions; it does not upgrade exploratory evidence into operational authorization.
 
@@ -116,9 +119,9 @@ Bootstrap or scenario stability remains conditional on the observed sample and d
 
 The analysis can prioritize validation, diligence, or a bounded pilot; it is not itself permission to act. Reconsider the interpretation when:
 
-- A prospective or external validation reverses the observed ranking.
-- A missing local constraint changes feasibility or the outcome definition.
-- A domain owner rejects the analyst-defined threshold, scale, or trade-off.
+- A current external population reproduces calibration and subgroup performance.
+- A real decision owner supplies a lawful, valid target and governance review.
+- Protected-class audit and error-cost review support a bounded use.
 
 ## Conditional downstream decision layer
 
@@ -147,6 +150,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `census-income-ai`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `a171a55231988fb6d5d2a518c093168e7fed4fea28603c2db39de870f2f4f23f`
+- Result SHA-256: `14defa73c244c50a1a6ddc4fac3059c6c84d4d835523980404b18b8a51c21ce3`
 
 </details>

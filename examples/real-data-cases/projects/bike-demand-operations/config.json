@@ -1,17 +1,23 @@
 {
   "project_id": "bike-demand-operations",
-  "analysis_seed": 20260727,
+  "analysis_seed": 20260810,
   "parameters": {
-    "training_year": 2011,
-    "test_year": 2012,
-    "resource_units": 40,
-    "rentals_per_unit_per_block": 120,
-    "minimum_units_per_six_hour_block": 2
+    "development_end": "2021-09",
+    "test_start": "2021-10",
+    "modeled_daily_rebalancing_units": 250,
+    "review_station_hour_counts": [
+      0,
+      10,
+      25
+    ]
   },
   "parameter_register": [
-    {"parameter": "training_year/test_year", "source_id": "time-split-protocol", "status": "pre-specified analytical design", "approved_by": "repository author self-review", "boundary": "Prevents random future-to-past leakage."},
-    {"parameter": "resource_units", "source_id": "analyst-capacity-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Demonstration resource budget, not a Capital Bikeshare constraint."},
-    {"parameter": "rentals_per_unit_per_block", "source_id": "analyst-capacity-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Scaling assumption for policy comparison."},
-    {"parameter": "minimum_units_per_six_hour_block", "source_id": "analyst-fairness-constraint", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Coverage guardrail for demonstration."}
+    {
+      "parameter": "development_end/test_start/modeled_daily_rebalancing_units/review_station_hour_counts",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Rebalancing outcomes are modeled; no stockout, routing, labor, or achieved-service claim."
+    }
   ]
 }

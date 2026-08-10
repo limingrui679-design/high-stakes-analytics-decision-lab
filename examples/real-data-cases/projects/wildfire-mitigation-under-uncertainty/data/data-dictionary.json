@@ -1,0 +1,16 @@
+{
+  "grain": "one historical fire-perimeter record",
+  "primary_key": "OBJECTID",
+  "fields": {
+    "OBJECTID": "OBJECTID",
+    "YEAR_": "YEAR ",
+    "AGENCY": "AGENCY",
+    "UNIT_ID": "UNIT ID",
+    "FIRE_NAME": "FIRE NAME",
+    "CAUSE": "CAUSE",
+    "C_METHOD": "C METHOD",
+    "OBJECTIVE": "OBJECTIVE",
+    "GIS_ACRES": "GIS ACRES",
+    "GlobalID": "GlobalID"
+  }
+}

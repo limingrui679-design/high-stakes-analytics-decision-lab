@@ -1,0 +1,29 @@
+{
+  "project_id": "opportunity-zone-policy-evaluation",
+  "charts": [
+    {
+      "path": "figures/baseline-balance.svg",
+      "question": "Baseline support",
+      "supported_finding": "Raw baseline differences motivate matching.",
+      "interpretation_boundary": "Balance on observed fields does not remove hidden confounding.",
+      "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/control-reuse.svg",
+      "question": "Control reuse",
+      "supported_finding": "Reuse is exposed as a support diagnostic.",
+      "interpretation_boundary": "Effective comparison diversity is limited.",
+      "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/matched-change-effects.svg",
+      "question": "Matched change contrasts",
+      "supported_finding": "One-year changes are compared within matched pairs.",
+      "interpretation_boundary": "Causality is not identified.",
+      "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading: analytical project
+# Small-Sample Repeated-Measures Inference: analytical project
 
 > **Bottom line:** Pseudoword passages increase fixation-duration burden, and the paired effect differs by reader group; a combined protocol gains contrast at the cost of time.
 

@@ -9,5 +9,6 @@ from portfolio_modeling import *
 from portfolio_treasury import *
 from portfolio_spatial import *
 from portfolio_reporting import *
+from portfolio_tailored import *
 
 __all__ = [name for name in globals() if not name.startswith("__")]

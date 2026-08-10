@@ -1,0 +1,18 @@
+{
+  "project_id": "nhanes-population-transportability",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "development_cohort": "2011-2012",
+    "validation_cohort": "2015-2016",
+    "mortality_horizon_months": 36
+  },
+  "parameter_register": [
+    {
+      "parameter": "development_cohort/validation_cohort/mortality_horizon_months",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "Population research only; no individual diagnosis or treatment."
+    }
+  ]
+}

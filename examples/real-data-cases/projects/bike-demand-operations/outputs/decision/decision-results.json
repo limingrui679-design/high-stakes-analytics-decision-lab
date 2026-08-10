@@ -2,54 +2,52 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-28T10:05:45.306578+00:00",
+    "generated_at": "2026-08-10T12:57:30.853134+00:00",
     "case_id": "real-bike-demand-operations",
-    "case_hash_sha256": "0c41a2b9ae0ac2f54d721052a168fd265d4acfb894b484490fab765bf31e8a3f",
-    "samples": 10000,
-    "seed": 20260727,
+    "case_hash_sha256": "eb7c46986234ba13f6a8806f9c1c3566caa68d6e71096d3e608f0757d3379913",
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
   "decision": {
-    "title": "Which time-block resource allocation should be piloted for system-level service planning",
+    "title": "Which fixed-budget station-hour rebalancing scenario should advance to a bounded operations pilot",
     "domain": "Operations research and systems engineering",
     "owner": "Hypothetical domain review panel; no real owner authorization",
-    "question": "Which time-block resource allocation should be piloted for system-level service planning?",
-    "time_horizon": "One planning year",
-    "recommendation": "robust-optimized",
+    "question": "Which fixed-budget station-hour rebalancing scenario should advance to a bounded operations pilot?",
+    "time_horizon": "Prospective operations pilot only",
+    "recommendation": "top-25-station-hours",
     "recommendation_available": true,
     "decision_ready": false,
     "decision_status": "provisional",
     "decision_status_label": "Provisional—validate before action",
     "decision_use": "exploratory",
     "ranking": [
-      "robust-optimized",
-      "demand-proportional",
-      "equal-baseline"
+      "top-25-station-hours",
+      "top-10-station-hours",
+      "baseline-monitoring-only"
     ],
     "pareto_frontier": [
-      "robust-optimized",
-      "demand-proportional",
-      "equal-baseline"
+      "top-25-station-hours",
+      "baseline-monitoring-only"
     ],
     "pareto_frontier_unconstrained": [
-      "equal-baseline",
-      "demand-proportional",
-      "robust-optimized"
+      "baseline-monitoring-only",
+      "top-25-station-hours"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.0019002888043005983,
-    "weight_sensitivity_stability": 0.6666666666666666,
+    "utility_margin": 0.04854625841249949,
+    "weight_sensitivity_stability": 1.0,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 78.13366666666666,
+    "robustness_score": 100.0,
     "robustness_components": {
       "probability_best": {
-        "value": 0.5489,
+        "value": 1.0,
         "weight": 0.3
       },
       "weight_stability": {
-        "value": 0.6666666666666666,
+        "value": 1.0,
         "weight": 0.25
       },
       "scenario_stability": {
@@ -70,7 +68,7 @@
     "readiness_checks": {
       "feasible_alternative": true,
       "probability_best": true,
-      "weight_stability": false,
+      "weight_stability": true,
       "scenario_stability": true,
       "scale_clipping": true,
       "parameter_provenance": true,
@@ -78,7 +76,6 @@
       "operational_evidence": false
     },
     "blocking_reasons": [
-      "the winner is sensitive to criterion weights",
       "evidence is not labeled for operational use"
     ],
     "max_constraint_violation_rate": 0.1,
@@ -87,37 +84,37 @@
   },
   "criteria": [
     {
-      "id": "unmet_rate",
-      "label": "Unmet demand",
+      "id": "modeled_residual_imbalance",
+      "label": "Modeled residual imbalance",
       "direction": "minimize",
       "weight": 0.45,
       "unit": "share",
       "scale": {
-        "worst": 0.5,
+        "worst": 1,
         "best": 0
       },
       "normalized_weight": 0.45
     },
     {
-      "id": "wet_unmet_rate",
-      "label": "Wet-day unmet demand",
+      "id": "unserved_station_hour_share",
+      "label": "Station-hours with residual imbalance",
       "direction": "minimize",
       "weight": 0.35,
       "unit": "share",
       "scale": {
-        "worst": 0.5,
+        "worst": 1,
         "best": 0
       },
       "normalized_weight": 0.35
     },
     {
-      "id": "shift_imbalance",
-      "label": "Shift imbalance",
+      "id": "allocation_concentration",
+      "label": "Allocation concentration",
       "direction": "minimize",
       "weight": 0.2,
-      "unit": "allocation range/total",
+      "unit": "Herfindahl index",
       "scale": {
-        "worst": 0.75,
+        "worst": 1,
         "best": 0
       },
       "normalized_weight": 0.2
@@ -137,13 +134,13 @@
       "probability": 0.25,
       "adjustments": {
         "*": {
-          "unmet_rate": {
+          "modeled_residual_imbalance": {
             "multiply": 1.08
           },
-          "wet_unmet_rate": {
+          "unserved_station_hour_share": {
             "multiply": 1.08
           },
-          "shift_imbalance": {
+          "allocation_concentration": {
             "multiply": 1.08
           }
         }
@@ -156,9 +153,9 @@
       "label": "Observed evidence base",
       "probability": 0.75,
       "winners": [
-        "robust-optimized"
+        "top-25-station-hours"
       ],
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "recommended_option_wins": true
     },
     {
@@ -166,54 +163,54 @@
       "label": "Adverse transfer to a new setting",
       "probability": 0.25,
       "winners": [
-        "robust-optimized"
+        "top-25-station-hours"
       ],
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "recommended_option_wins": true
     }
   ],
   "alternatives": {
-    "equal-baseline": {
-      "alternative_id": "equal-baseline",
-      "label": "Equal Baseline",
+    "baseline-monitoring-only": {
+      "alternative_id": "baseline-monitoring-only",
+      "label": "Baseline: Monitoring Only",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5151783891120414,
-      "utility_p05": 0.47562725763999997,
-      "utility_p95": 0.543326149,
-      "cvar10": 0.4739355397427996,
-      "risk_adjusted_utility": 0.504867676769731,
-      "value_score": 50.4867676769731,
+      "expected_utility": 0.3858353278600028,
+      "utility_p05": 0.37617858244,
+      "utility_p95": 0.389054243,
+      "cvar10": 0.37617858244000174,
+      "risk_adjusted_utility": 0.3834211415050025,
+      "value_score": 38.34211415050025,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
       "structural_breach_possible": false,
       "constraint_diagnostics": [],
       "feasible": true,
-      "overall_scale_clipping_rate": 0.0,
+      "overall_scale_clipping_rate": 0.08333333333333333,
       "criteria": {
-        "unmet_rate": {
-          "label": "Unmet demand",
+        "modeled_residual_imbalance": {
+          "label": "Modeled residual imbalance",
           "unit": "share",
-          "mean": 0.3271462737260014,
-          "normalized_score": 0.34570745254800156,
-          "scale_clipping_rate": 0.0,
-          "p05": 0.3078077,
-          "p95": 0.35509309200000005
+          "mean": 1.0199999999999896,
+          "normalized_score": 0.0,
+          "scale_clipping_rate": 0.25,
+          "p05": 1.0,
+          "p95": 1.08
         },
-        "wet_unmet_rate": {
-          "label": "Wet-day unmet demand",
+        "unserved_station_hour_share": {
+          "label": "Station-hours with residual imbalance",
           "unit": "share",
-          "mean": 0.2719856636208003,
-          "normalized_score": 0.45602867275839665,
+          "mean": 0.4690419204000157,
+          "normalized_score": 0.5309580795999796,
           "scale_clipping_rate": 0.0,
-          "p05": 0.2483053,
-          "p95": 0.299578716
+          "p05": 0.45984502,
+          "p95": 0.4966326216
         },
-        "shift_imbalance": {
-          "label": "Shift imbalance",
-          "unit": "allocation range/total",
+        "allocation_concentration": {
+          "label": "Allocation concentration",
+          "unit": "Herfindahl index",
           "mean": 0.0,
           "normalized_score": 1.0,
           "scale_clipping_rate": 0.0,
@@ -224,21 +221,21 @@
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5245369723239992,
-          "p05": 0.503826438,
-          "p95": 0.5453101549999999,
-          "cvar10": 0.5024969287733339,
-          "risk_adjusted_utility": 0.5190269614363329,
-          "sample_count": 7500
+          "mean": 0.389054243000007,
+          "p05": 0.389054243,
+          "p95": 0.389054243,
+          "cvar10": 0.38905424299999997,
+          "risk_adjusted_utility": 0.38905424300000524,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.48710263947616056,
-          "p05": 0.46416848193999993,
-          "p95": 0.50935522402,
-          "cvar10": 0.4631999800815995,
-          "risk_adjusted_utility": 0.4811269746275203,
-          "sample_count": 2500
+          "mean": 0.37617858243999597,
+          "p05": 0.37617858243999996,
+          "p95": 0.37617858243999996,
+          "cvar10": 0.3761785824400005,
+          "risk_adjusted_utility": 0.37617858243999713,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
@@ -247,18 +244,18 @@
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
-    "demand-proportional": {
-      "alternative_id": "demand-proportional",
-      "label": "Demand Proportional",
+    "top-10-station-hours": {
+      "alternative_id": "top-10-station-hours",
+      "label": "Top 10 Station Hours",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6067532450989206,
-      "utility_p05": 0.5741241374799999,
-      "utility_p95": 0.6302437291666667,
-      "cvar10": 0.5724667858917323,
-      "risk_adjusted_utility": 0.5981816302971235,
-      "value_score": 59.818163029712345,
+      "expected_utility": 0.39532767949000225,
+      "utility_p05": 0.35975871945999993,
+      "utility_p95": 0.40718399949999995,
+      "cvar10": 0.35975871946000065,
+      "risk_adjusted_utility": 0.38643543948250186,
+      "value_score": 38.64354394825018,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -267,72 +264,72 @@
       "feasible": true,
       "overall_scale_clipping_rate": 0.0,
       "criteria": {
-        "unmet_rate": {
-          "label": "Unmet demand",
+        "modeled_residual_imbalance": {
+          "label": "Modeled residual imbalance",
           "unit": "share",
-          "mean": 0.22025038879399952,
-          "normalized_score": 0.5594992224119948,
+          "mean": 0.9356870448000156,
+          "normalized_score": 0.06431295520000216,
           "scale_clipping_rate": 0.0,
-          "p05": 0.20266810000000002,
-          "p95": 0.2404726
+          "p05": 0.91734024,
+          "p95": 0.9907274592
         },
-        "wet_unmet_rate": {
-          "label": "Wet-day unmet demand",
+        "unserved_station_hour_share": {
+          "label": "Station-hours with residual imbalance",
           "unit": "share",
-          "mean": 0.17174486426640126,
-          "normalized_score": 0.6565102714672072,
+          "mean": 0.46365269940001547,
+          "normalized_score": 0.5363473005999827,
           "scale_clipping_rate": 0.0,
-          "p05": 0.1531177,
-          "p95": 0.193791528
+          "p05": 0.45456147,
+          "p95": 0.49092638760000007
         },
-        "shift_imbalance": {
-          "label": "Shift imbalance",
-          "unit": "allocation range/total",
-          "mean": 0.28050000000004455,
-          "normalized_score": 0.6259999999999619,
+        "allocation_concentration": {
+          "label": "Allocation concentration",
+          "unit": "Herfindahl index",
+          "mean": 0.10667352779999989,
+          "normalized_score": 0.8933264721999881,
           "scale_clipping_rate": 0.0,
-          "p05": 0.275,
-          "p95": 0.29700000000000004
+          "p05": 0.10458189,
+          "p95": 0.1129484412
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6144634000866652,
-          "p05": 0.5972386011666667,
-          "p95": 0.6318985571666668,
-          "cvar10": 0.5957676190533335,
-          "risk_adjusted_utility": 0.6097894548283322,
-          "sample_count": 7500
+          "mean": 0.4071839995000103,
+          "p05": 0.40718399949999995,
+          "p95": 0.40718399949999995,
+          "cvar10": 0.4071839995000013,
+          "risk_adjusted_utility": 0.40718399950000805,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.5836227801356803,
-          "p05": 0.5643782952399999,
-          "p95": 0.6026832643599999,
-          "cvar10": 0.5627475893727998,
-          "risk_adjusted_utility": 0.5784039824449602,
-          "sample_count": 2500
+          "mean": 0.35975871945999505,
+          "p05": 0.35975871945999993,
+          "p95": 0.35975871945999993,
+          "cvar10": 0.35975871946000015,
+          "risk_adjusted_utility": 0.3597587194599963,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.4511,
-      "probability_best_unconstrained": 0.4511,
-      "pareto_efficient": true,
-      "pareto_efficient_unconstrained": true
+      "probability_best": 0.0,
+      "probability_best_unconstrained": 0.0,
+      "pareto_efficient": false,
+      "pareto_efficient_unconstrained": false
     },
-    "robust-optimized": {
-      "alternative_id": "robust-optimized",
-      "label": "Robust Optimized",
+    "top-25-station-hours": {
+      "alternative_id": "top-25-station-hours",
+      "label": "Top 25 Station Hours",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.6084420538785211,
-      "utility_p05": 0.5763996344799999,
-      "utility_p95": 0.6305590218333333,
-      "cvar10": 0.575001514770133,
-      "risk_adjusted_utility": 0.600081919101424,
-      "value_score": 60.00819191014241,
+      "expected_utility": 0.4431703689400026,
+      "utility_p05": 0.4104156847599999,
+      "utility_p95": 0.45408859700000004,
+      "cvar10": 0.41041568475999757,
+      "risk_adjusted_utility": 0.43498169789500135,
+      "value_score": 43.49816978950013,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -341,233 +338,233 @@
       "feasible": true,
       "overall_scale_clipping_rate": 0.0,
       "criteria": {
-        "unmet_rate": {
-          "label": "Unmet demand",
+        "modeled_residual_imbalance": {
+          "label": "Modeled residual imbalance",
           "unit": "share",
-          "mean": 0.20933215646399808,
-          "normalized_score": 0.5813356870720084,
+          "mean": 0.8634014808000243,
+          "normalized_score": 0.1365985192000059,
           "scale_clipping_rate": 0.0,
-          "p05": 0.19537684500000002,
-          "p95": 0.22937979600000002
+          "p05": 0.84647204,
+          "p95": 0.9141898032000001
         },
-        "wet_unmet_rate": {
-          "label": "Wet-day unmet demand",
+        "unserved_station_hour_share": {
+          "label": "Station-hours with residual imbalance",
           "unit": "share",
-          "mean": 0.1639414361483994,
-          "normalized_score": 0.672117127703204,
+          "mean": 0.4557485051999764,
+          "normalized_score": 0.5442514948000372,
           "scale_clipping_rate": 0.0,
-          "p05": 0.1457701,
-          "p95": 0.184426308
+          "p05": 0.44681226,
+          "p95": 0.48255724080000006
         },
-        "shift_imbalance": {
-          "label": "Shift imbalance",
-          "unit": "allocation range/total",
-          "mean": 0.3314999999999827,
-          "normalized_score": 0.5579999999999883,
+        "allocation_concentration": {
+          "label": "Allocation concentration",
+          "unit": "Herfindahl index",
+          "mean": 0.043934939399998284,
+          "normalized_score": 0.9560650605999989,
           "scale_clipping_rate": 0.0,
-          "p05": 0.325,
-          "p95": 0.35100000000000003
+          "p05": 0.04307347,
+          "p95": 0.046519347600000004
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.6161533404133338,
-          "p05": 0.6003105448333332,
-          "p95": 0.6320563123333333,
-          "cvar10": 0.5992977949866664,
-          "risk_adjusted_utility": 0.6119394540566669,
-          "sample_count": 7500
+          "mean": 0.45408859700000764,
+          "p05": 0.45408859700000004,
+          "p95": 0.45408859700000004,
+          "cvar10": 0.45408859699999843,
+          "risk_adjusted_utility": 0.45408859700000537,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.5853081942740812,
-          "p05": 0.56796946066,
-          "p95": 0.60316600996,
-          "cvar10": 0.5668500237472002,
-          "risk_adjusted_utility": 0.580693651642361,
-          "sample_count": 2500
+          "mean": 0.41041568476000057,
+          "p05": 0.4104156847599999,
+          "p95": 0.4104156847599999,
+          "cvar10": 0.4104156847600002,
+          "risk_adjusted_utility": 0.41041568476000045,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.5489,
-      "probability_best_unconstrained": 0.5489,
+      "probability_best": 1.0,
+      "probability_best_unconstrained": 1.0,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     }
   },
   "weight_sensitivity": [
     {
-      "criterion": "unmet_rate",
-      "label": "↓ Unmet demand",
+      "criterion": "modeled_residual_imbalance",
+      "label": "↓ Modeled residual imbalance",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "demand-proportional",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.6048943582698314,
-        "demand-proportional": 0.6065925055093805,
-        "equal-baseline": 0.5351593051199799
+        "top-25-station-hours": 0.48987821424116185,
+        "top-10-station-hours": 0.44570883734411854,
+        "baseline-monitoring-only": 0.45108369588822406
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6132255303737882,
-          "cvar10": 0.5799008419579607,
-          "risk_adjusted_utility": 0.6048943582698314
+        "top-25-station-hours": {
+          "expected_utility": 0.4972712835999801,
+          "cvar10": 0.4676990061647072,
+          "risk_adjusted_utility": 0.48987821424116185
         },
-        "demand-proportional": {
-          "expected_utility": 0.6150921902789644,
-          "cvar10": 0.5810934512006285,
-          "risk_adjusted_utility": 0.6065925055093805
+        "top-10-station-hours": {
+          "expected_utility": 0.45374204260000073,
+          "cvar10": 0.4216092215764719,
+          "risk_adjusted_utility": 0.44570883734411854
         },
-        "equal-baseline": {
-          "expected_utility": 0.5450850249762871,
-          "cvar10": 0.5053821455510585,
-          "risk_adjusted_utility": 0.5351593051199799
+        "baseline-monitoring-only": {
+          "expected_utility": 0.45392391512939656,
+          "cvar10": 0.44256303816470666,
+          "risk_adjusted_utility": 0.45108369588822406
         }
       }
     },
     {
-      "criterion": "unmet_rate",
-      "label": "↑ Unmet demand",
+      "criterion": "modeled_residual_imbalance",
+      "label": "↑ Modeled residual imbalance",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.59497455185153,
-        "demand-proportional": 0.5893318127188005,
-        "equal-baseline": 0.47321341026359787
+        "top-25-station-hours": 0.3778445074122505,
+        "top-10-station-hours": 0.3247427192591699,
+        "baseline-monitoring-only": 0.3129968502081555
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6034633334446706,
-          "cvar10": 0.5695082070721084,
-          "risk_adjusted_utility": 0.59497455185153
+        "top-25-station-hours": {
+          "expected_utility": 0.38686125368164076,
+          "cvar10": 0.35079426860407986,
+          "risk_adjusted_utility": 0.3778445074122505
         },
-        "demand-proportional": {
-          "expected_utility": 0.5980739348094842,
-          "cvar10": 0.5631054464467494,
-          "risk_adjusted_utility": 0.5893318127188005
+        "top-10-station-hours": {
+          "expected_utility": 0.33452905666120586,
+          "cvar10": 0.29538370705306216,
+          "risk_adjusted_utility": 0.3247427192591699
         },
-        "equal-baseline": {
-          "expected_utility": 0.48405107423293314,
-          "cvar10": 0.4407004183555921,
-          "risk_adjusted_utility": 0.47321341026359787
+        "baseline-monitoring-only": {
+          "expected_utility": 0.31496761457958167,
+          "cvar10": 0.3070845570938769,
+          "risk_adjusted_utility": 0.3129968502081555
         }
       }
     },
     {
-      "criterion": "wet_unmet_rate",
-      "label": "↓ Wet-day unmet demand",
+      "criterion": "unserved_station_hour_share",
+      "label": "↓ Station-hours with residual imbalance",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.5916934969803308,
-        "demand-proportional": 0.5916894297612937,
-        "equal-baseline": 0.5129708887342672
+        "top-25-station-hours": 0.42143503202640814,
+        "top-10-station-hours": 0.3675363060207658,
+        "baseline-monitoring-only": 0.36484614453208364
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6000321384677116,
-          "cvar10": 0.5666775725181883,
-          "risk_adjusted_utility": 0.5916934969803308
+        "top-25-station-hours": {
+          "expected_utility": 0.4298200315622558,
+          "cvar10": 0.39628003341886514,
+          "risk_adjusted_utility": 0.42143503202640814
         },
-        "demand-proportional": {
-          "expected_utility": 0.6001815623710335,
-          "cvar10": 0.5662130319320742,
-          "risk_adjusted_utility": 0.5916894297612937
+        "top-10-station-hours": {
+          "expected_utility": 0.37670244651322266,
+          "cvar10": 0.3400378845433954,
+          "risk_adjusted_utility": 0.3675363060207658
         },
-        "equal-baseline": {
-          "expected_utility": 0.5229906158002559,
-          "cvar10": 0.4829117075363012,
-          "risk_adjusted_utility": 0.5129708887342672
+        "baseline-monitoring-only": {
+          "expected_utility": 0.3666681719698231,
+          "cvar10": 0.3593800622188652,
+          "risk_adjusted_utility": 0.36484614453208364
         }
       }
     },
     {
-      "criterion": "wet_unmet_rate",
-      "label": "↑ Wet-day unmet demand",
+      "criterion": "unserved_station_hour_share",
+      "label": "↑ Station-hours with residual imbalance",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.6094361508274613,
-        "demand-proportional": 0.6054011409110738,
-        "equal-baseline": 0.49559839491742186
+        "top-25-station-hours": 0.4502577253638384,
+        "top-10-station-hours": 0.4077472282797843,
+        "baseline-monitoring-only": 0.4043674146872402
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6179255755119817,
-          "cvar10": 0.5839678767739002,
-          "risk_adjusted_utility": 0.6094361508274613
+        "top-25-station-hours": {
+          "expected_utility": 0.45822500470639405,
+          "cvar10": 0.42635588733617147,
+          "risk_adjusted_utility": 0.4502577253638384
         },
-        "demand-proportional": {
-          "expected_utility": 0.6141638660473892,
-          "cvar10": 0.5791129655021275,
-          "risk_adjusted_utility": 0.6054011409110738
+        "top-10-station-hours": {
+          "expected_utility": 0.41633060178297426,
+          "cvar10": 0.38199710777021456,
+          "risk_adjusted_utility": 0.4077472282797843
         },
-        "equal-baseline": {
-          "expected_utility": 0.5063688568891582,
-          "cvar10": 0.4632870090022128,
-          "risk_adjusted_utility": 0.49559839491742186
+        "baseline-monitoring-only": {
+          "expected_utility": 0.40744935471490074,
+          "cvar10": 0.39512159460425855,
+          "risk_adjusted_utility": 0.4043674146872402
         }
       }
     },
     {
-      "criterion": "shift_imbalance",
-      "label": "↓ Shift imbalance",
+      "criterion": "allocation_concentration",
+      "label": "↓ Allocation concentration",
       "direction": "decrease",
       "factor": 0.6666666666666666,
-      "winner": "robust-optimized",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.6035509569342139,
-        "demand-proportional": 0.596580739448324,
-        "equal-baseline": 0.4695010822532828
+        "top-25-station-hours": 0.397807607848205,
+        "top-10-station-hours": 0.35034098917054385,
+        "baseline-monitoring-only": 0.3393797944696507
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6120450577269836,
-          "cvar10": 0.5780686545559051,
-          "risk_adjusted_utility": 0.6035509569342139
+        "top-25-station-hours": {
+          "expected_utility": 0.4065350338214157,
+          "cvar10": 0.37162532992857295,
+          "risk_adjusted_utility": 0.397807607848205
         },
-        "demand-proportional": {
-          "expected_utility": 0.6053784768917021,
-          "cvar10": 0.5701875271181898,
-          "risk_adjusted_utility": 0.596580739448324
+        "top-10-station-hours": {
+          "expected_utility": 0.35975633715358274,
+          "cvar10": 0.3220949452214272,
+          "risk_adjusted_utility": 0.35034098917054385
         },
-        "equal-baseline": {
-          "expected_utility": 0.48054827404861516,
-          "cvar10": 0.4363595068672856,
-          "risk_adjusted_utility": 0.4695010822532828
+        "baseline-monitoring-only": {
+          "expected_utility": 0.3419664227071538,
+          "cvar10": 0.33161990975714134,
+          "risk_adjusted_utility": 0.3393797944696507
         }
       }
     },
     {
-      "criterion": "shift_imbalance",
-      "label": "↑ Shift imbalance",
+      "criterion": "allocation_concentration",
+      "label": "↑ Allocation concentration",
       "direction": "increase",
       "factor": 1.5,
-      "winner": "demand-proportional",
+      "winner": "top-25-station-hours",
       "scores": {
-        "robust-optimized": 0.5956656232617207,
-        "demand-proportional": 0.6002147830829007,
-        "equal-baseline": 0.5498797061543012
+        "top-25-station-hours": 0.4822941761363745,
+        "top-10-station-hours": 0.4323738307886439,
+        "baseline-monitoring-only": 0.4394737650045467
       },
       "score_details": {
-        "robust-optimized": {
-          "expected_utility": 0.6038564126168398,
-          "cvar10": 0.5710932551963634,
-          "risk_adjusted_utility": 0.5956656232617207
+        "top-25-station-hours": {
+          "expected_utility": 0.4897971590909228,
+          "cvar10": 0.4597852272727296,
+          "risk_adjusted_utility": 0.4822941761363745
         },
-        "demand-proportional": {
-          "expected_utility": 0.6085029500899284,
-          "cvar10": 0.5753502820618175,
-          "risk_adjusted_utility": 0.6002147830829007
+        "top-10-station-hours": {
+          "expected_utility": 0.4406002970091012,
+          "cvar10": 0.4076944321272721,
+          "risk_adjusted_utility": 0.4323738307886439
         },
-        "equal-baseline": {
-          "expected_utility": 0.5592530810109471,
-          "cvar10": 0.5217595815843634,
-          "risk_adjusted_utility": 0.5498797061543012
+        "baseline-monitoring-only": {
+          "expected_utility": 0.4416684798727284,
+          "cvar10": 0.43288962040000173,
+          "risk_adjusted_utility": 0.4394737650045467
         }
       }
     }
@@ -580,136 +577,136 @@
         "label": "Shared adverse evidence shock",
         "description": "A common latent shock moves empirical metrics across all alternatives.",
         "loadings": {
-          "unmet_rate": 0.28,
-          "wet_unmet_rate": 0.28,
-          "shift_imbalance": 0.28
+          "modeled_residual_imbalance": 0.28,
+          "unserved_station_hour_share": 0.28,
+          "allocation_concentration": 0.28
         }
       }
     ],
     "stress_multiplier": 1.35,
     "independent_baseline": {
-      "recommendation": "robust-optimized",
+      "recommendation": "top-25-station-hours",
       "ranking": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "feasible_alternatives": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "alternatives": {
-        "equal-baseline": {
-          "expected_utility": 0.5151589184725612,
-          "cvar10": 0.4743098441651997,
-          "risk_adjusted_utility": 0.5049466498957209,
+        "baseline-monitoring-only": {
+          "expected_utility": 0.3858353278600028,
+          "cvar10": 0.37617858244000174,
+          "risk_adjusted_utility": 0.3834211415050025,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
-        "demand-proportional": {
-          "expected_utility": 0.6067291348657983,
-          "cvar10": 0.5728363816070662,
-          "risk_adjusted_utility": 0.5982559465511152,
+        "top-10-station-hours": {
+          "expected_utility": 0.39532767949000225,
+          "cvar10": 0.35975871946000065,
+          "risk_adjusted_utility": 0.38643543948250186,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.4523
+          "probability_best": 0.0
         },
-        "robust-optimized": {
-          "expected_utility": 0.6084131425983222,
-          "cvar10": 0.5753528375281334,
-          "risk_adjusted_utility": 0.600148066330775,
+        "top-25-station-hours": {
+          "expected_utility": 0.4431703689400026,
+          "cvar10": 0.41041568475999757,
+          "risk_adjusted_utility": 0.43498169789500135,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.5477
+          "probability_best": 1.0
         }
       }
     },
     "declared_correlation": {
-      "recommendation": "robust-optimized",
+      "recommendation": "top-25-station-hours",
       "ranking": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "feasible_alternatives": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "alternatives": {
-        "equal-baseline": {
-          "expected_utility": 0.5151783891120414,
-          "cvar10": 0.4739355397427996,
-          "risk_adjusted_utility": 0.504867676769731,
+        "baseline-monitoring-only": {
+          "expected_utility": 0.3858353278600028,
+          "cvar10": 0.37617858244000174,
+          "risk_adjusted_utility": 0.3834211415050025,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
-        "demand-proportional": {
-          "expected_utility": 0.6067532450989206,
-          "cvar10": 0.5724667858917323,
-          "risk_adjusted_utility": 0.5981816302971235,
+        "top-10-station-hours": {
+          "expected_utility": 0.39532767949000225,
+          "cvar10": 0.35975871946000065,
+          "risk_adjusted_utility": 0.38643543948250186,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.4511
+          "probability_best": 0.0
         },
-        "robust-optimized": {
-          "expected_utility": 0.6084420538785211,
-          "cvar10": 0.575001514770133,
-          "risk_adjusted_utility": 0.600081919101424,
+        "top-25-station-hours": {
+          "expected_utility": 0.4431703689400026,
+          "cvar10": 0.41041568475999757,
+          "risk_adjusted_utility": 0.43498169789500135,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.5489
+          "probability_best": 1.0
         }
       }
     },
     "correlation_stress": {
-      "recommendation": "robust-optimized",
+      "recommendation": "top-25-station-hours",
       "ranking": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "feasible_alternatives": [
-        "robust-optimized",
-        "demand-proportional",
-        "equal-baseline"
+        "top-25-station-hours",
+        "top-10-station-hours",
+        "baseline-monitoring-only"
       ],
       "alternatives": {
-        "equal-baseline": {
-          "expected_utility": 0.5151960372857197,
-          "cvar10": 0.47358780581760046,
-          "risk_adjusted_utility": 0.5047939794186899,
+        "baseline-monitoring-only": {
+          "expected_utility": 0.3858353278600028,
+          "cvar10": 0.37617858244000174,
+          "risk_adjusted_utility": 0.3834211415050025,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
           "probability_best": 0.0
         },
-        "demand-proportional": {
-          "expected_utility": 0.6067624856156384,
-          "cvar10": 0.5721304552594656,
-          "risk_adjusted_utility": 0.5981044780265952,
+        "top-10-station-hours": {
+          "expected_utility": 0.39532767949000225,
+          "cvar10": 0.35975871946000065,
+          "risk_adjusted_utility": 0.38643543948250186,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.449
+          "probability_best": 0.0
         },
-        "robust-optimized": {
-          "expected_utility": 0.6084527041844023,
-          "cvar10": 0.5747246171341333,
-          "risk_adjusted_utility": 0.600020682421835,
+        "top-25-station-hours": {
+          "expected_utility": 0.4431703689400026,
+          "cvar10": 0.41041568475999757,
+          "risk_adjusted_utility": 0.43498169789500135,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.551
+          "probability_best": 1.0
         }
       }
     },
@@ -717,19 +714,19 @@
     "recommendation_changed_under_stress": false,
     "realized_pairwise_utility_correlations": [
       {
-        "left_alternative": "equal-baseline",
-        "right_alternative": "demand-proportional",
-        "correlation": 0.6538367147838218
+        "left_alternative": "baseline-monitoring-only",
+        "right_alternative": "top-10-station-hours",
+        "correlation": 0.9999999999999997
       },
       {
-        "left_alternative": "equal-baseline",
-        "right_alternative": "robust-optimized",
-        "correlation": 0.6898331318538186
+        "left_alternative": "baseline-monitoring-only",
+        "right_alternative": "top-25-station-hours",
+        "correlation": 0.999999999999983
       },
       {
-        "left_alternative": "demand-proportional",
-        "right_alternative": "robust-optimized",
-        "correlation": 0.6769190211697601
+        "left_alternative": "top-10-station-hours",
+        "right_alternative": "top-25-station-hours",
+        "correlation": 0.999999999999995
       }
     ]
   },
@@ -744,9 +741,9 @@
     "sources": [
       {
         "id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
-        "as_of": "2026-07-27",
+        "as_of": "2026-08-10",
         "owner": "Original publisher and repository analysis author",
         "approved_decision_uses": [
           "exploratory"
@@ -956,10 +953,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.unmet_rate.distribution",
+        "path": "alternatives[0].metrics.modeled_residual_imbalance.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -975,10 +972,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.unmet_rate.values",
+        "path": "alternatives[0].metrics.modeled_residual_imbalance.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -994,10 +991,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.unmet_rate.uncertainty_type",
+        "path": "alternatives[0].metrics.modeled_residual_imbalance.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1013,10 +1010,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.wet_unmet_rate.distribution",
+        "path": "alternatives[0].metrics.unserved_station_hour_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1032,10 +1029,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.wet_unmet_rate.values",
+        "path": "alternatives[0].metrics.unserved_station_hour_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1051,10 +1048,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.wet_unmet_rate.uncertainty_type",
+        "path": "alternatives[0].metrics.unserved_station_hour_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1070,10 +1067,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.shift_imbalance.distribution",
+        "path": "alternatives[0].metrics.allocation_concentration.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1089,10 +1086,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.shift_imbalance.values",
+        "path": "alternatives[0].metrics.allocation_concentration.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1108,10 +1105,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[0].metrics.shift_imbalance.uncertainty_type",
+        "path": "alternatives[0].metrics.allocation_concentration.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1127,10 +1124,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.unmet_rate.distribution",
+        "path": "alternatives[1].metrics.modeled_residual_imbalance.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1146,10 +1143,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.unmet_rate.values",
+        "path": "alternatives[1].metrics.modeled_residual_imbalance.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1165,10 +1162,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.unmet_rate.uncertainty_type",
+        "path": "alternatives[1].metrics.modeled_residual_imbalance.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1184,10 +1181,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.wet_unmet_rate.distribution",
+        "path": "alternatives[1].metrics.unserved_station_hour_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1203,10 +1200,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.wet_unmet_rate.values",
+        "path": "alternatives[1].metrics.unserved_station_hour_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1222,10 +1219,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.wet_unmet_rate.uncertainty_type",
+        "path": "alternatives[1].metrics.unserved_station_hour_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1241,10 +1238,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.shift_imbalance.distribution",
+        "path": "alternatives[1].metrics.allocation_concentration.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1260,10 +1257,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.shift_imbalance.values",
+        "path": "alternatives[1].metrics.allocation_concentration.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1279,10 +1276,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[1].metrics.shift_imbalance.uncertainty_type",
+        "path": "alternatives[1].metrics.allocation_concentration.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1298,10 +1295,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.unmet_rate.distribution",
+        "path": "alternatives[2].metrics.modeled_residual_imbalance.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1317,10 +1314,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.unmet_rate.values",
+        "path": "alternatives[2].metrics.modeled_residual_imbalance.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1336,10 +1333,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.unmet_rate.uncertainty_type",
+        "path": "alternatives[2].metrics.modeled_residual_imbalance.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1355,10 +1352,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.wet_unmet_rate.distribution",
+        "path": "alternatives[2].metrics.unserved_station_hour_share.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1374,10 +1371,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.wet_unmet_rate.values",
+        "path": "alternatives[2].metrics.unserved_station_hour_share.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1393,10 +1390,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.wet_unmet_rate.uncertainty_type",
+        "path": "alternatives[2].metrics.unserved_station_hour_share.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1412,10 +1409,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.shift_imbalance.distribution",
+        "path": "alternatives[2].metrics.allocation_concentration.distribution",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1431,10 +1428,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.shift_imbalance.values",
+        "path": "alternatives[2].metrics.allocation_concentration.value",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1450,10 +1447,10 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "alternatives[2].metrics.shift_imbalance.uncertainty_type",
+        "path": "alternatives[2].metrics.allocation_concentration.uncertainty_type",
         "parameter_type": "metric_distribution",
         "source_id": "bike-demand-operations-analysis-output",
-        "citation": "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894; project outputs/results.json, generated from the hash-locked snapshot.",
+        "citation": "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.; project outputs/results.json, generated from the hash-locked snapshot.",
         "source_type": "reproducible_project_output",
         "owner": "Original publisher and repository analysis author",
         "approval_chain": [
@@ -1507,7 +1504,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "scenarios[1].adjustments.*.unmet_rate.multiply",
+        "path": "scenarios[1].adjustments.*.modeled_residual_imbalance.multiply",
         "parameter_type": "scenario_adjustment",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1526,7 +1523,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "scenarios[1].adjustments.*.wet_unmet_rate.multiply",
+        "path": "scenarios[1].adjustments.*.unserved_station_hour_share.multiply",
         "parameter_type": "scenario_adjustment",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1545,7 +1542,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "scenarios[1].adjustments.*.shift_imbalance.multiply",
+        "path": "scenarios[1].adjustments.*.allocation_concentration.multiply",
         "parameter_type": "scenario_adjustment",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1640,7 +1637,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "uncertainty_model.factors[0].loadings.unmet_rate",
+        "path": "uncertainty_model.factors[0].loadings.modeled_residual_imbalance",
         "parameter_type": "correlation_loading",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1659,7 +1656,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "uncertainty_model.factors[0].loadings.wet_unmet_rate",
+        "path": "uncertainty_model.factors[0].loadings.unserved_station_hour_share",
         "parameter_type": "correlation_loading",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1678,7 +1675,7 @@
         "approved_for_declared_use": true
       },
       {
-        "path": "uncertainty_model.factors[0].loadings.shift_imbalance",
+        "path": "uncertainty_model.factors[0].loadings.allocation_concentration",
         "parameter_type": "correlation_loading",
         "source_id": "portfolio-author-governance-assumptions",
         "citation": "Portfolio author governance register: weights, scales, scenario probabilities, thresholds, and dependence assumptions.",
@@ -1706,88 +1703,88 @@
       "none": "A fixed modeled quantity with no sampled marginal variation."
     },
     "counts": {
-      "none": 0,
-      "parameter": 9,
+      "none": 9,
+      "parameter": 0,
       "process": 0,
       "scenario": 0
     },
     "records": [
       {
-        "path": "alternatives[0].metrics.unmet_rate",
-        "alternative_id": "equal-baseline",
-        "criterion_id": "unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[0].metrics.modeled_residual_imbalance",
+        "alternative_id": "baseline-monitoring-only",
+        "criterion_id": "modeled_residual_imbalance",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[0].metrics.wet_unmet_rate",
-        "alternative_id": "equal-baseline",
-        "criterion_id": "wet_unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[0].metrics.unserved_station_hour_share",
+        "alternative_id": "baseline-monitoring-only",
+        "criterion_id": "unserved_station_hour_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[0].metrics.shift_imbalance",
-        "alternative_id": "equal-baseline",
-        "criterion_id": "shift_imbalance",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[0].metrics.allocation_concentration",
+        "alternative_id": "baseline-monitoring-only",
+        "criterion_id": "allocation_concentration",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[1].metrics.unmet_rate",
-        "alternative_id": "demand-proportional",
-        "criterion_id": "unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[1].metrics.modeled_residual_imbalance",
+        "alternative_id": "top-10-station-hours",
+        "criterion_id": "modeled_residual_imbalance",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[1].metrics.wet_unmet_rate",
-        "alternative_id": "demand-proportional",
-        "criterion_id": "wet_unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[1].metrics.unserved_station_hour_share",
+        "alternative_id": "top-10-station-hours",
+        "criterion_id": "unserved_station_hour_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[1].metrics.shift_imbalance",
-        "alternative_id": "demand-proportional",
-        "criterion_id": "shift_imbalance",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[1].metrics.allocation_concentration",
+        "alternative_id": "top-10-station-hours",
+        "criterion_id": "allocation_concentration",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[2].metrics.unmet_rate",
-        "alternative_id": "robust-optimized",
-        "criterion_id": "unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[2].metrics.modeled_residual_imbalance",
+        "alternative_id": "top-25-station-hours",
+        "criterion_id": "modeled_residual_imbalance",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[2].metrics.wet_unmet_rate",
-        "alternative_id": "robust-optimized",
-        "criterion_id": "wet_unmet_rate",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[2].metrics.unserved_station_hour_share",
+        "alternative_id": "top-25-station-hours",
+        "criterion_id": "unserved_station_hour_share",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       },
       {
-        "path": "alternatives[2].metrics.shift_imbalance",
-        "alternative_id": "robust-optimized",
-        "criterion_id": "shift_imbalance",
-        "distribution": "empirical",
-        "uncertainty_type": "parameter"
+        "path": "alternatives[2].metrics.allocation_concentration",
+        "alternative_id": "top-25-station-hours",
+        "criterion_id": "allocation_concentration",
+        "distribution": "fixed",
+        "uncertainty_type": "none"
       }
     ]
   },
   "evidence": {
     "type": "source-backed exploratory project evidence",
     "decision_use": "exploratory",
-    "as_of": "2026-07-27",
+    "as_of": "2026-08-10",
     "sources": [
-      "Fanaee-T, H. (2013). Bike Sharing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5W894",
+      "Citi Bike. Jersey City trip history, January-December 2021; derived station-hour aggregate.",
       "projects/bike-demand-operations/outputs/results.json"
     ],
     "causal_claim_status": "No causal claim unless explicitly identified in the source design; the decision comparison is exploratory.",
     "limitations": [
-      "System totals do not include station imbalances, travel times, labor rules, or causal service effects.",
+      "Pickups minus returns is an imbalance proxy, not observed stockout demand; modeled residual imbalance is not an achieved service result.",
       "Weights, scales, scenarios, and correlation loadings are analyst judgments without external approval."
     ]
   },

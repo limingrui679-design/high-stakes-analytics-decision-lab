@@ -47,21 +47,21 @@
 <text x="54.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
 <text x="54.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Short Baseline</text>
 <rect x="54.0" y="229.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="54.0" y="229.0" width="379.3" height="8.0" rx="4.0" fill="#7257D9"/>
-<text x="573.0" y="237.0" class="mono" text-anchor="end">0.802</text>
+<rect x="54.0" y="229.0" width="378.9" height="8.0" rx="4.0" fill="#7257D9"/>
+<text x="573.0" y="237.0" class="mono" text-anchor="end">0.801</text>
 <text x="573.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#7257D9">WINNER</text>
 <text x="54.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Intermediate</text>
 <rect x="54.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="54.0" y="273.0" width="365.4" height="8.0" rx="4.0" fill="#246BFD"/>
-<text x="573.0" y="281.0" class="mono" text-anchor="end">0.773</text>
+<rect x="54.0" y="273.0" width="365.1" height="8.0" rx="4.0" fill="#246BFD"/>
+<text x="573.0" y="281.0" class="mono" text-anchor="end">0.772</text>
 <text x="54.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Barbell</text>
 <rect x="54.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="54.0" y="317.0" width="363.2" height="8.0" rx="4.0" fill="#008C82"/>
-<text x="573.0" y="325.0" class="mono" text-anchor="end">0.768</text>
+<rect x="54.0" y="317.0" width="363.6" height="8.0" rx="4.0" fill="#008C82"/>
+<text x="573.0" y="325.0" class="mono" text-anchor="end">0.769</text>
 <text x="54.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Long Duration</text>
 <rect x="54.0" y="361.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="54.0" y="361.0" width="346.4" height="8.0" rx="4.0" fill="#C69214"/>
-<text x="573.0" y="369.0" class="mono" text-anchor="end">0.732</text>
+<rect x="54.0" y="361.0" width="346.5" height="8.0" rx="4.0" fill="#C69214"/>
+<text x="573.0" y="369.0" class="mono" text-anchor="end">0.733</text>
 <rect x="611.0" y="142.0" width="555.0" height="288.0" rx="16" fill="#07152A" opacity=".055"/><rect x="609.0" y="136.0" width="555.0" height="288.0" rx="16" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <text x="627.0" y="164.0" class="section" text-anchor="start">Adverse transfer to a new setting</text>
 <rect x="1062.0" y="149.0" width="84.0" height="28.0" rx="14" fill="#0B1F3A" stroke="none" stroke-width="1"/>
@@ -69,20 +69,20 @@
 <text x="627.0" y="191.0" class="small" text-anchor="start">Risk-adjusted value · common 0–1 scale</text>
 <text x="627.0" y="219.0" class="small" text-anchor="start" style="fill:#0B1324">Short Baseline</text>
 <rect x="627.0" y="229.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="627.0" y="229.0" width="376.8" height="8.0" rx="4.0" fill="#7257D9"/>
-<text x="1146.0" y="237.0" class="mono" text-anchor="end">0.797</text>
+<rect x="627.0" y="229.0" width="376.6" height="8.0" rx="4.0" fill="#7257D9"/>
+<text x="1146.0" y="237.0" class="mono" text-anchor="end">0.796</text>
 <text x="1146.0" y="219.0" class="eyebrow" text-anchor="end" style="fill:#7257D9">WINNER</text>
 <text x="627.0" y="263.0" class="small" text-anchor="start" style="fill:#617084">Intermediate</text>
 <rect x="627.0" y="273.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="627.0" y="273.0" width="362.8" height="8.0" rx="4.0" fill="#246BFD"/>
+<rect x="627.0" y="273.0" width="362.7" height="8.0" rx="4.0" fill="#246BFD"/>
 <text x="1146.0" y="281.0" class="mono" text-anchor="end">0.767</text>
 <text x="627.0" y="307.0" class="small" text-anchor="start" style="fill:#617084">Barbell</text>
 <rect x="627.0" y="317.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="627.0" y="317.0" width="360.8" height="8.0" rx="4.0" fill="#008C82"/>
+<rect x="627.0" y="317.0" width="361.1" height="8.0" rx="4.0" fill="#008C82"/>
 <text x="1146.0" y="325.0" class="mono" text-anchor="end">0.763</text>
 <text x="627.0" y="351.0" class="small" text-anchor="start" style="fill:#617084">Long Duration</text>
 <rect x="627.0" y="361.0" width="473.0" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="627.0" y="361.0" width="343.0" height="8.0" rx="4.0" fill="#C69214"/>
+<rect x="627.0" y="361.0" width="342.8" height="8.0" rx="4.0" fill="#C69214"/>
 <text x="1146.0" y="369.0" class="mono" text-anchor="end">0.725</text>
 <line x1="36" y1="448.0" x2="1164" y2="448.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="470.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

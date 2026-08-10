@@ -43,8 +43,8 @@
 <rect x="38.0" y="140.0" width="322.0" height="270.0" rx="18" fill="#07152A" opacity=".055"/><rect x="36.0" y="134.0" width="322.0" height="270.0" rx="18" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
 <circle cx="197.0" cy="242.0" r="72.0" fill="none" stroke="#DCE4ED" stroke-width="16"/>
 <circle cx="197.0" cy="242.0" r="56.0" fill="none" stroke="#D9E2EC" stroke-width="1" opacity=".8"/>
-<circle cx="197.0" cy="242.0" r="72.0" fill="none" stroke="#D85B43" stroke-width="16" stroke-linecap="round" stroke-dasharray="431.4 452.4" transform="rotate(-90 197.0 242.0)"/>
-<text x="197.0" y="239.0" class="display" text-anchor="middle">95</text>
+<circle cx="197.0" cy="242.0" r="72.0" fill="none" stroke="#D85B43" stroke-width="16" stroke-linecap="round" stroke-dasharray="432.8 452.4" transform="rotate(-90 197.0 242.0)"/>
+<text x="197.0" y="239.0" class="display" text-anchor="middle">96</text>
 <text x="197.0" y="261.0" class="eyebrow" text-anchor="middle">OF 100</text>
 <rect x="77.0" y="334.0" width="240.0" height="28.0" rx="14" fill="#FBE7E7" stroke="none" stroke-width="1"/>
 <text x="197.0" y="353.0" class="pill" text-anchor="middle" style="fill:#B33A3A">Provisional—validate before action</text>
@@ -53,9 +53,9 @@
 <text x="402.0" y="161.0" class="section" text-anchor="start">P(best among feasible)</text>
 <text x="402.0" y="181.0" class="small" text-anchor="start">How often this option leads</text>
 <rect x="690.0" y="162.0" width="320.0" height="10.0" rx="5.0" fill="#E8EDF3"/>
-<rect x="690.0" y="162.0" width="270.4" height="10.0" rx="5.0" fill="#D85B43"/>
+<rect x="690.0" y="162.0" width="273.8" height="10.0" rx="5.0" fill="#D85B43"/>
 <line x1="930.0" y1="158.0" x2="930.0" y2="176.0" stroke="#0B1324" stroke-width="1.5"/>
-<text x="1030.0" y="167.0" class="value" text-anchor="start">84%</text>
+<text x="1030.0" y="167.0" class="value" text-anchor="start">86%</text>
 <rect x="1083.0" y="153.0" width="62.0" height="28.0" rx="14" fill="#FCE7E2" stroke="none" stroke-width="1"/>
 <text x="1114.0" y="172.0" class="pill" text-anchor="middle" style="fill:#D85B43">w 30%</text>
 <rect x="382.0" y="206.0" width="782.0" height="58.0" rx="12" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>

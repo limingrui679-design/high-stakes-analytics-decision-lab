@@ -1,0 +1,19 @@
+{
+  "project_id": "wildfire-mitigation-under-uncertainty",
+  "analysis_seed": 20260810,
+  "parameters": {
+    "history_start": 2000,
+    "recent_start": 2020,
+    "recent_end": 2024,
+    "tail_quantile": 0.9
+  },
+  "parameter_register": [
+    {
+      "parameter": "history_start/recent_start/recent_end/tail_quantile",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "No fires-prevented or acres-prevented estimate; mitigation action blocked pending effectiveness and feasibility evidence."
+    }
+  ]
+}

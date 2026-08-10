@@ -41,53 +41,53 @@
 <line x1="1065" y1="58" x2="1185" y2="58" stroke="#49627F" stroke-width="1"/>
 <line x1="1125" y1="5" x2="1125" y2="111" stroke="#49627F" stroke-width="1"/>
 <rect x="279.0" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
-<text x="424.3" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Unmet demand</text>
+<text x="424.3" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Modeled residual imbalance</text>
 <text x="424.3" y="174.0" class="small" text-anchor="middle">weight 45%</text>
 <rect x="575.7" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
-<text x="721.0" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Wet-day unmet demand</text>
+<text x="721.0" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Station-hours with residual imbalance</text>
 <text x="721.0" y="174.0" class="small" text-anchor="middle">weight 35%</text>
 <rect x="872.3" y="128.0" width="288.7" height="42.0" rx="8" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="1"/>
-<text x="1017.7" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Shift imbalance</text>
+<text x="1017.7" y="145.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">Allocation concentration</text>
 <text x="1017.7" y="174.0" class="small" text-anchor="middle">weight 20%</text>
 <rect x="30.0" y="180.0" width="1134.0" height="68.0" rx="10" fill="#E8F2DF" stroke="#4E7D32" stroke-width="2"/>
-<text x="48.0" y="209.0" class="section" text-anchor="start">Robust Optimized</text>
+<text x="48.0" y="209.0" class="section" text-anchor="start">Top 25 Station Hours</text>
 <rect x="48.0" y="218.0" width="82.0" height="28.0" rx="14" fill="#4E7D32" stroke="none" stroke-width="1"/>
 <text x="89.0" y="237.0" class="pill" text-anchor="middle" style="fill:#FFFFFF">PREFERRED</text>
-<text x="290.0" y="206.0" class="value" text-anchor="start">58</text>
+<text x="290.0" y="206.0" class="value" text-anchor="start">14</text>
 <rect x="290.0" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="219.0" width="153.9" height="8.0" rx="4.0" fill="#4E7D32"/>
-<text x="290.0" y="241.0" class="small" text-anchor="start">mid-range</text>
-<text x="586.7" y="206.0" class="value" text-anchor="start">67</text>
+<rect x="290.0" y="219.0" width="36.2" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="290.0" y="241.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="206.0" class="value" text-anchor="start">54</text>
 <rect x="586.7" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="219.0" width="177.9" height="8.0" rx="4.0" fill="#4E7D32"/>
-<text x="586.7" y="241.0" class="small" text-anchor="start">higher value</text>
-<text x="883.3" y="206.0" class="value" text-anchor="start">56</text>
+<rect x="586.7" y="219.0" width="144.0" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="586.7" y="241.0" class="small" text-anchor="start">mid-range</text>
+<text x="883.3" y="206.0" class="value" text-anchor="start">96</text>
 <rect x="883.3" y="219.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="219.0" width="147.7" height="8.0" rx="4.0" fill="#4E7D32"/>
-<text x="883.3" y="241.0" class="small" text-anchor="start">mid-range</text>
+<rect x="883.3" y="219.0" width="253.0" height="8.0" rx="4.0" fill="#4E7D32"/>
+<text x="883.3" y="241.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="256.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="48.0" y="285.0" class="label" text-anchor="start">Demand Proportional</text>
-<text x="290.0" y="282.0" class="value" text-anchor="start">56</text>
+<text x="48.0" y="285.0" class="label" text-anchor="start">Top 10 Station Hours</text>
+<text x="290.0" y="282.0" class="value" text-anchor="start">6</text>
 <rect x="290.0" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="295.0" width="148.1" height="8.0" rx="4.0" fill="#263449"/>
-<text x="290.0" y="317.0" class="small" text-anchor="start">mid-range</text>
-<text x="586.7" y="282.0" class="value" text-anchor="start">66</text>
+<rect x="290.0" y="295.0" width="17.0" height="8.0" rx="4.0" fill="#263449"/>
+<text x="290.0" y="317.0" class="small" text-anchor="start">trade-off</text>
+<text x="586.7" y="282.0" class="value" text-anchor="start">54</text>
 <rect x="586.7" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="295.0" width="173.8" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="295.0" width="142.0" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="317.0" class="small" text-anchor="start">mid-range</text>
-<text x="883.3" y="282.0" class="value" text-anchor="start">63</text>
+<text x="883.3" y="282.0" class="value" text-anchor="start">89</text>
 <rect x="883.3" y="295.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="883.3" y="295.0" width="165.7" height="8.0" rx="4.0" fill="#263449"/>
-<text x="883.3" y="317.0" class="small" text-anchor="start">mid-range</text>
+<rect x="883.3" y="295.0" width="236.4" height="8.0" rx="4.0" fill="#263449"/>
+<text x="883.3" y="317.0" class="small" text-anchor="start">higher value</text>
 <rect x="30.0" y="332.0" width="1134.0" height="68.0" rx="10" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="48.0" y="361.0" class="label" text-anchor="start">Equal Baseline</text>
-<text x="290.0" y="358.0" class="value" text-anchor="start">35</text>
+<text x="48.0" y="361.0" class="label" text-anchor="start">Baseline: Monitoring Only</text>
+<text x="290.0" y="358.0" class="value" text-anchor="start">0</text>
 <rect x="290.0" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="290.0" y="371.0" width="91.5" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="290.0" y="371.0" width="0.0" height="8.0" rx="4.0" fill="#263449"/>
 <text x="290.0" y="393.0" class="small" text-anchor="start">trade-off</text>
-<text x="586.7" y="358.0" class="value" text-anchor="start">46</text>
+<text x="586.7" y="358.0" class="value" text-anchor="start">53</text>
 <rect x="586.7" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>
-<rect x="586.7" y="371.0" width="120.7" height="8.0" rx="4.0" fill="#263449"/>
+<rect x="586.7" y="371.0" width="140.5" height="8.0" rx="4.0" fill="#263449"/>
 <text x="586.7" y="393.0" class="small" text-anchor="start">mid-range</text>
 <text x="883.3" y="358.0" class="value" text-anchor="start">100</text>
 <rect x="883.3" y="371.0" width="264.7" height="8.0" rx="4.0" fill="#E8EDF3"/>

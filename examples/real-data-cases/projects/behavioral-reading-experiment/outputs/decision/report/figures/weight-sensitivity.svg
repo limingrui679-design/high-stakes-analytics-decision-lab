@@ -49,60 +49,60 @@
 <text x="76.0" y="210.0" class="label" text-anchor="start">↓ Standardized group</text>
 <text x="76.0" y="225.0" class="label" text-anchor="start">separation</text>
 <rect x="311.0" y="194.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.570</text>
+<text x="449.3" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.572</text>
 <text x="583.7" y="206.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="194.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.554</text>
+<text x="736.0" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.555</text>
 <rect x="884.3" y="194.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.369</text>
+<text x="1022.7" y="220.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.368</text>
 <text x="48.0" y="274.0" class="section" text-anchor="start" style="fill:#C69214">↑</text>
 <text x="76.0" y="272.0" class="label" text-anchor="start">↑ Standardized group</text>
 <text x="76.0" y="287.0" class="label" text-anchor="start">separation</text>
 <rect x="311.0" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.426</text>
+<text x="449.3" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.428</text>
 <rect x="597.7" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
-<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.430</text>
+<text x="736.0" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.432</text>
 <text x="870.3" y="268.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="256.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.331</text>
+<text x="1022.7" y="282.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.329</text>
 <rect x="30.0" y="309.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="336.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="334.0" class="label" text-anchor="start">↓ Assessment burden</text>
 <rect x="311.0" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.464</text>
+<text x="449.3" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.466</text>
 <rect x="597.7" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
-<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.465</text>
+<text x="736.0" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.467</text>
 <text x="870.3" y="330.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="884.3" y="318.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.363</text>
+<text x="1022.7" y="344.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.361</text>
 <text x="48.0" y="398.0" class="section" text-anchor="start" style="fill:#C69214">↑</text>
 <text x="76.0" y="396.0" class="label" text-anchor="start">↑ Assessment burden</text>
 <rect x="311.0" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.542</text>
+<text x="449.3" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.544</text>
 <text x="583.7" y="392.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.526</text>
+<text x="736.0" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.528</text>
 <rect x="884.3" y="380.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.336</text>
+<text x="1022.7" y="406.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.335</text>
 <rect x="30.0" y="433.0" width="1134.0" height="60.0" rx="8" fill="#FFFFFF" stroke="none" stroke-width="1"/>
 <text x="48.0" y="460.0" class="section" text-anchor="start" style="fill:#D85B43">↓</text>
 <text x="76.0" y="458.0" class="label" text-anchor="start">↓ Measurement stability</text>
 <rect x="311.0" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.469</text>
+<text x="449.3" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.471</text>
 <text x="583.7" y="454.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.465</text>
+<text x="736.0" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.466</text>
 <rect x="884.3" y="442.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.321</text>
+<text x="1022.7" y="468.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.320</text>
 <text x="48.0" y="522.0" class="section" text-anchor="start" style="fill:#C69214">↑</text>
 <text x="76.0" y="520.0" class="label" text-anchor="start">↑ Measurement stability</text>
 <rect x="311.0" y="504.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#C69214" stroke-width="3"/>
-<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.537</text>
+<text x="449.3" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.538</text>
 <text x="583.7" y="516.0" class="small" text-anchor="end" style="fill:#C69214">◆</text>
 <rect x="597.7" y="504.0" width="276.7" height="42.0" rx="7" fill="#FFF2C7" stroke="#D9E2EC" stroke-width="1"/>
-<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.528</text>
+<text x="736.0" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.529</text>
 <rect x="884.3" y="504.0" width="276.7" height="42.0" rx="7" fill="#FFFFFF" stroke="#D9E2EC" stroke-width="1"/>
-<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.387</text>
+<text x="1022.7" y="530.0" class="mono" text-anchor="middle" style="fill:#0B1324">0.385</text>
 <text x="48.0" y="584.0" class="small" text-anchor="start">◆ gold outline = winner after one two-sided value-weight stress; numbers remain directly readable</text>
 <line x1="36" y1="576.0" x2="1164" y2="576.0" stroke="#D9E2EC" stroke-width="1"/>
 <text x="42.0" y="598.0" class="footnote" text-anchor="start">Source: decision-results.json</text>

@@ -1,0 +1,19 @@
+{
+  "project_id": "nhanes-population-transportability",
+  "source_id": "cdc-nhanes-2011-2016-linked-mortality",
+  "verified_at": "2026-08-10T20:55:55.894979+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/nhanes-36-month-mortality-cohorts.csv",
+      "sha256": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad",
+      "bytes": 625921
+    },
+    {
+      "path": "data/raw/nhanes-36-month-mortality-cohorts.source-lock.json",
+      "sha256": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358",
+      "bytes": 1098
+    }
+  ]
+}

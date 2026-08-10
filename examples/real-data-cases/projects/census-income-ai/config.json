@@ -1,15 +1,28 @@
 {
   "project_id": "census-income-ai",
-  "analysis_seed": 20260727,
+  "analysis_seed": 20260810,
   "parameters": {
-    "decision_threshold": 0.5,
-    "calibration_bins": 10,
-    "train_split": "adult.data",
-    "test_split": "adult.test"
+    "development_year": 2019,
+    "test_year": 2023,
+    "model_fields": [
+      "age_band",
+      "education_band",
+      "worker_class",
+      "puma"
+    ],
+    "audit_only_fields": [
+      "sex",
+      "race",
+      "hispanic_origin"
+    ]
   },
   "parameter_register": [
-    {"parameter": "train_split/test_split", "source_id": "uci-source-split", "status": "source supplied", "approved_by": "repository author verification", "boundary": "Final metrics use only the held-out test split."},
-    {"parameter": "decision_threshold", "source_id": "analysis-protocol", "status": "benchmark convention", "approved_by": "repository author self-review", "boundary": "Not optimized for or authorized in any real decision."},
-    {"parameter": "calibration_bins", "source_id": "analysis-protocol", "status": "diagnostic choice", "approved_by": "repository author self-review", "boundary": "Bins with no observations are omitted."}
+    {
+      "parameter": "development_year/test_year/model_fields/audit_only_fields",
+      "source_id": "case-specific-analysis-protocol",
+      "status": "pre-specified exploratory design",
+      "approved_by": "repository author self-review",
+      "boundary": "No eligibility, hiring, credit, benefits, or other consequential action."
+    }
   ]
 }

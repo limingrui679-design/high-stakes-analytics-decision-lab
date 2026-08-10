@@ -1,0 +1,14 @@
+{
+  "project_id": "wildfire-mitigation-under-uncertainty",
+  "source_id": "calfire-historic-fire-perimeters-2000-2025",
+  "verified_at": "2026-08-10T20:55:49.785065+08:00",
+  "refresh_requested": false,
+  "status": "verified",
+  "files": [
+    {
+      "path": "data/raw/calfire-fire-perimeters-2000-2025.csv",
+      "sha256": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75",
+      "bytes": 700703
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "project_id": "cross-city-311-shift",
+  "data": {
+    "rows": 8760,
+    "cities": [
+      "Chicago",
+      "New York City"
+    ],
+    "years": [
+      2022,
+      2023
+    ]
+  },
+  "study_design": {
+    "design": "cross-city administrative distribution-shift audit",
+    "ontology": "versioned keyword mapping with unmatched `other`",
+    "claim_class": "descriptive transportability diagnostic"
+  },
+  "within_city_shift": {
+    "Chicago": {
+      "total_variation": 0.026399969108975043,
+      "jensen_shannon_bits": 0.0008498832762583713
+    },
+    "New York City": {
+      "total_variation": 0.051342141467965674,
+      "jensen_shannon_bits": 0.002356284332449124
+    }
+  },
+  "cross_city_2023": {
+    "total_variation": 0.5809894923709942,
+    "jensen_shannon_bits": 0.39774093584460923
+  },
+  "ontology_coverage": {
+    "Chicago": 0.9694785371662917,
+    "New York City": 0.525995876234951
+  },
+  "transfer_gate": {
+    "threshold": 0.2,
+    "passes": false,
+    "status": "transfer_refused",
+    "reversal_conditions": [
+      "The two cities adopt a harmonized service taxonomy.",
+      "A reviewed crosswalk materially reduces the measured distance.",
+      "A local validation period supports stable transfer."
+    ]
+  },
+  "headline_metrics": [
+    "Cross-city 2023 total-variation distance: 58.1%",
+    "Chicago mapped share: 96.9%",
+    "New York mapped share: 52.6%",
+    "Transfer gate: refused"
+  ],
+  "provenance": {
+    "source_id": "chicago-nyc-311-2022-2023",
+    "citation": "City of Chicago and City of New York. Daily source-category aggregates, 2022-2023.",
+    "version": "Daily source-category aggregates, 2022-2023",
+    "license": "Municipal open-data terms",
+    "accessed_at": "2026-08-10",
+    "raw_sha256": {
+      "cross-city-311-daily.csv": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
+    },
+    "config_sha256": "02307200fcb3040f46cdee907a3bf4277fe383f74d705d5bdd544a5875daca2e"
+  },
+  "parameter_register": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20260810,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is chicago-nyc-311-2022-2023.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.baseline_year",
+      "label": "baseline year",
+      "value_or_distribution": 2022,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for baseline_year; source dataset is chicago-nyc-311-2022-2023.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Administrative shift audit only; requests are not latent need or service quality."
+    },
+    {
+      "parameter_path": "config.parameters.comparison_year",
+      "label": "comparison year",
+      "value_or_distribution": 2023,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for comparison_year; source dataset is chicago-nyc-311-2022-2023.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Administrative shift audit only; requests are not latent need or service quality."
+    },
+    {
+      "parameter_path": "config.parameters.maximum_transfer_total_variation",
+      "label": "maximum transfer total variation",
+      "value_or_distribution": 0.2,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "case-specific-analysis-protocol",
+      "source_fact": "Registered project configuration for maximum_transfer_total_variation; source dataset is chicago-nyc-311-2022-2023.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-07-27",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-07-27",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Administrative shift audit only; requests are not latent need or service quality."
+    }
+  ]
+}

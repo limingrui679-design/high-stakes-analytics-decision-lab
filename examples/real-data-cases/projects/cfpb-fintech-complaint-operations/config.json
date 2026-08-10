@@ -10,7 +10,8 @@
     "bootstrap_block_days": 7,
     "permutation_samples": 500,
     "minimum_deployment_auc": 0.65,
-    "minimum_deployment_lift": 1.2
+    "minimum_deployment_lift": 1.2,
+    "workflow_delay_hours": 24
   },
   "parameter_register": [
     {
@@ -54,6 +55,13 @@
       "status": "observed operational outcome",
       "approved_by": "repository author self-review",
       "boundary": "A timely-response flag is not a measure of complaint merit, consumer harm, resolution quality, or regulatory compliance."
+    },
+    {
+      "parameter": "workflow_delay_hours",
+      "source_id": "analyst-workflow-monitoring-scenario",
+      "status": "scenario assumption",
+      "approved_by": "repository author self-review",
+      "boundary": "The 24-hour marker is an illustrative monitoring lane, not a CFPB service-level requirement or evidence of untimely company response."
     }
   ]
 }

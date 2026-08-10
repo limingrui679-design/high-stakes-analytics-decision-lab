@@ -1,4 +1,4 @@
-# R6A · Treasury Yield-Curve Portfolio Risk Engineering
+# R6A · Treasury Curve and Tail-Risk Decision Engine
 
 **Portfolio role:** financial analytics, FinTech, risk management, and decision analysis  
 **Decision boundary:** historical risk-engineering demonstration—not investment advice, a tradable backtest, or a return forecast.

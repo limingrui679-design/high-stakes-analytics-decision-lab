@@ -1,0 +1,29 @@
+{
+  "project_id": "cross-city-311-shift",
+  "charts": [
+    {
+      "path": "figures/monthly-requests.svg",
+      "question": "Monthly request volumes",
+      "supported_finding": "Observed intake patterns preserve city labels.",
+      "interpretation_boundary": "Counts do not measure service quality.",
+      "source_id": "chicago-nyc-311-2022-2023",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/service-mix-2023.svg",
+      "question": "Cross-city service mix",
+      "supported_finding": "Unmatched categories stay visible as other.",
+      "interpretation_boundary": "Local taxonomies are not equivalent.",
+      "source_id": "chicago-nyc-311-2022-2023",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    },
+    {
+      "path": "figures/within-city-shift.svg",
+      "question": "Within-city shift",
+      "supported_finding": "Each city is first compared with itself over time.",
+      "interpretation_boundary": "Administrative shift is not latent-need change.",
+      "source_id": "chicago-nyc-311-2022-2023",
+      "palette_policy": "single-root preferred; non-color labels retained"
+    }
+  ]
+}

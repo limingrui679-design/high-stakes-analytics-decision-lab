@@ -2,11 +2,11 @@
   "metadata": {
     "engine": "high-stakes-analytics-decision-lab",
     "engine_version": "7.0.0",
-    "generated_at": "2026-07-30T18:37:23.828612+00:00",
+    "generated_at": "2026-08-10T12:57:23.308221+00:00",
     "case_id": "real-behavioral-reading-experiment",
     "case_hash_sha256": "a6ddb1ff59e3b854a0fbf35e06aa6ff7f7ea625ca7d8ce9891fe79f8037fbb1e",
-    "samples": 10000,
-    "seed": 20260726,
+    "samples": 3000,
+    "seed": 20260810,
     "warnings": [],
     "sampling_design": "Stratified scenario allocation with a declared latent-factor Gaussian copula, shared shocks across alternatives, marginal-preserving inverse transforms, and matched independent/correlation-stress counterfactuals."
   },
@@ -38,14 +38,14 @@
       "combined-protocol"
     ],
     "probability_best_scope": "decision-feasible alternatives",
-    "utility_margin": 0.006210674190141929,
+    "utility_margin": 0.0068264670136389816,
     "weight_sensitivity_stability": 0.6666666666666666,
     "scenario_stability_probability_weighted": 1.0,
     "scenario_stability_count": 1.0,
-    "robustness_score": 77.00266666666667,
+    "robustness_score": 76.82666666666667,
     "robustness_components": {
       "probability_best": {
-        "value": 0.5112,
+        "value": 0.5053333333333333,
         "weight": 0.3
       },
       "weight_stability": {
@@ -177,14 +177,14 @@
       "alternative_id": "baseline-meaningful-only",
       "label": "Baseline: Meaningful Only",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5151557990585057,
-      "utility_p05": 0.45543990722668,
-      "utility_p95": 0.5941390169488333,
-      "cvar10": 0.4533786061702872,
-      "risk_adjusted_utility": 0.4997115008364511,
-      "value_score": 49.971150083645114,
+      "expected_utility": 0.5171288387069424,
+      "utility_p05": 0.4571482781934533,
+      "utility_p95": 0.5945043776178333,
+      "cvar10": 0.4548680437969303,
+      "risk_adjusted_utility": 0.5015636399794393,
+      "value_score": 50.156363997943934,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -196,54 +196,54 @@
         "group_separation": {
           "label": "Standardized group separation",
           "unit": "standardized difference",
-          "mean": 0.24661713359139953,
-          "normalized_score": 0.12330856679569976,
+          "mean": 0.254700737451734,
+          "normalized_score": 0.127350368725867,
           "scale_clipping_rate": 0.0,
-          "p05": 0.02417863,
-          "p95": 0.57929435
+          "p05": 0.024744807599999998,
+          "p95": 0.58096257
         },
         "mean_fixation_duration": {
           "label": "Assessment burden",
           "unit": "mean fixation duration",
-          "mean": 226.6799219377906,
-          "normalized_score": 0.8296001734715684,
+          "mean": 226.5855277001478,
+          "normalized_score": 0.8298099384441185,
           "scale_clipping_rate": 0.0,
           "p05": 215.65070175,
-          "p95": 244.12092631920004
+          "p95": 244.24901052840002
         },
         "measurement_stability": {
           "label": "Measurement stability",
           "unit": "index",
-          "mean": 0.843147567835876,
-          "normalized_score": 0.843147567835876,
+          "mean": 0.8435127649882654,
+          "normalized_score": 0.8435127649882654,
           "scale_clipping_rate": 0.0,
           "p05": 0.7767424944000001,
-          "p95": 0.88977055
+          "p95": 0.89075701
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5234528594385817,
-          "p05": 0.46913238228166665,
-          "p95": 0.6023266759170001,
-          "cvar10": 0.4683720917407294,
-          "risk_adjusted_utility": 0.5096826675141186,
-          "sample_count": 7500
+          "mean": 0.5253910474093982,
+          "p05": 0.4704132497021667,
+          "p95": 0.6010381184033333,
+          "cvar10": 0.46976585750460753,
+          "risk_adjusted_utility": 0.5114847499332006,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.4902646179182771,
-          "p05": 0.43997705026716,
-          "p95": 0.5626387159372599,
-          "cvar10": 0.43902625034865767,
-          "risk_adjusted_utility": 0.4774550260258722,
-          "sample_count": 2500
+          "mean": 0.4923422125995698,
+          "p05": 0.4418202482508,
+          "p95": 0.5693511497416399,
+          "cvar10": 0.44087293002425054,
+          "risk_adjusted_utility": 0.47947489195574,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.5112,
-      "probability_best_unconstrained": 0.5112,
+      "probability_best": 0.5053333333333333,
+      "probability_best_unconstrained": 0.5053333333333333,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -251,14 +251,14 @@
       "alternative_id": "pseudoword-only",
       "label": "Pseudoword Only",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.5150516497787901,
-      "utility_p05": 0.43251136320152,
-      "utility_p95": 0.6173946072861667,
-      "cvar10": 0.4288483572488663,
-      "risk_adjusted_utility": 0.4935008266463092,
-      "value_score": 49.35008266463092,
+      "expected_utility": 0.516653714761837,
+      "utility_p05": 0.4323175372351,
+      "utility_p95": 0.6149772475428866,
+      "cvar10": 0.4289875475776905,
+      "risk_adjusted_utility": 0.49473717296580033,
+      "value_score": 49.473717296580034,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -270,8 +270,8 @@
         "group_separation": {
           "label": "Standardized group separation",
           "unit": "standardized difference",
-          "mean": 0.38240779309204015,
-          "normalized_score": 0.19120389654602007,
+          "mean": 0.38945720596186706,
+          "normalized_score": 0.19472860298093353,
           "scale_clipping_rate": 0.0,
           "p05": 0.03012251,
           "p95": 0.81543836
@@ -279,45 +279,45 @@
         "mean_fixation_duration": {
           "label": "Assessment burden",
           "unit": "mean fixation duration",
-          "mean": 261.8141695945555,
-          "normalized_score": 0.751524067567656,
+          "mean": 261.76044828087277,
+          "normalized_score": 0.7516434482647266,
           "scale_clipping_rate": 0.0,
           "p05": 248.05438596,
-          "p95": 282.6179999964
+          "p95": 282.5145473688
         },
         "measurement_stability": {
           "label": "Measurement stability",
           "unit": "index",
-          "mean": 0.8142107042511169,
-          "normalized_score": 0.8142107042511169,
+          "mean": 0.8141312357639987,
+          "normalized_score": 0.8141312357639987,
           "scale_clipping_rate": 0.0,
-          "p05": 0.747995374,
-          "p95": 0.8662617699999999
+          "p05": 0.7466751832,
+          "p95": 0.86771965
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.5239368681841697,
-          "p05": 0.44199644883033334,
-          "p95": 0.6231620288568332,
-          "cvar10": 0.4411231848836804,
-          "risk_adjusted_utility": 0.5032334473590474,
-          "sample_count": 7500
+          "mean": 0.5256560428418056,
+          "p05": 0.4419071492215,
+          "p95": 0.620557509924333,
+          "cvar10": 0.4421032356941631,
+          "risk_adjusted_utility": 0.5047678410548949,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.4883959945626436,
-          "p05": 0.4127036997835599,
-          "p95": 0.57640538900516,
-          "cvar10": 0.4113226196600484,
-          "risk_adjusted_utility": 0.4691276508369948,
-          "sample_count": 2500
+          "mean": 0.4896467305219347,
+          "p05": 0.41305834319354,
+          "p95": 0.57950983485126,
+          "cvar10": 0.4111417085195305,
+          "risk_adjusted_utility": 0.47002047502133365,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.4754,
-      "probability_best_unconstrained": 0.4754,
+      "probability_best": 0.487,
+      "probability_best_unconstrained": 0.487,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     },
@@ -325,14 +325,14 @@
       "alternative_id": "combined-protocol",
       "label": "Combined Protocol",
       "description": "Candidate derived from the source-backed project output.",
-      "expected_utility": 0.37886257232158466,
-      "utility_p05": 0.2704006493043,
-      "utility_p95": 0.4891770530349997,
-      "cvar10": 0.2662650173758335,
-      "risk_adjusted_utility": 0.35071318358514686,
-      "value_score": 35.07131835851469,
+      "expected_utility": 0.3772612425084961,
+      "utility_p05": 0.27015635400733334,
+      "utility_p95": 0.4832680584001666,
+      "cvar10": 0.2649866156464307,
+      "risk_adjusted_utility": 0.34919258579297974,
+      "value_score": 34.919258579297974,
       "constraint_violation_count": 0,
-      "constraint_sample_count": 10000,
+      "constraint_sample_count": 3000,
       "constraint_violation_rate": 0.0,
       "constraint_violation_rate_upper_95": 0.0,
       "constraint_support_status": "declared_support_excludes_breach",
@@ -344,54 +344,54 @@
         "group_separation": {
           "label": "Standardized group separation",
           "unit": "standardized difference",
-          "mean": 0.5977718760729622,
-          "normalized_score": 0.2988859380364811,
+          "mean": 0.5915097950196002,
+          "normalized_score": 0.2957548975098001,
           "scale_clipping_rate": 0.0,
           "p05": 0.15700334,
-          "p95": 1.05437448
+          "p95": 1.05045084
         },
         "mean_fixation_duration": {
           "label": "Assessment burden",
           "unit": "mean fixation duration",
-          "mean": 488.3621938532718,
-          "normalized_score": 0.24808401365940166,
+          "mean": 488.45305033462137,
+          "normalized_score": 0.2478821103675073,
           "scale_clipping_rate": 0.0,
-          "p05": 464.44578947,
-          "p95": 528.1399326311999
+          "p05": 464.39473684,
+          "p95": 528.1347789468
         },
         "measurement_stability": {
           "label": "Measurement stability",
           "unit": "index",
-          "mean": 0.6797547844294061,
-          "normalized_score": 0.6797547844294061,
+          "mean": 0.679227622075335,
+          "normalized_score": 0.679227622075335,
           "scale_clipping_rate": 0.0,
-          "p05": 0.6157057864,
+          "p05": 0.6171303144,
           "p95": 0.72865994
         }
       },
       "scenario_utility": {
         "observed-evidence": {
           "label": "Observed evidence base",
-          "mean": 0.39127108229457336,
-          "p05": 0.2859125537418333,
-          "p95": 0.4975536051233332,
-          "cvar10": 0.2827932865359065,
-          "risk_adjusted_utility": 0.36415163335490663,
-          "sample_count": 7500
+          "mean": 0.3897973602100956,
+          "p05": 0.2864620615465,
+          "p95": 0.49272131157749965,
+          "cvar10": 0.28297559186376303,
+          "risk_adjusted_utility": 0.36309191812351244,
+          "sample_count": 2250
         },
         "adverse-transfer": {
           "label": "Adverse transfer to a new setting",
-          "mean": 0.34163704240262377,
-          "p05": 0.24544986997386004,
-          "p95": 0.44187405588352,
-          "cvar10": 0.2406954684083583,
-          "risk_adjusted_utility": 0.3164016489040574,
-          "sample_count": 2500
+          "mean": 0.33965288940369726,
+          "p05": 0.24039962755173996,
+          "p95": 0.43080347070273994,
+          "cvar10": 0.2358296611858134,
+          "risk_adjusted_utility": 0.3136970823492263,
+          "sample_count": 750
         }
       },
       "group_impacts": {},
-      "probability_best": 0.0134,
-      "probability_best_unconstrained": 0.0134,
+      "probability_best": 0.007666666666666666,
+      "probability_best_unconstrained": 0.007666666666666666,
       "pareto_efficient": true,
       "pareto_efficient_unconstrained": true
     }
@@ -404,25 +404,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-meaningful-only",
       "scores": {
-        "baseline-meaningful-only": 0.5701396669093086,
-        "pseudoword-only": 0.5537341331976794,
-        "combined-protocol": 0.36912629387177515
+        "baseline-meaningful-only": 0.5716768441305238,
+        "pseudoword-only": 0.5547729837953469,
+        "combined-protocol": 0.367790072105186
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5843053106342962,
-          "cvar10": 0.527642735734346,
-          "risk_adjusted_utility": 0.5701396669093086
+          "expected_utility": 0.5859132745859553,
+          "cvar10": 0.5289675527642292,
+          "risk_adjusted_utility": 0.5716768441305238
         },
         "pseudoword-only": {
-          "expected_utility": 0.5722012532904489,
-          "cvar10": 0.4983327729193708,
-          "risk_adjusted_utility": 0.5537341331976794
+          "expected_utility": 0.5734640286055264,
+          "cvar10": 0.4986998493648085,
+          "risk_adjusted_utility": 0.5547729837953469
         },
         "combined-protocol": {
-          "expected_utility": 0.39297609601895794,
-          "cvar10": 0.2975768874302267,
-          "risk_adjusted_utility": 0.36912629387177515
+          "expected_utility": 0.39164471515532456,
+          "cvar10": 0.29622614295477023,
+          "risk_adjusted_utility": 0.367790072105186
         }
       }
     },
@@ -433,25 +433,25 @@
       "factor": 1.5,
       "winner": "pseudoword-only",
       "scores": {
-        "baseline-meaningful-only": 0.42593061437712876,
-        "pseudoword-only": 0.4303724468809833,
-        "combined-protocol": 0.33107885185325436
+        "baseline-meaningful-only": 0.4280813020104828,
+        "pseudoword-only": 0.4318662712685654,
+        "combined-protocol": 0.32936155696349984
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.44318385843880626,
-          "cvar10": 0.37417088219209615,
-          "risk_adjusted_utility": 0.42593061437712876
+          "expected_utility": 0.4455368748328667,
+          "cvar10": 0.37571458354333115,
+          "risk_adjusted_utility": 0.4280813020104828
         },
         "pseudoword-only": {
-          "expected_utility": 0.45556940938909585,
-          "cvar10": 0.35478155935664557,
-          "risk_adjusted_utility": 0.4303724468809833
+          "expected_utility": 0.45752461259799815,
+          "cvar10": 0.35489124728026716,
+          "risk_adjusted_utility": 0.4318662712685654
         },
         "combined-protocol": {
-          "expected_utility": 0.36417298643248464,
-          "cvar10": 0.23179644811556366,
-          "risk_adjusted_utility": 0.33107885185325436
+          "expected_utility": 0.3622906893454699,
+          "cvar10": 0.23057415981758964,
+          "risk_adjusted_utility": 0.32936155696349984
         }
       }
     },
@@ -462,25 +462,25 @@
       "factor": 0.6666666666666666,
       "winner": "pseudoword-only",
       "scores": {
-        "baseline-meaningful-only": 0.46373185009737217,
-        "pseudoword-only": 0.4653551781318179,
-        "combined-protocol": 0.36292302993927217
+        "baseline-meaningful-only": 0.46571963410386585,
+        "pseudoword-only": 0.4667167673149786,
+        "combined-protocol": 0.36128671751539443
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.4802175352348323,
-          "cvar10": 0.41427479468499173,
-          "risk_adjusted_utility": 0.46373185009737217
+          "expected_utility": 0.4823864942916993,
+          "cvar10": 0.41571905354036554,
+          "risk_adjusted_utility": 0.46571963410386585
         },
         "pseudoword-only": {
-          "expected_utility": 0.48877693669113226,
-          "cvar10": 0.3950899024538749,
-          "risk_adjusted_utility": 0.4653551781318179
+          "expected_utility": 0.4905437443726274,
+          "cvar10": 0.3952358361420321,
+          "risk_adjusted_utility": 0.4667167673149786
         },
         "combined-protocol": {
-          "expected_utility": 0.39339352328405136,
-          "cvar10": 0.2715115499049345,
-          "risk_adjusted_utility": 0.36292302993927217
+          "expected_utility": 0.3916367016352727,
+          "cvar10": 0.2702367651557596,
+          "risk_adjusted_utility": 0.36128671751539443
         }
       }
     },
@@ -491,25 +491,25 @@
       "factor": 1.5,
       "winner": "baseline-meaningful-only",
       "scores": {
-        "baseline-meaningful-only": 0.5418408136619185,
-        "pseudoword-only": 0.5264292963014854,
-        "combined-protocol": 0.33615031174048005
+        "baseline-meaningful-only": 0.5435333729347255,
+        "pseudoword-only": 0.5275402572440657,
+        "combined-protocol": 0.33474725545750666
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5561702826776038,
-          "cvar10": 0.4988524066148624,
-          "risk_adjusted_utility": 0.5418408136619185
+          "expected_utility": 0.5579133299770087,
+          "cvar10": 0.5003935018078758,
+          "risk_adjusted_utility": 0.5435333729347255
         },
         "pseudoword-only": {
-          "expected_utility": 0.5458958781860322,
-          "cvar10": 0.46802955064784485,
-          "risk_adjusted_utility": 0.5264292963014854
+          "expected_utility": 0.5473045495665622,
+          "cvar10": 0.46824738027657636,
+          "risk_adjusted_utility": 0.5275402572440657
         },
         "combined-protocol": {
-          "expected_utility": 0.36180449945260645,
-          "cvar10": 0.2591877486041007,
-          "risk_adjusted_utility": 0.33615031174048005
+          "expected_utility": 0.3603857035335838,
+          "cvar10": 0.2578319112292753,
+          "risk_adjusted_utility": 0.33474725545750666
         }
       }
     },
@@ -520,25 +520,25 @@
       "factor": 0.6666666666666666,
       "winner": "baseline-meaningful-only",
       "scores": {
-        "baseline-meaningful-only": 0.4694037296863905,
-        "pseudoword-only": 0.4649701375328002,
-        "combined-protocol": 0.3213025414361059
+        "baseline-meaningful-only": 0.47141062424451563,
+        "pseudoword-only": 0.4663054771164317,
+        "combined-protocol": 0.3197007499587709
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.4853383655332894,
-          "cvar10": 0.42159982214569375,
-          "risk_adjusted_utility": 0.4694037296863905
+          "expected_utility": 0.4874575726813662,
+          "cvar10": 0.42326977893396395,
+          "risk_adjusted_utility": 0.47141062424451563
         },
         "pseudoword-only": {
-          "expected_utility": 0.487855372099484,
-          "cvar10": 0.3963144338327488,
-          "risk_adjusted_utility": 0.4649701375328002
+          "expected_utility": 0.48961030376164255,
+          "cvar10": 0.3963909971807992,
+          "risk_adjusted_utility": 0.4663054771164317
         },
         "combined-protocol": {
-          "expected_utility": 0.35150873485724005,
-          "cvar10": 0.2306839611727035,
-          "risk_adjusted_utility": 0.3213025414361059
+          "expected_utility": 0.3498097534569645,
+          "cvar10": 0.22937373946419,
+          "risk_adjusted_utility": 0.3197007499587709
         }
       }
     },
@@ -549,25 +549,25 @@
       "factor": 1.5,
       "winner": "baseline-meaningful-only",
       "scores": {
-        "baseline-meaningful-only": 0.5365517008442483,
-        "pseudoword-only": 0.5282095290719306,
-        "combined-protocol": 0.38657270095007845
+        "baseline-meaningful-only": 0.5382159694723736,
+        "pseudoword-only": 0.5293539765494055,
+        "combined-protocol": 0.3851714609338467
       },
       "score_details": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5515993289226595,
-          "cvar10": 0.4914088166090148,
-          "risk_adjusted_utility": 0.5365517008442483
+          "expected_utility": 0.553393719404867,
+          "cvar10": 0.4926827196748934,
+          "risk_adjusted_utility": 0.5382159694723736
         },
         "pseudoword-only": {
-          "expected_utility": 0.5482915447201593,
-          "cvar10": 0.4679634821272448,
-          "risk_adjusted_utility": 0.5282095290719306
+          "expected_utility": 0.5497067726509693,
+          "cvar10": 0.46829558824471423,
+          "risk_adjusted_utility": 0.5293539765494055
         },
         "combined-protocol": {
-          "expected_utility": 0.4122950403335665,
-          "cvar10": 0.30940568279961417,
-          "risk_adjusted_utility": 0.38657270095007845
+          "expected_utility": 0.4108130624603648,
+          "cvar10": 0.30824665635429244,
+          "risk_adjusted_utility": 0.3851714609338467
         }
       }
     }
@@ -601,31 +601,31 @@
       ],
       "alternatives": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5151737995160792,
-          "cvar10": 0.4540273512934254,
-          "risk_adjusted_utility": 0.49988718746041577,
+          "expected_utility": 0.5171775719208217,
+          "cvar10": 0.45542139148646377,
+          "risk_adjusted_utility": 0.5017385268122322,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.5031
+          "probability_best": 0.501
         },
         "pseudoword-only": {
-          "expected_utility": 0.5151014725799394,
-          "cvar10": 0.4303883562818765,
-          "risk_adjusted_utility": 0.4939231935054237,
+          "expected_utility": 0.516666600391537,
+          "cvar10": 0.43042684112708474,
+          "risk_adjusted_utility": 0.49510666057542396,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.4811
+          "probability_best": 0.488
         },
         "combined-protocol": {
-          "expected_utility": 0.37899797475357416,
-          "cvar10": 0.26853563805218095,
-          "risk_adjusted_utility": 0.35138239057822584,
+          "expected_utility": 0.37710550901343676,
+          "cvar10": 0.26578168026803034,
+          "risk_adjusted_utility": 0.34927455182708517,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0158
+          "probability_best": 0.011
         }
       }
     },
@@ -643,31 +643,31 @@
       ],
       "alternatives": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5151557990585057,
-          "cvar10": 0.4533786061702872,
-          "risk_adjusted_utility": 0.4997115008364511,
+          "expected_utility": 0.5171288387069424,
+          "cvar10": 0.4548680437969303,
+          "risk_adjusted_utility": 0.5015636399794393,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.5112
+          "probability_best": 0.5053333333333333
         },
         "pseudoword-only": {
-          "expected_utility": 0.5150516497787901,
-          "cvar10": 0.4288483572488663,
-          "risk_adjusted_utility": 0.4935008266463092,
+          "expected_utility": 0.516653714761837,
+          "cvar10": 0.4289875475776905,
+          "risk_adjusted_utility": 0.49473717296580033,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.4754
+          "probability_best": 0.487
         },
         "combined-protocol": {
-          "expected_utility": 0.37886257232158466,
-          "cvar10": 0.2662650173758335,
-          "risk_adjusted_utility": 0.35071318358514686,
+          "expected_utility": 0.3772612425084961,
+          "cvar10": 0.2649866156464307,
+          "risk_adjusted_utility": 0.34919258579297974,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0134
+          "probability_best": 0.007666666666666666
         }
       }
     },
@@ -685,31 +685,31 @@
       ],
       "alternatives": {
         "baseline-meaningful-only": {
-          "expected_utility": 0.5151298208917547,
-          "cvar10": 0.45279475947340264,
-          "risk_adjusted_utility": 0.4995460555371667,
+          "expected_utility": 0.5171158120194251,
+          "cvar10": 0.4544713743554594,
+          "risk_adjusted_utility": 0.5014547026034337,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.5125
+          "probability_best": 0.51
         },
         "pseudoword-only": {
-          "expected_utility": 0.515068606912766,
-          "cvar10": 0.42779631300961807,
-          "risk_adjusted_utility": 0.493250533436979,
+          "expected_utility": 0.5167001291778884,
+          "cvar10": 0.42792634004866215,
+          "risk_adjusted_utility": 0.4945066818955819,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.476
+          "probability_best": 0.4836666666666667
         },
         "combined-protocol": {
-          "expected_utility": 0.3788319230512394,
-          "cvar10": 0.26476273336860384,
-          "risk_adjusted_utility": 0.3503146256305805,
+          "expected_utility": 0.3773962568822324,
+          "cvar10": 0.2641635545025445,
+          "risk_adjusted_utility": 0.3490880812873104,
           "constraint_violation_rate": 0.0,
           "constraint_violation_rate_upper_95": 0.0,
           "feasible": true,
-          "probability_best": 0.0115
+          "probability_best": 0.006333333333333333
         }
       }
     },
@@ -719,17 +719,17 @@
       {
         "left_alternative": "baseline-meaningful-only",
         "right_alternative": "pseudoword-only",
-        "correlation": 0.15921576190571665
+        "correlation": 0.16406976535030876
       },
       {
         "left_alternative": "baseline-meaningful-only",
         "right_alternative": "combined-protocol",
-        "correlation": 0.1923775292134879
+        "correlation": 0.2049803172374144
       },
       {
         "left_alternative": "pseudoword-only",
         "right_alternative": "combined-protocol",
-        "correlation": 0.19057988754519048
+        "correlation": 0.18638119509089116
       }
     ]
   },
