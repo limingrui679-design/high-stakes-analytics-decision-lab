@@ -20,7 +20,10 @@ from decision_engine import (  # noqa: E402
     load_case,
     validate_case,
 )
-from prediction_validation import validate_predictions  # noqa: E402
+from prediction_validation import (  # noqa: E402
+    _classification_metrics,
+    validate_predictions,
+)
 
 
 class IndependentNumericalBenchmarks(unittest.TestCase):
@@ -73,6 +76,8 @@ class IndependentNumericalBenchmarks(unittest.TestCase):
             score_column="score",
             calibration_bins=2,
         )
+        with self.assertRaisesRegex(ValueError, "same number of values"):
+            _classification_metrics([0, 1], [0.1], 0.5)
         self.assertEqual(result["overall"]["auc"], 1.0)
         expected_brier = (0.1**2 + 0.2**2 + 0.2**2 + 0.1**2) / 4
         self.assertAlmostEqual(result["overall"]["brier_score"], expected_brier)
@@ -107,7 +112,10 @@ class PropertyTests(unittest.TestCase):
                 for probability in probabilities
             ]
             self.assertTrue(
-                all(left <= right for left, right in zip(values, values[1:]))
+                all(
+                    left <= right
+                    for left, right in zip(values, values[1:], strict=False)
+                )
             )
 
     def test_normalization_is_always_bounded(self) -> None:

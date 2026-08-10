@@ -937,7 +937,7 @@ def _scenario_draws(
         counts[candidates[0]] -= 1
     draws = [
         scenario
-        for scenario, count in zip(scenarios, counts)
+        for scenario, count in zip(scenarios, counts, strict=True)
         for _ in range(count)
     ]
     rng.shuffle(draws)
@@ -1279,7 +1279,7 @@ def _pearson(left: list[float], right: list[float]) -> float | None:
     left_mean, right_mean = _mean(left), _mean(right)
     numerator = sum(
         (left_value - left_mean) * (right_value - right_mean)
-        for left_value, right_value in zip(left, right)
+        for left_value, right_value in zip(left, right, strict=True)
     )
     left_scale = math.sqrt(
         sum((value - left_mean) ** 2 for value in left)
@@ -1294,7 +1294,7 @@ def _parameter_paths(case: dict[str, Any]) -> list[tuple[str, str]]:
     """Expand governed parameter families to individually traceable JSON paths."""
 
     records: list[tuple[str, str]] = []
-    for criterion_index, criterion in enumerate(case["criteria"]):
+    for criterion_index, _criterion in enumerate(case["criteria"]):
         records.append((f"criteria[{criterion_index}].weight", "criterion_weight"))
         for field in ("worst", "best"):
             records.append(
@@ -1522,6 +1522,7 @@ def analyze_case(
         for diagnostic, constraint in zip(
             constraint_samples[alternative_id],
             constraints,
+            strict=True,
         ):
             margin_values = diagnostic["margins"]
             diagnostic_violation_count = sum(diagnostic["violations"])

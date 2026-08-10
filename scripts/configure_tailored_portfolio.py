@@ -170,6 +170,17 @@ SPECS = {
         "boundary": "Causal scope is the historical randomized experiment; no new campaign authorization.",
         "result": "The Neighbors arm has the largest observed intent-to-treat effect at 8.1%, with a household-clustered 95% interval of 7.5% to 8.8%.",
         "methods": "Randomized-arm rates, household-clustered sandwich variance, 95% intervals, and descriptive strata contrasts.",
+        "source_rebuild": (
+            "After reviewing the Yale ISPS terms, provide the participant-level "
+            "replication file explicitly. The builder writes only the non-identifying "
+            "aggregate, clustered estimates, and external-source lock:\n\n"
+            "```bash\n"
+            "python3 scripts/build_tailored_source_snapshots.py social "
+            "--social-csv /absolute/path/to/reviewed-file.csv --accept-isps-terms\n"
+            "```\n\n"
+            "Run this command from the repository root. Participant rows are never "
+            "stored in the repository."
+        ),
         "config": {"confidence_level": 0.95, "cluster_unit": "household", "primary_outcome": "voted"},
     },
     "opportunity-zone-policy-evaluation": {
@@ -294,6 +305,12 @@ def configure_project(project_id: str, spec: dict) -> None:
     write_json(root / "source-manifest.json", manifest)
     if spec.get("config") is not None:
         write_json(root / "config.json", parameters(project_id, spec["config"], spec["boundary"]))
+    source_rebuild = spec.get("source_rebuild", "")
+    source_rebuild_section = (
+        f"\n## Recreate the minimized public sources\n\n{source_rebuild}\n\n"
+        if source_rebuild
+        else "\n"
+    )
     document = f"""# {spec['title']}
 
 **Analytical question:** {spec['question']}
@@ -315,8 +332,7 @@ python3 prepare_data.py
 python3 analyze.py
 python3 build_decision_case.py
 ```
-
-Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
+{source_rebuild_section}Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
 
 ## Non-negotiable limitation
 

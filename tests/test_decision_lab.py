@@ -124,7 +124,7 @@ class DecisionLabTests(unittest.TestCase):
             ),
             1.0,
         )
-        for alternative_id, summary in result["alternatives"].items():
+        for _alternative_id, summary in result["alternatives"].items():
             if not summary["feasible"]:
                 self.assertEqual(summary["probability_best"], 0.0)
             self.assertEqual(

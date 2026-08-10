@@ -20,6 +20,16 @@ python3 analyze.py
 python3 build_decision_case.py
 ```
 
+## Recreate the minimized public sources
+
+After reviewing the Yale ISPS terms, provide the participant-level replication file explicitly. The builder writes only the non-identifying aggregate, clustered estimates, and external-source lock:
+
+```bash
+python3 scripts/build_tailored_source_snapshots.py social --social-csv /absolute/path/to/reviewed-file.csv --accept-isps-terms
+```
+
+Run this command from the repository root. Participant rows are never stored in the repository.
+
 Read the [technical report](outputs/report.md), [machine-readable results](outputs/results.json), [source manifest](source-manifest.json), and [data-quality report](data/quality-report.json).
 
 ## Non-negotiable limitation

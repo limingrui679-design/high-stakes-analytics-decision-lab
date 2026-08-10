@@ -15,4 +15,6 @@ updates:
         patterns:
           - "mypy"
           - "ruff"
+          - "codespell"
           - "pandas"
+          - "defusedxml"

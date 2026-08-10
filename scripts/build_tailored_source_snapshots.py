@@ -27,7 +27,7 @@ import urllib.request
 import zipfile
 from collections import Counter, defaultdict
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,6 +36,10 @@ USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.0"
 )
+MAX_XLSX_FILE_BYTES = 50 * 1024 * 1024
+MAX_XLSX_MEMBER_COUNT = 2_048
+MAX_XLSX_MEMBER_BYTES = 32 * 1024 * 1024
+MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES = 128 * 1024 * 1024
 
 
 def _request(url: str, *, timeout: int = 180) -> bytes:
@@ -696,17 +700,97 @@ def _lodes_jobs(year: int) -> dict[str, int]:
     return dict(totals)
 
 
+def _validate_xlsx_archive(archive: zipfile.ZipFile) -> None:
+    members = archive.infolist()
+    if len(members) > MAX_XLSX_MEMBER_COUNT:
+        raise ValueError(
+            f"XLSX contains {len(members)} members; limit is {MAX_XLSX_MEMBER_COUNT}."
+        )
+    total_uncompressed = 0
+    names: set[str] = set()
+    for member in members:
+        if member.filename in names:
+            raise ValueError(f"Duplicate XLSX member name: {member.filename}")
+        names.add(member.filename)
+        name = PurePosixPath(member.filename)
+        if name.is_absolute() or ".." in name.parts:
+            raise ValueError(f"Unsafe XLSX member path: {member.filename}")
+        if member.flag_bits & 0x1:
+            raise ValueError(f"Encrypted XLSX member is not supported: {member.filename}")
+        if member.file_size > MAX_XLSX_MEMBER_BYTES:
+            raise ValueError(
+                f"XLSX member exceeds {MAX_XLSX_MEMBER_BYTES} bytes: {member.filename}"
+            )
+        total_uncompressed += member.file_size
+    if total_uncompressed > MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES:
+        raise ValueError(
+            "XLSX uncompressed content exceeds "
+            f"{MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES} bytes."
+        )
+
+
+def _read_xlsx_member(
+    archive: zipfile.ZipFile,
+    name: str,
+    *,
+    max_bytes: int = MAX_XLSX_MEMBER_BYTES,
+) -> bytes:
+    try:
+        member = archive.getinfo(name)
+    except KeyError as error:
+        raise ValueError(f"Required XLSX member is missing: {name}") from error
+    if member.file_size > max_bytes:
+        raise ValueError(f"XLSX member exceeds {max_bytes} bytes: {name}")
+    with archive.open(member) as handle:
+        payload = handle.read(max_bytes + 1)
+    if len(payload) > max_bytes:
+        raise ValueError(f"XLSX member expands beyond {max_bytes} bytes: {name}")
+    return payload
+
+
+def _safe_xml_root(payload: bytes) -> Any:
+    try:
+        from defusedxml import ElementTree as safe_element_tree
+    except ImportError as error:
+        raise SystemExit(
+            "defusedxml is required for maintenance-only XLSX source builds; "
+            "install requirements-maintenance.txt."
+        ) from error
+    return safe_element_tree.fromstring(
+        payload,
+        forbid_dtd=True,
+        forbid_entities=True,
+        forbid_external=True,
+    )
+
+
 def _xlsx_first_sheet(path: Path) -> list[list[str]]:
-    import xml.etree.ElementTree as ET
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    if path.stat().st_size > MAX_XLSX_FILE_BYTES:
+        raise ValueError(f"XLSX exceeds {MAX_XLSX_FILE_BYTES} bytes: {path}")
+    if not zipfile.is_zipfile(path):
+        raise ValueError(f"Expected an OOXML ZIP workbook: {path}")
 
     namespace = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
     with zipfile.ZipFile(path) as archive:
+        _validate_xlsx_archive(archive)
         strings = []
         if "xl/sharedStrings.xml" in archive.namelist():
-            root = ET.fromstring(archive.read("xl/sharedStrings.xml"))
+            root = _safe_xml_root(
+                _read_xlsx_member(archive, "xl/sharedStrings.xml")
+            )
             for item in root.findall("m:si", namespace):
-                strings.append("".join(node.text or "" for node in item.iter() if node.tag.endswith("}t")))
-        sheet = ET.fromstring(archive.read("xl/worksheets/sheet1.xml"))
+                strings.append(
+                    "".join(
+                        node.text or ""
+                        for node in item.iter()
+                        if node.tag.endswith("}t")
+                    )
+                )
+        sheet = _safe_xml_root(
+            _read_xlsx_member(archive, "xl/worksheets/sheet1.xml")
+        )
     rows = []
     for row in sheet.findall(".//m:sheetData/m:row", namespace):
         cells = []
@@ -741,7 +825,7 @@ def build_opportunity_zone() -> None:
         header = table[header_index]
         qozs = set()
         for row in table[header_index + 1 :]:
-            values = dict(zip(header, row))
+            values = dict(zip(header, row, strict=False))
             state = next(
                 (
                     value
@@ -931,9 +1015,12 @@ BUILDERS = {
     "311": lambda args: build_311(),
     "acs": lambda args: build_acs_pums(),
     "fire": lambda args: build_fire(),
-    "nport": lambda args: build_nport(args.nport_zip),
+    "nport": lambda args: build_nport(
+        _required_input(args.nport_zip, "--nport-zip")
+    ),
     "social": lambda args: build_social(
-        args.social_csv, accepted_terms=args.accept_isps_terms
+        _required_input(args.social_csv, "--social-csv"),
+        accepted_terms=args.accept_isps_terms,
     ),
     "nhis": lambda args: build_nhis(),
     "qoz": lambda args: build_opportunity_zone(),
@@ -942,18 +1029,25 @@ BUILDERS = {
 }
 
 
+def _required_input(value: Path | None, option: str) -> Path:
+    if value is None:
+        raise SystemExit(f"{option} is required for this source build.")
+    resolved = value.expanduser().resolve()
+    if not resolved.is_file():
+        raise SystemExit(f"{option} must point to an existing file: {resolved}")
+    return resolved
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("case", choices=sorted(BUILDERS))
     parser.add_argument(
         "--nport-zip",
         type=Path,
-        default=Path("/tmp/nport-data/2025q4_nport.zip"),
     )
     parser.add_argument(
         "--social-csv",
         type=Path,
-        default=Path("/tmp/social-norm-individual.csv"),
     )
     parser.add_argument("--accept-isps-terms", action="store_true")
     args = parser.parse_args()

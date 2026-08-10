@@ -28,9 +28,22 @@ def _safe_divide(numerator: float, denominator: float) -> float | None:
     return numerator / denominator if denominator else None
 
 
+def _require_aligned_labels_scores(
+    labels: list[int],
+    scores: list[float],
+) -> None:
+    if len(labels) != len(scores):
+        raise ValueError("labels and scores must contain the same number of values.")
+
+
 def _auc(labels: list[int], scores: list[float]) -> float | None:
-    positive_scores = [score for label, score in zip(labels, scores) if label == 1]
-    negative_scores = [score for label, score in zip(labels, scores) if label == 0]
+    _require_aligned_labels_scores(labels, scores)
+    positive_scores = [
+        score for label, score in zip(labels, scores, strict=True) if label == 1
+    ]
+    negative_scores = [
+        score for label, score in zip(labels, scores, strict=True) if label == 0
+    ]
     if not positive_scores or not negative_scores:
         return None
     wins = 0.0
@@ -45,16 +58,24 @@ def _classification_metrics(
     scores: list[float],
     threshold: float,
 ) -> dict[str, Any]:
+    _require_aligned_labels_scores(labels, scores)
+    if not labels:
+        raise ValueError("At least one label-score pair is required.")
     predictions = [int(score >= threshold) for score in scores]
-    true_positive = sum(label == 1 and prediction == 1 for label, prediction in zip(labels, predictions))
-    true_negative = sum(label == 0 and prediction == 0 for label, prediction in zip(labels, predictions))
-    false_positive = sum(label == 0 and prediction == 1 for label, prediction in zip(labels, predictions))
-    false_negative = sum(label == 1 and prediction == 0 for label, prediction in zip(labels, predictions))
+    pairs = list(zip(labels, predictions, strict=True))
+    true_positive = sum(label == 1 and prediction == 1 for label, prediction in pairs)
+    true_negative = sum(label == 0 and prediction == 0 for label, prediction in pairs)
+    false_positive = sum(label == 0 and prediction == 1 for label, prediction in pairs)
+    false_negative = sum(label == 1 and prediction == 0 for label, prediction in pairs)
     return {
         "n": len(labels),
         "prevalence": sum(labels) / len(labels),
         "auc": _auc(labels, scores),
-        "brier_score": sum((score - label) ** 2 for label, score in zip(labels, scores)) / len(labels),
+        "brier_score": sum(
+            (score - label) ** 2
+            for label, score in zip(labels, scores, strict=True)
+        )
+        / len(labels),
         "threshold": threshold,
         "accuracy": (true_positive + true_negative) / len(labels),
         "precision": _safe_divide(true_positive, true_positive + false_positive),
@@ -72,6 +93,9 @@ def _classification_metrics(
 
 
 def _calibration(labels: list[int], scores: list[float], bins: int) -> tuple[list[dict[str, Any]], float]:
+    _require_aligned_labels_scores(labels, scores)
+    if not labels:
+        raise ValueError("At least one label-score pair is required.")
     calibration: list[dict[str, Any]] = []
     expected_calibration_error = 0.0
     for index in range(bins):
@@ -79,7 +103,7 @@ def _calibration(labels: list[int], scores: list[float], bins: int) -> tuple[lis
         high = (index + 1) / bins
         members = [
             (label, score)
-            for label, score in zip(labels, scores)
+            for label, score in zip(labels, scores, strict=True)
             if low <= score < high or (index == bins - 1 and score == 1.0)
         ]
         if not members:

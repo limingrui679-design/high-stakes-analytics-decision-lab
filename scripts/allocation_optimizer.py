@@ -101,7 +101,7 @@ def optimize_allocation(config: dict[str, Any]) -> dict[str, Any]:
     evaluated = 0
     for allocation_values in itertools.product(*value_grids):
         evaluated += 1
-        allocation = dict(zip(resource_ids, allocation_values))
+        allocation = dict(zip(resource_ids, allocation_values, strict=True))
         diagnostics = []
         feasible = True
         for constraint in constraints:

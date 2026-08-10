@@ -23,7 +23,7 @@ produced, it makes each transition conditional on visible evidence.
 | **Data readiness** | Silently cleaning until a model runs | Preserves the source, profiles quality and privacy, and pauses on material choices |
 | **Adaptive analysis** | Filling one fixed report template | Selects only the descriptive, diagnostic, predictive, or prescriptive work supported |
 | **Honest endpoints** | Treating a recommendation as mandatory | Accepts an evidence request, negative validation, `do_not_deploy`, or bounded action |
-| **Shared uncertainty** | Disturbing alternatives independently | Retains common time, market, participant, operational, campaign, or spatial shocks |
+| **Shared uncertainty** | Treating alternatives as independent | Retains common time, market, participant, operational, campaign, or spatial shocks |
 | **Reproducible evidence** | Separating prose from analysis | Links claims and accessible figures to JSON, CSV, hashes, and rerunnable code |
 
 Its contribution is an adaptive orchestration system for evidence gating,
@@ -454,11 +454,26 @@ Run the complete standalone verification suite:
 python3 -m unittest discover -s tests -v
 ```
 
-The 68 public tests cover data-readiness safety, custom-workspace
+Rebuild all fifteen projects in an isolated tracked-file copy and compare raw
+sources exactly, categorical and integer outputs exactly, and cross-version
+floating-point outputs within the documented numerical tolerance:
+
+```bash
+python3 scripts/verify_portfolio_reproducibility.py
+```
+
+The two levels are deliberate: source and ordinary artifact integrity is
+byte-exact, while equivalent floating-point results may serialize differently
+across supported Python versions. Derived result hashes are exempted only when
+the underlying structured output passes the semantic comparison. See the
+[reproducibility contract](references/reproducibility-contract.md).
+
+The 72 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
 routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
-package naming, links, and SVG accessibility.
+package naming, links, SVG accessibility, semantic regeneration, and external
+source-parser security.
 Synthetic files under `tests/fixtures/` are engineering fixtures only; they are
 not presented as real-data projects.
 
@@ -484,7 +499,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 68-test standalone regression suite
+└── tests/                          # complete 72-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence

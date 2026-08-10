@@ -19,8 +19,10 @@ Before opening a pull request, run:
 
 ```bash
 python3 -m unittest discover -s tests -v
+python3 scripts/verify_portfolio_reproducibility.py
 ruff check scripts tests
 mypy scripts
+codespell --config .codespellrc README.md CONTRIBUTING.md references scripts tests
 ```
 
 ## Evidence and claim rules
@@ -51,6 +53,12 @@ If a source manifest or raw-source lock changes, rerun the affected project's
 download, preparation, analysis, and decision-case commands before running the
 full test suite. Generated case cards, galleries, reports, figures, manifests,
 and receipts should never be edited as isolated copies.
+
+The portfolio verifier rebuilds all fifteen projects in a temporary copy. It
+requires exact agreement for sources, strings, labels, counts, and documented
+hashes; it permits only bounded cross-version floating-point differences and
+their derived artifact receipts. See
+[`references/reproducibility-contract.md`](references/reproducibility-contract.md).
 
 ## Pull requests
 
