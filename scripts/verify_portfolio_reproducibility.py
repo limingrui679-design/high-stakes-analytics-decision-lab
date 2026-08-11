@@ -36,7 +36,8 @@ HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 REPORT_HASH_PATTERN = re.compile(
     r"(?im)(?P<prefix>(?:Result|Analytical result|Case) SHA-256:\s*`)[0-9a-f]{64}(?P<suffix>`)",
 )
-IGNORED_PARTS = {".git", "__pycache__", ".pytest_cache"}
+TOOL_CACHE_DIRECTORIES = {"__pycache__", ".pytest_cache"}
+IGNORED_PARTS = {".git", *TOOL_CACHE_DIRECTORIES}
 RELEASE_MANIFEST = Path("RELEASE-MANIFEST.json")
 
 
@@ -46,6 +47,18 @@ def _sha256_file(path: Path) -> str:
         for block in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(block)
     return digest.hexdigest()
+
+
+def _is_ignorable_tool_cache_file(path: Path, relative: Path) -> bool:
+    """Identify non-symlink cache files that are never copied into a rebuild."""
+    if path.is_symlink():
+        return False
+    parent_parts = set(relative.parts[:-1])
+    if ".pytest_cache" in parent_parts:
+        return True
+    if "__pycache__" in parent_parts:
+        return relative.suffix == ".pyc"
+    return False
 
 
 def _manifest_files(root: Path) -> list[Path]:
@@ -114,11 +127,14 @@ def _manifest_files(root: Path) -> list[Path]:
                 )
         paths.append(relative)
     expected_paths = {RELEASE_MANIFEST, *paths}
-    observed_paths = {
-        path.relative_to(root)
-        for path in root.rglob("*")
-        if path.is_file() or path.is_symlink()
-    }
+    observed_paths: set[Path] = set()
+    for path in root.rglob("*"):
+        if not path.is_file() and not path.is_symlink():
+            continue
+        relative = path.relative_to(root)
+        if _is_ignorable_tool_cache_file(path, relative):
+            continue
+        observed_paths.add(relative)
     unlisted = sorted(observed_paths - expected_paths)
     if unlisted:
         preview = ", ".join(path.as_posix() for path in unlisted[:20])

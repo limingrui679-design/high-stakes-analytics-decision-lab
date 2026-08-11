@@ -44,16 +44,16 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 ## Release
 
-The current stable release is [`v1.0.2`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.2).
+The current stable release is [`v1.0.3`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.3).
 Its versioned source package and SHA-256 checksum are published together on
 the release page; citation metadata is available in [`CITATION.cff`](CITATION.cff)
 and release changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Verification & boundaries
 
-| Layer | v1.0.2 verification | Boundary |
+| Layer | v1.0.3 verification | Boundary |
 |---|---|---|
-| Release files | Root manifest schema 1.1, exact file set, Git executable bits, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
+| Release files | Root manifest schema 1.1, exact file set, strict non-symlink tool-cache exceptions, Git executable bits, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
 | Rebuild | All fifteen projects rebuild from a Git checkout or a source ZIP without `.git` | Reproduction confirms the reviewed workflow and declared numerical tolerance |
 | Data correction | QOZ special values and NHANES weights remain audited; spatial composite need uses 1,495 complete cases plus a median sensitivity while retaining all 1,597 tracts elsewhere | QOZ remains associational; NHANES is population research; spatial hubs remain illustrative planning screens |
 | External I/O | Every urllib redirect and final HTTPS response requires an observable public connected peer; curl sources retain DNS pinning and manual redirects | These controls reduce untrusted-input risk but do not prove absolute security |
@@ -479,6 +479,12 @@ floating-point outputs within the documented numerical tolerance:
 python3 scripts/verify_portfolio_reproducibility.py
 ```
 
+The test suite and verifier may be run consecutively in the same published
+source-tree extraction. The verifier excludes only recognized non-symlink
+Python and pytest cache files from the no-Git observed-file set; those caches
+are never copied into the isolated rebuild, while ordinary unlisted files,
+unsupported cache contents, symlinks, mode changes, and hash changes still fail.
+
 The command works both in a Git checkout and in the published source ZIP. A
 checkout uses `git ls-files`; a ZIP without `.git` verifies the self-excluding
 root `RELEASE-MANIFEST.json` before copying or running any project code.
@@ -489,7 +495,7 @@ across supported Python versions. Derived result hashes are exempted only when
 the underlying structured output passes the semantic comparison. See the
 [reproducibility contract](references/reproducibility-contract.md).
 
-The 92 public tests cover data-readiness safety, custom-workspace
+The 93 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
 routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
@@ -521,7 +527,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 92-test standalone regression suite
+└── tests/                          # complete 93-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence

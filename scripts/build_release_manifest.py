@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "RELEASE-MANIFEST.json"
-RELEASE_VERSION = "1.0.2"
+RELEASE_VERSION = "1.0.3"
 
 
 def _sha256(path: Path) -> str:
@@ -65,10 +65,10 @@ def build_manifest(root: Path = ROOT) -> dict[str, object]:
         "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
         "archive_build_method": (
             "git archive --format=zip "
-            "--prefix=high-stakes-analytics-decision-lab/ v1.0.2"
+            f"--prefix=high-stakes-analytics-decision-lab/ v{RELEASE_VERSION}"
         ),
         "release_commit_binding": (
-            "The annotated v1.0.2 tag binds this self-excluding manifest and its "
+            f"The annotated v{RELEASE_VERSION} tag binds this self-excluding manifest and its "
             "content commit to the final release commit."
         ),
         "files": entries,

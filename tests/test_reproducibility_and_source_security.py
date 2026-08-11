@@ -828,7 +828,7 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             digest = hashlib.sha256(payload.read_bytes()).hexdigest()
             manifest = {
                 "schema_version": "1.1",
-                "release": "1.0.2",
+                "release": "1.0.3",
                 "algorithm": "sha256",
                 "files": [
                     {"path": "payload.txt", "mode": "100644", "sha256": digest}
@@ -854,6 +854,52 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                 payload.chmod(0o644)
             payload.write_text("tampered\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "hash mismatch"):
+                reproducibility._tracked_files(root)
+
+    def test_release_manifest_allows_only_recognized_tool_cache_files(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = root / "payload.txt"
+            payload.write_text("verified\n", encoding="utf-8")
+            digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+            manifest = {
+                "schema_version": "1.1",
+                "release": "1.0.3",
+                "algorithm": "sha256",
+                "files": [
+                    {"path": "payload.txt", "mode": "100644", "sha256": digest}
+                ],
+            }
+            (root / "RELEASE-MANIFEST.json").write_text(
+                json.dumps(manifest),
+                encoding="utf-8",
+            )
+            expected = [Path("RELEASE-MANIFEST.json"), Path("payload.txt")]
+
+            python_cache = root / "__pycache__"
+            python_cache.mkdir()
+            (python_cache / "payload.cpython-313.pyc").write_bytes(b"generated cache")
+            pytest_cache = root / ".pytest_cache" / "v" / "cache"
+            pytest_cache.mkdir(parents=True)
+            (pytest_cache / "nodeids").write_text("[]\n", encoding="utf-8")
+            self.assertEqual(reproducibility._tracked_files(root), expected)
+
+            unsupported_cache_file = python_cache / "unlisted.txt"
+            unsupported_cache_file.write_text("not a Python cache\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "unlisted files"):
+                reproducibility._tracked_files(root)
+            unsupported_cache_file.unlink()
+
+            if reproducibility.os.name == "posix":
+                cache_symlink = python_cache / "linked.cpython-313.pyc"
+                cache_symlink.symlink_to(payload)
+                with self.assertRaisesRegex(ValueError, "unlisted files"):
+                    reproducibility._tracked_files(root)
+                cache_symlink.unlink()
+
+            ordinary_extra = root / "unlisted.txt"
+            ordinary_extra.write_text("not in manifest\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "unlisted files"):
                 reproducibility._tracked_files(root)
 
     def test_safe_xlsx_parser_accepts_minimal_workbook_and_rejects_dtd(self) -> None:

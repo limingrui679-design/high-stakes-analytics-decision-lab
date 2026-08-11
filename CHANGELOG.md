@@ -3,6 +3,25 @@
 All notable public changes are documented here. The repository follows
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.3] - 2026-08-11
+
+### Fixed
+
+- Allowed no-Git release verification to distinguish recognized non-symlink
+  Python and pytest cache files from ordinary unlisted source files, so the
+  public tests and portfolio verifier can run consecutively in one extracted
+  release tree.
+- Kept the exception narrow: unsupported files inside `__pycache__`, cache
+  symlinks, ordinary extra files, mode changes, and hash changes remain fatal.
+
+### Verification
+
+- Added a cache allowlist regression test exercised by the existing Python
+  3.11–3.14 CI matrix, plus a release-like acceptance run that executes the
+  complete test suite before rebuilding all fifteen projects.
+- No case, raw source, analytical result, report, or figure changed in this
+  release.
+
 ## [1.0.2] - 2026-08-11
 
 ### Fixed
@@ -96,6 +115,7 @@ All notable public changes are documented here. The repository follows
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
+[1.0.3]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.0
