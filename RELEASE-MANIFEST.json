@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.0",
-  "release": "1.0.1",
-  "release_tag": "v1.0.1",
-  "content_commit": "79c2d79c3a48785781ea653db52e0e8f562dcb8b",
+  "schema_version": "1.1",
+  "release": "1.0.2",
+  "release_tag": "v1.0.2",
+  "content_commit": "7d10aae8a74dfb6fe66677ad66fc4016356454a5",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.1",
-  "release_commit_binding": "The annotated v1.0.1 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.2",
+  "release_commit_binding": "The annotated v1.0.2 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -51,12 +51,12 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "6cc0c42d008b1c1e16d15c47a053bcfa6e8ec4f73f836fe12eab9fa4c24ad613"
+      "sha256": "0483aeb91685f72ac67ae0e601c672cda1488c357a1a285620f6000fcaab2470"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "7d48748ae2b3358efc2d5fe4cc93567b9e4628728b94898f878056e1fcb1a81a"
+      "sha256": "7d283519f6a22720914cdd647726de7d39b762629b500e10ccc7ee964f670ba8"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -76,7 +76,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "db9a353b740b1f2b1d473e94fc4f91ae715abfbdc523a1b22c05dc503ecb825d"
+      "sha256": "6e3d37f0747d71abb4dee58aac0ab358e6521e5f6ae442f37858882779bc4d1e"
     },
     {
       "path": "SECURITY.md",
@@ -131,7 +131,7 @@
     {
       "path": "examples/real-data-cases/cases.json",
       "mode": "100644",
-      "sha256": "18f4a8aedaa68d50ece3e6c53d374dfff39e11bbc53faa088477e0645ea78ab7"
+      "sha256": "d270b397a489d36320f83462779eb304e3b912ac93e0a0c916225cf6bbe845d9"
     },
     {
       "path": "examples/real-data-cases/cases/01-bike-demand-operations.md",
@@ -206,7 +206,7 @@
     {
       "path": "examples/real-data-cases/cases/15-spatial-equity-planning.md",
       "mode": "100644",
-      "sha256": "80de2a271658c71af722979f3bf6610cfe0c1b35c910a34bc459075f515a298f"
+      "sha256": "479827bde609ed1adb8648e826f3978402eb961934e28ce67f9cbfcb0ecd7d5a"
     },
     {
       "path": "examples/real-data-cases/figures/01-bike-demand-operations.svg",
@@ -281,7 +281,7 @@
     {
       "path": "examples/real-data-cases/figures/15-spatial-equity-planning.svg",
       "mode": "100644",
-      "sha256": "96522d2c66edf48c07e5715f6293609546b2c5e3f7fa0e376216e84f3056f2d3"
+      "sha256": "6fb7ad1dc49e8c1f20603b41b5b1473291b7e3853f375a57738592c2569a4365"
     },
     {
       "path": "examples/real-data-cases/figures/case-landscape.svg",
@@ -301,7 +301,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_core.py",
       "mode": "100644",
-      "sha256": "c997f88bbce2615619f78aeb8810df9bc2a68e6851d598a322759ba9e2da3a24"
+      "sha256": "98dd41011b6dfad798b6ebade1cecbeb82f37c60540e24f5e326e49297c6c847"
     },
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_modeling.py",
@@ -311,7 +311,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_reporting.py",
       "mode": "100644",
-      "sha256": "57f3c5a0c3266931cea02eaed296a40e72b30f67408697c40e59edd16eef4022"
+      "sha256": "320b4d4b042c817eba9072876cb204940eb4507c77f9f33df0591af12cb6f8dc"
     },
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_runtime.py",
@@ -321,12 +321,12 @@
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_spatial.py",
       "mode": "100644",
-      "sha256": "3c71c6db1c720b869e88ee51c7b09be1b58ab3f1f709760d2c55a66760dcf5b1"
+      "sha256": "168dd4c787ac27d4d8030654cbb650394fb956a3d155c873da1a6f582d979426"
     },
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_tailored.py",
       "mode": "100644",
-      "sha256": "3fecbd49336f48a23eaa524641e01c001e423d14de44cb090829d5cfbd6b5db3"
+      "sha256": "e59d6ad123a25c204737c374c0f5c642a3c6e86f00b78b5ad8574e49b9481a77"
     },
     {
       "path": "examples/real-data-cases/projects/_shared/portfolio_treasury.py",
@@ -336,7 +336,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "5718ce367d7c5e1d3240820ffe5059571b696435b8deb3d4d08f5890f339c2fb"
+      "sha256": "358f7628c28fb0471a48094911234976608772e544e4b9c93c506fc04405e9fc"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -2456,12 +2456,12 @@
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/config.json",
       "mode": "100644",
-      "sha256": "50590e9e5794b8c8adee59ffd2577cb2ba479a93ce1ddc10e2d3b5992b5e2fc3"
+      "sha256": "0d19b32f22e3440e94a230d41f16a9207fbf1d0f277f1b405ac8624d86e2517d"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/data/data-dictionary.json",
       "mode": "100644",
-      "sha256": "3b3a9b70db9474cdbbfcb35c992544588ac04266026e9c6a24757907e6f9f8cb"
+      "sha256": "3c1cd9f94ccfc4a138ea0e06c0b84a765c261d9e206f5f207fd7cf751175007e"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/data/download-receipt.json",
@@ -2476,7 +2476,7 @@
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/data/quality-report.json",
       "mode": "100644",
-      "sha256": "b9bb08229e22548dd76d17186e4d6842095ec048db93a206af028a601feaca69"
+      "sha256": "19f8e186ae026bb935e5f12c5678f4dc8cdbd41181c22e04fa0c9951d7707dcd"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/2023_Gaz_tracts_national.zip",
@@ -2531,12 +2531,12 @@
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision-case.json",
       "mode": "100644",
-      "sha256": "42eac429bfe2581fb6c055cbbcf6b6e067308345715450f48b207853409d8a1f"
+      "sha256": "44b04e13281db7c1c3ab222cf5aa782465199e0bfc03dffb78462479696d2d46"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/case.json",
       "mode": "100644",
-      "sha256": "42eac429bfe2581fb6c055cbbcf6b6e067308345715450f48b207853409d8a1f"
+      "sha256": "44b04e13281db7c1c3ab222cf5aa782465199e0bfc03dffb78462479696d2d46"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/decision-report.md",
@@ -2671,37 +2671,37 @@
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/need-map.svg",
       "mode": "100644",
-      "sha256": "96522d2c66edf48c07e5715f6293609546b2c5e3f7fa0e376216e84f3056f2d3"
+      "sha256": "6fb7ad1dc49e8c1f20603b41b5b1473291b7e3853f375a57738592c2569a4365"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/need-map.txt",
       "mode": "100644",
-      "sha256": "dff8574fb07764ca4f7ca75ed642c462ea55dce3f374b2708b4a54d483bb363e"
+      "sha256": "5e43594a12ca5e850cd40a0bbbef8ba6558b7c3d2e6269e8af7f95477a0df55f"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/radius-sensitivity.svg",
       "mode": "100644",
-      "sha256": "bca59db538a2cfed7c8967e5703f1dac28624c9ee048424bf8231c16f7ea941e"
+      "sha256": "7a2f0bc4c56efcdb6b87be1d818d2a618bd55739398cc05ef51be6d752b7b297"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/strategy-coverage.svg",
       "mode": "100644",
-      "sha256": "6ddcf2b1bd9173ca74630408e6f9298a93ed9dc182aa51240eebc25c92cbc77a"
+      "sha256": "40732d57ec242d21b08e005bcd67aeaa6587fcd4c46e6835f74a717649b15616"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/parameter-provenance.json",
       "mode": "100644",
-      "sha256": "eb5a7a977fa62d03a1c27e82df1d96255df1e2729bfacd37aacf4137537fa67c"
+      "sha256": "fb92eb872520916f1632becbc282feb891a66bb6a81ebdc3c1043768365a6610"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/report.md",
       "mode": "100644",
-      "sha256": "f8e8d699524c2a68007a7e1d3e6487741f0f2c4b586ca15e02c80090655b7212"
+      "sha256": "23d349e0d2da04db2ba1007bc754371fabebf0de198f9483c4f8cb364ad8283f"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/results.json",
       "mode": "100644",
-      "sha256": "fdadcb9062900397b662e5c9866d8c38a7c9b5f2d4827087ffd28a50896c8bd8"
+      "sha256": "2666bffc0b0278a80e5b785bfdc48225f904e19300d57beca17afe9282a2c530"
     },
     {
       "path": "examples/real-data-cases/projects/spatial-equity-planning/prepare_data.py",
@@ -3146,7 +3146,7 @@
     {
       "path": "references/reproducibility-contract.md",
       "mode": "100644",
-      "sha256": "d208fe88276e4518171478a0a38f77e99fd59f2495bf24a86975e563c627bd27"
+      "sha256": "6e0dfa8b481e1caddfd35b61d4fb2be122cea23ce274eee8aa88e1a583c71e40"
     },
     {
       "path": "references/visual-report-system.md",
@@ -3191,12 +3191,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "18e49dbe042e7e39832254090aa09bf2766aabf0e78729a00815656921127df1"
+      "sha256": "aaa1472a81deb980f3abc4c192152368ac2f319c5a1f33048a649bba3c44b9e9"
     },
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "3554e6fce4dd27029613a340c40888aa681e1bb9ccfcde48a32d63f1a9ff9c1b"
+      "sha256": "3410ac5d56378ac154be437aa061d247fd85e374cbe7e2af170d580bbd5c7a08"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
@@ -3271,7 +3271,7 @@
     {
       "path": "scripts/verify_portfolio_reproducibility.py",
       "mode": "100644",
-      "sha256": "598dec4a098b1d0332d2a03387b396b10700609a543df519083eb68a5d3a5abd"
+      "sha256": "afc84f1a8bea0a1d1c8969039ae01ca3025870d437e52f025a3f4a0b682648a6"
     },
     {
       "path": "scripts/visual_system.py",
@@ -4096,17 +4096,17 @@
     {
       "path": "tests/test_package_integrity.py",
       "mode": "100644",
-      "sha256": "ca6ad1b27686527de02c0bc272c857e33379afc0a41e3cda407dac3f0b8cd4b9"
+      "sha256": "c266467e52f2cfb3bd1851aa9f028e35a4fcdd4725c3a99c1fb6b7ba44993eb2"
     },
     {
       "path": "tests/test_real_portfolio.py",
       "mode": "100644",
-      "sha256": "3275caf9a030ea12fae009d5218412e902672f5286cc8a3ddbc0b48f462bcd7e"
+      "sha256": "c53ee2f06556bbca7e18aea3c12e31057ca3787fdc27a4d22cc32b2137e9a8b4"
     },
     {
       "path": "tests/test_reproducibility_and_source_security.py",
       "mode": "100644",
-      "sha256": "703ebfb8e732941517c57838c5f22b854b0d2103118404725b319dff74cc62d9"
+      "sha256": "7f3475fa0540124da95bec6db298754c1c48116523ff02beee87cb42e69637dd"
     },
     {
       "path": "tests/test_v5_numerics.py",
