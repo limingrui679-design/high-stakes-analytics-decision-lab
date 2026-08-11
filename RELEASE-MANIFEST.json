@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "release": "1.0.1",
   "release_tag": "v1.0.1",
-  "content_commit": "c92e6b4b01ade00cf7cf099515765ee812111504",
+  "content_commit": "79c2d79c3a48785781ea653db52e0e8f562dcb8b",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
   "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.1",
@@ -41,7 +41,7 @@
     {
       "path": ".github/workflows/verify.yml",
       "mode": "100644",
-      "sha256": "f1dc47fe66d5812e0e026047248a830398c886678df5601ddb871a9be152686f"
+      "sha256": "26cda6167bd461a72eb1a0e9a40e5ea064aa0adc73388d487244528f8354f557"
     },
     {
       "path": ".gitignore",
