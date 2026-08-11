@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "release": "1.0.2",
-  "release_tag": "v1.0.2",
-  "content_commit": "7d10aae8a74dfb6fe66677ad66fc4016356454a5",
+  "release": "1.0.3",
+  "release_tag": "v1.0.3",
+  "content_commit": "0cd2cf14623fef90813b86af322f7596f532d694",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.2",
-  "release_commit_binding": "The annotated v1.0.2 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.3",
+  "release_commit_binding": "The annotated v1.0.3 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -51,12 +51,12 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "0483aeb91685f72ac67ae0e601c672cda1488c357a1a285620f6000fcaab2470"
+      "sha256": "66351405e1257e29c0babbb0535325a624735b1c3542ba91e5aca6e513c36da8"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "7d283519f6a22720914cdd647726de7d39b762629b500e10ccc7ee964f670ba8"
+      "sha256": "3b4e5892c38d9a0ee110445a76223a44e635de9aae5b1f27e2ca5cc89ed57c54"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -76,7 +76,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "6e3d37f0747d71abb4dee58aac0ab358e6521e5f6ae442f37858882779bc4d1e"
+      "sha256": "520462344d50187270c43c1e4ab33f58d679862b6b2ea2a9b3784cafbd32c7dd"
     },
     {
       "path": "SECURITY.md",
@@ -336,7 +336,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "358f7628c28fb0471a48094911234976608772e544e4b9c93c506fc04405e9fc"
+      "sha256": "e850f7e611df357303041cca32ca295899f7e6f669868e1c8cba7ea14318be88"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -3191,12 +3191,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "aaa1472a81deb980f3abc4c192152368ac2f319c5a1f33048a649bba3c44b9e9"
+      "sha256": "1a5834a375798546f7b358393e864dffc58c970aa3d25fc810cad4d132aea4d2"
     },
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "3410ac5d56378ac154be437aa061d247fd85e374cbe7e2af170d580bbd5c7a08"
+      "sha256": "7b8f7dd7c26e5abf52a70d2089446c80e088dacf7528386cc37c785a4f566315"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
@@ -3271,7 +3271,7 @@
     {
       "path": "scripts/verify_portfolio_reproducibility.py",
       "mode": "100644",
-      "sha256": "afc84f1a8bea0a1d1c8969039ae01ca3025870d437e52f025a3f4a0b682648a6"
+      "sha256": "4d4037280e732c864376e54c35a240763d51e4858323c45c0573ced9bec1a54d"
     },
     {
       "path": "scripts/visual_system.py",
@@ -4106,7 +4106,7 @@
     {
       "path": "tests/test_reproducibility_and_source_security.py",
       "mode": "100644",
-      "sha256": "7f3475fa0540124da95bec6db298754c1c48116523ff02beee87cb42e69637dd"
+      "sha256": "fbf266bb51633cb194c5e8a0f370580abdd47e50a35d974f22a09a5a17a11135"
     },
     {
       "path": "tests/test_v5_numerics.py",
