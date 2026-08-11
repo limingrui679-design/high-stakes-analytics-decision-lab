@@ -12,9 +12,9 @@
     "modeled_scenario": "fixed daily rebalancing-unit budget"
   },
   "forecast": {
-    "station_hour_mae": 0.6936460341386608,
-    "hour_baseline_mae": 1.0375601071705711,
-    "relative_mae_improvement": 0.3314642406306125
+    "station_hour_mae": 0.6936460341386594,
+    "hour_baseline_mae": 1.037560107170567,
+    "relative_mae_improvement": 0.3314642406306111
   },
   "decision_options": {
     "monitoring-only": {
@@ -32,12 +32,12 @@
     "top-25-station-hours": {
       "modeled_residual_imbalance": 0.8464720426017497,
       "unserved_station_hour_share": 0.44681225783726664,
-      "allocation_concentration": 0.04307347222383828,
+      "allocation_concentration": 0.04307347222383832,
       "modeled_units_per_day": 250.0
     }
   },
   "optimization": {
-    "policies_2012_evaluation": {
+    "scenario_evaluation": {
       "monitoring-only": {
         "modeled_residual_imbalance": 1.0,
         "unserved_station_hour_share": 0.45984501585065163,
@@ -53,7 +53,7 @@
       "top-25-station-hours": {
         "modeled_residual_imbalance": 0.8464720426017497,
         "unserved_station_hour_share": 0.44681225783726664,
-        "allocation_concentration": 0.04307347222383828,
+        "allocation_concentration": 0.04307347222383832,
         "modeled_units_per_day": 250.0
       }
     }

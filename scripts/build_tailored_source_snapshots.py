@@ -44,7 +44,7 @@ from safe_external_io import (  # noqa: E402
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.0"
+    "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.0.1"
 )
 MAX_XLSX_FILE_BYTES = 50 * 1024 * 1024
 MAX_XLSX_MEMBER_COUNT = 2_048
@@ -93,7 +93,12 @@ def _write_csv(path: Path, rows: Iterable[dict[str, Any]], fields: list[str]) ->
     path.parent.mkdir(parents=True, exist_ok=True)
     count = 0
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fields,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
@@ -720,6 +725,39 @@ def _acs_value(row: dict[str, str], table: str, line: str) -> str:
     return row.get(f"{table}_E{line}", row.get(f"{table}_{line}E", ""))
 
 
+ACS_SPECIAL_VALUE_MEANINGS = {
+    "-222222222": "margin_of_error_insufficient_sample",
+    "-333333333": "margin_of_error_open_ended_median",
+    "-555555555": "margin_of_error_not_applicable_controlled_estimate",
+    "-666666666": "estimate_not_computed",
+    "-888888888": "estimate_not_applicable_or_unavailable",
+    "-999999999": "estimate_not_displayable_insufficient_cases",
+}
+
+
+def _normalized_acs_estimate(
+    row: dict[str, str],
+    table: str,
+    line: str,
+) -> tuple[str, str]:
+    """Return an analytical value plus an explicit source-special-value code."""
+
+    value = _acs_value(row, table, line).strip()
+    if value in ACS_SPECIAL_VALUE_MEANINGS:
+        return "", value
+    if not value:
+        return "", "source_null"
+    try:
+        number = float(value)
+    except ValueError as error:
+        raise ValueError(
+            f"ACS {table} line {line} returned a non-numeric estimate: {value!r}"
+        ) from error
+    if not math.isfinite(number):
+        return "", "source_non_finite"
+    return value, ""
+
+
 def _lodes_jobs(year: int) -> tuple[dict[str, int], dict[str, Any]]:
     url = (
         "https://lehd.ces.census.gov/data/lodes/LODES8/ma/wac/"
@@ -868,24 +906,36 @@ def build_opportunity_zone() -> None:
         ]
         geoids = sorted(set(acs[2018]) & set(acs[2019]))
         rows = []
+        acs_special_value_counts: Counter[tuple[str, str]] = Counter()
+        acs_variables = {
+            "population": ("B01003", "001"),
+            "poverty_universe": ("B17001", "001"),
+            "poverty_count": ("B17001", "002"),
+            "median_household_income": ("B19013", "001"),
+            "median_gross_rent": ("B25064", "001"),
+            "civilian_labor_force": ("B23025", "003"),
+            "unemployed": ("B23025", "005"),
+        }
         for geoid in geoids:
             for year in (2018, 2019):
                 acs_row = acs[year][geoid]
-                rows.append(
-                    {
-                        "geoid": geoid,
-                        "year": year,
-                        "qoz_2018": int(geoid in qozs),
-                        "population": _acs_value(acs_row, "B01003", "001"),
-                        "poverty_universe": _acs_value(acs_row, "B17001", "001"),
-                        "poverty_count": _acs_value(acs_row, "B17001", "002"),
-                        "median_household_income": _acs_value(acs_row, "B19013", "001"),
-                        "median_gross_rent": _acs_value(acs_row, "B25064", "001"),
-                        "civilian_labor_force": _acs_value(acs_row, "B23025", "003"),
-                        "unemployed": _acs_value(acs_row, "B23025", "005"),
-                        "workplace_jobs": jobs[year].get(geoid, 0),
-                    }
-                )
+                output: dict[str, Any] = {
+                    "geoid": geoid,
+                    "year": year,
+                    "qoz_2018": int(geoid in qozs),
+                }
+                for field, (table_id, line) in acs_variables.items():
+                    value, source_code = _normalized_acs_estimate(
+                        acs_row,
+                        table_id,
+                        line,
+                    )
+                    output[field] = value
+                    output[f"{field}_source_code"] = source_code
+                    if source_code:
+                        acs_special_value_counts[(field, source_code)] += 1
+                output["workplace_jobs"] = jobs[year].get(geoid, 0)
+                rows.append(output)
         _write_csv(target, rows, list(rows[0]))
         _write_json(
             target.with_suffix(".source-lock.json"),
@@ -897,6 +947,20 @@ def build_opportunity_zone() -> None:
                 },
                 "acs_years": [2018, 2019],
                 "acs_files": acs_source_lock,
+                "acs_special_value_policy": {
+                    "status": "normalized_to_missing_before_analysis",
+                    "official_reference": (
+                        "https://www.census.gov/data/developers/data-sets/"
+                        "acs-1year/notes-on-acs-estimate-and-annotation-values.html"
+                    ),
+                    "code_meanings": ACS_SPECIAL_VALUE_MEANINGS,
+                    "counts": [
+                        {"field": field, "source_code": code, "count": count}
+                        for (field, code), count in sorted(
+                            acs_special_value_counts.items()
+                        )
+                    ],
+                },
                 "lodes_years": [2018, 2019],
                 "lodes_files": lodes_source_lock,
             },
@@ -917,6 +981,20 @@ def _nhanes_mortality(path: Path) -> dict[int, dict[str, Any]]:
                 "permth_int": line[42:45].strip(),
             }
     return result
+
+
+def _normalized_sas_numeric(value: Any) -> tuple[float | str, str]:
+    """Normalize XPORT missing values and decoder subnormal zero artifacts."""
+
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return "", "missing_or_non_numeric"
+    if not math.isfinite(number):
+        return "", "missing_or_non_finite"
+    if 0 < abs(number) < 1e-70:
+        return 0.0, "xport_subnormal_normalized_to_zero"
+    return number, ""
 
 
 def build_nhanes() -> None:
@@ -944,6 +1022,7 @@ def build_nhanes() -> None:
     ]
     rows = []
     source_lock: list[dict[str, Any]] = []
+    normalization_counts: Counter[tuple[str, str]] = Counter()
     with tempfile.TemporaryDirectory(prefix="nhanes-source-") as directory:
         temp_root = Path(directory)
         for cohort, public_year, stem, mortality_name in specifications:
@@ -980,6 +1059,18 @@ def build_nhanes() -> None:
                 if mort["mortstat"] == "0" and followup < 36:
                     continue
                 event = int(mort["mortstat"] == "1" and 0 < followup <= 36)
+                normalized_values = {}
+                for output_field, source_field in (
+                    ("poverty_income_ratio", "INDFMPIR"),
+                    ("interview_weight", "WTINT2YR"),
+                    ("exam_weight", "WTMEC2YR"),
+                ):
+                    value, normalization = _normalized_sas_numeric(
+                        record.get(source_field)
+                    )
+                    normalized_values[output_field] = value
+                    if normalization:
+                        normalization_counts[(output_field, normalization)] += 1
                 rows.append(
                     {
                         "seqn": seqn,
@@ -987,8 +1078,7 @@ def build_nhanes() -> None:
                         "age": int(age),
                         "sex": int(_float(record.get("RIAGENDR"))),
                         "race_ethnicity": int(_float(record.get("RIDRETH3"))),
-                        "poverty_income_ratio": record.get("INDFMPIR", ""),
-                        "exam_weight": record.get("WTMEC2YR", ""),
+                        **normalized_values,
                         "stratum": int(_float(record.get("SDMVSTRA"))),
                         "psu": int(_float(record.get("SDMVPSU"))),
                         "followup_months": followup,
@@ -997,7 +1087,22 @@ def build_nhanes() -> None:
                 )
     rows.sort(key=lambda row: (row["cohort"], row["seqn"]))
     _write_csv(target, rows, list(rows[0]))
-    _write_json(target.with_suffix(".source-lock.json"), {"files": source_lock})
+    _write_json(
+        target.with_suffix(".source-lock.json"),
+        {
+            "files": source_lock,
+            "sas_numeric_normalization": {
+                "policy": (
+                    "Non-finite values become explicit missing values; positive or "
+                    "negative XPORT decoder subnormals below 1e-70 become zero."
+                ),
+                "counts": [
+                    {"field": field, "normalization": reason, "count": count}
+                    for (field, reason), count in sorted(normalization_counts.items())
+                ],
+            },
+        },
+    )
     print(json.dumps({"case": "nhanes-population-transportability", "rows": len(rows)}))
 
 

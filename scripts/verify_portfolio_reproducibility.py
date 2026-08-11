@@ -11,6 +11,7 @@ manifest, and configuration hashes are never exempted.
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import math
 import os
@@ -19,7 +20,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,16 +37,87 @@ REPORT_HASH_PATTERN = re.compile(
     r"(?im)(?P<prefix>(?:Result|Analytical result|Case) SHA-256:\s*`)[0-9a-f]{64}(?P<suffix>`)",
 )
 IGNORED_PARTS = {".git", "__pycache__", ".pytest_cache"}
+RELEASE_MANIFEST = Path("RELEASE-MANIFEST.json")
+
+
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _manifest_files(root: Path) -> list[Path]:
+    manifest_path = root / RELEASE_MANIFEST
+    if not manifest_path.is_file():
+        raise RuntimeError(
+            "Repository metadata is unavailable and RELEASE-MANIFEST.json is missing."
+        )
+    payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if payload.get("schema_version") != "1.0" or payload.get("algorithm") != "sha256":
+        raise ValueError("Unsupported release-manifest schema or digest algorithm.")
+    entries = payload.get("files")
+    if not isinstance(entries, list) or not entries:
+        raise ValueError("Release manifest must contain a non-empty files list.")
+    paths: list[Path] = []
+    canonical_paths: set[str] = set()
+    for entry in entries:
+        if not isinstance(entry, dict):
+            raise ValueError("Release-manifest file entries must be objects.")
+        raw_path = entry.get("path")
+        expected_hash = entry.get("sha256")
+        if not isinstance(raw_path, str) or not isinstance(expected_hash, str):
+            raise ValueError("Release-manifest paths and hashes must be strings.")
+        pure_path = PurePosixPath(raw_path)
+        if (
+            not raw_path
+            or "\x00" in raw_path
+            or "\\" in raw_path
+            or pure_path.is_absolute()
+            or ".." in pure_path.parts
+            or pure_path.as_posix() != raw_path
+            or pure_path == RELEASE_MANIFEST
+        ):
+            raise ValueError(f"Unsafe release-manifest path: {raw_path!r}")
+        canonical = raw_path.casefold()
+        if canonical in canonical_paths:
+            raise ValueError(f"Duplicate release-manifest path: {raw_path!r}")
+        canonical_paths.add(canonical)
+        if HASH_PATTERN.fullmatch(expected_hash) is None:
+            raise ValueError(f"Invalid release-manifest hash for {raw_path!r}.")
+        relative = Path(*pure_path.parts)
+        source = root / relative
+        if not source.is_file() or source.is_symlink():
+            raise ValueError(
+                f"Release-manifest file is missing or unsupported: {raw_path}"
+            )
+        observed_hash = _sha256_file(source)
+        if observed_hash != expected_hash:
+            raise ValueError(
+                f"Release-manifest hash mismatch for {raw_path}: "
+                f"expected {expected_hash}, observed {observed_hash}"
+            )
+        paths.append(relative)
+    return [RELEASE_MANIFEST, *sorted(paths)]
 
 
 def _tracked_files(root: Path) -> list[Path]:
-    result = subprocess.run(
-        ["git", "ls-files", "-z"],
-        cwd=root,
-        check=True,
-        stdout=subprocess.PIPE,
-    )
-    return [Path(item.decode("utf-8")) for item in result.stdout.split(b"\0") if item]
+    if (root / ".git").exists():
+        result = subprocess.run(
+            ["git", "ls-files", "-z"],
+            cwd=root,
+            check=False,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        if result.returncode == 0:
+            return [
+                Path(item.decode("utf-8"))
+                for item in result.stdout.split(b"\0")
+                if item
+            ]
+    return _manifest_files(root)
 
 
 def _copy_tracked_repository(source: Path, destination: Path, tracked: list[Path]) -> None:

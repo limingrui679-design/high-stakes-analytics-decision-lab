@@ -1,7 +1,9 @@
 {
   "project_id": "nhanes-population-transportability",
   "data": {
+    "source_rows": 11820,
     "rows": 11820,
+    "excluded_nonpositive_or_missing_weight": 0,
     "development_rows": 5849,
     "external_validation_rows": 5971
   },
@@ -9,42 +11,43 @@
     "design": "survey-weighted cross-cohort transportability audit",
     "development": "NHANES 2011-2012",
     "validation": "NHANES 2015-2016",
+    "primary_weight": "WTINT2YR interview weight",
     "horizon": "36-month linked mortality"
   },
   "transport_validation": {
-    "auc": 0.8039134416014864,
-    "brier": 0.021547614686532584,
+    "auc": 0.8050964232297646,
+    "brier": 0.02252277533482503,
     "calibration": [
       {
-        "predicted": 0.002265221814221423,
-        "observed": 0.0019580321490138774,
+        "predicted": 0.002496847243567876,
+        "observed": 0.0018553219356596006,
         "rows": 1492
       },
       {
-        "predicted": 0.008679487694747792,
-        "observed": 0.007115166293032964,
+        "predicted": 0.009067477908673604,
+        "observed": 0.007260259901154535,
         "rows": 1493
       },
       {
-        "predicted": 0.027100927840817923,
-        "observed": 0.022444658654641705,
+        "predicted": 0.031264251771809734,
+        "observed": 0.023125655899976692,
         "rows": 1493
       },
       {
-        "predicted": 0.0652809299262662,
-        "observed": 0.06733567098243969,
+        "predicted": 0.07218986833138244,
+        "observed": 0.07156679559188112,
         "rows": 1493
       }
     ]
   },
   "cohort_mortality": {
-    "2011-2012": 0.022959767283072384,
-    "2015-2016": 0.02280799863979848
+    "2011-2012": 0.025595240491142958,
+    "2015-2016": 0.023901820226122507
   },
   "income_gradient": {
-    "PIR < 1": 0.04997161418064747,
-    "PIR 1-3": 0.026954949934752163,
-    "PIR >= 3": 0.01065344003817005
+    "PIR < 1": 0.04897891504054451,
+    "PIR 1-3": 0.028629995181616276,
+    "PIR >= 3": 0.011096166642049002
   },
   "decision_support": {
     "status": "population_research_only",
@@ -55,8 +58,8 @@
     ]
   },
   "headline_metrics": [
-    "External-cohort AUC: 0.804",
-    "External-cohort Brier score: 0.022",
+    "External-cohort AUC: 0.805",
+    "External-cohort Brier score: 0.023",
     "Linked adults: 11,820",
     "Terminal use: population research only"
   ],
@@ -67,8 +70,8 @@
     "license": "U.S. Government public-use data",
     "accessed_at": "2026-08-10",
     "raw_sha256": {
-      "nhanes-36-month-mortality-cohorts.csv": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad",
-      "nhanes-36-month-mortality-cohorts.source-lock.json": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358"
+      "nhanes-36-month-mortality-cohorts.csv": "22a467eebd9c940c143adb5b91486832759967ebd2415f1412fe6cde09da500f",
+      "nhanes-36-month-mortality-cohorts.source-lock.json": "d4bdbe4213b6cc8dc121e48c936b0bc134ec9447ff46476386884012210baffe"
     },
     "config_sha256": "67c3b0f4be172b697d129946be67dd75b6da3e7741768921bfa53679d41a68fb"
   },

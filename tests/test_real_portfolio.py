@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import csv
 import hashlib
 import importlib.util
 import json
+import math
 import re
 import shutil
 import sys
@@ -27,7 +29,12 @@ SPEC.loader.exec_module(MIGRATION)
 PROJECT_ROOT = ROOT / "examples" / "real-data-cases" / "projects"
 SHARED_DIR = PROJECT_ROOT / "_shared"
 sys.path.insert(0, str(SHARED_DIR))
-from portfolio_core import PROJECTS_WITH_CASES, is_missing_value  # noqa: E402
+from portfolio_core import (  # noqa: E402
+    ACS_SPECIAL_VALUE_CODES,
+    PROJECTS_WITH_CASES,
+    _quality,
+    is_missing_value,
+)
 from portfolio_modeling import _total_variation_distance  # noqa: E402
 
 
@@ -470,12 +477,183 @@ class RealPortfolioContractTests(unittest.TestCase):
         self.assertAlmostEqual(first, 0.09)
 
     def test_missing_value_policy_is_normalized_and_explicit(self) -> None:
-        for value in (None, "", "  ", "?", "NA", " na ", "N/A", " n/a "):
+        for value in (
+            None,
+            "",
+            "  ",
+            "?",
+            "NA",
+            " na ",
+            "N/A",
+            " n/a ",
+            "NaN",
+            "null",
+            "-666666666",
+        ):
             with self.subTest(value=value):
                 self.assertTrue(is_missing_value(value))
         for value in ("Not Applicable", "No", "0", 0, False):
             with self.subTest(value=value):
                 self.assertFalse(is_missing_value(value))
+
+    def test_unhandled_sentinels_and_domain_range_fail_the_quality_gate(self) -> None:
+        quality = _quality(
+            [{"id": "tract-1", "median_rent": "-666666666"}],
+            "id",
+            {"numeric_ranges": {"median_rent": {"minimum": 1, "maximum": 100000}}},
+        )
+        self.assertEqual(quality["quality_status"], "blocked")
+        self.assertEqual(
+            {finding["code"] for finding in quality["findings"]},
+            {"unnormalized_source_sentinel", "missing_values_present"},
+        )
+        outside = _quality(
+            [{"id": "tract-1", "rate": "1.1"}],
+            "id",
+            {"numeric_ranges": {"rate": {"minimum": 0, "maximum": 1}}},
+        )
+        self.assertEqual(outside["quality_status"], "blocked")
+        self.assertEqual(outside["outside_range_count_by_column"], {"rate": 1})
+
+    def test_processed_analytical_fields_contain_no_acs_special_codes(self) -> None:
+        for item in self.catalog["projects"]:
+            analysis = PROJECT_ROOT / item["id"] / "data/processed/analysis.csv"
+            with analysis.open(newline="", encoding="utf-8-sig") as handle:
+                for row_number, row in enumerate(csv.DictReader(handle), start=2):
+                    for field, value in row.items():
+                        if field.endswith("_source_code"):
+                            continue
+                        self.assertNotIn(
+                            value.strip(),
+                            ACS_SPECIAL_VALUE_CODES,
+                            f"{item['id']} row {row_number} field {field}",
+                        )
+
+    def test_qoz_special_values_are_audited_and_results_are_plausible(self) -> None:
+        project = PROJECT_ROOT / "opportunity-zone-policy-evaluation"
+        quality = json.loads(
+            (project / "data/quality-report.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(quality["sentinel_count_by_column"], {})
+        self.assertEqual(
+            quality["source_annotation_count_by_column"],
+            {
+                "median_gross_rent_source_code": 128,
+                "median_household_income_source_code": 47,
+            },
+        )
+        self.assertEqual(quality["missing_count_by_column"]["median_gross_rent"], 128)
+        self.assertEqual(
+            quality["missing_count_by_column"]["median_household_income"],
+            47,
+        )
+        with (
+            project / "data/raw/massachusetts-qoz-tract-panel.csv"
+        ).open(newline="", encoding="utf-8") as handle:
+            rows = list(csv.DictReader(handle))
+        source_codes = [
+            (field.removesuffix("_source_code"), value)
+            for row in rows
+            for field, value in row.items()
+            if field.endswith("_source_code") and value
+        ]
+        self.assertEqual(len(source_codes), 175)
+        for field, code in source_codes:
+            self.assertEqual(code, "-666666666")
+            row = next(
+                candidate
+                for candidate in rows
+                if candidate[f"{field}_source_code"] == code
+            )
+            self.assertEqual(row[field], "")
+
+        results = json.loads(
+            (project / "outputs/results.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(results["data"]["excluded_tracts"], 84)
+        self.assertEqual(results["data"]["exclusion_counts"], {"source_special_value": 84})
+        self.assertEqual(
+            results["data"]["complete_tracts"] + results["data"]["excluded_tracts"],
+            results["data"]["panel_rows"] // 2,
+        )
+        effects = results["matched_change_effects"]
+        self.assertLess(abs(effects["change_income"]["matched_difference_in_change"]), 1_000_000)
+        self.assertLess(abs(effects["change_rent"]["matched_difference_in_change"]), 100_000)
+        for outcome, result in effects.items():
+            point = result["matched_difference_in_change"]
+            interval = result["control_reuse_wild_cluster_95_interval"]
+            self.assertTrue(math.isfinite(point), outcome)
+            self.assertTrue(all(math.isfinite(value) for value in interval), outcome)
+            self.assertLessEqual(interval[0], interval[1], outcome)
+            if outcome in {"change_poverty", "change_unemployment"}:
+                self.assertTrue(-1 <= point <= 1, outcome)
+                self.assertTrue(all(-1 <= value <= 1 for value in interval), outcome)
+
+    def test_nhanes_weight_policy_and_spatial_annotations_are_explicit(self) -> None:
+        nhanes = PROJECT_ROOT / "nhanes-population-transportability"
+        with (nhanes / "data/processed/analysis.csv").open(
+            newline="",
+            encoding="utf-8",
+        ) as handle:
+            rows = list(csv.DictReader(handle))
+        self.assertTrue(all(float(row["interview_weight"]) > 0 for row in rows))
+        self.assertEqual(sum(not row["poverty_income_ratio"] for row in rows), 1196)
+        nhanes_quality = json.loads(
+            (nhanes / "data/quality-report.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            nhanes_quality["missing_count_by_column"]["poverty_income_ratio"],
+            1196,
+        )
+        nhanes_results = json.loads(
+            (nhanes / "outputs/results.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(
+            nhanes_results["study_design"]["primary_weight"],
+            "WTINT2YR interview weight",
+        )
+        self.assertEqual(
+            nhanes_results["data"]["excluded_nonpositive_or_missing_weight"],
+            0,
+        )
+        self.assertTrue(0 <= nhanes_results["transport_validation"]["auc"] <= 1)
+        self.assertTrue(0 <= nhanes_results["transport_validation"]["brier"] <= 1)
+
+        spatial = PROJECT_ROOT / "spatial-equity-planning"
+        spatial_quality = json.loads(
+            (spatial / "data/quality-report.json").read_text(encoding="utf-8")
+        )
+        self.assertEqual(spatial_quality["sentinel_count_by_column"], {})
+        self.assertEqual(
+            spatial_quality["source_annotation_count_by_column"][
+                "median_income_moe_source_code"
+            ],
+            55,
+        )
+        self.assertEqual(
+            spatial_quality["source_annotation_count_by_column"][
+                "median_rent_moe_source_code"
+            ],
+            141,
+        )
+        spatial_results = json.loads(
+            (spatial / "outputs/results.json").read_text(encoding="utf-8")
+        )
+        self.assertAlmostEqual(
+            spatial_results["transit_access"][
+                "high_poverty_weighted_nearest_stop_km"
+            ],
+            40.64967661673857,
+        )
+
+    def test_bike_scenario_key_matches_2021_evidence(self) -> None:
+        results = json.loads(
+            (
+                PROJECT_ROOT / "bike-demand-operations/outputs/results.json"
+            ).read_text(encoding="utf-8")
+        )
+        self.assertIn("scenario_evaluation", results["optimization"])
+        self.assertNotIn("policies_2012_evaluation", results["optimization"])
 
 
 if __name__ == "__main__":

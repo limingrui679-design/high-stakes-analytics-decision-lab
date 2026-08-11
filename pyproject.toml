@@ -14,7 +14,10 @@ select = ["B", "E4", "E7", "E9", "F", "I"]
 
 [tool.mypy]
 python_version = "3.11"
-files = ["scripts"]
+files = [
+  "scripts",
+  "examples/real-data-cases/projects/_shared/safe_external_io.py",
+]
 check_untyped_defs = true
 ignore_missing_imports = true
 no_implicit_optional = true

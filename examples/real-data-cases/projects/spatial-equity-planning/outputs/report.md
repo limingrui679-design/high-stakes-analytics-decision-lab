@@ -61,11 +61,11 @@ Every strategy uses the same hub count and radius before population and need cov
 
 | Check | Result |
 |---|---|
-| Prepared shape | 1,620 rows × 14 columns |
+| Prepared shape | 1,620 rows × 25 columns |
 | Duplicate primary keys | 0 |
-| Missing values under declared tokens | 157 |
+| Missing values under declared tokens | 353 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Service assumptions can reverse the apparent advantage
 
@@ -156,6 +156,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `spatial-equity-planning`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `cbbacc566f4e501689417567b51bea90dab8691a9c8503d6c21504536dc28ab6`
+- Result SHA-256: `fdadcb9062900397b662e5c9866d8c38a7c9b5f2d4827087ffd28a50896c8bd8`
 
 </details>

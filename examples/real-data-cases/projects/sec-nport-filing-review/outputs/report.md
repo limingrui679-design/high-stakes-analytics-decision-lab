@@ -68,7 +68,7 @@ Every score component is percentile-based.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 696 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Review capacity trade-off
 
@@ -149,6 +149,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `sec-nport-filing-review`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `decaf3a744d8ae63d1eae0582846ed9f8e571e1f61cff5ebce53f4965959013a`
+- Result SHA-256: `eea4c0939afc9ee823ad46d7fccd245eeb5b98492ffe7558cbcd307ff21fc94c`
 
 </details>

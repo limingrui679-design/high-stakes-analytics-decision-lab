@@ -65,7 +65,7 @@ A day-block interval and 500-permutation benchmark make the limited discriminati
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_aggregate_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Calibration is tested only after model selection
 
@@ -201,6 +201,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `cfpb-fintech-complaint-operations`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `aa0ecb2076431be2f9b9da5223e24cb87e1eba1f9324e8d2cedfc61cac8e9cdd`
+- Result SHA-256: `47e78a758ae96efa49fb02cb1574a464e0ef6622cfcd9435c9bf4de5ed2aa7da`
 
 </details>

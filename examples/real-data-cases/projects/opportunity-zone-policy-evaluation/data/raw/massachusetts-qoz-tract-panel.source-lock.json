@@ -70,6 +70,30 @@
       "bytes": 37371884
     }
   ],
+  "acs_special_value_policy": {
+    "status": "normalized_to_missing_before_analysis",
+    "official_reference": "https://www.census.gov/data/developers/data-sets/acs-1year/notes-on-acs-estimate-and-annotation-values.html",
+    "code_meanings": {
+      "-222222222": "margin_of_error_insufficient_sample",
+      "-333333333": "margin_of_error_open_ended_median",
+      "-555555555": "margin_of_error_not_applicable_controlled_estimate",
+      "-666666666": "estimate_not_computed",
+      "-888888888": "estimate_not_applicable_or_unavailable",
+      "-999999999": "estimate_not_displayable_insufficient_cases"
+    },
+    "counts": [
+      {
+        "field": "median_gross_rent",
+        "source_code": "-666666666",
+        "count": 128
+      },
+      {
+        "field": "median_household_income",
+        "source_code": "-666666666",
+        "count": 47
+      }
+    ]
+  },
   "lodes_years": [
     2018,
     2019

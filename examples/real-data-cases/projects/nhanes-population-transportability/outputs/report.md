@@ -10,8 +10,8 @@ This source-backed project connects the decision question to its data, validatio
 
 | Signal | Observed result |
 |---|---|
-| External-cohort AUC | 0.804 |
-| External-cohort Brier score | 0.022 |
+| External-cohort AUC | 0.805 |
+| External-cohort Brier score | 0.023 |
 | Linked adults | 11,820 |
 | Terminal use | population research only |
 
@@ -58,17 +58,18 @@ Earlier age/sex cells are tested later.
 | Design | survey-weighted cross-cohort transportability audit |
 | Development | NHANES 2011-2012 |
 | Validation | NHANES 2015-2016 |
+| Primary Weight | WTINT2YR interview weight |
 | Horizon | 36-month linked mortality |
 
 ### Data-quality gate
 
 | Check | Result |
 |---|---|
-| Prepared shape | 11,820 rows × 11 columns |
+| Prepared shape | 11,820 rows × 12 columns |
 | Duplicate primary keys | 0 |
-| Missing values under declared tokens | 0 |
+| Missing values under declared tokens | 1,196 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Income gradient
 
@@ -141,6 +142,6 @@ The analysis can prioritize validation, diligence, or a bounded pilot; it is not
 
 - Project ID: `nhanes-population-transportability`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `ec593b1a2a77c0c7a1ad2fe0f4ab468fc8e7b944d60bd560ef12cca07e6a47be`
+- Result SHA-256: `9de2658eda3a3bc22e81e6d2b23bb783b51be9fe738e0b73c3d0639f2d5466cc`
 
 </details>

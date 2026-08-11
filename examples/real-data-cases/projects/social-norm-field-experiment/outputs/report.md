@@ -68,7 +68,7 @@ Standard errors account for household assignment.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Prior-turnout strata
 

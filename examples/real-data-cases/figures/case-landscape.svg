@@ -132,7 +132,7 @@
 <text x="686.0" y="882.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC → DECISION</text>
 <text x="642.0" y="910.0" class="section" text-anchor="start" style="fill:#0B1324">Opportunity Zone One-Year Policy Evidence</text>
 <text x="642.0" y="928.0" class="section" text-anchor="start" style="fill:#0B1324">Screen</text>
-<text x="642.0" y="959.0" class="small" text-anchor="start" style="fill:#617084">Complete tract panels: 1,460</text>
+<text x="642.0" y="959.0" class="small" text-anchor="start" style="fill:#617084">Complete tract panels: 1,394</text>
 <text x="642.0" y="978.0" class="small" text-anchor="start" style="fill:#7257D9">associational policy screen only</text>
 <rect x="44.0" y="1008.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1002.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="42.0" y="1002.0" width="8" height="128" rx="4" fill="#B9487C"/>
@@ -147,7 +147,7 @@
 <text x="686.0" y="1026.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC → DECISION</text>
 <text x="642.0" y="1054.0" class="section" text-anchor="start" style="fill:#0B1324">NHANES Mortality Transportability and</text>
 <text x="642.0" y="1072.0" class="section" text-anchor="start" style="fill:#0B1324">Population Inequality</text>
-<text x="642.0" y="1103.0" class="small" text-anchor="start" style="fill:#617084">External-cohort AUC: 0.804</text>
+<text x="642.0" y="1103.0" class="small" text-anchor="start" style="fill:#617084">External-cohort AUC: 0.805</text>
 <text x="642.0" y="1122.0" class="small" text-anchor="start" style="fill:#4E7D32">population research only</text>
 <rect x="44.0" y="1152.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1146.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
 <rect x="42.0" y="1146.0" width="8" height="128" rx="4" fill="#246BFD"/>

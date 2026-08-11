@@ -1,19 +1,19 @@
 {
   "project_id": "opportunity-zone-policy-evaluation",
   "source_id": "cdfi-acs-lodes-ma-qoz-2018-2019",
-  "verified_at": "2026-08-11T10:03:57.103691+08:00",
+  "verified_at": "2026-08-11T13:17:18.267687+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
     {
       "path": "data/raw/massachusetts-qoz-tract-panel.csv",
-      "sha256": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae",
-      "bytes": 171850
+      "sha256": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3",
+      "bytes": 189785
     },
     {
       "path": "data/raw/massachusetts-qoz-tract-panel.source-lock.json",
-      "sha256": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790",
-      "bytes": 4358
+      "sha256": "c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6",
+      "bytes": 5232
     }
   ]
 }

@@ -24,5 +24,25 @@
       "sha256": "f392baaf9c20a4c75bc9936775ba956e64528fa5ada5102b08f86f64e41e84a0",
       "bytes": 484288
     }
-  ]
+  ],
+  "sas_numeric_normalization": {
+    "policy": "Non-finite values become explicit missing values; positive or negative XPORT decoder subnormals below 1e-70 become zero.",
+    "counts": [
+      {
+        "field": "exam_weight",
+        "normalization": "xport_subnormal_normalized_to_zero",
+        "count": 500
+      },
+      {
+        "field": "poverty_income_ratio",
+        "normalization": "missing_or_non_finite",
+        "count": 1196
+      },
+      {
+        "field": "poverty_income_ratio",
+        "normalization": "xport_subnormal_normalized_to_zero",
+        "count": 106
+      }
+    ]
+  }
 }

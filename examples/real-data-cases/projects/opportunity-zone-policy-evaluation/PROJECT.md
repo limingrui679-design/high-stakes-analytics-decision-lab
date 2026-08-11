@@ -8,7 +8,7 @@
 
 - Source: CDFI Fund and U.S. Census Bureau — 2018 designated QOZ list with 2018-2019 ACS and LODES Massachusetts tract panel.
 - Analytical grain: one Massachusetts tract-year row.
-- Methods: Panel linkage, nearest-neighbor matching, change contrasts, bootstrap intervals, and support diagnostics.
+- Methods: Panel linkage, ACS special-value normalization, complete-case screening, nearest-neighbor matching, change contrasts, reuse-aware wild-cluster intervals, and support diagnostics.
 - Every bundled raw or minimized source file is hash-locked in `source-manifest.json`.
 
 ## Reproduce

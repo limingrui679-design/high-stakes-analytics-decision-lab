@@ -22,7 +22,7 @@ bytes and receipts.
 
 Different CPython versions may accumulate or serialize the final few bits of a
 floating-point calculation differently. The public verification workflow
-therefore rebuilds all fifteen projects on Python 3.11, 3.13, and 3.14 and
+therefore rebuilds all fifteen projects on Python 3.11, 3.12, 3.13, and 3.14 and
 enforces:
 
 - absolute tolerance: `2e-8`;
@@ -43,7 +43,9 @@ record.
 python3 scripts/verify_portfolio_reproducibility.py
 ```
 
-The verifier copies only tracked files to an isolated temporary directory,
+The verifier copies only verified release files to an isolated temporary directory,
 runs the complete fifteen-project preparation, analysis, decision-case, report,
 visual, and gallery build, and fails on any unapproved difference or unexpected
-generated file.
+generated file. In a Git checkout, the allowlist comes from `git ls-files`; in
+a source ZIP without `.git`, the same paths and SHA-256 values come from the
+self-excluding root `RELEASE-MANIFEST.json`.

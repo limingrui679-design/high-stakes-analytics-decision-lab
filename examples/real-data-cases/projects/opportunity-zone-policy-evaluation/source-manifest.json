@@ -16,11 +16,11 @@
   "raw_files": [
     {
       "path": "data/raw/massachusetts-qoz-tract-panel.csv",
-      "sha256": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae"
+      "sha256": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3"
     },
     {
       "path": "data/raw/massachusetts-qoz-tract-panel.source-lock.json",
-      "sha256": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790"
+      "sha256": "c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6"
     }
   ],
   "privacy_review": {
@@ -134,12 +134,19 @@
         "geoid",
         "year",
         "population",
+        "population_source_code",
         "poverty_universe",
+        "poverty_universe_source_code",
         "poverty_count",
+        "poverty_count_source_code",
         "median_household_income",
+        "median_household_income_source_code",
         "median_gross_rent",
+        "median_gross_rent_source_code",
         "civilian_labor_force",
-        "unemployed"
+        "civilian_labor_force_source_code",
+        "unemployed",
+        "unemployed_source_code"
       ]
     },
     {

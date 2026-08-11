@@ -1,40 +1,119 @@
 {
+  "schema_version": "1.1",
   "rows": 1620,
-  "columns": 14,
+  "columns": 25,
   "column_names": [
     "geoid",
     "latitude",
     "longitude",
     "population",
+    "population_source_code",
     "population_moe",
+    "population_moe_source_code",
     "poverty_population",
+    "poverty_population_source_code",
     "poverty_count",
+    "poverty_count_source_code",
     "poverty_count_moe",
+    "poverty_count_moe_source_code",
     "median_household_income",
+    "median_household_income_source_code",
     "median_income_moe",
+    "median_income_moe_source_code",
     "workers",
+    "workers_source_code",
     "public_transit_workers",
+    "public_transit_workers_source_code",
     "median_gross_rent",
-    "median_rent_moe"
+    "median_gross_rent_source_code",
+    "median_rent_moe",
+    "median_rent_moe_source_code"
   ],
   "missing_count_by_column": {
     "geoid": 0,
     "latitude": 0,
     "longitude": 0,
     "population": 0,
+    "population_source_code": 0,
     "population_moe": 0,
+    "population_moe_source_code": 0,
     "poverty_population": 0,
+    "poverty_population_source_code": 0,
     "poverty_count": 0,
+    "poverty_count_source_code": 0,
     "poverty_count_moe": 0,
+    "poverty_count_moe_source_code": 0,
     "median_household_income": 35,
-    "median_income_moe": 0,
+    "median_household_income_source_code": 0,
+    "median_income_moe": 55,
+    "median_income_moe_source_code": 0,
     "workers": 0,
+    "workers_source_code": 0,
     "public_transit_workers": 0,
+    "public_transit_workers_source_code": 0,
     "median_gross_rent": 122,
-    "median_rent_moe": 0
+    "median_gross_rent_source_code": 0,
+    "median_rent_moe": 141,
+    "median_rent_moe_source_code": 0
   },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {
+    "median_income_moe_source_code": 55,
+    "median_gross_rent_source_code": 122,
+    "median_household_income_source_code": 35,
+    "median_rent_moe_source_code": 141
+  },
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
   "duplicate_key_count": 0,
-  "quality_status": "usable_with_documented_limitations",
+  "findings": [
+    {
+      "code": "source_special_values_normalized",
+      "severity": "low",
+      "columns": [
+        "median_gross_rent_source_code",
+        "median_household_income_source_code",
+        "median_income_moe_source_code",
+        "median_rent_moe_source_code"
+      ],
+      "count": 353,
+      "message": "Source special values were retained as annotations and kept out of analytical numeric fields."
+    },
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "median_gross_rent",
+        "median_household_income",
+        "median_income_moe",
+        "median_rent_moe"
+      ],
+      "count": 353,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 1
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
   "expected_rows": 1620,
   "row_count_matches_manifest": true,
   "privacy_review": {

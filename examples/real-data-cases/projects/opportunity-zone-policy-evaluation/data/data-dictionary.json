@@ -9,12 +9,82 @@
     "year": "year",
     "qoz_2018": "qoz 2018",
     "population": "population",
+    "population_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "poverty_universe": "poverty universe",
+    "poverty_universe_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "poverty_count": "poverty count",
+    "poverty_count_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "median_household_income": "median household income",
+    "median_household_income_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "median_gross_rent": "median gross rent",
+    "median_gross_rent_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "civilian_labor_force": "civilian labor force",
+    "civilian_labor_force_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "unemployed": "unemployed",
+    "unemployed_source_code": "Census source special-value code retained for audit; blank when the estimate is available",
     "workplace_jobs": "workplace jobs"
+  },
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
+  "complete_case_rule": "A tract enters matching only when both years have finite, in-range ACS estimates for every matching covariate and outcome. Source special values remain explicit in adjacent *_source_code fields.",
+  "quality_contract": {
+    "annotation_columns": [
+      "population_source_code",
+      "poverty_universe_source_code",
+      "poverty_count_source_code",
+      "median_household_income_source_code",
+      "median_gross_rent_source_code",
+      "civilian_labor_force_source_code",
+      "unemployed_source_code"
+    ],
+    "numeric_ranges": {
+      "year": {
+        "minimum": 2018,
+        "maximum": 2019
+      },
+      "qoz_2018": {
+        "minimum": 0,
+        "maximum": 1
+      },
+      "population": {
+        "minimum": 0
+      },
+      "poverty_universe": {
+        "minimum": 0
+      },
+      "poverty_count": {
+        "minimum": 0
+      },
+      "median_household_income": {
+        "minimum": 1,
+        "maximum": 1000000
+      },
+      "median_gross_rent": {
+        "minimum": 1,
+        "maximum": 100000
+      },
+      "civilian_labor_force": {
+        "minimum": 0
+      },
+      "unemployed": {
+        "minimum": 0
+      },
+      "workplace_jobs": {
+        "minimum": 0
+      }
+    }
   }
 }

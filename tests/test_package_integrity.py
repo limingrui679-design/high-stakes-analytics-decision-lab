@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import hashlib
+import json
 import re
 import sys
 import unittest
@@ -173,6 +175,33 @@ class PackageIntegrityTests(unittest.TestCase):
             if LEGACY_NAME in path.read_text(encoding="utf-8", errors="ignore"):
                 legacy_hits.append(path.relative_to(ROOT).as_posix())
         self.assertEqual(legacy_hits, [])
+
+    def test_release_manifest_hashes_every_listed_source_file(self) -> None:
+        manifest_path = ROOT / "RELEASE-MANIFEST.json"
+        self.assertTrue(manifest_path.is_file())
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        self.assertEqual(manifest["schema_version"], "1.0")
+        self.assertEqual(manifest["algorithm"], "sha256")
+        paths = [entry["path"] for entry in manifest["files"]]
+        self.assertEqual(paths, sorted(paths))
+        self.assertEqual(len(paths), len({path.casefold() for path in paths}))
+        self.assertNotIn("RELEASE-MANIFEST.json", paths)
+        for required in (
+            "README.md",
+            "SKILL.md",
+            "scripts/verify_portfolio_reproducibility.py",
+            "scripts/build_release_manifest.py",
+        ):
+            self.assertIn(required, paths)
+        for entry in manifest["files"]:
+            with self.subTest(path=entry["path"]):
+                source = ROOT / entry["path"]
+                self.assertTrue(source.is_file())
+                self.assertFalse(source.is_symlink())
+                self.assertEqual(
+                    hashlib.sha256(source.read_bytes()).hexdigest(),
+                    entry["sha256"],
+                )
 
 
 if __name__ == "__main__":

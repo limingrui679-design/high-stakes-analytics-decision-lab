@@ -67,7 +67,7 @@ Unit IDs are ranked by observed 2020-2024 acres.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 238 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Allocation regret
 
@@ -141,6 +141,6 @@ The analysis can prioritize validation, diligence, or a bounded pilot; it is not
 
 - Project ID: `wildfire-mitigation-under-uncertainty`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `3f1c4761cfe12197ff91ea8df9deb81b18dfb0578d4d1f2379a031155e6f89e3`
+- Result SHA-256: `9821284e98122861e4a574cbd69aec70569e6effb505c1b63a02eb2f18038d65`
 
 </details>

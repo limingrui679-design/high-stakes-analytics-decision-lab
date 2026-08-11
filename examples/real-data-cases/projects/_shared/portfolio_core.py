@@ -26,6 +26,7 @@ from statistics import NormalDist
 from typing import Any, Callable, Iterable
 
 from safe_external_io import (
+    ArchiveBudget,
     ZipLimits,
     download_https,
     open_https_stream,
@@ -363,15 +364,40 @@ def read_csv(path: Path, *, delimiter: str = ",") -> list[dict[str, str]]:
 def write_csv(path: Path, rows: list[dict[str, Any]], fields: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fields,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(rows)
 
 
-MISSING_TEXT_TOKENS = frozenset({"", "?", "n/a", "na"})
+ACS_SPECIAL_VALUE_CODES = frozenset(
+    {
+        "-222222222",
+        "-333333333",
+        "-555555555",
+        "-666666666",
+        "-888888888",
+        "-999999999",
+    }
+)
+MISSING_TEXT_TOKENS = frozenset(
+    {"", "?", "n/a", "na", "nan", "null"} | ACS_SPECIAL_VALUE_CODES
+)
 MISSING_VALUE_POLICY = {
     "normalization": "trim surrounding whitespace and compare text case-insensitively",
-    "treated_as_missing": ["null", "empty string", "?", "N/A", "NA"],
+    "treated_as_missing": [
+        "null",
+        "NaN",
+        "empty string",
+        "?",
+        "N/A",
+        "NA",
+        "ACS estimate and margin-of-error special-value codes",
+    ],
     "not_treated_as_missing": ["Not Applicable"],
 }
 
@@ -388,24 +414,190 @@ def is_missing_value(value: Any) -> bool:
 def _quality(
     rows: list[dict[str, Any]],
     key: str | list[str] | None = None,
+    contract: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    contract = contract or {}
     columns = list(rows[0]) if rows else []
+    annotation_columns = set(contract.get("annotation_columns", []))
     missing = {
-        column: sum(is_missing_value(row.get(column)) for row in rows)
+        column: (
+            0
+            if column in annotation_columns
+            else sum(is_missing_value(row.get(column)) for row in rows)
+        )
         for column in columns
     }
+    sentinel_count_by_column = {
+        column: sum(
+            str(row.get(column, "")).strip() in ACS_SPECIAL_VALUE_CODES
+            for row in rows
+        )
+        for column in columns
+        if column not in annotation_columns
+    }
+    sentinel_count_by_column = {
+        column: count
+        for column, count in sentinel_count_by_column.items()
+        if count
+    }
+    findings: list[dict[str, Any]] = []
+    if sentinel_count_by_column:
+        findings.append(
+            {
+                "code": "unnormalized_source_sentinel",
+                "severity": "critical",
+                "columns": sorted(sentinel_count_by_column),
+                "count": sum(sentinel_count_by_column.values()),
+                "message": (
+                    "Source-specific special-value codes must be normalized and "
+                    "documented before analysis."
+                ),
+            }
+        )
+
+    source_annotation_count_by_column = {
+        column: sum(bool(str(row.get(column, "")).strip()) for row in rows)
+        for column in annotation_columns
+    }
+    source_annotation_count_by_column = {
+        column: count
+        for column, count in source_annotation_count_by_column.items()
+        if count
+    }
+    if source_annotation_count_by_column:
+        findings.append(
+            {
+                "code": "source_special_values_normalized",
+                "severity": "low",
+                "columns": sorted(source_annotation_count_by_column),
+                "count": sum(source_annotation_count_by_column.values()),
+                "message": (
+                    "Source special values were retained as annotations and kept "
+                    "out of analytical numeric fields."
+                ),
+            }
+        )
+
+    total_missing = sum(missing.values())
+    if total_missing:
+        findings.append(
+            {
+                "code": "missing_values_present",
+                "severity": "medium",
+                "columns": sorted(column for column, count in missing.items() if count),
+                "count": total_missing,
+                "message": "Missing values require a documented route-specific treatment.",
+            }
+        )
+
+    required_non_missing = set(contract.get("required_non_missing_columns", []))
+    required_missing = {
+        column: missing.get(column, len(rows))
+        for column in required_non_missing
+        if missing.get(column, len(rows))
+    }
+    if required_missing:
+        findings.append(
+            {
+                "code": "required_values_missing",
+                "severity": "high",
+                "columns": sorted(required_missing),
+                "count": sum(required_missing.values()),
+                "message": "Required analytical fields contain missing values.",
+            }
+        )
+
+    invalid_numeric_count_by_column: dict[str, int] = {}
+    outside_range_count_by_column: dict[str, int] = {}
+    for column, bounds in contract.get("numeric_ranges", {}).items():
+        invalid = 0
+        outside = 0
+        minimum = bounds.get("minimum")
+        maximum = bounds.get("maximum")
+        for row in rows:
+            value = row.get(column)
+            if is_missing_value(value):
+                continue
+            try:
+                number = float(value)
+            except (TypeError, ValueError):
+                invalid += 1
+                continue
+            if not math.isfinite(number):
+                invalid += 1
+                continue
+            if minimum is not None and number < float(minimum):
+                outside += 1
+            if maximum is not None and number > float(maximum):
+                outside += 1
+        if invalid:
+            invalid_numeric_count_by_column[column] = invalid
+        if outside:
+            outside_range_count_by_column[column] = outside
+    if invalid_numeric_count_by_column:
+        findings.append(
+            {
+                "code": "invalid_numeric_values",
+                "severity": "high",
+                "columns": sorted(invalid_numeric_count_by_column),
+                "count": sum(invalid_numeric_count_by_column.values()),
+                "message": "Declared numeric fields contain non-finite or non-numeric values.",
+            }
+        )
+    if outside_range_count_by_column:
+        findings.append(
+            {
+                "code": "outside_declared_range",
+                "severity": "critical",
+                "columns": sorted(outside_range_count_by_column),
+                "count": sum(outside_range_count_by_column.values()),
+                "message": "Values fall outside the declared domain range.",
+            }
+        )
+
     duplicate_count = 0
     if key:
         key_fields = [key] if isinstance(key, str) else key
         values = [tuple(row.get(field) for field in key_fields) for row in rows]
         duplicate_count = len(values) - len(set(values))
+    if duplicate_count:
+        findings.append(
+            {
+                "code": "duplicate_primary_key",
+                "severity": "critical",
+                "columns": [key] if isinstance(key, str) else list(key or []),
+                "count": duplicate_count,
+                "message": "The declared primary key is not unique.",
+            }
+        )
+    severity_counts = {
+        severity: sum(item["severity"] == severity for item in findings)
+        for severity in ("critical", "high", "medium", "low")
+    }
+    if severity_counts["critical"]:
+        quality_status = "blocked"
+    elif severity_counts["high"]:
+        quality_status = "needs_user_confirmation"
+    elif severity_counts["medium"]:
+        quality_status = "ready_with_documented_limitations"
+    elif severity_counts["low"]:
+        quality_status = "ready_with_documented_transformations"
+    else:
+        quality_status = "ready"
     return {
+        "schema_version": "1.1",
         "rows": len(rows),
         "columns": len(columns),
         "column_names": columns,
         "missing_count_by_column": missing,
+        "sentinel_count_by_column": sentinel_count_by_column,
+        "source_annotation_count_by_column": source_annotation_count_by_column,
+        "invalid_numeric_count_by_column": invalid_numeric_count_by_column,
+        "outside_range_count_by_column": outside_range_count_by_column,
         "duplicate_key_count": duplicate_count,
-        "quality_status": "usable_with_documented_limitations",
+        "findings": findings,
+        "severity_counts": severity_counts,
+        "quality_status": quality_status,
     }
 
 
@@ -552,14 +744,32 @@ def _read_pipe_table(path: Path) -> dict[str, dict[str, str]]:
     return {row["GEO_ID"]: row for row in rows}
 
 
-def _safe_number(value: str | None) -> float | None:
-    if value in (None, "", "N/A", "NA", "-666666666", "-999999999"):
+def _safe_number(
+    value: str | None,
+    *,
+    margin_of_error: bool = False,
+) -> float | None:
+    if value is None:
+        return None
+    normalized = str(value).strip()
+    if normalized == "-555555555" and margin_of_error:
+        return 0.0
+    if normalized.casefold() in MISSING_TEXT_TOKENS:
         return None
     try:
-        number = float(value)
+        number = float(normalized)
     except ValueError:
         return None
     return number if math.isfinite(number) else None
+
+
+def _acs_source_code(value: str | None) -> str:
+    normalized = "" if value is None else str(value).strip()
+    if normalized in ACS_SPECIAL_VALUE_CODES:
+        return normalized
+    if not normalized:
+        return "source_null"
+    return ""
 
 
 def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -599,22 +809,75 @@ def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str
         transit = _safe_number(commute.get("B08301_E010"))
         median_income = _safe_number(income.get("B19013_E001"))
         median_rent = _safe_number(rent.get("B25064_E001"))
+        population_moe = _safe_number(
+            population_row.get("B01003_M001"),
+            margin_of_error=True,
+        )
+        poverty_count_moe = _safe_number(
+            poverty.get("B17001_M002"),
+            margin_of_error=True,
+        )
+        median_income_moe = _safe_number(
+            income.get("B19013_M001"),
+            margin_of_error=True,
+        )
+        median_rent_moe = _safe_number(
+            rent.get("B25064_M001"),
+            margin_of_error=True,
+        )
         rows.append(
             {
                 "geoid": geoid,
                 "latitude": centroids[geoid][0],
                 "longitude": centroids[geoid][1],
                 "population": "" if population is None else int(population),
-                "population_moe": population_row.get("B01003_M001", ""),
+                "population_source_code": _acs_source_code(
+                    population_row.get("B01003_E001")
+                ),
+                "population_moe": "" if population_moe is None else population_moe,
+                "population_moe_source_code": _acs_source_code(
+                    population_row.get("B01003_M001")
+                ),
                 "poverty_population": "" if poverty_total is None else int(poverty_total),
+                "poverty_population_source_code": _acs_source_code(
+                    poverty.get("B17001_E001")
+                ),
                 "poverty_count": "" if poverty_count is None else int(poverty_count),
-                "poverty_count_moe": poverty.get("B17001_M002", ""),
+                "poverty_count_source_code": _acs_source_code(
+                    poverty.get("B17001_E002")
+                ),
+                "poverty_count_moe": (
+                    "" if poverty_count_moe is None else poverty_count_moe
+                ),
+                "poverty_count_moe_source_code": _acs_source_code(
+                    poverty.get("B17001_M002")
+                ),
                 "median_household_income": "" if median_income is None else median_income,
-                "median_income_moe": income.get("B19013_M001", ""),
+                "median_household_income_source_code": _acs_source_code(
+                    income.get("B19013_E001")
+                ),
+                "median_income_moe": (
+                    "" if median_income_moe is None else median_income_moe
+                ),
+                "median_income_moe_source_code": _acs_source_code(
+                    income.get("B19013_M001")
+                ),
                 "workers": "" if workers is None else int(workers),
+                "workers_source_code": _acs_source_code(
+                    commute.get("B08301_E001")
+                ),
                 "public_transit_workers": "" if transit is None else int(transit),
+                "public_transit_workers_source_code": _acs_source_code(
+                    commute.get("B08301_E010")
+                ),
                 "median_gross_rent": "" if median_rent is None else median_rent,
-                "median_rent_moe": rent.get("B25064_M001", ""),
+                "median_gross_rent_source_code": _acs_source_code(
+                    rent.get("B25064_E001")
+                ),
+                "median_rent_moe": "" if median_rent_moe is None else median_rent_moe,
+                "median_rent_moe_source_code": _acs_source_code(
+                    rent.get("B25064_M001")
+                ),
             }
         )
     fields = list(rows[0])
@@ -625,13 +888,45 @@ def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str
         "coordinate_reference_system": "EPSG:4326 (Gazetteer internal points)",
         "estimate_period": "2019-2023 ACS 5-year",
         "fields": {
-            "population": "B01003 estimate",
-            "poverty_count": "B17001 population below poverty level",
-            "median_household_income": "B19013 median household income",
-            "public_transit_workers": "B08301 public transportation workers",
-            "median_gross_rent": "B25064 median gross rent",
+            "geoid": "11-digit Census tract identifier",
             "latitude": "Census Gazetteer internal point latitude",
             "longitude": "Census Gazetteer internal point longitude",
+            "population": "B01003 estimate",
+            "population_moe": "B01003 margin of error; unavailable codes are missing",
+            "poverty_population": "B17001 poverty-status universe",
+            "poverty_count": "B17001 population below poverty level",
+            "poverty_count_moe": "B17001 poverty-count margin of error",
+            "median_household_income": "B19013 median household income",
+            "median_income_moe": "B19013 margin of error; unavailable codes are missing",
+            "workers": "B08301 commuting-method universe",
+            "public_transit_workers": "B08301 public transportation workers",
+            "median_gross_rent": "B25064 median gross rent",
+            "median_rent_moe": "B25064 margin of error; unavailable codes are missing",
+            **{
+                field: (
+                    "Source special-value code retained for audit; blank when the "
+                    "corresponding estimate or margin of error is available"
+                )
+                for field in rows[0]
+                if field.endswith("_source_code")
+            },
+        },
+        "missing_value_policy": MISSING_VALUE_POLICY,
+        "quality_contract": {
+            "annotation_columns": [
+                field for field in rows[0] if field.endswith("_source_code")
+            ],
+            "numeric_ranges": {
+                "latitude": {"minimum": -90, "maximum": 90},
+                "longitude": {"minimum": -180, "maximum": 180},
+                "population": {"minimum": 0},
+                "poverty_population": {"minimum": 0},
+                "poverty_count": {"minimum": 0},
+                "median_household_income": {"minimum": 0, "maximum": 1_000_000},
+                "workers": {"minimum": 0},
+                "public_transit_workers": {"minimum": 0},
+                "median_gross_rent": {"minimum": 0, "maximum": 100_000},
+            }
         },
     }
     return rows, dictionary
@@ -647,13 +942,28 @@ def _prepare_bank_marketing(
         maximum_member_bytes=128 * 1024 * 1024,
         maximum_total_uncompressed_bytes=256 * 1024 * 1024,
     )
-    with open_safe_zip(outer_path, limits=nested_limits) as outer:
+    nested_budget = ArchiveBudget(
+        maximum_depth=2,
+        maximum_members=512,
+        maximum_total_uncompressed_bytes=256 * 1024 * 1024,
+    )
+    with open_safe_zip(
+        outer_path,
+        limits=nested_limits,
+        budget=nested_budget,
+        depth=1,
+    ) as outer:
         nested_bytes = read_zip_member(
             outer,
             "bank-additional.zip",
             maximum_bytes=nested_limits.maximum_archive_bytes,
         )
-    with open_safe_zip(io.BytesIO(nested_bytes), limits=nested_limits) as nested:
+    with open_safe_zip(
+        io.BytesIO(nested_bytes),
+        limits=nested_limits,
+        budget=nested_budget,
+        depth=2,
+    ) as nested:
         text = read_zip_member(
             nested,
             "bank-additional/bank-additional-full.csv",
@@ -766,7 +1076,11 @@ def prepare_project(project_root: Path) -> dict[str, Any]:
     manifest = load_json(project_root / "source-manifest.json")
     verify_raw_files(project_root)
     rows, dictionary = PREPARERS[manifest["project_id"]](project_root)
-    quality = _quality(rows, dictionary.get("primary_key"))
+    quality = _quality(
+        rows,
+        dictionary.get("primary_key"),
+        dictionary.get("quality_contract"),
+    )
     if dictionary.get("missing_value_policy"):
         quality["missing_value_policy"] = dictionary["missing_value_policy"]
     quality["expected_rows"] = manifest["expected_rows"]
@@ -779,6 +1093,9 @@ def prepare_project(project_root: Path) -> dict[str, Any]:
         )
     write_json(project_root / "data" / "data-dictionary.json", dictionary)
     write_json(project_root / "data" / "quality-report.json", quality)
+    if quality["quality_status"] == "blocked":
+        codes = ", ".join(item["code"] for item in quality["findings"])
+        raise ValueError(f"Prepared data failed the quality gate: {codes}")
     return quality
 
 

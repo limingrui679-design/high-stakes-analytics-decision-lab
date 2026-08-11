@@ -21,7 +21,7 @@ Before opening a pull request, run:
 python3 -m unittest discover -s tests -v
 python3 scripts/verify_portfolio_reproducibility.py
 ruff check scripts tests
-mypy scripts
+mypy
 codespell --config .codespellrc README.md CONTRIBUTING.md references scripts tests
 ```
 

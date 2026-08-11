@@ -26,8 +26,8 @@ limited by the evidence boundary stated below.
 
 ## Evidence-backed findings
 
-- **External-cohort AUC:** 0.804
-- **External-cohort Brier score:** 0.022
+- **External-cohort AUC:** 0.805
+- **External-cohort Brier score:** 0.023
 - **Linked adults:** 11,820
 - **Terminal use:** population research only
 
@@ -56,8 +56,8 @@ Population research only; no individual diagnosis or treatment.
 
 ### Reviewed source-snapshot hashes
 
-- `nhanes-36-month-mortality-cohorts.csv` — `e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad`
-- `nhanes-36-month-mortality-cohorts.source-lock.json` — `ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358`
+- `nhanes-36-month-mortality-cohorts.csv` — `22a467eebd9c940c143adb5b91486832759967ebd2415f1412fe6cde09da500f`
+- `nhanes-36-month-mortality-cohorts.source-lock.json` — `d4bdbe4213b6cc8dc121e48c936b0bc134ec9447ff46476386884012210baffe`
 
 The reviewed raw source files are bundled inside the complete project directory.
 The build script verifies each file against both this case index and the

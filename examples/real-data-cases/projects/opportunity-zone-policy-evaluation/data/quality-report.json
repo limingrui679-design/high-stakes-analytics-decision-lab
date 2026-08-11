@@ -1,17 +1,25 @@
 {
+  "schema_version": "1.1",
   "rows": 2956,
-  "columns": 11,
+  "columns": 18,
   "column_names": [
     "geoid",
     "year",
     "qoz_2018",
     "population",
+    "population_source_code",
     "poverty_universe",
+    "poverty_universe_source_code",
     "poverty_count",
+    "poverty_count_source_code",
     "median_household_income",
+    "median_household_income_source_code",
     "median_gross_rent",
+    "median_gross_rent_source_code",
     "civilian_labor_force",
+    "civilian_labor_force_source_code",
     "unemployed",
+    "unemployed_source_code",
     "workplace_jobs"
   ],
   "missing_count_by_column": {
@@ -19,16 +27,73 @@
     "year": 0,
     "qoz_2018": 0,
     "population": 0,
+    "population_source_code": 0,
     "poverty_universe": 0,
+    "poverty_universe_source_code": 0,
     "poverty_count": 0,
-    "median_household_income": 0,
-    "median_gross_rent": 0,
+    "poverty_count_source_code": 0,
+    "median_household_income": 47,
+    "median_household_income_source_code": 0,
+    "median_gross_rent": 128,
+    "median_gross_rent_source_code": 0,
     "civilian_labor_force": 0,
+    "civilian_labor_force_source_code": 0,
     "unemployed": 0,
+    "unemployed_source_code": 0,
     "workplace_jobs": 0
   },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {
+    "median_gross_rent_source_code": 128,
+    "median_household_income_source_code": 47
+  },
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
   "duplicate_key_count": 0,
-  "quality_status": "usable_with_documented_limitations",
+  "findings": [
+    {
+      "code": "source_special_values_normalized",
+      "severity": "low",
+      "columns": [
+        "median_gross_rent_source_code",
+        "median_household_income_source_code"
+      ],
+      "count": 175,
+      "message": "Source special values were retained as annotations and kept out of analytical numeric fields."
+    },
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "median_gross_rent",
+        "median_household_income"
+      ],
+      "count": 175,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 1
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
   "expected_rows": 2956,
   "row_count_matches_manifest": true,
   "privacy_review": {

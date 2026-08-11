@@ -4,12 +4,93 @@
   "coordinate_reference_system": "EPSG:4326 (Gazetteer internal points)",
   "estimate_period": "2019-2023 ACS 5-year",
   "fields": {
+    "geoid": "11-digit Census tract identifier",
+    "latitude": "Census Gazetteer internal point latitude",
+    "longitude": "Census Gazetteer internal point longitude",
     "population": "B01003 estimate",
+    "population_moe": "B01003 margin of error; unavailable codes are missing",
+    "poverty_population": "B17001 poverty-status universe",
     "poverty_count": "B17001 population below poverty level",
+    "poverty_count_moe": "B17001 poverty-count margin of error",
     "median_household_income": "B19013 median household income",
+    "median_income_moe": "B19013 margin of error; unavailable codes are missing",
+    "workers": "B08301 commuting-method universe",
     "public_transit_workers": "B08301 public transportation workers",
     "median_gross_rent": "B25064 median gross rent",
-    "latitude": "Census Gazetteer internal point latitude",
-    "longitude": "Census Gazetteer internal point longitude"
+    "median_rent_moe": "B25064 margin of error; unavailable codes are missing",
+    "population_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "population_moe_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "poverty_population_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "poverty_count_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "poverty_count_moe_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "median_household_income_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "median_income_moe_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "workers_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "public_transit_workers_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "median_gross_rent_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available",
+    "median_rent_moe_source_code": "Source special-value code retained for audit; blank when the corresponding estimate or margin of error is available"
+  },
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
+  "quality_contract": {
+    "annotation_columns": [
+      "population_source_code",
+      "population_moe_source_code",
+      "poverty_population_source_code",
+      "poverty_count_source_code",
+      "poverty_count_moe_source_code",
+      "median_household_income_source_code",
+      "median_income_moe_source_code",
+      "workers_source_code",
+      "public_transit_workers_source_code",
+      "median_gross_rent_source_code",
+      "median_rent_moe_source_code"
+    ],
+    "numeric_ranges": {
+      "latitude": {
+        "minimum": -90,
+        "maximum": 90
+      },
+      "longitude": {
+        "minimum": -180,
+        "maximum": 180
+      },
+      "population": {
+        "minimum": 0
+      },
+      "poverty_population": {
+        "minimum": 0
+      },
+      "poverty_count": {
+        "minimum": 0
+      },
+      "median_household_income": {
+        "minimum": 0,
+        "maximum": 1000000
+      },
+      "workers": {
+        "minimum": 0
+      },
+      "public_transit_workers": {
+        "minimum": 0
+      },
+      "median_gross_rent": {
+        "minimum": 0,
+        "maximum": 100000
+      }
+    }
   }
 }

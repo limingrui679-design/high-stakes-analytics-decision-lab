@@ -70,7 +70,7 @@ Primary and secondary outcomes are shown together after sign-flip inference and 
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 1,380 |
 | Privacy review | approved_for_public_aggregate_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Additional contrast carries an assessment-time cost
 
@@ -151,6 +151,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `behavioral-reading-experiment`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `7b0f5ebb4e2f9ea5300b733ce14fbc67d2dc5ad957683bbe866b26dc6f1b1c8b`
+- Result SHA-256: `22801e7b1ccf90e09c3d29782a9201c2d5d3dd342a41423da57cbe06e99d41e0`
 
 </details>

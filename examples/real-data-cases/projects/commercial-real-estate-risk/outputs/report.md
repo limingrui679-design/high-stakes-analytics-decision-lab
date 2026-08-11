@@ -68,7 +68,7 @@ Filtered transaction counts show the market activity available to the public-dat
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 390 |
 | Privacy review | pass_with_minimization |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready_with_documented_limitations** |
 
 ### Debt cost changes the income hurdle
 

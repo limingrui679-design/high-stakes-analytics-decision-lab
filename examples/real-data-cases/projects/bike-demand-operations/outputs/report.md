@@ -68,7 +68,7 @@ Seasonality is visible before the holdout assessment.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Modeled imbalance scenarios
 
@@ -150,6 +150,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `bike-demand-operations`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `1e00988cfd67db48ccb84cb2b8afcb22124138212caa143add3ffe63c9b50833`
+- Result SHA-256: `4490a08e97d3766e210b48951adadef76ce21da7ececacd1d6e14e53d5ed1686`
 
 </details>

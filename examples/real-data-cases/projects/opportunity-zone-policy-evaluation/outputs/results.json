@@ -2,56 +2,62 @@
   "project_id": "opportunity-zone-policy-evaluation",
   "data": {
     "panel_rows": 2956,
-    "complete_tracts": 1460,
-    "qoz_tracts": 138,
-    "matched_control_tracts": 121
+    "complete_tracts": 1394,
+    "excluded_tracts": 84,
+    "exclusion_counts": {
+      "source_special_value": 84
+    },
+    "qoz_tracts": 136,
+    "matched_control_tracts": 111
   },
   "study_design": {
     "design": "one-year matched pre/post association screen",
     "treatment": "2018 QOZ designation",
     "period": "2018 to 2019",
+    "complete_case_rule": "Both panel years must contain finite, positive median estimates and valid count/universe relationships.",
+    "uncertainty": "Rademacher wild-cluster interval by reused control tract",
     "causal_status": "not identified; no parallel-trends evidence"
   },
   "matched_change_effects": {
     "change_poverty": {
-      "matched_difference_in_change": 0.010548170154203429,
-      "bootstrap_95_interval": [
-        0.0023025749352452544,
-        0.019819178935105326
+      "matched_difference_in_change": 0.011247727327608339,
+      "control_reuse_wild_cluster_95_interval": [
+        0.0005976021485897593,
+        0.021350243457602794
       ]
     },
     "change_income": {
-      "matched_difference_in_change": 504.0869565217391,
-      "bootstrap_95_interval": [
-        -513.8317028985507,
-        1538.8740942028985
+      "matched_difference_in_change": -69.56617647058823,
+      "control_reuse_wild_cluster_95_interval": [
+        -1032.9871701989618,
+        994.7301767949824
       ]
     },
     "change_rent": {
-      "matched_difference_in_change": -4830925.152173913,
-      "bootstrap_95_interval": [
-        -14492788.399818841,
-        15.050724637681153
+      "matched_difference_in_change": -12.830882352941176,
+      "control_reuse_wild_cluster_95_interval": [
+        -36.27633272058823,
+        11.40575529844288
       ]
     },
     "change_jobs": {
-      "matched_difference_in_change": 11.58695652173913,
-      "bootstrap_95_interval": [
-        -37.87463768115942,
-        62.16811594202896
+      "matched_difference_in_change": 26.63235294117647,
+      "control_reuse_wild_cluster_95_interval": [
+        -36.39956206747404,
+        92.68234753460206
       ]
     },
     "change_unemployment": {
-      "matched_difference_in_change": 0.001652983480318107,
-      "bootstrap_95_interval": [
-        -0.004105864567927525,
-        0.008232008893248894
+      "matched_difference_in_change": -0.0009328701108433389,
+      "control_reuse_wild_cluster_95_interval": [
+        -0.005808918379564359,
+        0.004067339897914955
       ]
     }
   },
   "support_diagnostic": {
-    "unique_controls": 121,
-    "maximum_control_reuse": 3
+    "unique_controls": 111,
+    "maximum_control_reuse": 4
   },
   "decision_support": {
     "status": "associational_policy_screen_only",
@@ -62,9 +68,9 @@
     ]
   },
   "headline_metrics": [
-    "Complete tract panels: 1,460",
-    "Designated QOZ tracts analyzed: 138",
-    "Unique matched controls: 121",
+    "Complete tract panels: 1,394",
+    "Designated QOZ tracts analyzed: 136",
+    "Unique matched controls: 111",
     "Causal status: not identified"
   ],
   "provenance": {
@@ -74,8 +80,8 @@
     "license": "U.S. Government public data",
     "accessed_at": "2026-08-10",
     "raw_sha256": {
-      "massachusetts-qoz-tract-panel.csv": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae",
-      "massachusetts-qoz-tract-panel.source-lock.json": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790"
+      "massachusetts-qoz-tract-panel.csv": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3",
+      "massachusetts-qoz-tract-panel.source-lock.json": "c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6"
     },
     "config_sha256": "2968eb292c5350002baa70bbec0afe13bd9939d538d3e07c3c4fb7a04e4a6828"
   },

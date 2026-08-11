@@ -19,11 +19,11 @@
   "within_city_shift": {
     "Chicago": {
       "total_variation": 0.026399969108975043,
-      "jensen_shannon_bits": 0.0008498832762583713
+      "jensen_shannon_bits": 0.0008498832762583721
     },
     "New York City": {
       "total_variation": 0.051342141467965674,
-      "jensen_shannon_bits": 0.002356284332449124
+      "jensen_shannon_bits": 0.002356284332449123
     }
   },
   "cross_city_2023": {

@@ -746,33 +746,35 @@
         "snapshot_files": [
           {
             "name": "massachusetts-qoz-tract-panel.csv",
-            "sha256": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae"
+            "sha256": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3"
           },
           {
             "name": "massachusetts-qoz-tract-panel.source-lock.json",
-            "sha256": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790"
+            "sha256": "c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6"
           }
         ]
       },
       "methods": [
         "Panel linkage",
+        "ACS special-value normalization",
+        "complete-case screening",
         "nearest-neighbor matching",
         "change contrasts",
-        "bootstrap intervals",
+        "reuse-aware wild-cluster intervals",
         "and support diagnostics."
       ],
       "headline_metrics": [
         {
           "label": "Complete tract panels",
-          "value": "1,460"
+          "value": "1,394"
         },
         {
           "label": "Designated QOZ tracts analyzed",
-          "value": "138"
+          "value": "136"
         },
         {
           "label": "Unique matched controls",
-          "value": "121"
+          "value": "111"
         },
         {
           "label": "Causal status",
@@ -872,11 +874,11 @@
         "snapshot_files": [
           {
             "name": "nhanes-36-month-mortality-cohorts.csv",
-            "sha256": "e346bd95cab22bc86b6525e02db7d41a7c2767cc26e115539944dddd4e5755ad"
+            "sha256": "22a467eebd9c940c143adb5b91486832759967ebd2415f1412fe6cde09da500f"
           },
           {
             "name": "nhanes-36-month-mortality-cohorts.source-lock.json",
-            "sha256": "ef6a8e02bd1d0068a437e4cfd3706f04741f059f14572aae138725b8f762b358"
+            "sha256": "d4bdbe4213b6cc8dc121e48c936b0bc134ec9447ff46476386884012210baffe"
           }
         ]
       },
@@ -888,11 +890,11 @@
       "headline_metrics": [
         {
           "label": "External-cohort AUC",
-          "value": "0.804"
+          "value": "0.805"
         },
         {
           "label": "External-cohort Brier score",
-          "value": "0.022"
+          "value": "0.023"
         },
         {
           "label": "Linked adults",

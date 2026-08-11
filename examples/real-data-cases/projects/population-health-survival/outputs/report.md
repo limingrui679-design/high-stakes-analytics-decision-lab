@@ -68,7 +68,7 @@ The later cohort shows the expected age pattern.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Temporal calibration
 
@@ -149,6 +149,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `population-health-survival`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `ace660115d200063ef948038371306352161cdc7d1b1cff12406c89c7fe5a8be`
+- Result SHA-256: `de875143c72fa14b85c45be853765fc1aaed0e5d1651aa5c34d1e79e82744164`
 
 </details>

@@ -1240,7 +1240,7 @@ def analyze_bike(project_root: Path) -> dict[str, Any]:
                     if units == 2
                 ],
             },
-            "policies_2012_evaluation": policies,
+            "scenario_evaluation": policies,
             "resource_shadow_value_sensitivity": shadow_values,
             "pareto_frontier": pareto,
             "value_of_perfect_information_upper_bound": {

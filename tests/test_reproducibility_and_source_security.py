@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import gzip
 import hashlib
 import io
@@ -69,7 +70,19 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
         opener = SimpleNamespace(
             open=lambda *args, **kwargs: Response(b"1234", "https://example.com/final")
         )
-        with mock.patch.object(safe_io.urllib.request, "build_opener", return_value=opener):
+        public_addresses = frozenset({"93.184.216.34"})
+        with (
+            mock.patch.object(
+                safe_io,
+                "_resolve_public_addresses",
+                return_value=public_addresses,
+            ),
+            mock.patch.object(
+                safe_io.urllib.request,
+                "build_opener",
+                return_value=opener,
+            ),
+        ):
             with self.assertRaisesRegex(ValueError, "exceeds 3 bytes"):
                 safe_io.read_https_bytes(
                     "https://example.com/data",
@@ -78,8 +91,17 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                 )
 
         with (
+            mock.patch.object(
+                safe_io,
+                "_resolve_public_addresses",
+                return_value=public_addresses,
+            ),
             mock.patch.object(safe_io.urllib.request, "build_opener", return_value=opener),
-            mock.patch.object(safe_io.time, "monotonic", side_effect=[0.0, 2.0]),
+            mock.patch.object(
+                safe_io.time,
+                "monotonic",
+                side_effect=[0.0, 0.0, 2.0],
+            ),
         ):
             with self.assertRaisesRegex(TimeoutError, "total time limit"):
                 safe_io.read_https_bytes(
@@ -91,10 +113,17 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
         downgraded = SimpleNamespace(
             open=lambda *args, **kwargs: Response(b"ok", "http://example.com/final")
         )
-        with mock.patch.object(
-            safe_io.urllib.request,
-            "build_opener",
-            return_value=downgraded,
+        with (
+            mock.patch.object(
+                safe_io,
+                "_resolve_public_addresses",
+                return_value=public_addresses,
+            ),
+            mock.patch.object(
+                safe_io.urllib.request,
+                "build_opener",
+                return_value=downgraded,
+            ),
         ):
             with self.assertRaisesRegex(ValueError, "must use HTTPS"):
                 safe_io.read_https_bytes(
@@ -102,19 +131,113 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                     attempts=1,
                 )
 
+    def test_dns_and_connected_peer_must_both_be_public(self) -> None:
+        private_answer = [
+            (
+                safe_io.socket.AF_INET,
+                safe_io.socket.SOCK_STREAM,
+                6,
+                "",
+                ("10.0.0.7", 443),
+            )
+        ]
+        with mock.patch.object(
+            safe_io.socket,
+            "getaddrinfo",
+            return_value=private_answer,
+        ):
+            with self.assertRaisesRegex(ValueError, "non-public IP"):
+                safe_io._resolve_public_addresses("https://public.example/data")
+
+        class FakeSocket:
+            def getpeername(self):
+                return ("127.0.0.1", 443)
+
+        class Response(io.BytesIO):
+            def __init__(self) -> None:
+                super().__init__(b"ok")
+                self.headers: dict[str, str] = {}
+                self.fp = SimpleNamespace(
+                    raw=SimpleNamespace(_sock=FakeSocket())
+                )
+
+            def geturl(self) -> str:
+                return "https://public.example/final"
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                self.close()
+
+        opener = SimpleNamespace(open=lambda *args, **kwargs: Response())
+        with (
+            mock.patch.object(
+                safe_io,
+                "_resolve_public_addresses",
+                return_value=frozenset({"93.184.216.34"}),
+            ),
+            mock.patch.object(
+                safe_io.urllib.request,
+                "build_opener",
+                return_value=opener,
+            ),
+        ):
+            with self.assertRaisesRegex(ValueError, "non-public peer"):
+                safe_io.read_https_bytes(
+                    "https://public.example/data",
+                    attempts=1,
+                )
+
+    def test_retry_timeout_is_one_global_deadline(self) -> None:
+        clock = [0.0]
+
+        def monotonic() -> float:
+            return clock[0]
+
+        def sleep(seconds: float) -> None:
+            clock[0] += seconds
+
+        opening = mock.Mock(side_effect=OSError("slow upstream"))
+        with (
+            mock.patch.object(safe_io.time, "monotonic", side_effect=monotonic),
+            mock.patch.object(safe_io.time, "sleep", side_effect=sleep),
+            mock.patch.object(safe_io, "open_https_stream", opening),
+        ):
+            with self.assertRaisesRegex(TimeoutError, "total time limit"):
+                safe_io.read_https_bytes(
+                    "https://example.com/data",
+                    timeout=2.5,
+                    attempts=3,
+                )
+        self.assertEqual(opening.call_count, 2)
+
     def test_curl_fallback_keeps_protocol_redirect_and_size_guards(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             target = Path(directory) / "payload.bin"
 
             def fake_run(command, **kwargs):
                 output = Path(command[command.index("--output") + 1])
+                headers = Path(command[command.index("--dump-header") + 1])
                 output.write_bytes(b"bounded")
+                headers.write_text("HTTP/1.1 200 OK\r\n\r\n", encoding="ascii")
                 return SimpleNamespace(
-                    stdout="https://example.com/final",
+                    stdout="200\nhttps://example.com/source",
                     stderr="",
                 )
 
-            with mock.patch.object(safe_io.subprocess, "run", side_effect=fake_run) as run:
+            with (
+                mock.patch.object(
+                    safe_io,
+                    "_resolve_public_addresses",
+                    return_value=frozenset({"93.184.216.34"}),
+                ),
+                mock.patch.object(
+                    safe_io.subprocess,
+                    "run",
+                    side_effect=fake_run,
+                ) as run,
+            ):
                 observed = safe_io.download_https_with_curl(
                     "https://example.com/source",
                     target,
@@ -126,8 +249,55 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             self.assertTrue(Path(command[0]).is_absolute())
             self.assertEqual(Path(command[0]).name, "curl")
             self.assertIn("=https", command)
-            self.assertEqual(command[command.index("--max-redirs") + 1], "5")
+            self.assertEqual(command[command.index("--max-redirs") + 1], "0")
             self.assertEqual(command[command.index("--max-filesize") + 1], "10")
+            self.assertIn("--retry-max-time", command)
+            self.assertIn("--resolve", command)
+
+    def test_curl_validates_each_redirect_before_following(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            target = Path(directory) / "payload.bin"
+            calls = []
+
+            def fake_run(command, **kwargs):
+                calls.append(command)
+                output = Path(command[command.index("--output") + 1])
+                headers = Path(command[command.index("--dump-header") + 1])
+                if len(calls) == 1:
+                    output.write_bytes(b"")
+                    headers.write_text(
+                        "HTTP/1.1 302 Found\r\n"
+                        "Location: https://cdn.example/final\r\n\r\n",
+                        encoding="ascii",
+                    )
+                    return SimpleNamespace(
+                        stdout="302\nhttps://example.com/source",
+                        stderr="",
+                    )
+                output.write_bytes(b"final")
+                headers.write_text("HTTP/1.1 200 OK\r\n\r\n", encoding="ascii")
+                return SimpleNamespace(
+                    stdout="200\nhttps://cdn.example/final",
+                    stderr="",
+                )
+
+            with (
+                mock.patch.object(
+                    safe_io,
+                    "_resolve_public_addresses",
+                    return_value=frozenset({"93.184.216.34"}),
+                ) as resolver,
+                mock.patch.object(safe_io.subprocess, "run", side_effect=fake_run),
+            ):
+                observed = safe_io.download_https_with_curl(
+                    "https://example.com/source",
+                    target,
+                    maximum_bytes=10,
+                )
+            self.assertEqual(observed, 5)
+            self.assertEqual(target.read_bytes(), b"final")
+            self.assertEqual(len(calls), 2)
+            self.assertGreaterEqual(resolver.call_count, 4)
 
     def test_zip_policy_rejects_path_links_duplicates_and_resource_bombs(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -245,6 +415,32 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                 b"key,value\na,3\n",
             )
 
+        nested_budget = safe_io.ArchiveBudget(
+            maximum_depth=2,
+            maximum_members=2,
+            maximum_total_uncompressed_bytes=len(inner_buffer.getvalue()) + 22,
+        )
+        outer_buffer.seek(0)
+        with safe_io.open_safe_zip(
+            outer_buffer,
+            budget=nested_budget,
+            depth=1,
+        ) as outer:
+            nested = safe_io.read_zip_member(outer, "inner.zip")
+        with safe_io.open_safe_zip(
+            io.BytesIO(nested),
+            budget=nested_budget,
+            depth=2,
+        ) as inner:
+            safe_io.read_zip_member(inner, "table.csv")
+        with self.assertRaisesRegex(ValueError, "depth 3"):
+            with safe_io.open_safe_zip(
+                io.BytesIO(nested),
+                budget=nested_budget,
+                depth=3,
+            ):
+                pass
+
         lodes_payload = b"w_geocode,C000\n250250001001001,2\n250250001001002,3\n"
         compressed = gzip.compress(lodes_payload, mtime=0)
         with mock.patch.object(snapshot_builder, "_request", return_value=compressed):
@@ -336,6 +532,8 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                     "B23025_E003": "70",
                     "B23025_E005": "4",
                 }
+                if year == 2019:
+                    row["B25064_E001"] = "-666666666"
                 lock = {
                     "name": f"acs-{year}.dat",
                     "url": f"https://example.com/acs-{year}.dat",
@@ -391,6 +589,34 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             qoz_lock = json.loads(qoz_target.with_suffix(".source-lock.json").read_text())
             self.assertEqual(len(qoz_lock["lodes_files"]), 2)
             self.assertEqual(qoz_lock["lodes_years"], [2018, 2019])
+            with qoz_target.open(newline="", encoding="utf-8") as handle:
+                qoz_rows = list(csv.DictReader(handle))
+            self.assertEqual(qoz_rows[1]["median_gross_rent"], "")
+            self.assertEqual(
+                qoz_rows[1]["median_gross_rent_source_code"],
+                "-666666666",
+            )
+            self.assertEqual(
+                qoz_lock["acs_special_value_policy"]["counts"],
+                [
+                    {
+                        "field": "median_gross_rent",
+                        "source_code": "-666666666",
+                        "count": 1,
+                    }
+                ],
+            )
+
+    def test_sas_decoder_missing_and_subnormal_values_are_normalized(self) -> None:
+        self.assertEqual(
+            snapshot_builder._normalized_sas_numeric(float("nan")),
+            ("", "missing_or_non_finite"),
+        )
+        self.assertEqual(
+            snapshot_builder._normalized_sas_numeric(5.397605e-79),
+            (0.0, "xport_subnormal_normalized_to_zero"),
+        )
+        self.assertEqual(snapshot_builder._normalized_sas_numeric(3.15), (3.15, ""))
 
     def test_nport_and_social_builders_use_offline_locked_fixtures(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -526,6 +752,32 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             reproducibility._normalize_report_hashes(source_first),
             reproducibility._normalize_report_hashes(source_second),
         )
+
+    def test_release_manifest_supports_verified_no_git_source_tree(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            payload = root / "payload.txt"
+            payload.write_text("verified\n", encoding="utf-8")
+            digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+            manifest = {
+                "schema_version": "1.0",
+                "release": "1.0.1",
+                "algorithm": "sha256",
+                "files": [
+                    {"path": "payload.txt", "mode": "100644", "sha256": digest}
+                ],
+            }
+            (root / "RELEASE-MANIFEST.json").write_text(
+                json.dumps(manifest),
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                reproducibility._tracked_files(root),
+                [Path("RELEASE-MANIFEST.json"), Path("payload.txt")],
+            )
+            payload.write_text("tampered\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "hash mismatch"):
+                reproducibility._tracked_files(root)
 
     def test_safe_xlsx_parser_accepts_minimal_workbook_and_rejects_dtd(self) -> None:
         try:

@@ -19,7 +19,9 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from portfolio_core import (
+    MISSING_VALUE_POLICY,
     PREPARERS,
+    is_missing_value,
     mean,
     quantile,
     read_csv,
@@ -39,6 +41,16 @@ def _number(value: Any, default: float = 0.0) -> float:
     except (TypeError, ValueError):
         return default
     return result if math.isfinite(result) else default
+
+
+def _optional_number(value: Any) -> float | None:
+    if is_missing_value(value):
+        return None
+    try:
+        result = float(value)
+    except (TypeError, ValueError):
+        return None
+    return result if math.isfinite(result) else None
 
 
 def _weighted_mean(values: Iterable[tuple[float, float]]) -> float:
@@ -337,22 +349,74 @@ def prepare_social(project_root: Path):
 
 
 def prepare_qoz(project_root: Path):
-    return _copy_csv_prepare(
+    rows, dictionary = _copy_csv_prepare(
         project_root,
         "massachusetts-qoz-tract-panel.csv",
         grain="Massachusetts tract-year panel row",
         primary_key=["geoid", "year"],
     )
+    dictionary["fields"].update(
+        {
+            field: (
+                "Census source special-value code retained for audit; blank when "
+                "the estimate is available"
+            )
+            for field in dictionary["fields"]
+            if field.endswith("_source_code")
+        }
+    )
+    dictionary["missing_value_policy"] = MISSING_VALUE_POLICY
+    dictionary["complete_case_rule"] = (
+        "A tract enters matching only when both years have finite, in-range ACS "
+        "estimates for every matching covariate and outcome. Source special values "
+        "remain explicit in adjacent *_source_code fields."
+    )
+    dictionary["quality_contract"] = {
+        "annotation_columns": [
+            field for field in dictionary["fields"] if field.endswith("_source_code")
+        ],
+        "numeric_ranges": {
+            "year": {"minimum": 2018, "maximum": 2019},
+            "qoz_2018": {"minimum": 0, "maximum": 1},
+            "population": {"minimum": 0},
+            "poverty_universe": {"minimum": 0},
+            "poverty_count": {"minimum": 0},
+            "median_household_income": {"minimum": 1, "maximum": 1_000_000},
+            "median_gross_rent": {"minimum": 1, "maximum": 100_000},
+            "civilian_labor_force": {"minimum": 0},
+            "unemployed": {"minimum": 0},
+            "workplace_jobs": {"minimum": 0},
+        }
+    }
+    return rows, dictionary
 
 
 def prepare_nhanes(project_root: Path):
-    return _copy_csv_prepare(
+    rows, dictionary = _copy_csv_prepare(
         project_root,
         "nhanes-36-month-mortality-cohorts.csv",
         grain="NHANES adult linked to 36-month mortality follow-up",
         primary_key=["cohort", "seqn"],
         target="death_within_36_months",
     )
+    dictionary["missing_value_policy"] = MISSING_VALUE_POLICY
+    dictionary["weight_policy"] = (
+        "WTINT2YR is primary because the analysis uses interview/demographic "
+        "variables rather than MEC examination measures. WTMEC2YR is retained "
+        "for sensitivity review; nonpositive weights are excluded."
+    )
+    dictionary["quality_contract"] = {
+        "numeric_ranges": {
+            "age": {"minimum": 18, "maximum": 120},
+            "sex": {"minimum": 1, "maximum": 2},
+            "poverty_income_ratio": {"minimum": 0, "maximum": 5},
+            "interview_weight": {"minimum": 0},
+            "exam_weight": {"minimum": 0},
+            "followup_months": {"minimum": 0},
+            "death_within_36_months": {"minimum": 0, "maximum": 1},
+        }
+    }
+    return rows, dictionary
 
 
 def _calibration(rows: list[tuple[float, int, float]], groups: int = 5):
@@ -517,7 +581,7 @@ def analyze_bike(project_root: Path):
         "study_design": {"design": "station-hour temporal holdout", "development_period": "January-September 2021", "test_period": "October-December 2021", "modeled_scenario": "fixed daily rebalancing-unit budget"},
         "forecast": {"station_hour_mae": mae, "hour_baseline_mae": baseline_mae, "relative_mae_improvement": improvement},
         "decision_options": options,
-        "optimization": {"policies_2012_evaluation": options},
+        "optimization": {"scenario_evaluation": options},
         "headline_metrics": [f"Held-out station-hour MAE: {mae:.2f} pickups/day", f"Improvement vs hour-only baseline: {improvement:.1%}", f"Observed station-hour-month rows: {len(materialized):,}", "Rebalancing results: modeled scenario only"],
         "decision_support": {"status": "bounded_operations_pilot_only", "reversal_conditions": ["Travel-time or truck-capacity constraints make the allocation infeasible.", "A later seasonal holdout reverses the station-hour ranking.", "Observed dock inventory invalidates pickups-minus-returns as an imbalance proxy."]},
     }
@@ -769,18 +833,108 @@ def _standardize(values: list[float]) -> list[float]:
 
 def analyze_qoz(project_root: Path):
     rows = read_csv(project_root / "data/processed/analysis.csv")
-    panel: dict[str, dict[int, dict[str, float]]] = defaultdict(dict)
-    fields = ["poverty_count", "poverty_universe", "median_household_income", "median_gross_rent", "civilian_labor_force", "unemployed", "workplace_jobs"]
+    panel: dict[str, dict[int, dict[str, Any]]] = defaultdict(dict)
+    fields = [
+        "poverty_count",
+        "poverty_universe",
+        "median_household_income",
+        "median_gross_rent",
+        "civilian_labor_force",
+        "unemployed",
+        "workplace_jobs",
+    ]
     for row in rows:
-        panel[row["geoid"]][int(row["year"])] = {field: _number(row[field]) for field in fields} | {"qoz": int(row["qoz_2018"]), "population": _number(row["population"])}
+        panel[row["geoid"]][int(row["year"])] = {
+            field: _optional_number(row.get(field)) for field in fields
+        } | {
+            "qoz": int(row["qoz_2018"]),
+            "population": _optional_number(row.get("population")),
+            "source_codes": {
+                field: row.get(f"{field}_source_code", "").strip()
+                for field in ["population", *fields[:-1]]
+                if row.get(f"{field}_source_code", "").strip()
+            },
+        }
     tracts = []
+    exclusion_counts: Counter[str] = Counter()
     for geoid, years in panel.items():
         if 2018 not in years or 2019 not in years:
+            exclusion_counts["missing_panel_year"] += 1
             continue
         before, after = years[2018], years[2019]
-        if before["poverty_universe"] <= 0 or before["civilian_labor_force"] <= 0 or after["poverty_universe"] <= 0 or after["civilian_labor_force"] <= 0:
+        if before["source_codes"] or after["source_codes"]:
+            exclusion_counts["source_special_value"] += 1
             continue
-        tracts.append({"geoid": geoid, "qoz": before["qoz"], "poverty_before": before["poverty_count"] / before["poverty_universe"], "income_before": before["median_household_income"], "jobs_before": before["workplace_jobs"], "unemployment_before": before["unemployed"] / before["civilian_labor_force"], "change_poverty": after["poverty_count"] / after["poverty_universe"] - before["poverty_count"] / before["poverty_universe"], "change_income": after["median_household_income"] - before["median_household_income"], "change_rent": after["median_gross_rent"] - before["median_gross_rent"], "change_jobs": after["workplace_jobs"] - before["workplace_jobs"], "change_unemployment": after["unemployed"] / after["civilian_labor_force"] - before["unemployed"] / before["civilian_labor_force"]})
+        required = ["population", *fields]
+        if any(before[field] is None or after[field] is None for field in required):
+            exclusion_counts["missing_or_non_finite_value"] += 1
+            continue
+        if before["qoz"] != after["qoz"]:
+            exclusion_counts["designation_changed_within_panel"] += 1
+            continue
+        if any(
+            value < 0
+            for value in (
+                before["population"],
+                after["population"],
+                before["poverty_count"],
+                after["poverty_count"],
+                before["workplace_jobs"],
+                after["workplace_jobs"],
+                before["unemployed"],
+                after["unemployed"],
+            )
+        ):
+            exclusion_counts["negative_count"] += 1
+            continue
+        if (
+            before["poverty_universe"] <= 0
+            or after["poverty_universe"] <= 0
+            or before["civilian_labor_force"] <= 0
+            or after["civilian_labor_force"] <= 0
+            or before["median_household_income"] <= 0
+            or after["median_household_income"] <= 0
+            or before["median_gross_rent"] <= 0
+            or after["median_gross_rent"] <= 0
+        ):
+            exclusion_counts["nonpositive_denominator_or_median"] += 1
+            continue
+        if (
+            before["poverty_count"] > before["poverty_universe"]
+            or after["poverty_count"] > after["poverty_universe"]
+            or before["unemployed"] > before["civilian_labor_force"]
+            or after["unemployed"] > after["civilian_labor_force"]
+        ):
+            exclusion_counts["count_exceeds_universe"] += 1
+            continue
+        tracts.append(
+            {
+                "geoid": geoid,
+                "qoz": before["qoz"],
+                "poverty_before": before["poverty_count"] / before["poverty_universe"],
+                "income_before": before["median_household_income"],
+                "jobs_before": before["workplace_jobs"],
+                "unemployment_before": (
+                    before["unemployed"] / before["civilian_labor_force"]
+                ),
+                "change_poverty": (
+                    after["poverty_count"] / after["poverty_universe"]
+                    - before["poverty_count"] / before["poverty_universe"]
+                ),
+                "change_income": (
+                    after["median_household_income"]
+                    - before["median_household_income"]
+                ),
+                "change_rent": (
+                    after["median_gross_rent"] - before["median_gross_rent"]
+                ),
+                "change_jobs": after["workplace_jobs"] - before["workplace_jobs"],
+                "change_unemployment": (
+                    after["unemployed"] / after["civilian_labor_force"]
+                    - before["unemployed"] / before["civilian_labor_force"]
+                ),
+            }
+        )
     covariates = ["poverty_before", "income_before", "jobs_before", "unemployment_before"]
     standardized = {field: _standardize([row[field] for row in tracts]) for field in covariates}
     for index, row in enumerate(tracts):
@@ -797,19 +951,54 @@ def analyze_qoz(project_root: Path):
     samples = json.loads((project_root / "config.json").read_text())["parameters"]["bootstrap_samples"]
     for outcome in outcomes:
         differences = [left[outcome] - right[outcome] for left, right in pairs]
-        bootstrap = [mean(differences[rng.randrange(len(differences))] for _ in differences) for _ in range(samples)]
-        effects[outcome] = {"matched_difference_in_change": mean(differences), "bootstrap_95_interval": [quantile(bootstrap, 0.025), quantile(bootstrap, 0.975)]}
+        point = mean(differences)
+        cluster_scores: Counter[str] = Counter()
+        for difference, (_, control) in zip(differences, pairs, strict=True):
+            cluster_scores[control["geoid"]] += difference - point
+        bootstrap = [
+            point
+            + sum(
+                score * (-1 if rng.random() < 0.5 else 1)
+                for score in cluster_scores.values()
+            )
+            / len(differences)
+            for _ in range(samples)
+        ]
+        effects[outcome] = {
+            "matched_difference_in_change": point,
+            "control_reuse_wild_cluster_95_interval": [
+                quantile(bootstrap, 0.025),
+                quantile(bootstrap, 0.975),
+            ],
+        }
     reuse = Counter(right["geoid"] for _, right in pairs)
     figures = project_root / "outputs/figures"
     source = "CDFI Fund 2018 QOZ designations; Census ACS and LODES 2018-2019"
-    svg_interval(figures / "matched-change-effects.svg", "Matched differences in one-year change", "Tract-level screen; units vary and are shown in results.json", [(name.replace("change_", ""), item["matched_difference_in_change"], item["bootstrap_95_interval"][0], item["bootstrap_95_interval"][1]) for name, item in effects.items()], source)
+    svg_interval(figures / "matched-change-effects.svg", "Matched differences in one-year change", "Tract-level screen; units vary and are shown in results.json", [(name.replace("change_", ""), item["matched_difference_in_change"], item["control_reuse_wild_cluster_95_interval"][0], item["control_reuse_wild_cluster_95_interval"][1]) for name, item in effects.items()], source)
     before_balance = [(field, abs(mean(row[field] for row in treated) - mean(row[field] for row in controls))) for field in covariates]
     svg_bar(figures / "baseline-balance.svg", "Raw baseline differences", "Absolute treated-versus-all-control differences before matching", before_balance, source)
     svg_bar(figures / "control-reuse.svg", "Matched-control reuse", "Sensitivity signal for nearest-neighbor support", [("unique controls", len(reuse)), ("treated tracts", len(treated)), ("maximum reuse", max(reuse.values()))], source)
     return {
         "project_id": "opportunity-zone-policy-evaluation",
-        "data": {"panel_rows": len(rows), "complete_tracts": len(tracts), "qoz_tracts": len(treated), "matched_control_tracts": len(reuse)},
-        "study_design": {"design": "one-year matched pre/post association screen", "treatment": "2018 QOZ designation", "period": "2018 to 2019", "causal_status": "not identified; no parallel-trends evidence"},
+        "data": {
+            "panel_rows": len(rows),
+            "complete_tracts": len(tracts),
+            "excluded_tracts": len(panel) - len(tracts),
+            "exclusion_counts": dict(sorted(exclusion_counts.items())),
+            "qoz_tracts": len(treated),
+            "matched_control_tracts": len(reuse),
+        },
+        "study_design": {
+            "design": "one-year matched pre/post association screen",
+            "treatment": "2018 QOZ designation",
+            "period": "2018 to 2019",
+            "complete_case_rule": (
+                "Both panel years must contain finite, positive median estimates "
+                "and valid count/universe relationships."
+            ),
+            "uncertainty": "Rademacher wild-cluster interval by reused control tract",
+            "causal_status": "not identified; no parallel-trends evidence",
+        },
         "matched_change_effects": effects,
         "support_diagnostic": {"unique_controls": len(reuse), "maximum_control_reuse": max(reuse.values())},
         "decision_support": {"status": "associational_policy_screen_only", "reversal_conditions": ["A multi-year pre-period fails a parallel-trends diagnostic.", "Alternative comparison groups reverse the change contrast.", "Updated ACS or LODES vintages materially change tract outcomes."]},
@@ -828,9 +1017,25 @@ def _nhanes_age_band(age: int) -> str:
 def analyze_nhanes(project_root: Path):
     rows = read_csv(project_root / "data/processed/analysis.csv")
     materialized = []
+    excluded_nonpositive_weight = 0
     for row in rows:
         age = int(row["age"])
-        materialized.append({**row, "weight": max(_number(row["exam_weight"]), 1.0), "outcome": int(row["death_within_36_months"]), "age_band": _nhanes_age_band(age), "pir": _number(row["poverty_income_ratio"], -1.0)})
+        weight = _optional_number(
+            row.get("interview_weight", row.get("exam_weight"))
+        )
+        if weight is None or weight <= 0:
+            excluded_nonpositive_weight += 1
+            continue
+        pir = _optional_number(row.get("poverty_income_ratio"))
+        materialized.append(
+            {
+                **row,
+                "weight": weight,
+                "outcome": int(row["death_within_36_months"]),
+                "age_band": _nhanes_age_band(age),
+                "pir": -1.0 if pir is None else pir,
+            }
+        )
     train = [row for row in materialized if row["cohort"] == "2011-2012"]
     test = [row for row in materialized if row["cohort"] == "2015-2016"]
     global_rate = _weighted_mean((row["outcome"], row["weight"]) for row in train)
@@ -852,8 +1057,20 @@ def analyze_nhanes(project_root: Path):
     brier = _weighted_brier(scored)
     return {
         "project_id": "nhanes-population-transportability",
-        "data": {"rows": len(materialized), "development_rows": len(train), "external_validation_rows": len(test)},
-        "study_design": {"design": "survey-weighted cross-cohort transportability audit", "development": "NHANES 2011-2012", "validation": "NHANES 2015-2016", "horizon": "36-month linked mortality"},
+        "data": {
+            "source_rows": len(rows),
+            "rows": len(materialized),
+            "excluded_nonpositive_or_missing_weight": excluded_nonpositive_weight,
+            "development_rows": len(train),
+            "external_validation_rows": len(test),
+        },
+        "study_design": {
+            "design": "survey-weighted cross-cohort transportability audit",
+            "development": "NHANES 2011-2012",
+            "validation": "NHANES 2015-2016",
+            "primary_weight": "WTINT2YR interview weight",
+            "horizon": "36-month linked mortality",
+        },
         "transport_validation": {"auc": auc, "brier": brier, "calibration": calibration},
         "cohort_mortality": cohort_rates,
         "income_gradient": income_rates,
@@ -929,7 +1146,7 @@ REPORT_COPY.update(
         "cross-city-311-shift": {"answer": "Chicago and New York 311 systems show material taxonomy and distribution differences, so the cross-city transfer gate can refuse reuse rather than disguise incompatible service definitions.", "findings": [], "methods": "Versioned keyword ontology, unmatched-category retention, within-city year shift, total variation, Jensen-Shannon divergence, and a predeclared transfer gate.", "limits": "311 use reflects access, awareness, intake policy, and local taxonomy; request counts do not equal latent service need or agency performance."},
         "wildfire-mitigation-under-uncertainty": {"answer": "Historical perimeter data can stress-test where evidence collection should focus, but it cannot estimate fires or acres prevented; mitigation allocation remains blocked pending effectiveness and feasibility evidence.", "findings": [], "methods": "Historical, recent, and tail-acre exposure scenarios; allocation-share alignment; minimax regret; and an explicit evidence-request terminal state.", "limits": "Perimeter completeness, unit coding, suppression effectiveness, ecology, community priorities, costs, and 2025 completeness are not established by this dataset."},
         "social-norm-field-experiment": {"answer": "The household-randomized field experiment identifies intent-to-treat turnout differences in its study population; public artifacts retain clustered inference without redistributing participant rows.", "findings": [], "methods": "Randomized-arm turnout rates, household-clustered sandwich standard errors, 95% intervals, and descriptive prior-turnout-stratum contrasts.", "limits": "The historical election setting, intervention wording, interference, ethics, and population transport limit any new campaign use."},
-        "opportunity-zone-policy-evaluation": {"answer": "The Massachusetts panel provides a matched one-year change screen, but no parallel-trends evidence; every result remains associational rather than a causal QOZ effect.", "findings": [], "methods": "Official designation linkage, tract panel construction, baseline nearest-neighbor matching, change contrasts, bootstrap intervals, and support diagnostics.", "limits": "Only one pre/post interval is used, controls are reused, ACS estimates overlap in time, and selection into designation is not eliminated."},
+        "opportunity-zone-policy-evaluation": {"answer": "The Massachusetts panel provides a matched one-year change screen, but no parallel-trends evidence; every result remains associational rather than a causal QOZ effect.", "findings": [], "methods": "Official designation linkage, ACS special-value normalization, complete-case tract screening, baseline nearest-neighbor matching, change contrasts, reuse-aware wild-cluster intervals, and support diagnostics.", "limits": "Only one pre/post interval is used, controls are reused, ACS estimates overlap in time, and selection into designation is not eliminated."},
         "nhanes-population-transportability": {"answer": "Age/sex risk cells trained in NHANES 2011-2012 are externally checked in 2015-2016 linked mortality, with income gradients reported as population inequality evidence rather than clinical prediction.", "findings": [], "methods": "Survey-weighted cohort mortality, cross-cohort AUC/Brier/calibration, and poverty-income-ratio mortality gradients.", "limits": "This compact audit does not implement the full NHANES complex-survey variance design and cannot support individual diagnosis or treatment."},
         "spatial-equity-planning": {"answer": "ACS need patterns and observed MBTA stop proximity can prioritize local review, but no site recommendation is released until parcel, zoning, network, cost, and stakeholder evidence is supplied.", "findings": [], "methods": "ACS tract indicators, spatial autocorrelation, heuristic five-hub allocation, bootstrap/sensitivity checks, and population-weighted nearest-MBTA-stop distance.", "limits": "Tract internal points and straight-line distance are planning screens; land availability, ownership, zoning, travel networks, capacity, cost, and community consent are missing."},
     }

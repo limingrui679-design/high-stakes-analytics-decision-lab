@@ -1230,7 +1230,7 @@ def _case_options(project_id: str, result: dict[str, Any]) -> list[dict[str, Any
     elif project_id == "behavioral-reading-experiment":
         source = result["candidate_protocols"]
     elif project_id == "bike-demand-operations":
-        source = result["optimization"]["policies_2012_evaluation"]
+        source = result["optimization"]["scenario_evaluation"]
     elif project_id == "treasury-risk-engineering":
         source = result["portfolios"]
     elif project_id in {

@@ -96,13 +96,31 @@
         }
       ],
       "output_fields": [
+        "geoid",
+        "latitude",
+        "longitude",
         "population",
+        "population_moe",
+        "poverty_population",
         "poverty_count",
+        "poverty_count_moe",
         "median_household_income",
+        "median_income_moe",
+        "workers",
         "public_transit_workers",
         "median_gross_rent",
-        "latitude",
-        "longitude"
+        "median_rent_moe",
+        "population_source_code",
+        "population_moe_source_code",
+        "poverty_population_source_code",
+        "poverty_count_source_code",
+        "poverty_count_moe_source_code",
+        "median_household_income_source_code",
+        "median_income_moe_source_code",
+        "workers_source_code",
+        "public_transit_workers_source_code",
+        "median_gross_rent_source_code",
+        "median_rent_moe_source_code"
       ]
     },
     {

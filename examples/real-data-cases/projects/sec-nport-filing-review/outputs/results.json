@@ -46,17 +46,17 @@
     "review-top-5%": {
       "review_share": 0.04997020515876394,
       "high_risk_capture": 0.5,
-      "average_review_score": 0.760276433225592
+      "average_review_score": 0.7602764332255919
     },
     "review-top-10%": {
       "review_share": 0.09994041031752789,
       "high_risk_capture": 1.0,
-      "average_review_score": 0.7216356012021641
+      "average_review_score": 0.7216356012021635
     },
     "review-top-20%": {
       "review_share": 0.19996594875287307,
       "high_risk_capture": 1.0,
-      "average_review_score": 0.6753587373783837
+      "average_review_score": 0.675358737378383
     }
   },
   "headline_metrics": [

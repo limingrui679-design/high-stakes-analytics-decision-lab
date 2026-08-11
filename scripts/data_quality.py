@@ -2088,7 +2088,11 @@ def apply_cleaning_plan(
         )
     processed_dir.mkdir(parents=True, exist_ok=True)
     with processed.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fields,
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows({field: row.get(field, "") for field in fields} for row in rows)
 

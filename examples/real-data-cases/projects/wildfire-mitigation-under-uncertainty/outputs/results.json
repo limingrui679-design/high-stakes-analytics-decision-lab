@@ -43,32 +43,32 @@
   },
   "decision_options": {
     "frequency": {
-      "worst_case_regret": 0.6277984284586771,
-      "minimum_scenario_alignment": 0.37220157154132316,
-      "allocation_concentration": 0.026077009470651048,
+      "worst_case_regret": 0.6277984284586768,
+      "minimum_scenario_alignment": 0.3722015715413231,
+      "allocation_concentration": 0.026077009470651027,
       "scenario_alignment": {
-        "historical_acres": 0.6083053359913427,
-        "recent_acres": 0.37220157154132316,
+        "historical_acres": 0.6083053359913425,
+        "recent_acres": 0.3722015715413231,
         "tail_acres": 0.5323408970431482
       }
     },
     "recent_acres": {
-      "worst_case_regret": 0.26127040895915976,
+      "worst_case_regret": 0.26127040895915954,
       "minimum_scenario_alignment": 0.5075421299020356,
-      "allocation_concentration": 0.07006405449191246,
+      "allocation_concentration": 0.07006405449191244,
       "scenario_alignment": {
         "historical_acres": 0.5075421299020356,
-        "recent_acres": 1.0000000000000002,
+        "recent_acres": 1.0,
         "tail_acres": 0.7083604997719669
       }
     },
     "robust_blend": {
-      "worst_case_regret": 0.26128509975387626,
-      "minimum_scenario_alignment": 0.738714900246124,
-      "allocation_concentration": 0.03891462354715797,
+      "worst_case_regret": 0.2612850997538758,
+      "minimum_scenario_alignment": 0.7387149002461242,
+      "allocation_concentration": 0.038914623547157974,
       "scenario_alignment": {
-        "historical_acres": 0.7688125388611954,
-        "recent_acres": 0.738714900246124,
+        "historical_acres": 0.7688125388611952,
+        "recent_acres": 0.7387149002461242,
         "tail_acres": 0.9635363306881253
       }
     }

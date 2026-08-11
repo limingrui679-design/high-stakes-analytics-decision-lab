@@ -26,17 +26,19 @@ limited by the evidence boundary stated below.
 
 ## Evidence-backed findings
 
-- **Complete tract panels:** 1,460
-- **Designated QOZ tracts analyzed:** 138
-- **Unique matched controls:** 121
+- **Complete tract panels:** 1,394
+- **Designated QOZ tracts analyzed:** 136
+- **Unique matched controls:** 111
 - **Causal status:** not identified
 
 ## Methods selected for this case
 
 - Panel linkage
+- ACS special-value normalization
+- complete-case screening
 - nearest-neighbor matching
 - change contrasts
-- bootstrap intervals
+- reuse-aware wild-cluster intervals
 - and support diagnostics.
 
 These methods were selected from the question, data grain, and evidence
@@ -58,8 +60,8 @@ Associational one-year screen; no causal effect because parallel trends are unav
 
 ### Reviewed source-snapshot hashes
 
-- `massachusetts-qoz-tract-panel.csv` — `372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae`
-- `massachusetts-qoz-tract-panel.source-lock.json` — `5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790`
+- `massachusetts-qoz-tract-panel.csv` — `ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3`
+- `massachusetts-qoz-tract-panel.source-lock.json` — `c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6`
 
 The reviewed raw source files are bundled inside the complete project directory.
 The build script verifies each file against both this case index and the

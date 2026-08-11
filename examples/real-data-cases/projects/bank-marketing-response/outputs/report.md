@@ -65,7 +65,7 @@ Model and calibration choices are fixed before the final source-order split is e
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_aggregate_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Capacity planning preserves common campaign shocks
 
@@ -148,6 +148,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `bank-marketing-response`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `08475be795f8e3ba33dd6824e06eefc0a2ba4e29a9ddc235a57c4eb8927b1320`
+- Result SHA-256: `3af9590493acd763c0ceb80f109597cdbe522ce178d083123f6197aba29ccdf4`
 
 </details>

@@ -331,11 +331,12 @@ transportability, and spatial planning.
 
 Each project includes its reviewed raw source snapshot, source manifest and
 hashes, configuration, preparation and analysis code, Evidence Intelligence
-Report, all figures, machine-readable results, and an evidence-matched
-Decision Intelligence Brief. The Evidence Intelligence Report is the primary
-project record. A Decision Intelligence Brief is added only when a separate
-decision layer is justified; otherwise the analytical result itself records
-the bounded terminal status. Decision Intelligence Briefs may
+Report, all figures, and machine-readable results. Ten of the fifteen projects
+also include an evidence-matched Decision Intelligence Brief. The Evidence
+Intelligence Report is the primary project record. A Decision Intelligence
+Brief is added only when a separate decision layer is justified; otherwise the
+analytical result itself records the bounded terminal status. Decision
+Intelligence Briefs may
 end in a bounded comparison, `do_not_deploy`, a randomized-pilot requirement,
 targeted diligence, or an evidence request. Use
 `examples/real-data-cases/cases.json` as the machine-readable case index.

@@ -11,11 +11,57 @@
     "sex": "sex",
     "race_ethnicity": "race ethnicity",
     "poverty_income_ratio": "poverty income ratio",
+    "interview_weight": "interview weight",
     "exam_weight": "exam weight",
     "stratum": "stratum",
     "psu": "psu",
     "followup_months": "followup months",
     "death_within_36_months": "death within 36 months"
   },
-  "target": "death_within_36_months"
+  "target": "death_within_36_months",
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
+  "weight_policy": "WTINT2YR is primary because the analysis uses interview/demographic variables rather than MEC examination measures. WTMEC2YR is retained for sensitivity review; nonpositive weights are excluded.",
+  "quality_contract": {
+    "numeric_ranges": {
+      "age": {
+        "minimum": 18,
+        "maximum": 120
+      },
+      "sex": {
+        "minimum": 1,
+        "maximum": 2
+      },
+      "poverty_income_ratio": {
+        "minimum": 0,
+        "maximum": 5
+      },
+      "interview_weight": {
+        "minimum": 0
+      },
+      "exam_weight": {
+        "minimum": 0
+      },
+      "followup_months": {
+        "minimum": 0
+      },
+      "death_within_36_months": {
+        "minimum": 0,
+        "maximum": 1
+      }
+    }
+  }
 }

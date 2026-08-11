@@ -122,7 +122,7 @@ conditions:
 - Decision result: [`decision-results.json`](decision-results.json)
 - Decision chart map: [`figures/chart-map.json`](figures/chart-map.json)
 - Source manifest: [`../../../source-manifest.json`](../../../source-manifest.json)
-- Analytical result SHA-256: `08475be795f8e3ba33dd6824e06eefc0a2ba4e29a9ddc235a57c4eb8927b1320`
+- Analytical result SHA-256: `3af9590493acd763c0ceb80f109597cdbe522ce178d083123f6197aba29ccdf4`
 
 The report is generated from the committed analytical result and source
 manifest. It does not upgrade the permitted use of the underlying evidence.

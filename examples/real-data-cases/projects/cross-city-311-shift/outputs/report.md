@@ -67,7 +67,7 @@ Each city is first compared with itself over time.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Monthly request volumes
 
@@ -140,6 +140,6 @@ The analysis can prioritize validation, diligence, or a bounded pilot; it is not
 
 - Project ID: `cross-city-311-shift`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `7891821b5c571c7276f1493d94098363f75e64f91ea0866b70c18a694e36a417`
+- Result SHA-256: `e49fbd09103d4aae338e17b2cd604fec4eebb5bfbff2d0da858aa3f4f8bb58cb`
 
 </details>

@@ -9,7 +9,7 @@
   "spatial_autocorrelation": {
     "metric": "poverty_rate",
     "neighbors": 5,
-    "morans_i": 0.490555467751732
+    "morans_i": 0.49055546775173214
   },
   "location_allocation": {
     "hub_count": 5,
@@ -23,9 +23,9 @@
           "25005650900",
           "25009250900"
         ],
-        "need_coverage": 0.7848545058209955,
+        "need_coverage": 0.7848545058209959,
         "high_poverty_coverage": 0.6856381893070208,
-        "population_weighted_distance_km": 19.40982969303586,
+        "population_weighted_distance_km": 19.409829693035878,
         "bootstrap": {
           "need_coverage": [
             0.7968109,
@@ -945,7 +945,7 @@
         ],
         "need_coverage": 0.6292495112188238,
         "high_poverty_coverage": 0.41294569415585647,
-        "population_weighted_distance_km": 28.0510740918937,
+        "population_weighted_distance_km": 28.05107409189366,
         "bootstrap": {
           "need_coverage": [
             0.629275,
@@ -1863,9 +1863,9 @@
           "25009206800",
           "25009251200"
         ],
-        "need_coverage": 0.7813618007171367,
+        "need_coverage": 0.7813618007171371,
         "high_poverty_coverage": 0.6558213353230569,
-        "population_weighted_distance_km": 21.443963531619463,
+        "population_weighted_distance_km": 21.443963531619477,
         "bootstrap": {
           "need_coverage": [
             0.7602663,
@@ -2788,9 +2788,9 @@
           "25027731802",
           "25025100100"
         ],
-        "need_coverage": 0.6456639019945258,
+        "need_coverage": 0.6456639019945256,
         "high_poverty_coverage": 0.5052748863214318,
-        "population_weighted_distance_km": 22.697530112563385
+        "population_weighted_distance_km": 22.697530112563417
       },
       "10": {
         "radius_km": 10.0,
@@ -2801,9 +2801,9 @@
           "25009206800",
           "25009251200"
         ],
-        "need_coverage": 0.7813618007171367,
+        "need_coverage": 0.7813618007171371,
         "high_poverty_coverage": 0.6558213353230569,
-        "population_weighted_distance_km": 21.443963531619463
+        "population_weighted_distance_km": 21.443963531619477
       },
       "15": {
         "radius_km": 15.0,
@@ -2814,9 +2814,9 @@
           "25009251200",
           "25005650900"
         ],
-        "need_coverage": 0.8620598085975858,
+        "need_coverage": 0.8620598085975859,
         "high_poverty_coverage": 0.7729953034049477,
-        "population_weighted_distance_km": 19.680775020966244
+        "population_weighted_distance_km": 19.680775020966248
       }
     },
     "need_weight_sensitivity": {
@@ -2833,9 +2833,9 @@
           "25009250900",
           "25005650900"
         ],
-        "need_coverage": 0.7848545058209955,
+        "need_coverage": 0.7848545058209959,
         "high_poverty_coverage": 0.6856381893070208,
-        "population_weighted_distance_km": 19.40982969303586
+        "population_weighted_distance_km": 19.409829693035878
       },
       "balanced": {
         "weights": {
@@ -2850,9 +2850,9 @@
           "25009206800",
           "25009251200"
         ],
-        "need_coverage": 0.7813618007171367,
+        "need_coverage": 0.7813618007171371,
         "high_poverty_coverage": 0.6558213353230569,
-        "population_weighted_distance_km": 21.443963531619463
+        "population_weighted_distance_km": 21.443963531619477
       },
       "transit-heavy": {
         "weights": {
@@ -2867,17 +2867,17 @@
           "25027731602",
           "25009206800"
         ],
-        "need_coverage": 0.7792378818129253,
+        "need_coverage": 0.7792378818129255,
         "high_poverty_coverage": 0.6326673782381802,
-        "population_weighted_distance_km": 22.54992485717281
+        "population_weighted_distance_km": 22.549924857172826
       }
     },
     "maup_grid_proxy": {
       "tract_units": 1597,
       "coarse_quarter_degree_grid_units": 60,
-      "tract_poverty_morans_i": 0.490555467751732,
-      "grid_poverty_morans_i": 0.17041174994218303,
-      "poverty_rate_sd_ratio_grid_to_tract": 0.37816557997169614,
+      "tract_poverty_morans_i": 0.49055546775173214,
+      "grid_poverty_morans_i": 0.1704117499421831,
+      "poverty_rate_sd_ratio_grid_to_tract": 0.3781655799716961,
       "boundary": "The coarse grid is a sensitivity proxy, not an official planning geography; it demonstrates scale dependence."
     },
     "spatial_spillover": "Moran's I documents local dependence; the allocation model does not identify causal spillovers across tract boundaries."
@@ -2908,8 +2908,8 @@
   "measurement_boundary": "Gazetteer points approximate tract locations; the analysis is not a street-network travel-time model. ACS estimates carry sampling error.",
   "transit_access": {
     "mbta_stops": 265,
-    "population_weighted_nearest_stop_km": 36.29563382423317,
-    "high_poverty_weighted_nearest_stop_km": 40.64967661673858
+    "population_weighted_nearest_stop_km": 36.295633824233114,
+    "high_poverty_weighted_nearest_stop_km": 40.64967661673857
   },
   "site_feasibility_gate": {
     "status": "evidence_required_before_site_recommendation",

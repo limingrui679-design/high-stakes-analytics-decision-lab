@@ -123,10 +123,10 @@
   },
   "calibration": {
     "method": "validation-set Platt calibration",
-    "center": -4.44195998724346,
+    "center": -4.441959987243453,
     "spread": 0.7483737418824479,
-    "intercept": -4.297709336785308,
-    "slope": 0.1944491028948795,
+    "intercept": -4.2977093367853065,
+    "slope": 0.1944491028948796,
     "iterations": 2500,
     "l2": 0.001
   }

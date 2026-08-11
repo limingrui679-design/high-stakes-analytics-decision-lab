@@ -44,10 +44,19 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 ## Release
 
-The current stable release is [`v1.0.0`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.0).
+The current stable release is [`v1.0.1`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.1).
 Its versioned source package and SHA-256 checksum are published together on
 the release page; citation metadata is available in [`CITATION.cff`](CITATION.cff)
 and release changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
+
+### Verification & boundaries
+
+| Layer | v1.0.1 verification | Boundary |
+|---|---|---|
+| Release files | Root `RELEASE-MANIFEST.json`, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
+| Rebuild | All fifteen projects rebuild from a Git checkout or a source ZIP without `.git` | Reproduction confirms the reviewed workflow and declared numerical tolerance |
+| Data correction | 175 ACS special values are excluded and audited in QOZ; NHANES uses the documented interview weight; spatial ACS annotations stay outside numeric analysis | QOZ remains a one-year associational screen; NHANES is population research, not clinical prediction |
+| Product status | Public, tested research and portfolio prototype | No production deployment, institutional adoption, or real-world impact claim |
 
 <p align="center">
   <a href="#what-the-skill-does"><strong>Overview</strong></a> ·
@@ -461,7 +470,7 @@ Run the complete standalone verification suite:
 python3 -m unittest discover -s tests -v
 ```
 
-Rebuild all fifteen projects in an isolated tracked-file copy and compare raw
+Rebuild all fifteen projects in an isolated verified-file copy and compare raw
 sources exactly, categorical and integer outputs exactly, and cross-version
 floating-point outputs within the documented numerical tolerance:
 
@@ -469,18 +478,23 @@ floating-point outputs within the documented numerical tolerance:
 python3 scripts/verify_portfolio_reproducibility.py
 ```
 
+The command works both in a Git checkout and in the published source ZIP. A
+checkout uses `git ls-files`; a ZIP without `.git` verifies the self-excluding
+root `RELEASE-MANIFEST.json` before copying or running any project code.
+
 The two levels are deliberate: source and ordinary artifact integrity is
 byte-exact, while equivalent floating-point results may serialize differently
 across supported Python versions. Derived result hashes are exempted only when
 the underlying structured output passes the semantic comparison. See the
 [reproducibility contract](references/reproducibility-contract.md).
 
-The 81 public tests cover data-readiness safety, custom-workspace
+The 92 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
 routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
-package naming, links, SVG accessibility, semantic regeneration, and external
-source-parser security.
+package naming, links, SVG accessibility, semantic regeneration, ACS special
+values, survey-weight policy, no-Git release verification, DNS/SSRF boundaries,
+and external source-parser security.
 Synthetic files under `tests/fixtures/` are engineering fixtures only; they are
 not presented as real-data projects.
 
@@ -491,7 +505,7 @@ quality checks with:
 ```bash
 python3 -m pip install -r requirements-dev.txt
 ruff check scripts tests
-mypy scripts
+mypy
 ```
 
 ## Skill contents
@@ -506,7 +520,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 81-test standalone regression suite
+└── tests/                          # complete 92-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence

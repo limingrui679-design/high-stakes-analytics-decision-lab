@@ -1,4 +1,5 @@
 {
+  "schema_version": "1.1",
   "rows": 17906,
   "columns": 9,
   "column_names": [
@@ -23,8 +24,19 @@
     "pickups": 0,
     "returns": 0
   },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
   "duplicate_key_count": 0,
-  "quality_status": "usable_with_documented_limitations",
+  "findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "quality_status": "ready",
   "expected_rows": 17906,
   "row_count_matches_manifest": true,
   "privacy_review": {

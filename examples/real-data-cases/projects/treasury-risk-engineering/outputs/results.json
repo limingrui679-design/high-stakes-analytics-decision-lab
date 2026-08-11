@@ -10,10 +10,10 @@
   "return_model": "Daily carry plus first-order duration response to official par-yield changes; no convexity, transaction cost, or tradable-index replication.",
   "portfolios": {
     "short-baseline": {
-      "annualized_mean_return": 0.016178317545030022,
+      "annualized_mean_return": 0.01617831754503002,
       "annualized_volatility": 0.031716028841051944,
       "var95_loss": 0.003120530158730166,
-      "expected_shortfall95_loss": 0.004391245925925925,
+      "expected_shortfall95_loss": 0.004391245925925926,
       "worst_day_loss": 0.01017695238095238,
       "maximum_drawdown": 0.1055303105044686,
       "weights": {
@@ -1258,14 +1258,14 @@
           "annualized_mean_return": 0.18421752,
           "annualized_volatility": 0.03992634523731709,
           "var95_loss": 0.003740554761904761,
-          "expected_shortfall95_loss": 0.005022645502645502,
+          "expected_shortfall95_loss": 0.0050226455026455025,
           "worst_day_loss": 0.005851698412698413,
           "maximum_drawdown": 0.011243875897130051,
           "observations": 50,
           "source": "historical observed Treasury yield changes"
         },
         "rapid-tightening-2022": {
-          "annualized_mean_return": -0.06912913253012049,
+          "annualized_mean_return": -0.06912913253012047,
           "annualized_volatility": 0.04124863852764698,
           "var95_loss": 0.0040945746031746015,
           "expected_shortfall95_loss": 0.005562428571428573,
@@ -1275,10 +1275,10 @@
           "source": "historical observed Treasury yield changes"
         },
         "post-tightening-2023-2025": {
-          "annualized_mean_return": 0.04578256608811744,
+          "annualized_mean_return": 0.04578256608811749,
           "annualized_volatility": 0.03453092897351653,
           "var95_loss": 0.0033565761904761904,
-          "expected_shortfall95_loss": 0.004344219507101085,
+          "expected_shortfall95_loss": 0.004344219507101086,
           "worst_day_loss": 0.007199817460317453,
           "maximum_drawdown": 0.030358802615514824,
           "observations": 749,
@@ -1289,28 +1289,28 @@
         "5": {
           "expected_shortfall95_interval": [
             0.003977587370370371,
-            0.004695839005963232
+            0.004695839005963231
           ]
         },
         "20": {
           "expected_shortfall95_interval": [
-            0.003953969187477622,
+            0.003953969187477623,
             0.00479115265409194
           ]
         },
         "60": {
           "expected_shortfall95_interval": [
-            0.003777993505291005,
-            0.0048608134206349195
+            0.003777993505291006,
+            0.00486081342063492
           ]
         }
       }
     },
     "intermediate": {
-      "annualized_mean_return": 0.011094540360240164,
-      "annualized_volatility": 0.04586437066944272,
+      "annualized_mean_return": 0.01109454036024016,
+      "annualized_volatility": 0.04586437066944271,
       "var95_loss": 0.004594993650793648,
-      "expected_shortfall95_loss": 0.006300795343915347,
+      "expected_shortfall95_loss": 0.006300795343915344,
       "worst_day_loss": 0.014015333333333336,
       "maximum_drawdown": 0.14933655120624867,
       "weights": {
@@ -2552,7 +2552,7 @@
       },
       "historical_regimes": {
         "covid-liquidity-shock-2020": {
-          "annualized_mean_return": 0.24678384000000003,
+          "annualized_mean_return": 0.24678383999999998,
           "annualized_volatility": 0.06200904833592389,
           "var95_loss": 0.005909867460317459,
           "expected_shortfall95_loss": 0.008161296296296297,
@@ -2562,20 +2562,20 @@
           "source": "historical observed Treasury yield changes"
         },
         "rapid-tightening-2022": {
-          "annualized_mean_return": -0.0972099116465864,
+          "annualized_mean_return": -0.09720991164658635,
           "annualized_volatility": 0.0599215454581849,
           "var95_loss": 0.005945428571428574,
-          "expected_shortfall95_loss": 0.007916474969474969,
+          "expected_shortfall95_loss": 0.00791647496947497,
           "worst_day_loss": 0.014015333333333336,
           "maximum_drawdown": 0.1167291952217645,
           "observations": 249,
           "source": "historical observed Treasury yield changes"
         },
         "post-tightening-2023-2025": {
-          "annualized_mean_return": 0.04298219492656873,
+          "annualized_mean_return": 0.04298219492656876,
           "annualized_volatility": 0.04863074348514312,
           "var95_loss": 0.004875434920634929,
-          "expected_shortfall95_loss": 0.006134416457811194,
+          "expected_shortfall95_loss": 0.0061344164578111945,
           "worst_day_loss": 0.010217730158730154,
           "maximum_drawdown": 0.05540649027233413,
           "observations": 749,
@@ -2585,29 +2585,29 @@
       "block_length_sensitivity": {
         "5": {
           "expected_shortfall95_interval": [
-            0.005714811008589298,
+            0.005714811008589295,
             0.006754243724867727
           ]
         },
         "20": {
           "expected_shortfall95_interval": [
-            0.005682457329852413,
-            0.006933068894179897
+            0.005682457329852412,
+            0.006933068894179893
           ]
         },
         "60": {
           "expected_shortfall95_interval": [
-            0.005545460816207188,
+            0.0055454608162071855,
             0.0069246220529100505
           ]
         }
       }
     },
     "barbell": {
-      "annualized_mean_return": 0.010126825216811219,
-      "annualized_volatility": 0.04619981826292699,
+      "annualized_mean_return": 0.010126825216811209,
+      "annualized_volatility": 0.046199818262926996,
       "var95_loss": 0.004642431746031743,
-      "expected_shortfall95_loss": 0.006223904761904762,
+      "expected_shortfall95_loss": 0.006223904761904761,
       "worst_day_loss": 0.014258210317460326,
       "maximum_drawdown": 0.14937337962419506,
       "weights": {
@@ -3850,7 +3850,7 @@
       "historical_regimes": {
         "covid-liquidity-shock-2020": {
           "annualized_mean_return": 0.24998863999999998,
-          "annualized_volatility": 0.06895501508369692,
+          "annualized_volatility": 0.0689550150836969,
           "var95_loss": 0.005758064880952379,
           "expected_shortfall95_loss": 0.009577037037037037,
           "worst_day_loss": 0.012124091269841271,
@@ -3859,17 +3859,17 @@
           "source": "historical observed Treasury yield changes"
         },
         "rapid-tightening-2022": {
-          "annualized_mean_return": -0.10066507228915662,
+          "annualized_mean_return": -0.10066507228915661,
           "annualized_volatility": 0.059632020311702824,
           "var95_loss": 0.005969968253968251,
-          "expected_shortfall95_loss": 0.007762653235653236,
+          "expected_shortfall95_loss": 0.007762653235653237,
           "worst_day_loss": 0.014258210317460326,
           "maximum_drawdown": 0.11793674195369663,
           "observations": 249,
           "source": "historical observed Treasury yield changes"
         },
         "post-tightening-2023-2025": {
-          "annualized_mean_return": 0.041345452603471305,
+          "annualized_mean_return": 0.0413454526034713,
           "annualized_volatility": 0.048122981925676746,
           "var95_loss": 0.004817024603174601,
           "expected_shortfall95_loss": 0.006017491228070175,
@@ -3882,8 +3882,8 @@
       "block_length_sensitivity": {
         "5": {
           "expected_shortfall95_interval": [
-            0.0056102121534391544,
-            0.006665475003446117
+            0.005610212153439155,
+            0.0066654750034461155
           ]
         },
         "20": {
@@ -3894,17 +3894,17 @@
         },
         "60": {
           "expected_shortfall95_interval": [
-            0.005512528751322753,
+            0.005512528751322752,
             0.0067976274839703435
           ]
         }
       }
     },
     "long-duration": {
-      "annualized_mean_return": 0.003523080720480319,
+      "annualized_mean_return": 0.003523080720480323,
       "annualized_volatility": 0.06435779732551226,
       "var95_loss": 0.0064105515873016106,
-      "expected_shortfall95_loss": 0.008694552698412693,
+      "expected_shortfall95_loss": 0.008694552698412697,
       "worst_day_loss": 0.018990563492063503,
       "maximum_drawdown": 0.2086397682232164,
       "weights": {
@@ -5146,7 +5146,7 @@
       },
       "historical_regimes": {
         "covid-liquidity-shock-2020": {
-          "annualized_mean_return": 0.32673471999999987,
+          "annualized_mean_return": 0.32673472000000003,
           "annualized_volatility": 0.09977040901733378,
           "var95_loss": 0.008282302777777775,
           "expected_shortfall95_loss": 0.014079603174603173,
@@ -5159,14 +5159,14 @@
           "annualized_mean_return": -0.1361586907630522,
           "annualized_volatility": 0.0829066369553429,
           "var95_loss": 0.008345641269841267,
-          "expected_shortfall95_loss": 0.010742686813186814,
+          "expected_shortfall95_loss": 0.010742686813186813,
           "worst_day_loss": 0.018990563492063503,
           "maximum_drawdown": 0.15580249824548298,
           "observations": 249,
           "source": "historical observed Treasury yield changes"
         },
         "post-tightening-2023-2025": {
-          "annualized_mean_return": 0.037133901201602135,
+          "annualized_mean_return": 0.03713390120160214,
           "annualized_volatility": 0.06576289784834964,
           "var95_loss": 0.006606468253968233,
           "expected_shortfall95_loss": 0.008377208855472012,
@@ -5180,13 +5180,13 @@
         "5": {
           "expected_shortfall95_interval": [
             0.00782534017724868,
-            0.009240838486215533
+            0.009240838486215536
           ]
         },
         "20": {
           "expected_shortfall95_interval": [
-            0.007845196664021161,
-            0.009656144515873018
+            0.007845196664021165,
+            0.009656144515873016
           ]
         },
         "60": {

@@ -68,7 +68,7 @@ Predicted and survey-weighted observed rates are compared.
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_minimized_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Protected-attribute audit
 
@@ -150,6 +150,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `census-income-ai`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `14defa73c244c50a1a6ddc4fac3059c6c84d4d835523980404b18b8a51c21ce3`
+- Result SHA-256: `d3483a2ad3a7c1bfc68c03c0c1b3484cc07b7b1d6ec59d894722e23691be5ee4`
 
 </details>

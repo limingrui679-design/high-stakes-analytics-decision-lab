@@ -150,7 +150,7 @@
       ],
       "permutation_null": {
         "samples": 500,
-        "mean_auc": 0.5006276969178084,
+        "mean_auc": 0.5006276969178083,
         "95_interval": [
           0.4333720390981735,
           0.569574236586758
@@ -167,6 +167,6 @@
     "grain": "one CFPB complaint received in 2022 for a money-transfer, virtual-currency, or money-service product",
     "expected_rows": 13534,
     "source_manifest_sha256": "6d4c9a628fecb4d04718317eeaa82f56bde2974f054aa912e1548765aaaea837",
-    "analytical_results_sha256": "aa0ecb2076431be2f9b9da5223e24cb87e1eba1f9324e8d2cedfc61cac8e9cdd"
+    "analytical_results_sha256": "47e78a758ae96efa49fb02cb1574a464e0ef6622cfcd9435c9bf4de5ed2aa7da"
   }
 }

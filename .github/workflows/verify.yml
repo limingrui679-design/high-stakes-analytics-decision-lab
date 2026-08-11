@@ -52,7 +52,7 @@ jobs:
           ruff check scripts tests
           examples/real-data-cases/projects/_shared/safe_external_io.py
       - name: Run mypy
-        run: mypy scripts
+        run: mypy
       - name: Check prose and identifiers
         run: >-
           codespell --config .codespellrc

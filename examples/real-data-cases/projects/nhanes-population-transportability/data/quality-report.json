@@ -1,6 +1,7 @@
 {
+  "schema_version": "1.1",
   "rows": 11820,
-  "columns": 11,
+  "columns": 12,
   "column_names": [
     "seqn",
     "cohort",
@@ -8,6 +9,7 @@
     "sex",
     "race_ethnicity",
     "poverty_income_ratio",
+    "interview_weight",
     "exam_weight",
     "stratum",
     "psu",
@@ -20,15 +22,52 @@
     "age": 0,
     "sex": 0,
     "race_ethnicity": 0,
-    "poverty_income_ratio": 0,
+    "poverty_income_ratio": 1196,
+    "interview_weight": 0,
     "exam_weight": 0,
     "stratum": 0,
     "psu": 0,
     "followup_months": 0,
     "death_within_36_months": 0
   },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
   "duplicate_key_count": 0,
-  "quality_status": "usable_with_documented_limitations",
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "poverty_income_ratio"
+      ],
+      "count": 1196,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "missing_value_policy": {
+    "normalization": "trim surrounding whitespace and compare text case-insensitively",
+    "treated_as_missing": [
+      "null",
+      "NaN",
+      "empty string",
+      "?",
+      "N/A",
+      "NA",
+      "ACS estimate and margin-of-error special-value codes"
+    ],
+    "not_treated_as_missing": [
+      "Not Applicable"
+    ]
+  },
   "expected_rows": 11820,
   "row_count_matches_manifest": true,
   "privacy_review": {

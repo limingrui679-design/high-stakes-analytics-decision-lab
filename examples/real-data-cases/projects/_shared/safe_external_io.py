@@ -10,6 +10,7 @@ import ipaddress
 import os
 import re
 import shutil
+import socket
 import stat
 import subprocess
 import tempfile
@@ -20,9 +21,9 @@ import urllib.request
 import zipfile
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
-from typing import Any, BinaryIO, Iterator
+from typing import IO, Any, Iterator
 
-DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0"
+DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0.1"
 DEFAULT_DOWNLOAD_LIMIT_BYTES = 512 * 1024 * 1024
 DEFAULT_RESPONSE_LIMIT_BYTES = 64 * 1024 * 1024
 MAX_REDIRECTS = 5
@@ -37,7 +38,11 @@ def ensure_https_url(url: str) -> str:
     if parsed.username is not None or parsed.password is not None:
         raise ValueError("External URLs must not embed credentials.")
     hostname = parsed.hostname.casefold()
-    if hostname == "localhost" or hostname.endswith(".localhost") or hostname.endswith(".local"):
+    if (
+        hostname == "localhost"
+        or hostname.endswith(".localhost")
+        or hostname.endswith(".local")
+    ):
         raise ValueError("External URLs must not target a local hostname.")
     try:
         address = ipaddress.ip_address(hostname.strip("[]"))
@@ -46,6 +51,87 @@ def ensure_https_url(url: str) -> str:
     if address is not None and not address.is_global:
         raise ValueError("External URLs must not target a non-public IP address.")
     return url
+
+
+def _resolve_public_addresses(url: str) -> frozenset[str]:
+    """Resolve an HTTPS endpoint and reject every non-public answer."""
+
+    ensure_https_url(url)
+    parsed = urllib.parse.urlsplit(url)
+    hostname = parsed.hostname
+    if hostname is None:  # guarded by ensure_https_url; retained for type checkers
+        raise ValueError("External URL is missing a hostname.")
+    port = parsed.port or 443
+    try:
+        literal = ipaddress.ip_address(hostname.strip("[]"))
+    except ValueError:
+        literal = None
+    if literal is not None:
+        addresses = {str(literal)}
+    else:
+        try:
+            answers = socket.getaddrinfo(
+                hostname,
+                port,
+                type=socket.SOCK_STREAM,
+            )
+        except socket.gaierror as error:
+            raise urllib.error.URLError(
+                f"Could not resolve external hostname {hostname!r}."
+            ) from error
+        addresses = {str(ipaddress.ip_address(answer[4][0])) for answer in answers}
+    if not addresses:
+        raise urllib.error.URLError(
+            f"External hostname {hostname!r} returned no addresses."
+        )
+    non_public = sorted(
+        address
+        for address in addresses
+        if not ipaddress.ip_address(address).is_global
+    )
+    if non_public:
+        raise ValueError(
+            "External hostname resolves to a non-public IP address: "
+            + ", ".join(non_public)
+        )
+    return frozenset(addresses)
+
+
+def _response_peer_address(response: Any) -> str | None:
+    """Best-effort extraction of the connected socket peer from urllib."""
+
+    attribute_paths = (
+        ("fp", "raw", "_sock"),
+        ("fp", "_sock"),
+        ("raw", "_sock"),
+        ("_sock",),
+    )
+    for path in attribute_paths:
+        candidate = response
+        try:
+            for attribute in path:
+                candidate = getattr(candidate, attribute)
+            peer = candidate.getpeername()
+        except (AttributeError, OSError):
+            continue
+        if peer:
+            return str(ipaddress.ip_address(peer[0]))
+    return None
+
+
+def _remaining_time(deadline: float) -> float:
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        raise TimeoutError("HTTPS operation exceeded its total time limit.")
+    return remaining
+
+
+def _sleep_before_retry(deadline: float, attempt: int, error: BaseException) -> None:
+    remaining = _remaining_time(deadline)
+    delay = min(float(2**attempt), 2.0)
+    if delay >= remaining:
+        raise TimeoutError("HTTPS operation exceeded its total time limit.") from error
+    time.sleep(delay)
 
 
 class HttpsOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
@@ -57,20 +143,21 @@ class HttpsOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
     def redirect_request(
         self,
         req: urllib.request.Request,
-        fp: BinaryIO,
+        fp: IO[bytes],
         code: int,
         msg: str,
         headers: Any,
         newurl: str,
     ) -> urllib.request.Request | None:
         ensure_https_url(newurl)
+        _resolve_public_addresses(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 class _BoundedReader(io.RawIOBase):
     def __init__(
         self,
-        raw: BinaryIO,
+        raw: IO[bytes],
         maximum_bytes: int,
         *,
         deadline: float | None = None,
@@ -98,7 +185,7 @@ class _BoundedReader(io.RawIOBase):
             )
         return data
 
-    def readinto(self, buffer: bytearray | memoryview) -> int:
+    def readinto(self, buffer: Any) -> int:
         data = self.read(len(buffer))
         buffer[: len(data)] = data
         return len(data)
@@ -128,11 +215,12 @@ def _validated_content_length(response: Any, maximum_bytes: int) -> None:
 def open_https_stream(
     url: str,
     *,
-    timeout: int = 180,
+    timeout: float = 180,
     maximum_bytes: int = DEFAULT_RESPONSE_LIMIT_BYTES,
     user_agent: str = DEFAULT_USER_AGENT,
     accept: str = "*/*",
-) -> Iterator[io.BufferedReader]:
+    deadline: float | None = None,
+) -> Iterator[IO[bytes]]:
     """Open a bounded HTTPS stream whose redirects remain on HTTPS."""
 
     if timeout <= 0:
@@ -140,19 +228,32 @@ def open_https_stream(
     if maximum_bytes < 0:
         raise ValueError("maximum_bytes must be non-negative.")
     ensure_https_url(url)
+    if deadline is None:
+        deadline = time.monotonic() + timeout
+    _resolve_public_addresses(url)
     request = urllib.request.Request(
         url,
         headers={"User-Agent": user_agent, "Accept": accept},
     )
     opener = urllib.request.build_opener(HttpsOnlyRedirectHandler())
-    with opener.open(request, timeout=timeout) as response:  # nosec B310
-        ensure_https_url(response.geturl())
+    with opener.open(  # nosec B310
+        request,
+        timeout=_remaining_time(deadline),
+    ) as response:
+        final_url = ensure_https_url(response.geturl())
+        _resolve_public_addresses(final_url)
+        peer_address = _response_peer_address(response)
+        if peer_address is not None and not ipaddress.ip_address(peer_address).is_global:
+            raise ValueError(
+                "HTTPS connection reached a non-public peer address: "
+                f"{peer_address}"
+            )
         _validated_content_length(response, maximum_bytes)
         bounded = io.BufferedReader(
             _BoundedReader(
                 response,
                 maximum_bytes,
-                deadline=time.monotonic() + timeout,
+                deadline=deadline,
             )
         )
         try:
@@ -172,14 +273,18 @@ def read_https_bytes(
 ) -> bytes:
     if attempts < 1:
         raise ValueError("attempts must be at least 1.")
+    if timeout <= 0:
+        raise ValueError("timeout must be positive.")
+    deadline = time.monotonic() + timeout
     for attempt in range(attempts):
         try:
             with open_https_stream(
                 url,
-                timeout=timeout,
+                timeout=_remaining_time(deadline),
                 maximum_bytes=maximum_bytes,
                 user_agent=user_agent,
                 accept=accept,
+                deadline=deadline,
             ) as stream:
                 return stream.read()
         except urllib.error.HTTPError:
@@ -189,10 +294,10 @@ def read_https_bytes(
             OSError,
             TimeoutError,
             urllib.error.URLError,
-        ):
+        ) as error:
             if attempt + 1 == attempts:
                 raise
-            time.sleep(min(2**attempt, 2))
+            _sleep_before_retry(deadline, attempt, error)
     raise AssertionError("unreachable")
 
 
@@ -209,6 +314,9 @@ def download_https(
 
     if attempts < 1:
         raise ValueError("attempts must be at least 1.")
+    if timeout <= 0:
+        raise ValueError("timeout must be positive.")
+    deadline = time.monotonic() + timeout
     destination.parent.mkdir(parents=True, exist_ok=True)
     partial = destination.with_name(destination.name + ".part")
     if destination.is_symlink() or partial.is_symlink():
@@ -219,9 +327,10 @@ def download_https(
         try:
             with open_https_stream(
                 url,
-                timeout=timeout,
+                timeout=_remaining_time(deadline),
                 maximum_bytes=maximum_bytes,
                 user_agent=user_agent,
+                deadline=deadline,
             ) as source, partial.open("xb") as target:
                 while True:
                     block = source.read(1024 * 1024)
@@ -239,11 +348,11 @@ def download_https(
             OSError,
             TimeoutError,
             urllib.error.URLError,
-        ):
+        ) as error:
             partial.unlink(missing_ok=True)
             if attempt + 1 == attempts:
                 raise
-            time.sleep(min(2**attempt, 2))
+            _sleep_before_retry(deadline, attempt, error)
         except BaseException:
             partial.unlink(missing_ok=True)
             raise
@@ -274,57 +383,115 @@ def download_https_with_curl(
     if curl is None:
         raise RuntimeError("curl is required for this source endpoint.")
     curl = str(Path(curl).resolve(strict=True))
-    command = [
-        curl,
-        "--location",
-        "--max-redirs",
-        str(MAX_REDIRECTS),
-        "--proto",
-        "=https",
-        "--proto-redir",
-        "=https",
-        "--fail",
-        "--silent",
-        "--show-error",
-        "--retry",
-        "3",
-        "--retry-all-errors",
-        "--retry-delay",
-        "1",
-        "--connect-timeout",
-        "30",
-        "--max-time",
-        str(timeout),
-        "--max-filesize",
-        str(maximum_bytes),
-        "--user-agent",
-        user_agent,
-        "--output",
-        str(partial),
-        "--write-out",
-        "%{url_effective}",
-        url,
-    ]
+    headers = partial.with_name(partial.name + ".headers")
+    headers.unlink(missing_ok=True)
+    deadline = time.monotonic() + timeout
+    current_url = url
     try:
-        result = subprocess.run(
-            command,
-            check=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True,
-            timeout=timeout + 10,
-        )
-        ensure_https_url(result.stdout.strip())
-        observed = partial.stat().st_size
-        if observed > maximum_bytes:
-            raise ValueError(
-                f"HTTPS response exceeds {maximum_bytes} bytes."
+        for redirect_count in range(MAX_REDIRECTS + 1):
+            addresses = _resolve_public_addresses(current_url)
+            parsed = urllib.parse.urlsplit(current_url)
+            hostname = parsed.hostname
+            if hostname is None:  # guarded by ensure_https_url
+                raise ValueError("External URL is missing a hostname.")
+            port = parsed.port or 443
+            remaining = _remaining_time(deadline)
+            command = [
+                curl,
+                "--max-redirs",
+                "0",
+                "--proto",
+                "=https",
+                "--proto-redir",
+                "=https",
+                "--fail",
+                "--silent",
+                "--show-error",
+                "--retry",
+                "3",
+                "--retry-all-errors",
+                "--retry-delay",
+                "1",
+                "--retry-max-time",
+                str(max(1, int(remaining))),
+                "--connect-timeout",
+                str(max(1, min(30, int(remaining)))),
+                "--max-time",
+                str(max(1, int(remaining))),
+                "--max-filesize",
+                str(maximum_bytes),
+                "--user-agent",
+                user_agent,
+                "--dump-header",
+                str(headers),
+                "--output",
+                str(partial),
+                "--write-out",
+                "%{http_code}\n%{url_effective}",
+            ]
+            for address in sorted(addresses):
+                rendered_address = f"[{address}]" if ":" in address else address
+                command.extend(
+                    ["--resolve", f"{hostname}:{port}:{rendered_address}"]
+                )
+            command.append(current_url)
+            result = subprocess.run(
+                command,
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                timeout=_remaining_time(deadline) + 1,
             )
-        os.replace(partial, destination)
-        return observed
+            output_lines = result.stdout.strip().splitlines()
+            if len(output_lines) < 2 or not output_lines[0].isdigit():
+                raise ValueError("curl returned an invalid HTTP status record.")
+            status = int(output_lines[0])
+            effective_url = ensure_https_url(output_lines[-1])
+            _resolve_public_addresses(effective_url)
+            if 300 <= status < 400:
+                if redirect_count == MAX_REDIRECTS:
+                    raise ValueError(
+                        f"HTTPS redirect chain exceeds {MAX_REDIRECTS} hops."
+                    )
+                location = _redirect_location(headers)
+                current_url = ensure_https_url(
+                    urllib.parse.urljoin(effective_url, location)
+                )
+                partial.unlink(missing_ok=True)
+                headers.unlink(missing_ok=True)
+                continue
+            if not 200 <= status < 300:
+                raise ValueError(f"Unexpected HTTPS status from curl: {status}")
+            observed = partial.stat().st_size
+            if observed > maximum_bytes:
+                raise ValueError(
+                    f"HTTPS response exceeds {maximum_bytes} bytes."
+                )
+            os.replace(partial, destination)
+            headers.unlink(missing_ok=True)
+            return observed
+        raise AssertionError("unreachable")
     except BaseException:
         partial.unlink(missing_ok=True)
+        headers.unlink(missing_ok=True)
         raise
+
+
+def _redirect_location(headers: Path) -> str:
+    """Return the final Location header emitted for one non-following curl call."""
+
+    blocks = re.split(r"\r?\n\r?\n", headers.read_text(encoding="iso-8859-1"))
+    for block in reversed(blocks):
+        if not block.startswith("HTTP/"):
+            continue
+        for line in block.splitlines()[1:]:
+            name, separator, value = line.partition(":")
+            if separator and name.casefold() == "location":
+                location = value.strip()
+                if location:
+                    return location
+    raise ValueError("HTTPS redirect response is missing a Location header.")
 
 
 def read_https_bytes_with_curl(
@@ -360,7 +527,39 @@ class ZipLimits:
 DEFAULT_ZIP_LIMITS = ZipLimits()
 
 
-def _archive_size(source: Path | BinaryIO) -> int | None:
+@dataclass
+class ArchiveBudget:
+    """Cumulative expansion budget shared by nested archive layers."""
+
+    maximum_depth: int = 2
+    maximum_members: int = 4_096
+    maximum_total_uncompressed_bytes: int = 1024 * 1024 * 1024
+    observed_members: int = 0
+    observed_uncompressed_bytes: int = 0
+
+    def account(self, *, depth: int, members: int, uncompressed_bytes: int) -> None:
+        if depth < 1 or depth > self.maximum_depth:
+            raise ValueError(
+                f"Nested archive depth {depth} exceeds limit {self.maximum_depth}."
+            )
+        new_members = self.observed_members + members
+        if new_members > self.maximum_members:
+            raise ValueError(
+                "Nested archives contain "
+                f"{new_members} cumulative members; limit is {self.maximum_members}."
+            )
+        new_bytes = self.observed_uncompressed_bytes + uncompressed_bytes
+        if new_bytes > self.maximum_total_uncompressed_bytes:
+            raise ValueError(
+                "Nested archives expand to "
+                f"{new_bytes} cumulative bytes; limit is "
+                f"{self.maximum_total_uncompressed_bytes}."
+            )
+        self.observed_members = new_members
+        self.observed_uncompressed_bytes = new_bytes
+
+
+def _archive_size(source: Path | IO[bytes]) -> int | None:
     if isinstance(source, Path):
         return source.stat().st_size
     if isinstance(source, io.BytesIO):
@@ -379,7 +578,7 @@ def validate_zip_archive(
     archive: zipfile.ZipFile,
     *,
     limits: ZipLimits = DEFAULT_ZIP_LIMITS,
-) -> None:
+) -> tuple[int, int]:
     members = archive.infolist()
     if len(members) > limits.maximum_members:
         raise ValueError(
@@ -447,13 +646,16 @@ def validate_zip_archive(
                     f"{limits.label} member expansion ratio {ratio:.1f} exceeds "
                     f"{limits.maximum_expansion_ratio:.1f}: {name}"
                 )
+    return len(members), total
 
 
 @contextlib.contextmanager
 def open_safe_zip(
-    source: Path | BinaryIO,
+    source: Path | IO[bytes],
     *,
     limits: ZipLimits = DEFAULT_ZIP_LIMITS,
+    budget: ArchiveBudget | None = None,
+    depth: int = 1,
 ) -> Iterator[zipfile.ZipFile]:
     size = _archive_size(source)
     if size is not None and size > limits.maximum_archive_bytes:
@@ -466,7 +668,13 @@ def open_safe_zip(
     if not zipfile.is_zipfile(source):
         raise ValueError(f"Expected a {limits.label} archive.")
     with zipfile.ZipFile(source) as archive:
-        validate_zip_archive(archive, limits=limits)
+        members, uncompressed_bytes = validate_zip_archive(archive, limits=limits)
+        if budget is not None:
+            budget.account(
+                depth=depth,
+                members=members,
+                uncompressed_bytes=uncompressed_bytes,
+            )
         yield archive
 
 
@@ -476,7 +684,7 @@ def open_zip_member(
     name: str,
     *,
     maximum_bytes: int | None = None,
-) -> Iterator[io.BufferedReader]:
+) -> Iterator[IO[bytes]]:
     try:
         member = archive.getinfo(name)
     except KeyError as error:

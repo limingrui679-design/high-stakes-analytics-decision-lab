@@ -65,7 +65,7 @@ Empirical VaR and expected shortfall are reported together so the severity beyon
 | Duplicate primary keys | 0 |
 | Missing values under declared tokens | 0 |
 | Privacy review | approved_for_public_analysis |
-| Quality disposition | **usable_with_documented_limitations** |
+| Quality disposition | **ready** |
 
 ### Coverage and breach dependence are separate diagnostics
 
@@ -147,6 +147,6 @@ The Evidence Intelligence Report remains the primary record. The separate Decisi
 
 - Project ID: `treasury-risk-engineering`
 - Source manifest: [`../source-manifest.json`](../source-manifest.json)
-- Result SHA-256: `a395dd35002b7f2bb46d5c6f8aca874a3f9eb7498d32ea568a8e8a08f0b65eb6`
+- Result SHA-256: `2beef4d6735bffec8e83b39accfe55e6df26a208529227ce811a1e90c6ca9252`
 
 </details>
