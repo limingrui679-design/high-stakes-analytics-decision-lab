@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.13", "3.14"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -48,13 +48,16 @@ jobs:
       - name: Install quality tools
         run: python -m pip install --requirement requirements-dev.txt
       - name: Run Ruff
-        run: ruff check scripts tests
+        run: >-
+          ruff check scripts tests
+          examples/real-data-cases/projects/_shared/safe_external_io.py
       - name: Run mypy
         run: mypy scripts
       - name: Check prose and identifiers
         run: >-
           codespell --config .codespellrc
-          README.md CONTRIBUTING.md references scripts tests
+          README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md VERSIONING.md
+          references scripts tests
 
   portfolio-reproducibility:
     name: Portfolio rebuild ${{ matrix.python-version }}
@@ -63,7 +66,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.13", "3.14"]
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -91,3 +94,56 @@ jobs:
         run: >-
           python -m unittest discover -s tests
           -p 'test_reproducibility_and_source_security.py' -v
+
+  targeted-coverage:
+    name: Privacy and source-builder coverage
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install coverage and hardened XML parser
+        run: python -m pip install coverage==7.15.4 defusedxml==0.7.1
+      - name: Measure branch coverage for hardened input paths
+        run: >-
+          coverage run --branch
+          --include='scripts/data_quality.py,scripts/build_tailored_source_snapshots.py,examples/real-data-cases/projects/_shared/safe_external_io.py'
+          -m unittest tests.test_data_quality
+          tests.test_reproducibility_and_source_security -v
+      - name: Enforce targeted coverage floor
+        run: >-
+          coverage report --show-missing --fail-under=70
+          --include='scripts/data_quality.py,scripts/build_tailored_source_snapshots.py,examples/real-data-cases/projects/_shared/safe_external_io.py'
+
+  security-audit:
+    name: Dependency and code security
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements-dev.txt
+            requirements-maintenance.txt
+            requirements-security.txt
+      - name: Install security tools
+        run: python -m pip install --requirement requirements-security.txt
+      - name: Reject medium- and high-severity code findings
+        run: >-
+          bandit -r scripts examples/real-data-cases/projects/_shared -ll
+      - name: Audit pinned maintenance dependencies
+        run: >-
+          pip-audit -r requirements-dev.txt -r requirements-maintenance.txt
+          -r requirements-security.txt
+          --progress-spinner off
