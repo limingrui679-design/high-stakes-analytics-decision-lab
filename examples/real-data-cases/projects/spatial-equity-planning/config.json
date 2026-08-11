@@ -3,6 +3,7 @@
   "analysis_seed": 20260727,
   "parameters": {
     "composite_need_weights": {"poverty": 0.5, "transit": 0.3, "rent_to_income_proxy": 0.2},
+    "rent_to_income_missing_policy": {"primary": "complete_case_for_composite_need", "sensitivity": "observed_proxy_median_imputation", "legacy_zero_fill": "audit_only_not_used_for_decision"},
     "morans_i_neighbors": 5,
     "hub_count": 5,
     "coverage_radius_km": 10.0,
@@ -10,6 +11,7 @@
   },
   "parameter_register": [
     {"parameter": "composite_need_weights", "source_id": "analyst-planning-priorities", "status": "exploratory value judgment", "approved_by": "repository author self-review", "boundary": "Requires stakeholder elicitation before planning use."},
+    {"parameter": "rent_to_income_missing_policy", "source_id": "spatial-missingness-protocol", "status": "pre-registered analytical route", "approved_by": "repository author self-review", "boundary": "Complete-case and median-imputation agreement does not replace a stakeholder-approved missing-data policy."},
     {"parameter": "morans_i_neighbors", "source_id": "spatial-analysis-protocol", "status": "analytical choice", "approved_by": "repository author self-review", "boundary": "Five nearest tract centroids; no contiguity weights."},
     {"parameter": "hub_count", "source_id": "analyst-capacity-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Common constraint for strategy comparison."},
     {"parameter": "coverage_radius_km", "source_id": "analyst-access-scenario", "status": "hypothetical", "approved_by": "repository author self-review", "boundary": "Straight-line centroid distance, not travel time."},

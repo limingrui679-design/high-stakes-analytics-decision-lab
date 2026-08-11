@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata below."
 title: "High-Stakes Analytics & Decision Lab"
 type: software
-version: 1.0.1
+version: 1.0.2
 date-released: "2026-08-11"
 authors:
   - family-names: "Li"

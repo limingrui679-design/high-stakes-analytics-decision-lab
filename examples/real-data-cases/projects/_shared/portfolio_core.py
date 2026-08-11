@@ -880,6 +880,30 @@ def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str
                 ),
             }
         )
+    analysis_route_rows = []
+    for row in rows:
+        required = {
+            key: _safe_number(row.get(key))
+            for key in (
+                "population",
+                "poverty_population",
+                "poverty_count",
+                "workers",
+                "public_transit_workers",
+                "latitude",
+                "longitude",
+            )
+        }
+        if any(value is None for value in required.values()):
+            continue
+        if required["population"] <= 0 or required["poverty_population"] <= 0:
+            continue
+        analysis_route_rows.append(row)
+    missing_proxy_rows = sum(
+        _safe_number(row.get("median_household_income")) in {None, 0.0}
+        or _safe_number(row.get("median_gross_rent")) is None
+        for row in analysis_route_rows
+    )
     fields = list(rows[0])
     write_csv(project_root / "data/processed/analysis.csv", rows, fields)
     dictionary = {
@@ -912,6 +936,20 @@ def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str
             },
         },
         "missing_value_policy": MISSING_VALUE_POLICY,
+        "analysis_missingness_routes": {
+            "rent_to_income_proxy": {
+                "analysis_universe_rows": len(analysis_route_rows),
+                "affected_rows": missing_proxy_rows,
+                "primary_route": "complete_case_for_composite_need",
+                "sensitivity_route": "observed_proxy_median_imputation",
+                "retained_uses": [
+                    "poverty-priority analysis",
+                    "transit-priority analysis",
+                    "MBTA proximity analysis",
+                ],
+                "prohibited_route": "zero_fill",
+            }
+        },
         "quality_contract": {
             "annotation_columns": [
                 field for field in rows[0] if field.endswith("_source_code")
@@ -1083,6 +1121,10 @@ def prepare_project(project_root: Path) -> dict[str, Any]:
     )
     if dictionary.get("missing_value_policy"):
         quality["missing_value_policy"] = dictionary["missing_value_policy"]
+    if dictionary.get("analysis_missingness_routes"):
+        quality["analysis_missingness_routes"] = dictionary[
+            "analysis_missingness_routes"
+        ]
     quality["expected_rows"] = manifest["expected_rows"]
     quality["row_count_matches_manifest"] = len(rows) == manifest["expected_rows"]
     quality["privacy_review"] = manifest["privacy_review"]

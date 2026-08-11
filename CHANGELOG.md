@@ -3,6 +3,35 @@
 All notable public changes are documented here. The repository follows
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-08-11
+
+### Fixed
+
+- Replaced the spatial composite-need zero fill with a 1,495-tract
+  complete-case primary route while retaining all 1,597 analyzed tracts for
+  poverty, transit, and MBTA-access analyses.
+- Added an observed-median sensitivity and retained the v1.0.1 zero-fill hub
+  set only as an explicitly invalid release-to-release audit comparison. The
+  complete-case and median routes select the same five hubs; the legacy route
+  overlaps on four.
+
+### Security
+
+- Made urllib HTTPS reads fail closed when the connected peer address cannot be
+  observed, and required the same public-peer check on every redirect response.
+- Added regression coverage for unknown final peers and unknown intermediate
+  redirect peers while retaining the DNS, size, deadline, and atomic-write
+  boundaries.
+
+### Reproducibility
+
+- Upgraded the release manifest to schema 1.1 and made no-Git verification
+  reject unlisted source files, unsupported Git modes, and executable-bit
+  tampering in addition to path and SHA-256 mismatches.
+- Added route-specific spatial missingness metadata to the data-quality report,
+  machine results, technical report, figures, and decision artifacts without
+  removing any case or raw source.
+
 ## [1.0.1] - 2026-08-11
 
 ### Fixed
@@ -67,5 +96,6 @@ All notable public changes are documented here. The repository follows
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
+[1.0.2]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.0

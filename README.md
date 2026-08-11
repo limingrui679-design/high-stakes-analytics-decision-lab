@@ -44,18 +44,19 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 ## Release
 
-The current stable release is [`v1.0.1`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.1).
+The current stable release is [`v1.0.2`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.2).
 Its versioned source package and SHA-256 checksum are published together on
 the release page; citation metadata is available in [`CITATION.cff`](CITATION.cff)
 and release changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Verification & boundaries
 
-| Layer | v1.0.1 verification | Boundary |
+| Layer | v1.0.2 verification | Boundary |
 |---|---|---|
-| Release files | Root `RELEASE-MANIFEST.json`, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
+| Release files | Root manifest schema 1.1, exact file set, Git executable bits, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
 | Rebuild | All fifteen projects rebuild from a Git checkout or a source ZIP without `.git` | Reproduction confirms the reviewed workflow and declared numerical tolerance |
-| Data correction | 175 ACS special values are excluded and audited in QOZ; NHANES uses the documented interview weight; spatial ACS annotations stay outside numeric analysis | QOZ remains a one-year associational screen; NHANES is population research, not clinical prediction |
+| Data correction | QOZ special values and NHANES weights remain audited; spatial composite need uses 1,495 complete cases plus a median sensitivity while retaining all 1,597 tracts elsewhere | QOZ remains associational; NHANES is population research; spatial hubs remain illustrative planning screens |
+| External I/O | Every urllib redirect and final HTTPS response requires an observable public connected peer; curl sources retain DNS pinning and manual redirects | These controls reduce untrusted-input risk but do not prove absolute security |
 | Product status | Public, tested research and portfolio prototype | No production deployment, institutional adoption, or real-world impact claim |
 
 <p align="center">

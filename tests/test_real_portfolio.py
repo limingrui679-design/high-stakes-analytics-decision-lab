@@ -636,9 +636,52 @@ class RealPortfolioContractTests(unittest.TestCase):
             ],
             141,
         )
+        proxy_route = spatial_quality["analysis_missingness_routes"][
+            "rent_to_income_proxy"
+        ]
+        self.assertEqual(proxy_route["analysis_universe_rows"], 1597)
+        self.assertEqual(proxy_route["affected_rows"], 102)
+        self.assertEqual(
+            proxy_route["primary_route"],
+            "complete_case_for_composite_need",
+        )
+        self.assertEqual(proxy_route["prohibited_route"], "zero_fill")
         spatial_results = json.loads(
             (spatial / "outputs/results.json").read_text(encoding="utf-8")
         )
+        self.assertEqual(spatial_results["data"]["tracts_analyzed"], 1597)
+        self.assertEqual(
+            spatial_results["data"]["composite_need_complete_case_tracts"],
+            1495,
+        )
+        self.assertEqual(
+            spatial_results["data"]["rent_to_income_proxy_missing_tracts"],
+            102,
+        )
+        missingness = spatial_results["robustness"]["rent_to_income_missingness"]
+        primary_hubs = [
+            "25025070102",
+            "25013800600",
+            "25027731602",
+            "25009250900",
+            "25009206800",
+        ]
+        self.assertEqual(missingness["primary_hub_geoids"], primary_hubs)
+        self.assertEqual(
+            missingness["median_imputation_sensitivity"]["hub_geoids"],
+            primary_hubs,
+        )
+        self.assertEqual(
+            missingness["median_imputation_sensitivity"][
+                "hub_overlap_with_primary"
+            ],
+            5,
+        )
+        legacy = missingness["legacy_zero_fill_audit"]
+        self.assertEqual(legacy["status"], "not_used_for_decision")
+        self.assertEqual(legacy["hub_overlap_with_primary"], 4)
+        self.assertEqual(legacy["removed_from_primary"], ["25009251200"])
+        self.assertEqual(legacy["added_to_primary"], ["25009250900"])
         self.assertAlmostEqual(
             spatial_results["transit_access"][
                 "high_poverty_weighted_nearest_stop_km"

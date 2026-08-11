@@ -48,4 +48,6 @@ runs the complete fifteen-project preparation, analysis, decision-case, report,
 visual, and gallery build, and fails on any unapproved difference or unexpected
 generated file. In a Git checkout, the allowlist comes from `git ls-files`; in
 a source ZIP without `.git`, the same paths and SHA-256 values come from the
-self-excluding root `RELEASE-MANIFEST.json`.
+self-excluding root `RELEASE-MANIFEST.json`. Manifest schema 1.1 additionally
+requires the source tree to contain exactly the listed files and, on POSIX
+systems, verifies the Git executable-bit mode before any project code runs.

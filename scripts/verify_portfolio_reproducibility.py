@@ -55,7 +55,7 @@ def _manifest_files(root: Path) -> list[Path]:
             "Repository metadata is unavailable and RELEASE-MANIFEST.json is missing."
         )
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
-    if payload.get("schema_version") != "1.0" or payload.get("algorithm") != "sha256":
+    if payload.get("schema_version") != "1.1" or payload.get("algorithm") != "sha256":
         raise ValueError("Unsupported release-manifest schema or digest algorithm.")
     entries = payload.get("files")
     if not isinstance(entries, list) or not entries:
@@ -66,9 +66,14 @@ def _manifest_files(root: Path) -> list[Path]:
         if not isinstance(entry, dict):
             raise ValueError("Release-manifest file entries must be objects.")
         raw_path = entry.get("path")
+        expected_mode = entry.get("mode")
         expected_hash = entry.get("sha256")
-        if not isinstance(raw_path, str) or not isinstance(expected_hash, str):
-            raise ValueError("Release-manifest paths and hashes must be strings.")
+        if (
+            not isinstance(raw_path, str)
+            or not isinstance(expected_mode, str)
+            or not isinstance(expected_hash, str)
+        ):
+            raise ValueError("Release-manifest paths, modes, and hashes must be strings.")
         pure_path = PurePosixPath(raw_path)
         if (
             not raw_path
@@ -86,6 +91,8 @@ def _manifest_files(root: Path) -> list[Path]:
         canonical_paths.add(canonical)
         if HASH_PATTERN.fullmatch(expected_hash) is None:
             raise ValueError(f"Invalid release-manifest hash for {raw_path!r}.")
+        if expected_mode not in {"100644", "100755"}:
+            raise ValueError(f"Unsupported release-manifest mode for {raw_path!r}.")
         relative = Path(*pure_path.parts)
         source = root / relative
         if not source.is_file() or source.is_symlink():
@@ -98,7 +105,28 @@ def _manifest_files(root: Path) -> list[Path]:
                 f"Release-manifest hash mismatch for {raw_path}: "
                 f"expected {expected_hash}, observed {observed_hash}"
             )
+        if os.name == "posix":
+            observed_mode = "100755" if source.stat().st_mode & 0o111 else "100644"
+            if observed_mode != expected_mode:
+                raise ValueError(
+                    f"Release-manifest mode mismatch for {raw_path}: "
+                    f"expected {expected_mode}, observed {observed_mode}"
+                )
         paths.append(relative)
+    expected_paths = {RELEASE_MANIFEST, *paths}
+    observed_paths = {
+        path.relative_to(root)
+        for path in root.rglob("*")
+        if path.is_file() or path.is_symlink()
+    }
+    unlisted = sorted(observed_paths - expected_paths)
+    if unlisted:
+        preview = ", ".join(path.as_posix() for path in unlisted[:20])
+        remainder = len(unlisted) - min(len(unlisted), 20)
+        suffix = f" (+{remainder} more)" if remainder else ""
+        raise ValueError(
+            f"Release source tree contains unlisted files: {preview}{suffix}"
+        )
     return [RELEASE_MANIFEST, *sorted(paths)]
 
 

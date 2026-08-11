@@ -45,6 +45,20 @@
       "Not Applicable"
     ]
   },
+  "analysis_missingness_routes": {
+    "rent_to_income_proxy": {
+      "analysis_universe_rows": 1597,
+      "affected_rows": 102,
+      "primary_route": "complete_case_for_composite_need",
+      "sensitivity_route": "observed_proxy_median_imputation",
+      "retained_uses": [
+        "poverty-priority analysis",
+        "transit-priority analysis",
+        "MBTA proximity analysis"
+      ],
+      "prohibited_route": "zero_fill"
+    }
+  },
   "quality_contract": {
     "annotation_columns": [
       "population_source_code",

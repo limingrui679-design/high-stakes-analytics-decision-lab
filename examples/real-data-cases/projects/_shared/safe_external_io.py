@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from typing import IO, Any, Iterator
 
-DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0.1"
+DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0.2"
 DEFAULT_DOWNLOAD_LIMIT_BYTES = 512 * 1024 * 1024
 DEFAULT_RESPONSE_LIMIT_BYTES = 64 * 1024 * 1024
 MAX_REDIRECTS = 5
@@ -119,6 +119,20 @@ def _response_peer_address(response: Any) -> str | None:
     return None
 
 
+def _require_public_peer(response: Any) -> str:
+    """Fail closed unless the connected HTTPS peer is observable and public."""
+
+    peer_address = _response_peer_address(response)
+    if peer_address is None:
+        raise ValueError("Could not verify the HTTPS connection peer address.")
+    if not ipaddress.ip_address(peer_address).is_global:
+        raise ValueError(
+            "HTTPS connection reached a non-public peer address: "
+            f"{peer_address}"
+        )
+    return peer_address
+
+
 def _remaining_time(deadline: float) -> float:
     remaining = deadline - time.monotonic()
     if remaining <= 0:
@@ -150,6 +164,7 @@ class HttpsOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
         newurl: str,
     ) -> urllib.request.Request | None:
         ensure_https_url(newurl)
+        _require_public_peer(fp)
         _resolve_public_addresses(newurl)
         return super().redirect_request(req, fp, code, msg, headers, newurl)
 
@@ -242,12 +257,7 @@ def open_https_stream(
     ) as response:
         final_url = ensure_https_url(response.geturl())
         _resolve_public_addresses(final_url)
-        peer_address = _response_peer_address(response)
-        if peer_address is not None and not ipaddress.ip_address(peer_address).is_global:
-            raise ValueError(
-                "HTTPS connection reached a non-public peer address: "
-                f"{peer_address}"
-            )
+        _require_public_peer(response)
         _validated_content_length(response, maximum_bytes)
         bounded = io.BufferedReader(
             _BoundedReader(

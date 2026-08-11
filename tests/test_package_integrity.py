@@ -180,7 +180,7 @@ class PackageIntegrityTests(unittest.TestCase):
         manifest_path = ROOT / "RELEASE-MANIFEST.json"
         self.assertTrue(manifest_path.is_file())
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        self.assertEqual(manifest["schema_version"], "1.0")
+        self.assertEqual(manifest["schema_version"], "1.1")
         self.assertEqual(manifest["algorithm"], "sha256")
         paths = [entry["path"] for entry in manifest["files"]]
         self.assertEqual(paths, sorted(paths))
@@ -195,6 +195,7 @@ class PackageIntegrityTests(unittest.TestCase):
             self.assertIn(required, paths)
         for entry in manifest["files"]:
             with self.subTest(path=entry["path"]):
+                self.assertIn(entry["mode"], {"100644", "100755"})
                 source = ROOT / entry["path"]
                 self.assertTrue(source.is_file())
                 self.assertFalse(source.is_symlink())

@@ -977,6 +977,10 @@
           "value": "1,597"
         },
         {
+          "label": "Composite-need complete cases",
+          "value": "1,495; missing proxy: 102"
+        },
+        {
           "label": "MBTA rapid-transit stop records",
           "value": "265"
         },

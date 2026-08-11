@@ -1,12 +1,13 @@
 Composite-need tract pattern and selected hubs
 
 The analyzed dataset contains 1,597 Massachusetts census tract internal points. Higher composite need is concentrated rather than uniformly distributed.
+Composite need uses 1,495 complete cases; 102 tracts with a missing rent-to-income proxy remain visible in muted gray and are retained for non-composite analyses.
 
 Selected composite-equity hub tract GEOIDs:
 - 25025070102
 - 25013800600
 - 25027731602
+- 25009250900
 - 25009206800
-- 25009251200
 
 The SVG uses tract internal points, not polygons or street-network travel times. Hub selection assumes a 10 km straight-line radius.

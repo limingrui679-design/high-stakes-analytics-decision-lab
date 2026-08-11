@@ -538,8 +538,14 @@ def _headline_snapshot(result: dict[str, Any]) -> list[str]:
         ]
     if project_id == "spatial-equity-planning":
         composite = result["location_allocation"]["strategies"]["composite-equity"]
+        missingness = result["robustness"]["rent_to_income_missingness"]
         return [
             f"Analyzed tracts: {result['data']['tracts_analyzed']:,}",
+            (
+                "Composite-need complete cases: "
+                f"{missingness['complete_case_tracts']:,}; missing proxy retained "
+                f"outside the composite: {missingness['missing_proxy_tracts']:,}"
+            ),
             (
                 "Poverty-rate Moran's I: "
                 f"{result['spatial_autocorrelation']['morans_i']:.3f}"

@@ -58,10 +58,10 @@
   },
   "sentinel_count_by_column": {},
   "source_annotation_count_by_column": {
-    "median_income_moe_source_code": 55,
-    "median_gross_rent_source_code": 122,
     "median_household_income_source_code": 35,
-    "median_rent_moe_source_code": 141
+    "median_income_moe_source_code": 55,
+    "median_rent_moe_source_code": 141,
+    "median_gross_rent_source_code": 122
   },
   "invalid_numeric_count_by_column": {},
   "outside_range_count_by_column": {},
@@ -113,6 +113,20 @@
     "not_treated_as_missing": [
       "Not Applicable"
     ]
+  },
+  "analysis_missingness_routes": {
+    "rent_to_income_proxy": {
+      "analysis_universe_rows": 1597,
+      "affected_rows": 102,
+      "primary_route": "complete_case_for_composite_need",
+      "sensitivity_route": "observed_proxy_median_imputation",
+      "retained_uses": [
+        "poverty-priority analysis",
+        "transit-priority analysis",
+        "MBTA proximity analysis"
+      ],
+      "prohibited_route": "zero_fill"
+    }
   },
   "expected_rows": 1620,
   "row_count_matches_manifest": true,

@@ -28,6 +28,7 @@ limited by the evidence boundary stated below.
 ## Evidence-backed findings
 
 - **Analyzed Massachusetts tracts:** 1,597
+- **Composite-need complete cases:** 1,495; missing proxy: 102
 - **MBTA rapid-transit stop records:** 265
 - **High-poverty weighted nearest-stop distance:** 40.65 km
 - **Site decision:** blocked pending land and feasibility evidence

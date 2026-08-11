@@ -52,11 +52,18 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                 "http://example.com/downgrade",
             )
 
+        class PublicSocket:
+            def getpeername(self):
+                return ("93.184.216.34", 443)
+
         class Response(io.BytesIO):
             def __init__(self, payload: bytes, final_url: str) -> None:
                 super().__init__(payload)
                 self.headers: dict[str, str] = {}
                 self._final_url = final_url
+                self.fp = SimpleNamespace(
+                    raw=SimpleNamespace(_sock=PublicSocket())
+                )
 
             def geturl(self) -> str:
                 return self._final_url
@@ -149,9 +156,34 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "non-public IP"):
                 safe_io._resolve_public_addresses("https://public.example/data")
 
+        handler = safe_io.HttpsOnlyRedirectHandler()
+        request = safe_io.urllib.request.Request("https://public.example/start")
+        with self.assertRaisesRegex(ValueError, "Could not verify"):
+            handler.redirect_request(
+                request,
+                io.BytesIO(),
+                302,
+                "Found",
+                {},
+                "https://cdn.example/final",
+            )
+
         class FakeSocket:
             def getpeername(self):
                 return ("127.0.0.1", 443)
+
+        private_redirect = SimpleNamespace(
+            raw=SimpleNamespace(_sock=FakeSocket())
+        )
+        with self.assertRaisesRegex(ValueError, "non-public peer"):
+            handler.redirect_request(
+                request,
+                private_redirect,
+                302,
+                "Found",
+                {},
+                "https://cdn.example/final",
+            )
 
         class Response(io.BytesIO):
             def __init__(self) -> None:
@@ -184,6 +216,41 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             ),
         ):
             with self.assertRaisesRegex(ValueError, "non-public peer"):
+                safe_io.read_https_bytes(
+                    "https://public.example/data",
+                    attempts=1,
+                )
+
+        class UnknownPeerResponse(io.BytesIO):
+            def __init__(self) -> None:
+                super().__init__(b"ok")
+                self.headers: dict[str, str] = {}
+
+            def geturl(self) -> str:
+                return "https://public.example/final"
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                self.close()
+
+        unknown_opener = SimpleNamespace(
+            open=lambda *args, **kwargs: UnknownPeerResponse()
+        )
+        with (
+            mock.patch.object(
+                safe_io,
+                "_resolve_public_addresses",
+                return_value=frozenset({"93.184.216.34"}),
+            ),
+            mock.patch.object(
+                safe_io.urllib.request,
+                "build_opener",
+                return_value=unknown_opener,
+            ),
+        ):
+            with self.assertRaisesRegex(ValueError, "Could not verify"):
                 safe_io.read_https_bytes(
                     "https://public.example/data",
                     attempts=1,
@@ -760,8 +827,8 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             payload.write_text("verified\n", encoding="utf-8")
             digest = hashlib.sha256(payload.read_bytes()).hexdigest()
             manifest = {
-                "schema_version": "1.0",
-                "release": "1.0.1",
+                "schema_version": "1.1",
+                "release": "1.0.2",
                 "algorithm": "sha256",
                 "files": [
                     {"path": "payload.txt", "mode": "100644", "sha256": digest}
@@ -775,6 +842,16 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
                 reproducibility._tracked_files(root),
                 [Path("RELEASE-MANIFEST.json"), Path("payload.txt")],
             )
+            extra = root / "unlisted.txt"
+            extra.write_text("not in manifest\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "unlisted files"):
+                reproducibility._tracked_files(root)
+            extra.unlink()
+            if reproducibility.os.name == "posix":
+                payload.chmod(0o755)
+                with self.assertRaisesRegex(ValueError, "mode mismatch"):
+                    reproducibility._tracked_files(root)
+                payload.chmod(0o644)
             payload.write_text("tampered\n", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "hash mismatch"):
                 reproducibility._tracked_files(root)

@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 
+from statistics import median
+
 from portfolio_core import *
 
 def _haversine(left: tuple[float, float], right: tuple[float, float]) -> float:
@@ -18,6 +20,36 @@ def _standardize(values: list[float]) -> list[float]:
     return [(value - center) / spread for value in values]
 
 
+def _score_composite_need(
+    tracts: list[dict[str, Any]],
+    *,
+    missing_fill: float | None,
+    weights: tuple[float, float, float] = (0.5, 0.3, 0.2),
+) -> list[dict[str, Any]]:
+    """Score complete cases, or an explicitly declared fill sensitivity."""
+
+    scored: list[dict[str, Any]] = []
+    for row in tracts:
+        proxy = row["rent_to_income_proxy"]
+        if proxy is None:
+            if missing_fill is None:
+                continue
+            proxy = missing_fill
+        scored.append({**row, "rent_to_income_proxy": proxy})
+    if not scored:
+        raise ValueError("Composite need requires at least one observed rent proxy.")
+    poverty_z = _standardize([row["poverty_rate"] for row in scored])
+    transit_z = _standardize([row["transit_share"] for row in scored])
+    rent_z = _standardize([row["rent_to_income_proxy"] for row in scored])
+    for index, row in enumerate(scored):
+        row["composite_need"] = (
+            weights[0] * poverty_z[index]
+            + weights[1] * transit_z[index]
+            + weights[2] * rent_z[index]
+        )
+    return scored
+
+
 def _select_hubs(
     tracts: list[dict[str, Any]],
     score_field: str,
@@ -25,8 +57,13 @@ def _select_hubs(
     hub_count: int = 5,
     radius_km: float = 10.0,
 ) -> list[str]:
-    candidates = sorted(tracts, key=lambda row: row[score_field], reverse=True)[:100]
-    uncovered = {row["geoid"] for row in tracts}
+    eligible = [row for row in tracts if row.get(score_field) is not None]
+    candidates = sorted(
+        eligible,
+        key=lambda row: row[score_field],
+        reverse=True,
+    )[:100]
+    uncovered = {row["geoid"] for row in eligible}
     selected: list[str] = []
     for _ in range(hub_count):
         best_id, best_gain = None, -1.0
@@ -36,7 +73,7 @@ def _select_hubs(
             center = (candidate["latitude"], candidate["longitude"])
             gain = sum(
                 row["population"] * max(row[score_field], 0)
-                for row in tracts
+                for row in eligible
                 if row["geoid"] in uncovered
                 and _haversine(center, (row["latitude"], row["longitude"])) <= radius_km
             )
@@ -45,7 +82,7 @@ def _select_hubs(
         if best_id is None:
             break
         selected.append(best_id)
-        center_row = next(row for row in tracts if row["geoid"] == best_id)
+        center_row = next(row for row in eligible if row["geoid"] == best_id)
         center = (center_row["latitude"], center_row["longitude"])
         uncovered = {
             geoid
@@ -53,8 +90,8 @@ def _select_hubs(
             if _haversine(
                 center,
                 (
-                    next(row for row in tracts if row["geoid"] == geoid)["latitude"],
-                    next(row for row in tracts if row["geoid"] == geoid)["longitude"],
+                    next(row for row in eligible if row["geoid"] == geoid)["latitude"],
+                    next(row for row in eligible if row["geoid"] == geoid)["longitude"],
                 ),
             )
             > radius_km
@@ -68,6 +105,7 @@ def _evaluate_hubs(
     radius_km: float,
     *,
     hub_coordinates: list[tuple[float, float]] | None = None,
+    need_field: str = "composite_need",
 ) -> dict[str, float]:
     hubs = hub_coordinates or [
         (row["latitude"], row["longitude"])
@@ -80,11 +118,15 @@ def _evaluate_hubs(
         min(_haversine((row["latitude"], row["longitude"]), hub) for hub in hubs)
         for row in tracts
     ]
-    need_total = sum(row["population"] * max(row["composite_need"], 0) for row in tracts)
+    need_total = sum(
+        row["population"] * max(row[need_field], 0)
+        for row in tracts
+        if row.get(need_field) is not None
+    )
     need_covered = sum(
-        row["population"] * max(row["composite_need"], 0)
+        row["population"] * max(row[need_field], 0)
         for row, distance in zip(tracts, distances)
-        if distance <= radius_km
+        if row.get(need_field) is not None and distance <= radius_km
     )
     high_poverty = [row for row in tracts if row["poverty_rate"] >= 0.20]
     high_covered = sum(
@@ -137,10 +179,16 @@ def _svg_map(path: Path, tracts: list[dict[str, Any]], hubs: list[str], source: 
     for row in tracts:
         x = 90 + 820 * (row["longitude"] - min_lon) / (max_lon - min_lon)
         y = 430 - 310 * (row["latitude"] - min_lat) / (max_lat - min_lat)
-        opacity = 0.18 + 0.62 * max(0, min(1, (row["composite_need"] + 2) / 4))
+        score = row.get("composite_need")
+        if score is None:
+            fill = PALETTE["quiet"]
+            opacity = 0.34
+        else:
+            fill = PALETTE["blue"]
+            opacity = 0.18 + 0.62 * max(0, min(1, (score + 2) / 4))
         body.append(
             f'<circle cx="{x:.1f}" cy="{y:.1f}" r="2.2" '
-            f'fill="{PALETTE["blue"]}" fill-opacity="{opacity:.2f}"/>'
+            f'fill="{fill}" fill-opacity="{opacity:.2f}"/>'
         )
         if row["geoid"] in hubs:
             body.append(
@@ -159,6 +207,17 @@ def _svg_map(path: Path, tracts: list[dict[str, Any]], hubs: list[str], source: 
 
 
 def analyze_spatial(project_root: Path) -> dict[str, Any]:
+    config = load_json(project_root / "config.json")
+    missing_policy = config["parameters"]["rent_to_income_missing_policy"]
+    expected_policy = {
+        "primary": "complete_case_for_composite_need",
+        "sensitivity": "observed_proxy_median_imputation",
+        "legacy_zero_fill": "audit_only_not_used_for_decision",
+    }
+    if missing_policy != expected_policy:
+        raise ValueError(
+            "Spatial rent-to-income missingness policy differs from the reviewed route."
+        )
     source_rows = read_csv(project_root / "data/processed/analysis.csv")
     tracts = []
     for row in source_rows:
@@ -202,7 +261,7 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
             if values["median_household_income"]
             and values["median_household_income"] > 0
             and values["median_gross_rent"] is not None
-            else 0
+            else None
         )
         tracts.append(
             {
@@ -217,13 +276,33 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
         )
     poverty_z = _standardize([row["poverty_rate"] for row in tracts])
     transit_z = _standardize([row["transit_share"] for row in tracts])
-    rent_z = _standardize([row["rent_to_income_proxy"] for row in tracts])
     for index, row in enumerate(tracts):
         row["poverty_need"] = poverty_z[index]
         row["transit_need"] = transit_z[index]
-        row["composite_need"] = (
-            0.5 * poverty_z[index] + 0.3 * transit_z[index] + 0.2 * rent_z[index]
-        )
+        row["composite_need"] = None
+    observed_proxies = [
+        row["rent_to_income_proxy"]
+        for row in tracts
+        if row["rent_to_income_proxy"] is not None
+    ]
+    observed_proxy_median = median(observed_proxies)
+    primary_composite_tracts = _score_composite_need(
+        tracts,
+        missing_fill=None,
+    )
+    primary_scores = {
+        row["geoid"]: row["composite_need"] for row in primary_composite_tracts
+    }
+    for row in tracts:
+        row["composite_need"] = primary_scores.get(row["geoid"])
+    median_sensitivity_tracts = _score_composite_need(
+        tracts,
+        missing_fill=observed_proxy_median,
+    )
+    legacy_zero_fill_tracts = _score_composite_need(
+        tracts,
+        missing_fill=0.0,
+    )
     radius = 10.0
     strategies = {}
     for name, field in (
@@ -274,14 +353,16 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
     }
     weight_sensitivity = {}
     for name, weights in weight_scenarios.items():
-        field = f"sensitivity_{name}"
-        for index, row in enumerate(tracts):
-            row[field] = (
-                weights[0] * poverty_z[index]
-                + weights[1] * transit_z[index]
-                + weights[2] * rent_z[index]
-            )
-        hubs = _select_hubs(tracts, field, radius_km=radius)
+        sensitivity_tracts = _score_composite_need(
+            tracts,
+            missing_fill=None,
+            weights=weights,
+        )
+        hubs = _select_hubs(
+            sensitivity_tracts,
+            "composite_need",
+            radius_km=radius,
+        )
         weight_sensitivity[name] = {
             "weights": {
                 "poverty": weights[0],
@@ -291,6 +372,59 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
             "hub_geoids": hubs,
             **_evaluate_hubs(tracts, hubs, radius),
         }
+    primary_hubs = strategies["composite-equity"]["hub_geoids"]
+    median_hubs = _select_hubs(
+        median_sensitivity_tracts,
+        "composite_need",
+        radius_km=radius,
+    )
+    legacy_hubs = _select_hubs(
+        legacy_zero_fill_tracts,
+        "composite_need",
+        radius_km=radius,
+    )
+    median_metrics = _evaluate_hubs(
+        median_sensitivity_tracts,
+        median_hubs,
+        radius,
+    )
+    legacy_metrics = _evaluate_hubs(
+        legacy_zero_fill_tracts,
+        legacy_hubs,
+        radius,
+    )
+    missingness_sensitivity = {
+        "primary_policy": missing_policy["primary"],
+        "all_tracts_retained_for_non_composite_analyses": True,
+        "tracts_analyzed": len(tracts),
+        "complete_case_tracts": len(primary_composite_tracts),
+        "missing_proxy_tracts": len(tracts) - len(primary_composite_tracts),
+        "missing_proxy_share": (
+            (len(tracts) - len(primary_composite_tracts)) / len(tracts)
+        ),
+        "observed_proxy_median": observed_proxy_median,
+        "primary_hub_geoids": primary_hubs,
+        "median_imputation_sensitivity": {
+            "fill_value": observed_proxy_median,
+            "hub_geoids": median_hubs,
+            "hub_overlap_with_primary": len(set(primary_hubs) & set(median_hubs)),
+            **median_metrics,
+        },
+        "legacy_zero_fill_audit": {
+            "status": "not_used_for_decision",
+            "release": "v1.0.1",
+            "fill_value": 0.0,
+            "hub_geoids": legacy_hubs,
+            "hub_overlap_with_primary": len(set(primary_hubs) & set(legacy_hubs)),
+            "removed_from_primary": sorted(set(legacy_hubs) - set(primary_hubs)),
+            "added_to_primary": sorted(set(primary_hubs) - set(legacy_hubs)),
+            "boundary": (
+                "Retained only for release-to-release audit; missing rent pressure "
+                "is not interpreted as zero."
+            ),
+            **legacy_metrics,
+        },
+    }
     grid_groups: dict[tuple[float, float], list[dict[str, Any]]] = defaultdict(list)
     for row in tracts:
         grid_groups[
@@ -326,6 +460,12 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
             "tract internal points. Higher composite need is concentrated rather "
             "than uniformly distributed."
         ),
+        (
+            f"Composite need uses {len(primary_composite_tracts):,} complete cases; "
+            f"{len(tracts) - len(primary_composite_tracts):,} tracts with a missing "
+            "rent-to-income proxy remain visible in muted gray and are retained for "
+            "non-composite analyses."
+        ),
         "",
         "Selected composite-equity hub tract GEOIDs:",
         *[
@@ -347,6 +487,10 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
         "data": {
             "tracts_in_source": len(source_rows),
             "tracts_analyzed": len(tracts),
+            "composite_need_complete_case_tracts": len(primary_composite_tracts),
+            "rent_to_income_proxy_missing_tracts": (
+                len(tracts) - len(primary_composite_tracts)
+            ),
             "crs": "EPSG:4326",
             "acs_period": "2019-2023 5-year",
         },
@@ -361,6 +505,7 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
             "strategies": strategies,
         },
         "robustness": {
+            "rent_to_income_missingness": missingness_sensitivity,
             "coverage_radius_sensitivity": radius_sensitivity,
             "need_weight_sensitivity": weight_sensitivity,
             "maup_grid_proxy": {
@@ -406,11 +551,14 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
                 "Network travel times reverse straight-line accessibility rankings.",
                 "Local land-use or ownership makes selected hubs infeasible.",
                 "Alternative weights or geographic aggregation materially change priorities.",
+                "A reviewed missing-data route changes the complete-case hub set.",
             ],
         },
         "measurement_boundary": (
             "Gazetteer points approximate tract locations; the analysis is not a "
-            "street-network travel-time model. ACS estimates carry sampling error."
+            "street-network travel-time model. ACS estimates carry sampling error. "
+            "Composite need uses complete rent-to-income proxy cases; missing-proxy "
+            "tracts remain in poverty, transit, and access analyses."
         ),
     }
     source = "U.S. Census Bureau 2019–2023 ACS 5-year and 2023 Gazetteer"
@@ -454,4 +602,3 @@ def analyze_spatial(project_root: Path) -> dict[str, Any]:
     return result
 
 __all__ = [name for name in globals() if not name.startswith("__")]
-
