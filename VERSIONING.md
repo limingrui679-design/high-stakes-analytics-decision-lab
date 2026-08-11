@@ -15,7 +15,8 @@ Component versions are not expected to match one another. A component version
 changes only when that component's contract changes; the repository release
 version records the tested combination shipped together.
 
-Until the first tagged repository release, `main` is the supported development
-line. A release should be tagged only after the complete verification suite,
-static quality checks, source-hash validation, and generated-artifact checks
-pass on the release commit.
+The supported public line is `v1.0.x`; `main` is the supported development
+line for the next release. A release is tagged only after the complete
+verification suite, static quality checks, source-hash validation,
+generated-artifact checks, and release-archive checksum verification pass on
+the release commit.

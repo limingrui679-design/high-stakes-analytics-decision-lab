@@ -94,6 +94,10 @@
           {
             "name": "cross-city-311-daily.csv",
             "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
+          },
+          {
+            "name": "cross-city-311-daily.source-lock.json",
+            "sha256": "d0f1740a18bc759ee4d8fab6c8ab7f0efd225df02918cf3a9bb0a7f5eee36424"
           }
         ]
       },
@@ -746,7 +750,7 @@
           },
           {
             "name": "massachusetts-qoz-tract-panel.source-lock.json",
-            "sha256": "20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be"
+            "sha256": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790"
           }
         ]
       },

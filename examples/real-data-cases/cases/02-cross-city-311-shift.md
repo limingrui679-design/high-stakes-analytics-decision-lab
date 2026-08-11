@@ -59,6 +59,7 @@ Administrative shift audit only; requests are not latent need or service quality
 ### Reviewed source-snapshot hashes
 
 - `cross-city-311-daily.csv` — `46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f`
+- `cross-city-311-daily.source-lock.json` — `d0f1740a18bc759ee4d8fab6c8ab7f0efd225df02918cf3a9bb0a7f5eee36424`
 
 The reviewed raw source files are bundled inside the complete project directory.
 The build script verifies each file against both this case index and the

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "cross-city-311-shift",
   "source_id": "chicago-nyc-311-2022-2023",
   "title": "Cross-City 311 Distribution Shift and Transfer Gate",
@@ -17,6 +17,10 @@
     {
       "path": "data/raw/cross-city-311-daily.csv",
       "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
+    },
+    {
+      "path": "data/raw/cross-city-311-daily.source-lock.json",
+      "sha256": "d0f1740a18bc759ee4d8fab6c8ab7f0efd225df02918cf3a9bb0a7f5eee36424"
     }
   ],
   "privacy_review": {
@@ -28,5 +32,151 @@
   "citation": "City of Chicago and City of New York. Daily source-category aggregates, 2022-2023.",
   "additional_sources": [
     "https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9"
+  ],
+  "sources": [
+    {
+      "source_id": "chicago-311-api-2022-2023",
+      "publisher": "City of Chicago",
+      "version": "Quarterly API query snapshots for 2022-2023",
+      "license": "Chicago Data Portal terms",
+      "license_url": "https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+      "url": "https://data.cityofchicago.org/Service-Requests/311-Service-Requests-Request-and-Response-Times/v6vf-nfxy",
+      "artifacts": [
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-01-01T00%3A00%3A00%27+and+created_date+%3C+%272022-04-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "5b7c258379c6a131899e43b75bd1a020a5a9854940dd352310202935a099d9d5",
+          "bytes": 408732,
+          "records": 6752,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-04-01T00%3A00%3A00%27+and+created_date+%3C+%272022-07-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "91aedcc5987519957be19ae42c2066c975586649dc07f53b4fda5cf9c5404bac",
+          "bytes": 431310,
+          "records": 7147,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-07-01T00%3A00%3A00%27+and+created_date+%3C+%272022-10-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "0e61050a000c94337c62acbf149b3d5a14c94e7f56d4d41945dc226d9999c758",
+          "bytes": 444864,
+          "records": 7393,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-10-01T00%3A00%3A00%27+and+created_date+%3C+%272023-01-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "f892a0fd878fb75038c7a69c5b7aa27e66931d261ca579da643c5d617fd956c3",
+          "bytes": 417459,
+          "records": 6935,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-01-01T00%3A00%3A00%27+and+created_date+%3C+%272023-04-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "241b0dc7f66f8fa5a69cb51a7b9ddcc5744655b5f2d134f225236c54d03dbe61",
+          "bytes": 415927,
+          "records": 6882,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-04-01T00%3A00%3A00%27+and+created_date+%3C+%272023-07-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "de13a499082a33c40c16ca08a1c5cd0bad71b436bcb2923f3a2b7473bbf22ae4",
+          "bytes": 431693,
+          "records": 7160,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-07-01T00%3A00%3A00%27+and+created_date+%3C+%272023-10-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "ab7906e56803fe1f27ea030b0f4daa1f01d434de6d3666a06a23e4ecb82197ac",
+          "bytes": 441369,
+          "records": 7331,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofchicago.org/resource/v6vf-nfxy.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Csr_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-10-01T00%3A00%3A00%27+and+created_date+%3C+%272024-01-01T00%3A00%3A00%27&%24group=date%2Csr_type&%24order=date%2Csr_type&%24limit=50000",
+          "sha256": "e0fad02514ee731951dc73d46d377a1ab69f4425cb599ae07360cb9bfba1e8d2",
+          "bytes": 419773,
+          "records": 6975,
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "city",
+        "date",
+        "service_family",
+        "requests"
+      ]
+    },
+    {
+      "source_id": "nyc-311-api-2022-2023",
+      "publisher": "City of New York",
+      "version": "Quarterly API query snapshots for 2022-2023",
+      "license": "NYC Open Data terms of use",
+      "license_url": "https://opendata.cityofnewyork.us/overview/#termsofuse",
+      "url": "https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9",
+      "artifacts": [
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-01-01T00%3A00%3A00%27+and+created_date+%3C+%272022-04-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "694b81c1afa5dff5547b8726e0656b2bf5292a98f0ecb35e3209343dc299d8df",
+          "bytes": 561026,
+          "records": 11036,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-04-01T00%3A00%3A00%27+and+created_date+%3C+%272022-07-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "ae6586a943fd91cc63742bf25179417048d4abb97689a7ce70032d177dcbae2e",
+          "bytes": 586918,
+          "records": 11577,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-07-01T00%3A00%3A00%27+and+created_date+%3C+%272022-10-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "152c41b2d7e730d2b38c70ef7d82a499045ea8b9c57b73ee8402ec003ee411fe",
+          "bytes": 603328,
+          "records": 11930,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272022-10-01T00%3A00%3A00%27+and+created_date+%3C+%272023-01-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "48db6ef461bfee084c8f1473a9e76635e4c36f7f095df26c7bb4d735e1ff73d1",
+          "bytes": 572028,
+          "records": 11337,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-01-01T00%3A00%3A00%27+and+created_date+%3C+%272023-04-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "2132a5add523c491e7c4820d585896c84df0cfcf36961bc0a605a16a9cd46f7c",
+          "bytes": 558439,
+          "records": 11051,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-04-01T00%3A00%3A00%27+and+created_date+%3C+%272023-07-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "8e4c8ed9bc21d7256bb099d84144a0768c0742fcb6b53cd98fca059f2a6cea2c",
+          "bytes": 591786,
+          "records": 11700,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-07-01T00%3A00%3A00%27+and+created_date+%3C+%272023-10-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "f13caff31cef903f544161ccbca61fbf1cdb17319e52cb36f57d8a3f0fb4b9e0",
+          "bytes": 609608,
+          "records": 12059,
+          "hash_algorithm": "sha256"
+        },
+        {
+          "url": "https://data.cityofnewyork.us/resource/erm2-nwe9.csv?%24select=date_trunc_ymd%28created_date%29+as+date%2Ccomplaint_type+as+category%2Ccount%28%2A%29+as+requests&%24where=created_date+%3E%3D+%272023-10-01T00%3A00%3A00%27+and+created_date+%3C+%272024-01-01T00%3A00%3A00%27&%24group=date%2Ccomplaint_type&%24order=date%2Ccomplaint_type&%24limit=50000",
+          "sha256": "2e5023a257acb9ead8b86ee226f906876356f190b874fe9b366a5295c7d28b5e",
+          "bytes": 578533,
+          "records": 11466,
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "city",
+        "date",
+        "service_family",
+        "requests"
+      ]
+    }
   ]
 }

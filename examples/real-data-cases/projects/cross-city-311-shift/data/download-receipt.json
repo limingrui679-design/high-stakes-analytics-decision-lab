@@ -1,7 +1,7 @@
 {
   "project_id": "cross-city-311-shift",
   "source_id": "chicago-nyc-311-2022-2023",
-  "verified_at": "2026-08-10T20:54:10.958502+08:00",
+  "verified_at": "2026-08-11T10:26:18.543941+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [
@@ -9,6 +9,11 @@
       "path": "data/raw/cross-city-311-daily.csv",
       "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f",
       "bytes": 7137984
+    },
+    {
+      "path": "data/raw/cross-city-311-daily.source-lock.json",
+      "sha256": "d0f1740a18bc759ee4d8fab6c8ab7f0efd225df02918cf3a9bb0a7f5eee36424",
+      "bytes": 11151
     }
   ]
 }

@@ -73,5 +73,37 @@
   "lodes_years": [
     2018,
     2019
+  ],
+  "lodes_files": [
+    {
+      "publisher": "U.S. Census Bureau LEHD",
+      "version": "LODES8 Massachusetts WAC S000 JT00 2018",
+      "name": "ma_wac_S000_JT00_2018.csv.gz",
+      "url": "https://lehd.ces.census.gov/data/lodes/LODES8/ma/wac/ma_wac_S000_JT00_2018.csv.gz",
+      "sha256": "fddbd842d1f43062d2e46f9db699216311ac44e8784844839ec941e2e4faff03",
+      "bytes": 1217124,
+      "decompressed_sha256": "229a45a6bbc288ebf64a40ffa5109d537b2c33b10a2c06e80e2d6c7771b57e3a",
+      "decompressed_bytes": 6707794,
+      "output_fields": [
+        "geoid",
+        "year",
+        "workplace_jobs"
+      ]
+    },
+    {
+      "publisher": "U.S. Census Bureau LEHD",
+      "version": "LODES8 Massachusetts WAC S000 JT00 2019",
+      "name": "ma_wac_S000_JT00_2019.csv.gz",
+      "url": "https://lehd.ces.census.gov/data/lodes/LODES8/ma/wac/ma_wac_S000_JT00_2019.csv.gz",
+      "sha256": "d104a2217b9bc629e5b6420006c7233391d10f114d4423c453da99bc75ee23e5",
+      "bytes": 1234972,
+      "decompressed_sha256": "f083777b40352ac6a317ef19ca1be2360ea4de9f4b7f88655f91bf29c70c5010",
+      "decompressed_bytes": 6823755,
+      "output_fields": [
+        "geoid",
+        "year",
+        "workplace_jobs"
+      ]
+    }
   ]
 }

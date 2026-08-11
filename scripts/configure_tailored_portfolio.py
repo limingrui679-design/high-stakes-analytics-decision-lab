@@ -24,6 +24,233 @@ def write_json(path: Path, payload) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def _output_fields(root: Path) -> list[str]:
+    dictionary_path = root / "data/data-dictionary.json"
+    if not dictionary_path.exists():
+        return []
+    dictionary = json.loads(dictionary_path.read_text(encoding="utf-8"))
+    fields = dictionary.get("fields", {})
+    return list(fields) if isinstance(fields, dict) else []
+
+
+def _upstream_artifact(item: dict) -> dict:
+    artifact = {
+        key: item[key]
+        for key in (
+            "name",
+            "path",
+            "url",
+            "sha256",
+            "bytes",
+            "decompressed_sha256",
+            "decompressed_bytes",
+            "records",
+        )
+        if key in item
+    }
+    artifact["hash_algorithm"] = "sha256"
+    return artifact
+
+
+def _source_record(
+    *,
+    source_id: str,
+    publisher: str,
+    version: str,
+    license_name: str,
+    license_url: str,
+    url: str,
+    artifacts: list[dict],
+    output_fields: list[str],
+) -> dict:
+    if not artifacts:
+        raise ValueError(f"Structured source {source_id} has no hash-locked artifact.")
+    return {
+        "source_id": source_id,
+        "publisher": publisher,
+        "version": version,
+        "license": license_name,
+        "license_url": license_url,
+        "url": url,
+        "artifacts": [_upstream_artifact(item) for item in artifacts],
+        "output_fields": output_fields,
+    }
+
+
+def _structured_sources(root: Path, manifest: dict) -> list[dict]:
+    """Describe each upstream source and the output fields it supports."""
+
+    project_id = manifest["project_id"]
+    output_fields = _output_fields(root)
+    raw_files = manifest["raw_files"]
+    lock_paths = [
+        root / item["path"]
+        for item in raw_files
+        if item["path"].endswith(".source-lock.json")
+    ]
+    locks = [json.loads(path.read_text(encoding="utf-8")) for path in lock_paths]
+
+    if project_id == "cross-city-311-shift":
+        requests = locks[0].get("requests", []) if locks else []
+        chicago = [item for item in requests if "Chicago" in item.get("publisher", "")]
+        new_york = [item for item in requests if "New York" in item.get("publisher", "")]
+        return [
+            _source_record(
+                source_id="chicago-311-api-2022-2023",
+                publisher="City of Chicago",
+                version="Quarterly API query snapshots for 2022-2023",
+                license_name="Chicago Data Portal terms",
+                license_url="https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html",
+                url=manifest["landing_page"],
+                artifacts=chicago,
+                output_fields=output_fields,
+            ),
+            _source_record(
+                source_id="nyc-311-api-2022-2023",
+                publisher="City of New York",
+                version="Quarterly API query snapshots for 2022-2023",
+                license_name="NYC Open Data terms of use",
+                license_url="https://opendata.cityofnewyork.us/overview/#termsofuse",
+                url=manifest["additional_sources"][0],
+                artifacts=new_york,
+                output_fields=output_fields,
+            ),
+        ]
+
+    if project_id == "opportunity-zone-policy-evaluation":
+        lock = locks[0] if locks else {}
+        return [
+            _source_record(
+                source_id="cdfi-designated-qoz-2018",
+                publisher="U.S. Department of the Treasury CDFI Fund",
+                version="Designated Qualified Opportunity Zones, 2018-12-14",
+                license_name="U.S. Government public data",
+                license_url=manifest["license_url"],
+                url=manifest["landing_page"],
+                artifacts=[lock["qoz_workbook"]] if lock.get("qoz_workbook") else [],
+                output_fields=["geoid", "qoz_2018"],
+            ),
+            _source_record(
+                source_id="census-acs-5year-2018-2019",
+                publisher="U.S. Census Bureau",
+                version="2018 and 2019 ACS five-year table-based files",
+                license_name="U.S. Government public data",
+                license_url="https://www.census.gov/about/policies/open-gov/open-data.html",
+                url="https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+                artifacts=lock.get("acs_files", []),
+                output_fields=[
+                    "geoid",
+                    "year",
+                    "population",
+                    "poverty_universe",
+                    "poverty_count",
+                    "median_household_income",
+                    "median_gross_rent",
+                    "civilian_labor_force",
+                    "unemployed",
+                ],
+            ),
+            _source_record(
+                source_id="census-lodes8-ma-wac-2018-2019",
+                publisher="U.S. Census Bureau LEHD",
+                version="LODES8 Massachusetts WAC S000 JT00, 2018-2019",
+                license_name="U.S. Government public data",
+                license_url="https://www.census.gov/about/policies/open-gov/open-data.html",
+                url="https://lehd.ces.census.gov/data/",
+                artifacts=lock.get("lodes_files", []),
+                output_fields=["geoid", "year", "workplace_jobs"],
+            ),
+        ]
+
+    if project_id in {
+        "population-health-survival",
+        "nhanes-population-transportability",
+    }:
+        files = locks[0].get("files", []) if locks else []
+        mortality = [item for item in files if "MORT" in item.get("name", "").upper()]
+        survey = [item for item in files if item not in mortality]
+        identifier = "nhis" if project_id.startswith("population") else "nhanes"
+        survey_fields = [field for field in output_fields if not field.startswith("death_") and field != "followup_months"]
+        mortality_fields = [
+            field
+            for field in output_fields
+            if field.startswith("death_") or field == "followup_months"
+        ]
+        return [
+            _source_record(
+                source_id=f"cdc-{identifier}-survey-files",
+                publisher="U.S. CDC National Center for Health Statistics",
+                version=manifest["version"],
+                license_name=manifest["license"],
+                license_url=manifest["license_url"],
+                url=manifest["landing_page"],
+                artifacts=survey,
+                output_fields=survey_fields,
+            ),
+            _source_record(
+                source_id=f"cdc-{identifier}-linked-mortality-files",
+                publisher="U.S. CDC National Center for Health Statistics",
+                version="2019 public-use linked mortality release",
+                license_name=manifest["license"],
+                license_url=manifest["license_url"],
+                url="https://www.cdc.gov/nchs/data-linkage/mortality-public.htm",
+                artifacts=mortality,
+                output_fields=mortality_fields,
+            ),
+        ]
+
+    if project_id == "spatial-equity-planning":
+        census = [item for item in raw_files if "mbta" not in item["path"]]
+        mbta = [item for item in raw_files if "mbta" in item["path"]]
+        return [
+            _source_record(
+                source_id="census-acs-gazetteer-ma-2023",
+                publisher="U.S. Census Bureau",
+                version="2023 ACS five-year tables and tract Gazetteer",
+                license_name="U.S. Government open data",
+                license_url=manifest["license_url"],
+                url=manifest["landing_page"],
+                artifacts=census,
+                output_fields=output_fields,
+            ),
+            _source_record(
+                source_id="mbta-v3-rapid-transit-stops",
+                publisher="Massachusetts Bay Transportation Authority",
+                version="MBTA V3 rapid-transit stop snapshot",
+                license_name="MBTA open data",
+                license_url="https://www.mbta.com/policies/developers-terms",
+                url=manifest["additional_sources"][0],
+                artifacts=mbta,
+                output_fields=[
+                    "mbta_stops",
+                    "population_weighted_nearest_stop_km",
+                    "high_poverty_weighted_nearest_stop_km",
+                ],
+            ),
+        ]
+
+    return [
+        _source_record(
+            source_id=manifest["source_id"],
+            publisher=manifest["publisher"],
+            version=manifest["version"],
+            license_name=manifest["license"],
+            license_url=manifest["license_url"],
+            url=manifest["landing_page"],
+            artifacts=raw_files,
+            output_fields=output_fields,
+        )
+    ]
+
+
+def upgrade_source_manifests() -> None:
+    for path in sorted(PROJECTS.glob("*/source-manifest.json")):
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        manifest["schema_version"] = "1.1"
+        manifest["sources"] = _structured_sources(path.parent, manifest)
+        write_json(path, manifest)
+
+
 def parameters(project_id: str, values: dict, boundary: str) -> dict:
     return {
         "project_id": project_id,
@@ -126,7 +353,7 @@ SPECS = {
         "redistribution": "Official API aggregates; local source definitions remain controlling.",
         "expected_rows": 8760,
         "grain": "one city-day-audited service-family aggregate",
-        "raw": ["cross-city-311-daily.csv"],
+        "raw": ["cross-city-311-daily.csv", "cross-city-311-daily.source-lock.json"],
         "question": "Are city service-request distributions sufficiently comparable to transfer an analytical rule between Chicago and New York?",
         "boundary": "Administrative shift audit only; requests are not latent need or service quality.",
         "result": "The 2023 cross-city total-variation distance is 58.1%, and the transfer gate is refused.",
@@ -503,6 +730,7 @@ def configure_catalog() -> None:
 def main() -> int:
     for project_id, spec in SPECS.items():
         configure_project(project_id, spec)
+    upgrade_source_manifests()
     configure_catalog()
     configure_case_index()
     print(json.dumps({"configured_projects": len(SPECS), "catalog_projects": len(ORDER)}))

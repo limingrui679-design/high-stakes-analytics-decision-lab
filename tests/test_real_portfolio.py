@@ -125,10 +125,81 @@ class RealPortfolioContractTests(unittest.TestCase):
                 report = (project / "outputs/report.md").read_text(encoding="utf-8")
                 self.assertIn("## Executive Summary", report)
                 self.assertIn("## What this study cannot establish", report)
+                result_hash = hashlib.sha256(
+                    (project / "outputs/results.json").read_bytes()
+                ).hexdigest()
+                self.assertIn(f"Result SHA-256: `{result_hash}`", report)
                 self.assertGreaterEqual(
                     len(list((project / "outputs/figures").glob("*.svg"))),
                     3,
                 )
+
+    def test_structured_source_manifests_map_upstream_hashes_to_output_fields(self) -> None:
+        expected_multi_source = {
+            "cross-city-311-shift": 2,
+            "population-health-survival": 2,
+            "nhanes-population-transportability": 2,
+            "opportunity-zone-policy-evaluation": 3,
+            "spatial-equity-planning": 2,
+        }
+        for item in self.catalog["projects"]:
+            with self.subTest(project=item["id"]):
+                project = PROJECT_ROOT / item["id"]
+                manifest = json.loads(
+                    (project / "source-manifest.json").read_text(encoding="utf-8")
+                )
+                dictionary = json.loads(
+                    (project / "data/data-dictionary.json").read_text(encoding="utf-8")
+                )
+                results = json.loads(
+                    (project / "outputs/results.json").read_text(encoding="utf-8")
+                )
+
+                def nested_keys(value: object) -> set[str]:
+                    if isinstance(value, dict):
+                        return set(value) | {
+                            key
+                            for child in value.values()
+                            for key in nested_keys(child)
+                        }
+                    if isinstance(value, list):
+                        return {
+                            key
+                            for child in value
+                            for key in nested_keys(child)
+                        }
+                    return set()
+
+                documented_outputs = set(dictionary.get("fields", {})) | nested_keys(results)
+                self.assertEqual(manifest["schema_version"], "1.1")
+                sources = manifest["sources"]
+                self.assertEqual(
+                    len(sources),
+                    expected_multi_source.get(item["id"], 1),
+                )
+                for source in sources:
+                    for field in (
+                        "source_id",
+                        "publisher",
+                        "version",
+                        "license",
+                        "license_url",
+                        "url",
+                        "artifacts",
+                        "output_fields",
+                    ):
+                        self.assertTrue(source[field], field)
+                    self.assertTrue(source["url"].startswith("https://"))
+                    self.assertTrue(source["license_url"].startswith("https://"))
+                    self.assertTrue(
+                        set(source["output_fields"]).issubset(documented_outputs)
+                    )
+                    for artifact in source["artifacts"]:
+                        self.assertEqual(artifact["hash_algorithm"], "sha256")
+                        self.assertRegex(artifact["sha256"], r"^[0-9a-f]{64}$")
+                        self.assertTrue(artifact.get("path") or artifact.get("url"))
+                        if artifact.get("url"):
+                            self.assertTrue(artifact["url"].startswith("https://"))
 
     def test_raw_sources_match_manifests_and_download_receipts(self) -> None:
         checked = 0

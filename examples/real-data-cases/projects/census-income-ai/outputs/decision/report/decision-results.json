@@ -129,7 +129,7 @@
     "accessed_at": "2026-08-10",
     "grain": "one working-age ACS PUMS person record",
     "expected_rows": 12469,
-    "source_manifest_sha256": "acc3ee7acfed4ce9824615c3739996a4268c725b45f991a20a2ecc6bf958384f",
+    "source_manifest_sha256": "153872cdb7059c88af2fdb9ab75990d6e03acc7453dab70f1e8ce4c42c029d39",
     "analytical_results_sha256": "14defa73c244c50a1a6ddc4fac3059c6c84d4d835523980404b18b8a51c21ce3"
   }
 }

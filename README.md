@@ -42,6 +42,13 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 [See runtime-specific, manual, and no-install options](#install).
 
+## Release
+
+The current stable release is [`v1.0.0`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.0).
+Its versioned source package and SHA-256 checksum are published together on
+the release page; citation metadata is available in [`CITATION.cff`](CITATION.cff)
+and release changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
+
 <p align="center">
   <a href="#what-the-skill-does"><strong>Overview</strong></a> ·
   <a href="#one-complete-evidence-to-decision-workflow"><strong>Complete workflow</strong></a> ·
@@ -468,7 +475,7 @@ across supported Python versions. Derived result hashes are exempted only when
 the underlying structured output passes the semantic comparison. See the
 [reproducibility contract](references/reproducibility-contract.md).
 
-The 72 public tests cover data-readiness safety, custom-workspace
+The 81 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
 routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
@@ -478,7 +485,7 @@ Synthetic files under `tests/fixtures/` are engineering fixtures only; they are
 not presented as real-data projects.
 
 The supported Python baseline is 3.11 or newer. Continuous integration checks
-Python 3.11, 3.13, and 3.14. Maintainers can additionally run the pinned static
+Python 3.11, 3.12, 3.13, and 3.14. Maintainers can additionally run the pinned static
 quality checks with:
 
 ```bash
@@ -499,7 +506,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 72-test standalone regression suite
+└── tests/                          # complete 81-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence

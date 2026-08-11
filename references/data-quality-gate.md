@@ -32,6 +32,23 @@ and profile that extract. Never present the extract hash as the original-file
 hash, and never flatten multiple tables without declaring the resulting grain
 and join logic.
 
+## Bounded ingestion and privacy pause
+
+The inspectable baseline rejects inputs above 128 MiB, more than 500,000 rows
+or 256 columns, cells above 65,536 characters, and JSON nesting beyond 24
+levels. JSON arrays are capped at 16 MiB; use JSONL for larger bounded extracts.
+CSV, TSV, JSONL, and NDJSON rows are re-opened as streams instead of retaining
+the complete row set in memory.
+
+Privacy checks combine declared and named fields with value-level signals for
+email addresses, telephone numbers, U.S. Social Security numbers, Chinese
+resident identity numbers, IP addresses, postal addresses, common adult
+birth-date formats, and common medical-information terms. Sensitive or
+quasi-identifying fields and sensitive data in a sample below 50 rows produce a
+high-severity finding and therefore `needs_user_confirmation` at minimum.
+Reports never reproduce detected cell values; extrema and quantiles are also
+suppressed for detected identifier and sensitive fields.
+
 ## Gate statuses
 
 | Status | Meaning | Permitted next step |

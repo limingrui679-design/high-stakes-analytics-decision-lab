@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "behavioral-reading-experiment",
   "source_id": "harvard-dataverse-3ycb56",
   "title": "Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading",
@@ -27,5 +27,30 @@
     "treatment": "Retain the study subject number only as an opaque pairing key; report aggregates.",
     "status": "approved_for_public_aggregate_analysis"
   },
-  "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56"
+  "citation": "Al Dahhan, N. Z. et al. (2019). Eye movements of dyslexic and average readers in meaningful and pseudoword passage reading. Harvard Dataverse, V1. https://doi.org/10.7910/DVN/3YCB56",
+  "sources": [
+    {
+      "source_id": "harvard-dataverse-3ycb56",
+      "publisher": "Harvard Dataverse",
+      "version": "V1; file UNF:6:XJRpAtIOiQJZWyv7L3uj3A==",
+      "license": "CC0 1.0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "url": "https://doi.org/10.7910/DVN/3YCB56",
+      "artifacts": [
+        {
+          "path": "data/raw/pseudoword-passage-reading.tsv",
+          "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "subnum",
+        "group",
+        "Vd",
+        "Td",
+        "p_avg_f",
+        "m_avg_f"
+      ]
+    }
+  ]
 }

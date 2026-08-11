@@ -13,7 +13,6 @@ import io
 import json
 import math
 import random
-import zipfile
 from collections import Counter, defaultdict
 from datetime import date, datetime
 from pathlib import Path
@@ -31,6 +30,7 @@ from portfolio_core import (
 )
 from portfolio_reporting import ANALYZERS, REPORT_COPY, VISUAL_COPY
 from portfolio_spatial import _haversine, analyze_spatial
+from safe_external_io import open_safe_zip, open_zip_member
 
 
 def _number(value: Any, default: float = 0.0) -> float:
@@ -201,9 +201,17 @@ def prepare_pums(project_root: Path):
     ]
     for year in (2019, 2023):
         archive_path = project_root / f"data/raw/acs{year}-ri-person-pums.zip"
-        with zipfile.ZipFile(archive_path) as archive:
-            member = next(name for name in archive.namelist() if name.endswith(".csv"))
-            with archive.open(member) as source:
+        with open_safe_zip(archive_path) as archive:
+            members = [
+                item.filename
+                for item in archive.infolist()
+                if not item.is_dir() and item.filename.casefold().endswith(".csv")
+            ]
+            if len(members) != 1:
+                raise ValueError(
+                    f"ACS PUMS ZIP must contain exactly one CSV member: {archive_path.name}"
+                )
+            with open_zip_member(archive, members[0]) as source:
                 reader = csv.DictReader(io.TextIOWrapper(source, encoding="utf-8-sig"))
                 for row in reader:
                     age = int(row["AGEP"])

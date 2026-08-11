@@ -8,11 +8,13 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from unittest import mock
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_DIR = SKILL_ROOT / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
+import data_quality as dq  # noqa: E402
 from data_quality import (  # noqa: E402
     apply_cleaning_plan,
     build_cleaning_plan,
@@ -135,6 +137,13 @@ class DataQualityGateTests(unittest.TestCase):
             self.assertEqual(modes["drop_columns"], "requires_confirmation")
 
             original_hash = sha256_file(source)
+            with mock.patch.object(
+                dq,
+                "sha256_file",
+                side_effect=[original_hash, "changed-during-read"],
+            ):
+                with self.assertRaisesRegex(ValueError, "cleaning copy"):
+                    apply_cleaning_plan(source, profile, plan, root / "changed-during-read")
             safe_output = root / "safe"
             log = apply_cleaning_plan(source, profile, plan, safe_output)
             self.assertEqual(sha256_file(source), original_hash)
@@ -333,6 +342,147 @@ class DataQualityGateTests(unittest.TestCase):
                 "ambiguous_schema",
                 {item["code"] for item in profile["findings"]},
             )
+
+    def test_value_level_privacy_signals_force_confirmation_without_echoing_values(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "privacy.csv"
+            rows = [
+                {
+                    "record_key": "r1",
+                    "opaque_a": "+1 (212) 555-0182",
+                    "opaque_b": "123-45-6789",
+                    "opaque_c": "110105199001011234",
+                    "opaque_d": "10.1.2.3",
+                    "opaque_e": "10 Main Street",
+                    "opaque_f": "123456789",
+                    "cohort_date": "1988-02-03",
+                    "cohort_alt": "02/03/1988",
+                    "note": "diabetes treatment",
+                },
+                {
+                    "record_key": "r2",
+                    "opaque_a": "+1 (212) 555-0183",
+                    "opaque_b": "219099999",
+                    "opaque_c": "110105199202022345",
+                    "opaque_d": "10.1.2.4",
+                    "opaque_e": "11 Main Street",
+                    "opaque_f": "219099999",
+                    "cohort_date": "1990-04-05",
+                    "cohort_alt": "04/05/1990",
+                    "note": "asthma medication",
+                },
+            ]
+            _write_csv(source, rows)
+            contract_path = root / "contract.json"
+            contract_path.write_text(
+                json.dumps(
+                    {
+                        "dataset_name": "privacy",
+                        "intended_use": "descriptive",
+                        "grain": "one row per record",
+                        "primary_key": ["record_key"],
+                        "missing_tokens": [""],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            profile = profile_dataset(
+                source,
+                load_contract(contract_path, dataset_name="privacy"),
+            )
+            codes = {item["code"] for item in profile["findings"]}
+            self.assertEqual(profile["quality_gate"]["status"], "needs_user_confirmation")
+            self.assertIn("direct_identifiers_present", codes)
+            self.assertIn("sensitive_fields_present", codes)
+            self.assertIn("small_sample_reidentification_risk", codes)
+            self.assertIn("cohort_date", profile["privacy"]["sensitive_columns_detected"])
+            self.assertIn("cohort_alt", profile["privacy"]["sensitive_columns_detected"])
+            self.assertIn("note", profile["privacy"]["sensitive_columns_detected"])
+            for field in ("opaque_c", "opaque_f"):
+                numeric = profile["columns"][field]["numeric"]
+                self.assertTrue(
+                    {"minimum", "q1", "median", "q3", "maximum"}.isdisjoint(numeric)
+                )
+            date_summary = profile["columns"]["cohort_date"]["datetime"]
+            self.assertNotIn("minimum", date_summary)
+            self.assertNotIn("maximum", date_summary)
+            rendered = json.dumps(profile, ensure_ascii=False)
+            for row in rows:
+                for field, value in row.items():
+                    if field != "record_key":
+                        self.assertNotIn(value, rendered)
+
+    def test_input_resource_limits_and_jsonl_streaming_are_enforced(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+
+            oversized = root / "oversized.csv"
+            oversized.write_text("a\n12\n", encoding="utf-8")
+            with mock.patch.object(dq, "MAX_INPUT_FILE_BYTES", 2):
+                with self.assertRaisesRegex(ValueError, "Input file"):
+                    read_dataset(oversized)
+
+            too_many_rows = root / "rows.csv"
+            too_many_rows.write_text("a\n1\n2\n", encoding="utf-8")
+            with mock.patch.object(dq, "MAX_DATASET_ROWS", 1):
+                with self.assertRaisesRegex(ValueError, "exceeds 1 rows"):
+                    read_dataset(too_many_rows)
+
+            too_many_columns = root / "columns.csv"
+            too_many_columns.write_text("a,b,c\n1,2,3\n", encoding="utf-8")
+            with mock.patch.object(dq, "MAX_DATASET_COLUMNS", 2):
+                with self.assertRaisesRegex(ValueError, "2 columns"):
+                    read_dataset(too_many_columns)
+
+            long_cell = root / "cell.csv"
+            long_cell.write_text("a\nabcd\n", encoding="utf-8")
+            with mock.patch.object(dq, "MAX_CELL_CHARACTERS", 3):
+                with self.assertRaisesRegex(ValueError, "contains 4 characters"):
+                    read_dataset(long_cell)
+
+            nested = root / "nested.json"
+            nested.write_text('[{"a":{"b":{"c":1}}}]', encoding="utf-8")
+            with mock.patch.object(dq, "MAX_JSON_DEPTH", 3):
+                with self.assertRaisesRegex(ValueError, "nesting depth"):
+                    read_dataset(nested)
+
+            array = root / "array.json"
+            array.write_text('[{"a":1}]', encoding="utf-8")
+            with mock.patch.object(dq, "MAX_IN_MEMORY_JSON_BYTES", 2):
+                with self.assertRaisesRegex(ValueError, "Convert it to JSONL"):
+                    read_dataset(array)
+
+            jsonl = root / "rows.jsonl"
+            jsonl.write_text('{"a":1}\n{"a":2}\n', encoding="utf-8")
+            rows, fields, metadata = read_dataset(jsonl)
+            self.assertEqual(fields, ["a"])
+            self.assertTrue(metadata["streaming_input"])
+            self.assertEqual(list(rows), list(rows))
+            self.assertEqual(len(rows), 2)
+
+            contract_path = root / "stable-contract.json"
+            contract_path.write_text(
+                json.dumps(
+                    {
+                        "dataset_name": "rows",
+                        "intended_use": "descriptive",
+                        "grain": "one row per record",
+                        "missing_tokens": [""],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            with mock.patch.object(
+                dq,
+                "sha256_file",
+                side_effect=["before", "after"],
+            ):
+                with self.assertRaisesRegex(ValueError, "changed while"):
+                    profile_dataset(
+                        jsonl,
+                        load_contract(contract_path, dataset_name="rows"),
+                    )
 
     def test_predictive_contract_blocks_target_leakage_and_missing_features(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:

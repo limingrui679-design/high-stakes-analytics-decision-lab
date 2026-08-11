@@ -1,0 +1,3 @@
+# Security tooling runs in CI and is not required by the runtime.
+bandit==1.9.4
+pip-audit==2.10.1

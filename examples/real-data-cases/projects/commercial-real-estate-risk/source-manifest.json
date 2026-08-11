@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "commercial-real-estate-risk",
   "title": "Commercial Real Estate Transactions and Regeneration Risk",
   "project_title": "Commercial Real Estate Diligence Decision Product",
@@ -25,5 +25,40 @@
     "status": "pass_with_minimization",
     "notes": "The source is public administrative data. Street address and owner-identifying fields are not downloaded; the processed case uses a deterministic transaction key."
   },
-  "claim_boundary": "Public sales records do not establish arm's-length status, property income, condition, appraisal value, financing terms, investability, or causal regeneration effects."
+  "claim_boundary": "Public sales records do not establish arm's-length status, property income, condition, appraisal value, financing terms, investability, or causal regeneration effects.",
+  "sources": [
+    {
+      "source_id": "nyc-dof-annualized-property-sales-w2pb-icbu",
+      "publisher": "New York City Department of Finance via NYC Open Data",
+      "version": "filtered 2021-2025 commercial-unit snapshot from dataset w2pb-icbu",
+      "license": "NYC Open Data Terms of Use",
+      "license_url": "https://opendata.cityofnewyork.us/overview/#termsofuse",
+      "url": "https://data.cityofnewyork.us/City-Government/NYC-Citywide-Annualized-Calendar-Sales-Update/w2pb-icbu/about_data",
+      "artifacts": [
+        {
+          "path": "data/raw/nyc-commercial-sales-2021-2025.csv",
+          "sha256": "daa08cd7e6d95c2060cdc2eb1b8b6308932c334179dc57af46c203374935389a",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "transaction_id",
+        "sale_date",
+        "sale_year",
+        "borough",
+        "neighborhood",
+        "property_type",
+        "building_class_category",
+        "commercial_units",
+        "total_units",
+        "gross_square_feet",
+        "sale_price",
+        "price_per_sqft",
+        "year_built",
+        "latitude",
+        "longitude",
+        "community_board"
+      ]
+    }
+  ]
 }

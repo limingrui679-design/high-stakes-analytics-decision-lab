@@ -1,7 +1,7 @@
 {
   "project_id": "census-income-ai",
   "source_id": "census-acs-pums-ri-2019-2023",
-  "verified_at": "2026-08-10T20:54:58.457318+08:00",
+  "verified_at": "2026-08-11T09:45:47.752320+08:00",
   "refresh_requested": false,
   "status": "verified",
   "files": [

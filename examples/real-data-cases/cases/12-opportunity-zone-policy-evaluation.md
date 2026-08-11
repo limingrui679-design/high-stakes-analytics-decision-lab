@@ -59,7 +59,7 @@ Associational one-year screen; no causal effect because parallel trends are unav
 ### Reviewed source-snapshot hashes
 
 - `massachusetts-qoz-tract-panel.csv` — `372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae`
-- `massachusetts-qoz-tract-panel.source-lock.json` — `20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be`
+- `massachusetts-qoz-tract-panel.source-lock.json` — `5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790`
 
 The reviewed raw source files are bundled inside the complete project directory.
 The build script verifies each file against both this case index and the

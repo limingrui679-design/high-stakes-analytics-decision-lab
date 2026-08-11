@@ -27,5 +27,33 @@
     "treatment": "Use only aggregate and model-validation outputs; age and household-status variables are never proposed as authorization criteria.",
     "status": "approved_for_public_aggregate_analysis"
   },
-  "citation": "Moro, S., Rita, P., & Cortez, P. (2014). Bank Marketing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306"
+  "citation": "Moro, S., Rita, P., & Cortez, P. (2014). Bank Marketing [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5K306",
+  "sources": [
+    {
+      "source_id": "uci-bank-marketing-222",
+      "publisher": "UCI Machine Learning Repository",
+      "version": "UCI archive retrieved 2026-07-27; bank-additional-full.csv",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "url": "https://archive.ics.uci.edu/dataset/222/bank+marketing",
+      "artifacts": [
+        {
+          "path": "data/raw/uci-bank-marketing.zip",
+          "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "source_order",
+        "age",
+        "job",
+        "contact",
+        "campaign",
+        "pdays",
+        "previous",
+        "poutcome",
+        "y"
+      ]
+    }
+  ]
 }

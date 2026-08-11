@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "treasury-risk-engineering",
   "source_id": "us-treasury-daily-par-yield-2020-2025",
   "title": "Daily Treasury Par Yield Curve Rates",
@@ -15,12 +15,30 @@
   "expected_rows": 1500,
   "grain": "one U.S. Treasury business-day yield curve",
   "raw_files": [
-    {"path": "data/raw/treasury-2020.csv", "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"},
-    {"path": "data/raw/treasury-2021.csv", "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"},
-    {"path": "data/raw/treasury-2022.csv", "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"},
-    {"path": "data/raw/treasury-2023.csv", "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"},
-    {"path": "data/raw/treasury-2024.csv", "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"},
-    {"path": "data/raw/treasury-2025.csv", "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"}
+    {
+      "path": "data/raw/treasury-2020.csv",
+      "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"
+    },
+    {
+      "path": "data/raw/treasury-2021.csv",
+      "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"
+    },
+    {
+      "path": "data/raw/treasury-2022.csv",
+      "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"
+    },
+    {
+      "path": "data/raw/treasury-2023.csv",
+      "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"
+    },
+    {
+      "path": "data/raw/treasury-2024.csv",
+      "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"
+    },
+    {
+      "path": "data/raw/treasury-2025.csv",
+      "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"
+    }
   ],
   "privacy_review": {
     "contains_direct_identifiers": false,
@@ -28,5 +46,62 @@
     "treatment": "Market-level public data.",
     "status": "approved_for_public_analysis"
   },
-  "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27."
+  "citation": "U.S. Department of the Treasury. Daily Treasury Par Yield Curve Rates. Accessed 2026-07-27.",
+  "sources": [
+    {
+      "source_id": "us-treasury-daily-par-yield-2020-2025",
+      "publisher": "U.S. Department of the Treasury",
+      "version": "Official daily par yields, 2020-01-02 through 2025-12-31",
+      "license": "U.S. Government work",
+      "license_url": "https://www.usa.gov/government-copyright",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve",
+      "artifacts": [
+        {
+          "path": "data/raw/treasury-2020.csv",
+          "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/treasury-2021.csv",
+          "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/treasury-2022.csv",
+          "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/treasury-2023.csv",
+          "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/treasury-2024.csv",
+          "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/treasury-2025.csv",
+          "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "1 Mo",
+        "2 Mo",
+        "3 Mo",
+        "6 Mo",
+        "1 Yr",
+        "2 Yr",
+        "3 Yr",
+        "5 Yr",
+        "7 Yr",
+        "10 Yr",
+        "20 Yr",
+        "30 Yr",
+        "date"
+      ]
+    }
+  ]
 }

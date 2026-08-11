@@ -75,7 +75,7 @@
     "accessed_at": "2026-08-10",
     "raw_sha256": {
       "massachusetts-qoz-tract-panel.csv": "372b2a44ef2d38cd7d402cf3c58d1a9788f09baec3399065db4f8e93cde707ae",
-      "massachusetts-qoz-tract-panel.source-lock.json": "20a4587d0f5ab197fc78bbaa1150bb866e3c58a5b07c77a624bf4238f2de35be"
+      "massachusetts-qoz-tract-panel.source-lock.json": "5602509c4659062bed956f315feaed2aff429fdc384627b6fab68ebe85918790"
     },
     "config_sha256": "2968eb292c5350002baa70bbec0afe13bd9939d538d3e07c3c4fb7a04e4a6828"
   },

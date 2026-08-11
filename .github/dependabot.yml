@@ -16,5 +16,8 @@ updates:
           - "mypy"
           - "ruff"
           - "codespell"
+          - "coverage"
           - "pandas"
           - "defusedxml"
+          - "bandit"
+          - "pip-audit"

@@ -142,7 +142,7 @@
     "accessed_at": "2026-07-27",
     "grain": "one direct-marketing contact outcome",
     "expected_rows": 41188,
-    "source_manifest_sha256": "08ec0bf2638947e2b26d0fe35699249cfc2c78cf21310a59a7c7f5cd6412fb23",
+    "source_manifest_sha256": "2e9107e179d9cd6083d62ada4b3dcb728756815a78c82774241eb4571c3d0adb",
     "analytical_results_sha256": "08475be795f8e3ba33dd6824e06eefc0a2ba4e29a9ddc235a57c4eb8927b1320"
   }
 }

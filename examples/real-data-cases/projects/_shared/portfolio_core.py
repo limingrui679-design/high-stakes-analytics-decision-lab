@@ -18,14 +18,21 @@ import random
 import shutil
 import statistics
 import tempfile
-import urllib.request
-import zipfile
 from collections import Counter, defaultdict
 from datetime import datetime
 from html import escape
 from pathlib import Path
 from statistics import NormalDist
 from typing import Any, Callable, Iterable
+
+from safe_external_io import (
+    ZipLimits,
+    download_https,
+    open_https_stream,
+    open_safe_zip,
+    open_zip_member,
+    read_zip_member,
+)
 
 
 PALETTE = {
@@ -110,18 +117,16 @@ def verify_raw_files(project_root: Path) -> list[dict[str, Any]]:
 
 
 def _download(url: str, destination: Path) -> None:
-    request = urllib.request.Request(
+    download_https(
         url,
-        headers={
-            "User-Agent": (
-                "High-Stakes-Analytics-Decision-Lab/7.0 "
-                "research portfolio contact: github.com/limingrui679-design"
-            )
-        },
+        destination,
+        timeout=900,
+        maximum_bytes=512 * 1024 * 1024,
+        user_agent=(
+            "High-Stakes-Analytics-Decision-Lab/7.0 "
+            "research portfolio contact: github.com/limingrui679-design"
+        ),
     )
-    with urllib.request.urlopen(request, timeout=90) as response:
-        with destination.open("wb") as handle:
-            shutil.copyfileobj(response, handle)
 
 
 def _refresh_generic(project_root: Path, manifest: dict[str, Any]) -> None:
@@ -160,18 +165,22 @@ def _refresh_treasury(project_root: Path, manifest: dict[str, Any]) -> None:
 
 
 def _stream_filter_census(url: str, target: Path) -> None:
-    request = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "High-Stakes-Analytics-Decision-Lab/7.0 research portfolio"
-        },
-    )
-    with urllib.request.urlopen(request, timeout=180) as response:
-        text_stream = io.TextIOWrapper(response, encoding="utf-8")
-        with target.open("w", encoding="utf-8", newline="") as handle:
-            for index, line in enumerate(text_stream):
-                if index == 0 or line.startswith("1400000US25"):
-                    handle.write(line)
+    partial = target.with_name(target.name + ".part")
+    try:
+        with open_https_stream(
+            url,
+            timeout=300,
+            maximum_bytes=512 * 1024 * 1024,
+            user_agent="High-Stakes-Analytics-Decision-Lab/7.0 research portfolio",
+        ) as response, io.TextIOWrapper(response, encoding="utf-8") as text_stream:
+            with partial.open("w", encoding="utf-8", newline="") as handle:
+                for index, line in enumerate(text_stream):
+                    if index == 0 or line.startswith("1400000US25"):
+                        handle.write(line)
+        partial.replace(target)
+    except BaseException:
+        partial.unlink(missing_ok=True)
+        raise
 
 
 def _refresh_spatial(project_root: Path, manifest: dict[str, Any]) -> None:
@@ -401,8 +410,8 @@ def _quality(
 
 
 def _zip_text(path: Path, member: str, encoding: str = "utf-8") -> str:
-    with zipfile.ZipFile(path) as archive:
-        return archive.read(member).decode(encoding, errors="replace")
+    with open_safe_zip(path) as archive:
+        return read_zip_member(archive, member).decode(encoding, errors="replace")
 
 
 ADULT_FIELDS = [
@@ -559,11 +568,13 @@ def _prepare_spatial(project_root: Path) -> tuple[list[dict[str, Any]], dict[str
         for name in ("b01003", "b17001", "b19013", "b08301", "b25064")
     }
     centroids: dict[str, tuple[str, str]] = {}
-    with zipfile.ZipFile(
+    with open_safe_zip(
         project_root / "data/raw/2023_Gaz_tracts_national.zip"
     ) as archive:
-        member = archive.namelist()[0]
-        with archive.open(member) as source:
+        members = [item.filename for item in archive.infolist() if not item.is_dir()]
+        if len(members) != 1:
+            raise ValueError("Census Gazetteer ZIP must contain exactly one data member.")
+        with open_zip_member(archive, members[0]) as source:
             reader = csv.DictReader(
                 io.TextIOWrapper(source, encoding="utf-8"),
                 delimiter="\t",
@@ -630,11 +641,22 @@ def _prepare_bank_marketing(
     project_root: Path,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     outer_path = project_root / "data/raw/uci-bank-marketing.zip"
-    with zipfile.ZipFile(outer_path) as outer:
-        nested_bytes = outer.read("bank-additional.zip")
-    with zipfile.ZipFile(io.BytesIO(nested_bytes)) as nested:
-        text = nested.read(
-            "bank-additional/bank-additional-full.csv"
+    nested_limits = ZipLimits(
+        maximum_archive_bytes=128 * 1024 * 1024,
+        maximum_members=256,
+        maximum_member_bytes=128 * 1024 * 1024,
+        maximum_total_uncompressed_bytes=256 * 1024 * 1024,
+    )
+    with open_safe_zip(outer_path, limits=nested_limits) as outer:
+        nested_bytes = read_zip_member(
+            outer,
+            "bank-additional.zip",
+            maximum_bytes=nested_limits.maximum_archive_bytes,
+        )
+    with open_safe_zip(io.BytesIO(nested_bytes), limits=nested_limits) as nested:
+        text = read_zip_member(
+            nested,
+            "bank-additional/bank-additional-full.csv",
         ).decode("utf-8")
     rows = list(csv.DictReader(io.StringIO(text), delimiter=";"))
     for index, row in enumerate(rows):

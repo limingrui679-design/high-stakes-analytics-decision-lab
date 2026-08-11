@@ -19,19 +19,29 @@ import heapq
 import io
 import json
 import math
-import os
-import subprocess
+import sys
 import tempfile
 import urllib.parse
-import urllib.request
-import zipfile
 from collections import Counter, defaultdict
 from datetime import datetime
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 PROJECTS = ROOT / "examples" / "real-data-cases" / "projects"
+SHARED = PROJECTS / "_shared"
+sys.path.insert(0, str(SHARED))
+
+from safe_external_io import (  # noqa: E402
+    ZipLimits,
+    download_https_with_curl,
+    open_safe_zip,
+    open_zip_member,
+    read_https_bytes_with_curl,
+    read_zip_member,
+    validate_zip_archive,
+)
+
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.0"
@@ -40,61 +50,43 @@ MAX_XLSX_FILE_BYTES = 50 * 1024 * 1024
 MAX_XLSX_MEMBER_COUNT = 2_048
 MAX_XLSX_MEMBER_BYTES = 32 * 1024 * 1024
 MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES = 128 * 1024 * 1024
+MAX_GZIP_UNCOMPRESSED_BYTES = 512 * 1024 * 1024
+SOCRATA_QUERY_LIMIT = 50_000
+SOURCE_ZIP_LIMITS = ZipLimits(
+    maximum_archive_bytes=1024 * 1024 * 1024,
+    maximum_members=20_000,
+    maximum_member_bytes=1024 * 1024 * 1024,
+    maximum_total_uncompressed_bytes=4 * 1024 * 1024 * 1024,
+    maximum_expansion_ratio=500.0,
+    label="source ZIP",
+)
+XLSX_LIMITS = ZipLimits(
+    maximum_archive_bytes=MAX_XLSX_FILE_BYTES,
+    maximum_members=MAX_XLSX_MEMBER_COUNT,
+    maximum_member_bytes=MAX_XLSX_MEMBER_BYTES,
+    maximum_total_uncompressed_bytes=MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES,
+    maximum_expansion_ratio=500.0,
+    label="XLSX",
+)
 
 
 def _request(url: str, *, timeout: int = 180) -> bytes:
-    command = [
-        "curl",
-        "--location",
-        "--fail",
-        "--silent",
-        "--show-error",
-        "--retry",
-        "5",
-        "--retry-all-errors",
-        "--retry-delay",
-        "1",
-        "--connect-timeout",
-        "30",
-        "--max-time",
-        str(timeout),
-        "--user-agent",
-        USER_AGENT,
-        "--header",
-        "Accept: application/json,text/csv,*/*",
+    return read_https_bytes_with_curl(
         url,
-    ]
-    return subprocess.run(command, check=True, stdout=subprocess.PIPE).stdout
+        timeout=timeout,
+        maximum_bytes=128 * 1024 * 1024,
+        user_agent=USER_AGENT,
+    )
 
 
 def _download(url: str, destination: Path) -> None:
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    partial = destination.with_suffix(destination.suffix + ".part")
-    command = [
-        "curl",
-        "--location",
-        "--fail",
-        "--silent",
-        "--show-error",
-        "--retry",
-        "5",
-        "--retry-all-errors",
-        "--retry-delay",
-        "1",
-        "--continue-at",
-        "-",
-        "--connect-timeout",
-        "30",
-        "--max-time",
-        "900",
-        "--user-agent",
-        USER_AGENT,
-        "--output",
-        str(partial),
+    download_https_with_curl(
         url,
-    ]
-    subprocess.run(command, check=True)
-    os.replace(partial, destination)
+        destination,
+        timeout=900,
+        maximum_bytes=512 * 1024 * 1024,
+        user_agent=USER_AGENT,
+    )
 
 
 def _write_csv(path: Path, rows: Iterable[dict[str, Any]], fields: list[str]) -> int:
@@ -149,15 +141,17 @@ def build_bike() -> None:
                     "bytes": archive_path.stat().st_size,
                 }
             )
-            with zipfile.ZipFile(archive_path) as archive:
+            with open_safe_zip(archive_path, limits=SOURCE_ZIP_LIMITS) as archive:
                 members = [
-                    item
-                    for item in archive.namelist()
-                    if item.endswith(".csv") and not item.startswith("__MACOSX/")
+                    item.filename
+                    for item in archive.infolist()
+                    if not item.is_dir()
+                    and item.filename.endswith(".csv")
+                    and not item.filename.startswith("__MACOSX/")
                 ]
                 if len(members) != 1:
                     raise ValueError(f"Unexpected Citi Bike archive members: {members}")
-                with archive.open(members[0]) as source:
+                with open_zip_member(archive, members[0]) as source:
                     reader = csv.DictReader(io.TextIOWrapper(source, encoding="utf-8-sig"))
                     for row in reader:
                         for side, index in (("start", 0), ("end", 1)):
@@ -206,7 +200,10 @@ def build_bike() -> None:
     print(json.dumps({"case": "bike-demand-operations", "rows": len(rows)}))
 
 
-def _socrata_daily(city: str, year: int) -> list[dict[str, Any]]:
+def _socrata_daily(
+    city: str,
+    year: int,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     if city == "Chicago":
         base = "https://data.cityofchicago.org/resource/v6vf-nfxy.csv"
         category = "sr_type"
@@ -214,6 +211,7 @@ def _socrata_daily(city: str, year: int) -> list[dict[str, Any]]:
         base = "https://data.cityofnewyork.us/resource/erm2-nwe9.csv"
         category = "complaint_type"
     rows: list[dict[str, Any]] = []
+    source_lock: list[dict[str, Any]] = []
     for quarter_start in (1, 4, 7, 10):
         start = f"{year}-{quarter_start:02d}-01T00:00:00"
         if quarter_start == 10:
@@ -228,12 +226,14 @@ def _socrata_daily(city: str, year: int) -> list[dict[str, Any]]:
             "$where": f"created_date >= '{start}' and created_date < '{end}'",
             "$group": f"date,{category}",
             "$order": f"date,{category}",
-            "$limit": "50000",
+            "$limit": str(SOCRATA_QUERY_LIMIT),
         }
-        payload = _request(base + "?" + urllib.parse.urlencode(query), timeout=300)
+        url = base + "?" + urllib.parse.urlencode(query)
+        payload = _request(url, timeout=300)
+        quarter_rows: list[dict[str, Any]] = []
         reader = csv.DictReader(io.StringIO(payload.decode("utf-8-sig")))
         for row in reader:
-            rows.append(
+            quarter_rows.append(
                 {
                     "city": city,
                     "date": row["date"][:10],
@@ -241,17 +241,42 @@ def _socrata_daily(city: str, year: int) -> list[dict[str, Any]]:
                     "requests": int(row["requests"]),
                 }
             )
-    return rows
+        if len(quarter_rows) >= SOCRATA_QUERY_LIMIT:
+            raise ValueError(
+                f"{city} {year} Q{((quarter_start - 1) // 3) + 1} Socrata "
+                f"response reached the {SOCRATA_QUERY_LIMIT}-row query limit; "
+                "paginate before treating the snapshot as complete."
+            )
+        rows.extend(quarter_rows)
+        source_lock.append(
+            {
+                "publisher": f"{city} open-data portal",
+                "version": f"{year} Q{((quarter_start - 1) // 3) + 1} query snapshot",
+                "url": url,
+                "sha256": hashlib.sha256(payload).hexdigest(),
+                "bytes": len(payload),
+                "records": len(quarter_rows),
+                "output_fields": ["city", "date", "category", "requests"],
+            }
+        )
+    return rows, source_lock
 
 
 def build_311() -> None:
     target = PROJECTS / "cross-city-311-shift/data/raw/cross-city-311-daily.csv"
     rows = []
+    source_lock: list[dict[str, Any]] = []
     for city in ("Chicago", "New York City"):
         for year in (2022, 2023):
-            rows.extend(_socrata_daily(city, year))
+            city_rows, city_lock = _socrata_daily(city, year)
+            rows.extend(city_rows)
+            source_lock.extend(city_lock)
     rows.sort(key=lambda row: (row["city"], row["date"], row["category"]))
     _write_csv(target, rows, ["city", "date", "category", "requests"])
+    _write_json(
+        target.with_suffix(".source-lock.json"),
+        {"requests": source_lock},
+    )
     print(json.dumps({"case": "cross-city-311-shift", "rows": len(rows)}))
 
 
@@ -325,12 +350,11 @@ def build_nport(source_zip: Path) -> None:
         PROJECTS
         / "sec-nport-filing-review/data/raw/sec-nport-2025q4-fund-risk.csv"
     )
-    with zipfile.ZipFile(source_zip) as archive:
+    with open_safe_zip(source_zip, limits=SOURCE_ZIP_LIMITS) as archive:
         def table(name: str):
-            return csv.DictReader(
-                io.TextIOWrapper(archive.open(name), encoding="utf-8-sig"),
-                delimiter="\t",
-            )
+            with open_zip_member(archive, name) as source:
+                with io.TextIOWrapper(source, encoding="utf-8-sig") as text_source:
+                    yield from csv.DictReader(text_source, delimiter="\t")
 
         submissions = {row["ACCESSION_NUMBER"]: row for row in table("SUBMISSION.tsv")}
         registrants = {row["ACCESSION_NUMBER"]: row for row in table("REGISTRANT.tsv")}
@@ -434,8 +458,10 @@ def build_social(source_csv: Path, *, accepted_terms: bool) -> None:
         lambda: {"individuals": 0, "voters": 0, "households": set()}
     )
     observations: dict[str, list[tuple[str, int]]] = defaultdict(list)
+    source_records = 0
     with source_csv.open("r", encoding="utf-8-sig", newline="") as handle:
         for row in csv.DictReader(handle):
+            source_records += 1
             treatment = row["treatment"].strip()
             prior = "prior_primary_voter" if row.get("p2004", "").strip().lower() == "yes" else "not_prior_primary_voter"
             voted = int(row.get("voted", "").strip().lower() == "yes")
@@ -536,7 +562,7 @@ def build_social(source_csv: Path, *, accepted_terms: bool) -> None:
         target.parent / "external-source-lock.json",
         {
             "dataset": "Yale ISPS D001 individual-level replication file",
-            "source_records": 344084,
+            "source_records": source_records,
             "file_sha256": _sha256(source_csv),
             "file_bytes": source_csv.stat().st_size,
             "raw_redistribution": "not_redistributed_by_repository",
@@ -598,9 +624,15 @@ def build_nhis() -> None:
                 for path, url in ((survey, survey_url), (mortality, mortality_url))
             )
             linked = _nhis_mortality(mortality)
-            with zipfile.ZipFile(survey) as archive:
-                member = archive.namelist()[0]
-                with archive.open(member) as source:
+            with open_safe_zip(survey, limits=SOURCE_ZIP_LIMITS) as archive:
+                members = [
+                    item.filename for item in archive.infolist() if not item.is_dir()
+                ]
+                if len(members) != 1:
+                    raise ValueError(
+                        f"NHIS survey ZIP must contain exactly one data member: {survey.name}"
+                    )
+                with open_zip_member(archive, members[0]) as source:
                     reader = csv.DictReader(io.TextIOWrapper(source, encoding="utf-8-sig"))
                     for row in reader:
                         publicid = (
@@ -688,64 +720,47 @@ def _acs_value(row: dict[str, str], table: str, line: str) -> str:
     return row.get(f"{table}_E{line}", row.get(f"{table}_{line}E", ""))
 
 
-def _lodes_jobs(year: int) -> dict[str, int]:
+def _lodes_jobs(year: int) -> tuple[dict[str, int], dict[str, Any]]:
     url = (
         "https://lehd.ces.census.gov/data/lodes/LODES8/ma/wac/"
         f"ma_wac_S000_JT00_{year}.csv.gz"
     )
-    payload = gzip.decompress(_request(url, timeout=300)).decode("utf-8")
+    compressed = _request(url, timeout=300)
+    with gzip.GzipFile(fileobj=io.BytesIO(compressed)) as archive:
+        decompressed = archive.read(MAX_GZIP_UNCOMPRESSED_BYTES + 1)
+    if len(decompressed) > MAX_GZIP_UNCOMPRESSED_BYTES:
+        raise ValueError(
+            "LODES gzip content exceeds "
+            f"{MAX_GZIP_UNCOMPRESSED_BYTES} decompressed bytes."
+        )
+    payload = decompressed.decode("utf-8")
     totals: Counter[str] = Counter()
     for row in csv.DictReader(io.StringIO(payload)):
         totals[row["w_geocode"][:11]] += int(row["C000"])
-    return dict(totals)
+    return dict(totals), {
+        "publisher": "U.S. Census Bureau LEHD",
+        "version": f"LODES8 Massachusetts WAC S000 JT00 {year}",
+        "name": f"ma_wac_S000_JT00_{year}.csv.gz",
+        "url": url,
+        "sha256": hashlib.sha256(compressed).hexdigest(),
+        "bytes": len(compressed),
+        "decompressed_sha256": hashlib.sha256(decompressed).hexdigest(),
+        "decompressed_bytes": len(decompressed),
+        "output_fields": ["geoid", "year", "workplace_jobs"],
+    }
 
 
-def _validate_xlsx_archive(archive: zipfile.ZipFile) -> None:
-    members = archive.infolist()
-    if len(members) > MAX_XLSX_MEMBER_COUNT:
-        raise ValueError(
-            f"XLSX contains {len(members)} members; limit is {MAX_XLSX_MEMBER_COUNT}."
-        )
-    total_uncompressed = 0
-    names: set[str] = set()
-    for member in members:
-        if member.filename in names:
-            raise ValueError(f"Duplicate XLSX member name: {member.filename}")
-        names.add(member.filename)
-        name = PurePosixPath(member.filename)
-        if name.is_absolute() or ".." in name.parts:
-            raise ValueError(f"Unsafe XLSX member path: {member.filename}")
-        if member.flag_bits & 0x1:
-            raise ValueError(f"Encrypted XLSX member is not supported: {member.filename}")
-        if member.file_size > MAX_XLSX_MEMBER_BYTES:
-            raise ValueError(
-                f"XLSX member exceeds {MAX_XLSX_MEMBER_BYTES} bytes: {member.filename}"
-            )
-        total_uncompressed += member.file_size
-    if total_uncompressed > MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES:
-        raise ValueError(
-            "XLSX uncompressed content exceeds "
-            f"{MAX_XLSX_TOTAL_UNCOMPRESSED_BYTES} bytes."
-        )
+def _validate_xlsx_archive(archive: Any) -> None:
+    validate_zip_archive(archive, limits=XLSX_LIMITS)
 
 
 def _read_xlsx_member(
-    archive: zipfile.ZipFile,
+    archive: Any,
     name: str,
     *,
     max_bytes: int = MAX_XLSX_MEMBER_BYTES,
 ) -> bytes:
-    try:
-        member = archive.getinfo(name)
-    except KeyError as error:
-        raise ValueError(f"Required XLSX member is missing: {name}") from error
-    if member.file_size > max_bytes:
-        raise ValueError(f"XLSX member exceeds {max_bytes} bytes: {name}")
-    with archive.open(member) as handle:
-        payload = handle.read(max_bytes + 1)
-    if len(payload) > max_bytes:
-        raise ValueError(f"XLSX member expands beyond {max_bytes} bytes: {name}")
-    return payload
+    return read_zip_member(archive, name, maximum_bytes=max_bytes)
 
 
 def _safe_xml_root(payload: bytes) -> Any:
@@ -767,14 +782,8 @@ def _safe_xml_root(payload: bytes) -> Any:
 def _xlsx_first_sheet(path: Path) -> list[list[str]]:
     if not path.is_file():
         raise FileNotFoundError(path)
-    if path.stat().st_size > MAX_XLSX_FILE_BYTES:
-        raise ValueError(f"XLSX exceeds {MAX_XLSX_FILE_BYTES} bytes: {path}")
-    if not zipfile.is_zipfile(path):
-        raise ValueError(f"Expected an OOXML ZIP workbook: {path}")
-
     namespace = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
-    with zipfile.ZipFile(path) as archive:
-        _validate_xlsx_archive(archive)
+    with open_safe_zip(path, limits=XLSX_LIMITS) as archive:
         strings = []
         if "xl/sharedStrings.xml" in archive.namelist():
             root = _safe_xml_root(
@@ -852,7 +861,11 @@ def build_opportunity_zone() -> None:
             for payload in acs_with_lock.values()
             for source in payload[1]
         ]
-        jobs = {year: _lodes_jobs(year) for year in (2018, 2019)}
+        jobs_with_lock = {year: _lodes_jobs(year) for year in (2018, 2019)}
+        jobs = {year: payload[0] for year, payload in jobs_with_lock.items()}
+        lodes_source_lock = [
+            payload[1] for _, payload in sorted(jobs_with_lock.items())
+        ]
         geoids = sorted(set(acs[2018]) & set(acs[2019]))
         rows = []
         for geoid in geoids:
@@ -885,6 +898,7 @@ def build_opportunity_zone() -> None:
                 "acs_years": [2018, 2019],
                 "acs_files": acs_source_lock,
                 "lodes_years": [2018, 2019],
+                "lodes_files": lodes_source_lock,
             },
         )
     print(json.dumps({"case": "opportunity-zone-policy-evaluation", "rows": len(rows)}))

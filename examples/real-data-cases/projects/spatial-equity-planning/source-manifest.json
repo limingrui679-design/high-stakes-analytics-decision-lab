@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "spatial-equity-planning",
   "source_id": "census-acs-2023-ma-tracts-mbta-stops",
   "title": "Spatial Equity Planning with Transit and Site-Evidence Gates",
@@ -54,5 +54,76 @@
     "https://api-v3.mbta.com/"
   ],
   "download_url_template": "https://www2.census.gov/programs-surveys/acs/summary_file/2023/table-based-SF/data/5YRData/acsdt5y2023-{table}.dat",
-  "geography_url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_tracts_national.zip"
+  "geography_url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2023_Gazetteer/2023_Gaz_tracts_national.zip",
+  "sources": [
+    {
+      "source_id": "census-acs-gazetteer-ma-2023",
+      "publisher": "U.S. Census Bureau",
+      "version": "2023 ACS five-year tables and tract Gazetteer",
+      "license": "U.S. Government open data",
+      "license_url": "https://www.census.gov/topics/research/research-transparency-public-access/open-data.html",
+      "url": "https://www.census.gov/data/developers/data-sets/acs-5year/2023.html",
+      "artifacts": [
+        {
+          "path": "data/raw/acs-b01003-ma.dat",
+          "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/acs-b17001-ma.dat",
+          "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/acs-b19013-ma.dat",
+          "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/acs-b08301-ma.dat",
+          "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/acs-b25064-ma.dat",
+          "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/2023_Gaz_tracts_national.zip",
+          "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "population",
+        "poverty_count",
+        "median_household_income",
+        "public_transit_workers",
+        "median_gross_rent",
+        "latitude",
+        "longitude"
+      ]
+    },
+    {
+      "source_id": "mbta-v3-rapid-transit-stops",
+      "publisher": "Massachusetts Bay Transportation Authority",
+      "version": "MBTA V3 rapid-transit stop snapshot",
+      "license": "MBTA open data",
+      "license_url": "https://www.mbta.com/policies/developers-terms",
+      "url": "https://api-v3.mbta.com/",
+      "artifacts": [
+        {
+          "path": "data/raw/mbta-rapid-transit-stops.json",
+          "sha256": "22d2bfb9023dca4d261c149d1665e15f35d8f3e3406e947a60f34f327997ca6a",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "mbta_stops",
+        "population_weighted_nearest_stop_km",
+        "high_poverty_weighted_nearest_stop_km"
+      ]
+    }
+  ]
 }

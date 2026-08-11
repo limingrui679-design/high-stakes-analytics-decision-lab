@@ -166,7 +166,7 @@
     "accessed_at": "2026-07-27",
     "grain": "one CFPB complaint received in 2022 for a money-transfer, virtual-currency, or money-service product",
     "expected_rows": 13534,
-    "source_manifest_sha256": "a0035438d38a765feb2da1cfaa7040b850faddd31e06dd45e4d97a281b633d85",
+    "source_manifest_sha256": "6d4c9a628fecb4d04718317eeaa82f56bde2974f054aa912e1548765aaaea837",
     "analytical_results_sha256": "aa0ecb2076431be2f9b9da5223e24cb87e1eba1f9324e8d2cedfc61cac8e9cdd"
   }
 }

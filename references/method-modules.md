@@ -19,7 +19,11 @@ python3 scripts/profile_dataset.py /path/to/input.csv \
 ```
 
 The module writes a visual and machine-readable gate plus a dry-run cleaning
-plan. It never reproduces detected identifier values in the report.
+plan. It never reproduces detected identifier values in the report and
+suppresses value-bearing distribution statistics for detected identifier and
+sensitive fields. Row-oriented formats are streamed within explicit file,
+row, column, cell, and nesting limits; the exact boundaries are documented in
+[data-quality-gate.md](data-quality-gate.md).
 
 Apply reversible safe actions and any specifically approved executable action
 to a new file:

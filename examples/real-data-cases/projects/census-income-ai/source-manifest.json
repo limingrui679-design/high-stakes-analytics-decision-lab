@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "census-income-ai",
   "source_id": "census-acs-pums-ri-2019-2023",
   "title": "ACS Employment AI Temporal Transport and Audit",
@@ -29,5 +29,41 @@
     "treatment": "No eligibility, hiring, credit, benefits, or other consequential action.",
     "status": "approved_for_public_minimized_analysis"
   },
-  "citation": "U.S. Census Bureau. Rhode Island ACS 1-year PUMS person files, 2019 and 2023."
+  "citation": "U.S. Census Bureau. Rhode Island ACS 1-year PUMS person files, 2019 and 2023.",
+  "sources": [
+    {
+      "source_id": "census-acs-pums-ri-2019-2023",
+      "publisher": "U.S. Census Bureau",
+      "version": "Rhode Island ACS 1-year PUMS person files, 2019 and 2023",
+      "license": "U.S. Government open data",
+      "license_url": "https://www.census.gov/about/policies/open-gov/open-data.html",
+      "url": "https://www.census.gov/programs-surveys/acs/microdata.html",
+      "artifacts": [
+        {
+          "path": "data/raw/acs2019-ri-person-pums.zip",
+          "sha256": "22eebb2e2654577708d1baaf611109dba696f334c105236d3b3708d95864d824",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/acs2023-ri-person-pums.zip",
+          "sha256": "588cdc6059db4bcc6eb0add4722e6c75f5abe246ce59bf1cad83344966987819",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "person_id",
+        "cohort",
+        "weight",
+        "age",
+        "age_band",
+        "education_band",
+        "worker_class",
+        "puma",
+        "sex",
+        "race",
+        "hispanic_origin",
+        "employed"
+      ]
+    }
+  ]
 }

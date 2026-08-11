@@ -44,6 +44,19 @@ class PackageIntegrityTests(unittest.TestCase):
             f"npx skills add limingrui679-design/{SKILL_NAME} -g",
             readme,
         )
+        citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+        version_match = re.search(r"(?m)^version: ([0-9]+\.[0-9]+\.[0-9]+)$", citation)
+        self.assertIsNotNone(version_match)
+        assert version_match is not None
+        release_version = version_match.group(1)
+        self.assertIn(
+            f"releases/tag/v{release_version}",
+            readme,
+        )
+        self.assertIn(
+            f"## [{release_version}]",
+            (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"),
+        )
         test_count = sum(
             len(re.findall(r"^\s+def test_", path.read_text(encoding="utf-8"), re.MULTILINE))
             for path in (ROOT / "tests").glob("test_*.py")

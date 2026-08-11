@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project_id": "sec-nport-filing-review",
   "source_id": "sec-nport-2025q4-minimized-fund-risk",
   "title": "SEC N-PORT Liquidity and Crowding Filing Review",
@@ -29,5 +29,42 @@
     "treatment": "Filing review only; no expected-return, suitability, fund-quality, or investment recommendation.",
     "status": "approved_for_public_minimized_analysis"
   },
-  "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators."
+  "citation": "U.S. Securities and Exchange Commission. Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators.",
+  "sources": [
+    {
+      "source_id": "sec-nport-2025q4-minimized-fund-risk",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "version": "Form N-PORT Data Set 2025 Q4, minimized to fund-level review indicators",
+      "license": "U.S. Government public data",
+      "license_url": "https://www.sec.gov/os/accessing-edgar-data",
+      "url": "https://www.sec.gov/data-research/sec-markets-data/form-n-port-data-sets",
+      "artifacts": [
+        {
+          "path": "data/raw/sec-nport-2025q4-fund-risk.csv",
+          "sha256": "3c45ae1e8815a5bffd9fa0f0d2e100eae37113d3074324713670b4f975144d73",
+          "hash_algorithm": "sha256"
+        },
+        {
+          "path": "data/raw/sec-nport-2025q4-fund-risk.source-lock.json",
+          "sha256": "c000a6bf8325b96f8b592cf09be99f634dc47fa095ac7b202c1cf86181c29c8a",
+          "hash_algorithm": "sha256"
+        }
+      ],
+      "output_fields": [
+        "accession_number",
+        "report_date",
+        "series_id",
+        "series_name",
+        "registrant_name",
+        "net_assets",
+        "holding_count",
+        "top10_concentration",
+        "restricted_share",
+        "fair_value_level3_share",
+        "cash_like_share",
+        "crowded_security_share",
+        "three_month_redemption_share"
+      ]
+    }
+  ]
 }
