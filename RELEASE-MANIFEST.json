@@ -1,0 +1,4117 @@
+{
+  "schema_version": "1.0",
+  "release": "1.0.1",
+  "release_tag": "v1.0.1",
+  "content_commit": "c92e6b4b01ade00cf7cf099515765ee812111504",
+  "algorithm": "sha256",
+  "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.1",
+  "release_commit_binding": "The annotated v1.0.1 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "files": [
+    {
+      "path": ".codespellrc",
+      "mode": "100644",
+      "sha256": "a179c373c74719a0d46c056ddf07b6b17a1cad4ffe55079d51939fcd5223f682"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug.yml",
+      "mode": "100644",
+      "sha256": "b174882471a707d103c3fa3c15006078a8808de3defe60d218c9f3c1dd415e2f"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/evidence-source.yml",
+      "mode": "100644",
+      "sha256": "06bb23a3b2ad68451646cf204021fc1bc2b3c384a6fcbf29f436d0549ce93731"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "mode": "100644",
+      "sha256": "b85b10c1713a59397657d1b7aac78c8939eb97d5a9383606a5a202e039525603"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "mode": "100644",
+      "sha256": "840e6479df49ef4ee0b515dccb3e6d6037bd1e90d0f836a090005d7fb92d2796"
+    },
+    {
+      "path": ".github/workflows/codeql.yml",
+      "mode": "100644",
+      "sha256": "429eaa95d3cf7976671f49699b6d595617c3104c0646acae529b859dc67bcdd9"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "mode": "100644",
+      "sha256": "f1dc47fe66d5812e0e026047248a830398c886678df5601ddb871a9be152686f"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "sha256": "8d926a62a2c42f175329bada34f6c224fc83ea32bfdea7d154a322369a5e7a76"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "mode": "100644",
+      "sha256": "6cc0c42d008b1c1e16d15c47a053bcfa6e8ec4f73f836fe12eab9fa4c24ad613"
+    },
+    {
+      "path": "CITATION.cff",
+      "mode": "100644",
+      "sha256": "7d48748ae2b3358efc2d5fe4cc93567b9e4628728b94898f878056e1fcb1a81a"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "mode": "100644",
+      "sha256": "baad8763aef47e1404eb8874cfd10964aba4bd37ffe5246129ca6160e839e127"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "sha256": "a6e28fc6984fa7281c16ac53b20d975e03cb1a09087b1ad5e5bdb30d88321ca6"
+    },
+    {
+      "path": "LICENSE.txt",
+      "mode": "100644",
+      "sha256": "dcb9337504523d296473fcf472df760b7edc484f7fd9f5d752ced957957eea26"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha256": "db9a353b740b1f2b1d473e94fc4f91ae715abfbdc523a1b22c05dc503ecb825d"
+    },
+    {
+      "path": "SECURITY.md",
+      "mode": "100644",
+      "sha256": "12fb31de1bb7b447d8a303aa77e5df34fec0c9236be7101bf34c9fcbbda482c2"
+    },
+    {
+      "path": "SKILL.md",
+      "mode": "100644",
+      "sha256": "4809a0623506b6278b080167d6702bc03e1e1213e7cb586c5d67ae8e11b3b1ce"
+    },
+    {
+      "path": "VERSIONING.md",
+      "mode": "100644",
+      "sha256": "0afce91f2e699d6df0ee5389f113b1b09e154d4f03f167e139e48cf821ba7411"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "mode": "100644",
+      "sha256": "305417a8ee9585937d0eb1dab4e42467605008c856b2e79b2b4c833715968cfa"
+    },
+    {
+      "path": "assets/adaptive-reporting-system.svg",
+      "mode": "100644",
+      "sha256": "05f4039f0b46a03dd97bc3e08aca178e83aaaa6236cc011bea6c1d061ea29bff"
+    },
+    {
+      "path": "assets/case-template.json",
+      "mode": "100644",
+      "sha256": "78d9d51d8c05d9c64120b951e7decab950828278d8efc9d386506fa5a89b7762"
+    },
+    {
+      "path": "assets/data-contract-template.json",
+      "mode": "100644",
+      "sha256": "2baec3d52bd1046dcd8d71721d3c6e9c313abd75623ab18879b6c449b52f89dd"
+    },
+    {
+      "path": "assets/readme-hero.svg",
+      "mode": "100644",
+      "sha256": "c7af784636e3d095c145ed39b27c0e897ca9a85fb11e529d8e1f4b246d51a708"
+    },
+    {
+      "path": "assets/report-layers.svg",
+      "mode": "100644",
+      "sha256": "5b404055ccf8f721348330b55c0daf663e7e77ea94a0aa79fa980182670575a7"
+    },
+    {
+      "path": "examples/real-data-cases/README.md",
+      "mode": "100644",
+      "sha256": "01ae17c305fab5fd6d924d9105bb4831cca3a4a5052d49efce81c4c0ecad3036"
+    },
+    {
+      "path": "examples/real-data-cases/cases.json",
+      "mode": "100644",
+      "sha256": "18f4a8aedaa68d50ece3e6c53d374dfff39e11bbc53faa088477e0645ea78ab7"
+    },
+    {
+      "path": "examples/real-data-cases/cases/01-bike-demand-operations.md",
+      "mode": "100644",
+      "sha256": "1c77124e6fdd6516d0744d6fa36c22b1c8158a0102f4ebb3757563366cbfb64c"
+    },
+    {
+      "path": "examples/real-data-cases/cases/02-cross-city-311-shift.md",
+      "mode": "100644",
+      "sha256": "ca52e6e7d21409223ebf37b7f5834b4f95d3fb44c0c0fe45abf05f1d9c2d2dd5"
+    },
+    {
+      "path": "examples/real-data-cases/cases/03-bank-marketing-response.md",
+      "mode": "100644",
+      "sha256": "4a42cb423021e64ac07699c86ff336d0271fe8a2b1e5eaecaf565ae098e870ad"
+    },
+    {
+      "path": "examples/real-data-cases/cases/04-census-income-ai.md",
+      "mode": "100644",
+      "sha256": "24c84f80be36dd2d3394b3b881c471a84ee006bc7b7ef11fd675c95e3bcecc53"
+    },
+    {
+      "path": "examples/real-data-cases/cases/05-treasury-risk-engineering.md",
+      "mode": "100644",
+      "sha256": "2f1192d11e95444bd04a30c9a6973305c3e506fdde671dcb724433258c88fe2e"
+    },
+    {
+      "path": "examples/real-data-cases/cases/06-cfpb-fintech-complaint-operations.md",
+      "mode": "100644",
+      "sha256": "33b0038e787d6582dd798df270b99b4b45afb78788338efc8389fc0531a82559"
+    },
+    {
+      "path": "examples/real-data-cases/cases/07-commercial-real-estate-risk.md",
+      "mode": "100644",
+      "sha256": "106c7587b8f4082b1b03165e86ff0e1ab811dcda0de30777c4e9039031c7d3e7"
+    },
+    {
+      "path": "examples/real-data-cases/cases/08-wildfire-mitigation-under-uncertainty.md",
+      "mode": "100644",
+      "sha256": "4b20428290a4d889457b83bece92b41ec4342e5ecbdbd33e620c5ea92ddb336d"
+    },
+    {
+      "path": "examples/real-data-cases/cases/09-sec-nport-filing-review.md",
+      "mode": "100644",
+      "sha256": "06d9601e3a10034e4bedc22856793a064f6b1153fd998e9f11dd87bbe517eb91"
+    },
+    {
+      "path": "examples/real-data-cases/cases/10-social-norm-field-experiment.md",
+      "mode": "100644",
+      "sha256": "56d81d0dfe697724cffd6bd3d6cb2dd49e6b1c960d15da7b272ff1e8e1507839"
+    },
+    {
+      "path": "examples/real-data-cases/cases/11-population-health-survival.md",
+      "mode": "100644",
+      "sha256": "648518b41752c7cb2f94cb7ba8de0fc9010e4222b5a959719110c4603f804471"
+    },
+    {
+      "path": "examples/real-data-cases/cases/12-opportunity-zone-policy-evaluation.md",
+      "mode": "100644",
+      "sha256": "b7f86e2ae78c3f080ca6a68be85aea06a56b3ba10f2602327e08ba91e9e2bddb"
+    },
+    {
+      "path": "examples/real-data-cases/cases/13-behavioral-reading-experiment.md",
+      "mode": "100644",
+      "sha256": "a6aa2bed1c2377b487a138fbb8581fd97eabaaf931f6296b5e04fdf9db192e77"
+    },
+    {
+      "path": "examples/real-data-cases/cases/14-nhanes-population-transportability.md",
+      "mode": "100644",
+      "sha256": "cd4356d82bdf490fd7a9580f3eac0603ca5cb40262b45a80b94c711a52e7a2c1"
+    },
+    {
+      "path": "examples/real-data-cases/cases/15-spatial-equity-planning.md",
+      "mode": "100644",
+      "sha256": "80de2a271658c71af722979f3bf6610cfe0c1b35c910a34bc459075f515a298f"
+    },
+    {
+      "path": "examples/real-data-cases/figures/01-bike-demand-operations.svg",
+      "mode": "100644",
+      "sha256": "d59e6b432f366e273a118014d727c56809fb9f3724b36c4c461ed9a863bec55d"
+    },
+    {
+      "path": "examples/real-data-cases/figures/02-cross-city-311-shift.svg",
+      "mode": "100644",
+      "sha256": "93f71449ed6629263b3070f72b0205388f7972dfd69229e3b844d0c81c0c2388"
+    },
+    {
+      "path": "examples/real-data-cases/figures/03-bank-marketing-response.svg",
+      "mode": "100644",
+      "sha256": "cb08f0a3176076b0555de99f78b7f3ccd502a026216e89fd6faa0aaaa73b69b5"
+    },
+    {
+      "path": "examples/real-data-cases/figures/04-census-income-ai.svg",
+      "mode": "100644",
+      "sha256": "230bc3566d06a970c4628791a411e17f9ae251de31220baf01726eb8eea09d19"
+    },
+    {
+      "path": "examples/real-data-cases/figures/05-treasury-risk-engineering.svg",
+      "mode": "100644",
+      "sha256": "07703868f094d260738ee1c8f605fb07ef27505aac261664b210e16e2c96b68b"
+    },
+    {
+      "path": "examples/real-data-cases/figures/06-cfpb-fintech-complaint-operations.svg",
+      "mode": "100644",
+      "sha256": "4228e91c6e7e9660b21a1b881c5b24b977842ccc8f8fb27372ec84a5404497a5"
+    },
+    {
+      "path": "examples/real-data-cases/figures/07-commercial-real-estate-risk.svg",
+      "mode": "100644",
+      "sha256": "432a44284328cab3871d5a9322c0f888bbca73b71cb8afca2d865af632e8693b"
+    },
+    {
+      "path": "examples/real-data-cases/figures/08-wildfire-mitigation-under-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "3c95f1c1daee889ff2137377118cc83e76daa6c92f23e81189612448e77831c0"
+    },
+    {
+      "path": "examples/real-data-cases/figures/09-sec-nport-filing-review.svg",
+      "mode": "100644",
+      "sha256": "81a7afab8c5ab9da551cdc5d410b3d3979f583fce3d21ccdf0af866f41de01cb"
+    },
+    {
+      "path": "examples/real-data-cases/figures/10-social-norm-field-experiment.svg",
+      "mode": "100644",
+      "sha256": "474753f55a08b1d3df81dbe00a68f35b0ce32ec6982b32e091dd0054bf309d7e"
+    },
+    {
+      "path": "examples/real-data-cases/figures/11-population-health-survival.svg",
+      "mode": "100644",
+      "sha256": "26e407f5f616b13a682fd0d6fba91514ab2f4c8957fd076b43e282688e963e49"
+    },
+    {
+      "path": "examples/real-data-cases/figures/12-opportunity-zone-policy-evaluation.svg",
+      "mode": "100644",
+      "sha256": "d5b52ef5b74749630c26a01759d48bc2ee7e6b4a0157f713854f290a143fd0cb"
+    },
+    {
+      "path": "examples/real-data-cases/figures/13-behavioral-reading-experiment.svg",
+      "mode": "100644",
+      "sha256": "d6a5575572ec3474313ec25e2072faeedfb368f9c62c2d53c9dfc6c3b9e1eaf6"
+    },
+    {
+      "path": "examples/real-data-cases/figures/14-nhanes-population-transportability.svg",
+      "mode": "100644",
+      "sha256": "3819fd8d23ca00cedbf2d8790878f43c18d8a9304aff3e5808f12d4daf3d7b21"
+    },
+    {
+      "path": "examples/real-data-cases/figures/15-spatial-equity-planning.svg",
+      "mode": "100644",
+      "sha256": "96522d2c66edf48c07e5715f6293609546b2c5e3f7fa0e376216e84f3056f2d3"
+    },
+    {
+      "path": "examples/real-data-cases/figures/case-landscape.svg",
+      "mode": "100644",
+      "sha256": "0ac5330d54909758dc3169fd06aa870ed2b1b741ab38eb8af0f695f2a271576f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_asset_realestate.py",
+      "mode": "100644",
+      "sha256": "c0265c676995707d6d3837cf3a4abeb51c045107b84f966f74d060d58e4df1a4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_clinical.py",
+      "mode": "100644",
+      "sha256": "aa915c02222c7e217c2d09ff750c761ce789194a9f60fb87583b497fa1be0e26"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_core.py",
+      "mode": "100644",
+      "sha256": "c997f88bbce2615619f78aeb8810df9bc2a68e6851d598a322759ba9e2da3a24"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_modeling.py",
+      "mode": "100644",
+      "sha256": "5c6904d90d2ee4f257dda40bf2edeac79c9f27a911d6fe640c82c8a3dd4b17ae"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_reporting.py",
+      "mode": "100644",
+      "sha256": "57f3c5a0c3266931cea02eaed296a40e72b30f67408697c40e59edd16eef4022"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_runtime.py",
+      "mode": "100644",
+      "sha256": "d791b7cfc4f558f3a9009bca93b3f71cb9f8c3e136ed2ad75441842b08b73c77"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_spatial.py",
+      "mode": "100644",
+      "sha256": "3c71c6db1c720b869e88ee51c7b09be1b58ab3f1f709760d2c55a66760dcf5b1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_tailored.py",
+      "mode": "100644",
+      "sha256": "3fecbd49336f48a23eaa524641e01c001e423d14de44cb090829d5cfbd6b5db3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/portfolio_treasury.py",
+      "mode": "100644",
+      "sha256": "4e16e090e18a8ef5e39170b3aa3992f4d42b6462c2410aef5d7e1d3eb5433278"
+    },
+    {
+      "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
+      "mode": "100644",
+      "sha256": "5718ce367d7c5e1d3240820ffe5059571b696435b8deb3d4d08f5890f339c2fb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
+      "mode": "100644",
+      "sha256": "5b8d826992b64d9193b1f9cf883821af76e5c66adae619e61f32551d540348cf"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/config.json",
+      "mode": "100644",
+      "sha256": "298f46ba8e700d62c5390734b40c55b4d4204f803999eae1de3027039104620e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "d47775ef042cb0e943ace6484a4aa95820c228eadf57fb7e46a296b544a13850"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "34078c74f754ee02c8e58ddc747f422b1e5e1a6012769d61412d1a79983b2f3f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "7e90106ee5cefdebc12d32d887d97626d866d67d87b575d9d5d73d1cebcbbb69"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "9638afeb7710825fb23a3a0acb0a60808d763b1c966e61aeafac7f9dc5d7c530"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/data/raw/uci-bank-marketing.zip",
+      "mode": "100644",
+      "sha256": "e0bf5f5de5b846e2f18e9d90606637267d46dfa260e0f17bb12e605db5efbeb4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "b66dbd77d112f6c02baee4755dcd3785c04db578da6f8937b43b9488efcd30a4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision-analysis.json",
+      "mode": "100644",
+      "sha256": "6104e9d3e4ff0155abf9b870a02dfe9f642e940f50a22fd4b521eded98e411aa"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "b06db90f4f7f10fa827aad389961b1cdd330b593c3541b96a1116d8943aa9c94"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "07379f8aa0d31b719f78d9a107690c73131a9129d8fc487b785781ad9e5f609b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "838c7b9d1dd3af1818e8d6dfa890427ec555da05b07368c886e8305bb172709e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "6c5ef3659085ca330084291c98fcfad458f487a95ecd5fe281c03ec3f6d714c2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/figures/decision-path.svg",
+      "mode": "100644",
+      "sha256": "901de1c98ff681fc93f68e5472a06fea1486c89e95e0fb18bab22b8949900a2b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/decision/report/figures/decision-summary.svg",
+      "mode": "100644",
+      "sha256": "89ef1380d40aa289d20734ee7af25728eb283f9ac77d6b2132c886646fe25dbe"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/figures/calibration.svg",
+      "mode": "100644",
+      "sha256": "96f4934483be5035648bf9185791707ba74f4e7dc1919f1aaea040e2ddd3733e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/figures/capacity-capture.svg",
+      "mode": "100644",
+      "sha256": "cb08f0a3176076b0555de99f78b7f3ccd502a026216e89fd6faa0aaaa73b69b5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/figures/monthly-response.svg",
+      "mode": "100644",
+      "sha256": "1a7203b6622eb4e9052e3f3e5e53426f357abeb34488241365d0ac39f13f7aa6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/model.json",
+      "mode": "100644",
+      "sha256": "9392fcb522965441592962a35196ad6ccf60ac33aab4bd4f0713efbadb151fb2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "7cb4a86b9833376bd0e8d770e39719f90f2cfe576df301aaf8ec598aa47e66a2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/predictions.csv",
+      "mode": "100644",
+      "sha256": "3df3f0639ae023ac0dca44ce28ce3af54375c88e90dc9f615d00eba90fff7d2b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/report.md",
+      "mode": "100644",
+      "sha256": "c369b58483e7f219b3393b8f459fb44f3a191109a383906be5adc076c91e519f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/outputs/results.json",
+      "mode": "100644",
+      "sha256": "3af9590493acd763c0ceb80f109597cdbe522ce178d083123f6197aba29ccdf4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bank-marketing-response/source-manifest.json",
+      "mode": "100644",
+      "sha256": "2e9107e179d9cd6083d62ada4b3dcb728756815a78c82774241eb4571c3d0adb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/PROJECT.md",
+      "mode": "100644",
+      "sha256": "074c358f55ae905fb4ee9067d24e521056ed6842a3fdde3aae79a8ca22b730aa"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/config.json",
+      "mode": "100644",
+      "sha256": "0492074ef6cb4087d4289c694625ba08fc0e8b9f2cecaa2cbae668685aca9fbc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "b5bf45ce1cd9142213cefb23b62d311b27a33c029a3be04180e850966e8567b2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "b33b8e77c77c0180a18af7705bc0198e6f125564e68a8230e84efb07ce200ef9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "3e3d51276702e839ebf39a3a60476c8e168ea31d0689d80e73708b2486a2452c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "ee620e2a97abb7650add5d128443cfa246ad249cd92895593c43a9f24909daab"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/data/raw/pseudoword-passage-reading.tsv",
+      "mode": "100644",
+      "sha256": "9b3bb62263779fc847a7ae2c7f7ab7d6e248d6595648f44c92f44769d66750b8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "1ab4575795f5b99c1416c1d9427e05a71cccc8e0a55d8a9baf9c856fb9874076"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "c456a587b3edbcac4ca759cc3234da3dd85c2d9da59af984ca48cf3f7a3d1d5d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "a6ddb1ff59e3b854a0fbf35e06aa6ff7f7ea625ca7d8ce9891fe79f8037fbb1e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "a6ddb1ff59e3b854a0fbf35e06aa6ff7f7ea625ca7d8ce9891fe79f8037fbb1e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "a30e31f2aa7827228f08c5472b4333a1208c299d140f3a14261915ec11e0c759"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "a55a6f286ae36baf24bc3204084c6c720e8e1635aa32ffeeded882e10352459c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "69e6f927a832addf302da691c1c51f882226d2fbe31b4803a1f059ee34217dcd"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "c2dc7cf1a19bb5fbeae6f2ed856c3de930646bfd0b2a924ed50a1995283db4d6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "f921760bbbfbb3783f680efcf907851852af919a746e1d638ff18fbc171ecb2a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "a9a5b6d8ff9fad31cf5c72a93247bd0efde246abb8d8cb666fe5cbf0c161c3cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "0bb245cd649ba4128c0bdb55e5b495fc9b840a51cd8546a185f055e67c1c8155"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "cb94d6e7d3819e854fcf19553faaf86efc6b3f8f41c243a30713def13b46b9d6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "ccfe58064bc323ffb53aca6c53a78c1d1769f080ae4193c42711e42f7aa0ed80"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "a5e33b78a7bec2313ed21e99c648e56cc76254ff8ba45ccad10e7d6805f02ded"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "4590dbd90d66e82119bdd6922e1fbaac858c886cd5a3d9edce82d548dc6ccd01"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "80cfa1dbbd977316e826415e039f574987af84780866a690a590d2ee3c4ba1e8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "a30e31f2aa7827228f08c5472b4333a1208c299d140f3a14261915ec11e0c759"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "30663dd87311f0e381a4961f4bd0b524d7ebb75c604ef5982ea2c622a864d338"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "c2dc7cf1a19bb5fbeae6f2ed856c3de930646bfd0b2a924ed50a1995283db4d6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "f921760bbbfbb3783f680efcf907851852af919a746e1d638ff18fbc171ecb2a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "a9a5b6d8ff9fad31cf5c72a93247bd0efde246abb8d8cb666fe5cbf0c161c3cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "0bb245cd649ba4128c0bdb55e5b495fc9b840a51cd8546a185f055e67c1c8155"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "cb94d6e7d3819e854fcf19553faaf86efc6b3f8f41c243a30713def13b46b9d6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "ccfe58064bc323ffb53aca6c53a78c1d1769f080ae4193c42711e42f7aa0ed80"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "a5e33b78a7bec2313ed21e99c648e56cc76254ff8ba45ccad10e7d6805f02ded"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "4590dbd90d66e82119bdd6922e1fbaac858c886cd5a3d9edce82d548dc6ccd01"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "80cfa1dbbd977316e826415e039f574987af84780866a690a590d2ee3c4ba1e8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/figures/paired-effect.svg",
+      "mode": "100644",
+      "sha256": "d6a5575572ec3474313ec25e2072faeedfb368f9c62c2d53c9dfc6c3b9e1eaf6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/figures/paired-outcomes.svg",
+      "mode": "100644",
+      "sha256": "ac33942312c3cf7817f5364a3467f6de502051029a3a20935981c65d9b79a614"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/figures/protocol-burden.svg",
+      "mode": "100644",
+      "sha256": "d29bad51a2f692eb3c553b91f7f86e7865a978735e296b1448ced1f474159a2f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "e8e9919c61567a3d48fe371f6d58aaab1c458a4ae8486874e50f7d8bfa571f0f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/report.md",
+      "mode": "100644",
+      "sha256": "454d418263463e1295f21bc563704c76122700f9fd9f22d6a0dd8e84fa359b0b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/outputs/results.json",
+      "mode": "100644",
+      "sha256": "22801e7b1ccf90e09c3d29782a9201c2d5d3dd342a41423da57cbe06e99d41e0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/behavioral-reading-experiment/source-manifest.json",
+      "mode": "100644",
+      "sha256": "46cda604513ae9c1e1cdab90c8707e8e2dc9787c518cf728207e01589f87bc08"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/PROJECT.md",
+      "mode": "100644",
+      "sha256": "ac2099571c03daff24a223ce76d0984110598569cbb7c50c471d2025b88b027a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/config.json",
+      "mode": "100644",
+      "sha256": "b15383aeb2338640f220fab817961d6922e45764bbf2bcb697d04cd8fd0382dc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "e6e5128bea90217eed77c847542eda2ae761ccf1b511e760a724fd4b62a31fc0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "59e422ff0dbd23946391efbd12cbfbcb997d9a216103c9733eead9fb05671641"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "f779bf799f152bd93f524c3156cdc7c287789845149f8bbb45ba956175309b7b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "f6a04a1abc958e809de6eaf3cd7f0770e734428fa953c7925a4c63111fd0a91d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/raw/citibike-jc-2021-station-hour.csv",
+      "mode": "100644",
+      "sha256": "e34022dc61250b3a5e499fa429570a87104cec0985caeaa5980a5b2206e45524"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/data/raw/citibike-jc-2021-station-hour.source-lock.json",
+      "mode": "100644",
+      "sha256": "85d43b52e3f44a308aa72280726e4a0a28cb77197f634f2548b7c88168035eeb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "5ade21d2b6248d47b1ca4da16d1c5afc8814bcee755121c7928b2ff8ae2eadb4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "7149cf29ddb5ec4be6e816b84e5234f30719fa77af8d6587d7daaf1f6e5a7fd5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "eb7c46986234ba13f6a8806f9c1c3566caa68d6e71096d3e608f0757d3379913"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "eb7c46986234ba13f6a8806f9c1c3566caa68d6e71096d3e608f0757d3379913"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "608da6885faf13c831c5a8e7ac17f1282bee53ddca3631ee5c3a289a00719b34"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "cceab8259aeb65b524a79f289c011983a106b2e38a65aa5580a99f2ef2754350"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "1e8ce9eebd5d085aa42085a84d00144ac8429e48f2ab47d7e60c6250d2c83bcc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "03c46191a2b33206c42b5efb0a14ce27aeb3011f1ea6eaad53ed18dd150ad994"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "828e21c5cb775a031927e938258190de233f73bcaa0f69f43521c5919bd32a26"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "8dd219605d620d044e15f72e93545af787e4e67b6347074b558643817178145c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "34cb560cd99b1b84be88f5c061f1815f4ad6cb83da67984a8332621d6b6d1695"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "663b69a4fc25b28e7b1b6bde5abdb281608b05745ddce58e722235fe79959e1b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "142947b7b3b9d655eb211c7b20e04ca186b61d077770dec445768e2cb49b7beb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "b1113911a3826dfab714fe5f403407d50cf188e0621a7cd496dc9a71d68f58f3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "eee0b88915fa62c10f9d3f19fd3ca09d0e661088ed7952df87a3ddc868572dff"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "1c257d060d73c284df586641ec9db6e6ad32cfbb656c82dd0f4bb928d0cf21eb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "608da6885faf13c831c5a8e7ac17f1282bee53ddca3631ee5c3a289a00719b34"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "43324251fd09ebe6972b259eea03590ba9ff38a6d23bdf2bed194214288854c9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "03c46191a2b33206c42b5efb0a14ce27aeb3011f1ea6eaad53ed18dd150ad994"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "828e21c5cb775a031927e938258190de233f73bcaa0f69f43521c5919bd32a26"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "8dd219605d620d044e15f72e93545af787e4e67b6347074b558643817178145c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "34cb560cd99b1b84be88f5c061f1815f4ad6cb83da67984a8332621d6b6d1695"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "663b69a4fc25b28e7b1b6bde5abdb281608b05745ddce58e722235fe79959e1b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "142947b7b3b9d655eb211c7b20e04ca186b61d077770dec445768e2cb49b7beb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "b1113911a3826dfab714fe5f403407d50cf188e0621a7cd496dc9a71d68f58f3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "eee0b88915fa62c10f9d3f19fd3ca09d0e661088ed7952df87a3ddc868572dff"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "1c257d060d73c284df586641ec9db6e6ad32cfbb656c82dd0f4bb928d0cf21eb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/figures/forecast-mae.svg",
+      "mode": "100644",
+      "sha256": "d59e6b432f366e273a118014d727c56809fb9f3724b36c4c461ed9a863bec55d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/figures/modeled-imbalance.svg",
+      "mode": "100644",
+      "sha256": "45247b7bd307497813b65ad14d172c538c618fa3793ca1c796a4788037f0476b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/figures/monthly-demand.svg",
+      "mode": "100644",
+      "sha256": "c6fe84cb41716e2a8a9ca41dba68aea5d5ea5f167d0537e05beed5875f3f115c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "52619400adf0a6f68c329974f212e0777ef1fd1d1e25d7dc7b4146265a85e4e2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/report.md",
+      "mode": "100644",
+      "sha256": "258c37c066a3407228f3d9ee033db1d1e03533141f3dcaf9f6120d980d3616df"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/outputs/results.json",
+      "mode": "100644",
+      "sha256": "4490a08e97d3766e210b48951adadef76ce21da7ececacd1d6e14e53d5ed1686"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/bike-demand-operations/source-manifest.json",
+      "mode": "100644",
+      "sha256": "9eb2e477a8d4c56b4f8fcc3e760961e6fb49d99c019116bc36a15260af2d6b08"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/PROJECT.md",
+      "mode": "100644",
+      "sha256": "1b32212beeeeb09b83e2ece1f9f43813e0a8454da08d39cd6cd039c808a31059"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/config.json",
+      "mode": "100644",
+      "sha256": "2960725f6b32c91c19b5a349dffaf01ed73790cc30bf13285326264feda085a1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "2fce9c3d57c9fd36671b1610a61f54945ce4085ef5b2c237da1acdc8bb5c9eda"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "53ccbe4fa8990fdae23a5bc5e6981e9f1bb8bb698e0b38cc352c8634ad629580"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "53a6ab34ac273609814d02f0b2d8892e80decfa5d688d4eeb61d89eedabed787"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "5a84413c5c9c995c0929cb73e61e84d7b457f90586b3554ffb00feacf4f9c667"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/raw/acs2019-ri-person-pums.zip",
+      "mode": "100644",
+      "sha256": "22eebb2e2654577708d1baaf611109dba696f334c105236d3b3708d95864d824"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/data/raw/acs2023-ri-person-pums.zip",
+      "mode": "100644",
+      "sha256": "588cdc6059db4bcc6eb0add4722e6c75f5abe246ce59bf1cad83344966987819"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "0c04d034db8e1ebfad2fecf883c8c6be8d09a216e0a6e8580536cdd49ade7230"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "425dbb4b2a19196567c3348d6c6260525e1fea3ff05d69a96cd7359b6a1e26d5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "6c417f9617c90e88dde8e1bf03e2247d7e7761d6646bd5b448c76c6d1818b0ac"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "65f0bd7e2bfa02f7aa63878ac51532a5bba81d73f81c29e71ac0d53cc1be8d24"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "a5068454882bfab75f7ba83d6b5f9cdc86c7b2cc60974eb710ad34984b394463"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision/report/figures/decision-path.svg",
+      "mode": "100644",
+      "sha256": "413a31919c370636db16a7c3458243799f9447c1c51337ceb9aafde6beeab979"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/decision/report/figures/decision-summary.svg",
+      "mode": "100644",
+      "sha256": "d178c7137b4ffe22ca8818b98d77465098aa4a06e2386fed0fee7d6c280d8fc1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/deployment-checklist.md",
+      "mode": "100644",
+      "sha256": "4dd4b88b4781d6df552b2e512f02a008e20ad830cfaa11de666bee35b5b309be"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/figures/audit-slices.svg",
+      "mode": "100644",
+      "sha256": "fc73284495c6244deca280c4d08ac3506702d7007af8ad1ccb43857e5aa89447"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/figures/calibration.svg",
+      "mode": "100644",
+      "sha256": "fdd3c247e77c95a31fbf16a25352ff87c6d19cda5ef6e63f40ba250138186ef8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/figures/temporal-performance.svg",
+      "mode": "100644",
+      "sha256": "230bc3566d06a970c4628791a411e17f9ae251de31220baf01726eb8eea09d19"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/model-card.md",
+      "mode": "100644",
+      "sha256": "7007f986b7941f7698b7c89d5098bdd26a5a78c924d3301c0f831303c7321768"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/model.json",
+      "mode": "100644",
+      "sha256": "90604903b699e4ed7dfd3398dff5f45f47c31348bde1856ae84f0090a31daaa4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "2e48566ff4894d2e91e6ba9c8705816e78f4d49173c8ec8342d5aa93bd631582"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/predictions.csv",
+      "mode": "100644",
+      "sha256": "2b268a66b47329a4b09e590277335a5e3eee62c2cea1e562079a87f47caa89c5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/report.md",
+      "mode": "100644",
+      "sha256": "1363b00274943b34e04fa72186ddeebd3abc0d55282cf01e2bc83a8a3a707c69"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/outputs/results.json",
+      "mode": "100644",
+      "sha256": "d3483a2ad3a7c1bfc68c03c0c1b3484cc07b7b1d6ec59d894722e23691be5ee4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/census-income-ai/source-manifest.json",
+      "mode": "100644",
+      "sha256": "153872cdb7059c88af2fdb9ab75990d6e03acc7453dab70f1e8ce4c42c029d39"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/PROJECT.md",
+      "mode": "100644",
+      "sha256": "773edbf4a2f017c7d93981edc051c226f4cc820368db833f8ae6f5b8163da69a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/config.json",
+      "mode": "100644",
+      "sha256": "293d3152906115a9c2c1a30a7ff4af5679651f81dc81ac3731d57f6e9bbd2c10"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "bdd9d85e91eb61eebacde931f9684c2083b30c941889e5c5d1be97eef71dad1e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "7edf7b0ab20bed1f86467b69a01e93891e14a63907829bb48a0af735980fbbb5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/privacy-receipt.json",
+      "mode": "100644",
+      "sha256": "e5100f326866d0448750ae755a812e74ddca0c3d616fbdad0b62c4bbdd4f0924"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "7976991dc035c7d80c5318acc4f202106d843a1140d38808bb1c8a3d24b6734d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/data/raw/cfpb-digital-payments-2022-sanitized.csv",
+      "mode": "100644",
+      "sha256": "88057035226470e0a1291486198ff81325ae98eb8ba3ad3c881bb3960790d35b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "350455261fa66e01fd12ce7747a464696c90eb17461e3cb74ff61dd268adda52"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision-analysis.json",
+      "mode": "100644",
+      "sha256": "2b2130ce59395a749dd830318c054a958b5742aa710cb1236699cecbe3165d43"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "9db509408211a1d4b9393b33707a0eaebc80e2009c876bb074815b574b16c3d9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "0839bdcbcfd50659289f2cf5a69052092150e20a7e7909b0ce66d42d0369f19b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "d189d6b7458b25ffbf096c5620fc982a0aa2ab02f7506506258aec99876ca8e5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "d498a0a8073cab446669567950276a6014c467eac5e744ec580fde13fa111318"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/figures/decision-path.svg",
+      "mode": "100644",
+      "sha256": "7d251983f0aaa94811f4298ff3f5049da51a52862f09fa583683ed335d03c9a9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/decision/report/figures/decision-summary.svg",
+      "mode": "100644",
+      "sha256": "0bcbce07b756259f97c64b4213ad96491300c0e01ead304b6b2c3e1005825b2b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/auc-null-benchmark.svg",
+      "mode": "100644",
+      "sha256": "5e9e02be3904c5f890b5e039b6e2a3cfa7cbafa23d242134a751e52ed272c3d2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/calibration.svg",
+      "mode": "100644",
+      "sha256": "01ef718535e6d505a079dc3f16293216c18a9d7f132812c9841c3f98c36b155f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/capacity-capture.svg",
+      "mode": "100644",
+      "sha256": "4eef2d9671e1840faf40aeaccafdae217f21d93e591e8492fbf8ad0265237c26"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/cumulative-gain.svg",
+      "mode": "100644",
+      "sha256": "4228e91c6e7e9660b21a1b881c5b24b977842ccc8f8fb27372ec84a5404497a5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/monthly-volume.svg",
+      "mode": "100644",
+      "sha256": "a2da7b87febb98af36e446cd40e9e61205852c6cafa1fbb8a7600f32360e2d10"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/figures/subproduct-late-rate.svg",
+      "mode": "100644",
+      "sha256": "9aab167b7212c268f4ce4336dcf38d4a4ae4e1c515a74cd766eb273899b6f21a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/model.json",
+      "mode": "100644",
+      "sha256": "742ad638bf9532e36e8a10a1eba790d64a9ad9567ece1a78bd5a854ec15c94f7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "7f8d0bb560332bc7ede7c54580852954819b329c3f9461fcceb5db2b6ee5a897"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/predictions.csv",
+      "mode": "100644",
+      "sha256": "da1e8806ae9311be2e8ec038ba8b63b911f56d4ae3473e16f438bfdf1ce64f69"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/report.md",
+      "mode": "100644",
+      "sha256": "0534ff4da32ab2275b38ecad649683de8545ebab7a9602bbc9b1dd5f07cfef83"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/results.json",
+      "mode": "100644",
+      "sha256": "47e78a758ae96efa49fb02cb1574a464e0ef6622cfcd9435c9bf4de5ed2aa7da"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/system-contract.json",
+      "mode": "100644",
+      "sha256": "6f2fbac48d323fae041cc12f70cb99a1f95c4853019a182643e2bc6a91ad6ba0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cfpb-fintech-complaint-operations/source-manifest.json",
+      "mode": "100644",
+      "sha256": "6d4c9a628fecb4d04718317eeaa82f56bde2974f054aa912e1548765aaaea837"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/PROJECT.md",
+      "mode": "100644",
+      "sha256": "71d917b3feb2083468e39678cb359980063b6b9d99f5e19cb740ec0f86faab19"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/config.json",
+      "mode": "100644",
+      "sha256": "7291d1f5113fe7d45d990b8b6a24620d7289e69b649a14426ff2ab4b5d8d2d72"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "34a1c3b5da2ba534227c69f23605bf51df35e0e3e73680da22363f3f6089e7f4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "ac2fb605b54f29aa36f7fc5cfd2f94f259076a8c77c424cb874a6b33e86c6c5a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "b42e98efd38deda2d4cacfb5607a6559aafc79f76b520219537658c59c9e0e94"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "bb6fb6416a9ae4c6540dd8337baa0ef404cd6dbbd582bf51ad6bfb3aa350e0cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/data/raw/nyc-commercial-sales-2021-2025.csv",
+      "mode": "100644",
+      "sha256": "daa08cd7e6d95c2060cdc2eb1b8b6308932c334179dc57af46c203374935389a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "cee4e2d4100ea4cf1d789436d975bf116200a3476b1d61dc9adcb8879520339c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "d3e68b1b8233591313060689c31c1fc3e1920e38dfdc03a8eb37f47f4813aefb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "0024c4e85aea39c0edfd1cb29fa44e72b388662dfa68435e95dcd33251e9a3b7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision-product-contract.json",
+      "mode": "100644",
+      "sha256": "f0ac2868a7fd78aa0718dba0e80060bf8545659a26093b403e8322d0cac0ea3d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "0024c4e85aea39c0edfd1cb29fa44e72b388662dfa68435e95dcd33251e9a3b7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "0915185d764e4d469c658cde830432e5d67b4582826a5d19308af8877835f354"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "1cee7cd0b12311f6b50617873271ac28591a41bb133b9a8c223d4400ffcbc814"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "7d1f706200cfb659708f3fb790d7018275d6b54c64fc86ca3e21bce3b9162de9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "c2f7264655e585e8a07330b1c3c6ca43f1383efd2ef82a84aae4dfb68e5ce152"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "364104beab88a8c45f7a7690152648913e34c882e54e4a9220ff6fb3762b37d3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "5b015d88a6f6944a92ae7d2d4a38a3fcdd80de617821d047469ada3f53767871"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "3a6da1261a3bdf5e009787ba1cb48164fe90dfeb158ebcbe9f6961d8f2871540"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "215b7a1fa55d5d3c750ae35e1a8a8ed16c6a5200df3baf753fc0d3fb71f7430d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "3b696a553a99ccc1620debe625d306e999b83ceed7537668914cd92faed79888"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "fe8b78ec486c20e7c5355138e447b0645cc85797709ab739b0343138442bf7f2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "1368acd22f1fb551241b9dfaf0498a3fb814479bb8d87a6cf71a480af1d7ba1d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "334aeccef7c33a391ed69d6bd2ac63daa3580d95de7bbb18427028e1f30eecb5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "0915185d764e4d469c658cde830432e5d67b4582826a5d19308af8877835f354"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "76833593bc8bb3a7284ac458db7bb8b395b21eda201b98ed178d731d0a3f88b1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "c2f7264655e585e8a07330b1c3c6ca43f1383efd2ef82a84aae4dfb68e5ce152"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "364104beab88a8c45f7a7690152648913e34c882e54e4a9220ff6fb3762b37d3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "5b015d88a6f6944a92ae7d2d4a38a3fcdd80de617821d047469ada3f53767871"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "3a6da1261a3bdf5e009787ba1cb48164fe90dfeb158ebcbe9f6961d8f2871540"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "215b7a1fa55d5d3c750ae35e1a8a8ed16c6a5200df3baf753fc0d3fb71f7430d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "3b696a553a99ccc1620debe625d306e999b83ceed7537668914cd92faed79888"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "fe8b78ec486c20e7c5355138e447b0645cc85797709ab739b0343138442bf7f2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "1368acd22f1fb551241b9dfaf0498a3fb814479bb8d87a6cf71a480af1d7ba1d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "334aeccef7c33a391ed69d6bd2ac63daa3580d95de7bbb18427028e1f30eecb5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/evidence-table.csv",
+      "mode": "100644",
+      "sha256": "01024222b88150d69f13913859ef7e44e72cee6fe5bf0b63df31865c9a5b624f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/figures/borough-price-per-sqft.svg",
+      "mode": "100644",
+      "sha256": "432a44284328cab3871d5a9322c0f888bbca73b71cb8afca2d865af632e8693b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/figures/financing-stress.svg",
+      "mode": "100644",
+      "sha256": "6d620b329f081ce8957f5e0d39cae87a43c42781f1734b9354525ccccdf9324c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/figures/segment-observation.svg",
+      "mode": "100644",
+      "sha256": "ca39621868009594e8f8e146da28a64057fe02885c5170bcf9261ef0f4d573d9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/figures/transaction-activity.svg",
+      "mode": "100644",
+      "sha256": "b0a967129196c82a53480d925c3e3b3501591751153e14ecb833a45ac2007228"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "66c154fc760a281db9311332a88398d48ad6cc37f5dd933565afcb66937a9554"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/report.md",
+      "mode": "100644",
+      "sha256": "35f1d7215601193cd04aa0f8a8ef3ea7f11741c2c77f007b6a52cd854b4cad2f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/outputs/results.json",
+      "mode": "100644",
+      "sha256": "97c1a96badf2dd1f88282b4536981705f457316b478df0497c97573b0a0ce321"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/commercial-real-estate-risk/source-manifest.json",
+      "mode": "100644",
+      "sha256": "6d43daafe712969b4982e19f12180afdfcae5ad39ed1b2069e5de9762a988df3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/PROJECT.md",
+      "mode": "100644",
+      "sha256": "65ba5e5be75c055dac5a2836dbe735fd9d0c176a4c4bd025dc118c43f12dd0b2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/config.json",
+      "mode": "100644",
+      "sha256": "02307200fcb3040f46cdee907a3bf4277fe383f74d705d5bdd544a5875daca2e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "0a92eb30b12822afb3f17d19be579de792ed5c870a6614a1f9e9be0f4abefd87"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "7dcba3dec3fd1c9359ac380b7f3a9d46e0d969d19fe59f64996e975a511af49e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "bdc39cbff6345dfe46d053f7dcb59a792e172d37b19787d313556c5a7e041954"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "ab1487d6165fd9d099c4bbebe25102888d22dcd0c1fc790db6e6a7aeba34d77a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/raw/cross-city-311-daily.csv",
+      "mode": "100644",
+      "sha256": "46a932811648b1e0282a74456624a3928cad5f3b24860ffad5c6d4c66402006f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/data/raw/cross-city-311-daily.source-lock.json",
+      "mode": "100644",
+      "sha256": "d0f1740a18bc759ee4d8fab6c8ab7f0efd225df02918cf3a9bb0a7f5eee36424"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "2c73739482980291c04f44e506624548206f194363158d511209005dfef121df"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "d610ecc9e1432f5e53e075526f997b8314ea60a09cdcc336bb0a55a8cfe17271"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/figures/monthly-requests.svg",
+      "mode": "100644",
+      "sha256": "b1e8e2ff7a874cf7e9b73b98e805be9e339648062c6c22a1cb51b83b14e679b4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/figures/service-mix-2023.svg",
+      "mode": "100644",
+      "sha256": "bc25c29a94f069fd3a35bd7f66641873a9b61b05483245112e4f75d15f9528a6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/figures/within-city-shift.svg",
+      "mode": "100644",
+      "sha256": "93f71449ed6629263b3070f72b0205388f7972dfd69229e3b844d0c81c0c2388"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "b7afd4aecaca1ccb9877862f8640428ad09a8a727f200ab1129e75678639ef12"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/report.md",
+      "mode": "100644",
+      "sha256": "77452d16aceb6c6708b94c75e073efa99e42a7516642773d01869ff9c6494a31"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/outputs/results.json",
+      "mode": "100644",
+      "sha256": "e49fbd09103d4aae338e17b2cd604fec4eebb5bfbff2d0da858aa3f4f8bb58cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/cross-city-311-shift/source-manifest.json",
+      "mode": "100644",
+      "sha256": "d8298c60d9d8e0a008867861670d08128bd7fcc362b25332c624abb0d43989fa"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/PROJECT.md",
+      "mode": "100644",
+      "sha256": "417b52c619fecc20edca8f0d6d5be21981ed0af2f25a8991dfdfbefcfd515508"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/config.json",
+      "mode": "100644",
+      "sha256": "67c3b0f4be172b697d129946be67dd75b6da3e7741768921bfa53679d41a68fb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "bdf135fdb224d03ee61dfff236ca67d657a1a3e9a0f3107eec6146cba4c4b4b1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "0c9ed0471e771b6087ad2a338e35d500e76617feccb5b73e6454c784ab9c0b6f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "22a467eebd9c940c143adb5b91486832759967ebd2415f1412fe6cde09da500f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "de6b876e256cc24d1c33a01853a2f82e517f249a31e0851ae5c981a5dde651a4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/raw/nhanes-36-month-mortality-cohorts.csv",
+      "mode": "100644",
+      "sha256": "22a467eebd9c940c143adb5b91486832759967ebd2415f1412fe6cde09da500f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/data/raw/nhanes-36-month-mortality-cohorts.source-lock.json",
+      "mode": "100644",
+      "sha256": "d4bdbe4213b6cc8dc121e48c936b0bc134ec9447ff46476386884012210baffe"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "3827d064245519fe1834a02887844e5a86e3f1aa33a020744c30ef05bab76367"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "c439365c70a4a1e1307d9ca5a5cb3da4e44f6d142f399f465724c544245590e6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/figures/cohort-mortality.svg",
+      "mode": "100644",
+      "sha256": "a09fe1b71416acf8b78d4944c6d68743643a64181efb8421da195685c779ebf9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/figures/income-gradient.svg",
+      "mode": "100644",
+      "sha256": "014d8107616c266fc1fc8b573159f5cff21a4ade139063fa271588407bde5246"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/figures/transport-calibration.svg",
+      "mode": "100644",
+      "sha256": "3819fd8d23ca00cedbf2d8790878f43c18d8a9304aff3e5808f12d4daf3d7b21"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "a80919e75da362281406625b6a8a875f8b545b3f20612cd018cc42262f41cb90"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/report.md",
+      "mode": "100644",
+      "sha256": "0b075625dbaae72337eeb6db37ce62166b1612636c1c3659fa09de775206586f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/outputs/results.json",
+      "mode": "100644",
+      "sha256": "9de2658eda3a3bc22e81e6d2b23bb783b51be9fe738e0b73c3d0639f2d5466cc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/nhanes-population-transportability/source-manifest.json",
+      "mode": "100644",
+      "sha256": "46bc4056b7379bf88353f73e8f02bec52ba0f5dc9bbacc073829d5ebbde19e1e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/PROJECT.md",
+      "mode": "100644",
+      "sha256": "1d7f87916e3a1638fc78447feb818aae41193d121e4908e912aa6b328958166f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/config.json",
+      "mode": "100644",
+      "sha256": "2968eb292c5350002baa70bbec0afe13bd9939d538d3e07c3c4fb7a04e4a6828"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "eda59f1fe17a2d39ed778686f7e025eed13cc1b59f6e2945adcdafcab03a10e2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "d61445731557d65b6948f76e937b8f0884abc1d06e304f26f040805d74501ac4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "9fd035a9223caaba11fe04ef5ea6d9d044a4dd6b5b30761fe7b7e904731c7863"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/raw/massachusetts-qoz-tract-panel.csv",
+      "mode": "100644",
+      "sha256": "ccd88014ffbed3270278c0eababcc59a34af0a0dfdeeba0cd0578325479e2ef3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/data/raw/massachusetts-qoz-tract-panel.source-lock.json",
+      "mode": "100644",
+      "sha256": "c1ea764828f78d67eb6efa58b6b186232420026923d5ede47297543adf9a61e6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "e06da0be1f04a1059f780dfad20b0451e8e9b9a7ab84829df72ba3e0476bd777"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "998512b167fff5696a874c970411a322c272b29acb2eba9ac960f0ef4cc53b35"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/figures/baseline-balance.svg",
+      "mode": "100644",
+      "sha256": "70ae722ae42d3c5b18e6ad80963691faa270a5cae31e49de1d73e6609ea1a871"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/figures/control-reuse.svg",
+      "mode": "100644",
+      "sha256": "42c2f9bbfb7b0076ab84783bf685ca5dfe8535ad0e54bc7512d5765e2fd89c5f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/figures/matched-change-effects.svg",
+      "mode": "100644",
+      "sha256": "d5b52ef5b74749630c26a01759d48bc2ee7e6b4a0157f713854f290a143fd0cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "a803d286ccc13dfbfd4d57cf7e27e1abe67a4d0f6871e2590aeb79bea4c36c95"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/report.md",
+      "mode": "100644",
+      "sha256": "824bec8798effa7bc99b4665c7e0bf6b82818fc832f92c6da7d2b6b29a191093"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/outputs/results.json",
+      "mode": "100644",
+      "sha256": "1a2c64d33a5e0dfbc3366415988a624b050bcc76517d17545850debbd1ce2bf0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/opportunity-zone-policy-evaluation/source-manifest.json",
+      "mode": "100644",
+      "sha256": "80ccb0962771bf9c30db5a8bd2ce90d97162f2744e3b082bebeededc7ec1307a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/PROJECT.md",
+      "mode": "100644",
+      "sha256": "6218126bb77ba69aeb33b20fc3c2faa506210206e532437e3e041c1b49e569b2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/config.json",
+      "mode": "100644",
+      "sha256": "06030f6388c8ac229c667a85f84b37b0199f583946537e75adbf610f4aee6186"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "c6fb36da7b7220607c38e9298f81e38878d8beed618d9a024194631824354060"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "1ccb3fc79bbb6b3e72c89857e9dae5aa59ca1baada98a38769a53118c8ff905b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "ef2a7d308ebe9020d1d2bb53ef98115b9a60dbacacc1697c136512e8646d947a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "6e22127b105c65d8de3e806bbaa2411902e21175fba96646302bb6192fd9d6fe"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/raw/nhis-2016-2017-linked-mortality-extract.csv",
+      "mode": "100644",
+      "sha256": "ef2a7d308ebe9020d1d2bb53ef98115b9a60dbacacc1697c136512e8646d947a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/data/raw/nhis-2016-2017-linked-mortality-extract.source-lock.json",
+      "mode": "100644",
+      "sha256": "7e660b86cddc42955e56d77842eadda11cd7e5c2dd8331fa7416a8adccb3dcd7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "3d2f0e74af231529a70f82b8a3ee7682d273a3df2ca3c7a08819839b81787e5c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/cox-model.json",
+      "mode": "100644",
+      "sha256": "9237d3cecaaf58fe5314ee2497b2c1e9ba21489659f3b841cd3b0c7090d06ac2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "5e4a3d86746e0530a407258f6933960372b5800354c3537794eae4a8d2ca6ed4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "8526fe9a41beeb246509a268cb305e8dc6a5c3f4c4dc2ff3e810e2b858277a18"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "8526fe9a41beeb246509a268cb305e8dc6a5c3f4c4dc2ff3e810e2b858277a18"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "f1cb6b1f79660fe2f006335c2027b675841d42fc381bfdacdc4f07cfba48ecef"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "e7f407a38f613242f010996ee46a2840bd3962db8b563e68b97b483a06a3b99a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "3840b96fe1d7335bf6aa3e69e537ad5a33050123f7baeb5906c351dd06e030b0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "05cf4918108b40350652b5d34c97258af2f869ece9ee84291ae0cc339d0bf58d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "33d1ec451d39cf9fe66efd98b581c88d96fa073527b9e7622518c3097ebd1aa3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "a3507d9343843e5909a3696eb5582d16ac92fa425e63ccc24348a079726d412c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "140faebb6c17cd3c5d008f9b38a27ba8dba6fbe6deaba1b644c64292c37838b4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "74b278ec409df1baac2af5817f73c74f31d9e6e15ed2b158237a267198edaf1d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "480f281c2b5dfdae673ef77415dc4af50806e3eea1e0d6830a5316ab89c70ff4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "560d8eff06bc73f86605af0619d9c0678cd21260a3e7c97d32c2ee5725db79e4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "d84831bee78158c3cdba0b6eb130a223f11024411565307205c56da58ee51b33"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "224d17d1fefb61816f0399ae8c6798d3e261f8e78190062ce08805b35052c2cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "f1cb6b1f79660fe2f006335c2027b675841d42fc381bfdacdc4f07cfba48ecef"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "e54c8be242ce315b91c175a89608df1a5eecbeac754131f0e2cab1f0246dfe4c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "05cf4918108b40350652b5d34c97258af2f869ece9ee84291ae0cc339d0bf58d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "33d1ec451d39cf9fe66efd98b581c88d96fa073527b9e7622518c3097ebd1aa3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "a3507d9343843e5909a3696eb5582d16ac92fa425e63ccc24348a079726d412c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "140faebb6c17cd3c5d008f9b38a27ba8dba6fbe6deaba1b644c64292c37838b4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "74b278ec409df1baac2af5817f73c74f31d9e6e15ed2b158237a267198edaf1d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "480f281c2b5dfdae673ef77415dc4af50806e3eea1e0d6830a5316ab89c70ff4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "560d8eff06bc73f86605af0619d9c0678cd21260a3e7c97d32c2ee5725db79e4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "d84831bee78158c3cdba0b6eb130a223f11024411565307205c56da58ee51b33"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "224d17d1fefb61816f0399ae8c6798d3e261f8e78190062ce08805b35052c2cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/figures/age-gradient.svg",
+      "mode": "100644",
+      "sha256": "48e4220e33533920525e19ed45f38a7ebedda478eb125552f9b44dcbc2cadcde"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/figures/cohort-mortality.svg",
+      "mode": "100644",
+      "sha256": "3916e5b2fdaebc3910d5fec653eb0ffc78edbfe218dde72b2d86ac2881042066"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/figures/temporal-calibration.svg",
+      "mode": "100644",
+      "sha256": "26e407f5f616b13a682fd0d6fba91514ab2f4c8957fd076b43e282688e963e49"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "c04f1585ec1216d6da76400b0997a5d619386f2a78ca5c5540d4d7cf0d34ca32"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/report.md",
+      "mode": "100644",
+      "sha256": "b3b3dba00b8c5d3c27dbabff46205414496130ba9e60b540faa53751de2ab7b3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/outputs/results.json",
+      "mode": "100644",
+      "sha256": "de875143c72fa14b85c45be853765fc1aaed0e5d1651aa5c34d1e79e82744164"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/population-health-survival/source-manifest.json",
+      "mode": "100644",
+      "sha256": "ab50348cb6ef2e1cadf9058f05ce1cc1c1d40b8352ad93187d240f19eb0e5503"
+    },
+    {
+      "path": "examples/real-data-cases/projects/project-catalog.json",
+      "mode": "100644",
+      "sha256": "dc802a7b0611c84557dd8f7767cc9e44990de88919671c5ceb568636bbcb7deb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/PROJECT.md",
+      "mode": "100644",
+      "sha256": "447108c4793c901043da3b6386eb4aaa848bf8c1c73561b3d8cb6d7ad516fc03"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/config.json",
+      "mode": "100644",
+      "sha256": "d91365a7fc88bc1ed5669db52b5f7f45dc118bc383da86e8e9530b6e5f16d819"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "2fb1ea276fd78f0875b656d2616cb19f12e97aa9c8ef42f09ceab08123a5ca5c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "6818120f5c1452f6b3498924f3a58ab574256e54dc0ef222ad8de1cac6faf304"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "3c45ae1e8815a5bffd9fa0f0d2e100eae37113d3074324713670b4f975144d73"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "1fd1f69ccf51cd339319aa9b2c9303456a0bffc51d517873bfa152d7c791c7c6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/raw/sec-nport-2025q4-fund-risk.csv",
+      "mode": "100644",
+      "sha256": "3c45ae1e8815a5bffd9fa0f0d2e100eae37113d3074324713670b4f975144d73"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/data/raw/sec-nport-2025q4-fund-risk.source-lock.json",
+      "mode": "100644",
+      "sha256": "c000a6bf8325b96f8b592cf09be99f634dc47fa095ac7b202c1cf86181c29c8a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "42785f3e8f9c4e24b1e4ccad4e8ccb4b637f4185205556524ac82912bb390cf2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "cd20cd0cdd0899528594d4fe49f8f9cf2c9971d028ccd85ae7d6864984ed65bc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "2a1abfef1f11e70a3281e9b7df2ef3707ce40f680175bc7ba879de44acd7c9a4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "2a1abfef1f11e70a3281e9b7df2ef3707ce40f680175bc7ba879de44acd7c9a4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "a2291c9788f040ae43cd057f04a6226e9ea098b8e51cbd49f9a0d5a5cdd719ee"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "c5a3483803c3f2ea9347771ea8e613c73d39fee0e3d2d68d1c9262a63a0b2938"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "0ef123c150336973fa9e21c56f0e7a23ca7cea2eecf74d019fefec46d5058382"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "051d28d1fa947d6a1b5d841c016993fd5e75751fd511387a921798eb9bd341df"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "15dede2f20ad753b3c86440145e7180238d65ac4ff3cfe3fce39c150fe8fd674"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "97678f7639146703568f768fcddaa08ec0d2729b80770b1a1f4aa4fd490c28c9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "eb1010e65ed2e4bff43720216803c419cd17208e28b8a4c91024292d0fae8c3b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "d7cb3bcbcb4d03f464ffa6417ed4c26fdece3c34346d91b84dbccf3efc5668b5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "3b696a553a99ccc1620debe625d306e999b83ceed7537668914cd92faed79888"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "ccb38c96952e5779847e60ead539118e9410cd799115da61a6e47a60bb340b30"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "e6a3d8803ef482c2563dbbfd05d8e30e790a5a6d609831dbc8802d662363d7d9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "6086b0ab3a6f410201e67e9a6c7a2dedbe270e71ba493034de0b9c3d51da4617"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "a2291c9788f040ae43cd057f04a6226e9ea098b8e51cbd49f9a0d5a5cdd719ee"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "6d716e94da11fc14c26e1e538dbe3ed4923b334be9dfafbbb86a991a99e5b905"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "051d28d1fa947d6a1b5d841c016993fd5e75751fd511387a921798eb9bd341df"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "15dede2f20ad753b3c86440145e7180238d65ac4ff3cfe3fce39c150fe8fd674"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "97678f7639146703568f768fcddaa08ec0d2729b80770b1a1f4aa4fd490c28c9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "eb1010e65ed2e4bff43720216803c419cd17208e28b8a4c91024292d0fae8c3b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "d7cb3bcbcb4d03f464ffa6417ed4c26fdece3c34346d91b84dbccf3efc5668b5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "3b696a553a99ccc1620debe625d306e999b83ceed7537668914cd92faed79888"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "ccb38c96952e5779847e60ead539118e9410cd799115da61a6e47a60bb340b30"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "e6a3d8803ef482c2563dbbfd05d8e30e790a5a6d609831dbc8802d662363d7d9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "6086b0ab3a6f410201e67e9a6c7a2dedbe270e71ba493034de0b9c3d51da4617"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/evidence-table.csv",
+      "mode": "100644",
+      "sha256": "10ff72397687c67111217cc6731656771574bc8f5995711a81ff79b55e47b6fa"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/figures/review-capacity.svg",
+      "mode": "100644",
+      "sha256": "b283be8da9c759c1b4c5ef605a77b0253c678e4ca95cc544dec170f93e89634e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/figures/review-score-deciles.svg",
+      "mode": "100644",
+      "sha256": "6b2278001d129d44f4573e8a3cbd4926b65eaaee91366bdf01a02cf02c748798"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/figures/risk-indicator-p90.svg",
+      "mode": "100644",
+      "sha256": "81a7afab8c5ab9da551cdc5d410b3d3979f583fce3d21ccdf0af866f41de01cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "5258daaabf80f27c7e2b05dccddbaca242aa46e8d0f6b361b7848db2d36d2e62"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/report.md",
+      "mode": "100644",
+      "sha256": "321d3fb4a3e6d1dc7f830c46749556e8b6a928898e31b296d9c0e0f287af965d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/outputs/results.json",
+      "mode": "100644",
+      "sha256": "eea4c0939afc9ee823ad46d7fccd245eeb5b98492ffe7558cbcd307ff21fc94c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/sec-nport-filing-review/source-manifest.json",
+      "mode": "100644",
+      "sha256": "982a55a01abd2e418869f971c63dd36347892f8b27e4ad9f2e3b8a10c5ea1e0e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/PROJECT.md",
+      "mode": "100644",
+      "sha256": "29006b74170b1bc4ef0113017f5880726591cb3c5525686d5e83ef98c0534479"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/config.json",
+      "mode": "100644",
+      "sha256": "4e41e98b902f9ab0dbd5146c79e258eed8adcab1968fedac69c7bcff73bd7f19"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "88f82e7fe8c2737b6c9c60c19e2f7bc8a4902d353778813554ce7c13755c22d4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "eacc70254138de61b5ed3cda2403d26d18f51099ad1fa8d5379ca1c792ce7092"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "5c0ed8db87b6d0620d399b36687812a799648f1047cbbcd26bc9ffb72c206d10"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/raw/cluster-robust-itt.json",
+      "mode": "100644",
+      "sha256": "63219329010e08a005163c6bbe15227ccb2a73139995bb0f1ba5ceb8cbe45f61"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/raw/external-source-lock.json",
+      "mode": "100644",
+      "sha256": "336c93d11ad1536a3124ac93709cdf3e468a1483c75a7ae71ac0a27fd4aa3491"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/data/raw/terms-compliant-treatment-aggregate.csv",
+      "mode": "100644",
+      "sha256": "86621bba1ca677c6c56fea2412143fe74e8fc4834b46c17f7accc8cfb34f61e6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "da51e955575c15902f5124a515167aca8eb78730a9c7f26cf0902a8f23424a78"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "19a530ac6c90dd5f754f09f40495fbf002e86783f1f87e72c446dabe1b1477b3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/figures/cluster-robust-itt.svg",
+      "mode": "100644",
+      "sha256": "474753f55a08b1d3df81dbe00a68f35b0ce32ec6982b32e091dd0054bf309d7e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/figures/stratum-effects.svg",
+      "mode": "100644",
+      "sha256": "beaf81b689435af7c74519dfe785c6d4d43e7da267a16834959c413d4b2dcd55"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/figures/treatment-turnout.svg",
+      "mode": "100644",
+      "sha256": "3aaa453a2f4bf9b65b07ca4a49e510aee3bc65f878bafc4de6808069e7085725"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "cf1ff894492671a4cc90d998da61dc0bb3b44e507d81a052611839a1b87202f7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/report.md",
+      "mode": "100644",
+      "sha256": "823bdf0968134eda60df3a166d591223e5ab30e65164f53567a0f8da020b1fe2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/outputs/results.json",
+      "mode": "100644",
+      "sha256": "c0e0e4041c3bbf3b0165e20548d2b42f65fa6fafa3589581d2a1f4b2d0d3af15"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/social-norm-field-experiment/source-manifest.json",
+      "mode": "100644",
+      "sha256": "ae80a070575fefffe2b01f6cd092bc1b3b46fc6519da07cb819e0e0c384fca7b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/PROJECT.md",
+      "mode": "100644",
+      "sha256": "9c0aa3d6524349706e64e51d4d57dd9188b138b1bb2a6ebf6753c54f9fb8f460"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/config.json",
+      "mode": "100644",
+      "sha256": "50590e9e5794b8c8adee59ffd2577cb2ba479a93ce1ddc10e2d3b5992b5e2fc3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "3b3a9b70db9474cdbbfcb35c992544588ac04266026e9c6a24757907e6f9f8cb"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "2ec7275a4ae90c2c55fd9565bef537d073934a4e26ad4a4b87fa86e4cd797b1a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "ce60719f459851f48e099b07254a38985f9fef02413248ddb9a4e20536b2b2f8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "b9bb08229e22548dd76d17186e4d6842095ec048db93a206af028a601feaca69"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/2023_Gaz_tracts_national.zip",
+      "mode": "100644",
+      "sha256": "d97f27a434fb9f7b9994ec15ea5bbe41f7b7f4c2aabb3dfe437448bf4e1bc93c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/acs-b01003-ma.dat",
+      "mode": "100644",
+      "sha256": "cdcd4d9ff65e09e8b25f8da38acf982d33b9d734758b0fa157c8211ced21886f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/acs-b08301-ma.dat",
+      "mode": "100644",
+      "sha256": "228d3906b990878f0df15f935c5acbb0443b0b07aea885929fab6491d61f30c2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/acs-b17001-ma.dat",
+      "mode": "100644",
+      "sha256": "f80278da8a45a97119d5235836dd72e178d87a29aeed8a151dc67234966b8ec0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/acs-b19013-ma.dat",
+      "mode": "100644",
+      "sha256": "81447fabb88ca284fc556b5aea116cb61af6dd25e19306d894d9ecf1ad87f7ce"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/acs-b25064-ma.dat",
+      "mode": "100644",
+      "sha256": "cdfbcb46e9c5d81c0bd902d54f246a29becc31c0c8124ad838077b7337e0b2d4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/data/raw/mbta-rapid-transit-stops.json",
+      "mode": "100644",
+      "sha256": "22d2bfb9023dca4d261c149d1665e15f35d8f3e3406e947a60f34f327997ca6a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "0c5b70c05ae5dd8c44c2faedb23ff6b669070329b231827dc4e7a94b0c29b5a6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "6c25bbcb183d25ff9b05f6aa0bfa83e484557592f43de7724b6789100f582f42"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "42eac429bfe2581fb6c055cbbcf6b6e067308345715450f48b207853409d8a1f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "42eac429bfe2581fb6c055cbbcf6b6e067308345715450f48b207853409d8a1f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "95c7db0467aeac5ef2ed3f5af907926a4dc4ed83b97a57ee4586268fe39e7ac9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "6f98949afa5f290ad74477f37c9ffe972154dbedb3424a2a9f39a5649403096a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "9631def20511bc76681b824a671991e5acff9a63937999e88e78238362403bb9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "a81e0caf5dc3a05dac64a77b4d11de074b48f33149be531ebb5a30b51eb1b272"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "437cbdd4845cd329eb53635b8977cd198d2633b875b31012ca675cbac339ffda"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "937ef29e461eebcb30e76ecf4f476c428430c19b0e9bdac5eede2529f03a123c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "5a9b02c8f751e23358623a71f9087a03a9df5c81468d4267185e26b0d17b082d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "c3897bb9114206e1e955f0127fa51d702193c7b8b1c28cb563bb3f565e5001d1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "960c51e9f1d0f3f07d76bfcc1759a8beea33a5d53df0992ad96658138948729e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "d05c38f4ccdaab22d2ad8107fb2c80d379e7b1cee2651050cd83c10c0f91a486"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "238f934a46091262e1c1b8e0a4694f77d4adacae26995c86b77a8b1a69db1efc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "c3469accf27988f25b80b1c2cc77d2f9382dabc7b0f7c5afa087900f5d5d3235"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "95c7db0467aeac5ef2ed3f5af907926a4dc4ed83b97a57ee4586268fe39e7ac9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "b6760a0a9443c5dc85f63bbab79d2f6ed7d144a900bbb4aaaf79ebf0e6f15c8f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "a81e0caf5dc3a05dac64a77b4d11de074b48f33149be531ebb5a30b51eb1b272"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "437cbdd4845cd329eb53635b8977cd198d2633b875b31012ca675cbac339ffda"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "937ef29e461eebcb30e76ecf4f476c428430c19b0e9bdac5eede2529f03a123c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "5a9b02c8f751e23358623a71f9087a03a9df5c81468d4267185e26b0d17b082d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "c3897bb9114206e1e955f0127fa51d702193c7b8b1c28cb563bb3f565e5001d1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "960c51e9f1d0f3f07d76bfcc1759a8beea33a5d53df0992ad96658138948729e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "d05c38f4ccdaab22d2ad8107fb2c80d379e7b1cee2651050cd83c10c0f91a486"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "238f934a46091262e1c1b8e0a4694f77d4adacae26995c86b77a8b1a69db1efc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "c3469accf27988f25b80b1c2cc77d2f9382dabc7b0f7c5afa087900f5d5d3235"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/mbta-access-gap.svg",
+      "mode": "100644",
+      "sha256": "ab7a0bcc9ad5f9b157433b6ba2fac7fe1874b68a88b617886e5666194af8e432"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/need-map.svg",
+      "mode": "100644",
+      "sha256": "96522d2c66edf48c07e5715f6293609546b2c5e3f7fa0e376216e84f3056f2d3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/need-map.txt",
+      "mode": "100644",
+      "sha256": "dff8574fb07764ca4f7ca75ed642c462ea55dce3f374b2708b4a54d483bb363e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/radius-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "bca59db538a2cfed7c8967e5703f1dac28624c9ee048424bf8231c16f7ea941e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/figures/strategy-coverage.svg",
+      "mode": "100644",
+      "sha256": "6ddcf2b1bd9173ca74630408e6f9298a93ed9dc182aa51240eebc25c92cbc77a"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "eb5a7a977fa62d03a1c27e82df1d96255df1e2729bfacd37aacf4137537fa67c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/report.md",
+      "mode": "100644",
+      "sha256": "f8e8d699524c2a68007a7e1d3e6487741f0f2c4b586ca15e02c80090655b7212"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/outputs/results.json",
+      "mode": "100644",
+      "sha256": "fdadcb9062900397b662e5c9866d8c38a7c9b5f2d4827087ffd28a50896c8bd8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/spatial-equity-planning/source-manifest.json",
+      "mode": "100644",
+      "sha256": "6d2aaaebed619f310faad8b799c9e53c73242bc51d032c0098e2e1d9cf5779c2"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/PROJECT.md",
+      "mode": "100644",
+      "sha256": "bdbaeb7c9fdd74181eb0e39275b3e46593c0e635f0733754d2316e6d0f40ca91"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/config.json",
+      "mode": "100644",
+      "sha256": "7cbbdff8ab63156f8a1f9159f803c6ee9787033957eb7060e66a48cf21be37ec"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "bc97ff494e1df5709df15d85a0b40abe48f1fc5bf70bea626b1e348fda92feb5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "a807f1f2249f56129eec1434200b9031c615e55c336a727a6a3001d8c7256835"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "7e1d1510bba7c5a43c598f42e1dca2363c2f3c2f0ec66a33d85246e951896554"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "ac674c93f4e6c6eef191eaeb19dad29e14598d2fb7e0773a372c91d6c903cfd9"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2020.csv",
+      "mode": "100644",
+      "sha256": "edcf1c8be9622f3cd92eb7de1847aefc3977e2118e2ff9af67f46614a5c306a7"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2021.csv",
+      "mode": "100644",
+      "sha256": "1be57e49c63a99f6002431a1030c8fbe539b71066c3eaf14f9f58ddc34492cea"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2022.csv",
+      "mode": "100644",
+      "sha256": "c33cb2758e5e34c2c23b7ab759d18681091860f3f9e5960112859f64f31cd814"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2023.csv",
+      "mode": "100644",
+      "sha256": "edb7f3904e11dcaa502cdcc03ad9b1b16c893802d166ce9bc5fa1118251249d4"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2024.csv",
+      "mode": "100644",
+      "sha256": "6775840b76cd7fd41121f61d6f6c60184eca6b2ba49954ec7372c463cbeef34d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/data/raw/treasury-2025.csv",
+      "mode": "100644",
+      "sha256": "cf2fa3da7f160384b63d2ead698532b1d76cd9f789ce4911e2304db85b14e6d5"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "6647d6cbc055c2c0a61f93baaee6d3720500f8a82fc8c9c37e0210c01d90479f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "3fce3eb7d612ba3e77a78455cf34c3f11b5d344b5c1db22315d016387089fbdc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision-case.json",
+      "mode": "100644",
+      "sha256": "560e97bcaec27b9bfed1206430146a2f237a641d666148a2fd512dae7ff98d36"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/case.json",
+      "mode": "100644",
+      "sha256": "560e97bcaec27b9bfed1206430146a2f237a641d666148a2fd512dae7ff98d36"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/decision-report.md",
+      "mode": "100644",
+      "sha256": "0a2a83ecba0cfa6ee4c494487a29ee4342514be1323a04e026dcc5ba4a4f155d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/decision-results.json",
+      "mode": "100644",
+      "sha256": "65f3e420140e78708308c67f3a7f9c63b13f03c9be27ae94b024bf085d5099ed"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/evidence-input-table.md",
+      "mode": "100644",
+      "sha256": "8264e4845bfa51b646c0453ee8bd118b217a379af2a52784341bb06c9927838c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "95619283064c018e2cea6f8b4cfffd489c876afacee66905d8f89e2632ef2fd1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "f2257cbb6f94d41a7521e06a6967c07c4d3a37e17c33fb557533daa5886d619c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "0270a18083cc90bd7256d87161a21f985ecea848fd11806007f56694859b9b16"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "dc0749e4aa0baea7f4cf9a1ed12e16918130377f948d6d6f3c6f1f71111aa6dc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "d0cdb7d8d2e7dd855683204cb2e097717d7d221c0baba22ff76d3134c76c29f3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "becfe92e67b9c2581ffe77ebb9537e39e9d1eff7e714c6edd21d74b61bf21624"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "a5c33227cb5749967228e80f356ea9a4d21fb9a17e746ee39d0dd8daed944cb0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "dcb31e1ee88472c3fe9cac0e8e1f39b6c122b58efe30151abca306611472b4c6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "455c727eb7ad9d436cc8b14c96c08dfebbff3a56c40fe8f4d90d27bcbc6c2c3f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/decision-report.md",
+      "mode": "100644",
+      "sha256": "0a2a83ecba0cfa6ee4c494487a29ee4342514be1323a04e026dcc5ba4a4f155d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/decision-results.json",
+      "mode": "100644",
+      "sha256": "abd290cd200d395effd3c447f45e5b3de81ecb17ec63f33c9bd25a731bbdca44"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "95619283064c018e2cea6f8b4cfffd489c876afacee66905d8f89e2632ef2fd1"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "f2257cbb6f94d41a7521e06a6967c07c4d3a37e17c33fb557533daa5886d619c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "0270a18083cc90bd7256d87161a21f985ecea848fd11806007f56694859b9b16"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "dc0749e4aa0baea7f4cf9a1ed12e16918130377f948d6d6f3c6f1f71111aa6dc"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "d0cdb7d8d2e7dd855683204cb2e097717d7d221c0baba22ff76d3134c76c29f3"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "becfe92e67b9c2581ffe77ebb9537e39e9d1eff7e714c6edd21d74b61bf21624"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "a5c33227cb5749967228e80f356ea9a4d21fb9a17e746ee39d0dd8daed944cb0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "dcb31e1ee88472c3fe9cac0e8e1f39b6c122b58efe30151abca306611472b4c6"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/decision/report/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "455c727eb7ad9d436cc8b14c96c08dfebbff3a56c40fe8f4d90d27bcbc6c2c3f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/figures/expected-shortfall.svg",
+      "mode": "100644",
+      "sha256": "07703868f094d260738ee1c8f605fb07ef27505aac261664b210e16e2c96b68b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/figures/var-backtest.svg",
+      "mode": "100644",
+      "sha256": "5fefa4398e979678728d7cd180915935ab05d06c66cee079e7bad301ad6f4bcd"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/figures/yield-curves.svg",
+      "mode": "100644",
+      "sha256": "701a823ec99ed8c4add7d7a8d2fb269c65330b72bd20a3ad2574c634a9d9eb1b"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "4c7a82418a831a618b254d4154ae3918c4a6e2ab3785af4ad991dea2adfa2b3f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/report.md",
+      "mode": "100644",
+      "sha256": "b53c4e86e1fb7f634120689523d813f56385fe25a94ddeab805920875018c698"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/outputs/results.json",
+      "mode": "100644",
+      "sha256": "2beef4d6735bffec8e83b39accfe55e6df26a208529227ce811a1e90c6ca9252"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/treasury-risk-engineering/source-manifest.json",
+      "mode": "100644",
+      "sha256": "9e15d4eb6bd22b3a20f60d450b1fb2d28ed5286b821c76ab5e064715f1799594"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/PROJECT.md",
+      "mode": "100644",
+      "sha256": "d4e4c98973846d3d85dc33a32cec9135a0f52f8a806f619558d9c747636ed21c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/analyze.py",
+      "mode": "100644",
+      "sha256": "ab3659e07f379670930892252d3c0a8ca971bc73c1539dea0362a1bb351ebeb8"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/build_decision_case.py",
+      "mode": "100644",
+      "sha256": "7786fd80e8f336c32b085f1fc10cb389c713b264cb9f7400411505c52072585f"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/config.json",
+      "mode": "100644",
+      "sha256": "595a357121b478f2abdadc7aa02e4b43aa5904621b01652eddf6e317a611be84"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/data/data-dictionary.json",
+      "mode": "100644",
+      "sha256": "00381c1ba480fe32aaf85e2ac1ec568eb42ed632091daf939e82288218bb5185"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/data/download-receipt.json",
+      "mode": "100644",
+      "sha256": "9b8e5542ed39463946affcc62ddfdef77047b244d91cbbbe30461788392f57ad"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/data/processed/analysis.csv",
+      "mode": "100644",
+      "sha256": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/data/quality-report.json",
+      "mode": "100644",
+      "sha256": "3526a7b10eaf2861d946ddf4dc551804fa919eaea360c7c5d136ed58d131d528"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/data/raw/calfire-fire-perimeters-2000-2025.csv",
+      "mode": "100644",
+      "sha256": "03ac2df8ca6004dc4ce83cddcf8671ed4192597b198fb25a74bd873c881e1a75"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/download_data.py",
+      "mode": "100644",
+      "sha256": "13c371f663a47347bc858d9507eac28ce30b08e54a2be57bf6aac8a3db9f0161"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/chart-map.json",
+      "mode": "100644",
+      "sha256": "904f0b814244bc0eda24da593871d9691f8779148ad99f00cb5f36151a2b7b9e"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/decision-case-status.json",
+      "mode": "100644",
+      "sha256": "b897ec5442fcbc1731489704ceb847aae8cff13523d62c8f99633dee1e91d19d"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/figures/annual-observed-acres.svg",
+      "mode": "100644",
+      "sha256": "c7bfefb627b0dcf80c624d2b7494406780176aeeb9235bc156caf3a8ec328293"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/figures/recent-unit-exposure.svg",
+      "mode": "100644",
+      "sha256": "664154a38d18ee01bbd8d57b1499342992ee44ec33a5f0fbdfd86f92d9e2e977"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/figures/scenario-regret.svg",
+      "mode": "100644",
+      "sha256": "3c95f1c1daee889ff2137377118cc83e76daa6c92f23e81189612448e77831c0"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/parameter-provenance.json",
+      "mode": "100644",
+      "sha256": "7c96ad3c88b2b7fb25adf0b2ec0456da5a57b214b4cbeb11b6df9d64e64b060c"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/report.md",
+      "mode": "100644",
+      "sha256": "4dc4efc8c16ca1923079f7d2636a0b77f19f85c42075c4568b439636e7d97a87"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/outputs/results.json",
+      "mode": "100644",
+      "sha256": "9821284e98122861e4a574cbd69aec70569e6effb505c1b63a02eb2f18038d65"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/prepare_data.py",
+      "mode": "100644",
+      "sha256": "b7a96fcb9254d5a9a6d1d98a33171a6878f99d22076f7afc6d529b87457af928"
+    },
+    {
+      "path": "examples/real-data-cases/projects/wildfire-mitigation-under-uncertainty/source-manifest.json",
+      "mode": "100644",
+      "sha256": "e68e28784f2fa3484fc85726ee5808cbd75ba10cd786626d50115ef3f7fc7769"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "sha256": "f45e678869a3870fad7dc7bc1bf689f16e1d83d992012838e8c42d7ef4060b42"
+    },
+    {
+      "path": "references/advanced-method-boundaries.md",
+      "mode": "100644",
+      "sha256": "5210e7fc1710aae5a773dbb502d68796b20d9daa163306123e774f236077bf53"
+    },
+    {
+      "path": "references/analytics-triad.md",
+      "mode": "100644",
+      "sha256": "4148eea043e21ccb5cad86ba12306d3023aa9bac0c29722a1ae6258ccfd9b540"
+    },
+    {
+      "path": "references/case-schema.md",
+      "mode": "100644",
+      "sha256": "601bb02495b7d59a3432320d2bd67274bdebe67aaa4967e7721e364876bc411a"
+    },
+    {
+      "path": "references/data-quality-gate.md",
+      "mode": "100644",
+      "sha256": "193132fe8fb101514a4dd17416408534b418b8f49b80dcb16d199027c014bf31"
+    },
+    {
+      "path": "references/domain-playbooks.md",
+      "mode": "100644",
+      "sha256": "af18a367a0cfa931f0793163f367bfe9e296f063b8c67f06028b64995dab88d4"
+    },
+    {
+      "path": "references/editorial-visual-system.md",
+      "mode": "100644",
+      "sha256": "15879d6497b105249ca8a6854521dcf40815dcca928d079af846a2d453365ec1"
+    },
+    {
+      "path": "references/method-domain-map.json",
+      "mode": "100644",
+      "sha256": "d8c0847f059cdad1c38e5d8444076a2f26266c20e637bd6ce75cbe6fad55abb4"
+    },
+    {
+      "path": "references/method-modules.md",
+      "mode": "100644",
+      "sha256": "8cfad2eb0233c8aff3f15f4b95b6a819e25cdbcba3465646cf7d958e8a92ea79"
+    },
+    {
+      "path": "references/method-routing.md",
+      "mode": "100644",
+      "sha256": "bea11f59aa2f915c32b847f4df3d80ed850488ed478d9742ff36a2794395c562"
+    },
+    {
+      "path": "references/methodology.md",
+      "mode": "100644",
+      "sha256": "f3575279ea528f2f0909e1102de3056183c0edb924a63bf0cd5beab6dad7ff75"
+    },
+    {
+      "path": "references/provenance-contract.md",
+      "mode": "100644",
+      "sha256": "e9df0dacc6da22ea105a4dee6aac8369cddaa577446309300fb421aa564fb18c"
+    },
+    {
+      "path": "references/real-evidence-workflow.md",
+      "mode": "100644",
+      "sha256": "e159f42fa43b3928af218d8ffea512e44efa807083db74d074d04b0f4e58c58e"
+    },
+    {
+      "path": "references/reporting-standard.md",
+      "mode": "100644",
+      "sha256": "b00be3bc72ea0df3d1dadc0f04dfbbc0ca5f2e69cb7b15087a9a3424b37d6103"
+    },
+    {
+      "path": "references/reproducibility-contract.md",
+      "mode": "100644",
+      "sha256": "d208fe88276e4518171478a0a38f77e99fd59f2495bf24a86975e563c627bd27"
+    },
+    {
+      "path": "references/visual-report-system.md",
+      "mode": "100644",
+      "sha256": "3151626a2c7e64fe63f4e2cfdbfe1794f2a8ff99387958758f763cb89e6938d1"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "mode": "100644",
+      "sha256": "549497c0cf274df10c1345eb408b6cea73f307ee3506ee7f572cb765506a7810"
+    },
+    {
+      "path": "requirements-maintenance.txt",
+      "mode": "100644",
+      "sha256": "a6fc3aa73160793617c97d1716799b2e306b338c18dd181ba75bc65248931889"
+    },
+    {
+      "path": "requirements-security.txt",
+      "mode": "100644",
+      "sha256": "21f159dc7fb3b2c17fb4bc373b038cfdfd58fe063b4c6d101c86605c132f61fd"
+    },
+    {
+      "path": "scripts/allocation_optimizer.py",
+      "mode": "100644",
+      "sha256": "e8b8732016fcab7082c4f52016c8fc28eefb50df9ad8192fd3254c0f64cd6c9c"
+    },
+    {
+      "path": "scripts/analytics_router.py",
+      "mode": "100755",
+      "sha256": "d7189c26721fb225d05dd5f28e6c83c339b65b1892762ebc1dcbd783bc546e06"
+    },
+    {
+      "path": "scripts/build_case_examples.py",
+      "mode": "100644",
+      "sha256": "bd372510b8c001eb0c713bb2cdf896e71259e68516b8d6a18c6415f15e48d985"
+    },
+    {
+      "path": "scripts/build_readme_visuals.py",
+      "mode": "100644",
+      "sha256": "59442b0ac9fd745ed74d36ac5cef405249d3b39f30d004def8c0f256792a4a36"
+    },
+    {
+      "path": "scripts/build_release_manifest.py",
+      "mode": "100644",
+      "sha256": "18e49dbe042e7e39832254090aa09bf2766aabf0e78729a00815656921127df1"
+    },
+    {
+      "path": "scripts/build_tailored_source_snapshots.py",
+      "mode": "100644",
+      "sha256": "3554e6fce4dd27029613a340c40888aa681e1bb9ccfcde48a32d63f1a9ff9c1b"
+    },
+    {
+      "path": "scripts/build_terminal_decision_reports.py",
+      "mode": "100644",
+      "sha256": "ca32121389a9902525e25ea5ed5a923fc70ea694aa4cacf0ac3139bde8f18bb8"
+    },
+    {
+      "path": "scripts/configure_tailored_portfolio.py",
+      "mode": "100644",
+      "sha256": "d241656b5d56fcaf53aaaa7d6fa90a4155a2752bbbc40f3e5ec6cda55306bed9"
+    },
+    {
+      "path": "scripts/data_quality.py",
+      "mode": "100644",
+      "sha256": "31e0734c316d9922d2f4ed3aa0b2c99291bff369856acb67d4db52b3d80909d1"
+    },
+    {
+      "path": "scripts/decision_engine.py",
+      "mode": "100644",
+      "sha256": "46c203d1155f2f604cc7e22e11156c427d4e233d29137ddb68b4afb02240df27"
+    },
+    {
+      "path": "scripts/evidence_analysis.py",
+      "mode": "100644",
+      "sha256": "4af16106328b1d66c3443e1fba2afaa7ceb9d2c9e46db8930769e10f452f8bdc"
+    },
+    {
+      "path": "scripts/init_case.py",
+      "mode": "100755",
+      "sha256": "b79b6d0def6dbae15ea0300301cea0f77c8dc4e8ab76eef14f62467699836fef"
+    },
+    {
+      "path": "scripts/migrate_case_v12_to_v13.py",
+      "mode": "100644",
+      "sha256": "61973e06e07abc290bc3b577adbf4cd73820c46091373ad8cdd7258d2e7de362"
+    },
+    {
+      "path": "scripts/prediction_validation.py",
+      "mode": "100644",
+      "sha256": "16de0f15e8db89e0deeb5d958cd5ed3d86eef7cc97b492442087282bdb16df2f"
+    },
+    {
+      "path": "scripts/prepare_dataset.py",
+      "mode": "100644",
+      "sha256": "866f5226b0830e60bd3010e5ade62cbf1bd029156a28b5eae0e86f3ccbb58b32"
+    },
+    {
+      "path": "scripts/profile_dataset.py",
+      "mode": "100644",
+      "sha256": "c34121e07cc1f736b7080c568371b07ddea9687b09831d49ba9e82f925ac93bf"
+    },
+    {
+      "path": "scripts/report_visuals.py",
+      "mode": "100644",
+      "sha256": "b837efbb4e51eec66062f18a1187a61343d712d7c4fba91fc40027c07d7d270e"
+    },
+    {
+      "path": "scripts/route_question.py",
+      "mode": "100755",
+      "sha256": "19026df264e46927273fb52ecfa81c0fc79aac4c1b5363467d015c35c80a59ca"
+    },
+    {
+      "path": "scripts/run_case.py",
+      "mode": "100644",
+      "sha256": "3b0e1ad3672f44f3315b4c8dc45e1ac17d3685396f7fcd83cee99a5416a6c6d2"
+    },
+    {
+      "path": "scripts/validate_case.py",
+      "mode": "100644",
+      "sha256": "690fcafb466123f3a7957e67e4fc45b96a7dc6554a493b838a98b284b6a99801"
+    },
+    {
+      "path": "scripts/verify_portfolio_reproducibility.py",
+      "mode": "100644",
+      "sha256": "598dec4a098b1d0332d2a03387b396b10700609a543df519083eb68a5d3a5abd"
+    },
+    {
+      "path": "scripts/visual_system.py",
+      "mode": "100644",
+      "sha256": "b0a819fe1c39d622da556fc30d37c837f78e2175f0d80cd50613ed5c994035ad"
+    },
+    {
+      "path": "tests/README.md",
+      "mode": "100644",
+      "sha256": "c5d5cb0b5ccd33ac3b86dd8a01648a09e440060906f6fc4140f04951cc2548d0"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/README.md",
+      "mode": "100644",
+      "sha256": "88b339aeef587d0c8d8bf879e6690b014b8c4a7dc63725d36b3073baf4f30e5b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/ai-model-validation/case.json",
+      "mode": "100644",
+      "sha256": "64d9fad81aac5723f9027ec967a41c7d404986dc9f0c77ca6bbf0b89a873595e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/ai-model-validation/predictions.csv",
+      "mode": "100644",
+      "sha256": "2ba49b10ae2f1cad78afa241f6de50e9c4d8200083e4097a226bac9fe8ea48e5"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/ai-procurement-governance/case.json",
+      "mode": "100644",
+      "sha256": "302d637452b7641e057c2033bcfc8e2fce8d6f7eb76645ba9ce38ae6e47fce92"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/behavioral-policy-nudge/case.json",
+      "mode": "100644",
+      "sha256": "c6e6423c05a1edc88ea34f6c80e18b385ef661350aa8c7274c4b8d1021c14ea8"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/clinical-evidence-design/case.json",
+      "mode": "100644",
+      "sha256": "ecb4d5852e0af7e238cc07307ebfbcb85309fea1f9f950e39289cc1d358eb9cc"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/clinical-evidence-design/study-data.csv",
+      "mode": "100644",
+      "sha256": "9d10ba611564730b54ce1e412a30a65cd3c49d21e1c6c6189c55a12f0b5addc8"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/corporate-finance-capital-allocation/case.json",
+      "mode": "100644",
+      "sha256": "e12873e31763cf04f1f51c0d35aae9964268cffa2c5e566c4d6c46975e7d8744"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/fintech-credit-stress/case.json",
+      "mode": "100644",
+      "sha256": "ee573cabe0c4f5b04ed9f16a817202cab1e98028bc548aeeac931c31edc39133"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/health-resource-allocation/case.json",
+      "mode": "100644",
+      "sha256": "02b9dce81728971e6478b955535e21e0e86828703739d1a171f58904c7bbfd7a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/health-resource-allocation/optimization-config.json",
+      "mode": "100644",
+      "sha256": "612a3344f7e49c26551c38a2f3297b6d2c779b30f1f571b7cd815346bfb5b416"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/manifest.json",
+      "mode": "100644",
+      "sha256": "2a6dd5885007b9725c2880c3c25f10232022765288b198b0f34a46110d695d48"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/marketing-budget-allocation/case.json",
+      "mode": "100644",
+      "sha256": "9e50256284b1cfd83262cde0d8836bba2ca33fbf56336b838b8b7f53b73f4a4b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/supply-chain-resilience/case.json",
+      "mode": "100644",
+      "sha256": "a21cde5f7888c5968dc35c64c6d9422edc59bedc0d215d5ffab70f627377a99a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-cases/urban-regeneration/case.json",
+      "mode": "100644",
+      "sha256": "7ae31bacfc1a933ff5898a96c1231392c02a9e70ab9a0bbc327a4aeb10252bf5"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/README.md",
+      "mode": "100644",
+      "sha256": "16bdd1fe670506a5aa2c9f382676176b171c5e272a9dc56bc89481089058abe9"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/decision-report.md",
+      "mode": "100644",
+      "sha256": "33bc5499fb50cfbdee87fc696106e969e41a593190117ad3ac888bd2a7b4d5cf"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/decision-results.json",
+      "mode": "100644",
+      "sha256": "280ff15bc7c2932cc456ebf03cf820e121b920bbd202ba9a6921c3e9e7be5ea1"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "c265dc651f087a2e8f970526ed79ddf4e9025f747a17561db7f89b8bba735e0b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "d486ac049e89a25984ba1aacbf0aa3731702dfd23259f117266a55b3d4fa747e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "44725e949afa8f210d4389cf8cc7997fcf810bc88d3c2ab991431f0f4ba179fa"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "8d0c2731a37835032a1a5de17f4945c56cd398ff243bdd9c2f5e61d12a360d79"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "b0a41b00686dd0befcf91600a9a1f07a5f421119992aabb250d8a11833bee958"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "c2a744eb6ecc4c079103cd7a7e01079a9538d28dc2e772cacbcbfbd607a26316"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "3df8861676d17d4ecb8bd2c12dedab06a5e84ff508f334ef4edda5b49a3eaa52"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "001f21360e79d9f3fe2ec98cc2b08b6578e24f062f30ac5f6857869019223b5b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "b1071eeef1c6274dcdc6841a9a4ef1c85b0469af7ff11682468232d4500a7382"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-model-validation/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "30ede92cc0213c8093a34f36c69ba931509b9015e3a20f5e02c8335cd516bdea"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/decision-report.md",
+      "mode": "100644",
+      "sha256": "0a69171c23f871535e77db2a6dfcdf96b9aeb4dde110b2bbbbd2039531d94852"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/decision-results.json",
+      "mode": "100644",
+      "sha256": "0ae6cb4c811e082d2b24565919e7566ca62492a869c51869649dbbdb3f7159f3"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "69b60edc73a96890ecf094bc7a8c3694dd56b24ce1a94f397d105119d7adc0d3"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "311ed815c5e9429a49fa095ea85843257db0a27576d4ff177b462d9e62e9aade"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "a2ebf6ace0998b83bef7b22f508a02695d9b5ce39e81b2c5e41deefbf6b2b68a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "182caad9bee53f60bcbb5c95b4e73d3c82b42c0df870694ac4df547909c0ee66"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "86fbf202b8f5532f8323a2f0602332f6b48b0799cbb8f03c2211544de6b7a488"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "c896707fb9cc316189e25a07473c9bf2fd31d9ba10930be63728a4b00977eab3"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "ed67f6d8ed6625fc62ae68dc81e40dc52f6167fec910735d3ca8ed6cb6992229"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "38cc2b3eaed6a5d9ff771bc17650ed2866860326498a3496307939457a52a673"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "e07b4335b116653182761c1a7ed6d19a8231f8f1647c2e69004255b077a50e46"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/ai-procurement-governance/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "289c30816c7206a3b38d29e6b13e67564fbe6dee0ce880ae20a3fe7220bf9d24"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/decision-report.md",
+      "mode": "100644",
+      "sha256": "d77a996b95812dd3f19b30ee58dc35b909b3d1eda13785f2090ae2200a69a537"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/decision-results.json",
+      "mode": "100644",
+      "sha256": "982bce625dfdbb4c5fae4346c0fbeb9c9ef7324b38c19ab6d060be51b192595c"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "14fe5070a1f79f4e14a039cdfc46c16180626c57f12eb9b6c1bcb8a9f8378d3a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "0d28556419e74e53050e67e8b59a3fde2a615578228b68b66598be5fec1abef2"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "2119163539a22bc8514b5b4f40253d57fffab295fa39c6ba4dc3fd93972881fd"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "cd553b4af4b093adc6b2daa48967f0c69d27da7fc138bd34a5430ee35b267736"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "02bb4cf5466a06f6d2d66555c873b61308ce44278d1b07ea2ec5c746050fe560"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "64f33c36db43745c32c09702fdc23948d65eeaa98965c64dacf77c82642027f9"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "8832a7496fd4e1f2716f97d489067706a69eda80e09f199d46db184ff0e6ea15"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "a717956408adeb096834746196c607ae3c92bfac0f0caa048fed24616cd19be1"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "0196836f171292e3247c6261cd3b4fa80658b552b63e177ab2a9a7b22a0a3bd8"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/behavioral-policy-nudge/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "168c96ffddb0c5b02f44ea350cffbf6d4eb14110dd38a5b0b3363f9f85bcb4d9"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/decision-report.md",
+      "mode": "100644",
+      "sha256": "6059d9d217315ad592838053eeaf0748fa6caab22cfd41ec777c606f58dab432"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/decision-results.json",
+      "mode": "100644",
+      "sha256": "8e7c8486dfd4a8e622efa029503f71af2d7b16d6d836d01768abbac02687998b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "d490b1c2c193f15c30ce3e54494c7490894d62650ea6587d44313bc061292a3e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "6429be8ecabe03e6c848872dd0a259d8ebaf8e8f81efb7bf1e40699464429142"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "4c8ecef447630d2bce2c3be8ea372571a59f2fcf5ea506fc03d87e577001fc89"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "ff78eb0acaca607e074a6d2b02304f5ce80fca5b173f2c9b553e48a22366b8ad"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "4f571227733a7ddf52b1d493310a553ea06d8ab8d01952f7e378bfc507f821b9"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "363ea86538af4c87ad6c3e2d6303923067a281895bd82188e145c5afa4cbf63d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "9b628655633c61e854f8f2a04b94f198f214b0a36107e4cb20a2ff49374c26aa"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "47c1be1a715d02a3855eea3bab314a88304d5d79e5b3f1ccabd79fd74fa68042"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "b8106cdef8d60df6dbd7f2980a17da2040f94b91371ef6a98112898554c66fe9"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/clinical-evidence-design/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "820a1151df4cf5e55e4120959006deafb8cf41f245261980e08f4b5ba67214c2"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/decision-report.md",
+      "mode": "100644",
+      "sha256": "5852b417fb9f8300f274fbb7f75935a762ecd859fddae3901064c87bc582d8c6"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/decision-results.json",
+      "mode": "100644",
+      "sha256": "b89343a0ccdf9e5ad0591a28372c101d23f87f761603f9b55e3d28c8606549c2"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "5593434d8ffa36b85924ccdc46c1056401112cebc381142a0bb1dfe9a9a38760"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "d9a1dbe6945385fd6f5518854ad5b63c7cca137b99ab1799a4905d69c262e952"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "c6e3070e099b9abaea3d4c280a9b94ced888d7bd6de6bdb4419bfe657c7f32f7"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "02bbb195cc9583f6789dc6a036bafc8700a55cd084648b640d89c5d41fcb689e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "cdbc4fc0b280d9d4302dfc4b4081db193da8c2e2c0012ec34fd7258b0941bdad"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "37b6f8d5d3bb70bbf335c71a78d880a6550e23cf29b75ba466da4332a9271e4c"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "026bb9a8ebaeeaccebd9114f7f038a82a255d3769be496a73fae1eafc36093ec"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "dd89e0ba0eaf794539372f8d6911a3f73b9efa7c20a99413150086582412708c"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/corporate-finance-capital-allocation/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "119b82d8f16bffb67fede06d3b93c97f46823dfdee8dda34499c679a3b07a65f"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/decision-report.md",
+      "mode": "100644",
+      "sha256": "90a65ef32f8b274fe7ba46be0426da3d5fb2245aa20f5ac166910c6a158f73c5"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/decision-results.json",
+      "mode": "100644",
+      "sha256": "a696c0159ccbd6b07f1abe14bb318548744882bb1cea06aec2830aa11a727a46"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "4e10d7cae4a6b9df4db10e48ff58c90e334619d6928d2b0e91d114f15700d8a2"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "b7fa5264fa88e6cc7741b8c804a42a24bf2d36f3cb08ddb939b247e51d9b052f"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "ddff6f595732effc561febdd1bfb46a39ebc16289d5070e79edd0ee26e32451d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "6811b6b4c4322afd658577557c4b9235f8e2abed4594d9e319fcc7c24c493eb7"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "b8fa1e56765dad6db50108f5d9125209ba8cde27268e8cf18c982381edcc2d5a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "9c6c77bcb2069d09ef71c28a6c4194039c2fb6c15d860e72231f45342ebedaff"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "6ad6951011d23046f52224c98967be5a94bc775bfb12007b261a1418a8e72658"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "1c9a529d3e4d6409c428a0d53b5e0732ad1a376cf3773eaac037e5f589954869"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "853b87b3398ed78f037b9c7f8d27d0d096379e74c8d2fa8acfcce13d80d71736"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/fintech-credit-stress/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "fa28ec6ae10db82d1dc4dc5fb2b0aec9955bc2755fbaa4df54e9a2e42490f0ab"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/decision-report.md",
+      "mode": "100644",
+      "sha256": "19a731220258a049e5b3c5267e11ae2e6f83131a360d67be92e20d8882c69f24"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/decision-results.json",
+      "mode": "100644",
+      "sha256": "b6889a7bf4bb12fbfabaaad7a798d36bb72d1a56dab97841e98aaaa91beba3e2"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "5a2e886beb2b245bd9806b8ccde9987b1e586709f2d93614c8061b07e82ba7af"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "674f7108a64fcaabf733558dfdde9a142c55b369aa99339bcfc03f972b112a24"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "725c3ab5965ca983721a1a195c07329c7f699975b365facfe64db99f04cf7850"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "83a1a2a93ab4bf1694a6106526075340e91bd647ed26de147771a04132f64c89"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "cdd25e445ba1f006c2b22df363d81ecef571ce8071dc11f9cfa85335f1c97615"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "cd526a842c2f48c0b18a864c88fa26ec8dea38c62e1022022ce5ad71fc043203"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "9ef7297c9804cec710c055cdc2eaa824c6408b191ec84e22c7d6a0356f49c7a1"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "b2b0ade68d1b62882735c858a67a055a10cf63d806acdeb4c0241b9568016026"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "e88661575b7f1135a4c0b045eb087b51f07f93392c6eff5e6c485e0f389dc38b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/health-resource-allocation/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "a040e8a259d5c2853b1caeabf293dd7c4a3e0195387ccb4c8a84a25da780676d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/decision-report.md",
+      "mode": "100644",
+      "sha256": "e468a3906d6239be2d818aea4bfa3445896a127eb01b714aac6aa36b095218f0"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/decision-results.json",
+      "mode": "100644",
+      "sha256": "96257c406eb4be1c9c302713d2198b415066997324cce351c91bf84b79f62c1d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "fe9845c4c3e0260d25dc6d88d9b12394c2354a28374a8984ffea10be282c4b6d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "7e4005fd64446212545e599267178cfd53c9ae2d221776941f7a05778a207911"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "09dd2e032ec11e8da846c6e0bff46c7eb38c131fcd095bea319173ad0112837f"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "fc717785a52f65d8b5ac5286ec36fa8ce0efa1c24f8d9ad5f6ae3ae28613bc55"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "41922aaa9dbd84ada0abb1605208b76cef0ac9e3e0c5acc485237e825c700239"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "e06fc36266190902bfee712a26abc85ed41a5b77c06225abe7b49aef83deca47"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "892cf71ca4f83d397ba5682d0f6b5e388949b3e6f603c74ab3e5ff20873ad253"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "103cdc3926b58596e7ac1f68ca77ff77b5835333959b6a14ddf80f49430fa54e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "552f5aea1c32aed44e671309d5576f91e56f4be94a7ca12651593c2be338de53"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/marketing-budget-allocation/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "60360724ebbef85491e47c0ee66a50ff14645688072b41ada7ad989bcc565d2a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/README.md",
+      "mode": "100644",
+      "sha256": "9795345a2a5e670494b7d30a8439de7fd9eba6352bcb49830aea2274c002f71a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/evidence-analysis/evidence-report.md",
+      "mode": "100644",
+      "sha256": "28492e170e9db2e10606095c992d00aebfee985170d4d641c934cda0ebd43d7c"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/evidence-analysis/evidence-results.json",
+      "mode": "100644",
+      "sha256": "c9c3c607e3fc5c09754ebec827a455429c597fec139d271750208cdb17c1f9b6"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/evidence-analysis/evidence-summary.svg",
+      "mode": "100644",
+      "sha256": "373f8bba6171479edbb5dfb14769ab35ec49a0d6c731230ed37810e2a99f4bdf"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/prediction-validation/prediction-report.md",
+      "mode": "100644",
+      "sha256": "8ab8b45eab240d44fcfdeaec83f681f6f33b81cef51dd6b02442806ea692834e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/prediction-validation/prediction-results.json",
+      "mode": "100644",
+      "sha256": "3ecbdb9e71e9631566984cab014ded25319948245239ca235ac5b669cd1ad16b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/prediction-validation/prediction-validation.svg",
+      "mode": "100644",
+      "sha256": "8a6dc7be9007f490da4c39a2ec2f790828e677e79eba026f7d7b0c273660bc24"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/resource-optimization/allocation-ranking.svg",
+      "mode": "100644",
+      "sha256": "f01b84822e0f0376dcc66002c7fce3b35b9499f635c8a99423844707f9922822"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/resource-optimization/optimization-report.md",
+      "mode": "100644",
+      "sha256": "27714ee6a1d6ad8b77f8a4780f737f8703efd6859e3ab7c7112b70a2ddbdc009"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/methods/resource-optimization/optimization-results.json",
+      "mode": "100644",
+      "sha256": "cf0da063768b0c653c24237cf3c41550c896816ffa06fc879f63455004d13186"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/portfolio-index.json",
+      "mode": "100644",
+      "sha256": "2b74617843f5f3493818fe1024b642fe67f85f4561f31e20518a73ec542815fb"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/portfolio-readout.svg",
+      "mode": "100644",
+      "sha256": "3e4f7d5fdca43a33faa2bc03c2410ce14fc00bcebd6122df5bf10e5de312d2e5"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/question-routing/analysis-blueprint.json",
+      "mode": "100644",
+      "sha256": "2e5126488fe21d225796278b19ced774cca729bfe559c05e2407a5788e0d3f08"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/question-routing/analysis-blueprint.md",
+      "mode": "100644",
+      "sha256": "cbd0aa7d5aa7f7950624d01bbdf7f98e0e18851287ba1f312ab30798da522e97"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/question-routing/figures/analytics-lifecycle.svg",
+      "mode": "100644",
+      "sha256": "519360d14bf40181aad9a27173e495f758d8226424795ce59f4f9d38eb37512e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/decision-report.md",
+      "mode": "100644",
+      "sha256": "95922232ac15518bd012f517d36e31a2d8f7d5f8f02142bc9950f399725c40af"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/decision-results.json",
+      "mode": "100644",
+      "sha256": "ee58721cc4d7f2d42d92968054eb21f6c8b7f6f8d97258ddf5f94961f7286f0f"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "2ead2f0dd120dcc2daeb0ebd6dadc72d099b256402319ee90de3733e84cf2ea7"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "9817460217902879392a34f792464b8e5f9cec8214ca57c451ec1a245c58358b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "b0a14144fc215fef4497e0a56e75cc92ad62c6b012f10c5c9b309d2bee7220aa"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "c2516b0634ef1bceb4d90fbb800afc443d74fb41915b1c4209ecbaa9339e30c6"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "458618f4a9d89d6b6370598a8b898183a9c5089c9b80b8a03cdc44e52d734734"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "8baafded9e453a7f16dbdf564e23781c918ae1caae071b99f6da2a69178d797f"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "cfea49586ff24966122e381a02795517d8deaf5b69165d9794f8b900691f540a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "24ead52a39053f2463428f7c01887ec549a9a341f43278335945297d1a02c893"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "a3da1c9a67117dc7517ac596a4df9bdd808f521f1cefa15159516c525d332485"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/supply-chain-resilience/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "812f1c090db1bda79d115ac61a575d63542eb948a955f06bf7f79a790f581d8a"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/decision-report.md",
+      "mode": "100644",
+      "sha256": "6cf6961ff5d194aefade3e7e17a7f80d21cfb3a5c1d1660630af3f0a7f0666b4"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/decision-results.json",
+      "mode": "100644",
+      "sha256": "1f2bf1a1ba6587073525a91712fa4c48d66ea9955679d76bdb5349f10b125c31"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/alternative-ranking.svg",
+      "mode": "100644",
+      "sha256": "3187ae518657e4ef75b1ee6a012fe73d03468025c328d6f6fc6c71fbc4a9f056"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/chart-map.json",
+      "mode": "100644",
+      "sha256": "34477f2917d921926c37bc3a2432a600dd10cba889c7c166716cd61bd03f6069"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/constraint-risk.svg",
+      "mode": "100644",
+      "sha256": "2ccbdff2bb80300c7b54e201bba3a98bc1ff731ca9b30e241e99b61eeeb5904e"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/correlation-stress.svg",
+      "mode": "100644",
+      "sha256": "dd15bc806c04d14f7c6943b8b872e1d513438b8f53b5cfc1575a97c2dbb467e0"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/criterion-scorecard.svg",
+      "mode": "100644",
+      "sha256": "9615f5ba2f17f54160953eca36a2cd550a6814f45cc54fc898ba0e0177cb2d5b"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/decision-scorecard.svg",
+      "mode": "100644",
+      "sha256": "044df10bdaddf215acbc8c280563b6148022a667d5e0214ed79cf306cb51effc"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/group-impact.svg",
+      "mode": "100644",
+      "sha256": "8bf6c6486d8e54128af964973f6ab983781a77d258b5736838b9f8243a4f3a8d"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/robustness-profile.svg",
+      "mode": "100644",
+      "sha256": "66318e69ee7ce5c8dab88451525929d8b7789377d13c83f56f9772a0bbd17578"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/scenario-performance.svg",
+      "mode": "100644",
+      "sha256": "fecbe4b1c592ed8968ecdf229624f549bc60802c31dee831b4241ef05edcacbb"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/utility-uncertainty.svg",
+      "mode": "100644",
+      "sha256": "7246151c12e61a66e33f243bfea4d5488ea17f52bb5a97e4f1d8bb8563410f13"
+    },
+    {
+      "path": "tests/fixtures/synthetic-outputs/urban-regeneration/figures/weight-sensitivity.svg",
+      "mode": "100644",
+      "sha256": "6388e748f4ffc3595b8f8f580626247c12a17ffd7965ffa2fbfd7d9796bc4752"
+    },
+    {
+      "path": "tests/test_case_initializer.py",
+      "mode": "100644",
+      "sha256": "a860eefda940f7fe4fa59395b3fad13bc986ec5a5a0a1e98f53d03016d3d7cd0"
+    },
+    {
+      "path": "tests/test_data_quality.py",
+      "mode": "100644",
+      "sha256": "e862988bf2832756d3e0844065924b6ff70a56763ef50c57305dec1ceb93d860"
+    },
+    {
+      "path": "tests/test_decision_lab.py",
+      "mode": "100644",
+      "sha256": "c566d803634b7ca54bdcf3ef407f2b0ec6e3d8207bffff4b49b6c3f17a6553cd"
+    },
+    {
+      "path": "tests/test_package_integrity.py",
+      "mode": "100644",
+      "sha256": "ca6ad1b27686527de02c0bc272c857e33379afc0a41e3cda407dac3f0b8cd4b9"
+    },
+    {
+      "path": "tests/test_real_portfolio.py",
+      "mode": "100644",
+      "sha256": "3275caf9a030ea12fae009d5218412e902672f5286cc8a3ddbc0b48f462bcd7e"
+    },
+    {
+      "path": "tests/test_reproducibility_and_source_security.py",
+      "mode": "100644",
+      "sha256": "703ebfb8e732941517c57838c5f22b854b0d2103118404725b319dff74cc62d9"
+    },
+    {
+      "path": "tests/test_v5_numerics.py",
+      "mode": "100644",
+      "sha256": "b4965569b582dc9b255803a7aaa4542e3527fc20eac7d394b6dcd8d398b57976"
+    }
+  ]
+}
