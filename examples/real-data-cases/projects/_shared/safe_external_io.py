@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from typing import IO, Any, Iterator
 
-DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0.3"
+DEFAULT_USER_AGENT = "High-Stakes-Analytics-Decision-Lab/1.0.4"
 DEFAULT_DOWNLOAD_LIMIT_BYTES = 512 * 1024 * 1024
 DEFAULT_RESPONSE_LIMIT_BYTES = 64 * 1024 * 1024
 MAX_REDIRECTS = 5

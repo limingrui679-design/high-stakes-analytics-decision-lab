@@ -3,6 +3,24 @@
 All notable public changes are documented here. The repository follows
 [Semantic Versioning](https://semver.org/).
 
+## [1.0.4] - 2026-08-12
+
+### Changed
+
+- Refreshed `agents/openai.yaml` using only supported skill-interface metadata:
+  a concise user-facing description, the established teal brand color, and a
+  122-character default prompt that retains the explicit Skill invocation.
+- Kept the repository release version out of agent metadata because it is not a
+  supported `agents/openai.yaml` field; release identity remains in citation,
+  changelog, tag, manifest, and Release assets.
+
+### Verification
+
+- Added a metadata regression test covering the supported interface keys,
+  description and prompt lengths, brand-color format, and named Skill mention.
+- No case, raw source, analytical result, report, or figure changed in this
+  release.
+
 ## [1.0.3] - 2026-08-11
 
 ### Fixed
@@ -115,6 +133,7 @@ All notable public changes are documented here. The repository follows
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
+[1.0.4]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.0...v1.0.1

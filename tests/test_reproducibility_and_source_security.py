@@ -828,7 +828,7 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             digest = hashlib.sha256(payload.read_bytes()).hexdigest()
             manifest = {
                 "schema_version": "1.1",
-                "release": "1.0.3",
+                "release": "1.0.4",
                 "algorithm": "sha256",
                 "files": [
                     {"path": "payload.txt", "mode": "100644", "sha256": digest}
@@ -864,7 +864,7 @@ class ReproducibilityAndSourceSecurityTests(unittest.TestCase):
             digest = hashlib.sha256(payload.read_bytes()).hexdigest()
             manifest = {
                 "schema_version": "1.1",
-                "release": "1.0.3",
+                "release": "1.0.4",
                 "algorithm": "sha256",
                 "files": [
                     {"path": "payload.txt", "mode": "100644", "sha256": digest}

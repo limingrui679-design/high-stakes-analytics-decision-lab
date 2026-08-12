@@ -78,6 +78,25 @@ class PackageIntegrityTests(unittest.TestCase):
         )
         self.assertIn(portfolio_sentence, normalized_readme)
 
+    def test_agent_interface_metadata_is_supported_and_compact(self) -> None:
+        agent_metadata = (ROOT / "agents" / "openai.yaml").read_text(
+            encoding="utf-8"
+        )
+        self.assertTrue(agent_metadata.startswith("interface:\n"))
+        self.assertNotRegex(agent_metadata, r"(?m)^\s*version:")
+        interface = dict(
+            re.findall(r'^  ([a-z_]+): "([^"\n]*)"$', agent_metadata, re.MULTILINE)
+        )
+        self.assertEqual(
+            list(interface),
+            ["display_name", "short_description", "brand_color", "default_prompt"],
+        )
+        self.assertEqual(interface["display_name"], "High-Stakes Analytics & Decision Lab")
+        self.assertLessEqual(len(interface["short_description"]), 30)
+        self.assertRegex(interface["brand_color"], r"^#[0-9A-F]{6}$")
+        self.assertLessEqual(len(interface["default_prompt"]), 128)
+        self.assertIn(f"${SKILL_NAME}", interface["default_prompt"])
+
     def test_local_markdown_and_html_links_resolve(self) -> None:
         missing: list[str] = []
         markdown_pattern = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")

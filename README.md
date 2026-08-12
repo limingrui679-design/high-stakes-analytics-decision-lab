@@ -44,14 +44,14 @@ npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 
 ## Release
 
-The current stable release is [`v1.0.3`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.3).
+The current stable release is [`v1.0.4`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.4).
 Its versioned source package and SHA-256 checksum are published together on
 the release page; citation metadata is available in [`CITATION.cff`](CITATION.cff)
 and release changes are recorded in [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Verification & boundaries
 
-| Layer | v1.0.3 verification | Boundary |
+| Layer | v1.0.4 verification | Boundary |
 |---|---|---|
 | Release files | Root manifest schema 1.1, exact file set, strict non-symlink tool-cache exceptions, Git executable bits, per-file SHA-256, source manifests, and download receipts | Hash agreement proves artifact identity, not empirical validity |
 | Rebuild | All fifteen projects rebuild from a Git checkout or a source ZIP without `.git` | Reproduction confirms the reviewed workflow and declared numerical tolerance |
@@ -495,7 +495,7 @@ across supported Python versions. Derived result hashes are exempted only when
 the underlying structured output passes the semantic comparison. See the
 [reproducibility contract](references/reproducibility-contract.md).
 
-The 93 public tests cover data-readiness safety, custom-workspace
+The 94 public tests cover data-readiness safety, custom-workspace
 initialization, the command-line round-trip,
 routing, the decision engine, generator idempotence, fifteen-project source hashes, the evidence
 contract, independent numerical benchmarks, properties, extreme inputs,
@@ -527,7 +527,7 @@ high-stakes-analytics-decision-lab/
 ├── examples/real-data-cases/       # fifteen complete reproducible projects
 ├── references/                     # quality, methods, evidence, reporting, visuals
 ├── scripts/                        # profiling, preparation, analysis, decision
-└── tests/                          # complete 93-test standalone regression suite
+└── tests/                          # complete 94-test standalone regression suite
 ```
 
 Start with [SKILL.md](SKILL.md). It defines the complete workflow, evidence
