@@ -18,12 +18,27 @@ boundary.
 Before opening a pull request, run:
 
 ```bash
-python3 -m unittest discover -s tests -v
-python3 scripts/verify_portfolio_reproducibility.py
-ruff check scripts tests
-mypy
-codespell --config .codespellrc README.md CONTRIBUTING.md references scripts tests
+make verify
+make quality
 ```
+
+The Make targets are convenience entry points, not a second build system. The
+equivalent direct commands and the CI matrix are documented in
+[`docs/verification.md`](docs/verification.md).
+
+## Documentation structure
+
+- Keep `README.md` focused on product value, the shortest useful path, the
+  portfolio, and public verification.
+- Put onboarding, architecture, repository orientation, and maintainer
+  procedures in `docs/`.
+- Treat `references/` as the executable Skill contract library. Changes there
+  can alter runtime behavior and require corresponding tests.
+- Keep `SKILL.md` at the repository root so Agent Skills-compatible runtimes
+  can discover it.
+
+See [`docs/repository-layout.md`](docs/repository-layout.md) for the complete
+canonical-versus-generated file map.
 
 ## Evidence and claim rules
 
@@ -44,9 +59,7 @@ The principal commands are:
 
 ```bash
 python3 scripts/configure_tailored_portfolio.py
-python3 scripts/build_readme_visuals.py
-python3 scripts/build_terminal_decision_reports.py
-python3 scripts/build_case_examples.py
+make visuals
 ```
 
 If a source manifest or raw-source lock changes, rerun the affected project's
@@ -60,8 +73,15 @@ hashes; it permits only bounded cross-version floating-point differences and
 their derived artifact receipts. See
 [`references/reproducibility-contract.md`](references/reproducibility-contract.md).
 
+Documentation-only changes must still pass the local-link, package-integrity,
+and spelling checks. A visual change must begin in the canonical generator or
+shared visual helper; do not hand-edit generated SVGs, galleries, reports, or
+case cards.
+
 ## Pull requests
 
 Keep changes focused. Explain the decision or evidence problem being solved,
 list generated artifacts, report exact verification commands, and identify any
-claim-boundary or source-license implications.
+claim-boundary or source-license implications. If a change is unreleased, add
+it under `Unreleased` in [`CHANGELOG.md`](CHANGELOG.md); do not rewrite the
+manifest of an already tagged release.

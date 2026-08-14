@@ -14,9 +14,21 @@ Describe the bounded problem this change solves.
 List canonical inputs changed and every regenerated report, figure, manifest,
 receipt, gallery, or case card.
 
+- [ ] Generated files were changed through their canonical source or builder.
+- [ ] Documentation and runtime-contract changes are in the correct layer
+      (`docs/` versus `references/`).
+
 ## Verification
 
-- [ ] `python3 -m unittest discover -s tests -v`
-- [ ] `ruff check scripts tests`
-- [ ] `mypy scripts`
+- [ ] `make verify`
+- [ ] `make quality`
 - [ ] Generated-artifact and source-hash checks pass.
+
+List any intentionally skipped gate and explain why it does not apply.
+
+## Release impact
+
+- [ ] `CHANGELOG.md` records the change under `Unreleased`.
+- [ ] An existing tagged release manifest was not rewritten.
+- [ ] If this prepares a release, citation, version, tag, manifest, archive,
+      checksum, and public redownload identity will be verified together.

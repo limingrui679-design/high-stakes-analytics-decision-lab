@@ -3,6 +3,38 @@
 All notable public changes are documented here. The repository follows
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+No entries yet.
+
+## [1.0.5] - 2026-08-14
+
+### Added
+
+- Added a human documentation center with focused getting-started,
+  architecture, repository-layout, and verification guides.
+- Added a small `Makefile` with memorable test, portfolio, verification,
+  quality, and visual-regeneration entry points.
+
+### Changed
+
+- Reframed the root README as a concise public landing page with one quick
+  start, a visual system overview, a portfolio entrance, reproducible
+  verification, and clear reviewer and maintainer paths.
+- Separated human guides in `docs/` from enforceable runtime contracts in
+  `references/`, while retaining the root `SKILL.md` discovery contract.
+- Extended CI prose checks to cover the new documentation layer.
+- Made Git-checkout release tests verify the current release tag against its bound content
+  commit and annotated tag, while retaining direct file, mode, allowlist, and
+  hash verification for published source trees without Git metadata.
+
+### Verification
+
+- Preserved the existing chart generators, SVG visual language, fifteen case
+  pipelines, source snapshots, machine results, reports, and decision outputs.
+- Bound the release manifest to the reviewed content commit, then verified the
+  final tagged source tree and no-Git archive path independently.
+
 ## [1.0.4] - 2026-08-12
 
 ### Changed
@@ -133,6 +165,8 @@ All notable public changes are documented here. The repository follows
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
+[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.2...v1.0.3
 [1.0.2]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.1...v1.0.2

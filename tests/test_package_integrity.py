@@ -3,7 +3,10 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
 import sys
+import tarfile
+import tempfile
 import unittest
 import urllib.parse
 import xml.etree.ElementTree as ET
@@ -46,6 +49,17 @@ class PackageIntegrityTests(unittest.TestCase):
             f"npx skills add limingrui679-design/{SKILL_NAME} -g",
             readme,
         )
+        self.assertLessEqual(len(readme.splitlines()), 320)
+        for relative_document in (
+            "docs/README.md",
+            "docs/getting-started.md",
+            "docs/architecture.md",
+            "docs/repository-layout.md",
+            "docs/verification.md",
+        ):
+            with self.subTest(document=relative_document):
+                self.assertTrue((ROOT / relative_document).is_file())
+                self.assertIn(relative_document, readme)
         citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
         version_match = re.search(r"(?m)^version: ([0-9]+\.[0-9]+\.[0-9]+)$", citation)
         self.assertIsNotNone(version_match)
@@ -205,6 +219,72 @@ class PackageIntegrityTests(unittest.TestCase):
         self.assertEqual(paths, sorted(paths))
         self.assertEqual(len(paths), len({path.casefold() for path in paths}))
         self.assertNotIn("RELEASE-MANIFEST.json", paths)
+
+        git_checkout = (ROOT / ".git").exists()
+        content_commit = manifest.get("content_commit")
+        release_tag = manifest.get("release_tag")
+        archived_entries: dict[str, tuple[str, str]] = {}
+        if git_checkout:
+            self.assertIsInstance(content_commit, str)
+            self.assertRegex(content_commit, r"^[0-9a-f]{40}$")
+            self.assertIsInstance(release_tag, str)
+            assert isinstance(content_commit, str)
+            assert isinstance(release_tag, str)
+
+            def git_bytes(*arguments: str) -> bytes:
+                return subprocess.run(
+                    ["git", *arguments],
+                    cwd=ROOT,
+                    check=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                ).stdout
+
+            tagged_manifest = git_bytes(
+                "show", f"{release_tag}:RELEASE-MANIFEST.json"
+            )
+            self.assertEqual(tagged_manifest, manifest_path.read_bytes())
+            binding_changes = git_bytes(
+                "diff", "--name-only", content_commit, f"{release_tag}^{{}}"
+            ).decode("utf-8").splitlines()
+            self.assertEqual(binding_changes, ["RELEASE-MANIFEST.json"])
+
+            with tempfile.TemporaryDirectory(prefix="release-manifest-") as temp:
+                archive_path = Path(temp) / "content.tar"
+                subprocess.run(
+                    [
+                        "git",
+                        "archive",
+                        "--format=tar",
+                        f"--output={archive_path}",
+                        content_commit,
+                    ],
+                    cwd=ROOT,
+                    check=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                )
+                with tarfile.open(archive_path, mode="r") as archive:
+                    for member in archive.getmembers():
+                        if member.isdir():
+                            continue
+                        self.assertTrue(member.isfile(), member.name)
+                        extracted = archive.extractfile(member)
+                        self.assertIsNotNone(extracted)
+                        assert extracted is not None
+                        digest = hashlib.sha256()
+                        while block := extracted.read(1024 * 1024):
+                            digest.update(block)
+                        mode = "100755" if member.mode & 0o111 else "100644"
+                        archived_entries[member.name] = (mode, digest.hexdigest())
+            self.assertEqual(
+                paths,
+                sorted(
+                    path
+                    for path in archived_entries
+                    if path != "RELEASE-MANIFEST.json"
+                ),
+            )
         for required in (
             "README.md",
             "SKILL.md",
@@ -215,13 +295,15 @@ class PackageIntegrityTests(unittest.TestCase):
         for entry in manifest["files"]:
             with self.subTest(path=entry["path"]):
                 self.assertIn(entry["mode"], {"100644", "100755"})
-                source = ROOT / entry["path"]
-                self.assertTrue(source.is_file())
-                self.assertFalse(source.is_symlink())
-                self.assertEqual(
-                    hashlib.sha256(source.read_bytes()).hexdigest(),
-                    entry["sha256"],
-                )
+                if git_checkout:
+                    observed_mode, observed_hash = archived_entries[entry["path"]]
+                    self.assertEqual(observed_mode, entry["mode"])
+                else:
+                    source = ROOT / entry["path"]
+                    self.assertTrue(source.is_file())
+                    self.assertFalse(source.is_symlink())
+                    observed_hash = hashlib.sha256(source.read_bytes()).hexdigest()
+                self.assertEqual(observed_hash, entry["sha256"])
 
 
 if __name__ == "__main__":
