@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "release": "1.0.4",
-  "release_tag": "v1.0.4",
-  "content_commit": "f76157519781571f4dce2bc90747936efe5c003f",
+  "release": "1.0.5",
+  "release_tag": "v1.0.5",
+  "content_commit": "4bf64046ba461a08951afb3b7eefb93cf8312239",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.4",
-  "release_commit_binding": "The annotated v1.0.4 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.5",
+  "release_commit_binding": "The annotated v1.0.5 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -26,7 +26,7 @@
     {
       "path": ".github/PULL_REQUEST_TEMPLATE.md",
       "mode": "100644",
-      "sha256": "b85b10c1713a59397657d1b7aac78c8939eb97d5a9383606a5a202e039525603"
+      "sha256": "edf7f95a24692769759cb2144a9e35288eece3f960c87a390039de9af17114eb"
     },
     {
       "path": ".github/dependabot.yml",
@@ -41,7 +41,7 @@
     {
       "path": ".github/workflows/verify.yml",
       "mode": "100644",
-      "sha256": "26cda6167bd461a72eb1a0e9a40e5ea064aa0adc73388d487244528f8354f557"
+      "sha256": "c4192c291a4b060db607aa7ca8233554fec0742c41872c52e8beb7183b0c271e"
     },
     {
       "path": ".gitignore",
@@ -51,12 +51,12 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "6708e5852995af369f3012414ebd9bcb036e4c5eb89f90ef48e42942fd724160"
+      "sha256": "b86621747401423f90fe1b88f899e66054e929c98455cb2152850137e9e5cfff"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "275df1df24213fb11eaa7d577d27f06847a4576a6d273f32365f29222662a03c"
+      "sha256": "e8784690821cf98552594e74e3a008626f208c196a9cd3db3ddbe64a42dacb07"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -66,7 +66,7 @@
     {
       "path": "CONTRIBUTING.md",
       "mode": "100644",
-      "sha256": "a6e28fc6984fa7281c16ac53b20d975e03cb1a09087b1ad5e5bdb30d88321ca6"
+      "sha256": "26b2023dc8068782d96092c388f0e89ec0948bb28d588c235ff27bca37562f9d"
     },
     {
       "path": "LICENSE.txt",
@@ -74,9 +74,14 @@
       "sha256": "dcb9337504523d296473fcf472df760b7edc484f7fd9f5d752ced957957eea26"
     },
     {
+      "path": "Makefile",
+      "mode": "100644",
+      "sha256": "e65845dceec0290fdd96fc413e76dbfa3e5825cf97ab4fa571f6ab3713029a40"
+    },
+    {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "b509ebb90bb7987662929f8fe8c896520d634948019dbbfaa11da0c48fdc8e0e"
+      "sha256": "2cb1deb453096c080c275d3d89303b962b95c2c8db2dbd093afe5a89ca05c725"
     },
     {
       "path": "SECURITY.md",
@@ -122,6 +127,31 @@
       "path": "assets/report-layers.svg",
       "mode": "100644",
       "sha256": "5b404055ccf8f721348330b55c0daf663e7e77ea94a0aa79fa980182670575a7"
+    },
+    {
+      "path": "docs/README.md",
+      "mode": "100644",
+      "sha256": "44d68902ed8304d85070294be32d176795f653079bf6ca31df81789e71803a0c"
+    },
+    {
+      "path": "docs/architecture.md",
+      "mode": "100644",
+      "sha256": "438c1c8bd1d5273101197daf44edc4803961a76063d289471d21a1a122cd7cb5"
+    },
+    {
+      "path": "docs/getting-started.md",
+      "mode": "100644",
+      "sha256": "51ffcfd9e950ee150b2a229330f5b779c3d27743125bc79d83492fffcfee642d"
+    },
+    {
+      "path": "docs/repository-layout.md",
+      "mode": "100644",
+      "sha256": "f6cda7344f5a72f5ad1462954b387a3af4c61b022eaea24d55656d79d4d9627f"
+    },
+    {
+      "path": "docs/verification.md",
+      "mode": "100644",
+      "sha256": "9bd2240ea457d703e07b30521e44517418bab06a717e25e5784a05d1b45cbac8"
     },
     {
       "path": "examples/real-data-cases/README.md",
@@ -336,7 +366,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "9fbc5539a47c979c810cf6e1d7b43e29b521ea1829c5584dcdd74637e3bf3eca"
+      "sha256": "50ef5a195c9b75598e3b282bd1cb6c72c0c0d527e63baf39a91a720e96a0864c"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -3191,12 +3221,12 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "f85b2532d331727643238bddbdb7f454ee5392774407a37350d245c227417e44"
+      "sha256": "9bb43fb33af1fbdc9390cd5b06502e41d4b965c83763970f6942764ae2061cc4"
     },
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "60a112de498ba9448130b59eeabb3b2f750039b6458263684f01bc83fdb8b3f3"
+      "sha256": "9814bd37516405f66485cc24d6feb4e35be2ca589193456d68246cdda11085aa"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
@@ -4096,7 +4126,7 @@
     {
       "path": "tests/test_package_integrity.py",
       "mode": "100644",
-      "sha256": "0944a846cdeb0cd6ff39f3696dedf4089534d596d1cc316a2348a377312e0fd0"
+      "sha256": "0c8f889815520dbd03d00ffcd296acc12932413fa2989bac5c700485024c9e1b"
     },
     {
       "path": "tests/test_real_portfolio.py",
