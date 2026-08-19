@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "release": "1.0.5",
-  "release_tag": "v1.0.5",
-  "content_commit": "4bf64046ba461a08951afb3b7eefb93cf8312239",
+  "release": "1.1.0",
+  "release_tag": "v1.1.0",
+  "content_commit": "f1ceb5e3e872384188865554a54c9e7a4da8779c",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.0.5",
-  "release_commit_binding": "The annotated v1.0.5 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.1.0",
+  "release_commit_binding": "The annotated v1.1.0 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -39,24 +39,29 @@
       "sha256": "429eaa95d3cf7976671f49699b6d595617c3104c0646acae529b859dc67bcdd9"
     },
     {
+      "path": ".github/workflows/pages.yml",
+      "mode": "100644",
+      "sha256": "33f07f172bf173e60353764e989f3c944857fe5548df14497d73fbaa9628da6f"
+    },
+    {
       "path": ".github/workflows/verify.yml",
       "mode": "100644",
-      "sha256": "c4192c291a4b060db607aa7ca8233554fec0742c41872c52e8beb7183b0c271e"
+      "sha256": "046e7dce9720153c0b40d4b1a7cadc5b5f80c6145c72482491cda3cc7e9bd018"
     },
     {
       "path": ".gitignore",
       "mode": "100644",
-      "sha256": "8d926a62a2c42f175329bada34f6c224fc83ea32bfdea7d154a322369a5e7a76"
+      "sha256": "9eb13ca25d1afa0fcdff0b2cf433e3ccc82bd9e935f22f1a2b5cd308d9dd1668"
     },
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "b86621747401423f90fe1b88f899e66054e929c98455cb2152850137e9e5cfff"
+      "sha256": "20e3fb7ab21881201e4ac7db21c0dfde5de10ebdd8b936c29fa5f884ad2970c8"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "e8784690821cf98552594e74e3a008626f208c196a9cd3db3ddbe64a42dacb07"
+      "sha256": "1ab700ab1b91148a4859a5c8901915aadf5d550944cc020a7fe326f39b7362d9"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -66,7 +71,7 @@
     {
       "path": "CONTRIBUTING.md",
       "mode": "100644",
-      "sha256": "26b2023dc8068782d96092c388f0e89ec0948bb28d588c235ff27bca37562f9d"
+      "sha256": "c92acb45c994cd7c78091bbcc2219ddda67f4d871d227aa0ecc0b68651e21e4e"
     },
     {
       "path": "LICENSE.txt",
@@ -76,32 +81,22 @@
     {
       "path": "Makefile",
       "mode": "100644",
-      "sha256": "e65845dceec0290fdd96fc413e76dbfa3e5825cf97ab4fa571f6ab3713029a40"
+      "sha256": "518100b036ad39d60f2fcf7cd7680fe3c50c42ce81af3d5c65b49ca8b7103548"
     },
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "2cb1deb453096c080c275d3d89303b962b95c2c8db2dbd093afe5a89ca05c725"
+      "sha256": "7b9b264cbd9641339de99985c250b9b01d91181776101ee685ac498dda18f035"
     },
     {
       "path": "SECURITY.md",
       "mode": "100644",
-      "sha256": "12fb31de1bb7b447d8a303aa77e5df34fec0c9236be7101bf34c9fcbbda482c2"
-    },
-    {
-      "path": "SKILL.md",
-      "mode": "100644",
-      "sha256": "4809a0623506b6278b080167d6702bc03e1e1213e7cb586c5d67ae8e11b3b1ce"
+      "sha256": "fc8a38ca34d220ed2e37e4dcb4aebafed67f08e22c4e154f238fb13873147802"
     },
     {
       "path": "VERSIONING.md",
       "mode": "100644",
-      "sha256": "0afce91f2e699d6df0ee5389f113b1b09e154d4f03f167e139e48cf821ba7411"
-    },
-    {
-      "path": "agents/openai.yaml",
-      "mode": "100644",
-      "sha256": "f80e1d1871bb899db67f2f641ec491674394282846cbe80b35f62aa110e32170"
+      "sha256": "c38f15180812839637201610b4c389f09aa840456d11ac9a8cdd6118f203bb05"
     },
     {
       "path": "assets/adaptive-reporting-system.svg",
@@ -129,34 +124,69 @@
       "sha256": "5b404055ccf8f721348330b55c0daf663e7e77ea94a0aa79fa980182670575a7"
     },
     {
+      "path": "demo/README.md",
+      "mode": "100644",
+      "sha256": "f73b66bd9b60f5af6dbfd8ae4db85043fdcc04d626184da57907e658011bfec2"
+    },
+    {
+      "path": "demo/app.js",
+      "mode": "100644",
+      "sha256": "b74c52c9b7d31efd30c712e1967231d106aef1ab62d93db5d303121194a48564"
+    },
+    {
+      "path": "demo/data.js",
+      "mode": "100644",
+      "sha256": "ea48ba3196d06c2f81c532aba26f48b2e3327b987653467656d086920e77ccba"
+    },
+    {
+      "path": "demo/favicon.svg",
+      "mode": "100644",
+      "sha256": "070046e3ad23793df9bd170cd35419cf7705344c58033d610aec54806c13c8d9"
+    },
+    {
+      "path": "demo/index.html",
+      "mode": "100644",
+      "sha256": "82158f42fc6b8c722afa7956937edf3319e848c92a691f694a27cb454d7736c1"
+    },
+    {
+      "path": "demo/styles.css",
+      "mode": "100644",
+      "sha256": "4ee41e39ac901f549548b2e21ece7ff4c7048fdf340e2575a25dd3a39508bfbe"
+    },
+    {
       "path": "docs/README.md",
       "mode": "100644",
-      "sha256": "44d68902ed8304d85070294be32d176795f653079bf6ca31df81789e71803a0c"
+      "sha256": "68ec4c48c8a9e72ac0cee290672d0769f094430053bb9174ca3ee5de4744ab83"
     },
     {
       "path": "docs/architecture.md",
       "mode": "100644",
-      "sha256": "438c1c8bd1d5273101197daf44edc4803961a76063d289471d21a1a122cd7cb5"
+      "sha256": "67392e1a15fdc6873b7e5a8c6e64966d43f743dd969d1d6862bad284dc879929"
     },
     {
       "path": "docs/getting-started.md",
       "mode": "100644",
-      "sha256": "51ffcfd9e950ee150b2a229330f5b779c3d27743125bc79d83492fffcfee642d"
+      "sha256": "cee9389413b187b02b65c680c44e95084fa26d5d0eae384483131b5561923f99"
     },
     {
       "path": "docs/repository-layout.md",
       "mode": "100644",
-      "sha256": "f6cda7344f5a72f5ad1462954b387a3af4c61b022eaea24d55656d79d4d9627f"
+      "sha256": "1e0256a6c3bc0cfee56c41d34d9ac662f5ef249d7f15cebb03bcf54666fc3824"
     },
     {
       "path": "docs/verification.md",
       "mode": "100644",
-      "sha256": "9bd2240ea457d703e07b30521e44517418bab06a717e25e5784a05d1b45cbac8"
+      "sha256": "bc009a0addfe52e3cf8eafdff97a54d33e884feaf15cc5076b0e6d3b047f2da6"
     },
     {
       "path": "examples/real-data-cases/README.md",
       "mode": "100644",
-      "sha256": "01ae17c305fab5fd6d924d9105bb4831cca3a4a5052d49efce81c4c0ecad3036"
+      "sha256": "6a7ba3ea13dd3d0a5fe360418543aa6f65279253e7250092f2be885c702547d6"
+    },
+    {
+      "path": "examples/real-data-cases/capability-map.json",
+      "mode": "100644",
+      "sha256": "3d2df561a735acb03424b83ea0bfa00e1db9ef945e40bc4f1e77496f08707b1d"
     },
     {
       "path": "examples/real-data-cases/cases.json",
@@ -166,77 +196,77 @@
     {
       "path": "examples/real-data-cases/cases/01-bike-demand-operations.md",
       "mode": "100644",
-      "sha256": "1c77124e6fdd6516d0744d6fa36c22b1c8158a0102f4ebb3757563366cbfb64c"
+      "sha256": "3fc0bca217cb91348fd6c6e174a42f779b04a8dc53c18b510452d003318eb11f"
     },
     {
       "path": "examples/real-data-cases/cases/02-cross-city-311-shift.md",
       "mode": "100644",
-      "sha256": "ca52e6e7d21409223ebf37b7f5834b4f95d3fb44c0c0fe45abf05f1d9c2d2dd5"
+      "sha256": "82779d64256a8097bb4bd758e2b95cce8d54b99c235dd7de2dc25b1f8c33ddd7"
     },
     {
       "path": "examples/real-data-cases/cases/03-bank-marketing-response.md",
       "mode": "100644",
-      "sha256": "4a42cb423021e64ac07699c86ff336d0271fe8a2b1e5eaecaf565ae098e870ad"
+      "sha256": "6bc5b157bd18d4c79620c186bcb14ff6abf10f16cf2432616c8b6cbf4743a410"
     },
     {
       "path": "examples/real-data-cases/cases/04-census-income-ai.md",
       "mode": "100644",
-      "sha256": "24c84f80be36dd2d3394b3b881c471a84ee006bc7b7ef11fd675c95e3bcecc53"
+      "sha256": "f1c7fabe8bc976fa75c4d19bd62d6be06ea50f68b2ed278fb4e4eccc30d4701f"
     },
     {
       "path": "examples/real-data-cases/cases/05-treasury-risk-engineering.md",
       "mode": "100644",
-      "sha256": "2f1192d11e95444bd04a30c9a6973305c3e506fdde671dcb724433258c88fe2e"
+      "sha256": "990c10e48097109af39efd118f17babbb7bcedb97cc18d1351e818f9319af2e7"
     },
     {
       "path": "examples/real-data-cases/cases/06-cfpb-fintech-complaint-operations.md",
       "mode": "100644",
-      "sha256": "33b0038e787d6582dd798df270b99b4b45afb78788338efc8389fc0531a82559"
+      "sha256": "929d406b774f782e0787860da0bf34b54b219e9e031137a4bb9a4444a1e32325"
     },
     {
       "path": "examples/real-data-cases/cases/07-commercial-real-estate-risk.md",
       "mode": "100644",
-      "sha256": "106c7587b8f4082b1b03165e86ff0e1ab811dcda0de30777c4e9039031c7d3e7"
+      "sha256": "1bfbe3c59d427f76fd76accea6684fa32b6d11d52984bc33ff2e47215dbddc0f"
     },
     {
       "path": "examples/real-data-cases/cases/08-wildfire-mitigation-under-uncertainty.md",
       "mode": "100644",
-      "sha256": "4b20428290a4d889457b83bece92b41ec4342e5ecbdbd33e620c5ea92ddb336d"
+      "sha256": "46f0118d15b8220afc40930b2c1e06828c9c2d2b9ae5c44adbd726af88f31bf4"
     },
     {
       "path": "examples/real-data-cases/cases/09-sec-nport-filing-review.md",
       "mode": "100644",
-      "sha256": "06d9601e3a10034e4bedc22856793a064f6b1153fd998e9f11dd87bbe517eb91"
+      "sha256": "bc6892b69ed4002a2b426c6e33d246fa951416f98924ada9b68b9db71b1228d4"
     },
     {
       "path": "examples/real-data-cases/cases/10-social-norm-field-experiment.md",
       "mode": "100644",
-      "sha256": "56d81d0dfe697724cffd6bd3d6cb2dd49e6b1c960d15da7b272ff1e8e1507839"
+      "sha256": "adda34177ae724ea5b001635a414ddd13cf6d872e62884593c7ac84c9007a29b"
     },
     {
       "path": "examples/real-data-cases/cases/11-population-health-survival.md",
       "mode": "100644",
-      "sha256": "648518b41752c7cb2f94cb7ba8de0fc9010e4222b5a959719110c4603f804471"
+      "sha256": "9eddecf4f1e2c2ccd6b5a9d890eda643d2bf4ef014eb3ef978ffb0147822e30e"
     },
     {
       "path": "examples/real-data-cases/cases/12-opportunity-zone-policy-evaluation.md",
       "mode": "100644",
-      "sha256": "b7f86e2ae78c3f080ca6a68be85aea06a56b3ba10f2602327e08ba91e9e2bddb"
+      "sha256": "faffa2d7accc6169b57942a6890c384d04d17dc87261b96a9a521b506b6c42be"
     },
     {
       "path": "examples/real-data-cases/cases/13-behavioral-reading-experiment.md",
       "mode": "100644",
-      "sha256": "a6aa2bed1c2377b487a138fbb8581fd97eabaaf931f6296b5e04fdf9db192e77"
+      "sha256": "06c32f42a8ccaad1f22ac545ffb3c7f3d8938468c41443c0670b044cc3e677f0"
     },
     {
       "path": "examples/real-data-cases/cases/14-nhanes-population-transportability.md",
       "mode": "100644",
-      "sha256": "cd4356d82bdf490fd7a9580f3eac0603ca5cb40262b45a80b94c711a52e7a2c1"
+      "sha256": "0237ad74e0e4f21951689db71c1ca5ea6cc754049659b8a26062beb3338378e9"
     },
     {
       "path": "examples/real-data-cases/cases/15-spatial-equity-planning.md",
       "mode": "100644",
-      "sha256": "479827bde609ed1adb8648e826f3978402eb961934e28ce67f9cbfcb0ecd7d5a"
+      "sha256": "5e54635d0d62037cee6905646fdfd1090ef44b43c0e6f564065201265f2cfa5f"
     },
     {
       "path": "examples/real-data-cases/figures/01-bike-demand-operations.svg",
@@ -366,7 +396,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "50ef5a195c9b75598e3b282bd1cb6c72c0c0d527e63baf39a91a720e96a0864c"
+      "sha256": "b547dbd82045d3ddddffae4962d1ec78080a09f756106166435f36aeba153922"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -3104,6 +3134,11 @@
       "sha256": "e68e28784f2fa3484fc85726ee5808cbd75ba10cd786626d50115ef3f7fc7769"
     },
     {
+      "path": "pages/index.html",
+      "mode": "100644",
+      "sha256": "72848c68c34df4c8bb728fef98d85faab4fec02f3577dcad8f3193e213a6e642"
+    },
+    {
       "path": "pyproject.toml",
       "mode": "100644",
       "sha256": "f45e678869a3870fad7dc7bc1bf689f16e1d83d992012838e8c42d7ef4060b42"
@@ -3111,7 +3146,7 @@
     {
       "path": "references/advanced-method-boundaries.md",
       "mode": "100644",
-      "sha256": "5210e7fc1710aae5a773dbb502d68796b20d9daa163306123e774f236077bf53"
+      "sha256": "75bf0aaed3fcb9c085f1b84ab2cb1caf350eedea23f343c186d7bf72b5ad9bb3"
     },
     {
       "path": "references/analytics-triad.md",
@@ -3151,7 +3186,7 @@
     {
       "path": "references/method-routing.md",
       "mode": "100644",
-      "sha256": "bea11f59aa2f915c32b847f4df3d80ed850488ed478d9742ff36a2794395c562"
+      "sha256": "ab3db98c54662ad05297a84d8d93018008f4af7e5ecb0994d1b5e7a8e36bb8d0"
     },
     {
       "path": "references/methodology.md",
@@ -3161,7 +3196,7 @@
     {
       "path": "references/provenance-contract.md",
       "mode": "100644",
-      "sha256": "e9df0dacc6da22ea105a4dee6aac8369cddaa577446309300fb421aa564fb18c"
+      "sha256": "c7fd46577e6a53cbd5caa9b7432462f23bec92e2d6667c3a4581c21d3dd6b25b"
     },
     {
       "path": "references/real-evidence-workflow.md",
@@ -3211,7 +3246,12 @@
     {
       "path": "scripts/build_case_examples.py",
       "mode": "100644",
-      "sha256": "bd372510b8c001eb0c713bb2cdf896e71259e68516b8d6a18c6415f15e48d985"
+      "sha256": "85ff93c7a3cdd16c7e1a4913991ef92124ed4105b7cb68a8cae26ca2a00e6715"
+    },
+    {
+      "path": "scripts/build_portfolio_demo.py",
+      "mode": "100644",
+      "sha256": "46cbf68c6a53ec609f35883507385866b35c87a99649c87db59a76b8bc12a75c"
     },
     {
       "path": "scripts/build_readme_visuals.py",
@@ -3221,12 +3261,17 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "9bb43fb33af1fbdc9390cd5b06502e41d4b965c83763970f6942764ae2061cc4"
+      "sha256": "09d0c543c78d4c7144f7f2eb962d1a3d97de698c14b0bf4d3361da292f24f9ea"
+    },
+    {
+      "path": "scripts/build_skill_bundle.py",
+      "mode": "100644",
+      "sha256": "821086e4e92106c52666246ac37027f5cb597b3490049e1c3a0abcfd69eefb10"
     },
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "9814bd37516405f66485cc24d6feb4e35be2ca589193456d68246cdda11085aa"
+      "sha256": "5626f7849897d03d379eb70dd8656480df93f8203bd9f0353de881092b9205f4"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
@@ -3249,9 +3294,19 @@
       "sha256": "46c203d1155f2f604cc7e22e11156c427d4e233d29137ddb68b4afb02240df27"
     },
     {
+      "path": "scripts/doctor.py",
+      "mode": "100644",
+      "sha256": "61b80a92fbead7924f845f856102f0b4ea254a4d09ae74c140242170efd8e205"
+    },
+    {
       "path": "scripts/evidence_analysis.py",
       "mode": "100644",
       "sha256": "4af16106328b1d66c3443e1fba2afaa7ceb9d2c9e46db8930769e10f452f8bdc"
+    },
+    {
+      "path": "scripts/hsadl.py",
+      "mode": "100644",
+      "sha256": "d717ec776573d45b1eab903c7c778e883d1995906eb49f36d22da6b75f071d25"
     },
     {
       "path": "scripts/init_case.py",
@@ -3277,6 +3332,11 @@
       "path": "scripts/profile_dataset.py",
       "mode": "100644",
       "sha256": "c34121e07cc1f736b7080c568371b07ddea9687b09831d49ba9e82f925ac93bf"
+    },
+    {
+      "path": "scripts/quickstart_demo.py",
+      "mode": "100644",
+      "sha256": "1cc3a4d629dd60a1071adab2070b3e148d3adf856492bfa08a45d2b80a476dc1"
     },
     {
       "path": "scripts/report_visuals.py",
@@ -3305,6 +3365,201 @@
     },
     {
       "path": "scripts/visual_system.py",
+      "mode": "100644",
+      "sha256": "b0a819fe1c39d622da556fc30d37c837f78e2175f0d80cd50613ed5c994035ad"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/LICENSE.txt",
+      "mode": "100644",
+      "sha256": "dcb9337504523d296473fcf472df760b7edc484f7fd9f5d752ced957957eea26"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/SKILL.md",
+      "mode": "100644",
+      "sha256": "3e46190ed8153e01387465f4bbb497dea4686fa6b509c4c437c81461b2dc63a5"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/agents/openai.yaml",
+      "mode": "100644",
+      "sha256": "f80e1d1871bb899db67f2f641ec491674394282846cbe80b35f62aa110e32170"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/assets/case-template.json",
+      "mode": "100644",
+      "sha256": "78d9d51d8c05d9c64120b951e7decab950828278d8efc9d386506fa5a89b7762"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/assets/data-contract-template.json",
+      "mode": "100644",
+      "sha256": "2baec3d52bd1046dcd8d71721d3c6e9c313abd75623ab18879b6c449b52f89dd"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/bundle-manifest.json",
+      "mode": "100644",
+      "sha256": "2ec4a2c86f3577c5067aaa65244ec1a121847c02acb1ecd2aa8de9295b47b282"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/advanced-method-boundaries.md",
+      "mode": "100644",
+      "sha256": "75bf0aaed3fcb9c085f1b84ab2cb1caf350eedea23f343c186d7bf72b5ad9bb3"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/analytics-triad.md",
+      "mode": "100644",
+      "sha256": "4148eea043e21ccb5cad86ba12306d3023aa9bac0c29722a1ae6258ccfd9b540"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/case-precedents.md",
+      "mode": "100644",
+      "sha256": "cf70b14465c602f7689286a9f1631611a25f67995aec89e2d5e5e3a665c9692c"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/case-schema.md",
+      "mode": "100644",
+      "sha256": "601bb02495b7d59a3432320d2bd67274bdebe67aaa4967e7721e364876bc411a"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/data-quality-gate.md",
+      "mode": "100644",
+      "sha256": "193132fe8fb101514a4dd17416408534b418b8f49b80dcb16d199027c014bf31"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/domain-playbooks.md",
+      "mode": "100644",
+      "sha256": "af18a367a0cfa931f0793163f367bfe9e296f063b8c67f06028b64995dab88d4"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/editorial-visual-system.md",
+      "mode": "100644",
+      "sha256": "15879d6497b105249ca8a6854521dcf40815dcca928d079af846a2d453365ec1"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/method-domain-map.json",
+      "mode": "100644",
+      "sha256": "d8c0847f059cdad1c38e5d8444076a2f26266c20e637bd6ce75cbe6fad55abb4"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/method-modules.md",
+      "mode": "100644",
+      "sha256": "8cfad2eb0233c8aff3f15f4b95b6a819e25cdbcba3465646cf7d958e8a92ea79"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/method-routing.md",
+      "mode": "100644",
+      "sha256": "ab3db98c54662ad05297a84d8d93018008f4af7e5ecb0994d1b5e7a8e36bb8d0"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/methodology.md",
+      "mode": "100644",
+      "sha256": "f3575279ea528f2f0909e1102de3056183c0edb924a63bf0cd5beab6dad7ff75"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/provenance-contract.md",
+      "mode": "100644",
+      "sha256": "c7fd46577e6a53cbd5caa9b7432462f23bec92e2d6667c3a4581c21d3dd6b25b"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/real-evidence-workflow.md",
+      "mode": "100644",
+      "sha256": "e159f42fa43b3928af218d8ffea512e44efa807083db74d074d04b0f4e58c58e"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/reporting-standard.md",
+      "mode": "100644",
+      "sha256": "b00be3bc72ea0df3d1dadc0f04dfbbc0ca5f2e69cb7b15087a9a3424b37d6103"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/reproducibility-contract.md",
+      "mode": "100644",
+      "sha256": "6e0dfa8b481e1caddfd35b61d4fb2be122cea23ce274eee8aa88e1a583c71e40"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/references/visual-report-system.md",
+      "mode": "100644",
+      "sha256": "3151626a2c7e64fe63f4e2cfdbfe1794f2a8ff99387958758f763cb89e6938d1"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/allocation_optimizer.py",
+      "mode": "100644",
+      "sha256": "e8b8732016fcab7082c4f52016c8fc28eefb50df9ad8192fd3254c0f64cd6c9c"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/analytics_router.py",
+      "mode": "100755",
+      "sha256": "d7189c26721fb225d05dd5f28e6c83c339b65b1892762ebc1dcbd783bc546e06"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/data_quality.py",
+      "mode": "100644",
+      "sha256": "31e0734c316d9922d2f4ed3aa0b2c99291bff369856acb67d4db52b3d80909d1"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/decision_engine.py",
+      "mode": "100644",
+      "sha256": "46c203d1155f2f604cc7e22e11156c427d4e233d29137ddb68b4afb02240df27"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/doctor.py",
+      "mode": "100644",
+      "sha256": "61b80a92fbead7924f845f856102f0b4ea254a4d09ae74c140242170efd8e205"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/evidence_analysis.py",
+      "mode": "100644",
+      "sha256": "4af16106328b1d66c3443e1fba2afaa7ceb9d2c9e46db8930769e10f452f8bdc"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/hsadl.py",
+      "mode": "100644",
+      "sha256": "d717ec776573d45b1eab903c7c778e883d1995906eb49f36d22da6b75f071d25"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/init_case.py",
+      "mode": "100755",
+      "sha256": "b79b6d0def6dbae15ea0300301cea0f77c8dc4e8ab76eef14f62467699836fef"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/prediction_validation.py",
+      "mode": "100644",
+      "sha256": "16de0f15e8db89e0deeb5d958cd5ed3d86eef7cc97b492442087282bdb16df2f"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/prepare_dataset.py",
+      "mode": "100644",
+      "sha256": "866f5226b0830e60bd3010e5ade62cbf1bd029156a28b5eae0e86f3ccbb58b32"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/profile_dataset.py",
+      "mode": "100644",
+      "sha256": "c34121e07cc1f736b7080c568371b07ddea9687b09831d49ba9e82f925ac93bf"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/quickstart_demo.py",
+      "mode": "100644",
+      "sha256": "1cc3a4d629dd60a1071adab2070b3e148d3adf856492bfa08a45d2b80a476dc1"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/report_visuals.py",
+      "mode": "100644",
+      "sha256": "b837efbb4e51eec66062f18a1187a61343d712d7c4fba91fc40027c07d7d270e"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/route_question.py",
+      "mode": "100755",
+      "sha256": "19026df264e46927273fb52ecfa81c0fc79aac4c1b5363467d015c35c80a59ca"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/run_case.py",
+      "mode": "100644",
+      "sha256": "3b0e1ad3672f44f3315b4c8dc45e1ac17d3685396f7fcd83cee99a5416a6c6d2"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/validate_case.py",
+      "mode": "100644",
+      "sha256": "690fcafb466123f3a7957e67e4fc45b96a7dc6554a493b838a98b284b6a99801"
+    },
+    {
+      "path": "skills/high-stakes-analytics-decision-lab/scripts/visual_system.py",
       "mode": "100644",
       "sha256": "b0a819fe1c39d622da556fc30d37c837f78e2175f0d80cd50613ed5c994035ad"
     },
@@ -4126,7 +4381,7 @@
     {
       "path": "tests/test_package_integrity.py",
       "mode": "100644",
-      "sha256": "0c8f889815520dbd03d00ffcd296acc12932413fa2989bac5c700485024c9e1b"
+      "sha256": "833e6a2fd0e78b58877393ae3d01d5fdc4edaa2fd12eedcbad0a4a3f152407a3"
     },
     {
       "path": "tests/test_real_portfolio.py",
@@ -4137,6 +4392,11 @@
       "path": "tests/test_reproducibility_and_source_security.py",
       "mode": "100644",
       "sha256": "81fc78e3d1910f873117cc6adf53e5b30fbe0149037a1fcfe490a960a9e988b1"
+    },
+    {
+      "path": "tests/test_user_experience.py",
+      "mode": "100644",
+      "sha256": "e3268ec23abbb52258c1a5177d3e6fb26673218b28f9564863527f43515404d1"
     },
     {
       "path": "tests/test_v5_numerics.py",
