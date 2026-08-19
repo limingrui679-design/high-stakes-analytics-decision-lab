@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 58,754 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Population health and informatics** — Respect population, cohort, measurement and information-system semantics while separating research validation from individual clinical use. |
+| Supporting | AI and model validation, Data systems and governance |
+
+### Reviewer-visible signals
+
+- linked cohorts
+- temporal transport
+- workload screen
+- no individual clinical action
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **2017 temporal-test AUC:** 0.846

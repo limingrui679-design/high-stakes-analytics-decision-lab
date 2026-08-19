@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Explore fifteen evidence-gated, reproducible real-data cases by analytical route and capability."
+    >
+    <title>Case Explorer · High-Stakes Analytics &amp; Decision Lab</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#case-explorer">Skip to case explorer</a>
+    <header class="site-header">
+      <a class="brand" href="../README.md" aria-label="High-Stakes Analytics home">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>High-Stakes Analytics</strong><small>Decision Lab</small></span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#case-explorer">Cases</a>
+        <a href="#method">Method</a>
+        <a href="../docs/getting-started.md">Run locally</a>
+        <a class="nav-cta" href="../README.md">Repository</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">Interactive evidence portfolio · 15 real-data cases</p>
+          <h1 id="hero-title">Evidence that knows<br><em>when to stop.</em></h1>
+          <p class="hero-lede">
+            Explore analytical work where negative validation, transfer refusal,
+            an evidence request, and no recommendation are treated as rigorous outcomes.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#case-explorer">Explore the cases</a>
+            <a class="button button-quiet" href="../docs/architecture.md">Read the architecture</a>
+          </div>
+        </div>
+        <div class="orbit-card" aria-label="Evidence-to-decision lifecycle">
+          <div class="orbit" aria-hidden="true">
+            <span class="orbit-ring orbit-ring-one"></span>
+            <span class="orbit-ring orbit-ring-two"></span>
+            <span class="orbit-core"></span>
+            <span class="orbit-node node-a"></span>
+            <span class="orbit-node node-b"></span>
+            <span class="orbit-node node-c"></span>
+          </div>
+          <ol class="lifecycle">
+            <li><span>01</span><strong>Question</strong><small>Owner · scope · horizon</small></li>
+            <li><span>02</span><strong>Evidence</strong><small>Lineage · quality · limits</small></li>
+            <li><span>03</span><strong>Route</strong><small>Method follows the claim</small></li>
+            <li><span>04</span><strong>Stop or act</strong><small>Only when justified</small></li>
+          </ol>
+        </div>
+        <dl class="metric-strip" aria-label="Portfolio metrics">
+          <div><dt id="metric-cases">15</dt><dd>Real-data cases</dd></div>
+          <div><dt id="metric-routes">04</dt><dd>Analytical routes</dd></div>
+          <div><dt id="metric-capabilities">08</dt><dd>Capability paths</dd></div>
+          <div><dt id="metric-figures">119</dt><dd>Accessible figures</dd></div>
+        </dl>
+      </section>
+
+      <section class="principle-band" aria-label="Core principles">
+        <p><span>Observed</span> is not <span>causal</span></p>
+        <i aria-hidden="true"></i>
+        <p><span>Predictive</span> is not <span>prescriptive</span></p>
+        <i aria-hidden="true"></i>
+        <p><span>Reproducible</span> is not <span>deployed</span></p>
+      </section>
+
+      <section class="explorer" id="case-explorer" aria-labelledby="explorer-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark">Case atlas</p>
+            <h2 id="explorer-title">Find the evidence pattern,<br>not just the domain.</h2>
+          </div>
+          <p>
+            Filter by route or capability. Every card links to a full report,
+            machine-readable result, source manifest, code, and claim boundary.
+          </p>
+        </div>
+
+        <div class="control-panel" aria-label="Case filters">
+          <label class="search-control">
+            <span>Search the portfolio</span>
+            <input id="case-search" type="search" placeholder="Try calibration, policy, tail risk…">
+          </label>
+          <fieldset>
+            <legend>Route</legend>
+            <div id="route-filters" class="filter-row"></div>
+          </fieldset>
+          <label class="select-control">
+            <span>Capability</span>
+            <select id="capability-filter">
+              <option value="all">All capability paths</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="result-line" aria-live="polite">
+          <span id="result-count">15 cases</span>
+          <button id="reset-filters" type="button">Reset filters</button>
+        </div>
+        <div id="case-grid" class="case-grid"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <strong>No case matches this combination.</strong>
+          <p>Reset the filters or search for a broader analytical signal.</p>
+        </div>
+      </section>
+
+      <section class="method" id="method" aria-labelledby="method-title">
+        <div class="method-copy">
+          <p class="eyebrow">One contract · multiple valid endpoints</p>
+          <h2 id="method-title">The strongest supported claim—no stronger.</h2>
+          <p>
+            The system preserves source evidence, gates data quality, routes the
+            question, validates the chosen method, and separates the primary evidence
+            report from any conditional decision brief.
+          </p>
+          <a class="text-link" href="../references/real-evidence-workflow.md">Open the full evidence workflow →</a>
+        </div>
+        <ol class="method-steps">
+          <li><span>01</span><div><strong>Define</strong><small>Question, population, unit, estimand, horizon</small></div></li>
+          <li><span>02</span><div><strong>Gate</strong><small>Lineage, quality, privacy, leakage, approvals</small></div></li>
+          <li><span>03</span><div><strong>Validate</strong><small>Baselines, holdout, uncertainty, sensitivity</small></div></li>
+          <li><span>04</span><div><strong>Bound</strong><small>Interpretation, reversal conditions, stop state</small></div></li>
+        </ol>
+      </section>
+
+      <section class="boundary" aria-labelledby="boundary-title">
+        <p class="eyebrow">Public research boundary</p>
+        <h2 id="boundary-title">A portfolio can prove its work without pretending it changed the world.</h2>
+        <p id="portfolio-boundary"></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span><strong>High-Stakes Analytics</strong><small>Decision Lab</small></span>
+      </div>
+      <p>School-neutral · public-data research · reproducible · claim-bounded</p>
+      <a href="#hero-title">Back to top ↑</a>
+    </footer>
+
+    <dialog id="case-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close case details">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

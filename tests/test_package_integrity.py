@@ -25,12 +25,14 @@ from build_readme_visuals import (  # noqa: E402
 )
 
 SKILL_NAME = "high-stakes-analytics-decision-lab"
+SKILL_ROOT = ROOT / "skills" / SKILL_NAME
 LEGACY_NAME = "high-stakes-" + "decision-lab"
 
 
 class PackageIntegrityTests(unittest.TestCase):
     def test_skill_frontmatter_and_install_command_use_one_name(self) -> None:
-        skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+        self.assertFalse((ROOT / "SKILL.md").exists())
+        skill = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")
         match = re.match(r"^---\n(.*?)\n---\n", skill, flags=re.DOTALL)
         self.assertIsNotNone(match)
         assert match is not None
@@ -93,7 +95,7 @@ class PackageIntegrityTests(unittest.TestCase):
         self.assertIn(portfolio_sentence, normalized_readme)
 
     def test_agent_interface_metadata_is_supported_and_compact(self) -> None:
-        agent_metadata = (ROOT / "agents" / "openai.yaml").read_text(
+        agent_metadata = (SKILL_ROOT / "agents" / "openai.yaml").read_text(
             encoding="utf-8"
         )
         self.assertTrue(agent_metadata.startswith("interface:\n"))
@@ -287,7 +289,8 @@ class PackageIntegrityTests(unittest.TestCase):
             )
         for required in (
             "README.md",
-            "SKILL.md",
+            f"skills/{SKILL_NAME}/SKILL.md",
+            "scripts/build_skill_bundle.py",
             "scripts/verify_portfolio_reproducibility.py",
             "scripts/build_release_manifest.py",
         ):

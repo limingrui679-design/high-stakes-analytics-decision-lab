@@ -24,6 +24,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 8,760 |
 | Valid terminal output | transfer refused |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Data systems and governance** — Make data contracts, semantics, lineage, privacy, human review, failure states, and reproducibility part of the analytical system. |
+| Supporting | Statistical research, Spatial equity and planning |
+
+### Reviewer-visible signals
+
+- ontology audit
+- distribution shift
+- transfer refusal
+- administrative-data boundary
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Cross-city 2023 total-variation distance:** 58.1%

@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 17,906 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Analytics to action** — Connect prediction or diagnosis to capacity, workflow, implementation, communication, and a bounded next step. |
+| Supporting | AI and model validation, Risk and decision analysis |
+
+### Reviewer-visible signals
+
+- temporal holdout
+- simple baseline
+- fixed capacity
+- modeled pilot boundary
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Held-out station-hour MAE:** 0.69 pickups/day

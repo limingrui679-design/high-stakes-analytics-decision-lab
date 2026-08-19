@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.5"><img src="https://img.shields.io/badge/release-v1.0.5-008C82?style=flat-square" alt="Release v1.0.5"></a>
+  <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.0"><img src="https://img.shields.io/badge/release-v1.1.0-008C82?style=flat-square" alt="Release v1.1.0"></a>
   <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml"><img src="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml/badge.svg" alt="Verification status"></a>
   <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/codeql.yml"><img src="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/codeql.yml/badge.svg" alt="CodeQL status"></a>
   <a href="LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-6B7280?style=flat-square" alt="MIT License"></a>
@@ -19,6 +19,7 @@
 <p align="center">
   <a href="#start-in-three-steps"><strong>Quick start</strong></a> ·
   <a href="#how-it-works"><strong>Architecture</strong></a> ·
+  <a href="https://limingrui679-design.github.io/high-stakes-analytics-decision-lab/demo/"><strong>Live explorer</strong></a> ·
   <a href="#fifteen-complete-evidence-paths"><strong>Portfolio</strong></a> ·
   <a href="docs/README.md"><strong>Documentation</strong></a> ·
   <a href="CONTRIBUTING.md"><strong>Contributing</strong></a>
@@ -53,6 +54,12 @@ product without upgrading weak evidence into a stronger claim.
 ```bash
 npx skills add limingrui679-design/high-stakes-analytics-decision-lab -g
 ```
+
+The Agent Skills installer discovers the compact package under
+[`skills/high-stakes-analytics-decision-lab/`](skills/high-stakes-analytics-decision-lab/):
+39 files and about 472 KiB, rather than the full research portfolio. Its
+machine-readable file and hash contract is in
+[`bundle-manifest.json`](skills/high-stakes-analytics-decision-lab/bundle-manifest.json).
 
 Use [`docs/getting-started.md`](docs/getting-started.md) for Codex-specific,
 no-install, and direct repository options.
@@ -91,9 +98,11 @@ primary evidence product.
 
 | Starting point | Command or guide | Outcome |
 |---|---|---|
-| Question only | `python3 scripts/route_question.py "<question>" --scope full --output-dir <path>` | Evidence and method blueprint; no invented result |
-| Question plus data | `python3 scripts/init_case.py <data.csv> --question "<question>" --output-dir <path>` | Preserved source, draft contract, readiness profile, and unresolved decisions |
-| Existing decision case | `python3 scripts/validate_case.py <case.json>` then `python3 scripts/run_case.py <case.json> --output-dir <path>` | Validated expected, tail, sensitivity, provenance, and group-impact outputs |
+| Environment audit | `python3 scripts/hsadl.py doctor` | Python, runtime, template, write-access, and Skill-footprint checks |
+| Safe 60-second walkthrough | `python3 scripts/hsadl.py demo --output-dir build/demo` | Synthetic source preservation, contract, quality gate, route, and accessible SVGs; no model or recommendation |
+| Question only | `python3 scripts/hsadl.py route "<question>" --scope full --output-dir <path>` | Evidence and method blueprint; no invented result |
+| Question plus data | `python3 scripts/hsadl.py start <data.csv> --question "<question>" --output-dir <path>` | Preserved source, draft contract, readiness profile, and unresolved decisions |
+| Existing decision case | `python3 scripts/hsadl.py validate <case.json>` then `python3 scripts/hsadl.py run <case.json> --output-dir <path>` | Validated expected, tail, sensitivity, provenance, and group-impact outputs |
 | Worked precedents | [Fifteen-project portfolio](examples/real-data-cases/README.md) | Complete source-to-report evidence paths |
 
 ## How it works
@@ -167,8 +176,8 @@ The public portfolio contains 15 primary reports and 10 conditional briefs—25 
 The cases span operational demand, distribution shift, scarce-capacity pilots,
 temporal model transport, tail-risk decisions, human-in-the-loop triage,
 commercial diligence, mitigation allocation, filing review, clustered field
-experiments, health evidence, Opportunity Zones, spatial access, clinical
-prediction, and campaign monitoring.
+experiments, survival evidence, policy evaluation, repeated-measures inference,
+population transportability, and spatial equity.
 
 They intentionally end differently: some support a bounded decision, some
 require a pilot or targeted review, and some stop at an evidence request or
@@ -176,15 +185,17 @@ require a pilot or targeted review, and some stop at an evidence request or
 
 | Explore | Open |
 |---|---|
+| Searchable route and capability explorer | [Live case atlas](https://limingrui679-design.github.io/high-stakes-analytics-decision-lab/demo/) · [local source](demo/index.html) |
 | Visual case gallery | [Portfolio overview](examples/real-data-cases/README.md) |
 | Machine-readable catalog | [`cases.json`](examples/real-data-cases/cases.json) |
+| School-neutral capability paths | [`capability-map.json`](examples/real-data-cases/capability-map.json) |
 | Rebuild and comparison contract | [Verification guide](docs/verification.md) |
 | Method and domain routing | [`method-domain-map.json`](references/method-domain-map.json) |
 
 ## Verification you can reproduce
 
 The current stable release is
-[`v1.0.5`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.5).
+[`v1.1.0`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.0).
 Its versioned source package and SHA-256 checksum are published together; the
 release identity is also recorded in [`CITATION.cff`](CITATION.cff),
 [`CHANGELOG.md`](CHANGELOG.md), and `RELEASE-MANIFEST.json`.
@@ -198,10 +209,11 @@ an isolated verified-file copy. Use `make quality` for Ruff, mypy, and
 codespell; use [`docs/verification.md`](docs/verification.md) for direct
 commands, static security gates, and no-Git release verification.
 
-The 94 public tests cover data readiness, adaptive routing, numerical behavior,
+The 102 public tests cover data readiness, adaptive routing, numerical behavior,
 source and artifact identity, package integrity, local links, accessible SVGs,
-generator idempotence, no-Git releases, DNS and SSRF boundaries, and source
-parser security. The complete 94-test standalone regression suite and the
+generator idempotence, compact installation, quickstart safety, interactive
+explorer synchronization, no-Git releases, DNS and SSRF boundaries, and source
+parser security. The complete 102-test standalone regression suite and the
 fifteen-project rebuild are separate gates: successful reproduction establishes
 the reviewed workflow and declared numerical tolerance, not empirical validity,
 external adoption, or real-world impact.
@@ -214,19 +226,22 @@ coverage, and CodeQL.
 
 ```text
 high-stakes-analytics-decision-lab/
-├── SKILL.md                     # Agent Skill runtime contract
+├── skills/high-stakes-analytics-decision-lab/
+│   └── SKILL.md                 # compact, installable Agent Skill package
+├── demo/                        # dependency-free interactive case explorer
 ├── docs/                        # onboarding, architecture, layout, verification
 ├── references/                  # enforceable method and evidence contracts
 ├── assets/                      # templates and canonical README visuals
 ├── scripts/                     # profiling, routing, analysis, generation, checks
 ├── examples/real-data-cases/    # fifteen reproducible evidence projects
 ├── tests/                       # standalone contract and regression suite
-├── agents/                      # supported agent-facing metadata
 └── .github/                     # CI, security, issue, and PR workflows
 ```
 
-`SKILL.md` stays at the root because Agent Skills-compatible runtimes discover
-it there. Human guides live in `docs/`; precise runtime rules live in
+The nested Skill package prevents compatible installers from copying the full
+portfolio. It is generated from the canonical root scripts, references, and
+templates by `scripts/build_skill_bundle.py`; the full cases remain in
+`examples/`. Human guides live in `docs/`; precise runtime rules live in
 `references/`; generated evidence stays beside the project that produced it.
 See [`docs/repository-layout.md`](docs/repository-layout.md) before moving or
 regenerating files.

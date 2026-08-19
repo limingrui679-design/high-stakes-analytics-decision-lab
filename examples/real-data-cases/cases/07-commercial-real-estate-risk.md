@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 12,399 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Analytics to action** — Connect prediction or diagnosis to capacity, workflow, implementation, communication, and a bounded next step. |
+| Supporting | Risk and decision analysis, Spatial equity and planning |
+
+### Reviewer-visible signals
+
+- transaction screening
+- financing sensitivity
+- diligence workflow
+- missing property evidence
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Filtered transactions:** 12,399

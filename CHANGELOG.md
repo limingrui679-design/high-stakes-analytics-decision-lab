@@ -7,6 +7,41 @@ All notable public changes are documented here. The repository follows
 
 No entries yet.
 
+## [1.1.0] - 2026-08-20
+
+### Added
+
+- Added a dependency-free interactive explorer for all fifteen cases with
+  search, route filters, capability filters, accessible details, direct project
+  links, and explicit valid endpoints and claim boundaries.
+- Added a school-neutral capability map spanning analytics-to-action,
+  statistical research, data systems and governance, AI validation, risk and
+  decision analysis, behavior and policy evidence, population health and
+  informatics, and spatial equity and planning.
+- Added one unified `hsadl.py` command surface, an environment doctor, and a
+  synthetic 60-second readiness walkthrough that fits no model and produces no
+  recommendation.
+
+### Changed
+
+- Moved Agent Skill discovery into a compact nested package and added a
+  deterministic bundle builder and file-hash manifest. Compatible installers
+  now avoid copying the complete fifteen-project research portfolio.
+- Added reviewer signals and capability paths to the generated case gallery and
+  case cards without changing any source dataset, empirical result, quantitative
+  outcome, terminal status, or claim boundary.
+- Updated the README, getting-started path, architecture, repository map,
+  verification guide, CI prose coverage, and maintainer commands for the new
+  installation and exploration paths.
+
+### Verification
+
+- Added regression coverage for compact-package identity and footprint,
+  environment readiness, safe demo replacement and overwrite refusal, complete
+  school-neutral capability mapping, and explorer synchronization.
+- Retained the fifteen independent project pipelines, source snapshots,
+  reports, decision artifacts, accessible figures, and full rebuild gate.
+
 ## [1.0.5] - 2026-08-14
 
 ### Added
@@ -165,7 +200,8 @@ No entries yet.
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
-[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.5...HEAD
+[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.2...v1.0.3

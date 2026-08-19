@@ -2,7 +2,7 @@
 
 ## Supported versions
 
-Security updates apply to the latest `v1.0.x` release and the current `main`
+Security updates apply to the latest `v1.1.x` release and the current `main`
 branch. The supported Python baseline is 3.11 or newer, with CI coverage on
 Python 3.11, 3.12, 3.13, and 3.14.
 

@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 1,620 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Spatial equity and planning** — Connect place-based evidence, access, distribution, uncertainty and feasibility without turning a screening model into a site or policy decision. |
+| Supporting | Behavior and policy evidence, Analytics to action |
+
+### Reviewer-visible signals
+
+- complete-case route
+- missingness sensitivity
+- observed transit proximity
+- site evidence gate
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Analyzed Massachusetts tracts:** 1,597

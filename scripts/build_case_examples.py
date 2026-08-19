@@ -24,6 +24,7 @@ from visual_system import (
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 CASE_ROOT = SKILL_ROOT / "examples" / "real-data-cases"
 CASE_INDEX = CASE_ROOT / "cases.json"
+CAPABILITY_INDEX = CASE_ROOT / "capability-map.json"
 CASE_DIR = CASE_ROOT / "cases"
 FIGURE_DIR = CASE_ROOT / "figures"
 HASH_PATTERN = re.compile(r"^[0-9a-f]{64}$")
@@ -84,6 +85,23 @@ def validate_local_links(markdown_path: Path) -> None:
             )
 
 
+def load_capabilities() -> tuple[dict[str, dict], dict[str, dict]]:
+    payload = json.loads(CAPABILITY_INDEX.read_text(encoding="utf-8"))
+    if payload.get("schema_version") != "1.0":
+        raise ValueError("The capability map must use schema version 1.0.")
+    if not payload.get("policy", {}).get("school_neutral"):
+        raise ValueError("The public capability map must remain school-neutral.")
+    definitions = payload.get("capabilities", [])
+    capability_by_id = {item.get("id"): item for item in definitions}
+    if len(capability_by_id) != len(definitions) or None in capability_by_id:
+        raise ValueError("Capability identifiers must be present and unique.")
+    for item in definitions:
+        if not all(str(item.get(field, "")).strip() for field in ("label", "description")):
+            raise ValueError(f"Capability {item.get('id')} is incomplete.")
+    case_map = payload.get("cases", {})
+    return capability_by_id, case_map
+
+
 def load_cases() -> list[dict]:
     payload = json.loads(CASE_INDEX.read_text(encoding="utf-8"))
     cases = payload.get("cases", [])
@@ -93,6 +111,9 @@ def load_cases() -> list[dict]:
     numbers = [case.get("number") for case in cases]
     if len(set(ids)) != 15 or len(set(numbers)) != 15:
         raise ValueError("Case identifiers and display numbers must be unique.")
+    capability_by_id, capability_case_map = load_capabilities()
+    if set(capability_case_map) != set(ids):
+        raise ValueError("The capability map must cover exactly the fifteen case IDs.")
     for case in cases:
         required = {
             "number",
@@ -116,6 +137,27 @@ def load_cases() -> list[dict]:
         missing = sorted(required - set(case))
         if missing:
             raise ValueError(f"{case.get('id', 'unknown')} missing fields: {missing}")
+        capability_path = capability_case_map[case["id"]]
+        primary = capability_path.get("primary")
+        supporting = capability_path.get("supporting", [])
+        signals = capability_path.get("signals", [])
+        if primary not in capability_by_id:
+            raise ValueError(f"{case['id']} has an unknown primary capability.")
+        if not isinstance(supporting, list) or any(
+            item not in capability_by_id or item == primary for item in supporting
+        ):
+            raise ValueError(f"{case['id']} has an invalid supporting capability.")
+        if len(set(supporting)) != len(supporting):
+            raise ValueError(f"{case['id']} repeats a supporting capability.")
+        if not isinstance(signals, list) or len(signals) < 3 or any(
+            not str(item).strip() for item in signals
+        ):
+            raise ValueError(f"{case['id']} must expose at least three reviewer signals.")
+        case["capability_path"] = {
+            "primary": capability_by_id[primary],
+            "supporting": [capability_by_id[item] for item in supporting],
+            "signals": signals,
+        }
         source = case["source"]
         for field in (
             "dataset",
@@ -240,6 +282,13 @@ def case_card(case: dict) -> str:
         for metric in case["headline_metrics"]
     )
     methods = "\n".join(f"- {method}" for method in case["methods"])
+    capability_path = case["capability_path"]
+    supporting_capabilities = ", ".join(
+        item["label"] for item in capability_path["supporting"]
+    )
+    reviewer_signals = "\n".join(
+        f"- {signal}" for signal in capability_path["signals"]
+    )
     snapshots = "\n".join(
         f"- `{snapshot['name']}` — `{snapshot['sha256']}`"
         for snapshot in source["snapshot_files"]
@@ -289,6 +338,20 @@ limited by the evidence boundary stated below.
 | Analytical question | {case['question']} |
 | Prepared rows | {source['prepared_rows']:,} |{analyzed_note}
 | Valid terminal output | {case['terminal_output']} |
+
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **{capability_path['primary']['label']}** — {capability_path['primary']['description']} |
+| Supporting | {supporting_capabilities} |
+
+### Reviewer-visible signals
+
+{reviewer_signals}
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
 
 ## Evidence-backed findings
 
@@ -465,6 +528,24 @@ def gallery_readme(cases: list[dict]) -> str:
 </td>"""
             )
         gallery_cells.append("<tr>\n" + "\n".join(cells) + "\n</tr>")
+    capability_by_id, _ = load_capabilities()
+    capability_rows = []
+    for capability_id, capability in capability_by_id.items():
+        matched = [
+            case
+            for case in cases
+            if capability_id
+            in {
+                case["capability_path"]["primary"]["id"],
+                *(item["id"] for item in case["capability_path"]["supporting"]),
+            }
+        ]
+        links = " · ".join(
+            f"[{case['number']}](cases/{card_filename(case)})" for case in matched
+        )
+        capability_rows.append(
+            f"| **{capability['label']}** | {capability['description']} | {links} |"
+        )
     return f"""# Fifteen Complete Real-Data Projects
 
 ## Technical summary
@@ -508,6 +589,16 @@ projects/
 
 </details>
 
+## Explore by capability
+
+These school-neutral paths expose what a reviewer can inspect in each case.
+They are navigation aids, not claims that every case proves every listed
+competency or that a public-data prototype had real-world impact.
+
+| Capability path | What to inspect | Cases |
+|---|---|---|
+{chr(10).join(capability_rows)}
+
 ## Evidence Intelligence index
 
 | Project | Domain and headline evidence | Adaptive route | Open artifacts |
@@ -530,9 +621,13 @@ visual comparison across all fifteen projects is useful.
 
 ## Machine-readable evidence
 
-[`cases.json`](cases.json) is the canonical case index. It records the sources,
+[`cases.json`](cases.json) is the canonical empirical case index. It records the sources,
 reviewed snapshot hashes, data grain, methods, metrics, result, terminal
 output, interpretation boundary, and representative figure for every case.
+[`capability-map.json`](capability-map.json) is the separate school-neutral
+navigation contract; it maps each case to a primary capability, supporting
+capabilities, and concrete reviewer-visible signals without changing the case
+result or claim boundary.
 The generator checks the bundled raw files against those hashes and each
 project's source manifest before rebuilding the navigation layer.
 

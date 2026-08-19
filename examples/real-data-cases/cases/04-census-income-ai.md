@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 12,469 |
 | Valid terminal output | do not use for consequential action |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **AI and model validation** — Use leakage-safe validation, baselines, calibration, drift and subgroup checks, including a legitimate non-deployment result. |
+| Supporting | Statistical research, Data systems and governance |
+
+### Reviewer-visible signals
+
+- temporal transport
+- survey weights
+- protected-attribute audit
+- no consequential use
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **2023 temporal-test AUC:** 0.640

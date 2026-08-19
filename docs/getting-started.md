@@ -38,6 +38,28 @@ Generate a temporary prompt without installing:
 npx skills use limingrui679-design/high-stakes-analytics-decision-lab@high-stakes-analytics-decision-lab
 ```
 
+The installer discovers only the compact package under
+`skills/high-stakes-analytics-decision-lab/`; it does not need to copy the full
+fifteen-project portfolio. After installation, the package includes its own
+scripts, templates, method references, case-precedent index, license, and hash
+manifest.
+
+## Verify the setup in 60 seconds
+
+From a repository checkout, audit the environment and build the synthetic
+readiness walkthrough:
+
+```bash
+python3 scripts/hsadl.py doctor
+python3 scripts/hsadl.py demo --output-dir build/demo
+```
+
+The demo preserves an eight-row synthetic source, applies an explicit data
+contract, runs the quality gate, routes the question, and writes accessible
+SVGs. It fits no model, produces no recommendation, and permits no empirical
+claim. The generator replaces only an output directory carrying its own
+ownership marker; it refuses to overwrite an arbitrary existing directory.
+
 ## Ask for the right outcome
 
 After installation, start with the decision or evidence question rather than a
@@ -60,7 +82,7 @@ When no row-level data are available, generate an analysis blueprint instead
 of inventing results:
 
 ```bash
-python3 scripts/route_question.py \
+python3 scripts/hsadl.py route \
   "How should limited review capacity be allocated?" \
   --scope full \
   --output-dir /absolute/path/to/blueprint
@@ -74,7 +96,7 @@ validity checks, handoffs, and an accessible lifecycle figure.
 Initialize a reviewable workspace:
 
 ```bash
-python3 scripts/init_case.py /absolute/path/to/input.csv \
+python3 scripts/hsadl.py start /absolute/path/to/input.csv \
   --question "Which customers are likely to respond next month?" \
   --output-dir /absolute/path/to/customer-response-workspace
 ```
@@ -88,7 +110,7 @@ To run the gate separately, complete
 and run:
 
 ```bash
-python3 scripts/profile_dataset.py /absolute/path/to/input.csv \
+python3 scripts/hsadl.py profile /absolute/path/to/input.csv \
   --contract /absolute/path/to/data-contract.json \
   --output-dir /absolute/path/to/readiness
 ```
@@ -104,7 +126,7 @@ treatment, category merging, unit conversion, target correction, and grain
 changes require approval by action ID.
 
 ```bash
-python3 scripts/prepare_dataset.py /absolute/path/to/input.csv \
+python3 scripts/hsadl.py prepare /absolute/path/to/input.csv \
   --quality-report /absolute/path/to/readiness/data-quality-report.json \
   --cleaning-plan /absolute/path/to/readiness/cleaning-plan.json \
   --approve clean-003 \
@@ -117,9 +139,9 @@ must still permit the intended route.
 ## Validate and run a decision case
 
 ```bash
-python3 scripts/validate_case.py /absolute/path/to/case.json
+python3 scripts/hsadl.py validate /absolute/path/to/case.json
 
-python3 scripts/run_case.py /absolute/path/to/case.json \
+python3 scripts/hsadl.py run /absolute/path/to/case.json \
   --output-dir /absolute/path/to/output \
   --samples 10000 \
   --seed 20260726
@@ -154,6 +176,6 @@ figures/*.svg
 ```
 
 Continue with [Architecture](architecture.md) for the system design or open the
+[interactive case explorer](../demo/index.html) and
 [fifteen-project portfolio](../examples/real-data-cases/README.md) for worked
 precedents.
-

@@ -24,6 +24,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 2,956 |
 | Valid terminal output | associational policy screen only |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Behavior and policy evidence** — Separate observed behavior, randomized or associational evidence, mechanisms, intervention claims, ethics, and implementation authority. |
+| Supporting | Statistical research, Spatial equity and planning |
+
+### Reviewer-visible signals
+
+- matched change
+- support diagnostics
+- control reuse
+- associational policy screen
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Complete tract panels:** 1,394

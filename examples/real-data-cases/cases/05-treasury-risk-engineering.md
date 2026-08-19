@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 1,500 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Risk and decision analysis** — Compare feasible choices under dependent uncertainty, tail risk, scenario stress, value judgments, and reversal conditions. |
+| Supporting | Statistical research, Analytics to action |
+
+### Reviewer-visible signals
+
+- tail loss
+- coverage backtest
+- regime comparison
+- dependent market shocks
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Short-baseline historical ES95 loss:** 0.4%

@@ -34,8 +34,10 @@ equivalent direct commands and the CI matrix are documented in
   procedures in `docs/`.
 - Treat `references/` as the executable Skill contract library. Changes there
   can alter runtime behavior and require corresponding tests.
-- Keep `SKILL.md` at the repository root so Agent Skills-compatible runtimes
-  can discover it.
+- Keep the installable contract at
+  `skills/high-stakes-analytics-decision-lab/SKILL.md`. Edit canonical root
+  scripts, references, or templates first, then run `make bundle`; do not
+  hand-edit copied bundle files.
 
 See [`docs/repository-layout.md`](docs/repository-layout.md) for the complete
 canonical-versus-generated file map.

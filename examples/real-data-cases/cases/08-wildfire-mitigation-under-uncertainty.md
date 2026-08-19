@@ -24,6 +24,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 8,892 |
 | Valid terminal output | evidence request before mitigation allocation |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Risk and decision analysis** — Compare feasible choices under dependent uncertainty, tail risk, scenario stress, value judgments, and reversal conditions. |
+| Supporting | Behavior and policy evidence, Spatial equity and planning |
+
+### Reviewer-visible signals
+
+- scenario regret
+- tail exposure
+- feasibility gap
+- evidence request
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Valid mapped perimeters:** 8,892

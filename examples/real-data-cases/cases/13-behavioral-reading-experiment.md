@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 57 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Statistical research** — Define the estimand, preserve the data-generating structure, quantify uncertainty, test robustness, and state the transport boundary. |
+| Supporting | Behavior and policy evidence |
+
+### Reviewer-visible signals
+
+- within-participant contrast
+- small sample
+- clustered inference
+- generalization boundary
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Complete participant pairs:** 57

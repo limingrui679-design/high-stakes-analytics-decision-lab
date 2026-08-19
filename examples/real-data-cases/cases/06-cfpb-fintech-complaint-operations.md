@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 13,534 |
 | Valid terminal output | do not deploy |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Data systems and governance** — Make data contracts, semantics, lineage, privacy, human review, failure states, and reproducibility part of the analytical system. |
+| Supporting | AI and model validation, Analytics to action |
+
+### Reviewer-visible signals
+
+- privacy minimization
+- calendar holdout
+- human review
+- do not deploy
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Later-period untimely-response prevalence:** 2.5%

@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0",
+  "skill": "high-stakes-analytics-decision-lab",
+  "generator": "scripts/build_skill_bundle.py",
+  "school_neutral": true,
+  "file_count_excluding_manifest": 38,
+  "bytes_excluding_manifest": 476669,
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "bytes": 1106,
+      "sha256": "dcb9337504523d296473fcf472df760b7edc484f7fd9f5d752ced957957eea26"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 8971,
+      "sha256": "3e46190ed8153e01387465f4bbb497dea4686fa6b509c4c437c81461b2dc63a5"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 282,
+      "sha256": "f80e1d1871bb899db67f2f641ec491674394282846cbe80b35f62aa110e32170"
+    },
+    {
+      "path": "assets/case-template.json",
+      "bytes": 7834,
+      "sha256": "78d9d51d8c05d9c64120b951e7decab950828278d8efc9d386506fa5a89b7762"
+    },
+    {
+      "path": "assets/data-contract-template.json",
+      "bytes": 945,
+      "sha256": "2baec3d52bd1046dcd8d71721d3c6e9c313abd75623ab18879b6c449b52f89dd"
+    },
+    {
+      "path": "references/advanced-method-boundaries.md",
+      "bytes": 2935,
+      "sha256": "75bf0aaed3fcb9c085f1b84ab2cb1caf350eedea23f343c186d7bf72b5ad9bb3"
+    },
+    {
+      "path": "references/analytics-triad.md",
+      "bytes": 2643,
+      "sha256": "4148eea043e21ccb5cad86ba12306d3023aa9bac0c29722a1ae6258ccfd9b540"
+    },
+    {
+      "path": "references/case-precedents.md",
+      "bytes": 15098,
+      "sha256": "cf70b14465c602f7689286a9f1631611a25f67995aec89e2d5e5e3a665c9692c"
+    },
+    {
+      "path": "references/case-schema.md",
+      "bytes": 8541,
+      "sha256": "601bb02495b7d59a3432320d2bd67274bdebe67aaa4967e7721e364876bc411a"
+    },
+    {
+      "path": "references/data-quality-gate.md",
+      "bytes": 8197,
+      "sha256": "193132fe8fb101514a4dd17416408534b418b8f49b80dcb16d199027c014bf31"
+    },
+    {
+      "path": "references/domain-playbooks.md",
+      "bytes": 3073,
+      "sha256": "af18a367a0cfa931f0793163f367bfe9e296f063b8c67f06028b64995dab88d4"
+    },
+    {
+      "path": "references/editorial-visual-system.md",
+      "bytes": 7642,
+      "sha256": "15879d6497b105249ca8a6854521dcf40815dcca928d079af846a2d453365ec1"
+    },
+    {
+      "path": "references/method-domain-map.json",
+      "bytes": 1883,
+      "sha256": "d8c0847f059cdad1c38e5d8444076a2f26266c20e637bd6ce75cbe6fad55abb4"
+    },
+    {
+      "path": "references/method-modules.md",
+      "bytes": 5242,
+      "sha256": "8cfad2eb0233c8aff3f15f4b95b6a819e25cdbcba3465646cf7d958e8a92ea79"
+    },
+    {
+      "path": "references/method-routing.md",
+      "bytes": 4927,
+      "sha256": "ab3db98c54662ad05297a84d8d93018008f4af7e5ecb0994d1b5e7a8e36bb8d0"
+    },
+    {
+      "path": "references/methodology.md",
+      "bytes": 8818,
+      "sha256": "f3575279ea528f2f0909e1102de3056183c0edb924a63bf0cd5beab6dad7ff75"
+    },
+    {
+      "path": "references/provenance-contract.md",
+      "bytes": 2468,
+      "sha256": "c7fd46577e6a53cbd5caa9b7432462f23bec92e2d6667c3a4581c21d3dd6b25b"
+    },
+    {
+      "path": "references/real-evidence-workflow.md",
+      "bytes": 3083,
+      "sha256": "e159f42fa43b3928af218d8ffea512e44efa807083db74d074d04b0f4e58c58e"
+    },
+    {
+      "path": "references/reporting-standard.md",
+      "bytes": 2372,
+      "sha256": "b00be3bc72ea0df3d1dadc0f04dfbbc0ca5f2e69cb7b15087a9a3424b37d6103"
+    },
+    {
+      "path": "references/reproducibility-contract.md",
+      "bytes": 2358,
+      "sha256": "6e0dfa8b481e1caddfd35b61d4fb2be122cea23ce274eee8aa88e1a583c71e40"
+    },
+    {
+      "path": "references/visual-report-system.md",
+      "bytes": 5168,
+      "sha256": "3151626a2c7e64fe63f4e2cfdbfe1794f2a8ff99387958758f763cb89e6938d1"
+    },
+    {
+      "path": "scripts/allocation_optimizer.py",
+      "bytes": 15634,
+      "sha256": "e8b8732016fcab7082c4f52016c8fc28eefb50df9ad8192fd3254c0f64cd6c9c"
+    },
+    {
+      "path": "scripts/analytics_router.py",
+      "bytes": 25335,
+      "sha256": "d7189c26721fb225d05dd5f28e6c83c339b65b1892762ebc1dcbd783bc546e06"
+    },
+    {
+      "path": "scripts/data_quality.py",
+      "bytes": 86035,
+      "sha256": "31e0734c316d9922d2f4ed3aa0b2c99291bff369856acb67d4db52b3d80909d1"
+    },
+    {
+      "path": "scripts/decision_engine.py",
+      "bytes": 115391,
+      "sha256": "46c203d1155f2f604cc7e22e11156c427d4e233d29137ddb68b4afb02240df27"
+    },
+    {
+      "path": "scripts/doctor.py",
+      "bytes": 5248,
+      "sha256": "61b80a92fbead7924f845f856102f0b4ea254a4d09ae74c140242170efd8e205"
+    },
+    {
+      "path": "scripts/evidence_analysis.py",
+      "bytes": 16652,
+      "sha256": "4af16106328b1d66c3443e1fba2afaa7ceb9d2c9e46db8930769e10f452f8bdc"
+    },
+    {
+      "path": "scripts/hsadl.py",
+      "bytes": 2517,
+      "sha256": "d717ec776573d45b1eab903c7c778e883d1995906eb49f36d22da6b75f071d25"
+    },
+    {
+      "path": "scripts/init_case.py",
+      "bytes": 12408,
+      "sha256": "b79b6d0def6dbae15ea0300301cea0f77c8dc4e8ab76eef14f62467699836fef"
+    },
+    {
+      "path": "scripts/prediction_validation.py",
+      "bytes": 25374,
+      "sha256": "16de0f15e8db89e0deeb5d958cd5ed3d86eef7cc97b492442087282bdb16df2f"
+    },
+    {
+      "path": "scripts/prepare_dataset.py",
+      "bytes": 1596,
+      "sha256": "866f5226b0830e60bd3010e5ade62cbf1bd029156a28b5eae0e86f3ccbb58b32"
+    },
+    {
+      "path": "scripts/profile_dataset.py",
+      "bytes": 1252,
+      "sha256": "c34121e07cc1f736b7080c568371b07ddea9687b09831d49ba9e82f925ac93bf"
+    },
+    {
+      "path": "scripts/quickstart_demo.py",
+      "bytes": 5490,
+      "sha256": "1cc3a4d629dd60a1071adab2070b3e148d3adf856492bfa08a45d2b80a476dc1"
+    },
+    {
+      "path": "scripts/report_visuals.py",
+      "bytes": 43522,
+      "sha256": "b837efbb4e51eec66062f18a1187a61343d712d7c4fba91fc40027c07d7d270e"
+    },
+    {
+      "path": "scripts/route_question.py",
+      "bytes": 1826,
+      "sha256": "19026df264e46927273fb52ecfa81c0fc79aac4c1b5363467d015c35c80a59ca"
+    },
+    {
+      "path": "scripts/run_case.py",
+      "bytes": 1752,
+      "sha256": "3b0e1ad3672f44f3315b4c8dc45e1ac17d3685396f7fcd83cee99a5416a6c6d2"
+    },
+    {
+      "path": "scripts/validate_case.py",
+      "bytes": 995,
+      "sha256": "690fcafb466123f3a7957e67e4fc45b96a7dc6554a493b838a98b284b6a99801"
+    },
+    {
+      "path": "scripts/visual_system.py",
+      "bytes": 12056,
+      "sha256": "b0a819fe1c39d622da556fc30d37c837f78e2175f0d80cd50613ed5c994035ad"
+    }
+  ]
+}

@@ -41,6 +41,23 @@ projects/
 
 </details>
 
+## Explore by capability
+
+These school-neutral paths expose what a reviewer can inspect in each case.
+They are navigation aids, not claims that every case proves every listed
+competency or that a public-data prototype had real-world impact.
+
+| Capability path | What to inspect | Cases |
+|---|---|---|
+| **Analytics to action** | Connect prediction or diagnosis to capacity, workflow, implementation, communication, and a bounded next step. | [01](cases/01-bike-demand-operations.md) · [03](cases/03-bank-marketing-response.md) · [05](cases/05-treasury-risk-engineering.md) · [06](cases/06-cfpb-fintech-complaint-operations.md) · [07](cases/07-commercial-real-estate-risk.md) · [09](cases/09-sec-nport-filing-review.md) · [15](cases/15-spatial-equity-planning.md) |
+| **Statistical research** | Define the estimand, preserve the data-generating structure, quantify uncertainty, test robustness, and state the transport boundary. | [02](cases/02-cross-city-311-shift.md) · [04](cases/04-census-income-ai.md) · [05](cases/05-treasury-risk-engineering.md) · [10](cases/10-social-norm-field-experiment.md) · [12](cases/12-opportunity-zone-policy-evaluation.md) · [13](cases/13-behavioral-reading-experiment.md) · [14](cases/14-nhanes-population-transportability.md) |
+| **Data systems and governance** | Make data contracts, semantics, lineage, privacy, human review, failure states, and reproducibility part of the analytical system. | [02](cases/02-cross-city-311-shift.md) · [04](cases/04-census-income-ai.md) · [06](cases/06-cfpb-fintech-complaint-operations.md) · [09](cases/09-sec-nport-filing-review.md) · [11](cases/11-population-health-survival.md) |
+| **AI and model validation** | Use leakage-safe validation, baselines, calibration, drift and subgroup checks, including a legitimate non-deployment result. | [01](cases/01-bike-demand-operations.md) · [03](cases/03-bank-marketing-response.md) · [04](cases/04-census-income-ai.md) · [06](cases/06-cfpb-fintech-complaint-operations.md) · [11](cases/11-population-health-survival.md) · [14](cases/14-nhanes-population-transportability.md) |
+| **Risk and decision analysis** | Compare feasible choices under dependent uncertainty, tail risk, scenario stress, value judgments, and reversal conditions. | [01](cases/01-bike-demand-operations.md) · [05](cases/05-treasury-risk-engineering.md) · [07](cases/07-commercial-real-estate-risk.md) · [08](cases/08-wildfire-mitigation-under-uncertainty.md) · [09](cases/09-sec-nport-filing-review.md) |
+| **Behavior and policy evidence** | Separate observed behavior, randomized or associational evidence, mechanisms, intervention claims, ethics, and implementation authority. | [03](cases/03-bank-marketing-response.md) · [08](cases/08-wildfire-mitigation-under-uncertainty.md) · [10](cases/10-social-norm-field-experiment.md) · [12](cases/12-opportunity-zone-policy-evaluation.md) · [13](cases/13-behavioral-reading-experiment.md) · [15](cases/15-spatial-equity-planning.md) |
+| **Population health and informatics** | Respect population, cohort, measurement and information-system semantics while separating research validation from individual clinical use. | [11](cases/11-population-health-survival.md) · [14](cases/14-nhanes-population-transportability.md) |
+| **Spatial equity and planning** | Connect place-based evidence, access, distribution, uncertainty and feasibility without turning a screening model into a site or policy decision. | [02](cases/02-cross-city-311-shift.md) · [07](cases/07-commercial-real-estate-risk.md) · [08](cases/08-wildfire-mitigation-under-uncertainty.md) · [12](cases/12-opportunity-zone-policy-evaluation.md) · [15](cases/15-spatial-equity-planning.md) |
+
 ## Evidence Intelligence index
 
 | Project | Domain and headline evidence | Adaptive route | Open artifacts |
@@ -242,9 +259,13 @@ visual comparison across all fifteen projects is useful.
 
 ## Machine-readable evidence
 
-[`cases.json`](cases.json) is the canonical case index. It records the sources,
+[`cases.json`](cases.json) is the canonical empirical case index. It records the sources,
 reviewed snapshot hashes, data grain, methods, metrics, result, terminal
 output, interpretation boundary, and representative figure for every case.
+[`capability-map.json`](capability-map.json) is the separate school-neutral
+navigation contract; it maps each case to a primary capability, supporting
+capabilities, and concrete reviewer-visible signals without changing the case
+result or claim boundary.
 The generator checks the bundled raw files against those hashes and each
 project's source manifest before rebuilding the navigation layer.
 

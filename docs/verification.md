@@ -38,13 +38,14 @@ python3 scripts/verify_portfolio_reproducibility.py
 - Security checks include Bandit, dependency auditing, hardened source-builder
   tests, targeted branch coverage, and CodeQL.
 
-The 94 public tests cover data-readiness safety, custom-workspace
+The 102 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
-SVG accessibility, semantic regeneration, ACS special values, survey-weight
-policy, no-Git release verification, DNS and SSRF boundaries, and external
-source-parser security.
+SVG accessibility, compact Skill identity and footprint, safe quickstart
+behavior, interactive explorer synchronization, semantic regeneration, ACS
+special values, survey-weight policy, no-Git release verification, DNS and SSRF
+boundaries, and external source-parser security.
 
 ## Static quality
 
@@ -61,7 +62,7 @@ The target runs:
 ruff check scripts tests examples/real-data-cases/projects/_shared/safe_external_io.py
 mypy
 codespell --config .codespellrc README.md CHANGELOG.md CONTRIBUTING.md \
-  SECURITY.md VERSIONING.md docs references scripts tests
+  SECURITY.md VERSIONING.md demo docs references scripts skills tests
 ```
 
 ## Rebuild generated documentation and figures
@@ -72,9 +73,10 @@ Canonical source or generator changes must be followed by regeneration:
 make visuals
 ```
 
-This runs the README visual builder, terminal decision-report builder, and
-case-card/gallery builder. The generated files are then checked by the test
-suite. Do not manually restyle generated case figures or report figures.
+This runs the README visual builder, terminal decision-report builder,
+case-card/gallery builder, interactive explorer data builder, and compact Skill
+builder. The generated files are then checked by the test suite. Do not
+manually restyle generated case figures or report figures.
 
 ## Portfolio reproducibility
 
@@ -96,7 +98,7 @@ See the full
 ## Release verification
 
 The current stable release is
-[`v1.0.5`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.0.5).
+[`v1.1.0`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.0).
 The release page publishes the versioned source ZIP and its SHA-256 checksum.
 `CITATION.cff`, `CHANGELOG.md`, the annotated tag, and the release manifest must
 identify the same release.
@@ -108,6 +110,6 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 94-test standalone regression suite, fifteen-project rebuild,
+The complete 102-test standalone regression suite, fifteen-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.

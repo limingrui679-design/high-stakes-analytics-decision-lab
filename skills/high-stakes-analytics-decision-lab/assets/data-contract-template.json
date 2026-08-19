@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "contract_source": "user_supplied",
+  "dataset_name": "replace-with-dataset-name",
+  "intended_use": "descriptive",
+  "grain": "one row per declared unit and observation time",
+  "required_columns": [
+    "replace_with_required_column"
+  ],
+  "primary_key": [
+    "replace_with_primary_key"
+  ],
+  "date_columns": [],
+  "numeric_columns": [],
+  "numeric_ranges": {
+    "replace_with_bounded_numeric_column": {
+      "minimum": 0,
+      "maximum": 100
+    }
+  },
+  "categorical_columns": {},
+  "target_column": null,
+  "feature_columns": [],
+  "forbidden_columns": [],
+  "direct_identifier_columns": [],
+  "sensitive_columns": [],
+  "missing_tokens": [
+    "",
+    "?",
+    "NA",
+    "N/A",
+    "null"
+  ],
+  "thresholds": {
+    "required_column_missing_rate_max": 0.0,
+    "primary_key_duplicate_rate_max": 0.0,
+    "invalid_type_rate_max": 0.0,
+    "future_date_rate_max": 0.0,
+    "high_missing_rate": 0.5
+  }
+}

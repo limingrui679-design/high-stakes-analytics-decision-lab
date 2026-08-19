@@ -4,5 +4,6 @@ __pycache__/
 .coverage
 coverage.xml
 htmlcov/
+build/
 .DS_Store
 ._*

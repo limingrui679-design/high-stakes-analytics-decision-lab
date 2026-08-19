@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "scope": "School-neutral capability paths for navigating the fifteen-case portfolio.",
+  "policy": {
+    "school_neutral": true,
+    "capabilities_are_navigation_aids": true,
+    "capabilities_do_not_upgrade_empirical_claims": true,
+    "one_case_may_support_multiple_capabilities": true
+  },
+  "capabilities": [
+    {
+      "id": "analytics-to-action",
+      "label": "Analytics to action",
+      "description": "Connect prediction or diagnosis to capacity, workflow, implementation, communication, and a bounded next step."
+    },
+    {
+      "id": "statistical-research",
+      "label": "Statistical research",
+      "description": "Define the estimand, preserve the data-generating structure, quantify uncertainty, test robustness, and state the transport boundary."
+    },
+    {
+      "id": "data-systems-governance",
+      "label": "Data systems and governance",
+      "description": "Make data contracts, semantics, lineage, privacy, human review, failure states, and reproducibility part of the analytical system."
+    },
+    {
+      "id": "ai-validation",
+      "label": "AI and model validation",
+      "description": "Use leakage-safe validation, baselines, calibration, drift and subgroup checks, including a legitimate non-deployment result."
+    },
+    {
+      "id": "risk-decision",
+      "label": "Risk and decision analysis",
+      "description": "Compare feasible choices under dependent uncertainty, tail risk, scenario stress, value judgments, and reversal conditions."
+    },
+    {
+      "id": "behavior-policy",
+      "label": "Behavior and policy evidence",
+      "description": "Separate observed behavior, randomized or associational evidence, mechanisms, intervention claims, ethics, and implementation authority."
+    },
+    {
+      "id": "health-informatics",
+      "label": "Population health and informatics",
+      "description": "Respect population, cohort, measurement and information-system semantics while separating research validation from individual clinical use."
+    },
+    {
+      "id": "spatial-equity",
+      "label": "Spatial equity and planning",
+      "description": "Connect place-based evidence, access, distribution, uncertainty and feasibility without turning a screening model into a site or policy decision."
+    }
+  ],
+  "cases": {
+    "bike-demand-operations": {
+      "primary": "analytics-to-action",
+      "supporting": ["ai-validation", "risk-decision"],
+      "signals": ["temporal holdout", "simple baseline", "fixed capacity", "modeled pilot boundary"]
+    },
+    "cross-city-311-shift": {
+      "primary": "data-systems-governance",
+      "supporting": ["statistical-research", "spatial-equity"],
+      "signals": ["ontology audit", "distribution shift", "transfer refusal", "administrative-data boundary"]
+    },
+    "bank-marketing-response": {
+      "primary": "analytics-to-action",
+      "supporting": ["ai-validation", "behavior-policy"],
+      "signals": ["leakage-safe timing", "untouched test", "capacity capture", "randomized pilot requirement"]
+    },
+    "census-income-ai": {
+      "primary": "ai-validation",
+      "supporting": ["statistical-research", "data-systems-governance"],
+      "signals": ["temporal transport", "survey weights", "protected-attribute audit", "no consequential use"]
+    },
+    "treasury-risk-engineering": {
+      "primary": "risk-decision",
+      "supporting": ["statistical-research", "analytics-to-action"],
+      "signals": ["tail loss", "coverage backtest", "regime comparison", "dependent market shocks"]
+    },
+    "cfpb-fintech-complaint-operations": {
+      "primary": "data-systems-governance",
+      "supporting": ["ai-validation", "analytics-to-action"],
+      "signals": ["privacy minimization", "calendar holdout", "human review", "do not deploy"]
+    },
+    "commercial-real-estate-risk": {
+      "primary": "analytics-to-action",
+      "supporting": ["risk-decision", "spatial-equity"],
+      "signals": ["transaction screening", "financing sensitivity", "diligence workflow", "missing property evidence"]
+    },
+    "wildfire-mitigation-under-uncertainty": {
+      "primary": "risk-decision",
+      "supporting": ["behavior-policy", "spatial-equity"],
+      "signals": ["scenario regret", "tail exposure", "feasibility gap", "evidence request"]
+    },
+    "sec-nport-filing-review": {
+      "primary": "risk-decision",
+      "supporting": ["data-systems-governance", "analytics-to-action"],
+      "signals": ["transparent indicators", "review capacity", "filing lineage", "fiduciary boundary"]
+    },
+    "social-norm-field-experiment": {
+      "primary": "behavior-policy",
+      "supporting": ["statistical-research"],
+      "signals": ["randomized assignment", "household clustering", "intent-to-treat", "no new campaign authorization"]
+    },
+    "population-health-survival": {
+      "primary": "health-informatics",
+      "supporting": ["ai-validation", "data-systems-governance"],
+      "signals": ["linked cohorts", "temporal transport", "workload screen", "no individual clinical action"]
+    },
+    "opportunity-zone-policy-evaluation": {
+      "primary": "behavior-policy",
+      "supporting": ["statistical-research", "spatial-equity"],
+      "signals": ["matched change", "support diagnostics", "control reuse", "associational policy screen"]
+    },
+    "behavioral-reading-experiment": {
+      "primary": "statistical-research",
+      "supporting": ["behavior-policy"],
+      "signals": ["within-participant contrast", "small sample", "clustered inference", "generalization boundary"]
+    },
+    "nhanes-population-transportability": {
+      "primary": "health-informatics",
+      "supporting": ["statistical-research", "ai-validation"],
+      "signals": ["survey weights", "external cohort check", "calibration", "population inequality"]
+    },
+    "spatial-equity-planning": {
+      "primary": "spatial-equity",
+      "supporting": ["behavior-policy", "analytics-to-action"],
+      "signals": ["complete-case route", "missingness sensitivity", "observed transit proximity", "site evidence gate"]
+    }
+  }
+}

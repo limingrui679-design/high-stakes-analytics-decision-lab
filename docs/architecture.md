@@ -57,6 +57,19 @@ transformation log so a changed input or plan fails closed.
 Routes can compose, but a later route cannot erase the evidence and quality
 requirements of an earlier stage.
 
+## Capability navigation
+
+The public portfolio keeps school and application strategy outside the
+repository. A school-neutral capability map instead connects every case to one
+primary and up to two supporting paths: analytics-to-action, statistical
+research, data systems and governance, AI validation, risk and decision
+analysis, behavior and policy evidence, population health and informatics, and
+spatial equity and planning. These labels help reviewers find an evidence
+pattern; they do not upgrade a case's empirical claim.
+
+Use the [interactive explorer](../demo/index.html) or inspect the
+[machine-readable capability map](../examples/real-data-cases/capability-map.json).
+
 ## Two products, one contract
 
 ![The Evidence Intelligence Report remains primary and the Decision Intelligence Brief is conditional](../assets/report-layers.svg)
@@ -106,4 +119,3 @@ The system is a public research and portfolio prototype. It does not establish
 production readiness, institutional adoption, medical advice, investment
 advice, a regulatory finding, an assurance opinion, or achieved real-world
 impact. Domain review remains mandatory before operational use.
-

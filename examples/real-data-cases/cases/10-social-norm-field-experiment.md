@@ -24,6 +24,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 10 |
 | Valid terminal output | observed field effect no new campaign authorization |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Behavior and policy evidence** — Separate observed behavior, randomized or associational evidence, mechanisms, intervention claims, ethics, and implementation authority. |
+| Supporting | Statistical research |
+
+### Reviewer-visible signals
+
+- randomized assignment
+- household clustering
+- intent-to-treat
+- no new campaign authorization
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Source individuals analyzed:** 344,084

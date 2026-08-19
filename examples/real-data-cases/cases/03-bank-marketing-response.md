@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 41,188 |
 | Valid terminal output | randomized pilot required |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Analytics to action** — Connect prediction or diagnosis to capacity, workflow, implementation, communication, and a bounded next step. |
+| Supporting | AI and model validation, Behavior and policy evidence |
+
+### Reviewer-visible signals
+
+- leakage-safe timing
+- untouched test
+- capacity capture
+- randomized pilot requirement
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Untouched-test AUC:** 0.650

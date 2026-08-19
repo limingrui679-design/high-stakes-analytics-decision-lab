@@ -59,7 +59,7 @@ jobs:
         run: >-
           codespell --config .codespellrc
           README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md VERSIONING.md
-          docs references scripts tests
+          demo docs references scripts skills tests
 
   portfolio-reproducibility:
     name: Portfolio rebuild ${{ matrix.python-version }}

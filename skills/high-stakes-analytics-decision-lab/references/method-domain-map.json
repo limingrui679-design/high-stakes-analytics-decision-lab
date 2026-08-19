@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Machine-readable routing from transferable method domains to the fifteen real-data projects.",
+  "domains": [
+    {
+      "id": "statistical-inference",
+      "label": "Statistical inference and study design",
+      "project_ids": [
+        "population-health-survival",
+        "behavioral-reading-experiment",
+        "social-norm-field-experiment",
+        "nhanes-population-transportability"
+      ]
+    },
+    {
+      "id": "predictive-validation",
+      "label": "Predictive validation and model risk",
+      "project_ids": [
+        "census-income-ai",
+        "bank-marketing-response",
+        "cfpb-fintech-complaint-operations",
+        "cross-city-311-shift",
+        "population-health-survival"
+      ]
+    },
+    {
+      "id": "optimization-systems",
+      "label": "Optimization and systems decisions",
+      "project_ids": [
+        "bike-demand-operations",
+        "spatial-equity-planning",
+        "wildfire-mitigation-under-uncertainty"
+      ]
+    },
+    {
+      "id": "finance-risk",
+      "label": "Asset allocation, financial risk, and real-estate finance",
+      "project_ids": [
+        "treasury-risk-engineering",
+        "sec-nport-filing-review",
+        "commercial-real-estate-risk"
+      ]
+    },
+    {
+      "id": "policy-governance",
+      "label": "Public policy, planning, and administrative evidence",
+      "project_ids": [
+        "cfpb-fintech-complaint-operations",
+        "commercial-real-estate-risk",
+        "spatial-equity-planning",
+        "cross-city-311-shift",
+        "wildfire-mitigation-under-uncertainty",
+        "opportunity-zone-policy-evaluation"
+      ]
+    },
+    {
+      "id": "responsible-ai",
+      "label": "Responsible AI and sociotechnical boundaries",
+      "project_ids": [
+        "census-income-ai",
+        "cfpb-fintech-complaint-operations"
+      ]
+    }
+  ]
+}

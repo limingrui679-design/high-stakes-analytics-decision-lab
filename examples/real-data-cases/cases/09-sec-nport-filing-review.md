@@ -25,6 +25,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 11,747 |
 | Valid terminal output | claim-bounded decision review |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Risk and decision analysis** — Compare feasible choices under dependent uncertainty, tail risk, scenario stress, value judgments, and reversal conditions. |
+| Supporting | Data systems and governance, Analytics to action |
+
+### Reviewer-visible signals
+
+- transparent indicators
+- review capacity
+- filing lineage
+- fiduciary boundary
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **Reviewed fund filings:** 11,747

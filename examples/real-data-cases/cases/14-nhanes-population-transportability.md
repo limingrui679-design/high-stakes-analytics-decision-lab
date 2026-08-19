@@ -24,6 +24,23 @@ limited by the evidence boundary stated below.
 | Prepared rows | 11,820 |
 | Valid terminal output | population research only |
 
+## Capability path
+
+| Role | Capability |
+|---|---|
+| Primary | **Population health and informatics** — Respect population, cohort, measurement and information-system semantics while separating research validation from individual clinical use. |
+| Supporting | Statistical research, AI and model validation |
+
+### Reviewer-visible signals
+
+- survey weights
+- external cohort check
+- calibration
+- population inequality
+
+Capability labels help readers find a relevant precedent. They do not upgrade
+the evidence, permitted use, or empirical result of this case.
+
 ## Evidence-backed findings
 
 - **External-cohort AUC:** 0.805
