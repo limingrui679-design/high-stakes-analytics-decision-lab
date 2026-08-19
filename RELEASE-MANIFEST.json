@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "release": "1.1.0",
-  "release_tag": "v1.1.0",
-  "content_commit": "f1ceb5e3e872384188865554a54c9e7a4da8779c",
+  "release": "1.1.1",
+  "release_tag": "v1.1.1",
+  "content_commit": "24c1978dbe70d06f615817b7071e4e7b326453b4",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.1.0",
-  "release_commit_binding": "The annotated v1.1.0 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.1.1",
+  "release_commit_binding": "The annotated v1.1.1 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -31,12 +31,12 @@
     {
       "path": ".github/dependabot.yml",
       "mode": "100644",
-      "sha256": "840e6479df49ef4ee0b515dccb3e6d6037bd1e90d0f836a090005d7fb92d2796"
+      "sha256": "66e3f2057692a4807ef5aacea821b89bba38cdc424ad98409249745a89636b67"
     },
     {
       "path": ".github/workflows/codeql.yml",
       "mode": "100644",
-      "sha256": "429eaa95d3cf7976671f49699b6d595617c3104c0646acae529b859dc67bcdd9"
+      "sha256": "8aef7325de4bd88dde6f5c518e6d74bfe94e22814624027c791727f90e5361ec"
     },
     {
       "path": ".github/workflows/pages.yml",
@@ -56,12 +56,12 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "20e3fb7ab21881201e4ac7db21c0dfde5de10ebdd8b936c29fa5f884ad2970c8"
+      "sha256": "dc79d31568fd917d557f22cc45d152f2dfe18faf905dba9d161a0e4c6af337f4"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "1ab700ab1b91148a4859a5c8901915aadf5d550944cc020a7fe326f39b7362d9"
+      "sha256": "55941f850676dcf2deee520955b187e119f7466ebedb41cf1440f595d8dfd745"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -86,7 +86,7 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "7b9b264cbd9641339de99985c250b9b01d91181776101ee685ac498dda18f035"
+      "sha256": "f52db16c0cac8dcde69591c2225d058fa48159cfea06bf862e493ba4443dc837"
     },
     {
       "path": "SECURITY.md",
@@ -176,7 +176,7 @@
     {
       "path": "docs/verification.md",
       "mode": "100644",
-      "sha256": "bc009a0addfe52e3cf8eafdff97a54d33e884feaf15cc5076b0e6d3b047f2da6"
+      "sha256": "cdc612252f1a12c7b5588eae44d960b483d33566430f76ce24c817724af4bdd9"
     },
     {
       "path": "examples/real-data-cases/README.md",
@@ -396,7 +396,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "b547dbd82045d3ddddffae4962d1ec78080a09f756106166435f36aeba153922"
+      "sha256": "607aa1e222fa305f3149418b7ee97b748ea105b2d8ef1bff69625cd2f28cb3c8"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -3221,7 +3221,7 @@
     {
       "path": "requirements-dev.txt",
       "mode": "100644",
-      "sha256": "549497c0cf274df10c1345eb408b6cea73f307ee3506ee7f572cb765506a7810"
+      "sha256": "1b3eefac3a659f6b3e4149e39ab6e019a08b2c8ad1b7e11e651143e0b91be90b"
     },
     {
       "path": "requirements-maintenance.txt",
@@ -3241,7 +3241,7 @@
     {
       "path": "scripts/analytics_router.py",
       "mode": "100755",
-      "sha256": "d7189c26721fb225d05dd5f28e6c83c339b65b1892762ebc1dcbd783bc546e06"
+      "sha256": "9729bc128970471a2f27b9edb6653043ac7493e39cae200a04d7b8c9dfad16af"
     },
     {
       "path": "scripts/build_case_examples.py",
@@ -3261,7 +3261,7 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "09d0c543c78d4c7144f7f2eb962d1a3d97de698c14b0bf4d3361da292f24f9ea"
+      "sha256": "bdc15cecaa2e8bb546d2efc95b6e7684c8add9ed98e348c698586a6843481d9b"
     },
     {
       "path": "scripts/build_skill_bundle.py",
@@ -3271,7 +3271,7 @@
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "5626f7849897d03d379eb70dd8656480df93f8203bd9f0353de881092b9205f4"
+      "sha256": "c579b7764f0b09792e055117081c490bc02ae91a5585fdc1c21bbea8357ba10b"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
@@ -3396,7 +3396,7 @@
     {
       "path": "skills/high-stakes-analytics-decision-lab/bundle-manifest.json",
       "mode": "100644",
-      "sha256": "2ec4a2c86f3577c5067aaa65244ec1a121847c02acb1ecd2aa8de9295b47b282"
+      "sha256": "fc372a656fee071b9bc6b12c6955a4683c3f683bf864ce90e075b5c0f6e85101"
     },
     {
       "path": "skills/high-stakes-analytics-decision-lab/references/advanced-method-boundaries.md",
@@ -3486,7 +3486,7 @@
     {
       "path": "skills/high-stakes-analytics-decision-lab/scripts/analytics_router.py",
       "mode": "100755",
-      "sha256": "d7189c26721fb225d05dd5f28e6c83c339b65b1892762ebc1dcbd783bc546e06"
+      "sha256": "9729bc128970471a2f27b9edb6653043ac7493e39cae200a04d7b8c9dfad16af"
     },
     {
       "path": "skills/high-stakes-analytics-decision-lab/scripts/data_quality.py",
@@ -4226,12 +4226,12 @@
     {
       "path": "tests/fixtures/synthetic-outputs/question-routing/analysis-blueprint.json",
       "mode": "100644",
-      "sha256": "2e5126488fe21d225796278b19ced774cca729bfe559c05e2407a5788e0d3f08"
+      "sha256": "f946cd147339635d8f5a694394442ee91dabfb255b4d70ee8ebe5ffb109ce746"
     },
     {
       "path": "tests/fixtures/synthetic-outputs/question-routing/analysis-blueprint.md",
       "mode": "100644",
-      "sha256": "cbd0aa7d5aa7f7950624d01bbdf7f98e0e18851287ba1f312ab30798da522e97"
+      "sha256": "fcdee427d5c9d6602d147d1c0d593d0525d7e1ceb782ba61b97c08ecbcfc31ed"
     },
     {
       "path": "tests/fixtures/synthetic-outputs/question-routing/figures/analytics-lifecycle.svg",
@@ -4396,7 +4396,7 @@
     {
       "path": "tests/test_user_experience.py",
       "mode": "100644",
-      "sha256": "e3268ec23abbb52258c1a5177d3e6fb26673218b28f9564863527f43515404d1"
+      "sha256": "18c545b953bf18fbc59589689d4fae410ea2fced7333e31711035eda6ba207c4"
     },
     {
       "path": "tests/test_v5_numerics.py",
