@@ -193,6 +193,23 @@ class UserExperienceTests(unittest.TestCase):
             (ROOT / "README.md").read_text(encoding="utf-8"),
         )
 
+    def test_codeql_action_updates_are_pinned_atomic_and_grouped(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "codeql.yml").read_text(
+            encoding="utf-8"
+        )
+        references = re.findall(
+            r"github/codeql-action/(?:init|analyze)@([0-9a-f]{40})", workflow
+        )
+        self.assertEqual(len(references), 2)
+        self.assertEqual(len(set(references)), 1)
+        dependabot = (ROOT / ".github" / "dependabot.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertRegex(
+            dependabot,
+            r'(?ms)^\s+codeql:\s*$.*?^\s+- "github/codeql-action/\*"\s*$',
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

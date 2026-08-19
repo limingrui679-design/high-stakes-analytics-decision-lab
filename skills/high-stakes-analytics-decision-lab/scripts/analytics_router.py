@@ -9,7 +9,7 @@ from html import escape
 from pathlib import Path
 from typing import Any
 
-ROUTER_VERSION = "1.1.0"
+ROUTER_VERSION = "1.1.1"
 
 MODE_LABELS = {
     "descriptive": "Descriptive analytics",

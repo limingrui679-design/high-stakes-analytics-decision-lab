@@ -38,7 +38,7 @@ python3 scripts/verify_portfolio_reproducibility.py
 - Security checks include Bandit, dependency auditing, hardened source-builder
   tests, targeted branch coverage, and CodeQL.
 
-The 102 public tests cover data-readiness safety, custom-workspace
+The 103 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
@@ -98,7 +98,7 @@ See the full
 ## Release verification
 
 The current stable release is
-[`v1.1.0`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.0).
+[`v1.1.1`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.1).
 The release page publishes the versioned source ZIP and its SHA-256 checksum.
 `CITATION.cff`, `CHANGELOG.md`, the annotated tag, and the release manifest must
 identify the same release.
@@ -110,6 +110,6 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 102-test standalone regression suite, fifteen-project rebuild,
+The complete 103-test standalone regression suite, fifteen-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.

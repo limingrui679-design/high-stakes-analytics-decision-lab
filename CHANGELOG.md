@@ -7,6 +7,22 @@ All notable public changes are documented here. The repository follows
 
 No entries yet.
 
+## [1.1.1] - 2026-08-20
+
+### Changed
+
+- Updated CodeQL `init` and `analyze` together to v4.37.7 and grouped future
+  Dependabot CodeQL updates so one half of the workflow cannot advance alone.
+- Updated Ruff to 0.16.3 after its isolated dependency update passed the
+  existing verification and security workflows.
+
+### Verification
+
+- Added a regression check requiring both CodeQL steps to use the same pinned
+  commit and requiring the matching Dependabot group.
+- Preserved every case source, empirical result, report, decision artifact,
+  and figure from v1.1.0.
+
 ## [1.1.0] - 2026-08-20
 
 ### Added
@@ -200,7 +216,8 @@ No entries yet.
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
-[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.3...v1.0.4

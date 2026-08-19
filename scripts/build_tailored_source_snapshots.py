@@ -44,7 +44,7 @@ from safe_external_io import (  # noqa: E402
 
 USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.1.0"
+    "AppleWebKit/537.36 High-Stakes-Analytics-Decision-Lab/1.1.1"
 )
 MAX_XLSX_FILE_BYTES = 50 * 1024 * 1024
 MAX_XLSX_MEMBER_COUNT = 2_048

@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "RELEASE-MANIFEST.json"
-RELEASE_VERSION = "1.1.0"
+RELEASE_VERSION = "1.1.1"
 
 
 def _sha256(path: Path) -> str:
