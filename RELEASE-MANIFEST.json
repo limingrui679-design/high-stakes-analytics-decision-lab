@@ -1,12 +1,12 @@
 {
   "schema_version": "1.1",
-  "release": "1.1.1",
-  "release_tag": "v1.1.1",
-  "content_commit": "24c1978dbe70d06f615817b7071e4e7b326453b4",
+  "release": "1.1.2",
+  "release_tag": "v1.1.2",
+  "content_commit": "1831f4971c5e1637002be3696e36244bac6430df",
   "algorithm": "sha256",
   "scope": "Every tracked release file except RELEASE-MANIFEST.json itself.",
-  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.1.1",
-  "release_commit_binding": "The annotated v1.1.1 tag binds this self-excluding manifest and its content commit to the final release commit.",
+  "archive_build_method": "git archive --format=zip --prefix=high-stakes-analytics-decision-lab/ v1.1.2",
+  "release_commit_binding": "The annotated v1.1.2 tag binds this self-excluding manifest and its content commit to the final release commit.",
   "files": [
     {
       "path": ".codespellrc",
@@ -46,7 +46,7 @@
     {
       "path": ".github/workflows/verify.yml",
       "mode": "100644",
-      "sha256": "046e7dce9720153c0b40d4b1a7cadc5b5f80c6145c72482491cda3cc7e9bd018"
+      "sha256": "cc41c768b4db99fa7720582a1d78a3b3b8bb82f854d626905fbb478de962697f"
     },
     {
       "path": ".gitignore",
@@ -56,12 +56,12 @@
     {
       "path": "CHANGELOG.md",
       "mode": "100644",
-      "sha256": "dc79d31568fd917d557f22cc45d152f2dfe18faf905dba9d161a0e4c6af337f4"
+      "sha256": "9769915c95e20ec6563690ef806490b8eb7c4a08cb3ecf88cf3de83895081947"
     },
     {
       "path": "CITATION.cff",
       "mode": "100644",
-      "sha256": "55941f850676dcf2deee520955b187e119f7466ebedb41cf1440f595d8dfd745"
+      "sha256": "ef79830216ff4f0a04e91b997c4122d9ccae18a636fbd7808f8964544678297c"
     },
     {
       "path": "CODE_OF_CONDUCT.md",
@@ -81,17 +81,17 @@
     {
       "path": "Makefile",
       "mode": "100644",
-      "sha256": "518100b036ad39d60f2fcf7cd7680fe3c50c42ce81af3d5c65b49ca8b7103548"
+      "sha256": "74d5207e245340b9987a593c4a0e4ee31b205438aa54b080e079edf21369ddd5"
     },
     {
       "path": "README.md",
       "mode": "100644",
-      "sha256": "f52db16c0cac8dcde69591c2225d058fa48159cfea06bf862e493ba4443dc837"
+      "sha256": "7ed6c389b9e42dcadd216d54669071aa7b840df7c9eeea73d334d1cac05266a1"
     },
     {
       "path": "SECURITY.md",
       "mode": "100644",
-      "sha256": "fc8a38ca34d220ed2e37e4dcb4aebafed67f08e22c4e154f238fb13873147802"
+      "sha256": "f4eb17f37352359ef71c2a215ec874a415140db5488b8c255e8afdd158e860f6"
     },
     {
       "path": "VERSIONING.md",
@@ -146,7 +146,7 @@
     {
       "path": "demo/index.html",
       "mode": "100644",
-      "sha256": "82158f42fc6b8c722afa7956937edf3319e848c92a691f694a27cb454d7736c1"
+      "sha256": "d42955f4c796f3faa583ee2968ebfcb1772e35ef5037446a9d1004b99ccd8c2e"
     },
     {
       "path": "demo/styles.css",
@@ -176,7 +176,7 @@
     {
       "path": "docs/verification.md",
       "mode": "100644",
-      "sha256": "cdc612252f1a12c7b5588eae44d960b483d33566430f76ce24c817724af4bdd9"
+      "sha256": "fd776123cf1fdb0c6079cbcea643bc5274194726705aaf2b981b127af204cf07"
     },
     {
       "path": "examples/real-data-cases/README.md",
@@ -396,7 +396,7 @@
     {
       "path": "examples/real-data-cases/projects/_shared/safe_external_io.py",
       "mode": "100644",
-      "sha256": "607aa1e222fa305f3149418b7ee97b748ea105b2d8ef1bff69625cd2f28cb3c8"
+      "sha256": "e3ad712295d336e89984e913a415e6031563bcf499a8c20a17b3de4da865e678"
     },
     {
       "path": "examples/real-data-cases/projects/bank-marketing-response/PROJECT.md",
@@ -3221,7 +3221,7 @@
     {
       "path": "requirements-dev.txt",
       "mode": "100644",
-      "sha256": "1b3eefac3a659f6b3e4149e39ab6e019a08b2c8ad1b7e11e651143e0b91be90b"
+      "sha256": "c379ae8ac2c2d10d6cc9fc829a39cbde544322120b5631c5e56f2e9b7b97bc36"
     },
     {
       "path": "requirements-maintenance.txt",
@@ -3261,7 +3261,7 @@
     {
       "path": "scripts/build_release_manifest.py",
       "mode": "100644",
-      "sha256": "bdc15cecaa2e8bb546d2efc95b6e7684c8add9ed98e348c698586a6843481d9b"
+      "sha256": "410be6c4517af5db0fd735f9e21b460b1ad13d9d65206928e319cdd9fc6cd85e"
     },
     {
       "path": "scripts/build_skill_bundle.py",
@@ -3271,12 +3271,17 @@
     {
       "path": "scripts/build_tailored_source_snapshots.py",
       "mode": "100644",
-      "sha256": "c579b7764f0b09792e055117081c490bc02ae91a5585fdc1c21bbea8357ba10b"
+      "sha256": "7da9252d7eb5641bb8e94c3d2e37f2785e1f2a19fbc16d73472ae080feefec78"
     },
     {
       "path": "scripts/build_terminal_decision_reports.py",
       "mode": "100644",
       "sha256": "ca32121389a9902525e25ea5ed5a923fc70ea694aa4cacf0ac3139bde8f18bb8"
+    },
+    {
+      "path": "scripts/check_tracked_secrets.py",
+      "mode": "100644",
+      "sha256": "800dc33301340f2b400eca7e4899dd8a69c1cb15d2d304e6284379d7151ae730"
     },
     {
       "path": "scripts/configure_tailored_portfolio.py",
@@ -4394,9 +4399,14 @@
       "sha256": "81fc78e3d1910f873117cc6adf53e5b30fbe0149037a1fcfe490a960a9e988b1"
     },
     {
+      "path": "tests/test_security_hygiene.py",
+      "mode": "100644",
+      "sha256": "c2dd3281df97fb1723ef46d9703ab20bbcf2529bdec584625a62de6b664d6170"
+    },
+    {
       "path": "tests/test_user_experience.py",
       "mode": "100644",
-      "sha256": "18c545b953bf18fbc59589689d4fae410ea2fced7333e31711035eda6ba207c4"
+      "sha256": "71e2808864ce647d46007b2a73985915dbd2c2551590c00ce675c7b9f9dae20a"
     },
     {
       "path": "tests/test_v5_numerics.py",
