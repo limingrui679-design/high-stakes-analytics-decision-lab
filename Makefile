@@ -10,7 +10,7 @@ help:
 	@echo "  make test       Run the standalone regression suite"
 	@echo "  make portfolio  Rebuild and compare all fifteen projects"
 	@echo "  make verify     Run tests and the complete portfolio rebuild"
-	@echo "  make quality    Run Ruff, mypy, and codespell"
+	@echo "  make quality    Run tracked-secret, Ruff, mypy, and prose checks"
 	@echo "  make visuals    Regenerate canonical README, report, and case visuals"
 
 check-python:
@@ -34,6 +34,7 @@ portfolio: check-python
 verify: test portfolio
 
 quality:
+	$(PYTHON) scripts/check_tracked_secrets.py
 	ruff check scripts tests examples/real-data-cases/projects/_shared/safe_external_io.py
 	mypy
 	codespell --config .codespellrc README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md VERSIONING.md demo docs references scripts skills tests

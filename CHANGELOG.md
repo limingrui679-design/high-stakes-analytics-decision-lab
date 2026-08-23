@@ -7,6 +7,33 @@ All notable public changes are documented here. The repository follows
 
 No entries yet.
 
+## [1.1.2] - 2026-08-24
+
+### Fixed
+
+- Replaced repository-relative links in the deployed case explorer with public
+  GitHub repository and document links, eliminating five navigation anchors
+  that resolved outside the bounded Pages artifact.
+- Made CI invoke mypy without positional overrides so the configured shared
+  safe-input module is checked alongside the maintenance scripts.
+
+### Security
+
+- Added a dependency-free high-confidence tracked-secret gate that reports only
+  path, rule, and line metadata, plus regression tests for detection, redaction,
+  false-positive boundaries, and no-Git release-manifest discovery.
+
+### Changed
+
+- Updated mypy from 2.3.0 to 2.3.1 after the dependency update passed the full
+  public verification and security matrix.
+
+### Verification
+
+- Added a Pages deployment-boundary regression test for explorer links without
+  changing any case source, empirical result, report, decision artifact, or
+  figure.
+
 ## [1.1.1] - 2026-08-20
 
 ### Changed
@@ -216,7 +243,8 @@ No entries yet.
   numerical tests, package integrity, and security-specific input fixtures on
   the release commit.
 
-[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.1...HEAD
+[Unreleased]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.2...HEAD
+[1.1.2]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.5...v1.1.0
 [1.0.5]: https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/compare/v1.0.4...v1.0.5

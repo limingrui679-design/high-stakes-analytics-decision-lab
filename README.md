@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.1"><img src="https://img.shields.io/badge/release-v1.1.1-008C82?style=flat-square" alt="Release v1.1.1"></a>
+  <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.2"><img src="https://img.shields.io/badge/release-v1.1.2-008C82?style=flat-square" alt="Release v1.1.2"></a>
   <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml"><img src="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/verify.yml/badge.svg" alt="Verification status"></a>
   <a href="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/codeql.yml"><img src="https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/actions/workflows/codeql.yml/badge.svg" alt="CodeQL status"></a>
   <a href="LICENSE.txt"><img src="https://img.shields.io/badge/license-MIT-6B7280?style=flat-square" alt="MIT License"></a>
@@ -195,7 +195,7 @@ require a pilot or targeted review, and some stop at an evidence request or
 ## Verification you can reproduce
 
 The current stable release is
-[`v1.1.1`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.1).
+[`v1.1.2`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.2).
 Its versioned source package and SHA-256 checksum are published together; the
 release identity is also recorded in [`CITATION.cff`](CITATION.cff),
 [`CHANGELOG.md`](CHANGELOG.md), and `RELEASE-MANIFEST.json`.
@@ -205,22 +205,22 @@ make verify
 ```
 
 This runs the standalone regression suite and rebuilds all fifteen projects in
-an isolated verified-file copy. Use `make quality` for Ruff, mypy, and
-codespell; use [`docs/verification.md`](docs/verification.md) for direct
-commands, static security gates, and no-Git release verification.
+an isolated verified-file copy. Use `make quality` for the tracked-secret scan,
+Ruff, mypy, and codespell; use [`docs/verification.md`](docs/verification.md)
+for direct commands, static security gates, and no-Git release verification.
 
-The 103 public tests cover data readiness, adaptive routing, numerical behavior,
+The 106 public tests cover data readiness, adaptive routing, numerical behavior,
 source and artifact identity, package integrity, local links, accessible SVGs,
 generator idempotence, compact installation, quickstart safety, interactive
 explorer synchronization, no-Git releases, DNS and SSRF boundaries, and source
-parser security. The complete 103-test standalone regression suite and the
+parser security. The complete 106-test standalone regression suite and the
 fifteen-project rebuild are separate gates: successful reproduction establishes
 the reviewed workflow and declared numerical tolerance, not empirical validity,
 external adoption, or real-world impact.
 
-CI exercises Python 3.11, 3.12, 3.13, and 3.14. Security checks include
-Bandit, dependency auditing, hardened source-builder tests, targeted branch
-coverage, and CodeQL.
+CI exercises Python 3.11, 3.12, 3.13, and 3.14. Security checks include the
+tracked-secret gate, Bandit, dependency auditing, hardened source-builder tests,
+targeted branch coverage, and CodeQL.
 
 ## Repository design
 

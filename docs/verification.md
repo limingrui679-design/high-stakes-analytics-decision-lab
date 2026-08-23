@@ -27,7 +27,7 @@ python3 scripts/verify_portfolio_reproducibility.py
 | Portfolio rebuild | Fifteen reviewed projects regenerate in an isolated verified-file copy | Real-world adoption or impact |
 | Source and artifact identity | Hashes, modes, exact file set, manifests, and source receipts | That a publisher's data answer a causal question |
 | Numerical equivalence | Declared cross-version tolerances for structured floating-point results | Permission to normalize categorical, integer, source, or ordinary artifact differences |
-| Static and security checks | Ruff, mypy, codespell, Bandit, dependency audit, and CodeQL | Absolute security or production authorization |
+| Static and security checks | Tracked-secret scan, Ruff, mypy, codespell, Bandit, dependency audit, and CodeQL | Absolute security or production authorization |
 
 ## Current supported matrix
 
@@ -35,10 +35,11 @@ python3 scripts/verify_portfolio_reproducibility.py
 - CI runs the public suite and portfolio rebuild on Python 3.11, 3.12, 3.13,
   and 3.14.
 - Static quality runs on Python 3.14.
-- Security checks include Bandit, dependency auditing, hardened source-builder
-  tests, targeted branch coverage, and CodeQL.
+- Security checks include a dependency-free high-confidence tracked-secret
+  scan, Bandit, dependency auditing, hardened source-builder tests, targeted
+  branch coverage, and CodeQL.
 
-The 103 public tests cover data-readiness safety, custom-workspace
+The 106 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
@@ -61,6 +62,7 @@ The target runs:
 ```bash
 ruff check scripts tests examples/real-data-cases/projects/_shared/safe_external_io.py
 mypy
+python3 scripts/check_tracked_secrets.py
 codespell --config .codespellrc README.md CHANGELOG.md CONTRIBUTING.md \
   SECURITY.md VERSIONING.md demo docs references scripts skills tests
 ```
@@ -98,7 +100,7 @@ See the full
 ## Release verification
 
 The current stable release is
-[`v1.1.1`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.1).
+[`v1.1.2`](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/releases/tag/v1.1.2).
 The release page publishes the versioned source ZIP and its SHA-256 checksum.
 `CITATION.cff`, `CHANGELOG.md`, the annotated tag, and the release manifest must
 identify the same release.
@@ -110,6 +112,6 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 103-test standalone regression suite, fifteen-project rebuild,
+The complete 106-test standalone regression suite, fifteen-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.

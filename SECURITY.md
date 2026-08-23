@@ -18,6 +18,11 @@ execution, privacy leakage, or evidence and artifact tampering. Questions about
 empirical claims, source suitability, or data quality are usually better filed
 as regular source or quality issues unless they expose a security weakness.
 
+CI rejects high-confidence credential patterns and secret-shaped tracked file
+names without printing suspected credential values. This narrow gate complements
+Bandit, dependency auditing, hardened input tests, and CodeQL; it is not a claim
+of exhaustive secret detection or security certification.
+
 Please include the affected file or workflow, a minimal reproduction, the
 observed impact, and any suggested mitigation when those details can be shared
 safely.

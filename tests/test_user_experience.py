@@ -193,6 +193,32 @@ class UserExperienceTests(unittest.TestCase):
             (ROOT / "README.md").read_text(encoding="utf-8"),
         )
 
+    def test_deployed_explorer_links_respect_the_pages_artifact_boundary(self) -> None:
+        html = (ROOT / "demo" / "index.html").read_text(encoding="utf-8")
+        targets = re.findall(r"(?:href|src)=[\"']([^\"']+)[\"']", html)
+        repository = (
+            "https://github.com/limingrui679-design/"
+            "high-stakes-analytics-decision-lab"
+        )
+        self.assertNotRegex(html, r"(?:href|src)=[\"']\.\./")
+        for target in targets:
+            if target.startswith("#"):
+                continue
+            if target.startswith("https://"):
+                with self.subTest(external_target=target):
+                    self.assertTrue(target.startswith(repository))
+                continue
+            with self.subTest(deployed_demo_asset=target):
+                self.assertTrue((ROOT / "demo" / target).is_file())
+        for target in (
+            repository,
+            f"{repository}/blob/main/docs/getting-started.md",
+            f"{repository}/blob/main/docs/architecture.md",
+            f"{repository}/blob/main/references/real-evidence-workflow.md",
+        ):
+            with self.subTest(required_public_target=target):
+                self.assertIn(target, targets)
+
     def test_codeql_action_updates_are_pinned_atomic_and_grouped(self) -> None:
         workflow = (ROOT / ".github" / "workflows" / "codeql.yml").read_text(
             encoding="utf-8"
