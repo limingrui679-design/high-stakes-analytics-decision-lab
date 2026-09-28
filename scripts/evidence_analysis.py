@@ -153,10 +153,10 @@ def analyze_evidence(
             continue
         outcome_text = row.get(binary_outcome, "").strip()
         if outcome_text:
-            outcome = int(float(outcome_text))
+            outcome = float(outcome_text)
             if outcome not in {0, 1}:
                 raise ValueError(f"{binary_outcome} must contain only 0/1 values.")
-            binary[group].append(outcome)
+            binary[group].append(int(outcome))
         if continuous_outcome and row.get(continuous_outcome, "").strip():
             continuous[group].append(float(row[continuous_outcome]))
         if (
@@ -165,7 +165,7 @@ def analyze_evidence(
             and row.get(time_column, "").strip()
             and row.get(event_column, "").strip()
         ):
-            event = int(float(row[event_column]))
+            event = float(row[event_column])
             if event not in {0, 1}:
                 raise ValueError(f"{event_column} must contain only 0/1 values.")
             survival[group].append((float(row[time_column]), event))

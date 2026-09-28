@@ -407,6 +407,26 @@ class DecisionLabTests(unittest.TestCase):
             self.assertEqual(parsed["routing"]["primary_mode"], "prescriptive")
             self.assertTrue(ET.parse(figure_path).getroot().tag.endswith("svg"))
 
+    def test_binary_outcome_rejects_non_binary_values(self) -> None:
+        rows = [
+            {"arm": "standard", "adverse_event": "0"},
+            {"arm": "adaptive", "adverse_event": "1"},
+            {"arm": "adaptive", "adverse_event": "1.5"},
+        ]
+
+        with self.assertRaisesRegex(
+            ValueError,
+            "adverse_event must contain only 0/1 values.",
+        ):
+            analyze_evidence(
+                rows,
+                group_column="arm",
+                binary_outcome="adverse_event",
+                exposed_group="adaptive",
+                reference_group="standard",
+            )
+
+
     def test_evidence_prediction_and_optimization_modules(self) -> None:
         evidence_path = (
             REPO_ROOT / "tests" / "fixtures" / "synthetic-cases"
