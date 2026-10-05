@@ -1,4 +1,4 @@
-mypy==2.3.1
-ruff==0.16.3
+mypy==2.4.0
+ruff==0.16.10
 codespell==2.4.3
-coverage==7.15.4
+coverage==7.16.2
