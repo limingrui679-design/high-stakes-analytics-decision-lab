@@ -49,3 +49,27 @@ class ReviewCapacityTests(unittest.TestCase):
                 result(rows, **args)
         with self.assertRaisesRegex(ValueError, "complete"):
             result([*rows, {"y": "0", "s": ".2"}], batch_column="batch", batch_capacity=1)
+
+    def test_exact_yield_matches_exhaustive_two_batch_lotteries(self):
+        from itertools import combinations, product
+
+        from prediction_validation import _draw_distribution
+
+        rows = [
+            {"day": day, "score": str(score), "y": str(label)}
+            for day in ("a", "b")
+            for score, label in [(1, 1), (.5, 1), (.5, 0), (.1, 0)]
+        ]
+        report = validate_predictions(
+            rows, score_column="score", label_column="y", batch_column="day",
+            batch_capacity=2, exact_batch_yield=True, calibration_bins=2,
+        )["batch_review"]["yield_comparison"]
+        ranked = [sum(x) for x in product([1, 2], repeat=2)]
+        uniform_day = [sum(pair) for pair in combinations([1, 1, 0, 0], 2)]
+        uniform = [sum(x) for x in product(uniform_day, repeat=2)]
+        wins = sum(a > b for a, b in product(ranked, uniform))
+        self.assertAlmostEqual(report["probability_ranked_more_hits"], wins / (len(ranked) * len(uniform)))
+        self.assertEqual(report["ranked_yield"], {"first": 2, "probabilities": [.25, .5, .25]})
+        self.assertEqual(_draw_distribution(12, 0, 5), (0, [1.0]))
+        with self.assertRaisesRegex(ValueError, "requires a batch"):
+            validate_predictions(rows, score_column="score", label_column="y", exact_batch_yield=True)

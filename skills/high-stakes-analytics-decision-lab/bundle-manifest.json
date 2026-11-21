@@ -4,7 +4,7 @@
   "generator": "scripts/build_skill_bundle.py",
   "school_neutral": true,
   "file_count_excluding_manifest": 38,
-  "bytes_excluding_manifest": 483055,
+  "bytes_excluding_manifest": 487556,
   "files": [
     {
       "path": "LICENSE.txt",
@@ -153,8 +153,8 @@
     },
     {
       "path": "scripts/prediction_validation.py",
-      "bytes": 31760,
-      "sha256": "3adaeeefef6f2c3f7ccbdf520b3efb558b98c95cbadd46aadda48e4c30a927f1"
+      "bytes": 36261,
+      "sha256": "546ddc692badb423f4cfe2218a12eba40b118df0c7dd41c2c664b29f6bf362a5"
     },
     {
       "path": "scripts/prepare_dataset.py",
