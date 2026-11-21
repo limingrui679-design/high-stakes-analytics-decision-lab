@@ -39,7 +39,7 @@ python3 scripts/verify_portfolio_reproducibility.py
   scan, Bandit, dependency auditing, hardened source-builder tests, targeted
   branch coverage, and CodeQL.
 
-The 107 public tests cover data-readiness safety, custom-workspace
+The 108 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
@@ -112,6 +112,6 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 107-test standalone regression suite, fifteen-project rebuild,
+The complete 108-test standalone regression suite, fifteen-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.
