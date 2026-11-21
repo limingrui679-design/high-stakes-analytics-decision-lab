@@ -205,11 +205,11 @@ an isolated verified-file copy. Use `make quality` for the tracked-secret scan,
 Ruff, mypy, and codespell; use [`docs/verification.md`](docs/verification.md)
 for direct commands, static security gates, and no-Git release verification.
 
-The 108 public tests cover data readiness, adaptive routing, numerical behavior,
+The 109 public tests cover data readiness, adaptive routing, numerical behavior,
 source and artifact identity, package integrity, local links, accessible SVGs,
 generator idempotence, compact installation, quickstart safety, interactive
 explorer synchronization, no-Git releases, DNS and SSRF boundaries, and source
-parser security. The complete 108-test standalone regression suite and the
+parser security. The complete 109-test standalone regression suite and the
 fifteen-project rebuild are separate gates: successful reproduction establishes
 the reviewed workflow and declared numerical tolerance, not empirical validity,
 external adoption, or real-world impact.
@@ -277,3 +277,5 @@ Pass `--review-budget 10 --review-budget 25` to `scripts/prediction_validation.p
 For the [CFPB complaint holdout](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/predictions.csv), reviewing the top 25 of 2,396 records finds zero late labels. At a budget of 100, cutoff ties give 3 to 5 late labels (3.48 expected under random tie ordering), compared with 2.50 under random review. These are retrospective labels; changing the review order has no demonstrated effect on complaint outcomes.
 
 For a queue that closes daily, add `--batch-column date_received --batch-capacity 5`. Across 2,396 held-out CFPB complaints on 61 observed dates, 305 slots yielded 7.82 expected late responses under the score ranking (6–10 across tie orders), against 6.97 with uniform review on the same dates. Pooling all dates retrospectively yielded 8.52 using the same 305 slots. Scores were available for held-out records; review effects and deployment outcomes were not measured. Reproduce with the case's `outputs/predictions.csv`, `--label late_label` and `--score late_score`.
+
+Add `--exact-batch-yield` to calculate how often the ranking beats a uniform daily review lottery. For the same 61 CFPB dates and five daily slots, independent tie-breaking and uniform sampling give a **56.89%** chance of more late responses found by the ranking, a **14.06%** chance of a tie and a **29.04%** chance of fewer. [Method and interpretation](docs/verification.md#conditional-review-yield).

@@ -88,6 +88,8 @@ def _review_curve(
                     "cutoff_score": score,
                     "cutoff_tie_size": size,
                     "slots_at_cutoff": slots,
+                    "positives_at_cutoff": hits,
+                    "positives_above_cutoff": hits_above,
                     "expected_positives": expected,
                     "min_positives": hits_above + max(0, slots - (size - hits)),
                     "max_positives": hits_above + min(slots, hits),
@@ -104,7 +106,84 @@ def _review_curve(
     return points
 
 
-def _batch_review(clean: list[dict[str, Any]], capacity: int) -> dict[str, Any]:
+def _draw_distribution(population: int, positives: int, draws: int) -> tuple[int, list[float]]:
+    """Hypergeometric mass, scaled at its mode to avoid factorial overflow."""
+    low = max(0, draws + positives - population)
+    high = min(draws, positives)
+    mode = min(high, max(low, (draws + 1) * (positives + 1) // (population + 2)))
+    weights = [0.0] * (high - low + 1)
+    weights[mode - low] = 1.0
+    for k in range(mode, high):
+        weights[k + 1 - low] = weights[k - low] * (
+            (positives - k) * (draws - k) / ((k + 1) * (population - positives - draws + k + 1))
+        )
+    for k in range(mode, low, -1):
+        weights[k - 1 - low] = weights[k - low] * (
+            k * (population - positives - draws + k) / ((positives - k + 1) * (draws - k + 1))
+        )
+    total = math.fsum(weights)
+    return low, [weight / total for weight in weights]
+
+
+def _sum_distributions(
+    days: list[tuple[int, list[float]]],
+) -> tuple[int, list[float]]:
+    offset, probabilities = 0, [1.0]
+    for low, mass in days:
+        offset += low
+        if len(mass) == 1:
+            continue
+        updated = [0.0] * (len(probabilities) + len(mass) - 1)
+        for i, left in enumerate(probabilities):
+            for j, right in enumerate(mass):
+                updated[i + j] += left * right
+        probabilities = updated
+    return offset, probabilities
+
+
+def _yield_comparison(points: list[dict[str, Any]]) -> dict[str, Any]:
+    """Compare independent review lotteries conditional on arrivals, labels and scores."""
+    ranked_days = []
+    random_days = []
+    # Bound the explicit convolution before allocating any large distributions.
+    widths = [1, 1]
+    operations = 0
+    for p in points:
+        groups = [
+            (p["cutoff_tie_size"], p["positives_at_cutoff"], p["slots_at_cutoff"]),
+            (p["eligible"], p["batch_positives"], p["budget"]),
+        ]
+        for i, (n, hits, k) in enumerate(groups):
+            width = min(k, hits) - max(0, k + hits - n) + 1
+            if width > 1:
+                operations += widths[i] * width
+                widths[i] += width - 1
+            if operations > 10_000_000:
+                raise ValueError("Exact batch yield exceeds the convolution work budget.")
+        low, mass = _draw_distribution(*groups[0])
+        ranked_days.append((p["positives_above_cutoff"] + low, mass))
+        random_days.append(_draw_distribution(*groups[1]))
+    ranked_low, ranked = _sum_distributions(ranked_days)
+    random_low, random = _sum_distributions(random_days)
+    pending = 0
+    below = wins = ties = 0.0
+    for i, probability in enumerate(ranked, start=ranked_low):
+        while pending < len(random) and random_low + pending < i:
+            below += random[pending]
+            pending += 1
+        wins += probability * below
+        if pending < len(random) and random_low + pending == i:
+            ties += probability * random[pending]
+    return {
+        "ranked_yield": {"first": ranked_low, "probabilities": ranked},
+        "random_yield": {"first": random_low, "probabilities": random},
+        "probability_ranked_more_hits": wins,
+        "probability_equal_hits": ties,
+        "probability_random_more_hits": max(0.0, 1.0 - wins - ties),
+    }
+
+
+def _batch_review(clean: list[dict[str, Any]], capacity: int, exact_yield: bool = False) -> dict[str, Any]:
     """Rank within each observed batch, with unused slots expiring at its close."""
     if type(capacity) is not int or capacity < 1:
         raise ValueError("batch_capacity must be a positive integer.")
@@ -115,7 +194,7 @@ def _batch_review(clean: list[dict[str, Any]], capacity: int) -> dict[str, Any]:
     for batch, rows in sorted(batches.items()):
         slots = min(capacity, len(rows))
         point = _review_curve([r["label"] for r in rows], [r["score"] for r in rows], [slots])[0]
-        points.append({"batch": batch, "eligible": len(rows), **point})
+        points.append({"batch": batch, "eligible": len(rows), "batch_positives": sum(r["label"] for r in rows), **point})
     slots_used = sum(p["budget"] for p in points)
     expected = math.fsum(p["expected_positives"] for p in points)
     pooled = _review_curve([r["label"] for r in clean], [r["score"] for r in clean], [slots_used])[0]
@@ -128,6 +207,7 @@ def _batch_review(clean: list[dict[str, Any]], capacity: int) -> dict[str, Any]:
         "expected_positives_random_within_batch": math.fsum(p["expected_positives_random_review"] for p in points),
         "pooled_same_slots_expected_positives": pooled["expected_positives"],
         "batches": points,
+        **({"yield_comparison": _yield_comparison(points)} if exact_yield else {}),
     }
 
 
@@ -330,6 +410,7 @@ def validate_predictions(
     review_budgets: list[int] | None = None,
     batch_column: str | None = None,
     batch_capacity: int | None = None,
+    exact_batch_yield: bool = False,
 ) -> dict[str, Any]:
     if isinstance(threshold, bool) or not isinstance(threshold, (int, float)):
         raise ValueError("threshold must be a finite number between 0 and 1.")
@@ -342,6 +423,8 @@ def validate_predictions(
     if not rows:
         raise ValueError("At least one prediction row is required.")
     required_columns = {label_column, score_column}
+    if exact_batch_yield and batch_column is None:
+        raise ValueError("Exact batch yield requires a batch column and capacity.")
     if (batch_column is None) != (batch_capacity is None):
         raise ValueError("Supply both batch_column and batch_capacity for batch review.")
     if batch_column is not None:
@@ -442,7 +525,7 @@ def validate_predictions(
             }
     return {
         "analysis_type": "binary_prediction_validation",
-        **({"batch_review": _batch_review(clean, batch_capacity)} if batch_capacity is not None else {}),
+        **({"batch_review": _batch_review(clean, batch_capacity, exact_batch_yield)} if batch_capacity is not None else {}),
         **({"review_capacity": _review_curve(labels, scores, review_budgets)} if review_budgets else {}),
         "data_quality": {
             "rows_received": len(rows),
@@ -639,6 +722,15 @@ def render_report(result: dict[str, Any], title: str) -> str:
             f"Pooling all dates with the same slots yields {b['pooled_same_slots_expected_positives']:.2f}.", "",
             "Each batch closes before ranking. Unused slots expire. Dates absent from the input are unobserved.", "",
         ])
+    if result.get("batch_review", {}).get("yield_comparison"):
+        distribution = result["batch_review"]["yield_comparison"]
+        lines.extend([
+            "## How often does the ranking beat random review?", "",
+            "Conditional on these held-out labels, independent draws break score ties "
+            "and fill the same daily slots uniformly in the comparator.",
+            f"The ranking finds more positives in {distribution['probability_ranked_more_hits']:.1%} "
+            f"of paired draws and ties in {distribution['probability_equal_hits']:.1%}.", "",
+        ])
     if result["subgroups"]:
         lines.extend(
             [
@@ -722,6 +814,7 @@ def main() -> int:
     parser.add_argument("--threshold", type=float, default=0.5)
     parser.add_argument("--group")
     parser.add_argument("--period")
+    parser.add_argument("--exact-batch-yield", action="store_true", help="Compare the full ranking and within-batch random yield distributions.")
     parser.add_argument("--batch-column", help="Arrival date or other batch known at review time.")
     parser.add_argument("--batch-capacity", type=int, help="Maximum reviews per observed batch.")
     parser.add_argument("--bins", type=int, default=10)
@@ -746,6 +839,7 @@ def main() -> int:
         calibration_bins=args.bins,
         review_budgets=args.review_budget,
         batch_column=args.batch_column,
+        exact_batch_yield=args.exact_batch_yield,
         batch_capacity=args.batch_capacity,
     )
     paths = write_outputs(result, args.output_dir, args.title)

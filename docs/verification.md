@@ -39,7 +39,7 @@ python3 scripts/verify_portfolio_reproducibility.py
   scan, Bandit, dependency auditing, hardened source-builder tests, targeted
   branch coverage, and CodeQL.
 
-The 108 public tests cover data-readiness safety, custom-workspace
+The 109 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
@@ -112,6 +112,12 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 108-test standalone regression suite, fifteen-project rebuild,
+The complete 109-test standalone regression suite, fifteen-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.
+
+### Conditional review yield
+
+Run `python scripts/prediction_validation.py examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/predictions.csv --label late_label --score late_score --batch-column date_received --batch-capacity 5 --exact-batch-yield --output-dir /tmp/queue-review`.
+
+For the score rule, records above the cutoff always enter the queue. Uniform sampling without replacement among cutoff ties adds a hypergeometric number of positives. Uniform review draws from the whole batch with the same slot count. The implementation convolves daily distributions separately, then compares independent draws from both policies. The JSON exposes both probability mass functions; the first element corresponds to the integer in `first`. A mode-centered recurrence avoids large factorials. Results describe random selection on these fixed historical arrivals and labels. Transfer to future queues requires new evidence. An enumeration test independently checks the paired comparison against every possible selection in two small batches.
