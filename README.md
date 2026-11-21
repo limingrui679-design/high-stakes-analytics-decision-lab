@@ -5,8 +5,7 @@
 <h1 align="center">High-Stakes Analytics & Decision Lab</h1>
 
 <p align="center">
-  Evidence-gated analytics for consequential questions.<br>
-  Move from an ambiguous decision to reproducible evidence—and only then, when justified, to bounded action.
+  Turn a decision about people or resources into an analysis another team can reproduce.
 </p>
 
 <p align="center">
@@ -27,12 +26,11 @@
 
 ## Why this exists
 
-High-stakes analysis often fails before the model: the question is underspecified,
-the data contract is implicit, cleaning choices are hidden, uncertainty is treated
-as independent, or a recommendation is written because the template expects one.
+A transit planner choosing service locations and a review team prioritising complaints face a similar problem. An analysis has to answer a decision someone can actually make with the time, data and capacity available. This reusable analytics skill starts by defining that decision, the people affected and the unit of analysis. It then compares methods, tests how assumptions change the result, and links each finding to the data and code behind it.
 
-This repository is a platform-neutral Agent Skill and reproducible research
-portfolio built around a stricter sequence:
+The spatial equity case combines U.S. Census tract estimates with Massachusetts transit data to compare candidate service locations. Excluding tracts with missing rent-to-income data and filling those gaps with the observed median yielded the same five candidate sites. Treating the missing values as zero would have changed one selection. [Explore the spatial equity analysis](examples/real-data-cases/projects/spatial-equity-planning/PROJECT.md)
+
+The same workflow runs across 15 public-data cases.
 
 | Principle | System behavior |
 |---|---|
@@ -43,9 +41,7 @@ portfolio built around a stricter sequence:
 | **Dependent uncertainty** | Retain shared time, market, participant, campaign, operational, and spatial shocks |
 | **Traceable communication** | Link claims and accessible figures to JSON, CSV, hashes, and rerunnable code |
 
-The result is not a fixed report generator. It is an evidence-gated orchestration
-system that can stop, ask for a named decision, or produce a bounded analytical
-product without upgrading weak evidence into a stronger claim.
+The skill produces an evidence report. When the analysis supports an action, a separate decision brief records the alternatives, their trade-offs and the conditions for revisiting the choice.
 
 ## Start in three steps
 
