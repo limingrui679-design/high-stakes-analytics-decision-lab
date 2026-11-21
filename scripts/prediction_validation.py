@@ -36,21 +36,99 @@ def _require_aligned_labels_scores(
         raise ValueError("labels and scores must contain the same number of values.")
 
 
-def _auc(labels: list[int], scores: list[float]) -> float | None:
+def _score_groups(labels: list[int], scores: list[float]) -> dict[float, tuple[int, int]]:
     _require_aligned_labels_scores(labels, scores)
-    positive_scores = [
-        score for label, score in zip(labels, scores, strict=True) if label == 1
-    ]
-    negative_scores = [
-        score for label, score in zip(labels, scores, strict=True) if label == 0
-    ]
-    if not positive_scores or not negative_scores:
+    groups: dict[float, tuple[int, int]] = {}
+    for label, score in zip(labels, scores, strict=True):
+        count, positives = groups.get(score, (0, 0))
+        groups[score] = (count + 1, positives + label)
+    return groups
+
+
+def _auc(labels: list[int], scores: list[float]) -> float | None:
+    groups = _score_groups(labels, scores)
+    positive = sum(labels)
+    negative = len(labels) - positive
+    if not positive or not negative:
         return None
-    wins = 0.0
-    for positive in positive_scores:
-        for negative in negative_scores:
-            wins += 1.0 if positive > negative else 0.5 if positive == negative else 0.0
-    return wins / (len(positive_scores) * len(negative_scores))
+    negatives_below = 0
+    twice_wins = 0
+    for score in sorted(groups):
+        size, hits = groups[score]
+        misses = size - hits
+        twice_wins += hits * (2 * negatives_below + misses)
+        negatives_below += misses
+    return twice_wins / (2 * positive * negative)
+
+
+def _review_curve(
+    labels: list[int], scores: list[float], budgets: list[int]
+) -> list[dict[str, Any]]:
+    """Yield from ranking a fixed held-out cohort; assume random order only inside ties."""
+    if any(type(k) is not int or not 1 <= k <= len(labels) for k in budgets):
+        raise ValueError(
+            "Each review budget must be an integer between 1 and the analyzed row count."
+        )
+    if not budgets:
+        return []
+    total_positive = sum(labels)
+    groups = _score_groups(labels, scores)
+    ordered = sorted(set(budgets))
+    position = above = hits_above = 0
+    points = []
+    for score in sorted(groups, reverse=True):
+        size, hits = groups[score]
+        while position < len(ordered) and ordered[position] <= above + size:
+            k = ordered[position]
+            slots = k - above
+            expected = hits_above + slots * hits / size
+            points.append(
+                {
+                    "budget": k,
+                    "cutoff_score": score,
+                    "cutoff_tie_size": size,
+                    "slots_at_cutoff": slots,
+                    "expected_positives": expected,
+                    "min_positives": hits_above + max(0, slots - (size - hits)),
+                    "max_positives": hits_above + min(slots, hits),
+                    "expected_positives_random_review": k * total_positive / len(labels),
+                    "expected_recall": _safe_divide(expected, total_positive),
+                    "expected_precision": expected / k,
+                }
+            )
+            position += 1
+        if position == len(ordered):
+            break
+        above += size
+        hits_above += hits
+    return points
+
+
+def _batch_review(clean: list[dict[str, Any]], capacity: int) -> dict[str, Any]:
+    """Rank within each observed batch, with unused slots expiring at its close."""
+    if type(capacity) is not int or capacity < 1:
+        raise ValueError("batch_capacity must be a positive integer.")
+    batches: dict[str, list[dict[str, Any]]] = {}
+    for row in clean:
+        batches.setdefault(row["batch"], []).append(row)
+    points = []
+    for batch, rows in sorted(batches.items()):
+        slots = min(capacity, len(rows))
+        point = _review_curve([r["label"] for r in rows], [r["score"] for r in rows], [slots])[0]
+        points.append({"batch": batch, "eligible": len(rows), **point})
+    slots_used = sum(p["budget"] for p in points)
+    expected = math.fsum(p["expected_positives"] for p in points)
+    pooled = _review_curve([r["label"] for r in clean], [r["score"] for r in clean], [slots_used])[0]
+    return {
+        "capacity_per_observed_batch": capacity, "observed_batches": len(points),
+        "slots_used": slots_used, "unused_slots_in_observed_batches": capacity * len(points) - slots_used,
+        "expected_positives": expected,
+        "min_positives": sum(p["min_positives"] for p in points),
+        "max_positives": sum(p["max_positives"] for p in points),
+        "expected_positives_random_within_batch": math.fsum(p["expected_positives_random_review"] for p in points),
+        "pooled_same_slots_expected_positives": pooled["expected_positives"],
+        "batches": points,
+    }
 
 
 def _classification_metrics(
@@ -249,6 +327,9 @@ def validate_predictions(
     group_column: str | None = None,
     period_column: str | None = None,
     calibration_bins: int = 10,
+    review_budgets: list[int] | None = None,
+    batch_column: str | None = None,
+    batch_capacity: int | None = None,
 ) -> dict[str, Any]:
     if isinstance(threshold, bool) or not isinstance(threshold, (int, float)):
         raise ValueError("threshold must be a finite number between 0 and 1.")
@@ -261,6 +342,10 @@ def validate_predictions(
     if not rows:
         raise ValueError("At least one prediction row is required.")
     required_columns = {label_column, score_column}
+    if (batch_column is None) != (batch_capacity is None):
+        raise ValueError("Supply both batch_column and batch_capacity for batch review.")
+    if batch_column is not None:
+        required_columns.add(batch_column)
     if group_column:
         required_columns.add(group_column)
     if period_column:
@@ -297,12 +382,16 @@ def validate_predictions(
             raise ValueError(
                 f"{period_column} must be complete when period-based drift is requested."
             )
+        batch = row.get(batch_column, "").strip() if batch_column is not None else ""
+        if batch_column is not None and not batch:
+            raise ValueError(f"{batch_column} must be complete for analyzed batch-review rows.")
         clean.append(
             {
                 "label": int(label_value),
                 "score": score,
                 "group": row.get(group_column, "").strip() if group_column else "",
                 "period": period,
+                "batch": batch,
             }
         )
     if not clean:
@@ -353,6 +442,8 @@ def validate_predictions(
             }
     return {
         "analysis_type": "binary_prediction_validation",
+        **({"batch_review": _batch_review(clean, batch_capacity)} if batch_capacity is not None else {}),
+        **({"review_capacity": _review_curve(labels, scores, review_budgets)} if review_budgets else {}),
         "data_quality": {
             "rows_received": len(rows),
             "rows_analyzed": len(clean),
@@ -518,6 +609,36 @@ def render_report(result: dict[str, Any], title: str) -> str:
         f"{_metric_text(overall['false_negative_rate'])} |",
         "",
     ]
+    if result.get("review_capacity"):
+        lines.extend(
+            [
+                "## Fixed review capacity",
+                "",
+                "Expected yield assumes uniform selection within cutoff ties. The range covers every possible tie ordering.",
+                "",
+                "| Slots | Expected positives | Tie range | Random review |",
+                "|---:|---:|---:|---:|",
+            ]
+        )
+        for point in result["review_capacity"]:
+            lines.append(
+                f"| {point['budget']} | {point['expected_positives']:.2f} | "
+                f"{point['min_positives']}–{point['max_positives']} | "
+                f"{point['expected_positives_random_review']:.2f} |"
+            )
+        lines.append("")
+    if result.get("batch_review"):
+        b = result["batch_review"]
+        lines.extend([
+            "## Review capacity by arrival batch", "",
+            f"At {b['capacity_per_observed_batch']} slots per batch, reviewers can examine "
+            f"{b['slots_used']} records in {b['observed_batches']} observed batches. "
+            f"The ranking yields {b['expected_positives']:.2f} expected positives "
+            f"(tie range {b['min_positives']}–{b['max_positives']}). "
+            f"Random review within batches yields {b['expected_positives_random_within_batch']:.2f}. "
+            f"Pooling all dates with the same slots yields {b['pooled_same_slots_expected_positives']:.2f}.", "",
+            "Each batch closes before ranking. Unused slots expire. Dates absent from the input are unobserved.", "",
+        ])
     if result["subgroups"]:
         lines.extend(
             [
@@ -601,7 +722,15 @@ def main() -> int:
     parser.add_argument("--threshold", type=float, default=0.5)
     parser.add_argument("--group")
     parser.add_argument("--period")
+    parser.add_argument("--batch-column", help="Arrival date or other batch known at review time.")
+    parser.add_argument("--batch-capacity", type=int, help="Maximum reviews per observed batch.")
     parser.add_argument("--bins", type=int, default=10)
+    parser.add_argument(
+        "--review-budget",
+        type=int,
+        action="append",
+        help="Number of ranked records reviewers can inspect; repeat for multiple budgets.",
+    )
     parser.add_argument("--title", default="Prediction Model Validation")
     parser.add_argument("--output-dir", required=True)
     args = parser.parse_args()
@@ -615,6 +744,9 @@ def main() -> int:
         group_column=args.group,
         period_column=args.period,
         calibration_bins=args.bins,
+        review_budgets=args.review_budget,
+        batch_column=args.batch_column,
+        batch_capacity=args.batch_capacity,
     )
     paths = write_outputs(result, args.output_dir, args.title)
     print("\n".join(str(path) for path in paths))
