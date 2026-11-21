@@ -209,11 +209,11 @@ an isolated verified-file copy. Use `make quality` for the tracked-secret scan,
 Ruff, mypy, and codespell; use [`docs/verification.md`](docs/verification.md)
 for direct commands, static security gates, and no-Git release verification.
 
-The 106 public tests cover data readiness, adaptive routing, numerical behavior,
+The 107 public tests cover data readiness, adaptive routing, numerical behavior,
 source and artifact identity, package integrity, local links, accessible SVGs,
 generator idempotence, compact installation, quickstart safety, interactive
 explorer synchronization, no-Git releases, DNS and SSRF boundaries, and source
-parser security. The complete 106-test standalone regression suite and the
+parser security. The complete 107-test standalone regression suite and the
 fifteen-project rebuild are separate gates: successful reproduction establishes
 the reviewed workflow and declared numerical tolerance, not empirical validity,
 external adoption, or real-world impact.
@@ -273,3 +273,9 @@ history is in [`CHANGELOG.md`](CHANGELOG.md), and component-version boundaries
 are in [`VERSIONING.md`](VERSIONING.md).
 
 Licensed under the [MIT License](LICENSE.txt).
+
+### Evaluate a fixed review capacity
+
+Pass `--review-budget 10 --review-budget 25` to `scripts/prediction_validation.py` to evaluate top-ranked records on a labeled holdout. The report compares expected positives with random review and gives the exact best and worst achievable counts when scores tie at the cutoff. Choose budgets from available capacity before viewing outcomes. This describes retrospective yield in the supplied sample.
+
+For the [CFPB complaint holdout](examples/real-data-cases/projects/cfpb-fintech-complaint-operations/outputs/predictions.csv), reviewing the top 25 of 2,396 records finds zero late labels. At a budget of 100, cutoff ties give 3 to 5 late labels (3.48 expected under random tie ordering), compared with 2.50 under random review. These are retrospective labels; changing the review order has no demonstrated effect on complaint outcomes.
