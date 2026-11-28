@@ -1,0 +1,7 @@
+{
+  "status": "investment_risk_review",
+  "owner": "Fixed-income portfolio risk analyst",
+  "evidence": "Over 1097 held-out weeks, the rule triggered 143 times. The modeled net maximum drawdown was -17.02% after cutting credit and -19.21% under the matched-rate hedge.",
+  "next_decision": "Use the matched-rate comparison and stress-period outcomes to distinguish spread/liquidity exposure from rate sensitivity. The turnover threshold identifies when modeled trading costs reverse the gross comparison.",
+  "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+}

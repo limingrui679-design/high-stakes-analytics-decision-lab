@@ -1,0 +1,1219 @@
+{
+  "conclusion": "The 25% exploration policy allocated 960 slots over 8 quarters. Historical results were observable for 197 selections, giving full-roster critical-finding bounds of 4.9% to 84.4%.",
+  "headline_metrics": [
+    "Eligible restaurant-quarters: 55823",
+    "Exploration-policy reviews: 960",
+    "Unobserved selected outcomes: 763"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Retrospective ranking where an outcome is observed",
+      "unit": "Mean critical inspections per quarter",
+      "values": {
+        "Calendar": 18.25,
+        "Risk + 0% audit": 29.375,
+        "Risk + 10% audit": 28.375,
+        "Risk + 25% audit": 26.375,
+        "Risk + 50% audit": 23.625
+      },
+      "note": "Only the historically inspected subset enters this conditional replay."
+    },
+    "slice": {
+      "title": "Unknown outcomes at fixed inspection capacity",
+      "unit": "Percent of selections",
+      "values": {
+        "Calendar": 72.91666667,
+        "Risk + 0% audit": 79.79166667,
+        "Risk + 10% audit": 80.20833333,
+        "Risk + 25% audit": 79.47916667,
+        "Risk + 50% audit": 79.58333333
+      },
+      "note": "Wider bounds identify the cost of selective outcome observation."
+    },
+    "sensitivity": {
+      "title": "Where mixed-policy inspection slots went",
+      "unit": "Selected restaurant-quarters",
+      "values": {
+        "North": 625,
+        "South": 102,
+        "Central": 225,
+        "Unlocated": 8
+      },
+      "note": "The audit sample has known selection probabilities within each fixed geographic band."
+    }
+  },
+  "audit": {
+    "mean_days_earlier_logged_critical": {
+      "Calendar": 0.46315078,
+      "Risk + 0% audit": 3.04530088,
+      "Risk + 10% audit": 2.82285328,
+      "Risk + 25% audit": 2.42393509,
+      "Risk + 50% audit": 1.89858012
+    },
+    "randomization_ledger_first_quarter": [
+      {
+        "quarter": "2013-01-01",
+        "license": "1121361",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1197090",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1354323",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1493489",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1519437",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1622867",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1649314",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1769408",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1959937",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1964400",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1974743",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1974745",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1985227",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2065037",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2114331",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "29965",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "33342",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "43599",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1916161",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1042276",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1042399",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1042702",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1042910",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1044933",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1045342",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "10468",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "10476",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1070164",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1092172",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1093231",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "11030",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "11034",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "11126",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1120539",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1121243",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1142676",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1144116",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1145429",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "11583",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1166476",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1167481",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1167576",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1167581",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1168",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1193131",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1194410",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1197450",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1198093",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1216154",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1223247",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1226410",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1226628",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1228206",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1228649",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "12378",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "12380",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1245927",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1249650",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "12575",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "12601",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1272606",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1273690",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1275144",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1275219",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1275762",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1276880",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1299745",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1299747",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1300087",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1300822",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1305343",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1329966",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1331225",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1331472",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1332164",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1332365",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1332885",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1335044",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1336561",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1336958",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1337207",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "13388",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "13495",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1380398",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1382730",
+        "area": "South",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1384276",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "14422",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1442816",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1444965",
+        "area": "Central",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1445319",
+        "area": "North",
+        "policy": "targeted",
+        "inclusion_probability": 1
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1594513",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2102735",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1740076",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2004040",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2004115",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1121856",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "27303",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "37803",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "15888",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "33501",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "18271",
+        "area": "Central",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.0066385
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1817894",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1617552",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "29989",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1766453",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1904868",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2088929",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "59789",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1271831",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "2060329",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "52004",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1948257",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1964310",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1968878",
+        "area": "North",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00668037
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "3688",
+        "area": "South",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00730994
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "34396",
+        "area": "South",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00730994
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "16516",
+        "area": "South",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00730994
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "1060",
+        "area": "South",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00730994
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "42945",
+        "area": "South",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.00730994
+      },
+      {
+        "quarter": "2013-01-01",
+        "license": "59290",
+        "area": "Unlocated",
+        "policy": "stratified draw",
+        "inclusion_probability": 0.14285714
+      }
+    ],
+    "all_roster_lower_pct": {
+      "Calendar": 4.58333333,
+      "Risk + 0% audit": 5.20833333,
+      "Risk + 10% audit": 4.89583333,
+      "Risk + 25% audit": 4.89583333,
+      "Risk + 50% audit": 4.27083333
+    },
+    "all_roster_upper_pct": {
+      "Calendar": 77.5,
+      "Risk + 0% audit": 85.0,
+      "Risk + 10% audit": 85.10416667,
+      "Risk + 25% audit": 84.375,
+      "Risk + 50% audit": 83.85416667
+    },
+    "policy_counts": {
+      "Calendar": {
+        "selected": 960,
+        "known": 260,
+        "critical": 44,
+        "unknown": 700
+      },
+      "Risk + 0% audit": {
+        "selected": 960,
+        "known": 194,
+        "critical": 50,
+        "unknown": 766
+      },
+      "Risk + 10% audit": {
+        "selected": 960,
+        "known": 190,
+        "critical": 47,
+        "unknown": 770
+      },
+      "Risk + 25% audit": {
+        "selected": 960,
+        "known": 197,
+        "critical": 47,
+        "unknown": 763
+      },
+      "Risk + 50% audit": {
+        "selected": 960,
+        "known": 196,
+        "critical": 41,
+        "unknown": 764
+      }
+    },
+    "geo_selections": {
+      "Calendar": {
+        "Central": 423,
+        "North": 400,
+        "South": 137
+      },
+      "Risk + 0% audit": {
+        "North": 656,
+        "South": 93,
+        "Central": 211
+      },
+      "Risk + 10% audit": {
+        "North": 645,
+        "South": 96,
+        "Central": 211,
+        "Unlocated": 8
+      },
+      "Risk + 25% audit": {
+        "North": 625,
+        "South": 102,
+        "Central": 225,
+        "Unlocated": 8
+      },
+      "Risk + 50% audit": {
+        "North": 564,
+        "South": 115,
+        "Central": 273,
+        "Unlocated": 8
+      }
+    },
+    "prospective_randomization": {
+      "2013-01-01": {
+        "North": {
+          "eligible_after_exploitation": 1946,
+          "random_draws": 13,
+          "pi": 0.00668037
+        },
+        "Central": {
+          "eligible_after_exploitation": 1657,
+          "random_draws": 11,
+          "pi": 0.0066385
+        },
+        "South": {
+          "eligible_after_exploitation": 684,
+          "random_draws": 5,
+          "pi": 0.00730994
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2013-04-01": {
+        "North": {
+          "eligible_after_exploitation": 2160,
+          "random_draws": 13,
+          "pi": 0.00601852
+        },
+        "Central": {
+          "eligible_after_exploitation": 1819,
+          "random_draws": 11,
+          "pi": 0.00604728
+        },
+        "South": {
+          "eligible_after_exploitation": 740,
+          "random_draws": 5,
+          "pi": 0.00675676
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2013-07-01": {
+        "North": {
+          "eligible_after_exploitation": 2423,
+          "random_draws": 13,
+          "pi": 0.00536525
+        },
+        "South": {
+          "eligible_after_exploitation": 849,
+          "random_draws": 5,
+          "pi": 0.00588928
+        },
+        "Central": {
+          "eligible_after_exploitation": 1920,
+          "random_draws": 11,
+          "pi": 0.00572917
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2013-10-01": {
+        "Central": {
+          "eligible_after_exploitation": 2153,
+          "random_draws": 11,
+          "pi": 0.00510915
+        },
+        "North": {
+          "eligible_after_exploitation": 2596,
+          "random_draws": 13,
+          "pi": 0.0050077
+        },
+        "South": {
+          "eligible_after_exploitation": 849,
+          "random_draws": 5,
+          "pi": 0.00588928
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2014-01-01": {
+        "South": {
+          "eligible_after_exploitation": 854,
+          "random_draws": 5,
+          "pi": 0.0058548
+        },
+        "North": {
+          "eligible_after_exploitation": 2734,
+          "random_draws": 13,
+          "pi": 0.00475494
+        },
+        "Central": {
+          "eligible_after_exploitation": 2319,
+          "random_draws": 11,
+          "pi": 0.00474342
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2014-04-01": {
+        "North": {
+          "eligible_after_exploitation": 2851,
+          "random_draws": 14,
+          "pi": 0.00491056
+        },
+        "Central": {
+          "eligible_after_exploitation": 2370,
+          "random_draws": 11,
+          "pi": 0.00464135
+        },
+        "South": {
+          "eligible_after_exploitation": 866,
+          "random_draws": 4,
+          "pi": 0.00461894
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 7,
+          "random_draws": 1,
+          "pi": 0.14285714
+        }
+      },
+      "2014-07-01": {
+        "Central": {
+          "eligible_after_exploitation": 2404,
+          "random_draws": 11,
+          "pi": 0.00457571
+        },
+        "North": {
+          "eligible_after_exploitation": 2976,
+          "random_draws": 14,
+          "pi": 0.0047043
+        },
+        "South": {
+          "eligible_after_exploitation": 915,
+          "random_draws": 4,
+          "pi": 0.00437158
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 8,
+          "random_draws": 1,
+          "pi": 0.125
+        }
+      },
+      "2014-10-01": {
+        "South": {
+          "eligible_after_exploitation": 932,
+          "random_draws": 4,
+          "pi": 0.00429185
+        },
+        "Central": {
+          "eligible_after_exploitation": 2459,
+          "random_draws": 11,
+          "pi": 0.00447336
+        },
+        "North": {
+          "eligible_after_exploitation": 3077,
+          "random_draws": 14,
+          "pi": 0.00454989
+        },
+        "Unlocated": {
+          "eligible_after_exploitation": 11,
+          "random_draws": 1,
+          "pi": 0.09090909
+        }
+      }
+    },
+    "conditional_replay_counts": {
+      "Calendar": [
+        21,
+        27,
+        10,
+        11,
+        22,
+        32,
+        12,
+        11
+      ],
+      "Risk + 0% audit": [
+        25,
+        32,
+        30,
+        22,
+        32,
+        31,
+        36,
+        27
+      ],
+      "Risk + 10% audit": [
+        29,
+        30,
+        28,
+        19,
+        28,
+        31,
+        33,
+        29
+      ],
+      "Risk + 25% audit": [
+        27,
+        26,
+        25,
+        16,
+        27,
+        35,
+        32,
+        23
+      ],
+      "Risk + 50% audit": [
+        19,
+        17,
+        25,
+        13,
+        28,
+        34,
+        31,
+        22
+      ]
+    }
+  },
+  "next_decision": "Implement exploration as a recorded randomized sample of the non-targeted eligible roster, retaining each stratum's probability. Evaluate future yield with design weights and geographic coverage.",
+  "project_id": "food-inspection-exploration",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "prescriptive"
+    ],
+    "protocol": "Reconstruct dated permit eligibility and use only earlier restaurant records for classification, risk and geography. Compare calendar ordering, risk prioritization and stratified random exploration under one slot budget. Evaluate reordering on historically inspected premises; report worst/best bounds for missing outcomes on the full eligible roster. Supply exact inclusion probabilities for a future audit."
+  },
+  "data": {
+    "rows": 55823,
+    "grain": "One active retail-food license with a previously identified restaurant at the start of a quarter",
+    "snapshot_sha256": "a1c4731f949ef38a3d67614011a150279765725d9263271781c8779673b20edd"
+  },
+  "decision_support": {
+    "status": "inspection_audit_design"
+  }
+}

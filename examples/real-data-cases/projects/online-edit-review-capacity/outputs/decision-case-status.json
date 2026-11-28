@@ -1,0 +1,7 @@
+{
+  "status": "finite_inventory_policy",
+  "owner": "Operations research queue designer",
+  "evidence": "Across 366 held-out publication days, the inventory-value policy captured 308 seven-day identity reverts, versus 287 with a fixed threshold and 1095 for an outcome-aware upper bound.",
+  "next_decision": "Use logged arrivals to price the next slot. Compare operational rules with both ceilings; knowing the best future scores and knowing the future outcomes are different advantages.",
+  "boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits."
+}

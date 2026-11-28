@@ -7,6 +7,7 @@ on:
     paths:
       - ".github/workflows/pages.yml"
       - "demo/**"
+      - "examples/real-data-cases/projects/programming-hint-design/learning-prototype.html"
       - "examples/real-data-cases/figures/**"
       - "pages/**"
   workflow_dispatch:
@@ -38,6 +39,8 @@ jobs:
           mkdir -p _site/demo _site/examples/real-data-cases/figures
           cp pages/index.html _site/index.html
           cp -R demo/. _site/demo/
+          mkdir -p _site/demo/learning-feedback
+          cp examples/real-data-cases/projects/programming-hint-design/learning-prototype.html _site/demo/learning-feedback/index.html
           cp -R examples/real-data-cases/figures/. _site/examples/real-data-cases/figures/
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

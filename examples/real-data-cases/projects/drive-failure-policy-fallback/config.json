@@ -1,0 +1,32 @@
+{
+  "project_id": "drive-failure-policy-fallback",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "horizon_days": 14,
+    "held_model": "ST4000DM000",
+    "daily_slots": 15
+  },
+  "parameter_register": [
+    {
+      "parameter": "daily_slots",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes."
+    },
+    {
+      "parameter": "horizon_days",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes."
+    },
+    {
+      "parameter": "held_model",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes."
+    }
+  ]
+}

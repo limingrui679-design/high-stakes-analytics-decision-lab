@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Slots left idle at close",
+      "supported_finding": "The committed calendar offers the same daily ceiling to every rule.",
+      "interpretation_boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Gap to the score-aware hindsight ranking",
+      "supported_finding": "Score hindsight knows future scores but has no access to realized labels when ranking.",
+      "interpretation_boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits."
+    }
+  ]
+}

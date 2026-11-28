@@ -1,0 +1,7 @@
+{
+  "status": "inspection_audit_design",
+  "owner": "City public-health inspection and oversight team",
+  "evidence": "The 25% exploration policy allocated 960 slots over 8 quarters. Historical results were observable for 197 selections, giving full-roster critical-finding bounds of 4.9% to 84.4%.",
+  "next_decision": "Implement exploration as a recorded randomized sample of the non-targeted eligible roster, retaining each stratum's probability. Evaluate future yield with design weights and geographic coverage.",
+  "boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier."
+}

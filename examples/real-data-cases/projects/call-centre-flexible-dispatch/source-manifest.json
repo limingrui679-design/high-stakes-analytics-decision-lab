@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.1",
+  "project_id": "call-centre-flexible-dispatch",
+  "source_id": "bank99",
+  "title": "Technion Service Engineering Israeli bank call-centre logs",
+  "publisher": "Technion Service Enterprise Engineering",
+  "landing_page": "https://ie.technion.ac.il/serveng/callcenterdata/",
+  "version": "1999 bank call records",
+  "accessed_at": "2026-11-28",
+  "license": "Public academic research data; publisher terms apply",
+  "redistribution": "Prepared extract removes customer and employee identifiers. Original research data and documentation remain available at the Technion.",
+  "grain": "One queued telephone call between 08:00 and 13:00 on a Sunday–Thursday business day",
+  "expected_rows": 144382,
+  "sources": [
+    {
+      "source_id": "bank99",
+      "publisher": "Technion Service Enterprise Engineering",
+      "url": "https://ie.technion.ac.il/serveng/callcenterdata/",
+      "version": "1999 bank call records",
+      "license": "Public academic research data; publisher terms apply",
+      "license_url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/",
+      "output_fields": [
+        "arrival",
+        "service",
+        "wait",
+        "served"
+      ],
+      "artifacts": [
+        {
+          "name": "AprilTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/AprilTxt.ZIP",
+          "bytes": 876732,
+          "hash_algorithm": "sha256",
+          "sha256": "1aba520159a846e1144bf6336122779a8a3c72cbb41771a2ac7925821594c6b8"
+        },
+        {
+          "name": "AugustTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/AugustTxt.ZIP",
+          "bytes": 1113177,
+          "hash_algorithm": "sha256",
+          "sha256": "fbc210405b21823380f7250162d2e46697020100c2cec606355f368531551955"
+        },
+        {
+          "name": "DecemberTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/DecemberTxt.ZIP?download=1",
+          "bytes": 1173921,
+          "hash_algorithm": "sha256",
+          "sha256": "3e3eb51e10cf1b9dd44c15d70c0a6e88b029a7420f91f9882a471f1f3558951b"
+        },
+        {
+          "name": "FebruaryTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/FebruaryTxt.ZIP",
+          "bytes": 886408,
+          "hash_algorithm": "sha256",
+          "sha256": "bce1f2fd12ac4c68f6151530991a66f4ab0b42364a6957c642ace16548d8257b"
+        },
+        {
+          "name": "JanuaryTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/JanuaryTxt.ZIP",
+          "bytes": 849352,
+          "hash_algorithm": "sha256",
+          "sha256": "2cc4008643a940ba13620677f8de3d737c7496186029e53e632d2cf61a09a6f5"
+        },
+        {
+          "name": "JulyTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/JulyTxt.ZIP",
+          "bytes": 1070550,
+          "hash_algorithm": "sha256",
+          "sha256": "308712ba867f752f0a521513d6a5f602d79612985d3ead2db93c9a579b2edf21"
+        },
+        {
+          "name": "JuneTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/JuneTxt.ZIP",
+          "bytes": 1026538,
+          "hash_algorithm": "sha256",
+          "sha256": "528ae31089b1ce1a805754fb61afc2146cd2581d75aa7bb0ab13c9029d89993b"
+        },
+        {
+          "name": "MarchTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/MarchTxt.ZIP",
+          "bytes": 1070341,
+          "hash_algorithm": "sha256",
+          "sha256": "fd0366372c14f4c432c04986b7c2901397a4425d1c794c230a7050caf224b3fc"
+        },
+        {
+          "name": "MayTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/MayTxt.ZIP",
+          "bytes": 1081929,
+          "hash_algorithm": "sha256",
+          "sha256": "dd87426c7ab61bdf0c090ca1d09aff48059a2503bd5fc7280e95a32c95e5b8e6"
+        },
+        {
+          "name": "NovemberTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/NovemberTxt.ZIP",
+          "bytes": 1111661,
+          "hash_algorithm": "sha256",
+          "sha256": "8b14fdc9e0d0bbead85575069aeea75991b9839a0ac2601f3f5b0b6b77b5094b"
+        },
+        {
+          "name": "OctoberTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/OctoberTxt.ZIP",
+          "bytes": 869706,
+          "hash_algorithm": "sha256",
+          "sha256": "71c4179562899a1e6b21362cb72b354670b3e487215816bda7bfee2cb1631332"
+        },
+        {
+          "name": "SeptemberTxt.ZIP",
+          "url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/SeptemberTxt.ZIP",
+          "bytes": 811600,
+          "hash_algorithm": "sha256",
+          "sha256": "e57a564108ecf0c5b139c0b2cf3aa21dc87341feb97441cfe53724881b3d991d"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "11cf87b8bae7beca13ec7d03c5e7693447aecd71097e5c2a6aa71c08001bb0b9",
+      "bytes": 1499501,
+      "uncompressed_sha256": "a993c237568246e4e4a474e23a0d3b518123ea1094268c4172476634feb3a65a"
+    }
+  ]
+}

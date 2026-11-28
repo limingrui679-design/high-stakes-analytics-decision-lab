@@ -6,7 +6,7 @@ silently imply another.
 
 ## Fast path
 
-Run the complete standalone test suite and rebuild all fifteen projects:
+Run the complete standalone test suite and rebuild all thirty projects:
 
 ```bash
 make verify
@@ -24,7 +24,7 @@ python3 scripts/verify_portfolio_reproducibility.py
 | Layer | What is checked | What it does not prove |
 |---|---|---|
 | Unit and contract tests | Data gates, routing, numerical behavior, package integrity, security boundaries, links, and SVG accessibility | Empirical validity of a new dataset |
-| Portfolio rebuild | Fifteen reviewed projects regenerate in an isolated verified-file copy | Real-world adoption or impact |
+| Portfolio rebuild | Thirty reviewed projects regenerate in an isolated verified-file copy | Real-world adoption or impact |
 | Source and artifact identity | Hashes, modes, exact file set, manifests, and source receipts | That a publisher's data answer a causal question |
 | Numerical equivalence | Declared cross-version tolerances for structured floating-point results | Permission to normalize categorical, integer, source, or ordinary artifact differences |
 | Static and security checks | Tracked-secret scan, Ruff, mypy, codespell, Bandit, dependency audit, and CodeQL | Absolute security or production authorization |
@@ -39,7 +39,7 @@ python3 scripts/verify_portfolio_reproducibility.py
   scan, Bandit, dependency auditing, hardened source-builder tests, targeted
   branch coverage, and CodeQL.
 
-The 109 public tests cover data-readiness safety, custom-workspace
+The 120 public tests cover data-readiness safety, custom-workspace
 initialization, CLI round-trips, adaptive routing, the decision engine,
 generator idempotence, all source hashes, evidence contracts, independent
 numerical benchmarks, properties, extreme inputs, package naming, local links,
@@ -112,7 +112,7 @@ development changes as an older release. In a published source tree without
 Git metadata, the verifier instead checks the extracted files, modes, exact
 allowlist, and hashes directly against the bundled manifest.
 
-The complete 109-test standalone regression suite, fifteen-project rebuild,
+The complete 120-test standalone regression suite, thirty-project rebuild,
 static quality checks, security checks, archive inspection, and public
 redownload comparison are separate release gates.
 

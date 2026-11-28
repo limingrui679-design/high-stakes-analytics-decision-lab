@@ -1,0 +1,13 @@
+{
+  "grain": "One queued telephone call between 08:00 and 13:00 on a Sunday–Thursday business day",
+  "primary_key": "call",
+  "fields": {
+    "call": "Date, telephone line and source call number",
+    "date": "Calendar date",
+    "arrival": "Queue entry, seconds after midnight",
+    "kind": "Source call service type",
+    "wait": "Observed queued seconds",
+    "served": "1 when served, 0 when the caller abandoned",
+    "service": "Observed service duration in seconds; blank for abandoned calls"
+  }
+}

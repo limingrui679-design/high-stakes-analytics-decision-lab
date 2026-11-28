@@ -1,0 +1,17 @@
+{
+  "grain": "One changed scheduled connection or version marker in ordered MBTA archive copies",
+  "primary_key": "key",
+  "fields": {
+    "key": "Version and connection identity",
+    "feed": "Archived feed label",
+    "op": "Version marker or put/drop",
+    "trip": "Published trip ID",
+    "seq": "Starting stop sequence",
+    "a": "Origin station or stop",
+    "b": "Destination station or stop",
+    "depart": "Scheduled seconds from service-day midnight",
+    "arrive": "Arrival seconds from service-day midnight",
+    "board": "Boarding permitted at origin",
+    "alight": "Alighting permitted at destination"
+  }
+}

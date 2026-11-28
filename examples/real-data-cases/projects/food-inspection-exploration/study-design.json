@@ -1,0 +1,66 @@
+{
+  "number": 25,
+  "slug": "food-inspection-exploration",
+  "title": "How Much Inspection Capacity Should a City Reserve for Random Audits?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One active retail-food license with a previously identified restaurant at the start of a quarter",
+  "dataset": "Chicago Food Inspection Forecasting, historical permits and canvass inspections",
+  "question": "How much of a city's finite inspection capacity should be reserved for random exploration?",
+  "owner": "City public-health inspection and oversight team",
+  "design": "Reconstruct dated permit eligibility and use only earlier restaurant records for classification, risk and geography. Compare calendar ordering, risk prioritization and stratified random exploration under one slot budget. Evaluate reordering on historically inspected premises; report worst/best bounds for missing outcomes on the full eligible roster. Supply exact inclusion probabilities for a future audit.",
+  "boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier.",
+  "route": [
+    "diagnostic",
+    "prescriptive"
+  ],
+  "redistribution": "Deidentified derived public City of Chicago records with attribution. No names or premises addresses are published.",
+  "fields": {
+    "key": "Quarter/license key",
+    "quarter": "Decision date",
+    "license": "Public license number",
+    "area": "Pre-specified latitude band from a prior visit",
+    "risk": "Risk category at prior visit",
+    "days_since": "Days since most recent prior observation",
+    "prior_visits": "Earlier canvass visit count",
+    "critical_history": "Earlier visits with a critical finding",
+    "last_critical": "Critical finding on last observed past visit",
+    "outcome": "Critical finding at next inspected date this quarter; empty if unlabeled",
+    "inspection_day": "Observed days from quarter start to first published restaurant inspection, when available"
+  },
+  "sources": [
+    {
+      "source_id": "chicago-inspections",
+      "publisher": "City of Chicago",
+      "url": "https://chicago.github.io/food-inspections-evaluation/",
+      "version": "City archive ending December 2014",
+      "license": "City of Chicago open data and repository license",
+      "license_url": "https://github.com/Chicago/food-inspections-evaluation/blob/master/LICENSE.md",
+      "prefixes": [
+        "chicago_repo"
+      ],
+      "output_fields": [
+        "license",
+        "area",
+        "risk",
+        "critical_history",
+        "outcome"
+      ]
+    }
+  ],
+  "landing_page": "https://chicago.github.io/food-inspections-evaluation/",
+  "publisher": "City of Chicago",
+  "version": "City archive ending December 2014",
+  "endpoint": "inspection_audit_design",
+  "domains": [
+    "technology policy",
+    "public-sector inspection",
+    "randomized exploration"
+  ],
+  "methods": [
+    "licensed eligibility roster",
+    "selective outcomes",
+    "stratified exploration",
+    "design probabilities"
+  ]
+}

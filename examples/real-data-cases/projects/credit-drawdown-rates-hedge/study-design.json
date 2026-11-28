@@ -1,0 +1,77 @@
+{
+  "number": 27,
+  "slug": "credit-drawdown-rates-hedge",
+  "title": "Cut Credit Exposure or Hedge Rates During a Corporate Bond Drawdown?",
+  "accessed_at": "2026-11-28",
+  "key": "week",
+  "grain": "One common trading week for four iShares funds",
+  "dataset": "Issuer historical NAV and ex-dividend distribution records for LQD, IEF, SHY and TLT",
+  "question": "During a credit drawdown, how does reducing corporate exposure compare with matching its expected rate sensitivity using a Treasury hedge?",
+  "owner": "Fixed-income portfolio risk analyst",
+  "design": "Form weekly total returns from NAV plus distributions on ex-dates. At each week, use prior returns to estimate rate-factor betas and a lagged drawdown trigger. Compare static credit, a partial move to bills, and a self-financing Treasury overlay at similar expected rate sensitivity. Include costs, turnover, peak-to-trough loss and crisis subperiods.",
+  "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk.",
+  "route": [
+    "diagnostic",
+    "prescriptive"
+  ],
+  "redistribution": "Analytical weekly total-return changes only; full issuer workbooks are fetched separately from BlackRock and are not redistributed.",
+  "fields": {
+    "week": "Friday of trading week",
+    "days": "Common observed trading days",
+    "LQD": "Investment-grade credit weekly total return",
+    "IEF": "7–10 year Treasury weekly total return",
+    "SHY": "1–3 year Treasury weekly total return",
+    "TLT": "20+ year Treasury weekly total return",
+    "spread_change_bp": "Change from preceding month in the Board GZ corporate spread, basis points (descriptive regime only)",
+    "rate_change_bp": "Change from preceding month in the H.15 ten-year Treasury yield, basis points (descriptive regime only)"
+  },
+  "sources": [
+    {
+      "source_id": "ishares-nav",
+      "publisher": "BlackRock iShares",
+      "url": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+      "version": "Aligned calendar years 2004–2025",
+      "license": "Copyright BlackRock; issuer terms of use",
+      "license_url": "https://www.ishares.com/us/terms-and-conditions",
+      "prefixes": [
+        "ishares-"
+      ],
+      "output_fields": [
+        "LQD",
+        "IEF",
+        "SHY",
+        "TLT"
+      ]
+    },
+    {
+      "source_id": "federal-reserve-rates-and-spreads",
+      "publisher": "Federal Reserve Board and Federal Reserve Bank of St. Louis",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/updating-the-recession-risk-and-the-excess-bond-premium-20161006.html",
+      "version": "GZ research series and H.15 GS10, 2003–2025 analysis window",
+      "license": "Board research data and H.15 government series; source attribution",
+      "license_url": "https://www.federalreserve.gov/disclaimer.htm",
+      "prefixes": [
+        "fed-"
+      ],
+      "output_fields": [
+        "spread_change_bp",
+        "rate_change_bp"
+      ]
+    }
+  ],
+  "landing_page": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+  "publisher": "BlackRock iShares and the Federal Reserve",
+  "version": "Aligned calendar years 2004–2025 / Board GZ spread and H.15 10-year yield",
+  "endpoint": "investment_risk_review",
+  "domains": [
+    "investment risk",
+    "fixed income",
+    "transaction costs"
+  ],
+  "methods": [
+    "lagged Treasury beta match",
+    "self-financing overlay",
+    "distribution-adjusted NAV",
+    "turnover break-even"
+  ]
+}

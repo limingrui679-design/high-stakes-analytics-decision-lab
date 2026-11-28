@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.1",
+  "rows": 7579,
+  "columns": 7,
+  "column_names": [
+    "key",
+    "week",
+    "state",
+    "released",
+    "next_release",
+    "advance",
+    "residence"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "week": 0,
+    "state": 0,
+    "released": 0,
+    "next_release": 0,
+    "advance": 0,
+    "residence": 0
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "quality_status": "ready",
+  "expected_rows": 7579,
+  "row_count_matches_manifest": true
+}

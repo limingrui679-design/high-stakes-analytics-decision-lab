@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.1",
+  "project_id": "programming-hint-design",
+  "source_id": "csedm-itap",
+  "title": "CSEDM 2019 published ITAP cross-validation rows and the Refactory novice programming corpus",
+  "publisher": "Thomas Price and CSEDM 2019 organizers and Yang Hu and coauthors",
+  "landing_page": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+  "version": "Public challenge demonstration and predictions, revision 6e7a1f6463d6343bd0c063fdeacf9cf9147e5073 / ASE 2019 public artifact, f05583a56c2e3c50aa8cc0327645283f27df3a68",
+  "accessed_at": "2026-11-28",
+  "license": "Publicly released example; full DataShop records have separate terms",
+  "redistribution": "Only derived features and public author example labels are included; no raw student programs are redistributed. Source teams and distribution terms are identified.",
+  "grain": "Either an author-published learner/problem summary or an independently published anonymized source-code attempt",
+  "expected_rows": 1583,
+  "sources": [
+    {
+      "source_id": "csedm-itap",
+      "publisher": "Thomas Price and CSEDM 2019 organizers",
+      "url": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+      "version": "Public challenge demonstration and predictions, revision 6e7a1f6463d6343bd0c063fdeacf9cf9147e5073",
+      "license": "Publicly released example; full DataShop records have separate terms",
+      "license_url": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+      "output_fields": [
+        "first",
+        "hint",
+        "official",
+        "fold",
+        "student"
+      ],
+      "artifacts": [
+        {
+          "name": "CSEDM-6e7a1f6463d6343bd0c063fdeacf9cf9147e5073.zip",
+          "url": "https://codeload.github.com/thomaswp/CSEDM2019-Data-Challenge/zip/6e7a1f6463d6343bd0c063fdeacf9cf9147e5073",
+          "bytes": 23381,
+          "hash_algorithm": "sha256",
+          "sha256": "82c0570c115c1cd616331b7a82c3bc1b6baa4225b266c6e980d8b195e3d4ff09"
+        }
+      ]
+    },
+    {
+      "source_id": "refactory",
+      "publisher": "Yang Hu and coauthors",
+      "url": "https://github.com/githubhuyang/refactory",
+      "version": "ASE 2019 public artifact, f05583a56c2e3c50aa8cc0327645283f27df3a68",
+      "license": "Repository LGPL-3.0; derived observation summaries and source attribution",
+      "license_url": "https://github.com/githubhuyang/refactory/blob/master/LICENSE",
+      "output_fields": [
+        "file",
+        "correct",
+        "mutates"
+      ],
+      "artifacts": [
+        {
+          "name": "refactory.zip",
+          "url": "https://codeload.github.com/githubhuyang/refactory/zip/f05583a56c2e3c50aa8cc0327645283f27df3a68",
+          "bytes": 966867,
+          "hash_algorithm": "sha256",
+          "sha256": "38133b64ffc1d599d206051cee8e97cbdc12b2bcff5453d1a1b34ead6bf79750"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "531c8b2eaae6d03f22c5ccd678dfeeac12f9405427ca8dca81ac514b5a08e4a5",
+      "bytes": 15445,
+      "uncompressed_sha256": "c74e21f7d4f02ba555394962a088c969d1a6a3b178c3e8ad608b3e09424412e7"
+    }
+  ]
+}

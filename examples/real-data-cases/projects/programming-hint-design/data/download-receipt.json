@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "csedm-itap",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "531c8b2eaae6d03f22c5ccd678dfeeac12f9405427ca8dca81ac514b5a08e4a5",
+      "bytes": 15445
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

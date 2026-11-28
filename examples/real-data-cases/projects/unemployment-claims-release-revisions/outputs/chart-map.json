@@ -1,0 +1,26 @@
+{
+  "project_id": "unemployment-claims-release-revisions",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "First-release triage against the next publication",
+      "supported_finding": "All methods spend the same number of weekly review slots.",
+      "interpretation_boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock.",
+      "source_id": "dol-ui"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "First-release alerts displaced in the next vintage",
+      "supported_finding": "An alert is displaced if its state falls outside the later top list.",
+      "interpretation_boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock.",
+      "source_id": "dol-ui"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Review capacity sensitivity",
+      "supported_finding": "Target ranking and capacity are recalculated at every budget.",
+      "interpretation_boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock.",
+      "source_id": "dol-ui"
+    }
+  ]
+}

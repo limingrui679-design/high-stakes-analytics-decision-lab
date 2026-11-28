@@ -1,0 +1,26 @@
+{
+  "project_id": "last-mile-departure-slack",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Routes with a feasible delay witness",
+      "supported_finding": "Every reported delay supports a verified order and a return within the stated shift.",
+      "interpretation_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.",
+      "source_id": "amazon-routes"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Minutes of delay on jointly feasible routes",
+      "supported_finding": "The paired denominator is recorded separately to expose feasibility selection.",
+      "interpretation_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.",
+      "source_id": "amazon-routes"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "One common zone travel-time disruption",
+      "supported_finding": "Each evaluated order sees the same 25% travel-time increase into one zone.",
+      "interpretation_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.",
+      "source_id": "amazon-routes"
+    }
+  ]
+}

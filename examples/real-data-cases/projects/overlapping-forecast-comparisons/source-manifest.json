@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.1",
+  "project_id": "overlapping-forecast-comparisons",
+  "source_id": "eia930",
+  "title": "EIA-930 hourly balancing authority electricity load",
+  "publisher": "US Energy Information Administration",
+  "landing_page": "https://www.eia.gov/electricity/930-content/about.html",
+  "version": "2020–2024; ten half-years",
+  "accessed_at": "2026-11-28",
+  "license": "US government open data",
+  "redistribution": "Aggregate US federal open data. Currency of historical data is identified by the upstream file hashes.",
+  "grain": "One balancing authority and UTC date with 24 observed, forecast and lagged observations",
+  "expected_rows": 10833,
+  "sources": [
+    {
+      "source_id": "eia930",
+      "publisher": "US Energy Information Administration",
+      "url": "https://www.eia.gov/electricity/930-content/about.html",
+      "version": "2020–2024; ten half-years",
+      "license": "US government open data",
+      "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+      "output_fields": [
+        "forecast_error",
+        "lag_error",
+        "load"
+      ],
+      "artifacts": [
+        {
+          "name": "EIA930_BALANCE_2020_Jan_Jun.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2020_Jan_Jun.csv",
+          "bytes": 42970027,
+          "hash_algorithm": "sha256",
+          "sha256": "fff83ed20365e69933bdd6ebde06afaa8083930c613363c438844b0fd52034cf"
+        },
+        {
+          "name": "EIA930_BALANCE_2020_Jul_Dec.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2020_Jul_Dec.csv",
+          "bytes": 43635740,
+          "hash_algorithm": "sha256",
+          "sha256": "47788a718c26eae5a2453e3471c2b9e7d1a11062a0de70e2dca803163de5a754"
+        },
+        {
+          "name": "EIA930_BALANCE_2021_Jan_Jun.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2021_Jan_Jun.csv",
+          "bytes": 43073764,
+          "hash_algorithm": "sha256",
+          "sha256": "40b183f333e0f3edc1b9a2ed48b792eff00fd477915dae79ce5784e862380f7f"
+        },
+        {
+          "name": "EIA930_BALANCE_2021_Jul_Dec.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2021_Jul_Dec.csv",
+          "bytes": 43438192,
+          "hash_algorithm": "sha256",
+          "sha256": "66afadcab6865f74cebd6db82e363a66976846241c040cba66baf240afcd669b"
+        },
+        {
+          "name": "EIA930_BALANCE_2022_Jan_Jun.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2022_Jan_Jun.csv",
+          "bytes": 42567904,
+          "hash_algorithm": "sha256",
+          "sha256": "d3d315a0c29d9527a1c64cf6ddcdcc5c0b7281fddd99199bd70f06d242e503d5"
+        },
+        {
+          "name": "EIA930_BALANCE_2022_Jul_Dec.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2022_Jul_Dec.csv",
+          "bytes": 42909865,
+          "hash_algorithm": "sha256",
+          "sha256": "267575c29ef40f386bcf3bc3993013b9ce13a3a154b89b702559a75dd742976d"
+        },
+        {
+          "name": "EIA930_BALANCE_2023_Jan_Jun.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jan_Jun.csv",
+          "bytes": 41981693,
+          "hash_algorithm": "sha256",
+          "sha256": "a0e14e9c07ab4cc1de3e384c7be890b0c61d9de3fe04ad3ae5ec739f1f35ec1b"
+        },
+        {
+          "name": "EIA930_BALANCE_2023_Jul_Dec.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2023_Jul_Dec.csv",
+          "bytes": 42574041,
+          "hash_algorithm": "sha256",
+          "sha256": "c719fc1b513eec8982ce209b6e3173fc64b2d0d243f83d3bf0d8d1adf6222de2"
+        },
+        {
+          "name": "EIA930_BALANCE_2024_Jan_Jun.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2024_Jan_Jun.csv",
+          "bytes": 41742812,
+          "hash_algorithm": "sha256",
+          "sha256": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10"
+        },
+        {
+          "name": "EIA930_BALANCE_2024_Jul_Dec.csv",
+          "url": "https://www.eia.gov/electricity/gridmonitor/sixMonthFiles/EIA930_BALANCE_2024_Jul_Dec.csv",
+          "bytes": 47928993,
+          "hash_algorithm": "sha256",
+          "sha256": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "479a4167a706c14016364bdefe593bf478a99744bb5d1c94a924487fc72b9271",
+      "bytes": 208378,
+      "uncompressed_sha256": "a5a503abfc04e153ee7599880f096fd0185f7077cf8fde34b97c2a3a33ea25c9"
+    }
+  ]
+}

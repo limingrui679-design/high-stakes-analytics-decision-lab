@@ -1,0 +1,48 @@
+{
+  "project_id": "overlapping-forecast-comparisons",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "hac_lag": 14,
+    "block_days": 14,
+    "bootstrap_draws": 999,
+    "simulation_reps": 240,
+    "gross_error_screen_mw": 2000000
+  },
+  "parameter_register": [
+    {
+      "parameter": "hac_lag",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+    },
+    {
+      "parameter": "block_days",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+    },
+    {
+      "parameter": "bootstrap_draws",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+    },
+    {
+      "parameter": "simulation_reps",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+    },
+    {
+      "parameter": "gross_error_screen_mw",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "physical gross-error sensitivity; preserve unscreened estimates",
+      "approved_by": "repository author",
+      "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+    }
+  ]
+}

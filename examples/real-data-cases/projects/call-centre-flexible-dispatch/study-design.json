@@ -1,0 +1,73 @@
+{
+  "number": 18,
+  "slug": "call-centre-flexible-dispatch",
+  "title": "When Should a Call Centre Reallocate Staff After a Demand Shock?",
+  "accessed_at": "2026-11-28",
+  "key": "call",
+  "grain": "One queued telephone call between 08:00 and 13:00 on a Sunday–Thursday business day",
+  "dataset": "Technion Service Engineering Israeli bank call-centre logs",
+  "question": "When, within a fixed staffing budget, should a manager release temporary service capacity?",
+  "owner": "Call-centre operations planner",
+  "design": "Estimate censored patience and service by call type from January–July. Select base staffing against both waiting and abandonment in August–September. Replay October–December arrivals under fixed, queue-triggered and receding-horizon dispatch. Calls already in service continue after a flexible staffing interval ends.",
+  "boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue.",
+  "route": [
+    "diagnostic",
+    "predictive",
+    "prescriptive"
+  ],
+  "redistribution": "Prepared extract removes customer and employee identifiers. Original research data and documentation remain available at the Technion.",
+  "fields": {
+    "call": "Date, telephone line and source call number",
+    "date": "Calendar date",
+    "arrival": "Queue entry, seconds after midnight",
+    "kind": "Source call service type",
+    "wait": "Observed queued seconds",
+    "served": "1 when served, 0 when the caller abandoned",
+    "service": "Observed service duration in seconds; blank for abandoned calls"
+  },
+  "sources": [
+    {
+      "source_id": "bank99",
+      "publisher": "Technion Service Enterprise Engineering",
+      "url": "https://ie.technion.ac.il/serveng/callcenterdata/",
+      "version": "1999 bank call records",
+      "license": "Public academic research data; publisher terms apply",
+      "license_url": "https://serveng.technion.ac.il/files/Homeworks/callcenterdata/",
+      "prefixes": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "output_fields": [
+        "arrival",
+        "service",
+        "wait",
+        "served"
+      ]
+    }
+  ],
+  "landing_page": "https://ie.technion.ac.il/serveng/callcenterdata/",
+  "publisher": "Technion Service Enterprise Engineering",
+  "version": "1999 bank call records",
+  "endpoint": "staffing_policy_review",
+  "domains": [
+    "systems engineering",
+    "queueing simulation",
+    "workforce control"
+  ],
+  "methods": [
+    "censored patience distribution",
+    "held-out staffing calibration",
+    "matched reserve hours",
+    "switching cost"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.1",
+  "rows": 3072,
+  "columns": 13,
+  "column_names": [
+    "key",
+    "route",
+    "station",
+    "stop",
+    "depot",
+    "zone",
+    "packages",
+    "window_packages",
+    "service",
+    "open",
+    "close",
+    "sequence",
+    "travel"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "route": 0,
+    "station": 0,
+    "stop": 6,
+    "depot": 0,
+    "zone": 40,
+    "packages": 0,
+    "window_packages": 0,
+    "service": 0,
+    "open": 2825,
+    "close": 2825,
+    "sequence": 0,
+    "travel": 0
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "close",
+        "open",
+        "stop",
+        "zone"
+      ],
+      "count": 5696,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 3072,
+  "row_count_matches_manifest": true
+}

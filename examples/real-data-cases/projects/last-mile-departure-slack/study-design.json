@@ -1,0 +1,70 @@
+{
+  "number": 24,
+  "slug": "last-mile-departure-slack",
+  "title": "How Much Departure Delay Can a Last-Mile Route Absorb?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One stop in a complete route, including its row of the fixed travel-time matrix",
+  "dataset": "Amazon Last Mile Routing Research Challenge, public model-build inputs",
+  "question": "How late can a dispatcher release a route while still honoring its published windows and a stated end of shift?",
+  "owner": "Freight and last-mile dispatch planner",
+  "design": "Select six UUID-ordered high-rated routes of 45–145 stops from each of four depots before inspecting time windows. Evaluate the driver order and two classical route-improvement searches at the same move budget. Use backward time propagation for feasible witnesses and independent relaxation bounds for the largest possible delay. Report a station held out of design and a common zone disruption.",
+  "boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.",
+  "route": [
+    "diagnostic",
+    "prescriptive"
+  ],
+  "redistribution": "Derived numerical extracts from Amazon under the research challenge CC BY-NC 4.0 data license, with attribution; see upstream license.",
+  "fields": {
+    "key": "Route/stop",
+    "route": "Public route UUID",
+    "station": "Departure depot",
+    "stop": "Anonymized stop token",
+    "depot": "Station indicator",
+    "zone": "Released zone code",
+    "packages": "Number of packages",
+    "window_packages": "Packages with an explicit bound",
+    "service": "Total planned seconds",
+    "open": "Latest package opening relative to original departure, seconds",
+    "close": "Earliest package deadline relative to original departure, seconds",
+    "sequence": "Original driver order",
+    "travel": "Rounded-up seconds to stops in ascending stop ID order"
+  },
+  "sources": [
+    {
+      "source_id": "amazon-routes",
+      "publisher": "Amazon / MIT Last Mile Routing Research Challenge",
+      "url": "https://registry.opendata.aws/amazon-last-mile-challenges/",
+      "version": "2021 model-build inputs, observations from 2018",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/License.txt",
+      "prefixes": [
+        "amazon-"
+      ],
+      "output_fields": [
+        "route",
+        "station",
+        "packages",
+        "service",
+        "sequence",
+        "travel",
+        "close"
+      ]
+    }
+  ],
+  "landing_page": "https://registry.opendata.aws/amazon-last-mile-challenges/",
+  "publisher": "Amazon / MIT Last Mile Routing Research Challenge",
+  "version": "2021 model-build inputs, observations from 2018",
+  "endpoint": "dispatch_feasibility_review",
+  "domains": [
+    "freight transportation",
+    "vehicle routing",
+    "feasibility certificates"
+  ],
+  "methods": [
+    "package time windows",
+    "verified departure witnesses",
+    "independent upper bounds",
+    "depot holdout"
+  ]
+}

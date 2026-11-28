@@ -1,0 +1,19 @@
+{
+  "grain": "One stop in a complete route, including its row of the fixed travel-time matrix",
+  "primary_key": "key",
+  "fields": {
+    "key": "Route/stop",
+    "route": "Public route UUID",
+    "station": "Departure depot",
+    "stop": "Anonymized stop token",
+    "depot": "Station indicator",
+    "zone": "Released zone code",
+    "packages": "Number of packages",
+    "window_packages": "Packages with an explicit bound",
+    "service": "Total planned seconds",
+    "open": "Latest package opening relative to original departure, seconds",
+    "close": "Earliest package deadline relative to original departure, seconds",
+    "sequence": "Original driver order",
+    "travel": "Rounded-up seconds to stops in ascending stop ID order"
+  }
+}

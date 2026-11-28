@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Independent depot check",
+      "supported_finding": "The DBO3 depot is held out of design choices.",
+      "interpretation_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Independent time-budget comparison",
+      "supported_finding": "Wall-clock budget per method and route is fixed; each returned order is replayed offline.",
+      "interpretation_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    }
+  ]
+}

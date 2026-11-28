@@ -1,0 +1,26 @@
+{
+  "project_id": "overlapping-forecast-comparisons",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Forecast advantage by balancing authority",
+      "supported_finding": "Negative values favor EIA's posted day-ahead forecasts over seven-day persistence.",
+      "interpretation_boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas.",
+      "source_id": "eia930"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Uncertainty in the shared-date average",
+      "supported_finding": "Blocking the cross-area mean resamples entire dates jointly across areas.",
+      "interpretation_boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas.",
+      "source_id": "eia930"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Known-truth coverage after seven-day overlap",
+      "supported_finding": "Seeded experiments use a zero population mean; simulation coverage and historical intervals answer different questions.",
+      "interpretation_boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas.",
+      "source_id": "eia930"
+    }
+  ]
+}

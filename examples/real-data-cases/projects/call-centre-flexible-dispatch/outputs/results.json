@@ -1,0 +1,174 @@
+{
+  "conclusion": "Across 65 held-out mornings, mean simulated abandonment was 17.23% with a fixed reserve and 18.48% under receding-horizon dispatch. Observed abandonment averaged 13.91%.",
+  "headline_metrics": [
+    "Calls: 144382",
+    "Test days: 65",
+    "Flex hours per morning: 2.0"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Abandonment at identical purchased staffing hours",
+      "unit": "Percent",
+      "values": {
+        "fixed": 17.2269061,
+        "queue": 17.40011164,
+        "horizon": 18.48219085
+      },
+      "note": "The three policies receive the same two-hour flexible reserve."
+    },
+    "slice": {
+      "title": "Waiting among answered calls",
+      "unit": "Mean seconds over held-out days",
+      "values": {
+        "fixed": 81.19605652,
+        "queue": 84.45613776,
+        "horizon": 92.31296536
+      },
+      "note": "The simulation runs common arrivals, latent patience draws and service durations."
+    },
+    "sensitivity": {
+      "title": "High-arrival mornings",
+      "unit": "Mean abandonment (%)",
+      "values": {
+        "fixed": 25.07402983,
+        "queue": 25.00370697,
+        "horizon": 26.19046945
+      },
+      "note": "Days above the holdout 75th percentile expose the cost of spending the reserve early."
+    }
+  },
+  "audit": {
+    "stress_loss_abandonment_pp_plus_cost_per_switch": {
+      "1.0": {
+        "fixed": {
+          "0": 17.16582719,
+          "0.25": 17.66582719,
+          "1": 19.16582719
+        },
+        "queue": {
+          "0": 17.36204362,
+          "0.25": 18.30819747,
+          "1": 21.14665901
+        },
+        "horizon": {
+          "0": 18.4518361,
+          "0.25": 19.0518361,
+          "1": 20.8518361
+        }
+      },
+      "1.15": {
+        "fixed": {
+          "0": 18.62912823,
+          "0.25": 19.12912823,
+          "1": 20.62912823
+        },
+        "queue": {
+          "0": 18.83199433,
+          "0.25": 19.81276356,
+          "1": 22.75507126
+        },
+        "horizon": {
+          "0": 19.86427589,
+          "0.25": 20.46427589,
+          "1": 22.26427589
+        }
+      },
+      "1.3": {
+        "fixed": {
+          "0": 19.97285222,
+          "0.25": 20.47285222,
+          "1": 21.97285222
+        },
+        "queue": {
+          "0": 20.21110719,
+          "0.25": 21.16110719,
+          "1": 24.01110719
+        },
+        "horizon": {
+          "0": 21.22106051,
+          "0.25": 21.82106051,
+          "1": 23.62106051
+        }
+      }
+    },
+    "answered_wait_at_least_120s_pct": {
+      "fixed": 25.87022891,
+      "queue": 26.49698591,
+      "horizon": 29.2869226
+    },
+    "peak_to_empty_minutes": {
+      "fixed": {
+        "observable_days": 49,
+        "median_minutes": 30
+      },
+      "queue": {
+        "observable_days": 53,
+        "median_minutes": 30
+      },
+      "horizon": {
+        "observable_days": 50,
+        "median_minutes": 60.0
+      }
+    },
+    "validation_days": 43,
+    "training_days": 144,
+    "holdout_days": 65,
+    "calibrated_multiplier": 1.15,
+    "observed_abandonment_pct": 13.91367194,
+    "observed_mean_wait_s": 64.28208589,
+    "tail_sensitivity": {
+      "300": 18.48219085,
+      "1800": 18.48219085
+    },
+    "staff_by_half_hour": [
+      4,
+      5,
+      6,
+      7,
+      7,
+      7,
+      6,
+      6,
+      6,
+      6
+    ],
+    "reserve_slots": 4,
+    "switches": {
+      "fixed": 2,
+      "queue": 3.76923077,
+      "horizon": 2.4
+    },
+    "flex_usage_range": {
+      "fixed": [
+        4,
+        4
+      ],
+      "queue": [
+        4,
+        4
+      ],
+      "horizon": [
+        4,
+        4
+      ]
+    }
+  },
+  "next_decision": "Review out-of-time discrepancies in waiting and abandonment before staffing a live shift. The forecast and flexibility costs can be varied independently.",
+  "project_id": "call-centre-flexible-dispatch",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "predictive",
+      "prescriptive"
+    ],
+    "protocol": "Estimate censored patience and service by call type from January–July. Select base staffing against both waiting and abandonment in August–September. Replay October–December arrivals under fixed, queue-triggered and receding-horizon dispatch. Calls already in service continue after a flexible staffing interval ends."
+  },
+  "data": {
+    "rows": 144382,
+    "grain": "One queued telephone call between 08:00 and 13:00 on a Sunday–Thursday business day",
+    "snapshot_sha256": "a993c237568246e4e4a474e23a0d3b518123ea1094268c4172476634feb3a65a"
+  },
+  "decision_support": {
+    "status": "staffing_policy_review"
+  }
+}

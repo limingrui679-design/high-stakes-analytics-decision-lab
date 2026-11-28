@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "bank99",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "11cf87b8bae7beca13ec7d03c5e7693447aecd71097e5c2a6aa71c08001bb0b9",
+      "bytes": 1499501
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

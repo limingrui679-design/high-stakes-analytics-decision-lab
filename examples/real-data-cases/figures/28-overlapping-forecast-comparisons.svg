@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 294" role="img" aria-labelledby="t d">
+<title id="t">Forecast advantage by balancing authority</title><desc id="d">Negative values favor EIA&#x27;s posted day-ahead forecasts over seven-day persistence.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Forecast advantage by balancing authority</text>
+<text x="16" y="47" font-size="13">Difference in load-normalized absolute loss (pp)</text>
+<path d="M 657.00 55 V 275" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">CISO</text>
+<rect x="509.57" y="62" width="147.43" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">-2.686</text>
+<text x="16" y="111" font-size="13">ERCO</text>
+<rect x="291.71" y="96" width="365.29" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">-6.654</text>
+<text x="16" y="145" font-size="13">ISNE</text>
+<rect x="237.00" y="130" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">-7.651</text>
+<text x="16" y="179" font-size="13">MISO</text>
+<rect x="443.98" y="164" width="213.02" height="18" fill="#166c77"/>
+<text x="683" y="179" font-size="14">-3.880</text>
+<text x="16" y="213" font-size="13">NYIS</text>
+<rect x="367.91" y="198" width="289.09" height="18" fill="#166c77"/>
+<text x="683" y="213" font-size="14">-5.266</text>
+<text x="16" y="247" font-size="13">PJM</text>
+<rect x="385.77" y="232" width="271.23" height="18" fill="#166c77"/>
+<text x="683" y="247" font-size="14">-4.941</text>
+</g></svg>

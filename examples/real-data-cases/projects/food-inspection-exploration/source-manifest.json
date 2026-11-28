@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.1",
+  "project_id": "food-inspection-exploration",
+  "source_id": "chicago-inspections",
+  "title": "Chicago Food Inspection Forecasting, historical permits and canvass inspections",
+  "publisher": "City of Chicago",
+  "landing_page": "https://chicago.github.io/food-inspections-evaluation/",
+  "version": "City archive ending December 2014",
+  "accessed_at": "2026-11-28",
+  "license": "City of Chicago open data and repository license",
+  "redistribution": "Deidentified derived public City of Chicago records with attribution. No names or premises addresses are published.",
+  "grain": "One active retail-food license with a previously identified restaurant at the start of a quarter",
+  "expected_rows": 55823,
+  "sources": [
+    {
+      "source_id": "chicago-inspections",
+      "publisher": "City of Chicago",
+      "url": "https://chicago.github.io/food-inspections-evaluation/",
+      "version": "City archive ending December 2014",
+      "license": "City of Chicago open data and repository license",
+      "license_url": "https://github.com/Chicago/food-inspections-evaluation/blob/master/LICENSE.md",
+      "output_fields": [
+        "license",
+        "area",
+        "risk",
+        "critical_history",
+        "outcome"
+      ],
+      "artifacts": [
+        {
+          "name": "chicago_repo.zip",
+          "url": "https://codeload.github.com/Chicago/food-inspections-evaluation/zip/refs/heads/master",
+          "bytes": 144763113,
+          "hash_algorithm": "sha256",
+          "sha256": "98539d67c0e37ea12e6d22f9d12c1425c2c6d2c6e7f96e50d3dd642dbf79594e"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "2bd55b80faaee367f7dae730514a56c8c816f892bbe2fd6fce73e306a3eb1287",
+      "bytes": 551935,
+      "uncompressed_sha256": "a1c4731f949ef38a3d67614011a150279765725d9263271781c8779673b20edd"
+    }
+  ]
+}

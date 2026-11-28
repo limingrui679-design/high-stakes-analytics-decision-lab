@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.1",
+  "project_id": "transit-timetable-repair",
+  "source_id": "mbta-gtfs",
+  "title": "MBTA archived GTFS timetables for common service date 22 November 2024",
+  "publisher": "Massachusetts Bay Transportation Authority",
+  "landing_page": "https://www.mbta.com/developers/gtfs",
+  "version": "Oct–Nov 2024 archives, common service 2024-11-22",
+  "accessed_at": "2026-11-28",
+  "license": "MassDOT developers license",
+  "redistribution": "Derived MBTA schedule records with attribution to the Massachusetts Bay Transportation Authority; publisher terms apply.",
+  "grain": "One changed scheduled connection or version marker in ordered MBTA archive copies",
+  "expected_rows": 86658,
+  "sources": [
+    {
+      "source_id": "mbta-gtfs",
+      "publisher": "Massachusetts Bay Transportation Authority",
+      "url": "https://www.mbta.com/developers/gtfs",
+      "version": "Oct–Nov 2024 archives, common service 2024-11-22",
+      "license": "MassDOT developers license",
+      "license_url": "https://www.mass.gov/lists/developers-data",
+      "output_fields": [
+        "feed",
+        "trip",
+        "seq",
+        "depart",
+        "arrive"
+      ],
+      "artifacts": [
+        {
+          "name": "mbta-20241021.zip",
+          "url": "https://cdn.mbtace.com/archive/20241021.zip",
+          "bytes": 14342546,
+          "hash_algorithm": "sha256",
+          "sha256": "78da997e7ab1c16b07ed0ea54dbec7e357f06ad989f6cf6d508682d35befc99e"
+        },
+        {
+          "name": "mbta-20241024.zip",
+          "url": "https://cdn.mbtace.com/archive/20241024.zip",
+          "bytes": 14519601,
+          "hash_algorithm": "sha256",
+          "sha256": "2bf4757f8e6904506f5a1fd98b06036009f191079618dbe6e376f90be832fd49"
+        },
+        {
+          "name": "mbta-20241025.zip",
+          "url": "https://cdn.mbtace.com/archive/20241025.zip",
+          "bytes": 14850359,
+          "hash_algorithm": "sha256",
+          "sha256": "6be6b1ca1a1836c58beebafe28b03dd018e74885e9e5ac0a03fec6eeab8c0828"
+        },
+        {
+          "name": "mbta-20241027.zip",
+          "url": "https://cdn.mbtace.com/archive/20241027.zip",
+          "bytes": 14766008,
+          "hash_algorithm": "sha256",
+          "sha256": "4a3e26f0a4224295dadadb8fa0fee48f8b1917e3845f6ee7881f9da3479ba90e"
+        },
+        {
+          "name": "mbta-20241031.zip",
+          "url": "https://cdn.mbtace.com/archive/20241031.zip",
+          "bytes": 14811111,
+          "hash_algorithm": "sha256",
+          "sha256": "dae3edb6ddcec1542497017e032ef0422fc891b75a1812f2826ff993df49eb0a"
+        },
+        {
+          "name": "mbta-20241101.zip",
+          "url": "https://cdn.mbtace.com/archive/20241101.zip",
+          "bytes": 15856067,
+          "hash_algorithm": "sha256",
+          "sha256": "164e413b802a742ffc6559615d932e6a1ecd016ff472427321a75a74e54caf3e"
+        },
+        {
+          "name": "mbta-20241107.zip",
+          "url": "https://cdn.mbtace.com/archive/20241107.zip",
+          "bytes": 15719264,
+          "hash_algorithm": "sha256",
+          "sha256": "25eec4fb2ad27887acc522dc6052c04aeb08efa20eae877bf689eb23b7c02b16"
+        },
+        {
+          "name": "mbta-20241112.zip",
+          "url": "https://cdn.mbtace.com/archive/20241112.zip",
+          "bytes": 14969640,
+          "hash_algorithm": "sha256",
+          "sha256": "4e707a01cf277d9f9405072d3f32474bb5611acf11f28ce8626279a2fd79aae6"
+        },
+        {
+          "name": "mbta-20241113.zip",
+          "url": "https://cdn.mbtace.com/archive/20241113.zip",
+          "bytes": 14980821,
+          "hash_algorithm": "sha256",
+          "sha256": "400ea034b7508f7df0c5c662729cd7bcd6a8a2e44c32199edd278881511279db"
+        },
+        {
+          "name": "mbta-20241115.zip",
+          "url": "https://cdn.mbtace.com/archive/20241115.zip",
+          "bytes": 14790223,
+          "hash_algorithm": "sha256",
+          "sha256": "f269413a803d0b3c75c7d34ce58dd80607ac04f84563e86478b138b40ccd6872"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "2ef13fb50ca7252db948718cf4802da6768ed4ce6db6f7e99a88faa946e1b11a",
+      "bytes": 873410,
+      "uncompressed_sha256": "865382d1400eb7ffb45ea3d4759650b6e78ff10b9c0640198d79140d996a662b"
+    }
+  ]
+}

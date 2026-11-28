@@ -1,0 +1,220 @@
+{
+  "conclusion": "Across 366 held-out publication days, the inventory-value policy captured 308 seven-day identity reverts, versus 287 with a fixed threshold and 1095 for an outcome-aware upper bound.",
+  "headline_metrics": [
+    "Daily slots: 3",
+    "Held-out edits: 165597",
+    "Training edits: 371780"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Which online policies capture later identity reverts?",
+      "unit": "Reverted edits selected",
+      "values": {
+        "Fixed threshold": 287,
+        "Time quota": 324,
+        "Inventory value": 308,
+        "Future scores": 318,
+        "Future outcomes": 1095
+      },
+      "note": "The two hindsight references see future scores or realized labels and are not deployable."
+    },
+    "slice": {
+      "title": "Use of the daily review inventory",
+      "unit": "Percent of daily slots",
+      "values": {
+        "Fixed threshold": 90.80145719,
+        "Time quota": 100.0,
+        "Inventory value": 98.99817851,
+        "Future scores": 100.0,
+        "Future outcomes": 100.0
+      },
+      "note": "Unused slots expire at the end of each UTC day."
+    },
+    "sensitivity": {
+      "title": "Highest-volume tenth of held-out days",
+      "unit": "Mean captured events per day",
+      "values": {
+        "Fixed threshold": 0.78378378,
+        "Time quota": 0.81081081,
+        "Inventory value": 0.83783784,
+        "Future scores": 0.91891892,
+        "Future outcomes": 3
+      },
+      "note": "Traffic bursts expose the cost of spending the last slot too early."
+    }
+  },
+  "audit": {
+    "reservation_price_by_hour_and_slots": {
+      "23": [
+        0.18939,
+        0.128919,
+        0.07245
+      ],
+      "22": [
+        0.216139,
+        0.203238,
+        0.175035
+      ],
+      "21": [
+        0.221533,
+        0.215426,
+        0.208689
+      ],
+      "20": [
+        0.226154,
+        0.218163,
+        0.215667
+      ],
+      "19": [
+        0.229446,
+        0.220893,
+        0.217157
+      ],
+      "18": [
+        0.231718,
+        0.223515,
+        0.218519
+      ],
+      "17": [
+        0.233607,
+        0.226331,
+        0.22049
+      ],
+      "16": [
+        0.234841,
+        0.22861,
+        0.222508
+      ],
+      "15": [
+        0.23576,
+        0.230628,
+        0.224656
+      ],
+      "14": [
+        0.236415,
+        0.232305,
+        0.226752
+      ],
+      "13": [
+        0.236906,
+        0.233748,
+        0.228837
+      ],
+      "12": [
+        0.237173,
+        0.234632,
+        0.230275
+      ],
+      "11": [
+        0.237348,
+        0.23526,
+        0.231393
+      ],
+      "10": [
+        0.23751,
+        0.235895,
+        0.232621
+      ],
+      "9": [
+        0.237617,
+        0.236348,
+        0.233571
+      ],
+      "8": [
+        0.237722,
+        0.236834,
+        0.234686
+      ],
+      "7": [
+        0.237782,
+        0.23714,
+        0.235455
+      ],
+      "6": [
+        0.237819,
+        0.237341,
+        0.236
+      ],
+      "5": [
+        0.237838,
+        0.237448,
+        0.236304
+      ],
+      "4": [
+        0.237853,
+        0.237542,
+        0.236587
+      ],
+      "3": [
+        0.237869,
+        0.237638,
+        0.236889
+      ],
+      "2": [
+        0.237878,
+        0.237704,
+        0.237107
+      ],
+      "1": [
+        0.237887,
+        0.237761,
+        0.237308
+      ],
+      "0": [
+        0.237891,
+        0.237796,
+        0.237435
+      ]
+    },
+    "capacity": 3,
+    "days": 366,
+    "train_end_exclusive": "2023-12-25",
+    "policy_totals": {
+      "Fixed threshold": {
+        "hits": 287,
+        "spent": 997,
+        "score": 237.19022249
+      },
+      "Time quota": {
+        "hits": 324,
+        "spent": 1098,
+        "score": 234.93955305
+      },
+      "Inventory value": {
+        "hits": 308,
+        "spent": 1087,
+        "score": 254.06758833
+      },
+      "Future scores": {
+        "hits": 318,
+        "spent": 1098,
+        "score": 259.08262737
+      },
+      "Future outcomes": {
+        "hits": 1095,
+        "spent": 1098,
+        "score": 146.93905503
+      }
+    },
+    "training_prevalence": 0.03467911,
+    "fixed_threshold": 0.23790393,
+    "bursty_day_size": 629
+  },
+  "next_decision": "Use logged arrivals to price the next slot. Compare operational rules with both ceilings; knowing the best future scores and knowing the future outcomes are different advantages.",
+  "project_id": "online-edit-review-capacity",
+  "study_design": {
+    "route": [
+      "predictive",
+      "prescriptive"
+    ],
+    "protocol": "Replay real UTC arrivals in order. Use anonymized arrival-visible edit properties to estimate seven-day identity-revert risk on matured history. Compare a fixed threshold, time quota and marginal inventory-value policy with two hindsight bounds. Use the same finite daily capacity and examine burst days separately."
+  },
+  "data": {
+    "rows": 541009,
+    "grain": "One timestamped main-namespace English Wikivoyage revision, with complete future label horizon",
+    "snapshot_sha256": "3d7bc1e8763902d7ab4194f306e0f02e9a0d66f40bfaf97425eb2cd6833b0eab"
+  },
+  "decision_support": {
+    "status": "finite_inventory_policy"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.1",
+  "rows": 96081,
+  "columns": 11,
+  "column_names": [
+    "key",
+    "stage",
+    "seq",
+    "kind",
+    "id",
+    "version",
+    "op",
+    "x",
+    "y",
+    "road",
+    "refs"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "stage": 0,
+    "seq": 0,
+    "kind": 0,
+    "id": 0,
+    "version": 0,
+    "op": 0,
+    "x": 12588,
+    "y": 12588,
+    "road": 83525,
+    "refs": 83525
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "refs",
+        "road",
+        "x",
+        "y"
+      ],
+      "count": 192226,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 96081,
+  "row_count_matches_manifest": true
+}

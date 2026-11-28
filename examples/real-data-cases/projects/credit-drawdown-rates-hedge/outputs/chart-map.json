@@ -1,0 +1,26 @@
+{
+  "project_id": "credit-drawdown-rates-hedge",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Compounded total return after trading costs",
+      "supported_finding": "Fund inputs are weekly NAV total returns with ex-date distributions reinvested.",
+      "interpretation_boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk.",
+      "source_id": "ishares-nav"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Peak-to-trough drawdown",
+      "supported_finding": "The same lagged signal and transaction cost convention apply to every strategy.",
+      "interpretation_boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk.",
+      "source_id": "ishares-nav"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Crisis-window portfolio returns",
+      "supported_finding": "Named historical windows are descriptive stress checks.",
+      "interpretation_boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk.",
+      "source_id": "ishares-nav"
+    }
+  ]
+}

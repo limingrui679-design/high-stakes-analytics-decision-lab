@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Implementation cost exposure",
+      "supported_finding": "The explicit one-way trading cost is applied to the absolute change in each leg.",
+      "interpretation_boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Risk-off performance during the credit crisis",
+      "supported_finding": "Reported on the common historical calendar for all three portfolios.",
+      "interpretation_boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    }
+  ]
+}

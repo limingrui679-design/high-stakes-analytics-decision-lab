@@ -1,0 +1,61 @@
+{
+  "number": 28,
+  "slug": "overlapping-forecast-comparisons",
+  "title": "How Reliable Are Model Comparisons With Overlapping Evaluation Windows?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One balancing authority and UTC date with 24 observed, forecast and lagged observations",
+  "dataset": "EIA-930 hourly balancing authority electricity load",
+  "question": "How wide should a forecast-comparison interval be when adjacent scores reuse six days of observations?",
+  "owner": "Forecast evaluation lead",
+  "design": "For each full UTC date compute the paired difference in daily demand-normalized absolute errors. Average seven consecutive calendar dates; join six authorities by date. Compare independent, non-overlapping weekly, Bartlett HAC and moving-block intervals. In a separate controlled experiment run the identical procedures against a known population mean. Read both scores against a common reported-load screen; preserve the unfiltered replay and identify the influential dates.",
+  "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas.",
+  "route": [
+    "diagnostic",
+    "predictive"
+  ],
+  "redistribution": "Aggregate US federal open data. Currency of historical data is identified by the upstream file hashes.",
+  "fields": {
+    "key": "Authority/date compound key",
+    "area": "EIA balancing authority code",
+    "day": "UTC operating day",
+    "forecast_error": "Sum of 24 absolute day-ahead errors, MWh",
+    "lag_error": "Sum of 24 absolute seven-day lag errors, MWh",
+    "load": "Daily observed load, MWh",
+    "n_hours": "Number of complete hourly comparisons",
+    "max_hour_MW": "Largest hourly observed, lagged or forecast power value feeding either score (MW)"
+  },
+  "sources": [
+    {
+      "source_id": "eia930",
+      "publisher": "US Energy Information Administration",
+      "url": "https://www.eia.gov/electricity/930-content/about.html",
+      "version": "2020–2024; ten half-years",
+      "license": "US government open data",
+      "license_url": "https://www.eia.gov/about/copyrights_reuse.php",
+      "prefixes": [
+        "EIA930"
+      ],
+      "output_fields": [
+        "forecast_error",
+        "lag_error",
+        "load"
+      ]
+    }
+  ],
+  "landing_page": "https://www.eia.gov/electricity/930-content/about.html",
+  "publisher": "US Energy Information Administration",
+  "version": "2020–2024; ten half-years",
+  "endpoint": "dependence_aware_comparison",
+  "domains": [
+    "applied statistics",
+    "dependent inference",
+    "forecast evaluation"
+  ],
+  "methods": [
+    "paired calendar dates",
+    "overlapping forecast losses",
+    "HAC and moving blocks",
+    "known-truth coverage"
+  ]
+}

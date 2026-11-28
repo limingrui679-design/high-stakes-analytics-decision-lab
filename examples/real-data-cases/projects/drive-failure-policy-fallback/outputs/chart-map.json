@@ -1,0 +1,26 @@
+{
+  "project_id": "drive-failure-policy-fallback",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Failures warned before the event",
+      "supported_finding": "Each drive and failure date counts once even with repeat warnings.",
+      "interpretation_boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes.",
+      "source_id": "backblaze-drive"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Confirmed false alert episodes",
+      "supported_finding": "A consecutive episode with incomplete follow-up is reported as unresolved unless a failure is observed.",
+      "interpretation_boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes.",
+      "source_id": "backblaze-drive"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Lead time on detected failures",
+      "supported_finding": "Lead time uses the earliest eligible warning in the fourteen-day horizon.",
+      "interpretation_boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes.",
+      "source_id": "backblaze-drive"
+    }
+  ]
+}

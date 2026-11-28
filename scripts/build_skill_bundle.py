@@ -80,13 +80,13 @@ def _case_precedents() -> str:
     cases = case_payload.get("cases", [])
     capabilities = capability_payload.get("capabilities", [])
     mappings = capability_payload.get("cases", {})
-    if not isinstance(cases, list) or len(cases) != 15:
-        raise ValueError("The compact Skill requires exactly fifteen case precedents.")
+    if not isinstance(cases, list) or len(cases) != 30:
+        raise ValueError("The compact Skill requires exactly thirty case precedents.")
     if not isinstance(capabilities, list) or not isinstance(mappings, dict):
         raise ValueError("The capability map is incomplete.")
     labels = {item["id"]: item["label"] for item in capabilities}
     lines = [
-        "# Fifteen case precedents",
+        "# Thirty case precedents",
         "",
         (
             "These school-neutral precedents are navigation aids. Reuse a method contract, "

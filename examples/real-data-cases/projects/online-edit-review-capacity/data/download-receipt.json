@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "mediawiki-history",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "42123cead88a69ccdd4f8d8aab4a08b34b9acd6469b39ff24035acb4ef6d7332",
+      "bytes": 4436944
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

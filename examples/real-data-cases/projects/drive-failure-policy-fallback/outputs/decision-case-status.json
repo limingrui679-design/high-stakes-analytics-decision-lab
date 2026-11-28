@@ -1,0 +1,7 @@
+{
+  "status": "reliability_handoff",
+  "owner": "ML reliability lead",
+  "evidence": "With 15 daily review slots across 139 held-out dates, event recall was 21.8% for the pending-sector rule and 9.8% for monitored fallback across 459 observable failures.",
+  "next_decision": "Use the per-model alert counts, false investigations and warning time to set a review budget. Record whether missing measurements or delayed precision caused each fallback.",
+  "boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes."
+}

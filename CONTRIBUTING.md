@@ -69,7 +69,7 @@ download, preparation, analysis, and decision-case commands before running the
 full test suite. Generated case cards, galleries, reports, figures, manifests,
 and receipts should never be edited as isolated copies.
 
-The portfolio verifier rebuilds all fifteen projects in a temporary copy. It
+The portfolio verifier rebuilds all thirty projects in a temporary copy. It
 requires exact agreement for sources, strings, labels, counts, and documented
 hashes; it permits only bounded cross-version floating-point differences and
 their derived artifact receipts. See

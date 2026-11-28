@@ -4,7 +4,7 @@
   "generator": "scripts/build_skill_bundle.py",
   "school_neutral": true,
   "file_count_excluding_manifest": 38,
-  "bytes_excluding_manifest": 487556,
+  "bytes_excluding_manifest": 505245,
   "files": [
     {
       "path": "LICENSE.txt",
@@ -13,8 +13,8 @@
     },
     {
       "path": "SKILL.md",
-      "bytes": 8971,
-      "sha256": "3e46190ed8153e01387465f4bbb497dea4686fa6b509c4c437c81461b2dc63a5"
+      "bytes": 8970,
+      "sha256": "d854d9c05bce338ff035744253048a8edfc0cafde755faced8c2147b2910e630"
     },
     {
       "path": "agents/openai.yaml",
@@ -43,8 +43,8 @@
     },
     {
       "path": "references/case-precedents.md",
-      "bytes": 15098,
-      "sha256": "cf70b14465c602f7689286a9f1631611a25f67995aec89e2d5e5e3a665c9692c"
+      "bytes": 31821,
+      "sha256": "1da1bed95c012f7b629d2fb00904555bdfa0e487d897cb37b1dcc428759bb2d2"
     },
     {
       "path": "references/case-schema.md",
@@ -68,8 +68,8 @@
     },
     {
       "path": "references/method-domain-map.json",
-      "bytes": 1883,
-      "sha256": "d8c0847f059cdad1c38e5d8444076a2f26266c20e637bd6ce75cbe6fad55abb4"
+      "bytes": 2852,
+      "sha256": "abb2ac7551e2b261fa66843b740552572d40efd3fac8413a86f3460bf84fea88"
     },
     {
       "path": "references/method-modules.md",
@@ -103,8 +103,8 @@
     },
     {
       "path": "references/reproducibility-contract.md",
-      "bytes": 2358,
-      "sha256": "6e0dfa8b481e1caddfd35b61d4fb2be122cea23ce274eee8aa88e1a583c71e40"
+      "bytes": 2356,
+      "sha256": "214cceb6d6562619a689ca7285571c5628b66f64a811b9c02ee0b1413da7355e"
     },
     {
       "path": "references/visual-report-system.md",

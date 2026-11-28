@@ -1,0 +1,7 @@
+{
+  "status": "intervention_budget_review",
+  "owner": "Marketplace strategy and logistics team",
+  "evidence": "Across 4 future quarters and 2,000 equal review slots per policy, adjusted seller targeting found 86 late deliveries following a missed handoff deadline. Carrier-focused targeting found 225 late deliveries after on-time handoff.",
+  "next_decision": "Match proposed seller coaching or carrier service review to the observed stage. With equal per-order costs, choose carrier review only above the reported relative-effectiveness crossover; estimate effects prospectively.",
+  "boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness."
+}

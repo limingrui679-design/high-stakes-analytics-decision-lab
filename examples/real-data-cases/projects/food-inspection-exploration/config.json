@@ -1,0 +1,16 @@
+{
+  "project_id": "food-inspection-exploration",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "slots": 120
+  },
+  "parameter_register": [
+    {
+      "parameter": "slots",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier."
+    }
+  ]
+}

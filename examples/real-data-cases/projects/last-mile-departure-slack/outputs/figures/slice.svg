@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 192" role="img" aria-labelledby="t d">
+<title id="t">Minutes of delay on jointly feasible routes</title><desc id="d">The paired denominator is recorded separately to expose feasibility selection.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Minutes of delay on jointly feasible routes</text>
+<text x="16" y="47" font-size="13">Median feasible minutes</text>
+<path d="M 237.00 55 V 173" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Driver sequence</text>
+<rect x="237.00" y="62" width="372.42" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">21.917</text>
+<text x="16" y="111" font-size="13">Standard 2-opt</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">24.717</text>
+<text x="16" y="145" font-size="13">Window relocation</text>
+<rect x="237.00" y="130" width="415.33" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">24.442</text>
+</g></svg>

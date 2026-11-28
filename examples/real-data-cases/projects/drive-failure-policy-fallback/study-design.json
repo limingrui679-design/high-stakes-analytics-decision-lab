@@ -1,0 +1,67 @@
+{
+  "number": 23,
+  "slug": "drive-failure-policy-fallback",
+  "title": "Knowing When to Fall Back After a Drive Fleet Changes",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One maximal consecutive run of equal binned SMART indicators for a pseudonymous drive",
+  "dataset": "Backblaze Hard Drive Daily Statistics, 2016",
+  "question": "When monitoring signals disappear after a fleet change, is switching to an interpretable rule worth the lost warnings?",
+  "owner": "ML reliability lead",
+  "design": "Keep the complete fleet's observation calendar. Train on earlier, disjoint serials and exclude one entire model. Evaluate fifteen daily alerts on unseen serials or the excluded model. Keep every observed candidate at allocation, then report unobservable follow-up separately; differentiate missing from zero. Compare a fixed pending-sector rule, a frozen empirical score and a fallback triggered by unavailable indicators or matured poor precision.",
+  "boundary": "A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes.",
+  "route": [
+    "predictive",
+    "prescriptive"
+  ],
+  "redistribution": "Backblaze permits sharing the data with attribution. The extract reports binned measurements and pseudonyms.",
+  "fields": {
+    "key": "Drive and beginning of contiguous state interval",
+    "drive": "Irreversible serial pseudonym",
+    "from": "First date in state",
+    "until": "Last observed date in state",
+    "model": "Drive model",
+    "reallocated": "Binned SMART 5 raw",
+    "uncorrectable": "Binned SMART 187 raw",
+    "pending": "Binned SMART 197 raw",
+    "offline": "Binned SMART 198 raw",
+    "failure": "Failure on interval end"
+  },
+  "sources": [
+    {
+      "source_id": "backblaze-drive",
+      "publisher": "Backblaze",
+      "url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+      "version": "2016 calendar quarters 1–4",
+      "license": "Backblaze Drive Stats terms and attribution",
+      "license_url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+      "prefixes": [
+        "data_Q"
+      ],
+      "output_fields": [
+        "drive",
+        "model",
+        "reallocated",
+        "uncorrectable",
+        "pending",
+        "offline",
+        "failure"
+      ]
+    }
+  ],
+  "landing_page": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+  "publisher": "Backblaze",
+  "version": "2016 calendar quarters 1–4",
+  "endpoint": "reliability_handoff",
+  "domains": [
+    "machine learning engineering",
+    "time-to-event validation",
+    "reliability monitoring"
+  ],
+  "methods": [
+    "serial and hardware-family holdout",
+    "right-censored device days",
+    "episode-level false alerts",
+    "delayed-label fallback"
+  ]
+}

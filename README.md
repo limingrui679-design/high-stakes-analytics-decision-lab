@@ -19,7 +19,7 @@
   <a href="#start-in-three-steps"><strong>Quick start</strong></a> ·
   <a href="#how-it-works"><strong>Architecture</strong></a> ·
   <a href="https://limingrui679-design.github.io/high-stakes-analytics-decision-lab/demo/"><strong>Live explorer</strong></a> ·
-  <a href="#fifteen-complete-evidence-paths"><strong>Portfolio</strong></a> ·
+  <a href="#thirty-complete-evidence-paths"><strong>Portfolio</strong></a> ·
   <a href="docs/README.md"><strong>Documentation</strong></a> ·
   <a href="CONTRIBUTING.md"><strong>Contributing</strong></a>
 </p>
@@ -30,7 +30,7 @@ A transit planner choosing service locations and a review team prioritising comp
 
 The spatial equity case combines U.S. Census tract estimates with Massachusetts transit data to compare candidate service locations. Excluding tracts with missing rent-to-income data and filling those gaps with the observed median yielded the same five candidate sites. Treating the missing values as zero would have changed one selection. [Explore the spatial equity analysis](examples/real-data-cases/projects/spatial-equity-planning/PROJECT.md)
 
-The same workflow runs across 15 public-data cases.
+The same workflow runs across 30 public-data cases.
 
 | Principle | System behavior |
 |---|---|
@@ -99,7 +99,7 @@ primary evidence product.
 | Question only | `python3 scripts/hsadl.py route "<question>" --scope full --output-dir <path>` | Evidence and method blueprint; no invented result |
 | Question plus data | `python3 scripts/hsadl.py start <data.csv> --question "<question>" --output-dir <path>` | Preserved source, draft contract, readiness profile, and unresolved decisions |
 | Existing decision case | `python3 scripts/hsadl.py validate <case.json>` then `python3 scripts/hsadl.py run <case.json> --output-dir <path>` | Validated expected, tail, sensitivity, provenance, and group-impact outputs |
-| Worked precedents | [Fifteen-project portfolio](examples/real-data-cases/README.md) | Complete source-to-report evidence paths |
+| Worked precedents | [Thirty-project portfolio](examples/real-data-cases/README.md) | Complete source-to-report evidence paths |
 
 ## How it works
 
@@ -161,19 +161,19 @@ includes a title and description, and is paired with its analytical question,
 supported interpretation, and claim boundary. The visual system is part of the
 evidence contract, not decorative reporting.
 
-## Fifteen complete evidence paths
+## Thirty complete evidence paths
 
 <p align="center">
-  <img src="examples/real-data-cases/figures/case-landscape.svg" alt="Fifteen real-data cases and their evidence-matched analytical paths" width="92%">
+  <img src="examples/real-data-cases/figures/case-landscape.svg" alt="Thirty real-data cases and their evidence-matched analytical paths" width="92%">
 </p>
 
-The public portfolio contains 15 primary reports and 10 conditional briefs—25 intelligence products in total—plus 119 canonical accessible figures: 50 evidence figures and 69 decision figures.
+The public portfolio contains 30 primary reports and 16 conditional briefs—46 intelligence products in total—plus 176 canonical accessible figures: 95 evidence figures and 81 decision figures.
 
 The cases span operational demand, distribution shift, scarce-capacity pilots,
 temporal model transport, tail-risk decisions, human-in-the-loop triage,
 commercial diligence, mitigation allocation, filing review, clustered field
 experiments, survival evidence, policy evaluation, repeated-measures inference,
-population transportability, and spatial equity.
+population transportability, and spatial equity. The additional studies examine paired blood-pressure measurements, withheld wearable readings, queue dispatch, weekly publication revisions, incremental transit routing, online review budgets, seller and carrier targeting, hardware failures, last-mile routing, inspection allocation, learning feedback, bond hedges, correlated forecast errors, accounting forecasts, and transactional map updates.
 
 They intentionally end differently: some support a bounded decision, some
 require a pilot or targeted review, and some stop at an evidence request or
@@ -183,6 +183,7 @@ require a pilot or targeted review, and some stop at an evidence request or
 |---|---|
 | Searchable route and capability explorer | [Live case atlas](https://limingrui679-design.github.io/high-stakes-analytics-decision-lab/demo/) · [local source](demo/index.html) |
 | Visual case gallery | [Portfolio overview](examples/real-data-cases/README.md) |
+| Rebuild the latest 15 studies from public sources | [Source reconstruction and benchmarks](examples/real-data-cases/source_tools/README.md) |
 | Machine-readable catalog | [`cases.json`](examples/real-data-cases/cases.json) |
 | School-neutral capability paths | [`capability-map.json`](examples/real-data-cases/capability-map.json) |
 | Rebuild and comparison contract | [Verification guide](docs/verification.md) |
@@ -200,17 +201,17 @@ release identity is also recorded in [`CITATION.cff`](CITATION.cff),
 make verify
 ```
 
-This runs the standalone regression suite and rebuilds all fifteen projects in
+This runs the standalone regression suite and rebuilds all thirty projects in
 an isolated verified-file copy. Use `make quality` for the tracked-secret scan,
 Ruff, mypy, and codespell; use [`docs/verification.md`](docs/verification.md)
 for direct commands, static security gates, and no-Git release verification.
 
-The 109 public tests cover data readiness, adaptive routing, numerical behavior,
+The 120 public tests cover data readiness, adaptive routing, numerical behavior,
 source and artifact identity, package integrity, local links, accessible SVGs,
 generator idempotence, compact installation, quickstart safety, interactive
 explorer synchronization, no-Git releases, DNS and SSRF boundaries, and source
-parser security. The complete 109-test standalone regression suite and the
-fifteen-project rebuild are separate gates: successful reproduction establishes
+parser security. The complete 120-test standalone regression suite and the
+thirty-project rebuild are separate gates: successful reproduction establishes
 the reviewed workflow and declared numerical tolerance, not empirical validity,
 external adoption, or real-world impact.
 
@@ -229,7 +230,7 @@ high-stakes-analytics-decision-lab/
 ├── references/                  # enforceable method and evidence contracts
 ├── assets/                      # templates and canonical README visuals
 ├── scripts/                     # profiling, routing, analysis, generation, checks
-├── examples/real-data-cases/    # fifteen reproducible evidence projects
+├── examples/real-data-cases/    # thirty reproducible evidence projects
 ├── tests/                       # standalone contract and regression suite
 └── .github/                     # CI, security, issue, and PR workflows
 ```

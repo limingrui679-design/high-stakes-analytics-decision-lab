@@ -1,0 +1,66 @@
+{
+  "number": 20,
+  "slug": "transit-timetable-repair",
+  "title": "Maintaining Earliest Arrival Routes Across Timetable Revisions",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One changed scheduled connection or version marker in ordered MBTA archive copies",
+  "dataset": "MBTA archived GTFS timetables for common service date 22 November 2024",
+  "question": "Can a router repair a revised timetable and still return exactly the same earliest arrivals as rebuilding?",
+  "owner": "Transit-routing systems engineer",
+  "design": "Apply calendar and date exceptions for one Friday to ten consecutive archived feeds. Extract trunk rail, selected bus lines and shuttles. A timetable connection scan handles remaining on board, boarding restrictions, transfer waiting, and times beyond midnight. Retain unaltered time prefixes and compare with full invalidation and a fresh oracle for all reachable stops.",
+  "boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links.",
+  "route": [
+    "diagnostic",
+    "prescriptive"
+  ],
+  "redistribution": "Derived MBTA schedule records with attribution to the Massachusetts Bay Transportation Authority; publisher terms apply.",
+  "fields": {
+    "key": "Version and connection identity",
+    "feed": "Archived feed label",
+    "op": "Version marker or put/drop",
+    "trip": "Published trip ID",
+    "seq": "Starting stop sequence",
+    "a": "Origin station or stop",
+    "b": "Destination station or stop",
+    "depart": "Scheduled seconds from service-day midnight",
+    "arrive": "Arrival seconds from service-day midnight",
+    "board": "Boarding permitted at origin",
+    "alight": "Alighting permitted at destination"
+  },
+  "sources": [
+    {
+      "source_id": "mbta-gtfs",
+      "publisher": "Massachusetts Bay Transportation Authority",
+      "url": "https://www.mbta.com/developers/gtfs",
+      "version": "Oct–Nov 2024 archives, common service 2024-11-22",
+      "license": "MassDOT developers license",
+      "license_url": "https://www.mass.gov/lists/developers-data",
+      "prefixes": [
+        "mbta-"
+      ],
+      "output_fields": [
+        "feed",
+        "trip",
+        "seq",
+        "depart",
+        "arrive"
+      ]
+    }
+  ],
+  "landing_page": "https://www.mbta.com/developers/gtfs",
+  "publisher": "Massachusetts Bay Transportation Authority",
+  "version": "Oct–Nov 2024 archives, common service 2024-11-22",
+  "endpoint": "routing_update_review",
+  "domains": [
+    "computer science algorithms",
+    "transit routing",
+    "incremental computation"
+  ],
+  "methods": [
+    "exact timetable oracle",
+    "query checkpoints",
+    "off-path added connection",
+    "transfer-aware replay"
+  ]
+}

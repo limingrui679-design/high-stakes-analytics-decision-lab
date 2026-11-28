@@ -1,0 +1,7 @@
+{
+  "status": "selective_measurement_review",
+  "owner": "Biomedical signal-informatics researcher",
+  "evidence": "With the DaLiA threshold frozen, WESAD retained 85.2% of 5,544 eligible windows. Subject-averaged absolute error among reported ECG-readable windows was 6.83 bpm.",
+  "next_decision": "Choose the reporting threshold using both per-person error and maximum no-readout time. Verify the policy in intended activities and hardware before relying on a new deployment.",
+  "boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions."
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.1",
+  "project_id": "drive-failure-policy-fallback",
+  "source_id": "backblaze-drive",
+  "title": "Backblaze Hard Drive Daily Statistics, 2016",
+  "publisher": "Backblaze",
+  "landing_page": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+  "version": "2016 calendar quarters 1–4",
+  "accessed_at": "2026-11-28",
+  "license": "Backblaze Drive Stats terms and attribution",
+  "redistribution": "Backblaze permits sharing the data with attribution. The extract reports binned measurements and pseudonyms.",
+  "grain": "One maximal consecutive run of equal binned SMART indicators for a pseudonymous drive",
+  "expected_rows": 100501,
+  "sources": [
+    {
+      "source_id": "backblaze-drive",
+      "publisher": "Backblaze",
+      "url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+      "version": "2016 calendar quarters 1–4",
+      "license": "Backblaze Drive Stats terms and attribution",
+      "license_url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+      "output_fields": [
+        "drive",
+        "model",
+        "reallocated",
+        "uncorrectable",
+        "pending",
+        "offline",
+        "failure"
+      ],
+      "artifacts": [
+        {
+          "name": "data_Q1_2016.zip",
+          "url": "https://f001.backblazeb2.com/file/Backblaze-Hard-Drive-Data/data_Q1_2016.zip",
+          "bytes": 270281914,
+          "hash_algorithm": "sha256",
+          "sha256": "768bd8e2e95564012b1467c0f9c23e8c591526ca79a2c6cdadf707cbd8850699"
+        },
+        {
+          "name": "data_Q2_2016.zip",
+          "url": "https://f001.backblazeb2.com/file/Backblaze-Hard-Drive-Data/data_Q2_2016.zip",
+          "bytes": 292369418,
+          "hash_algorithm": "sha256",
+          "sha256": "c2f0855fe979698a5c6b5643f76394254f57fbd1659cdb1efcd056bd9a592ab2"
+        },
+        {
+          "name": "data_Q3_2016.zip",
+          "url": "https://f001.backblazeb2.com/file/Backblaze-Hard-Drive-Data/data_Q3_2016.zip",
+          "bytes": 322384270,
+          "hash_algorithm": "sha256",
+          "sha256": "70d0531317b3a8215adacefc78250cc50a87fe867f5293dbc14f75f0a1927607"
+        },
+        {
+          "name": "data_Q4_2016.zip",
+          "url": "https://f001.backblazeb2.com/file/Backblaze-Hard-Drive-Data/data_Q4_2016.zip",
+          "bytes": 337175346,
+          "hash_algorithm": "sha256",
+          "sha256": "46de02b23ab6f93e30c8651582961cced35a304180b5b321c043c78eff6f3044"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "d7ffa8cd1787cbddc10507e9ce1e8b3a836870310a8c0b0965524211355d90e1",
+      "bytes": 1391407,
+      "uncompressed_sha256": "ea9d1927ba9692c223751023338fd5ed0b28613344481073a62bdb9a0fe10ac5"
+    }
+  ]
+}

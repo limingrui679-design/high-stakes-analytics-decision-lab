@@ -1,0 +1,26 @@
+{
+  "project_id": "programming-hint-design",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Anticipating first-attempt correctness",
+      "supported_finding": "Author predictions come from the published learner-fold analysis; the new fit imposes an additional historical cutoff.",
+      "interpretation_boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort.",
+      "source_id": "csedm-itap"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Which observed attempts included any hint?",
+      "supported_finding": "The released aggregate gives a binary hint indicator, not hint timestamps or treatment assignment.",
+      "interpretation_boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort.",
+      "source_id": "csedm-itap"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "A real diagnostic pattern in a second corpus",
+      "supported_finding": "Correct programs can share the pattern, so inspect a concrete trace before selecting feedback.",
+      "interpretation_boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort.",
+      "source_id": "csedm-itap"
+    }
+  ]
+}

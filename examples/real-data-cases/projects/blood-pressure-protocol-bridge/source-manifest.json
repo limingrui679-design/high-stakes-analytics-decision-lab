@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.1",
+  "project_id": "blood-pressure-protocol-bridge",
+  "source_id": "nhanes-bridge",
+  "title": "NHANES 2017–2018 blood pressure methodology study and demographics",
+  "publisher": "CDC NCHS",
+  "landing_page": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPXO_J.htm",
+  "version": "NHANES 2017–2018",
+  "accessed_at": "2026-11-28",
+  "license": "US government public-use data",
+  "redistribution": "Derived numeric public-use NHANES records; no additional individual identifiers.",
+  "grain": "One examined adult with at least two valid systolic readings in each protocol",
+  "expected_rows": 4614,
+  "sources": [
+    {
+      "source_id": "nhanes-bridge",
+      "publisher": "CDC NCHS",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPXO_J.htm",
+      "version": "NHANES 2017–2018",
+      "license": "US government public-use data",
+      "license_url": "https://wwwn.cdc.gov/nchs/nhanes/",
+      "output_fields": [
+        "manual",
+        "automatic",
+        "weight",
+        "minutes",
+        "psu",
+        "stratum"
+      ],
+      "artifacts": [
+        {
+          "name": "BPXO_J.XPT",
+          "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPXO_J.xpt",
+          "bytes": 694400,
+          "hash_algorithm": "sha256",
+          "sha256": "9a7f4b6d0e327282b0032c94ab85936c9b1027e5e4d410bcda6af23f188665c4"
+        },
+        {
+          "name": "BPX_J.XPT",
+          "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/BPX_J.xpt",
+          "bytes": 1466000,
+          "hash_algorithm": "sha256",
+          "sha256": "f98f1d9a4c18173e715c749b4294f6f1525140d5ad5751316bb17cc038fb3423"
+        },
+        {
+          "name": "DEMO_J.XPT",
+          "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.xpt",
+          "bytes": 3412720,
+          "hash_algorithm": "sha256",
+          "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "77d9302589452ee4dcd3c2395a61fc6d9d6bbf0b7f315ee6aaab73f4b98a927b",
+      "bytes": 84853,
+      "uncompressed_sha256": "947a1ab11da5537f29b18127c581e939eb17f040bdca3dc07b2f3be1dd8b72fe"
+    }
+  ]
+}

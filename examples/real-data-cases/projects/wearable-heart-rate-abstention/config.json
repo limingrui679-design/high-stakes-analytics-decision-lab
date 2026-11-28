@@ -1,0 +1,16 @@
+{
+  "project_id": "wearable-heart-rate-abstention",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "report_fraction": 0.7
+  },
+  "parameter_register": [
+    {
+      "parameter": "report_fraction",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions."
+    }
+  ]
+}

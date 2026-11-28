@@ -40,7 +40,7 @@ npx skills use limingrui679-design/high-stakes-analytics-decision-lab@high-stake
 
 The installer discovers only the compact package under
 `skills/high-stakes-analytics-decision-lab/`; it does not need to copy the full
-fifteen-project portfolio. After installation, the package includes its own
+thirty-project portfolio. After installation, the package includes its own
 scripts, templates, method references, case-precedent index, license, and hash
 manifest.
 
@@ -177,5 +177,5 @@ figures/*.svg
 
 Continue with [Architecture](architecture.md) for the system design or open the
 [interactive case explorer](../demo/index.html) and
-[fifteen-project portfolio](../examples/real-data-cases/README.md) for worked
+[thirty-project portfolio](../examples/real-data-cases/README.md) for worked
 precedents.

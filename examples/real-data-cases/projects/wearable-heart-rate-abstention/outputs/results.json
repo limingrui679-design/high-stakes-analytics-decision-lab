@@ -1,0 +1,490 @@
+{
+  "conclusion": "With the DaLiA threshold frozen, WESAD retained 85.2% of 5,544 eligible windows. Subject-averaged absolute error among reported ECG-readable windows was 6.83 bpm.",
+  "headline_metrics": [
+    "Development participants: 10",
+    "External participants: 15",
+    "Longest external silence: 152 s"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Error at matched reporting coverage",
+      "unit": "Subject-averaged MAE (bpm)",
+      "values": {
+        "DaLiA motion": 10.12103606,
+        "DaLiA quality": 9.86921571,
+        "WESAD motion": 5.29103098,
+        "WESAD quality": 4.23049902
+      },
+      "note": "At matched coverage, quality and motion policies report the same number of windows in each cohort."
+    },
+    "slice": {
+      "title": "Which external activities retain a reading?",
+      "unit": "Reported percent",
+      "values": {
+        "1": 85.49862763,
+        "2": 66.31407648,
+        "3": 93.11859444,
+        "4": 96.9571231
+      },
+      "note": "Frozen development threshold. The audit gives paired per-activity error, reference availability and large-error frequency."
+    },
+    "sensitivity": {
+      "title": "Longest uninterrupted no-readout run",
+      "unit": "Seconds",
+      "values": {
+        "Held-out DaLiA": 400,
+        "External WESAD": 152
+      },
+      "note": "Clock gaps and changes in study activity eligibility break no-readout runs."
+    }
+  },
+  "audit": {
+    "development_error_over_10bpm_probability_by_bin": {
+      "0": 0.65234366,
+      "1": 0.57597053,
+      "2": 0.49016956,
+      "3": 0.36100093,
+      "4": 0.20993638,
+      "5": 0.06536474,
+      "6": 0.01912965,
+      "7": 0.00564849
+    },
+    "development_score_cutpoints": [
+      0.1614299,
+      0.2399869,
+      0.31241995,
+      0.39176785,
+      0.4968007,
+      0.60392255,
+      0.69673105
+    ],
+    "development_motion_weight": 0.5,
+    "fixed_cutoff": 0.50983045,
+    "groups": {
+      "Held-out DaLiA": {
+        "windows": 3466,
+        "usable_ecg": 3432,
+        "all_mae": 14.17075449,
+        "motion_mae": 10.12103606,
+        "matched_quality_mae": 9.86921571,
+        "frozen_mae": 9.24350785,
+        "frozen_coverage": 0.66503174,
+        "longest_gap_s": 400,
+        "coverage_and_error_by_activity": {
+          "1": {
+            "eligible": 376,
+            "reported": 348,
+            "reference_readable": 347,
+            "coverage_pct": 92.55319149,
+            "mae": 1.94983243,
+            "error_over_10bpm_pct": 2.3054755
+          },
+          "2": {
+            "eligible": 276,
+            "reported": 118,
+            "reference_readable": 118,
+            "coverage_pct": 42.75362319,
+            "mae": 37.15504916,
+            "error_over_10bpm_pct": 59.3220339
+          },
+          "3": {
+            "eligible": 183,
+            "reported": 60,
+            "reference_readable": 60,
+            "coverage_pct": 32.78688525,
+            "mae": 26.34666857,
+            "error_over_10bpm_pct": 61.66666667
+          },
+          "4": {
+            "eligible": 289,
+            "reported": 180,
+            "reference_readable": 180,
+            "coverage_pct": 62.28373702,
+            "mae": 13.86845524,
+            "error_over_10bpm_pct": 22.22222222
+          },
+          "5": {
+            "eligible": 570,
+            "reported": 383,
+            "reference_readable": 381,
+            "coverage_pct": 67.19298246,
+            "mae": 6.12952586,
+            "error_over_10bpm_pct": 17.06036745
+          },
+          "6": {
+            "eligible": 859,
+            "reported": 617,
+            "reference_readable": 613,
+            "coverage_pct": 71.82770664,
+            "mae": 7.73412569,
+            "error_over_10bpm_pct": 24.46982055
+          },
+          "7": {
+            "eligible": 311,
+            "reported": 131,
+            "reference_readable": 123,
+            "coverage_pct": 42.1221865,
+            "mae": 19.56744933,
+            "error_over_10bpm_pct": 56.91056911
+          },
+          "8": {
+            "eligible": 602,
+            "reported": 468,
+            "reference_readable": 467,
+            "coverage_pct": 77.74086379,
+            "mae": 4.77413432,
+            "error_over_10bpm_pct": 13.0620985
+          }
+        },
+        "matched_quality_by_activity": {
+          "1": {
+            "eligible": 376,
+            "reported": 349,
+            "reference_readable": 348,
+            "coverage_pct": 92.81914894,
+            "mae": 1.94787013,
+            "error_over_10bpm_pct": 2.29885057
+          },
+          "2": {
+            "eligible": 276,
+            "reported": 133,
+            "reference_readable": 133,
+            "coverage_pct": 48.1884058,
+            "mae": 36.8359409,
+            "error_over_10bpm_pct": 60.15037594
+          },
+          "3": {
+            "eligible": 183,
+            "reported": 70,
+            "reference_readable": 70,
+            "coverage_pct": 38.25136612,
+            "mae": 26.31723213,
+            "error_over_10bpm_pct": 62.85714286
+          },
+          "4": {
+            "eligible": 289,
+            "reported": 190,
+            "reference_readable": 190,
+            "coverage_pct": 65.74394464,
+            "mae": 13.88105439,
+            "error_over_10bpm_pct": 22.63157895
+          },
+          "5": {
+            "eligible": 570,
+            "reported": 406,
+            "reference_readable": 404,
+            "coverage_pct": 71.22807018,
+            "mae": 6.56114797,
+            "error_over_10bpm_pct": 18.31683168
+          },
+          "6": {
+            "eligible": 859,
+            "reported": 643,
+            "reference_readable": 639,
+            "coverage_pct": 74.85448196,
+            "mae": 8.21514947,
+            "error_over_10bpm_pct": 26.13458529
+          },
+          "7": {
+            "eligible": 311,
+            "reported": 147,
+            "reference_readable": 139,
+            "coverage_pct": 47.26688103,
+            "mae": 20.46657562,
+            "error_over_10bpm_pct": 56.11510791
+          },
+          "8": {
+            "eligible": 602,
+            "reported": 488,
+            "reference_readable": 487,
+            "coverage_pct": 81.06312292,
+            "mae": 5.11456956,
+            "error_over_10bpm_pct": 14.78439425
+          }
+        },
+        "matched_motion_by_activity": {
+          "1": {
+            "eligible": 376,
+            "reported": 362,
+            "reference_readable": 360,
+            "coverage_pct": 96.27659574,
+            "mae": 2.40793746,
+            "error_over_10bpm_pct": 3.61111111
+          },
+          "2": {
+            "eligible": 276,
+            "reported": 112,
+            "reference_readable": 112,
+            "coverage_pct": 40.57971014,
+            "mae": 33.6157287,
+            "error_over_10bpm_pct": 52.67857143
+          },
+          "3": {
+            "eligible": 183,
+            "reported": 65,
+            "reference_readable": 65,
+            "coverage_pct": 35.51912568,
+            "mae": 23.69649524,
+            "error_over_10bpm_pct": 61.53846154
+          },
+          "4": {
+            "eligible": 289,
+            "reported": 104,
+            "reference_readable": 104,
+            "coverage_pct": 35.98615917,
+            "mae": 13.91949782,
+            "error_over_10bpm_pct": 25.0
+          },
+          "5": {
+            "eligible": 570,
+            "reported": 412,
+            "reference_readable": 409,
+            "coverage_pct": 72.28070175,
+            "mae": 7.67789965,
+            "error_over_10bpm_pct": 22.98288509
+          },
+          "6": {
+            "eligible": 859,
+            "reported": 698,
+            "reference_readable": 694,
+            "coverage_pct": 81.2572759,
+            "mae": 9.04673253,
+            "error_over_10bpm_pct": 29.68299712
+          },
+          "7": {
+            "eligible": 311,
+            "reported": 148,
+            "reference_readable": 141,
+            "coverage_pct": 47.58842444,
+            "mae": 22.16359827,
+            "error_over_10bpm_pct": 58.15602837
+          },
+          "8": {
+            "eligible": 602,
+            "reported": 525,
+            "reference_readable": 524,
+            "coverage_pct": 87.20930233,
+            "mae": 6.29054687,
+            "error_over_10bpm_pct": 20.03816794
+          }
+        },
+        "subjects": {
+          "S12": 5.9381576,
+          "S15": 6.35719732,
+          "S3": 10.92130148,
+          "S6": 12.68036559,
+          "S9": 10.32051724
+        },
+        "activities": {
+          "1": {
+            "n": 347,
+            "mae": 1.94983243
+          },
+          "2": {
+            "n": 118,
+            "mae": 37.15504916
+          },
+          "3": {
+            "n": 60,
+            "mae": 26.34666857
+          },
+          "4": {
+            "n": 180,
+            "mae": 13.86845524
+          },
+          "5": {
+            "n": 381,
+            "mae": 6.12952586
+          },
+          "6": {
+            "n": 613,
+            "mae": 7.73412569
+          },
+          "7": {
+            "n": 123,
+            "mae": 19.56744933
+          },
+          "8": {
+            "n": 467,
+            "mae": 4.77413432
+          }
+        },
+        "matched_coverage_curve": {
+          "0.5": 6.29758261,
+          "0.7": 9.86921571,
+          "0.9": 12.55736211
+        }
+      },
+      "External WESAD": {
+        "windows": 5544,
+        "usable_ecg": 5516,
+        "all_mae": 9.43428629,
+        "motion_mae": 5.29103098,
+        "matched_quality_mae": 4.23049902,
+        "frozen_mae": 6.83026901,
+        "frozen_coverage": 0.8517316,
+        "longest_gap_s": 152,
+        "coverage_and_error_by_activity": {
+          "1": {
+            "eligible": 2186,
+            "reported": 1869,
+            "reference_readable": 1869,
+            "coverage_pct": 85.49862763,
+            "mae": 4.37058706,
+            "error_over_10bpm_pct": 9.25628678
+          },
+          "2": {
+            "eligible": 1229,
+            "reported": 815,
+            "reference_readable": 814,
+            "coverage_pct": 66.31407648,
+            "mae": 20.80659315,
+            "error_over_10bpm_pct": 50.12285012
+          },
+          "3": {
+            "eligible": 683,
+            "reported": 636,
+            "reference_readable": 636,
+            "coverage_pct": 93.11859444,
+            "mae": 4.52042718,
+            "error_over_10bpm_pct": 11.00628931
+          },
+          "4": {
+            "eligible": 1446,
+            "reported": 1402,
+            "reference_readable": 1380,
+            "coverage_pct": 96.9571231,
+            "mae": 3.65351517,
+            "error_over_10bpm_pct": 6.52173913
+          }
+        },
+        "matched_quality_by_activity": {
+          "1": {
+            "eligible": 2186,
+            "reported": 1573,
+            "reference_readable": 1573,
+            "coverage_pct": 71.957914,
+            "mae": 2.67002189,
+            "error_over_10bpm_pct": 2.86077559
+          },
+          "2": {
+            "eligible": 1229,
+            "reported": 431,
+            "reference_readable": 430,
+            "coverage_pct": 35.06916192,
+            "mae": 17.6787615,
+            "error_over_10bpm_pct": 35.34883721
+          },
+          "3": {
+            "eligible": 683,
+            "reported": 566,
+            "reference_readable": 566,
+            "coverage_pct": 82.86969253,
+            "mae": 3.01667558,
+            "error_over_10bpm_pct": 4.94699647
+          },
+          "4": {
+            "eligible": 1446,
+            "reported": 1311,
+            "reference_readable": 1295,
+            "coverage_pct": 90.66390041,
+            "mae": 3.30766263,
+            "error_over_10bpm_pct": 4.63320463
+          }
+        },
+        "matched_motion_by_activity": {
+          "1": {
+            "eligible": 2186,
+            "reported": 1309,
+            "reference_readable": 1309,
+            "coverage_pct": 59.8810613,
+            "mae": 2.8051762,
+            "error_over_10bpm_pct": 3.66692131
+          },
+          "2": {
+            "eligible": 1229,
+            "reported": 618,
+            "reference_readable": 617,
+            "coverage_pct": 50.28478438,
+            "mae": 16.94698717,
+            "error_over_10bpm_pct": 45.54294976
+          },
+          "3": {
+            "eligible": 683,
+            "reported": 574,
+            "reference_readable": 574,
+            "coverage_pct": 84.04099561,
+            "mae": 3.44835101,
+            "error_over_10bpm_pct": 7.14285714
+          },
+          "4": {
+            "eligible": 1446,
+            "reported": 1380,
+            "reference_readable": 1357,
+            "coverage_pct": 95.43568465,
+            "mae": 3.62369104,
+            "error_over_10bpm_pct": 5.96904937
+          }
+        },
+        "subjects": {
+          "S10": 7.38814063,
+          "S11": 12.7410712,
+          "S13": 11.92898997,
+          "S14": 4.23294706,
+          "S15": 5.50653584,
+          "S16": 7.77474085,
+          "S17": 7.47489439,
+          "S2": 5.01029054,
+          "S3": 6.18462369,
+          "S4": 4.19245614,
+          "S5": 6.32565449,
+          "S6": 5.15523795,
+          "S7": 6.34685443,
+          "S8": 7.29772698,
+          "S9": 4.89387107
+        },
+        "activities": {
+          "1": {
+            "n": 1869,
+            "mae": 4.37058706
+          },
+          "2": {
+            "n": 814,
+            "mae": 20.80659315
+          },
+          "3": {
+            "n": 636,
+            "mae": 4.52042718
+          },
+          "4": {
+            "n": 1380,
+            "mae": 3.65351517
+          }
+        },
+        "matched_coverage_curve": {
+          "0.5": 2.33137389,
+          "0.7": 4.23049902,
+          "0.9": 7.62531344
+        }
+      }
+    },
+    "reference": "Same chest-ECG energy-envelope algorithm and quality gate in each cohort"
+  },
+  "next_decision": "Choose the reporting threshold using both per-person error and maximum no-readout time. Verify the policy in intended activities and hardware before relying on a new deployment.",
+  "project_id": "wearable-heart-rate-abstention",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "predictive"
+    ],
+    "protocol": "Estimate wrist rate from the strongest physiological-frequency spectral peak. Compare movement-only gating to spectral concentration penalized by movement. Tune on complete DaLiA participants, freeze a threshold and test on unseen DaLiA people and the separate WESAD cohort. Check equivalent coverage, per-person and per-activity error, rejected ECG windows, and sustained gaps."
+  },
+  "data": {
+    "rows": 17237,
+    "grain": "One non-overlapping eight-second activity window from an anonymized participant",
+    "snapshot_sha256": "927a2d0bb6a28264993cc5e56f26ee7652f12e9ad128b33df4993c868cfe779c"
+  },
+  "decision_support": {
+    "status": "selective_measurement_review"
+  }
+}

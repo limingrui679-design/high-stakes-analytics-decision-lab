@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from build_readme_visuals import _portfolio_metrics
+
 ROOT = Path(__file__).resolve().parents[1]
 CASE_ROOT = ROOT / "examples" / "real-data-cases"
 OUTPUT = ROOT / "demo" / "data.js"
@@ -32,8 +34,8 @@ def build_payload() -> dict[str, Any]:
     cases = case_payload.get("cases", [])
     capabilities = capability_payload.get("capabilities", [])
     mappings = capability_payload.get("cases", {})
-    if not isinstance(cases, list) or len(cases) != 15:
-        raise ValueError("The explorer requires exactly fifteen cases.")
+    if not isinstance(cases, list) or len(cases) != 30:
+        raise ValueError("The explorer requires exactly thirty cases.")
     if not isinstance(capabilities, list) or not isinstance(mappings, dict):
         raise ValueError("The capability map is incomplete.")
     labels = {item["id"]: item["label"] for item in capabilities}
@@ -82,10 +84,10 @@ def build_payload() -> dict[str, Any]:
             "adoption, external review, or achieved real-world impact is implied."
         ),
         "metrics": {
-            "cases": 15,
+            "cases": len(demo_cases),
             "routes": 4,
             "capabilities": len(capabilities),
-            "accessible_figures": 119,
+            "accessible_figures": _portfolio_metrics()["accessible_figures"],
         },
         "capabilities": capabilities,
         "cases": demo_cases,
@@ -103,8 +105,9 @@ def render_data(payload: dict[str, Any] | None = None) -> str:
 
 def main() -> int:
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(render_data(), encoding="utf-8")
-    print(json.dumps({"path": str(OUTPUT), "cases": 15, "school_neutral": True}))
+    payload = build_payload()
+    OUTPUT.write_text(render_data(payload), encoding="utf-8")
+    print(json.dumps({"path": str(OUTPUT), "cases": len(payload["cases"]), "school_neutral": True}))
     return 0
 
 

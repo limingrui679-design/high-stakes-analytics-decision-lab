@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 192" role="img" aria-labelledby="t d">
+<title id="t">Routes with a feasible delay witness</title><desc id="d">Every reported delay supports a verified order and a return within the stated shift.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Routes with a feasible delay witness</text>
+<text x="16" y="47" font-size="13">Routes</text>
+<path d="M 237.00 55 V 173" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Driver sequence</text>
+<rect x="237.00" y="62" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">10.000</text>
+<text x="16" y="111" font-size="13">Standard 2-opt</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">10.000</text>
+<text x="16" y="145" font-size="13">Window relocation</text>
+<rect x="237.00" y="130" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">10.000</text>
+</g></svg>

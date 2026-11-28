@@ -1,0 +1,16 @@
+{
+  "grain": "One maximal consecutive run of equal binned SMART indicators for a pseudonymous drive",
+  "primary_key": "key",
+  "fields": {
+    "key": "Drive and beginning of contiguous state interval",
+    "drive": "Irreversible serial pseudonym",
+    "from": "First date in state",
+    "until": "Last observed date in state",
+    "model": "Drive model",
+    "reallocated": "Binned SMART 5 raw",
+    "uncorrectable": "Binned SMART 187 raw",
+    "pending": "Binned SMART 197 raw",
+    "offline": "Binned SMART 198 raw",
+    "failure": "Failure on interval end"
+  }
+}

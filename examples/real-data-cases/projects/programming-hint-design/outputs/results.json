@@ -1,0 +1,89 @@
+{
+  "conclusion": "The authors' public file contained 729 learner–problem records. On 584 matched out-of-time learner-held-out observations, first-correct F1 was 0.676 for the past-only model. In the independent code archive, 27 incorrect programs removed from the list being traversed.",
+  "headline_metrics": [
+    "Observed learner–problem records: 729",
+    "Observed students: 86",
+    "Prospective learners per arm: 170"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Anticipating first-attempt correctness",
+      "unit": "F1 score",
+      "values": {
+        "Problem prior": 0.69346734,
+        "Author fold output": 0.69565217,
+        "Past-only logistic": 0.67634253
+      },
+      "note": "Author predictions come from the published learner-fold analysis; the new fit imposes an additional historical cutoff."
+    },
+    "slice": {
+      "title": "Which observed attempts included any hint?",
+      "unit": "Any-hint percent",
+      "values": {
+        "Incorrect first": 24.92917847,
+        "Correct first": 0
+      },
+      "note": "The released aggregate gives a binary hint indicator, not hint timestamps or treatment assignment."
+    },
+    "sensitivity": {
+      "title": "A real diagnostic pattern in a second corpus",
+      "unit": "Programs containing the AST pattern",
+      "values": {
+        "Incorrect archive": 27,
+        "Correct archive": 16
+      },
+      "note": "Correct programs can share the pattern, so inspect a concrete trace before selecting feedback."
+    }
+  },
+  "audit": {
+    "public_evaluation_rows": 729,
+    "learners": 86,
+    "public_evaluation_problems": 19,
+    "indicator_no_hint_and_first_correct_f1": 0.67634253,
+    "indicator_definition": "First correct and no hint recorded anywhere in this problem summary. Hint timing within the problem is unavailable.",
+    "matched_count": 584,
+    "matched_students": 69,
+    "brier": 0.2261493,
+    "outcomes": {
+      "Problem prior": 0.69346734,
+      "Author fold output": 0.69565217,
+      "Past-only logistic": 0.67634253
+    },
+    "code_archive_size": 854,
+    "unparseable": 0,
+    "teaching_example": "Refactory question 3, wrong_3_053.py: for [2,1,2], removing the first 2 leaves [1,2]; the intended order is [2,1].",
+    "planned_experiment": {
+      "arms": [
+        "Predict the counterexample then trace the deletion",
+        "View the corrected accumulation rule then trace identical input"
+      ],
+      "unit": "learner; equal practice time and same independent unseen transfer item; randomize within baseline-skill stratum",
+      "primary": "Unaided first response on unseen order-preserving transfer task",
+      "secondary": "Explanation score and delayed transfer; conceal scoring condition",
+      "baseline_assumption": 0.5,
+      "absolute_effect_assumption": 0.15,
+      "alpha": 0.05,
+      "power": 0.8,
+      "independent_learners_per_arm": 170,
+      "missing_outcomes": "Intention-to-treat denominators, differential attrition and worst/best bounds",
+      "status": "Prospective design; no participant trial"
+    }
+  },
+  "next_decision": "Use the two interactive feedback variants for a future learner-randomized study. Historical hint use is observational and cannot measure which prototype improves independent transfer.",
+  "project_id": "programming-hint-design",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "predictive"
+    ],
+    "protocol": "Use the 2019 challenge authors' public predictions and real first-correct, any-hint and attempt records. Hold out entire learners and mature earlier learners before fitting. Independently inspect real duplicate-removal attempts in the Refactory corpus. Build two runnable feedback designs and specify equal exposure, a new transfer item and a prospective learner-randomized evaluation."
+  },
+  "data": {
+    "rows": 1583,
+    "grain": "Either an author-published learner/problem summary or an independently published anonymized source-code attempt",
+    "snapshot_sha256": "c74e21f7d4f02ba555394962a088c969d1a6a3b178c3e8ad608b3e09424412e7"
+  },
+  "decision_support": {
+    "status": "prospective_experiment"
+  }
+}

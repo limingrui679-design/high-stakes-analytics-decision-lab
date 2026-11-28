@@ -1,0 +1,137 @@
+{
+  "conclusion": "Across 89 out-of-time company-year forecasts, next-year operating-cash-flow MAE was 3.08% of opening assets for cash persistence and 3.07% for the accrual model.",
+  "headline_metrics": [
+    "Issuers with evaluated forecasts: 14",
+    "Forecasts: 89",
+    "Later comparative earnings changes: 25"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "One-year-ahead cash-flow forecasts",
+      "unit": "Mean absolute error (% of target year's opening assets)",
+      "values": {
+        "CFO persistence": 3.07913925,
+        "Earnings persistence": 5.00633507,
+        "Accrual components": 3.07023284,
+        "Other-firm fit": 3.09696266
+      },
+      "note": "Each fitted model sees only labels publicly filed before the forecast."
+    },
+    "slice": {
+      "title": "Does the cash advantage persist by year?",
+      "unit": "MAE improvement over cash persistence (pp)",
+      "values": {
+        "2018": -0.68805985,
+        "2019": 0.22074659,
+        "2020": -0.35961899,
+        "2021": -0.01463486,
+        "2022": -0.35156275,
+        "2023": 0.20855005,
+        "2024": 0.99296634,
+        "2025": -0.74519638
+      },
+      "note": "Negative values mean the accrual model lost to cash persistence."
+    },
+    "sensitivity": {
+      "title": "Apple residual-income sensitivity",
+      "unit": "Modeled price / opening book",
+      "values": {
+        "8% cost / 0.3 decay": 3.41899102,
+        "8% cost / 0.6 decay": 4.9308604,
+        "8% cost / 0.8 decay": 7.73861784,
+        "10% cost / 0.3 decay": 3.33351624,
+        "10% cost / 0.6 decay": 4.73362599,
+        "10% cost / 0.8 decay": 7.22270998,
+        "12% cost / 0.3 decay": 3.25221097,
+        "12% cost / 0.6 decay": 4.55156345,
+        "12% cost / 0.8 decay": 6.77129061
+      },
+      "note": "Scenario valuation holds book fixed under full payout. The cost of equity and persistence are assumptions."
+    }
+  },
+  "audit": {
+    "observed_vintages": 902,
+    "first_report_issuers": 24,
+    "forecast_count": 89,
+    "mae_pct": {
+      "CFO persistence": 3.07913925,
+      "Earnings persistence": 5.00633507,
+      "Accrual components": 3.07023284,
+      "Other-firm fit": 3.09696266
+    },
+    "earnings_target_mae_pct": {
+      "CFO persistence": 5.40489102,
+      "Earnings persistence": 3.55205198,
+      "Accrual components": 3.56857515
+    },
+    "yearly_improvement_pp": {
+      "2018": -0.68805985,
+      "2019": 0.22074659,
+      "2020": -0.35961899,
+      "2021": -0.01463486,
+      "2022": -0.35156275,
+      "2023": 0.20855005,
+      "2024": 0.99296634,
+      "2025": -0.74519638
+    },
+    "loss_by_cash_gap": {
+      "positive": 10,
+      "nonpositive": 79
+    },
+    "valuation": {
+      "issuer": "Apple",
+      "accession": "0000320193-25-000079",
+      "trade_receivables_usd_m": 39777.0,
+      "collection_sensitivity_usd_m": {
+        "0": 349024.44495171,
+        "0.05": 347216.39949717,
+        "0.1": 345408.35404262,
+        "0.2": 341792.26313353
+      },
+      "collection_assumptions": "One-time year-one loss as a fraction of trade receivables with other cash flows and full-payout baseline held fixed; no tax shield.",
+      "opening_book_for_projection_usd_m": 73733.0,
+      "observed_roe": 1.96681299,
+      "price_to_book_scenarios": {
+        "8% cost / 0.3 decay": 3.41899102,
+        "8% cost / 0.6 decay": 4.9308604,
+        "8% cost / 0.8 decay": 7.73861784,
+        "10% cost / 0.3 decay": 3.33351624,
+        "10% cost / 0.6 decay": 4.73362599,
+        "10% cost / 0.8 decay": 7.22270998,
+        "12% cost / 0.3 decay": 3.25221097,
+        "12% cost / 0.6 decay": 4.55156345,
+        "12% cost / 0.8 decay": 6.77129061
+      },
+      "valuation_usd_m": {
+        "8% cost / 0.3 decay": 252092.46471264,
+        "8% cost / 0.6 decay": 363567.13015803,
+        "8% cost / 0.8 decay": 570591.50884234,
+        "10% cost / 0.3 decay": 245790.15309482,
+        "10% cost / 0.6 decay": 349024.44495171,
+        "10% cost / 0.8 decay": 532552.07491952,
+        "12% cost / 0.3 decay": 239795.27131202,
+        "12% cost / 0.6 decay": 335600.42783818,
+        "12% cost / 0.8 decay": 499267.57023705
+      }
+    },
+    "audited_note": "Apple FY2023 Form 10-K, printed page 38: vendor non-trade receivables arise from components supplied to manufacturing vendors. The two largest counterparties accounted for 48% and 23%. Audit trade and vendor receivables separately before interpreting collections.",
+    "chronology": "New annual originals only for forecast features. Later amended or repeated comparative values are retained separately for auditing."
+  },
+  "next_decision": "Investigate persistent cash-collection gaps alongside the audited note, industry and fiscal period. Use issuer-specific balance-sheet classifications before applying a valuation haircut.",
+  "project_id": "earnings-cash-collection",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "predictive"
+    ],
+    "protocol": "Use a preselected set of 24 nonfinancial issuers. Retain filing dates and accessions, identify first original 10-K observations, and preserve later comparisons and amendments separately. Align annual income and CFO with point-in-time balances. Compare earnings/CFO persistence and a regularized working-capital decomposition using only matured prior labels. Include an issuer-held-out fit, annual falsification and a residual-income valuation sensitivity anchored to book value."
+  },
+  "data": {
+    "rows": 902,
+    "grain": "One issuer, accession and fiscal period in an original or comparative annual filing",
+    "snapshot_sha256": "c9b67984f643224803b540159548b2d862dc123ff7e54dbfe697b1ddd8da9f94"
+  },
+  "decision_support": {
+    "status": "valuation_review"
+  }
+}

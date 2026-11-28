@@ -45,8 +45,8 @@ class RealPortfolioContractTests(unittest.TestCase):
             (PROJECT_ROOT / "project-catalog.json").read_text(encoding="utf-8")
         )
 
-    def test_public_catalog_contains_fifteen_real_projects(self) -> None:
-        self.assertEqual(self.catalog["project_count"], 15)
+    def test_public_catalog_contains_thirty_real_projects(self) -> None:
+        self.assertEqual(self.catalog["project_count"], 30)
         self.assertEqual(
             self.catalog["public_project_type"],
             "real_world_research_project",
@@ -57,15 +57,15 @@ class RealPortfolioContractTests(unittest.TestCase):
         )
         self.assertEqual(
             len({item["id"] for item in self.catalog["projects"]}),
-            15,
+            30,
         )
         case_index = json.loads(
             (
                 ROOT / "examples" / "real-data-cases" / "cases.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(case_index["case_count"], 15)
-        self.assertEqual(len(case_index["cases"]), 15)
+        self.assertEqual(case_index["case_count"], 30)
+        self.assertEqual(len(case_index["cases"]), 30)
         for case in case_index["cases"]:
             with self.subTest(case_result=case["id"]):
                 self.assertNotEqual(
@@ -148,6 +148,10 @@ class RealPortfolioContractTests(unittest.TestCase):
             "nhanes-population-transportability": 2,
             "opportunity-zone-policy-evaluation": 3,
             "spatial-equity-planning": 2,
+            "wearable-heart-rate-abstention": 2,
+            "programming-hint-design": 2,
+            "earnings-cash-collection": 2,
+            "credit-drawdown-rates-hedge": 2,
         }
         for item in self.catalog["projects"]:
             with self.subTest(project=item["id"]):

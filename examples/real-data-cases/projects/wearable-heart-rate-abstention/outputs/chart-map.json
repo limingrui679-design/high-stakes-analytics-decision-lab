@@ -1,0 +1,26 @@
+{
+  "project_id": "wearable-heart-rate-abstention",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Error at matched reporting coverage",
+      "supported_finding": "At matched coverage, quality and motion policies report the same number of windows in each cohort.",
+      "interpretation_boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions.",
+      "source_id": "dalia"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Which external activities retain a reading?",
+      "supported_finding": "Frozen development threshold. The audit gives paired per-activity error, reference availability and large-error frequency.",
+      "interpretation_boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions.",
+      "source_id": "dalia"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Longest uninterrupted no-readout run",
+      "supported_finding": "Clock gaps and changes in study activity eligibility break no-readout runs.",
+      "interpretation_boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions.",
+      "source_id": "dalia"
+    }
+  ]
+}

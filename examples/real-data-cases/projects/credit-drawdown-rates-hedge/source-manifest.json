@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.1",
+  "project_id": "credit-drawdown-rates-hedge",
+  "source_id": "ishares-nav",
+  "title": "Issuer historical NAV and ex-dividend distribution records for LQD, IEF, SHY and TLT",
+  "publisher": "BlackRock iShares and the Federal Reserve",
+  "landing_page": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+  "version": "Aligned calendar years 2004–2025 / Board GZ spread and H.15 10-year yield",
+  "accessed_at": "2026-11-28",
+  "license": "Copyright BlackRock; issuer terms of use",
+  "redistribution": "Analytical weekly total-return changes only; full issuer workbooks are fetched separately from BlackRock and are not redistributed.",
+  "grain": "One common trading week for four iShares funds",
+  "expected_rows": 1149,
+  "sources": [
+    {
+      "source_id": "ishares-nav",
+      "publisher": "BlackRock iShares",
+      "url": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+      "version": "Aligned calendar years 2004–2025",
+      "license": "Copyright BlackRock; issuer terms of use",
+      "license_url": "https://www.ishares.com/us/terms-and-conditions",
+      "output_fields": [
+        "LQD",
+        "IEF",
+        "SHY",
+        "TLT"
+      ],
+      "artifacts": [
+        {
+          "name": "ishares-IEF.xls",
+          "url": "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239456&component=fundDownload&userType=individual",
+          "bytes": 2496231,
+          "hash_algorithm": "sha256",
+          "sha256": "3a5e061468236bdc02974b46eb414b21a2d1919472f1c8e162e093e6f1f784f7"
+        },
+        {
+          "name": "ishares-LQD.xls",
+          "url": "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239566&component=fundDownload&userType=individual",
+          "bytes": 9020825,
+          "hash_algorithm": "sha256",
+          "sha256": "c31affef782318b5147b44949e40d27c222ebaa8d8bcf4769816a2b038773b9b"
+        },
+        {
+          "name": "ishares-SHY.xls",
+          "url": "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239452&component=fundDownload&userType=individual",
+          "bytes": 2639305,
+          "hash_algorithm": "sha256",
+          "sha256": "77cba2cdc0bb7bde874d8561a721f8463f4a644a4515cda052dddc1a657d7620"
+        },
+        {
+          "name": "ishares-TLT.xls",
+          "url": "https://www.blackrock.com/varnish-api/blk-one01-product-data/product-data/api/v1/get-fund-document?appType=PRODUCT_PAGE&appSubType=ISHARES&targetSite=us-ishares&locale=en_US&portfolioId=239454&component=fundDownload&userType=individual",
+          "bytes": 2555044,
+          "hash_algorithm": "sha256",
+          "sha256": "cd50392fcc661f779983182e76aa46981507a5452b14ba0e07db10a955ebb1b3"
+        }
+      ]
+    },
+    {
+      "source_id": "federal-reserve-rates-and-spreads",
+      "publisher": "Federal Reserve Board and Federal Reserve Bank of St. Louis",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/updating-the-recession-risk-and-the-excess-bond-premium-20161006.html",
+      "version": "GZ research series and H.15 GS10, 2003–2025 analysis window",
+      "license": "Board research data and H.15 government series; source attribution",
+      "license_url": "https://www.federalreserve.gov/disclaimer.htm",
+      "output_fields": [
+        "spread_change_bp",
+        "rate_change_bp"
+      ],
+      "artifacts": [
+        {
+          "name": "fed-gs10.csv",
+          "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GS10&cosd=2003-01-01&coed=2025-12-31",
+          "bytes": 4438,
+          "hash_algorithm": "sha256",
+          "sha256": "12318414ca4efa2ad27c2ff63d46296633466775379743b056b14a09b66a1905"
+        },
+        {
+          "name": "fed-gz.csv",
+          "url": "https://www.federalreserve.gov/econres/notes/feds-notes/ebp_csv.csv",
+          "bytes": 44669,
+          "hash_algorithm": "sha256",
+          "sha256": "caa16e0619cb5399b9c8f44433868351f01973f9594c50a4f1f87dd0856542c5"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "de8453acb76924b9e94d35cd425798d9c4c3eb040ac23b324f8cbe0487ef5701",
+      "bytes": 31550,
+      "uncompressed_sha256": "7b92cdb238d8612cfdbef33a131a069ec4db3d7f1d70f8f692cf0caee9ccccac"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "grain": "One common trading week for four iShares funds",
+  "primary_key": "week",
+  "fields": {
+    "week": "Friday of trading week",
+    "days": "Common observed trading days",
+    "LQD": "Investment-grade credit weekly total return",
+    "IEF": "7–10 year Treasury weekly total return",
+    "SHY": "1–3 year Treasury weekly total return",
+    "TLT": "20+ year Treasury weekly total return",
+    "spread_change_bp": "Change from preceding month in the Board GZ corporate spread, basis points (descriptive regime only)",
+    "rate_change_bp": "Change from preceding month in the H.15 ten-year Treasury yield, basis points (descriptive regime only)"
+  }
+}

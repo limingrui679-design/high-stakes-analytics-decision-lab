@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "mbta-gtfs",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "2ef13fb50ca7252db948718cf4802da6768ed4ce6db6f7e99a88faa946e1b11a",
+      "bytes": 873410
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

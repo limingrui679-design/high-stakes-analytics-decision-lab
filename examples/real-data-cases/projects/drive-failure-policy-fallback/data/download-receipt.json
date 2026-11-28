@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "backblaze-drive",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "d7ffa8cd1787cbddc10507e9ce1e8b3a836870310a8c0b0965524211355d90e1",
+      "bytes": 1391407
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

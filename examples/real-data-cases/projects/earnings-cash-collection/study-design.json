@@ -1,0 +1,83 @@
+{
+  "number": 29,
+  "slug": "earnings-cash-collection",
+  "title": "When Reported Earnings Outrun Cash Collections",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One issuer, accession and fiscal period in an original or comparative annual filing",
+  "dataset": "US SEC EDGAR as-filed US-GAAP facts with an Apple audited-note cross-check",
+  "question": "When earnings outrun collections, do receivables and inventory changes improve next-year cash-flow forecasts?",
+  "owner": "Fundamental research and accounting analyst",
+  "design": "Use a preselected set of 24 nonfinancial issuers. Retain filing dates and accessions, identify first original 10-K observations, and preserve later comparisons and amendments separately. Align annual income and CFO with point-in-time balances. Compare earnings/CFO persistence and a regularized working-capital decomposition using only matured prior labels. Include an issuer-held-out fit, annual falsification and a residual-income valuation sensitivity anchored to book value.",
+  "boundary": "Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity.",
+  "route": [
+    "diagnostic",
+    "predictive"
+  ],
+  "redistribution": "Derived numeric facts from public US filings, with accession IDs. Company-specific annual report remains with its publisher; the source identity is retained.",
+  "fields": {
+    "key": "Unique issuer/accession/period",
+    "cik": "Issuer SEC identifier",
+    "accession": "EDGAR accession as filed",
+    "form": "Original annual report or amendment",
+    "filed": "Public filing date",
+    "end": "Fiscal reporting period end",
+    "income": "Net income, USD millions",
+    "cfo": "Cash provided by operations, USD millions",
+    "assets": "Total assets, USD millions",
+    "equity": "Stockholder equity, USD millions",
+    "receivables": "Current net customer receivables, USD millions",
+    "inventory": "Net inventories, USD millions"
+  },
+  "sources": [
+    {
+      "source_id": "sec-edgar-companyfacts",
+      "publisher": "US SEC EDGAR; fixed public mirror by DenyTranDFW",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "version": "Point-in-time accession facts, mirror revision e4088db1b10363c29719508935991a851587d17c",
+      "license": "Public filings; mirror metadata and terms linked",
+      "license_url": "https://huggingface.co/datasets/DenyTranDFW/edgar_xbrl_companyfacts",
+      "prefixes": [
+        "sec-facts"
+      ],
+      "output_fields": [
+        "accession",
+        "filed",
+        "assets",
+        "receivables",
+        "inventory",
+        "income",
+        "cfo"
+      ]
+    },
+    {
+      "source_id": "aapl-note",
+      "publisher": "Apple Inc.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
+      "version": "2023 Form 10-K, accession 0000320193-23-000106",
+      "license": "Public corporate filing; Apple copyright",
+      "license_url": "https://investor.apple.com/sec-filings/default.aspx",
+      "prefixes": [
+        "apple-fy2023"
+      ],
+      "output_fields": [
+        "audited_note"
+      ]
+    }
+  ],
+  "landing_page": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+  "publisher": "US SEC EDGAR; fixed public mirror by DenyTranDFW and Apple Inc.",
+  "version": "Point-in-time accession facts, mirror revision e4088db1b10363c29719508935991a851587d17c / 2023 Form 10-K, accession 0000320193-23-000106",
+  "endpoint": "valuation_review",
+  "domains": [
+    "fundamental analysis",
+    "accounting forecasts",
+    "residual income valuation"
+  ],
+  "methods": [
+    "as-filed accessions",
+    "mature competing forecasts",
+    "issuer footnote",
+    "cash-collection valuation sensitivity"
+  ]
+}

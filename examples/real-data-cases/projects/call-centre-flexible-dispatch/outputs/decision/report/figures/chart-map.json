@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Flexible reserve starts and stops",
+      "supported_finding": "Each policy pays for the same reserve time. Frequent changes carry additional organizational cost.",
+      "interpretation_boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Peak-load stress with a switching charge",
+      "supported_finding": "30% more arrivals in each sampled day's busiest period; each switch costs 0.25 percentage-point equivalents.",
+      "interpretation_boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue."
+    }
+  ]
+}

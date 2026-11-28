@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 192" role="img" aria-labelledby="t d">
+<title id="t">Protocol difference by measurement sequence</title><desc id="d">Signed elapsed time orders examinations. The within-two-hour subset tests time separation.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Protocol difference by measurement sequence</text>
+<text x="16" y="47" font-size="13">Automatic minus manual (mmHg)</text>
+<path d="M 657.00 55 V 173" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Manual first</text>
+<rect x="270.11" y="62" width="386.89" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">-1.444</text>
+<text x="16" y="111" font-size="13">Automatic first</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">-1.567</text>
+<text x="16" y="145" font-size="13">Within 2 hours</text>
+<rect x="263.24" y="130" width="393.76" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">-1.469</text>
+</g></svg>

@@ -1,0 +1,1917 @@
+{
+  "conclusion": "With 15 daily review slots across 139 held-out dates, event recall was 21.8% for the pending-sector rule and 9.8% for monitored fallback across 459 observable failures.",
+  "headline_metrics": [
+    "Distinct drives: 81158",
+    "Held-out at-risk device-days: 6337141",
+    "Review slots per day: 15"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Failures warned before the event",
+      "unit": "Percent of eligible failures",
+      "values": {
+        "Pending-sector rule": 21.78649237,
+        "Frozen score": 1.30718954,
+        "Monitored fallback": 9.80392157
+      },
+      "note": "Each drive and failure date counts once even with repeat warnings."
+    },
+    "slice": {
+      "title": "Confirmed false alert episodes",
+      "unit": "Per 1,000 held-out device-days",
+      "values": {
+        "Pending-sector rule": 0.30881434,
+        "Frozen score": 0.16774126,
+        "Monitored fallback": 0.2368576
+      },
+      "note": "A consecutive episode with incomplete follow-up is reported as unresolved unless a failure is observed."
+    },
+    "sensitivity": {
+      "title": "Lead time on detected failures",
+      "unit": "Median days",
+      "values": {
+        "Pending-sector rule": 8.0,
+        "Frozen score": 11.5,
+        "Monitored fallback": 8
+      },
+      "note": "Lead time uses the earliest eligible warning in the fourteen-day horizon."
+    }
+  },
+  "audit": {
+    "totals": {
+      "Pending-sector rule": {
+        "observable_failures": 459,
+        "alert_slots": 2085,
+        "at_risk_device_days": 6337141,
+        "episodes": 2080,
+        "confirmed_false_episodes": 1957,
+        "unresolved_episodes": 8,
+        "recall_pct": 21.78649237,
+        "median_lead_days": 8.0,
+        "false_per_1000_device_days": 0.30881434
+      },
+      "Frozen score": {
+        "observable_failures": 459,
+        "alert_slots": 2085,
+        "at_risk_device_days": 6337141,
+        "episodes": 1084,
+        "confirmed_false_episodes": 1063,
+        "unresolved_episodes": 0,
+        "recall_pct": 1.30718954,
+        "median_lead_days": 11.5,
+        "false_per_1000_device_days": 0.16774126
+      },
+      "Monitored fallback": {
+        "observable_failures": 459,
+        "alert_slots": 2085,
+        "at_risk_device_days": 6337141,
+        "episodes": 1560,
+        "confirmed_false_episodes": 1501,
+        "unresolved_episodes": 2,
+        "recall_pct": 9.80392157,
+        "median_lead_days": 8,
+        "false_per_1000_device_days": 0.2368576
+      }
+    },
+    "by_hardware_model": {
+      "HGST HDS5C4040ALE630": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2944,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2944,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2944,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "HGST HDS724040ALE640": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1668,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1668,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1668,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "HGST HMS5C4040ALE640": {
+        "Pending-sector rule": {
+          "observable_failures": 6,
+          "alert_slots": 8,
+          "at_risk_device_days": 301985,
+          "episodes": 8,
+          "confirmed_false_episodes": 8,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.02649138
+        },
+        "Frozen score": {
+          "observable_failures": 6,
+          "alert_slots": 0,
+          "at_risk_device_days": 301985,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 6,
+          "alert_slots": 4,
+          "at_risk_device_days": 301985,
+          "episodes": 4,
+          "confirmed_false_episodes": 4,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.01324569
+        }
+      },
+      "HGST HMS5C4040BLE640": {
+        "Pending-sector rule": {
+          "observable_failures": 4,
+          "alert_slots": 13,
+          "at_risk_device_days": 363768,
+          "episodes": 13,
+          "confirmed_false_episodes": 13,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.03573706
+        },
+        "Frozen score": {
+          "observable_failures": 4,
+          "alert_slots": 139,
+          "at_risk_device_days": 363768,
+          "episodes": 1,
+          "confirmed_false_episodes": 1,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.002749
+        },
+        "Monitored fallback": {
+          "observable_failures": 4,
+          "alert_slots": 84,
+          "at_risk_device_days": 363768,
+          "episodes": 9,
+          "confirmed_false_episodes": 9,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.02474104
+        }
+      },
+      "HGST HUH728080ALE600": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1946,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1946,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1946,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "Hitachi HDS5C3030ALA630": {
+        "Pending-sector rule": {
+          "observable_failures": 5,
+          "alert_slots": 32,
+          "at_risk_device_days": 189490,
+          "episodes": 32,
+          "confirmed_false_episodes": 31,
+          "unresolved_episodes": 0,
+          "recall_pct": 20.0,
+          "median_lead_days": 12,
+          "false_per_1000_device_days": 0.16359702
+        },
+        "Frozen score": {
+          "observable_failures": 5,
+          "alert_slots": 0,
+          "at_risk_device_days": 189490,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 5,
+          "alert_slots": 12,
+          "at_risk_device_days": 189490,
+          "episodes": 12,
+          "confirmed_false_episodes": 11,
+          "unresolved_episodes": 0,
+          "recall_pct": 20.0,
+          "median_lead_days": 12,
+          "false_per_1000_device_days": 0.05805056
+        }
+      },
+      "Hitachi HDS5C3030BLE630": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "Hitachi HDS5C4040ALE630": {
+        "Pending-sector rule": {
+          "observable_failures": 1,
+          "alert_slots": 8,
+          "at_risk_device_days": 104726,
+          "episodes": 8,
+          "confirmed_false_episodes": 8,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.07638982
+        },
+        "Frozen score": {
+          "observable_failures": 1,
+          "alert_slots": 139,
+          "at_risk_device_days": 104726,
+          "episodes": 1,
+          "confirmed_false_episodes": 1,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.00954873
+        },
+        "Monitored fallback": {
+          "observable_failures": 1,
+          "alert_slots": 82,
+          "at_risk_device_days": 104726,
+          "episodes": 7,
+          "confirmed_false_episodes": 7,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.06684109
+        }
+      },
+      "Hitachi HDS722020ALA330": {
+        "Pending-sector rule": {
+          "observable_failures": 1,
+          "alert_slots": 4,
+          "at_risk_device_days": 17007,
+          "episodes": 4,
+          "confirmed_false_episodes": 2,
+          "unresolved_episodes": 2,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.11759864
+        },
+        "Frozen score": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 17007,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 17007,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "Hitachi HDS723020BLA642": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 41,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 41,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 41,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "Hitachi HDS723030ALA640": {
+        "Pending-sector rule": {
+          "observable_failures": 5,
+          "alert_slots": 35,
+          "at_risk_device_days": 42082,
+          "episodes": 35,
+          "confirmed_false_episodes": 34,
+          "unresolved_episodes": 0,
+          "recall_pct": 20.0,
+          "median_lead_days": 9,
+          "false_per_1000_device_days": 0.80794639
+        },
+        "Frozen score": {
+          "observable_failures": 5,
+          "alert_slots": 0,
+          "at_risk_device_days": 42082,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 5,
+          "alert_slots": 15,
+          "at_risk_device_days": 42082,
+          "episodes": 15,
+          "confirmed_false_episodes": 15,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.35644694
+        }
+      },
+      "Hitachi HDS723030BLE640": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "Hitachi HDS724040ALE640": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST2000VN000": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 29,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 29,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 29,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST250LM004 HN": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 973,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 973,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 973,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST31500541AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1599,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1599,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1599,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST3160316AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 3,
+          "at_risk_device_days": 2033,
+          "episodes": 3,
+          "confirmed_false_episodes": 3,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 1.47565175
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2033,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 1,
+          "at_risk_device_days": 2033,
+          "episodes": 1,
+          "confirmed_false_episodes": 1,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.49188392
+        }
+      },
+      "ST3160318AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 547,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 62,
+          "at_risk_device_days": 547,
+          "episodes": 35,
+          "confirmed_false_episodes": 35,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 63.98537477
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 32,
+          "at_risk_device_days": 547,
+          "episodes": 19,
+          "confirmed_false_episodes": 19,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 34.73491773
+        }
+      },
+      "ST320LT007": {
+        "Pending-sector rule": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 373,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 373,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 373,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST33000651AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 123,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 123,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 123,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST4000DM000": {
+        "Pending-sector rule": {
+          "observable_failures": 410,
+          "alert_slots": 1952,
+          "at_risk_device_days": 4828437,
+          "episodes": 1948,
+          "confirmed_false_episodes": 1834,
+          "unresolved_episodes": 1,
+          "recall_pct": 23.90243902,
+          "median_lead_days": 8.0,
+          "false_per_1000_device_days": 0.37983306
+        },
+        "Frozen score": {
+          "observable_failures": 410,
+          "alert_slots": 1631,
+          "at_risk_device_days": 4828437,
+          "episodes": 975,
+          "confirmed_false_episodes": 954,
+          "unresolved_episodes": 0,
+          "recall_pct": 1.46341463,
+          "median_lead_days": 11.5,
+          "false_per_1000_device_days": 0.19757947
+        },
+        "Monitored fallback": {
+          "observable_failures": 410,
+          "alert_slots": 1775,
+          "at_risk_device_days": 4828437,
+          "episodes": 1436,
+          "confirmed_false_episodes": 1379,
+          "unresolved_episodes": 1,
+          "recall_pct": 10.73170732,
+          "median_lead_days": 8.0,
+          "false_per_1000_device_days": 0.28559967
+        }
+      },
+      "ST4000DX000": {
+        "Pending-sector rule": {
+          "observable_failures": 2,
+          "alert_slots": 14,
+          "at_risk_device_days": 8767,
+          "episodes": 13,
+          "confirmed_false_episodes": 13,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 1.48283335
+        },
+        "Frozen score": {
+          "observable_failures": 2,
+          "alert_slots": 0,
+          "at_risk_device_days": 8767,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 2,
+          "alert_slots": 8,
+          "at_risk_device_days": 8767,
+          "episodes": 7,
+          "confirmed_false_episodes": 7,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.79844873
+        }
+      },
+      "ST500LM012 HN": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 30676,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 30676,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 30676,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST6000DM001": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 71,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 71,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 71,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST6000DX000": {
+        "Pending-sector rule": {
+          "observable_failures": 4,
+          "alert_slots": 0,
+          "at_risk_device_days": 82849,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 4,
+          "alert_slots": 80,
+          "at_risk_device_days": 82849,
+          "episodes": 51,
+          "confirmed_false_episodes": 51,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.61557774
+        },
+        "Monitored fallback": {
+          "observable_failures": 4,
+          "alert_slots": 41,
+          "at_risk_device_days": 82849,
+          "episodes": 28,
+          "confirmed_false_episodes": 28,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.33796425
+        }
+      },
+      "ST8000DM002": {
+        "Pending-sector rule": {
+          "observable_failures": 12,
+          "alert_slots": 0,
+          "at_risk_device_days": 250789,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 12,
+          "alert_slots": 34,
+          "at_risk_device_days": 250789,
+          "episodes": 21,
+          "confirmed_false_episodes": 21,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.08373573
+        },
+        "Monitored fallback": {
+          "observable_failures": 12,
+          "alert_slots": 25,
+          "at_risk_device_days": 250789,
+          "episodes": 16,
+          "confirmed_false_episodes": 16,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.06379865
+        }
+      },
+      "ST8000NM0055": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 252,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 252,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 252,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST9250315AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2133,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2133,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2133,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "ST9320325AS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1112,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1112,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1112,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "TOSHIBA DT01ACA300": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2641,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2641,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2641,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "TOSHIBA MD04ABA400V": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 7228,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 7228,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 7228,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "TOSHIBA MD04ABA500V": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1807,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1807,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1807,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "TOSHIBA MQ01ABF050": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2008,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2008,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 2008,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD1000FYPS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD10EACS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 95,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 95,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 95,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD10EADS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 524,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 524,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 524,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD10EADX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 20,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 20,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 20,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD1600AAJS": {
+        "Pending-sector rule": {
+          "observable_failures": 1,
+          "alert_slots": 5,
+          "at_risk_device_days": 2815,
+          "episodes": 5,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 5,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 1,
+          "alert_slots": 0,
+          "at_risk_device_days": 2815,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 1,
+          "alert_slots": 1,
+          "at_risk_device_days": 2815,
+          "episodes": 1,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 1,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD20EFRX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 642,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 642,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 642,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD2500AAJS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD2500BPVT": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 278,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD30EFRX": {
+        "Pending-sector rule": {
+          "observable_failures": 5,
+          "alert_slots": 11,
+          "at_risk_device_days": 44019,
+          "episodes": 11,
+          "confirmed_false_episodes": 11,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.24989209
+        },
+        "Frozen score": {
+          "observable_failures": 5,
+          "alert_slots": 0,
+          "at_risk_device_days": 44019,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 5,
+          "alert_slots": 5,
+          "at_risk_device_days": 44019,
+          "episodes": 5,
+          "confirmed_false_episodes": 5,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.11358731
+        }
+      },
+      "WDC WD3200BEKX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD40EFRX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1251,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1251,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1251,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD5000BPKT": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1390,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1390,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1390,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD5000LPCX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1909,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1909,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 1909,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD5000LPVX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 12925,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 12925,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 12925,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD5002ABYS": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 172,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 172,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 172,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD5003ABYX": {
+        "Pending-sector rule": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 0,
+          "alert_slots": 0,
+          "at_risk_device_days": 139,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": null,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      },
+      "WDC WD60EFRX": {
+        "Pending-sector rule": {
+          "observable_failures": 2,
+          "alert_slots": 0,
+          "at_risk_device_days": 20023,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Frozen score": {
+          "observable_failures": 2,
+          "alert_slots": 0,
+          "at_risk_device_days": 20023,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        },
+        "Monitored fallback": {
+          "observable_failures": 2,
+          "alert_slots": 0,
+          "at_risk_device_days": 20023,
+          "episodes": 0,
+          "confirmed_false_episodes": 0,
+          "unresolved_episodes": 0,
+          "recall_pct": 0.0,
+          "median_lead_days": null,
+          "false_per_1000_device_days": 0.0
+        }
+      }
+    },
+    "held_out_model": "ST4000DM000",
+    "matured_training_share": 0.00067656,
+    "missing_feature_fallback_selections": 0,
+    "gated_dates": [
+      "2016-08-17",
+      "2016-08-18",
+      "2016-08-19",
+      "2016-08-20",
+      "2016-08-21",
+      "2016-08-22",
+      "2016-09-12",
+      "2016-09-13",
+      "2016-09-14",
+      "2016-09-15",
+      "2016-09-16",
+      "2016-09-17",
+      "2016-09-18",
+      "2016-09-19",
+      "2016-09-20",
+      "2016-09-21",
+      "2016-09-22",
+      "2016-09-23",
+      "2016-09-24",
+      "2016-09-25",
+      "2016-09-26",
+      "2016-09-27",
+      "2016-09-28",
+      "2016-09-29",
+      "2016-09-30",
+      "2016-10-01",
+      "2016-10-02",
+      "2016-10-03",
+      "2016-10-04",
+      "2016-10-05",
+      "2016-10-06",
+      "2016-10-07",
+      "2016-10-08",
+      "2016-10-09",
+      "2016-10-10",
+      "2016-10-11",
+      "2016-10-12",
+      "2016-10-13",
+      "2016-10-14",
+      "2016-10-15",
+      "2016-10-16",
+      "2016-10-17",
+      "2016-10-18",
+      "2016-10-19",
+      "2016-10-20",
+      "2016-10-21",
+      "2016-10-22",
+      "2016-10-23",
+      "2016-10-24",
+      "2016-10-25",
+      "2016-10-26",
+      "2016-11-30",
+      "2016-12-01",
+      "2016-12-02",
+      "2016-12-03",
+      "2016-12-04",
+      "2016-12-05",
+      "2016-12-06",
+      "2016-12-07",
+      "2016-12-08",
+      "2016-12-09"
+    ],
+    "unobservable_selected_windows": {
+      "Pending-sector rule": 8,
+      "Monitored fallback": 2
+    },
+    "monitor_window": "Seven days of frozen-model alerts whose entire fourteen-day outcome window expired before today."
+  },
+  "next_decision": "Use the per-model alert counts, false investigations and warning time to set a review budget. Record whether missing measurements or delayed precision caused each fallback.",
+  "project_id": "drive-failure-policy-fallback",
+  "study_design": {
+    "route": [
+      "predictive",
+      "prescriptive"
+    ],
+    "protocol": "Keep the complete fleet's observation calendar. Train on earlier, disjoint serials and exclude one entire model. Evaluate fifteen daily alerts on unseen serials or the excluded model. Keep every observed candidate at allocation, then report unobservable follow-up separately; differentiate missing from zero. Compare a fixed pending-sector rule, a frozen empirical score and a fallback triggered by unavailable indicators or matured poor precision."
+  },
+  "data": {
+    "rows": 100501,
+    "grain": "One maximal consecutive run of equal binned SMART indicators for a pseudonymous drive",
+    "snapshot_sha256": "ea9d1927ba9692c223751023338fd5ed0b28613344481073a62bdb9a0fe10ac5"
+  },
+  "decision_support": {
+    "status": "reliability_handoff"
+  }
+}

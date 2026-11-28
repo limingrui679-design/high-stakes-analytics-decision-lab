@@ -1,0 +1,21 @@
+{
+  "grain": "Either an author-published learner/problem summary or an independently published anonymized source-code attempt",
+  "primary_key": "key",
+  "fields": {
+    "key": "Source-specific record key",
+    "source": "CSEDM or Refactory",
+    "student": "CSEDM published pseudonym",
+    "problem": "Exercise identifier",
+    "order": "Source chronological first attempt order",
+    "first": "First attempt correct",
+    "hint": "Any hint requested",
+    "attempts": "Attempt count",
+    "prior_rate": "Previously correct fraction supplied by CSEDM",
+    "prior_attempts": "Earlier attempts summary supplied by authors",
+    "official": "Published cross-validated classifier prediction",
+    "fold": "Released learner-held-out fold",
+    "file": "Public Refactory submission filename",
+    "correct": "Archive classification",
+    "mutates": "Static iteration/removal pattern; empty if Python syntax could not be parsed"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "project_id": "marketplace-delivery-intervention",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "prior_orders": 20,
+    "quarterly_audit_orders": 500
+  },
+  "parameter_register": [
+    {
+      "parameter": "prior_orders",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness."
+    },
+    {
+      "parameter": "quarterly_audit_orders",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness."
+    }
+  ]
+}

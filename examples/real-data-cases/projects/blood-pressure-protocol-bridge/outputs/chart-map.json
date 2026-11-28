@@ -1,0 +1,26 @@
+{
+  "project_id": "blood-pressure-protocol-bridge",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Prediction of the manual protocol in held-out PSUs",
+      "supported_finding": "Every calibration excludes the complete test sampling unit.",
+      "interpretation_boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses.",
+      "source_id": "nhanes-bridge"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Which participants cross the analysis threshold?",
+      "supported_finding": "Movement up and down can cancel in a prevalence difference.",
+      "interpretation_boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses.",
+      "source_id": "nhanes-bridge"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Protocol difference by measurement sequence",
+      "supported_finding": "Signed elapsed time orders examinations. The within-two-hour subset tests time separation.",
+      "interpretation_boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses.",
+      "source_id": "nhanes-bridge"
+    }
+  ]
+}

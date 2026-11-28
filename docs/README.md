@@ -10,7 +10,7 @@ clear entry point.
 |---|---|
 | Install the Skill or run a first question | [Getting started](getting-started.md) |
 | Understand the evidence-gated design | [Architecture](architecture.md) |
-| Browse the fifteen complete projects | [Real-data portfolio](../examples/real-data-cases/README.md) |
+| Browse the thirty complete projects | [Real-data portfolio](../examples/real-data-cases/README.md) |
 | Filter cases by route and capability | [Interactive case explorer](https://limingrui679-design.github.io/high-stakes-analytics-decision-lab/demo/) |
 | Understand the repository before changing it | [Repository layout](repository-layout.md) |
 | Reproduce tests, figures, and release checks | [Verification](verification.md) |
