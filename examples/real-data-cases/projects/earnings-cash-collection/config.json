@@ -1,0 +1,16 @@
+{
+  "project_id": "earnings-cash-collection",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "min_matured": 38
+  },
+  "parameter_register": [
+    {
+      "parameter": "min_matured",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity."
+    }
+  ]
+}

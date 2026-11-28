@@ -1,0 +1,26 @@
+{
+  "project_id": "food-inspection-exploration",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Retrospective ranking where an outcome is observed",
+      "supported_finding": "Only the historically inspected subset enters this conditional replay.",
+      "interpretation_boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier.",
+      "source_id": "chicago-inspections"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Unknown outcomes at fixed inspection capacity",
+      "supported_finding": "Wider bounds identify the cost of selective outcome observation.",
+      "interpretation_boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier.",
+      "source_id": "chicago-inspections"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Where mixed-policy inspection slots went",
+      "supported_finding": "The audit sample has known selection probabilities within each fixed geographic band.",
+      "interpretation_boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier.",
+      "source_id": "chicago-inspections"
+    }
+  ]
+}

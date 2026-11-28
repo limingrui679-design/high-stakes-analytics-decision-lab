@@ -1,0 +1,145 @@
+{
+  "project_id": "last-mile-departure-slack",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20261128,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is amazon-routes.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.shift_hours",
+      "label": "shift hours",
+      "value_or_distribution": 8,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "predeclared-analysis-protocol",
+      "source_fact": "Registered project configuration for shift_hours; source dataset is amazon-routes.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    },
+    {
+      "parameter_path": "config.parameters.move_budget",
+      "label": "move budget",
+      "value_or_distribution": 650,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "predeclared-analysis-protocol",
+      "source_fact": "Registered project configuration for move_budget; source dataset is amazon-routes.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    },
+    {
+      "parameter_path": "config.parameters.holdout_station",
+      "label": "holdout station",
+      "value_or_distribution": "DBO3",
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "predeclared-analysis-protocol",
+      "source_fact": "Registered project configuration for holdout_station; source dataset is amazon-routes.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    }
+  ]
+}

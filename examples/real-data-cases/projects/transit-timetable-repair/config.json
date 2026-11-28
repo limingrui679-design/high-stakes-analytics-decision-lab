@@ -1,0 +1,38 @@
+{
+  "project_id": "transit-timetable-repair",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "departure_hours": [
+      5.25,
+      8,
+      16.75,
+      23.75,
+      24.1
+    ],
+    "transfer_seconds": 120,
+    "checkpoint_minutes": 30
+  },
+  "parameter_register": [
+    {
+      "parameter": "departure_hours",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links."
+    },
+    {
+      "parameter": "transfer_seconds",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links."
+    },
+    {
+      "parameter": "checkpoint_minutes",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links."
+    }
+  ]
+}

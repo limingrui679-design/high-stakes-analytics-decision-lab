@@ -8,7 +8,7 @@ help:
 	@echo "  make demo       Build a safe synthetic readiness walkthrough"
 	@echo "  make bundle     Rebuild the compact installable Skill package"
 	@echo "  make test       Run the standalone regression suite"
-	@echo "  make portfolio  Rebuild and compare all fifteen projects"
+	@echo "  make portfolio  Rebuild and compare all thirty projects"
 	@echo "  make verify     Run tests and the complete portfolio rebuild"
 	@echo "  make quality    Run tracked-secret, Ruff, mypy, and prose checks"
 	@echo "  make visuals    Regenerate canonical README, report, and case visuals"
@@ -35,7 +35,7 @@ verify: test portfolio
 
 quality:
 	$(PYTHON) scripts/check_tracked_secrets.py
-	ruff check scripts tests examples/real-data-cases/projects/_shared/safe_external_io.py
+	ruff check scripts tests examples/real-data-cases/projects/_shared/safe_external_io.py examples/real-data-cases/projects/_shared/applied_*.py examples/real-data-cases/projects/*/study.py examples/real-data-cases/projects/*/extract.py examples/real-data-cases/projects/*/benchmark_solver.py examples/real-data-cases/source_tools/*.py
 	mypy
 	codespell --config .codespellrc README.md CHANGELOG.md CONTRIBUTING.md SECURITY.md VERSIONING.md demo docs references scripts skills tests
 

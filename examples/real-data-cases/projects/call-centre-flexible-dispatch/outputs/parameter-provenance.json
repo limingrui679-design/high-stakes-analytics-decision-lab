@@ -1,0 +1,75 @@
+{
+  "project_id": "call-centre-flexible-dispatch",
+  "records": [
+    {
+      "parameter_path": "config.analysis_seed",
+      "label": "analysis seed",
+      "value_or_distribution": 20261128,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "analysis-protocol",
+      "source_fact": "Registered project configuration for analysis_seed; source dataset is bank99.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author self-review",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Computational setting; it does not increase evidence quality."
+    },
+    {
+      "parameter_path": "config.parameters.flex_slots",
+      "label": "flex slots",
+      "value_or_distribution": 4,
+      "unit": "configuration value",
+      "uncertainty_type": "none",
+      "source_id": "predeclared-analysis-protocol",
+      "source_fact": "Registered project configuration for flex_slots; source dataset is bank99.",
+      "transformation": "Used directly by the reproducible analysis script.",
+      "owner": "Repository analysis author",
+      "reviewer": "not_assigned",
+      "review_date": "2026-11-28",
+      "approval_status": "provisional_self_review",
+      "approval_scope": "exploratory",
+      "approval_chain": [
+        {
+          "sequence": 1,
+          "role": "model_author",
+          "actor": "repository author",
+          "status": "approved",
+          "date": "2026-11-28",
+          "scope": "Exploratory repository analysis"
+        },
+        {
+          "sequence": 2,
+          "role": "independent_domain_reviewer",
+          "actor": "not_assigned",
+          "status": "not_obtained",
+          "date": null,
+          "scope": "Required before operational use"
+        }
+      ],
+      "evidence_strength": "assumed",
+      "notes": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "grain": "One order with exactly one recorded item from one seller; incomplete outcomes are retained",
+  "primary_key": "id",
+  "fields": {
+    "id": "Pseudonymous order identifier",
+    "placed": "Purchase date",
+    "month": "Purchase month",
+    "seller": "Pseudonymous seller identifier",
+    "origin": "Seller state",
+    "destination": "Buyer state",
+    "status": "Recorded order status",
+    "handoff_late": "Handoff after seller deadline; empty if missing",
+    "late": "Delivery after promised calendar date; empty if missing",
+    "known_month": "Latest actual handoff or delivery month",
+    "category": "Original Olist product-category code"
+  }
+}

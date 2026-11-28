@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.1",
+  "project_id": "online-edit-review-capacity",
+  "source_id": "mediawiki-history",
+  "title": "Wikimedia MediaWiki history, English Wikivoyage",
+  "publisher": "Wikimedia Foundation",
+  "landing_page": "https://wikitech.wikimedia.org/wiki/Data_Platform/Data_Lake/Edits/MediaWiki_history_dumps",
+  "version": "2026-10 English Wikivoyage history; evaluation years 2022–2024",
+  "accessed_at": "2026-11-28",
+  "license": "Wikimedia historical dumps; attribution and terms of use",
+  "redistribution": "Released extract omits names, IP addresses, page text and comments; attribution to Wikimedia contributors and the public release.",
+  "grain": "One timestamped main-namespace English Wikivoyage revision, with complete future label horizon",
+  "expected_rows": 541009,
+  "sources": [
+    {
+      "source_id": "mediawiki-history",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://wikitech.wikimedia.org/wiki/Data_Platform/Data_Lake/Edits/MediaWiki_history_dumps",
+      "version": "2026-10 English Wikivoyage history; evaluation years 2022–2024",
+      "license": "Wikimedia historical dumps; attribution and terms of use",
+      "license_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "output_fields": [
+        "ts",
+        "revision",
+        "change",
+        "anonymous",
+        "minor",
+        "reverted"
+      ],
+      "artifacts": [
+        {
+          "name": "wiki-voyages.tsv.bz2",
+          "url": "https://dumps.wikimedia.org/other/mediawiki_history/2026-10/enwikivoyage/2026-10.enwikivoyage.all-time.tsv.bz2",
+          "bytes": 498648953,
+          "hash_algorithm": "sha256",
+          "sha256": "7ec2e63fa0c846ba965801c3d56622948d0cadf245fc95dd84482d76dcbe1959"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "42123cead88a69ccdd4f8d8aab4a08b34b9acd6469b39ff24035acb4ef6d7332",
+      "bytes": 4436944,
+      "uncompressed_sha256": "3d7bc1e8763902d7ab4194f306e0f02e9a0d66f40bfaf97425eb2cd6833b0eab"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1380" viewBox="0 0 1200 1380" role="img" aria-labelledby="title desc">
-<title id="title">Fifteen complete real-data projects, fifteen evidence-matched paths</title>
-<desc id="desc">Fifteen numbered cards show each case domain, adaptive analytical route, one headline metric, and the evidence-matched terminal output.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="2388" viewBox="0 0 1200 2388" role="img" aria-labelledby="title desc">
+<title id="title">Thirty complete real-data projects, thirty evidence-matched paths</title>
+<desc id="desc">Thirty numbered cards show each case domain, adaptive analytical route, one headline metric, and the evidence-matched terminal output.</desc>
 <defs>
   <pattern id="headerGrid" width="22" height="22" patternUnits="userSpaceOnUse">
     <circle cx="1" cy="1" r=".85" fill="#FFFFFF" opacity=".12"/>
@@ -23,15 +23,15 @@
   .footnote { fill: #8B98A9; font-size: 10.5px; }
   .micro { fill: #8B98A9; font-size: 8.5px; font-weight: 800; letter-spacing: 1px; }
 </style>
-<rect width="1200" height="1380" fill="#EEF3F8"/>
-<circle cx="1180" cy="1350" r="120" fill="#246BFD" opacity=".035"/>
-<circle cx="36" cy="1375" r="86" fill="#246BFD" opacity=".025"/>
+<rect width="1200" height="2388" fill="#EEF3F8"/>
+<circle cx="1180" cy="2358" r="120" fill="#246BFD" opacity=".035"/>
+<circle cx="36" cy="2383" r="86" fill="#246BFD" opacity=".025"/>
 <rect width="1200" height="118" fill="#0B1F3A"/>
 <rect width="1200" height="118" fill="url(#headerGrid)"/>
 <rect width="10" height="118" fill="#246BFD"/>
 <rect x="34" y="19" width="4" height="16" rx="2" fill="#246BFD"/>
 <text x="48.0" y="31.0" class="kicker" text-anchor="start" style="fill:#246BFD">REAL-DATA CASE GALLERY</text>
-<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Fifteen complete real-data projects, fifteen evidence-matched paths</text>
+<text x="42.0" y="68.0" class="title" text-anchor="start" style="fill:#FFFFFF">Thirty complete real-data projects, thirty evidence-matched paths</text>
 <text x="42.0" y="96.0" class="subtitle" text-anchor="start" style="fill:#C7D4E4">Complete projects span health, behavior, AI, operations, business, finance, policy, and spatial planning.</text>
 <rect x="933" y="20" width="139" height="24" rx="12" fill="#13345B" stroke="#36516F"/>
 <text x="1002.5" y="36.0" class="micro" text-anchor="middle" style="fill:#AFC0D3">MODEL-BOUND EVIDENCE</text>
@@ -157,8 +157,127 @@
 <text x="66.0" y="1216.0" class="section" text-anchor="start" style="fill:#0B1324">Site-Evidence Gates</text>
 <text x="66.0" y="1247.0" class="small" text-anchor="start" style="fill:#617084">Analyzed Massachusetts tracts: 1,597</text>
 <text x="66.0" y="1266.0" class="small" text-anchor="start" style="fill:#246BFD">claim-bounded decision review</text>
-<line x1="36" y1="1340.0" x2="1164" y2="1340.0" stroke="#D9E2EC" stroke-width="1"/>
-<text x="42.0" y="1362.0" class="footnote" text-anchor="start">Sources: official or academic datasets; identities and hashes in cases.json</text>
-<text x="1158.0" y="1362.0" class="footnote" text-anchor="end">Complete reports · code · figures · reviewed source snapshots</text>
-<text x="600.0" y="1362.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
+<rect x="620.0" y="1152.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1146.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1146.0" width="8" height="128" rx="4" fill="#008C82"/>
+<text x="642.0" y="1170.0" class="eyebrow" text-anchor="start" style="fill:#008C82">16</text>
+<text x="686.0" y="1170.0" class="eyebrow" text-anchor="start" style="fill:#617084">DESCRIPTIVE → DIAGNOSTIC</text>
+<text x="642.0" y="1198.0" class="section" text-anchor="start" style="fill:#0B1324">When a Blood Pressure Survey Changes Its</text>
+<text x="642.0" y="1216.0" class="section" text-anchor="start" style="fill:#0B1324">Measurement Protocol</text>
+<text x="642.0" y="1247.0" class="small" text-anchor="start" style="fill:#617084">Paired adults: 4614</text>
+<text x="642.0" y="1266.0" class="small" text-anchor="start" style="fill:#008C82">measurement protocol review</text>
+<rect x="44.0" y="1296.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1290.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="1290.0" width="8" height="128" rx="4" fill="#C69214"/>
+<text x="66.0" y="1314.0" class="eyebrow" text-anchor="start" style="fill:#C69214">17</text>
+<text x="110.0" y="1314.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE</text>
+<text x="66.0" y="1342.0" class="section" text-anchor="start" style="fill:#0B1324">When Should a Wrist Monitor Withhold a Heart</text>
+<text x="66.0" y="1360.0" class="section" text-anchor="start" style="fill:#0B1324">Rate Reading?</text>
+<text x="66.0" y="1391.0" class="small" text-anchor="start" style="fill:#617084">Development participants: 10</text>
+<text x="66.0" y="1410.0" class="small" text-anchor="start" style="fill:#C69214">selective measurement review</text>
+<rect x="620.0" y="1296.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1290.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1290.0" width="8" height="128" rx="4" fill="#D85B43"/>
+<text x="642.0" y="1314.0" class="eyebrow" text-anchor="start" style="fill:#D85B43">18</text>
+<text x="686.0" y="1314.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE → PRESCRIPTIVE</text>
+<text x="642.0" y="1342.0" class="section" text-anchor="start" style="fill:#0B1324">When Should a Call Centre Reallocate Staff</text>
+<text x="642.0" y="1360.0" class="section" text-anchor="start" style="fill:#0B1324">After a Demand Shock?</text>
+<text x="642.0" y="1391.0" class="small" text-anchor="start" style="fill:#617084">Calls: 144382</text>
+<text x="642.0" y="1410.0" class="small" text-anchor="start" style="fill:#D85B43">staffing policy review</text>
+<rect x="44.0" y="1440.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1434.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="1434.0" width="8" height="128" rx="4" fill="#7257D9"/>
+<text x="66.0" y="1458.0" class="eyebrow" text-anchor="start" style="fill:#7257D9">19</text>
+<text x="110.0" y="1458.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE</text>
+<text x="66.0" y="1486.0" class="section" text-anchor="start" style="fill:#0B1324">Which State Unemployment Claims Alerts</text>
+<text x="66.0" y="1504.0" class="section" text-anchor="start" style="fill:#0B1324">Survive the Next Release?</text>
+<text x="66.0" y="1535.0" class="small" text-anchor="start" style="fill:#617084">Holdout weeks: 68</text>
+<text x="66.0" y="1554.0" class="small" text-anchor="start" style="fill:#7257D9">vintage sensitive alerting</text>
+<rect x="620.0" y="1440.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1434.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1434.0" width="8" height="128" rx="4" fill="#B9487C"/>
+<text x="642.0" y="1458.0" class="eyebrow" text-anchor="start" style="fill:#B9487C">20</text>
+<text x="686.0" y="1458.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="642.0" y="1486.0" class="section" text-anchor="start" style="fill:#0B1324">Maintaining Earliest Arrival Routes Across</text>
+<text x="642.0" y="1504.0" class="section" text-anchor="start" style="fill:#0B1324">Timetable Revisions</text>
+<text x="642.0" y="1535.0" class="small" text-anchor="start" style="fill:#617084">Version-query checks: 300</text>
+<text x="642.0" y="1554.0" class="small" text-anchor="start" style="fill:#B9487C">routing update review</text>
+<rect x="44.0" y="1584.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1578.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="1578.0" width="8" height="128" rx="4" fill="#4E7D32"/>
+<text x="66.0" y="1602.0" class="eyebrow" text-anchor="start" style="fill:#4E7D32">21</text>
+<text x="110.0" y="1602.0" class="eyebrow" text-anchor="start" style="fill:#617084">PREDICTIVE → PRESCRIPTIVE</text>
+<text x="66.0" y="1630.0" class="section" text-anchor="start" style="fill:#0B1324">The Last Review Slot in an Online Queue</text>
+<text x="66.0" y="1679.0" class="small" text-anchor="start" style="fill:#617084">Daily slots: 3</text>
+<text x="66.0" y="1698.0" class="small" text-anchor="start" style="fill:#4E7D32">finite inventory policy</text>
+<rect x="620.0" y="1584.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1578.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1578.0" width="8" height="128" rx="4" fill="#246BFD"/>
+<text x="642.0" y="1602.0" class="eyebrow" text-anchor="start" style="fill:#246BFD">22</text>
+<text x="686.0" y="1602.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="642.0" y="1630.0" class="section" text-anchor="start" style="fill:#0B1324">Where Should a Marketplace Spend Its Delivery</text>
+<text x="642.0" y="1648.0" class="section" text-anchor="start" style="fill:#0B1324">Improvement Budget?</text>
+<text x="642.0" y="1679.0" class="small" text-anchor="start" style="fill:#617084">Single-item orders: 88863</text>
+<text x="642.0" y="1698.0" class="small" text-anchor="start" style="fill:#246BFD">intervention budget review</text>
+<rect x="44.0" y="1728.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1722.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="1722.0" width="8" height="128" rx="4" fill="#008C82"/>
+<text x="66.0" y="1746.0" class="eyebrow" text-anchor="start" style="fill:#008C82">23</text>
+<text x="110.0" y="1746.0" class="eyebrow" text-anchor="start" style="fill:#617084">PREDICTIVE → PRESCRIPTIVE</text>
+<text x="66.0" y="1774.0" class="section" text-anchor="start" style="fill:#0B1324">Knowing When to Fall Back After a Drive Fleet</text>
+<text x="66.0" y="1792.0" class="section" text-anchor="start" style="fill:#0B1324">Changes</text>
+<text x="66.0" y="1823.0" class="small" text-anchor="start" style="fill:#617084">Distinct drives: 81158</text>
+<text x="66.0" y="1842.0" class="small" text-anchor="start" style="fill:#008C82">reliability handoff</text>
+<rect x="620.0" y="1728.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1722.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1722.0" width="8" height="128" rx="4" fill="#C69214"/>
+<text x="642.0" y="1746.0" class="eyebrow" text-anchor="start" style="fill:#C69214">24</text>
+<text x="686.0" y="1746.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="642.0" y="1774.0" class="section" text-anchor="start" style="fill:#0B1324">How Much Departure Delay Can a Last-Mile</text>
+<text x="642.0" y="1792.0" class="section" text-anchor="start" style="fill:#0B1324">Route Absorb?</text>
+<text x="642.0" y="1823.0" class="small" text-anchor="start" style="fill:#617084">Complete routes: 24</text>
+<text x="642.0" y="1842.0" class="small" text-anchor="start" style="fill:#C69214">dispatch feasibility review</text>
+<rect x="44.0" y="1872.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="1866.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="1866.0" width="8" height="128" rx="4" fill="#D85B43"/>
+<text x="66.0" y="1890.0" class="eyebrow" text-anchor="start" style="fill:#D85B43">25</text>
+<text x="110.0" y="1890.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="66.0" y="1918.0" class="section" text-anchor="start" style="fill:#0B1324">How Much Inspection Capacity Should a City</text>
+<text x="66.0" y="1936.0" class="section" text-anchor="start" style="fill:#0B1324">Reserve for Random Audits?</text>
+<text x="66.0" y="1967.0" class="small" text-anchor="start" style="fill:#617084">Eligible restaurant-quarters: 55823</text>
+<text x="66.0" y="1986.0" class="small" text-anchor="start" style="fill:#D85B43">inspection audit design</text>
+<rect x="620.0" y="1872.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="1866.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="1866.0" width="8" height="128" rx="4" fill="#7257D9"/>
+<text x="642.0" y="1890.0" class="eyebrow" text-anchor="start" style="fill:#7257D9">26</text>
+<text x="686.0" y="1890.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE</text>
+<text x="642.0" y="1918.0" class="section" text-anchor="start" style="fill:#0B1324">Counterexamples or Direct Corrections for</text>
+<text x="642.0" y="1936.0" class="section" text-anchor="start" style="fill:#0B1324">Novice Programmers?</text>
+<text x="642.0" y="1967.0" class="small" text-anchor="start" style="fill:#617084">Observed learner–problem records: 729</text>
+<text x="642.0" y="1986.0" class="small" text-anchor="start" style="fill:#7257D9">prospective experiment</text>
+<rect x="44.0" y="2016.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="2010.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="2010.0" width="8" height="128" rx="4" fill="#B9487C"/>
+<text x="66.0" y="2034.0" class="eyebrow" text-anchor="start" style="fill:#B9487C">27</text>
+<text x="110.0" y="2034.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="66.0" y="2062.0" class="section" text-anchor="start" style="fill:#0B1324">Cut Credit Exposure or Hedge Rates During a</text>
+<text x="66.0" y="2080.0" class="section" text-anchor="start" style="fill:#0B1324">Corporate Bond Drawdown?</text>
+<text x="66.0" y="2111.0" class="small" text-anchor="start" style="fill:#617084">Backtest weeks: 1097</text>
+<text x="66.0" y="2130.0" class="small" text-anchor="start" style="fill:#B9487C">investment risk review</text>
+<rect x="620.0" y="2016.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="2010.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="2010.0" width="8" height="128" rx="4" fill="#4E7D32"/>
+<text x="642.0" y="2034.0" class="eyebrow" text-anchor="start" style="fill:#4E7D32">28</text>
+<text x="686.0" y="2034.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE</text>
+<text x="642.0" y="2062.0" class="section" text-anchor="start" style="fill:#0B1324">How Reliable Are Model Comparisons With</text>
+<text x="642.0" y="2080.0" class="section" text-anchor="start" style="fill:#0B1324">Overlapping Evaluation Windows?</text>
+<text x="642.0" y="2111.0" class="small" text-anchor="start" style="fill:#617084">Shared dates: 1520</text>
+<text x="642.0" y="2130.0" class="small" text-anchor="start" style="fill:#4E7D32">dependence aware comparison</text>
+<rect x="44.0" y="2160.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="42.0" y="2154.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="42.0" y="2154.0" width="8" height="128" rx="4" fill="#246BFD"/>
+<text x="66.0" y="2178.0" class="eyebrow" text-anchor="start" style="fill:#246BFD">29</text>
+<text x="110.0" y="2178.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PREDICTIVE</text>
+<text x="66.0" y="2206.0" class="section" text-anchor="start" style="fill:#0B1324">When Reported Earnings Outrun Cash</text>
+<text x="66.0" y="2224.0" class="section" text-anchor="start" style="fill:#0B1324">Collections</text>
+<text x="66.0" y="2255.0" class="small" text-anchor="start" style="fill:#617084">Issuers with evaluated forecasts: 14</text>
+<text x="66.0" y="2274.0" class="small" text-anchor="start" style="fill:#246BFD">valuation review</text>
+<rect x="620.0" y="2160.0" width="540.0" height="128.0" rx="14" fill="#07152A" opacity=".055"/><rect x="618.0" y="2154.0" width="540.0" height="128.0" rx="14" fill="#FFFFFF" stroke="#B9C6D5" stroke-width="1"/>
+<rect x="618.0" y="2154.0" width="8" height="128" rx="4" fill="#008C82"/>
+<text x="642.0" y="2178.0" class="eyebrow" text-anchor="start" style="fill:#008C82">30</text>
+<text x="686.0" y="2178.0" class="eyebrow" text-anchor="start" style="fill:#617084">DIAGNOSTIC → PRESCRIPTIVE</text>
+<text x="642.0" y="2206.0" class="section" text-anchor="start" style="fill:#0B1324">Consistent Road Geometry During Interrupted</text>
+<text x="642.0" y="2224.0" class="section" text-anchor="start" style="fill:#0B1324">Map Updates</text>
+<text x="642.0" y="2255.0" class="small" text-anchor="start" style="fill:#617084">Checked sequences: 29</text>
+<text x="642.0" y="2274.0" class="small" text-anchor="start" style="fill:#008C82">transactional release</text>
+<line x1="36" y1="2348.0" x2="1164" y2="2348.0" stroke="#D9E2EC" stroke-width="1"/>
+<text x="42.0" y="2370.0" class="footnote" text-anchor="start">Sources: official or academic datasets; identities and hashes in cases.json</text>
+<text x="1158.0" y="2370.0" class="footnote" text-anchor="end">Complete reports · code · figures · reviewed source snapshots</text>
+<text x="600.0" y="2370.0" class="micro" text-anchor="middle" style="fill:#8B98A9">HIGH-STAKES ANALYTICS &amp; DECISION LAB · EDITORIAL EVIDENCE SYSTEM</text>
 </svg>

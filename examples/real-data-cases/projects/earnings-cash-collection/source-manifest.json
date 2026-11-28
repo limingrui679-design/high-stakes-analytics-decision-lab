@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.1",
+  "project_id": "earnings-cash-collection",
+  "source_id": "sec-edgar-companyfacts",
+  "title": "US SEC EDGAR as-filed US-GAAP facts with an Apple audited-note cross-check",
+  "publisher": "US SEC EDGAR; fixed public mirror by DenyTranDFW and Apple Inc.",
+  "landing_page": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+  "version": "Point-in-time accession facts, mirror revision e4088db1b10363c29719508935991a851587d17c / 2023 Form 10-K, accession 0000320193-23-000106",
+  "accessed_at": "2026-11-28",
+  "license": "Public filings; mirror metadata and terms linked",
+  "redistribution": "Derived numeric facts from public US filings, with accession IDs. Company-specific annual report remains with its publisher; the source identity is retained.",
+  "grain": "One issuer, accession and fiscal period in an original or comparative annual filing",
+  "expected_rows": 902,
+  "sources": [
+    {
+      "source_id": "sec-edgar-companyfacts",
+      "publisher": "US SEC EDGAR; fixed public mirror by DenyTranDFW",
+      "url": "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+      "version": "Point-in-time accession facts, mirror revision e4088db1b10363c29719508935991a851587d17c",
+      "license": "Public filings; mirror metadata and terms linked",
+      "license_url": "https://huggingface.co/datasets/DenyTranDFW/edgar_xbrl_companyfacts",
+      "output_fields": [
+        "accession",
+        "filed",
+        "assets",
+        "receivables",
+        "inventory",
+        "income",
+        "cfo"
+      ],
+      "artifacts": [
+        {
+          "name": "sec-facts.parquet",
+          "url": "https://huggingface.co/datasets/DenyTranDFW/edgar_xbrl_companyfacts/resolve/e4088db1b10363c29719508935991a851587d17c/Facts_UsGaap.parquet",
+          "bytes": 1498113812,
+          "hash_algorithm": "sha256",
+          "sha256": "a6ab4fef2aaddaa6c9324dadccf80f057e2fcae0d80bdaadf4ed1f2483faed81"
+        }
+      ]
+    },
+    {
+      "source_id": "aapl-note",
+      "publisher": "Apple Inc.",
+      "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019323000106/aapl-20230930.htm",
+      "version": "2023 Form 10-K, accession 0000320193-23-000106",
+      "license": "Public corporate filing; Apple copyright",
+      "license_url": "https://investor.apple.com/sec-filings/default.aspx",
+      "output_fields": [
+        "audited_note"
+      ],
+      "artifacts": [
+        {
+          "name": "apple-fy2023-10k.pdf",
+          "url": "https://www.annualreports.com/HostedData/AnnualReportArchive/a/NASDAQ_AAPL_2023.pdf",
+          "bytes": 807316,
+          "hash_algorithm": "sha256",
+          "sha256": "068176ab665682096a79859d73b805c7b2fda05331e503f26d893b582353464e"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "3133841cf09a4acd70637c643e92d7f6a5a00567a163438fa39996fa34ad904c",
+      "bytes": 18580,
+      "uncompressed_sha256": "c9b67984f643224803b540159548b2d862dc123ff7e54dbfe697b1ddd8da9f94"
+    }
+  ]
+}

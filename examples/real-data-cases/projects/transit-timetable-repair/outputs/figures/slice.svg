@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 158" role="img" aria-labelledby="t d">
+<title id="t">Publisher timetable changes</title><desc id="d">A changed departure time is compared within the same published trip and stop sequence.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Publisher timetable changes</text>
+<text x="16" y="47" font-size="13">Connection operations</text>
+<path d="M 237.00 55 V 139" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Added</text>
+<rect x="237.00" y="62" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">80,387.000</text>
+<text x="16" y="111" font-size="13">Removed</text>
+<rect x="237.00" y="96" width="32.71" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">6,261.000</text>
+</g></svg>

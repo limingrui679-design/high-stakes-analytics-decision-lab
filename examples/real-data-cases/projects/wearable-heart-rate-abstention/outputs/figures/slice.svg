@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 226" role="img" aria-labelledby="t d">
+<title id="t">Which external activities retain a reading?</title><desc id="d">Frozen development threshold. The audit gives paired per-activity error, reference availability and large-error frequency.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Which external activities retain a reading?</text>
+<text x="16" y="47" font-size="13">Reported percent</text>
+<path d="M 237.00 55 V 207" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">1</text>
+<rect x="237.00" y="62" width="370.36" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">85.499</text>
+<text x="16" y="111" font-size="13">2</text>
+<rect x="237.00" y="96" width="287.26" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">66.314</text>
+<text x="16" y="145" font-size="13">3</text>
+<rect x="237.00" y="130" width="403.37" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">93.119</text>
+<text x="16" y="179" font-size="13">4</text>
+<rect x="237.00" y="164" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="179" font-size="14">96.957</text>
+</g></svg>

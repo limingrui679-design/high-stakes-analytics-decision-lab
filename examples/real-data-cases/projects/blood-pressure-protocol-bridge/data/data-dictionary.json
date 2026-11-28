@@ -1,0 +1,16 @@
+{
+  "grain": "One examined adult with at least two valid systolic readings in each protocol",
+  "primary_key": "person",
+  "fields": {
+    "person": "Public sequence identifier",
+    "age": "Years at exam, top-coded by NHANES",
+    "stratum": "Masked variance stratum",
+    "psu": "Masked primary sampling unit within stratum",
+    "weight": "Two-year MEC examination weight",
+    "minutes": "Minutes between protocols; positive means manual first",
+    "n_manual": "Nonmissing first-three manual systolic readings",
+    "n_automatic": "Nonmissing first-three oscillometric systolic readings",
+    "manual": "Mean manual systolic pressure, mmHg",
+    "automatic": "Mean automatic systolic pressure, mmHg"
+  }
+}

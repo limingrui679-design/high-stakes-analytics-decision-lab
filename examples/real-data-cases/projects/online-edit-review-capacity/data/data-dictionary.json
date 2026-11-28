@@ -1,0 +1,12 @@
+{
+  "grain": "One timestamped main-namespace English Wikivoyage revision, with complete future label horizon",
+  "primary_key": "revision",
+  "fields": {
+    "revision": "Public revision ID",
+    "ts": "UTC event timestamp",
+    "anonymous": "Publisher anonymous flag at event",
+    "change": "Signed text-byte difference",
+    "minor": "Revision marked minor",
+    "reverted": "Subsequent identity revert within seven days"
+  }
+}

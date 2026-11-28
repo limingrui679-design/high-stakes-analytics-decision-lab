@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 192" role="img" aria-labelledby="t d">
+<title id="t">Lead time on detected failures</title><desc id="d">Lead time uses the earliest eligible warning in the fourteen-day horizon.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Lead time on detected failures</text>
+<text x="16" y="47" font-size="13">Median days</text>
+<path d="M 237.00 55 V 173" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Pending-sector rule</text>
+<rect x="237.00" y="62" width="292.17" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">8.000</text>
+<text x="16" y="111" font-size="13">Frozen score</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">11.500</text>
+<text x="16" y="145" font-size="13">Monitored fallback</text>
+<rect x="237.00" y="130" width="292.17" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">8.000</text>
+</g></svg>

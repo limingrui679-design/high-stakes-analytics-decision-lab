@@ -147,9 +147,9 @@ class UserExperienceTests(unittest.TestCase):
             build_portfolio_demo.render_data(payload),
         )
         self.assertTrue(payload["school_neutral"])
-        self.assertEqual(payload["metrics"]["cases"], 15)
-        self.assertEqual(len(payload["cases"]), 15)
-        self.assertEqual(len({item["id"] for item in payload["cases"]}), 15)
+        self.assertEqual(payload["metrics"]["cases"], 30)
+        self.assertEqual(len(payload["cases"]), 30)
+        self.assertEqual(len({item["id"] for item in payload["cases"]}), 30)
         self.assertEqual(
             {route for item in payload["cases"] for route in item["routes"]},
             {"descriptive", "diagnostic", "predictive", "prescriptive"},

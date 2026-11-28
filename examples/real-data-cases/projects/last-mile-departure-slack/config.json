@@ -1,0 +1,32 @@
+{
+  "project_id": "last-mile-departure-slack",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "shift_hours": 8,
+    "move_budget": 650,
+    "holdout_station": "DBO3"
+  },
+  "parameter_register": [
+    {
+      "parameter": "shift_hours",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    },
+    {
+      "parameter": "move_budget",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    },
+    {
+      "parameter": "holdout_station",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined."
+    }
+  ]
+}

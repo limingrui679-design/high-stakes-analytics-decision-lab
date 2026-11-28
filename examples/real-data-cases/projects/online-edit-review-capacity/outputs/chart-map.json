@@ -1,0 +1,26 @@
+{
+  "project_id": "online-edit-review-capacity",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Which online policies capture later identity reverts?",
+      "supported_finding": "The two hindsight references see future scores or realized labels and are not deployable.",
+      "interpretation_boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits.",
+      "source_id": "mediawiki-history"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Use of the daily review inventory",
+      "supported_finding": "Unused slots expire at the end of each UTC day.",
+      "interpretation_boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits.",
+      "source_id": "mediawiki-history"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Highest-volume tenth of held-out days",
+      "supported_finding": "Traffic bursts expose the cost of spending the last slot too early.",
+      "interpretation_boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits.",
+      "source_id": "mediawiki-history"
+    }
+  ]
+}

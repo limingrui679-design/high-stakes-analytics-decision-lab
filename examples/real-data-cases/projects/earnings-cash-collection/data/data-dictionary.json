@@ -1,0 +1,18 @@
+{
+  "grain": "One issuer, accession and fiscal period in an original or comparative annual filing",
+  "primary_key": "key",
+  "fields": {
+    "key": "Unique issuer/accession/period",
+    "cik": "Issuer SEC identifier",
+    "accession": "EDGAR accession as filed",
+    "form": "Original annual report or amendment",
+    "filed": "Public filing date",
+    "end": "Fiscal reporting period end",
+    "income": "Net income, USD millions",
+    "cfo": "Cash provided by operations, USD millions",
+    "assets": "Total assets, USD millions",
+    "equity": "Stockholder equity, USD millions",
+    "receivables": "Current net customer receivables, USD millions",
+    "inventory": "Net inventories, USD millions"
+  }
+}

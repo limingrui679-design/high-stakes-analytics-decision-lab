@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.1",
+  "rows": 144382,
+  "columns": 7,
+  "column_names": [
+    "call",
+    "date",
+    "arrival",
+    "kind",
+    "wait",
+    "served",
+    "service"
+  ],
+  "missing_count_by_column": {
+    "call": 0,
+    "date": 0,
+    "arrival": 0,
+    "kind": 0,
+    "wait": 0,
+    "served": 0,
+    "service": 23817
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "service"
+      ],
+      "count": 23817,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 144382,
+  "row_count_matches_manifest": true
+}

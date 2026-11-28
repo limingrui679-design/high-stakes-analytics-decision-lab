@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "amazon-routes",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "b889cb157e210dc5965d10658f9fbd9eef29b9fbea80566420585c97e11d8d65",
+      "bytes": 697744
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

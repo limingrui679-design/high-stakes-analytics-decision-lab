@@ -1,0 +1,26 @@
+{
+  "project_id": "marketplace-delivery-intervention",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Late deliveries with late handoff",
+      "supported_finding": "Groups are prioritized using only matured prior-quarter outcomes.",
+      "interpretation_boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness.",
+      "source_id": "olist"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Late deliveries after on-time handoff",
+      "supported_finding": "This decomposition identifies the timing of a delay, not the responsible party.",
+      "interpretation_boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness.",
+      "source_id": "olist"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Equal-effectiveness scenario at different carrier costs",
+      "supported_finding": "Compare against 1.0. Relative intervention effectiveness and unit cost are assumptions.",
+      "interpretation_boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness.",
+      "source_id": "olist"
+    }
+  ]
+}

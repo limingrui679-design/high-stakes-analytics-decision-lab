@@ -1,0 +1,26 @@
+{
+  "project_id": "call-centre-flexible-dispatch",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Abandonment at identical purchased staffing hours",
+      "supported_finding": "The three policies receive the same two-hour flexible reserve.",
+      "interpretation_boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue.",
+      "source_id": "bank99"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Waiting among answered calls",
+      "supported_finding": "The simulation runs common arrivals, latent patience draws and service durations.",
+      "interpretation_boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue.",
+      "source_id": "bank99"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "High-arrival mornings",
+      "supported_finding": "Days above the holdout 75th percentile expose the cost of spending the reserve early.",
+      "interpretation_boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue.",
+      "source_id": "bank99"
+    }
+  ]
+}

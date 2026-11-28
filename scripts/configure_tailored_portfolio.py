@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize the public, school-neutral fifteen-case portfolio metadata."""
+"""Materialize the public, school-neutral thirty-case portfolio metadata."""
 
 from __future__ import annotations
 
@@ -252,6 +252,9 @@ def _structured_sources(root: Path, manifest: dict) -> list[dict]:
 
 def upgrade_source_manifests() -> None:
     for path in sorted(PROJECTS.glob("*/source-manifest.json")):
+        if (path.parent / "study-design.json").exists():
+            # replay_extract.py records the exact upstream objects and data fields.
+            continue
         manifest = json.loads(path.read_text(encoding="utf-8"))
         manifest["schema_version"] = "1.1"
         manifest["sources"] = _structured_sources(path.parent, manifest)
@@ -597,6 +600,17 @@ ORDER = [
     ("spatial-equity-planning", "R15", ["urban planning", "spatial analytics", "transit equity"]),
 ]
 
+# New source-locked studies supply their own metadata and deterministic numerical result.
+STUDIES = {
+    study["slug"]: study
+    for path in PROJECTS.glob("*/study-design.json")
+    for study in [json.loads(path.read_text(encoding="utf-8"))]
+}
+ORDER.extend(
+    (study["slug"], f"R{study['number']:02d}", study["domains"])
+    for study in sorted(STUDIES.values(), key=lambda x: x["number"])
+)
+
 REPRESENTATIVE_FIGURES = {
     "bike-demand-operations": "forecast-mae.svg",
     "cross-city-311-shift": "within-city-shift.svg",
@@ -666,11 +680,17 @@ def configure_case_index() -> None:
             if spec
             else prior.get("result", f"The analysis terminates at {terminal}.")
         )
+        study = STUDIES.get(project_id)
+        if study:
+            methods = study["methods"]
+            question = study["question"]
+            boundary = study["boundary"]
+            result_text = result["conclusion"]
         raw_snapshots = [
             {"name": Path(item["path"]).name, "sha256": item["sha256"]}
             for item in manifest["raw_files"]
         ]
-        title = manifest.get("project_title", manifest["title"])
+        title = study["title"] if study else manifest.get("project_title", manifest["title"])
         cases.append(
             {
                 "number": f"{index:02d}",
@@ -706,8 +726,8 @@ def configure_case_index() -> None:
         case_path,
         {
             "schema_version": "2.0",
-            "case_count": 15,
-            "scope": "Fifteen school-neutral, reproducible real-data projects with one distinct substantive case per private application-program mapping.",
+            "case_count": len(ORDER),
+            "scope": "Thirty reproducible public-data studies with case-specific decisions, baselines, and external source records.",
             "cases": cases,
         },
     )
@@ -718,16 +738,19 @@ def configure_catalog() -> None:
     by_id = {item["id"]: item for item in existing}
     entries = []
     for project_id, code, domains in ORDER:
-        title = SPECS[project_id]["title"] if project_id in SPECS else by_id[project_id]["title"]
+        spec = STUDIES.get(project_id) or SPECS.get(project_id) or by_id[project_id]
+        title = spec["title"]
         analytics = by_id.get(project_id, {}).get("analytics", ["descriptive", "diagnostic", "decision"])
+        if project_id in STUDIES:
+            analytics = STUDIES[project_id]["route"]
         entries.append({"id": project_id, "code": code, "title": title, "analytics": analytics, "decision_analysis": "claim_bounded_case_specific", "method_domains": domains})
     write_json(
         PROJECTS / "project-catalog.json",
         {
-            "portfolio_version": "9.0.0",
-            "verified_on": "2026-08-10",
+            "portfolio_version": "10.0.0",
+            "verified_on": "2026-11-28",
             "public_project_type": "real_world_research_project",
-            "project_count": 15,
+            "project_count": len(ORDER),
             "projects": entries,
             "synthetic_fixture_policy": {"public_project_count": 0, "location": "tests/fixtures/synthetic-cases", "purpose": "offline regression and edge-case testing only"},
         },

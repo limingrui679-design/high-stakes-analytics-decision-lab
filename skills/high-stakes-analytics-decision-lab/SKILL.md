@@ -172,7 +172,7 @@ ranking. Read `references/reporting-standard.md` and
 
 ## Worked precedents
 
-Read `references/case-precedents.md` to choose among fifteen school-neutral,
+Read `references/case-precedents.md` to choose among thirty school-neutral,
 real-data precedents. Reuse the method contract, never a saved empirical
 result, threshold, weight, subgroup definition, causal claim, or
 recommendation. A new source, population, time window, objective, or owner

@@ -1,0 +1,14 @@
+{
+  "grain": "One balancing authority and UTC date with 24 observed, forecast and lagged observations",
+  "primary_key": "key",
+  "fields": {
+    "key": "Authority/date compound key",
+    "area": "EIA balancing authority code",
+    "day": "UTC operating day",
+    "forecast_error": "Sum of 24 absolute day-ahead errors, MWh",
+    "lag_error": "Sum of 24 absolute seven-day lag errors, MWh",
+    "load": "Daily observed load, MWh",
+    "n_hours": "Number of complete hourly comparisons",
+    "max_hour_MW": "Largest hourly observed, lagged or forecast power value feeding either score (MW)"
+  }
+}

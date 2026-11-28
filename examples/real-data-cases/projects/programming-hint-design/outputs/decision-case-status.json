@@ -1,0 +1,7 @@
+{
+  "status": "prospective_experiment",
+  "owner": "Learning designer and educational researcher",
+  "evidence": "The authors' public file contained 729 learner–problem records. On 584 matched out-of-time learner-held-out observations, first-correct F1 was 0.676 for the past-only model. In the independent code archive, 27 incorrect programs removed from the list being traversed.",
+  "next_decision": "Use the two interactive feedback variants for a future learner-randomized study. Historical hint use is observational and cannot measure which prototype improves independent transfer.",
+  "boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort."
+}

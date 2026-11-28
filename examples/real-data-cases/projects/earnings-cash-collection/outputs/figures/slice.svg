@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 362" role="img" aria-labelledby="t d">
+<title id="t">Does the cash advantage persist by year?</title><desc id="d">Negative values mean the accrual model lost to cash persistence.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Does the cash advantage persist by year?</text>
+<text x="16" y="47" font-size="13">MAE improvement over cash persistence (pp)</text>
+<path d="M 417.07 55 V 343" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">2018</text>
+<rect x="250.81" y="62" width="166.26" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">-0.688</text>
+<text x="16" y="111" font-size="13">2019</text>
+<rect x="417.07" y="96" width="53.34" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">0.221</text>
+<text x="16" y="145" font-size="13">2020</text>
+<rect x="330.17" y="130" width="86.90" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">-0.360</text>
+<text x="16" y="179" font-size="13">2021</text>
+<rect x="413.53" y="164" width="3.54" height="18" fill="#166c77"/>
+<text x="683" y="179" font-size="14">-0.015</text>
+<text x="16" y="213" font-size="13">2022</text>
+<rect x="332.12" y="198" width="84.95" height="18" fill="#166c77"/>
+<text x="683" y="213" font-size="14">-0.352</text>
+<text x="16" y="247" font-size="13">2023</text>
+<rect x="417.07" y="232" width="50.39" height="18" fill="#166c77"/>
+<text x="683" y="247" font-size="14">0.209</text>
+<text x="16" y="281" font-size="13">2024</text>
+<rect x="417.07" y="266" width="239.93" height="18" fill="#166c77"/>
+<text x="683" y="281" font-size="14">0.993</text>
+<text x="16" y="315" font-size="13">2025</text>
+<rect x="237.00" y="300" width="180.07" height="18" fill="#166c77"/>
+<text x="683" y="315" font-size="14">-0.745</text>
+</g></svg>

@@ -1,0 +1,15 @@
+{
+  "grain": "One non-overlapping eight-second activity window from an anonymized participant",
+  "primary_key": "key",
+  "fields": {
+    "key": "Cohort/participant/window",
+    "cohort": "Source study",
+    "person": "Study-specific participant ID",
+    "sec": "Aligned window start in seconds",
+    "activity": "Source-defined activity ID",
+    "wrist_bpm": "Spectral wrist HR estimate",
+    "ecg_bpm": "Chest ECG-derived reference; blank when unsuitable",
+    "peak_share": "Fraction of in-band power around largest peak",
+    "motion": "Acceleration variability relative to median vector magnitude"
+  }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Two ways to teach order-preserving deduplication</title>
+<style>body{font:18px/1.55 system-ui,sans-serif;color:#182c39;background:#fafaf7;margin:2rem auto;padding:0 1.25rem;max-width:44rem}h1,h2{line-height:1.2}h1{font-size:2rem}fieldset,section{margin:1.4rem 0;padding:1rem;border:1px solid #bdc8c6}input,button{font:inherit;padding:.38rem .6rem}input[type=text]{max-width:100%;box-sizing:border-box}pre{overflow:auto;background:#e8eeeb;padding:.8rem}button{background:#154e4d;color:white;border:0;border-radius:.2rem;cursor:pointer}a{color:#195c63}output{display:block;margin-top:.5rem}button:focus-visible,input:focus-visible{outline:3px solid #d78314}</style>
+<main><h1>Keep the first occurrence</h1><p>Try one feedback design, then solve the transfer task without a hint. All answers stay in this tab.</p>
+<fieldset><legend>Feedback design</legend><label><input type="radio" name="arm" value="counterexample" checked> Predict a counterexample</label><br><label><input type="radio" name="arm" value="correction"> Read a correction</label></fieldset>
+<button id="start">Begin practice</button> <span id="clock" aria-live="off"></span>
+<section id="practice" hidden><h2>Practice</h2><p>Keep only the first occurrence of each number, in its original order. The input is <code>[2, 1, 2]</code>.</p>
+<div id="counterexample" hidden><p>A loop visits the first <code>2</code>. Because it appears twice, the loop removes the first <code>2</code> from the list it is traversing. What order will the remaining values have?</p>
+<label>Remaining values <input id="prediction" type="text" placeholder="Separate with commas"></label> <button id="trace">Check the trace</button><output id="trace-result"></output></div>
+<div id="correction" hidden><p>Start with an empty output. Look at each value once in its original order. Append it only if it has not appeared before.</p>
+<pre>input        2      1       2
+output      [2]   [2, 1]  [2, 1]</pre><p>The first occurrence determines the position.</p></div>
+<p>Both designs have 60 seconds of practice. The transfer task also measures time to first response.</p></section>
+<section id="transfer" hidden><h2>Independent transfer</h2><p>A visitor taps gates in the order <code>C, A, B, C, B, D</code>. Keep each gate only on the first visit. Enter the gate order and explain how you decided which visits to keep.</p><form id="answer"><label>Gate order <input id="gates" type="text" required></label><p><label>Explanation <input id="reason" type="text" required></label></p><button>Finish first attempt</button></form><output id="score" aria-live="polite"></output></section>
+<details><summary>Study protocol and scoring guide</summary><p>For research, assign one variant per learner within baseline-skill blocks. Give both groups the same input, 60 seconds to study and the same unaided transfer item. Primary outcome is exact first-attempt transfer order. Record independent completion time separately. Score explanations blind on two criteria, one point each for retaining the first occurrence and preserving relative order. Record immediate practice and delayed transfer separately. This demonstration stores no research records.</p></details></main>
+<script>
+const el = id => document.getElementById(id);
+const tokens = s => s.trim().toUpperCase().split(/[\s,]+/).filter(Boolean).join(",");
+let transferStart = 0;
+if (location.hash === "#correction") document.querySelector('[value="correction"]').checked = true;
+el("start").onclick = () => {
+  const arm = document.querySelector('[name="arm"]:checked').value;
+  document.querySelector("fieldset").disabled = true;
+  el("start").disabled = true;
+  el("practice").hidden = false; el(arm).hidden = false;
+  const end = Date.now() + 60000;
+  const tick = () => {
+    const remaining = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+    el("clock").textContent = remaining + " seconds of practice remaining";
+    if (remaining === 0) {
+      clearInterval(timer); el("practice").hidden = true; el("transfer").hidden = false;
+      el("clock").textContent = "Independent response"; transferStart = performance.now(); el("gates").focus();
+    }
+  };
+  const timer = setInterval(tick, 250); tick();
+};
+el("trace").onclick = () => {
+  el("trace-result").textContent = tokens(el("prediction").value) === "1,2"
+    ? "Yes. Removing the first 2 leaves 1, 2. The intended order was 2, 1."
+    : "Trace the first deletion. The remaining list is 1, 2, so the original order changes.";
+};
+el("answer").onsubmit = event => {
+  event.preventDefault();
+  const correct = tokens(el("gates").value) === "C,A,B,D";
+  const elapsed = ((performance.now() - transferStart) / 1000).toFixed(1);
+  el("score").textContent = (correct ? "Correct." : "The order is C, A, B, D.") + " First response recorded locally in " + elapsed + " seconds.";
+  Array.from(el("answer").elements).forEach(control => control.disabled = true);
+};
+</script></html>

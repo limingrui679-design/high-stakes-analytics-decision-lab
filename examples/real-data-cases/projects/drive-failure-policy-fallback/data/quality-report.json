@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1",
+  "rows": 100501,
+  "columns": 10,
+  "column_names": [
+    "key",
+    "drive",
+    "from",
+    "until",
+    "model",
+    "reallocated",
+    "uncorrectable",
+    "pending",
+    "offline",
+    "failure"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "drive": 0,
+    "from": 0,
+    "until": 0,
+    "model": 0,
+    "reallocated": 0,
+    "uncorrectable": 0,
+    "pending": 0,
+    "offline": 0,
+    "failure": 0
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "quality_status": "ready",
+  "expected_rows": 100501,
+  "row_count_matches_manifest": true
+}

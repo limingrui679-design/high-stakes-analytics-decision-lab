@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 260" role="img" aria-labelledby="t d">
+<title id="t">Finding critical violations earlier on the logged subset</title><desc id="d">Historical time slots and outcomes are held fixed in this comparison.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Finding critical violations earlier on the logged subset</text>
+<text x="16" y="47" font-size="13">Mean days earlier than historical</text>
+<path d="M 237.00 55 V 241" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">Calendar</text>
+<rect x="237.00" y="62" width="63.88" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">0.463</text>
+<text x="16" y="111" font-size="13">Risk + 0% audit</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">3.045</text>
+<text x="16" y="145" font-size="13">Risk + 10% audit</text>
+<rect x="237.00" y="130" width="389.32" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">2.823</text>
+<text x="16" y="179" font-size="13">Risk + 25% audit</text>
+<rect x="237.00" y="164" width="334.30" height="18" fill="#166c77"/>
+<text x="683" y="179" font-size="14">2.424</text>
+<text x="16" y="213" font-size="13">Risk + 50% audit</text>
+<rect x="237.00" y="198" width="261.85" height="18" fill="#166c77"/>
+<text x="683" y="213" font-size="14">1.899</text>
+</g></svg>

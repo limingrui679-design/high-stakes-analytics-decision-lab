@@ -1,0 +1,7 @@
+{
+  "status": "staffing_policy_review",
+  "owner": "Call-centre operations planner",
+  "evidence": "Across 65 held-out mornings, mean simulated abandonment was 17.23% with a fixed reserve and 18.48% under receding-horizon dispatch. Observed abandonment averaged 13.91%.",
+  "next_decision": "Review out-of-time discrepancies in waiting and abandonment before staffing a live shift. The forecast and flexibility costs can be varied independently.",
+  "boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue."
+}

@@ -1,0 +1,1676 @@
+{
+  "conclusion": "Across 68 held-out weekly releases at 5 review slots, 83.2% of first-release alerts and 89.7% of revision-adjusted alerts appeared in the next release's residence-based list.",
+  "headline_metrics": [
+    "Holdout weeks: 68",
+    "State-weeks evaluated: 3604",
+    "Weekly slots: 5"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "First-release triage against the next publication",
+      "unit": "Top-list precision (%)",
+      "values": {
+        "Seasonal prior": 16.17647059,
+        "First release": 83.23529412,
+        "Shrunk revisions": 89.70588235,
+        "Revision probability": 89.41176471
+      },
+      "note": "All methods spend the same number of weekly review slots."
+    },
+    "slice": {
+      "title": "First-release alerts displaced in the next vintage",
+      "unit": "Count of state-week alerts",
+      "values": {
+        "Seasonal prior": 285,
+        "First release": 57,
+        "Shrunk revisions": 35,
+        "Revision probability": 36
+      },
+      "note": "An alert is displaced if its state falls outside the later top list."
+    },
+    "sensitivity": {
+      "title": "Review capacity sensitivity",
+      "unit": "Revision-adjusted top-list precision (%)",
+      "values": {
+        "3 slots": 89.70588235,
+        "5 slots": 89.70588235,
+        "10 slots": 88.67647059
+      },
+      "note": "Target ranking and capacity are recalculated at every budget."
+    }
+  },
+  "audit": {
+    "state_membership_brier": 0.01571068,
+    "jurisdiction_review": {
+      "Alabama": {
+        "Seasonal prior": {
+          "raised": 15,
+          "confirmed": 0,
+          "displaced": 15,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "First release": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Alaska": {
+        "Seasonal prior": {
+          "raised": 20,
+          "confirmed": 0,
+          "displaced": 20,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "First release": {
+          "raised": 17,
+          "confirmed": 0,
+          "displaced": 17,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 2,
+          "confirmed": 0,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 6,
+          "confirmed": 0,
+          "displaced": 6,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Arizona": {
+        "Seasonal prior": {
+          "raised": 12,
+          "confirmed": 0,
+          "displaced": 12,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Arkansas": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 0,
+          "displaced": 8,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "First release": {
+          "raised": 2,
+          "confirmed": 2,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 2,
+          "confirmed": 2,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 2,
+          "confirmed": 2,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "California": {
+        "Seasonal prior": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Colorado": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 9,
+          "days_until_publication_for_missed": 63
+        },
+        "First release": {
+          "raised": 11,
+          "confirmed": 9,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 7,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 13
+        },
+        "Revision probability": {
+          "raised": 9,
+          "confirmed": 8,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Connecticut": {
+        "Seasonal prior": {
+          "raised": 9,
+          "confirmed": 3,
+          "displaced": 6,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 6,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Delaware": {
+        "Seasonal prior": {
+          "raised": 10,
+          "confirmed": 1,
+          "displaced": 9,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 5,
+          "confirmed": 4,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 4,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "District of Columbia": {
+        "Seasonal prior": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 18,
+          "days_until_publication_for_missed": 127
+        },
+        "First release": {
+          "raised": 19,
+          "confirmed": 18,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 18,
+          "confirmed": 18,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 15,
+          "confirmed": 15,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 20
+        }
+      },
+      "Florida": {
+        "Seasonal prior": {
+          "raised": 3,
+          "confirmed": 0,
+          "displaced": 3,
+          "missed": 10,
+          "days_until_publication_for_missed": 70
+        },
+        "First release": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 12,
+          "confirmed": 10,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 11,
+          "confirmed": 10,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Georgia": {
+        "Seasonal prior": {
+          "raised": 11,
+          "confirmed": 3,
+          "displaced": 8,
+          "missed": 5,
+          "days_until_publication_for_missed": 36
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 15
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Hawaii": {
+        "Seasonal prior": {
+          "raised": 27,
+          "confirmed": 2,
+          "displaced": 25,
+          "missed": 1,
+          "days_until_publication_for_missed": 6
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 3,
+          "displaced": 3,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 3,
+          "confirmed": 3,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Idaho": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 13
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 6
+        },
+        "Shrunk revisions": {
+          "raised": 2,
+          "confirmed": 2,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 6
+        }
+      },
+      "Illinois": {
+        "Seasonal prior": {
+          "raised": 4,
+          "confirmed": 1,
+          "displaced": 3,
+          "missed": 6,
+          "days_until_publication_for_missed": 42
+        },
+        "First release": {
+          "raised": 9,
+          "confirmed": 7,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 10,
+          "confirmed": 7,
+          "displaced": 3,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 10,
+          "confirmed": 7,
+          "displaced": 3,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Indiana": {
+        "Seasonal prior": {
+          "raised": 9,
+          "confirmed": 1,
+          "displaced": 8,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Iowa": {
+        "Seasonal prior": {
+          "raised": 5,
+          "confirmed": 1,
+          "displaced": 4,
+          "missed": 5,
+          "days_until_publication_for_missed": 34
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 5,
+          "displaced": 2,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Kansas": {
+        "Seasonal prior": {
+          "raised": 2,
+          "confirmed": 0,
+          "displaced": 2,
+          "missed": 8,
+          "days_until_publication_for_missed": 56
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Revision probability": {
+          "raised": 7,
+          "confirmed": 7,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Kentucky": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 1,
+          "displaced": 7,
+          "missed": 15,
+          "days_until_publication_for_missed": 105
+        },
+        "First release": {
+          "raised": 15,
+          "confirmed": 15,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 15,
+          "confirmed": 15,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 15,
+          "confirmed": 15,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Louisiana": {
+        "Seasonal prior": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 5,
+          "days_until_publication_for_missed": 35
+        },
+        "Shrunk revisions": {
+          "raised": 2,
+          "confirmed": 2,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 22
+        },
+        "Revision probability": {
+          "raised": 3,
+          "confirmed": 3,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 15
+        }
+      },
+      "Maine": {
+        "Seasonal prior": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Maryland": {
+        "Seasonal prior": {
+          "raised": 2,
+          "confirmed": 0,
+          "displaced": 2,
+          "missed": 9,
+          "days_until_publication_for_missed": 62
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 20
+        },
+        "Shrunk revisions": {
+          "raised": 10,
+          "confirmed": 8,
+          "displaced": 2,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 10,
+          "confirmed": 8,
+          "displaced": 2,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Massachusetts": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 0,
+          "displaced": 8,
+          "missed": 10,
+          "days_until_publication_for_missed": 69
+        },
+        "First release": {
+          "raised": 14,
+          "confirmed": 10,
+          "displaced": 4,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 10,
+          "confirmed": 9,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 6
+        },
+        "Revision probability": {
+          "raised": 9,
+          "confirmed": 8,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 13
+        }
+      },
+      "Michigan": {
+        "Seasonal prior": {
+          "raised": 3,
+          "confirmed": 1,
+          "displaced": 2,
+          "missed": 7,
+          "days_until_publication_for_missed": 49
+        },
+        "First release": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Minnesota": {
+        "Seasonal prior": {
+          "raised": 10,
+          "confirmed": 6,
+          "displaced": 4,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 9,
+          "confirmed": 7,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 9,
+          "confirmed": 7,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 9,
+          "confirmed": 7,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Mississippi": {
+        "Seasonal prior": {
+          "raised": 9,
+          "confirmed": 2,
+          "displaced": 7,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "First release": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 5,
+          "confirmed": 4,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Missouri": {
+        "Seasonal prior": {
+          "raised": 9,
+          "confirmed": 1,
+          "displaced": 8,
+          "missed": 6,
+          "days_until_publication_for_missed": 42
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 7,
+          "confirmed": 7,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Montana": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Nebraska": {
+        "Seasonal prior": {
+          "raised": 4,
+          "confirmed": 1,
+          "displaced": 3,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 4,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 5,
+          "confirmed": 4,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Nevada": {
+        "Seasonal prior": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 7,
+          "days_until_publication_for_missed": 50
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 5,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Revision probability": {
+          "raised": 5,
+          "confirmed": 4,
+          "displaced": 1,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        }
+      },
+      "New Hampshire": {
+        "Seasonal prior": {
+          "raised": 7,
+          "confirmed": 4,
+          "displaced": 3,
+          "missed": 4,
+          "days_until_publication_for_missed": 28
+        },
+        "First release": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Shrunk revisions": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Revision probability": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        }
+      },
+      "New Jersey": {
+        "Seasonal prior": {
+          "raised": 7,
+          "confirmed": 5,
+          "displaced": 2,
+          "missed": 4,
+          "days_until_publication_for_missed": 28
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 7,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "New Mexico": {
+        "Seasonal prior": {
+          "raised": 2,
+          "confirmed": 0,
+          "displaced": 2,
+          "missed": 13,
+          "days_until_publication_for_missed": 89
+        },
+        "First release": {
+          "raised": 10,
+          "confirmed": 10,
+          "displaced": 0,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Shrunk revisions": {
+          "raised": 11,
+          "confirmed": 11,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Revision probability": {
+          "raised": 14,
+          "confirmed": 13,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "New York": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 3,
+          "displaced": 5,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 5,
+          "displaced": 2,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "North Carolina": {
+        "Seasonal prior": {
+          "raised": 2,
+          "confirmed": 1,
+          "displaced": 1,
+          "missed": 6,
+          "days_until_publication_for_missed": 42
+        },
+        "First release": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "North Dakota": {
+        "Seasonal prior": {
+          "raised": 3,
+          "confirmed": 1,
+          "displaced": 2,
+          "missed": 10,
+          "days_until_publication_for_missed": 70
+        },
+        "First release": {
+          "raised": 13,
+          "confirmed": 11,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 12,
+          "confirmed": 11,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 13,
+          "confirmed": 11,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Ohio": {
+        "Seasonal prior": {
+          "raised": 17,
+          "confirmed": 0,
+          "displaced": 17,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Oklahoma": {
+        "Seasonal prior": {
+          "raised": 10,
+          "confirmed": 0,
+          "displaced": 10,
+          "missed": 9,
+          "days_until_publication_for_missed": 64
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 5,
+          "displaced": 1,
+          "missed": 4,
+          "days_until_publication_for_missed": 28
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 7,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 7,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        }
+      },
+      "Oregon": {
+        "Seasonal prior": {
+          "raised": 5,
+          "confirmed": 0,
+          "displaced": 5,
+          "missed": 4,
+          "days_until_publication_for_missed": 29
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 4,
+          "displaced": 3,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 8
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 3,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 8
+        }
+      },
+      "Pennsylvania": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 15
+        },
+        "First release": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Puerto Rico": {
+        "Seasonal prior": {
+          "raised": 3,
+          "confirmed": 2,
+          "displaced": 1,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "First release": {
+          "raised": 3,
+          "confirmed": 3,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 8
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Rhode Island": {
+        "Seasonal prior": {
+          "raised": 7,
+          "confirmed": 4,
+          "displaced": 3,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "First release": {
+          "raised": 10,
+          "confirmed": 7,
+          "displaced": 3,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 7,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 9,
+          "confirmed": 7,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "South Carolina": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 2,
+          "displaced": 6,
+          "missed": 7,
+          "days_until_publication_for_missed": 49
+        },
+        "First release": {
+          "raised": 9,
+          "confirmed": 9,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 10,
+          "confirmed": 9,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "South Dakota": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 4,
+          "days_until_publication_for_missed": 28
+        },
+        "First release": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 4,
+          "days_until_publication_for_missed": 28
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Revision probability": {
+          "raised": 4,
+          "confirmed": 2,
+          "displaced": 2,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        }
+      },
+      "Tennessee": {
+        "Seasonal prior": {
+          "raised": 8,
+          "confirmed": 2,
+          "displaced": 6,
+          "missed": 7,
+          "days_until_publication_for_missed": 48
+        },
+        "First release": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 8,
+          "confirmed": 8,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Texas": {
+        "Seasonal prior": {
+          "raised": 11,
+          "confirmed": 0,
+          "displaced": 11,
+          "missed": 12,
+          "days_until_publication_for_missed": 84
+        },
+        "First release": {
+          "raised": 10,
+          "confirmed": 10,
+          "displaced": 0,
+          "missed": 2,
+          "days_until_publication_for_missed": 14
+        },
+        "Shrunk revisions": {
+          "raised": 12,
+          "confirmed": 12,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 12,
+          "confirmed": 12,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Utah": {
+        "Seasonal prior": {
+          "raised": 10,
+          "confirmed": 0,
+          "displaced": 10,
+          "missed": 5,
+          "days_until_publication_for_missed": 35
+        },
+        "First release": {
+          "raised": 5,
+          "confirmed": 4,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 7,
+          "confirmed": 5,
+          "displaced": 2,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 5,
+          "confirmed": 5,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Vermont": {
+        "Seasonal prior": {
+          "raised": 5,
+          "confirmed": 0,
+          "displaced": 5,
+          "missed": 4,
+          "days_until_publication_for_missed": 27
+        },
+        "First release": {
+          "raised": 3,
+          "confirmed": 3,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 3,
+          "confirmed": 3,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Virgin Islands": {
+        "Seasonal prior": {
+          "raised": 14,
+          "confirmed": 3,
+          "displaced": 11,
+          "missed": 8,
+          "days_until_publication_for_missed": 56
+        },
+        "First release": {
+          "raised": 4,
+          "confirmed": 4,
+          "displaced": 0,
+          "missed": 7,
+          "days_until_publication_for_missed": 49
+        },
+        "Shrunk revisions": {
+          "raised": 9,
+          "confirmed": 8,
+          "displaced": 1,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Revision probability": {
+          "raised": 9,
+          "confirmed": 8,
+          "displaced": 1,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        }
+      },
+      "Virginia": {
+        "Seasonal prior": {
+          "raised": 3,
+          "confirmed": 0,
+          "displaced": 3,
+          "missed": 21,
+          "days_until_publication_for_missed": 148
+        },
+        "First release": {
+          "raised": 20,
+          "confirmed": 18,
+          "displaced": 2,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Shrunk revisions": {
+          "raised": 21,
+          "confirmed": 18,
+          "displaced": 3,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        },
+        "Revision probability": {
+          "raised": 21,
+          "confirmed": 18,
+          "displaced": 3,
+          "missed": 3,
+          "days_until_publication_for_missed": 21
+        }
+      },
+      "Washington": {
+        "Seasonal prior": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 6,
+          "days_until_publication_for_missed": 42
+        },
+        "First release": {
+          "raised": 7,
+          "confirmed": 6,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 7,
+          "confirmed": 6,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 7,
+          "confirmed": 6,
+          "displaced": 1,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "West Virginia": {
+        "Seasonal prior": {
+          "raised": 5,
+          "confirmed": 2,
+          "displaced": 3,
+          "missed": 5,
+          "days_until_publication_for_missed": 35
+        },
+        "First release": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Revision probability": {
+          "raised": 6,
+          "confirmed": 6,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        }
+      },
+      "Wisconsin": {
+        "Seasonal prior": {
+          "raised": 7,
+          "confirmed": 0,
+          "displaced": 7,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      },
+      "Wyoming": {
+        "Seasonal prior": {
+          "raised": 1,
+          "confirmed": 0,
+          "displaced": 1,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "First release": {
+          "raised": 0,
+          "confirmed": 0,
+          "displaced": 0,
+          "missed": 1,
+          "days_until_publication_for_missed": 7
+        },
+        "Shrunk revisions": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        },
+        "Revision probability": {
+          "raised": 1,
+          "confirmed": 1,
+          "displaced": 0,
+          "missed": 0,
+          "days_until_publication_for_missed": 0
+        }
+      }
+    },
+    "hit_rate": {
+      "Seasonal prior": 16.17647059,
+      "First release": 83.23529412,
+      "Shrunk revisions": 89.70588235,
+      "Revision probability": 89.41176471
+    },
+    "flips": {
+      "Seasonal prior": 285,
+      "First release": 57,
+      "Shrunk revisions": 35,
+      "Revision probability": 36
+    },
+    "missed_state_days_until_next_release": {
+      "Seasonal prior": 1993,
+      "First release": 399,
+      "Shrunk revisions": 245,
+      "Revision probability": 251
+    },
+    "holdout_weeks": 68,
+    "state_weeks": 3604,
+    "pdf_pairs": 143,
+    "maturity_rule": "Only residence observations available by this release enter past history."
+  },
+  "next_decision": "Keep first-publication alerts provisional. Actual review budgets and the observed cost of a one-release delay determine whether an adjusted list is useful.",
+  "project_id": "unemployment-claims-release-revisions",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "predictive"
+    ],
+    "protocol": "Extract consecutive dated weekly releases and verify each printed state change. Rank anomalies after state-specific scale and seasonality adjustment. Compare a seasonal prior, the raw release and a shrunk historical revision adjustment against the residence-based top-K in the next publication. Hold out late dates and respect label publication."
+  },
+  "data": {
+    "rows": 7579,
+    "grain": "One US state or covered territory and initial-claims week, with two actual release dates",
+    "snapshot_sha256": "fd3ca6f0387e935dcb8bf8444d5ed8a7ed50acd812f8abc098265dc44bdd7f85"
+  },
+  "decision_support": {
+    "status": "vintage_sensitive_alerting"
+  }
+}

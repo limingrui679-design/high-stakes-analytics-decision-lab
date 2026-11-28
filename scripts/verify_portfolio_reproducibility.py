@@ -200,8 +200,8 @@ def _rebuild(root: Path) -> int:
         for path in project_root.iterdir()
         if path.is_dir() and path.name != "_shared"
     )
-    if len(projects) != 15:
-        raise RuntimeError(f"Expected 15 public projects; found {len(projects)}.")
+    if len(projects) != 30:
+        raise RuntimeError(f"Expected 30 public projects; found {len(projects)}.")
     for project in projects:
         print(f"Rebuilding {project.name}...", flush=True)
         for entrypoint in ("prepare_data.py", "analyze.py", "build_decision_case.py"):

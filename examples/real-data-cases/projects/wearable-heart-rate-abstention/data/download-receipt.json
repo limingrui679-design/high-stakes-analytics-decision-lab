@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "dalia",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "95047a43c3620eb337d79c3ecb88777c76dcbfebfa7f30dba3d4304d43e3168f",
+      "bytes": 329228
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

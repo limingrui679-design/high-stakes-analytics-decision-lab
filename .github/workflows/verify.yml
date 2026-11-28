@@ -53,6 +53,11 @@ jobs:
         run: >-
           ruff check scripts tests
           examples/real-data-cases/projects/_shared/safe_external_io.py
+          examples/real-data-cases/projects/_shared/applied_*.py
+          examples/real-data-cases/projects/*/study.py
+          examples/real-data-cases/projects/*/extract.py
+          examples/real-data-cases/projects/*/benchmark_solver.py
+          examples/real-data-cases/source_tools/*.py
       - name: Run mypy
         run: mypy
       - name: Check prose and identifiers
@@ -76,7 +81,7 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Rebuild and compare all fifteen projects
+      - name: Rebuild and compare all thirty projects
         run: python scripts/verify_portfolio_reproducibility.py
 
   source-builder-security:

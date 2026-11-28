@@ -1,0 +1,1048 @@
+{
+  "schema_version": "1.1",
+  "project_id": "unemployment-claims-release-revisions",
+  "source_id": "dol-ui",
+  "title": "Unemployment Insurance Weekly Claims, advance state tables",
+  "publisher": "US Department of Labor",
+  "landing_page": "https://oui.doleta.gov/unemploy/claims_arch.asp",
+  "version": "Dated weekly releases, December 2022–2025",
+  "accessed_at": "2026-11-28",
+  "license": "US government public data",
+  "redistribution": "Derived government counts. Consecutive publication dates are retained for audit.",
+  "grain": "One US state or covered territory and initial-claims week, with two actual release dates",
+  "expected_rows": 7579,
+  "sources": [
+    {
+      "source_id": "dol-ui",
+      "publisher": "US Department of Labor",
+      "url": "https://oui.doleta.gov/unemploy/claims_arch.asp",
+      "version": "Dated weekly releases, December 2022–2025",
+      "license": "US government public data",
+      "license_url": "https://www.dol.gov/general/aboutdol/website-policies",
+      "output_fields": [
+        "advance",
+        "residence",
+        "released",
+        "next_release"
+      ],
+      "artifacts": [
+        {
+          "name": "dol-010225.pdf",
+          "url": "https://oui.doleta.gov/press/2025/010225.pdf",
+          "bytes": 597170,
+          "hash_algorithm": "sha256",
+          "sha256": "fee87d879ffed7e48829e2b989a70800232fbc8adba2b8c5ee4f2ca364cc603a"
+        },
+        {
+          "name": "dol-010424.pdf",
+          "url": "https://oui.doleta.gov/press/2024/010424.pdf",
+          "bytes": 640139,
+          "hash_algorithm": "sha256",
+          "sha256": "89e02839c024633029228ab82cd45785c2525625828c163bd952dee1e3ab106d"
+        },
+        {
+          "name": "dol-010523.pdf",
+          "url": "https://oui.doleta.gov/press/2023/010523.pdf",
+          "bytes": 706661,
+          "hash_algorithm": "sha256",
+          "sha256": "c13896d486f1d071f88e93421f87b1631fd031d8ad91662c4cf230effd712fe7"
+        },
+        {
+          "name": "dol-010825.pdf",
+          "url": "https://oui.doleta.gov/press/2025/010825.pdf",
+          "bytes": 341336,
+          "hash_algorithm": "sha256",
+          "sha256": "4f783b03d1ef85ec2928e286f50ac8883c68a48352bdc6237c0b43dd2b3e4064"
+        },
+        {
+          "name": "dol-011124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/011124.pdf",
+          "bytes": 597089,
+          "hash_algorithm": "sha256",
+          "sha256": "b09abad86abfea3e459c9a48ecfa731bca86dfa4e3e4d74c3fc56870a3b78e34"
+        },
+        {
+          "name": "dol-011223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/011223.pdf",
+          "bytes": 702015,
+          "hash_algorithm": "sha256",
+          "sha256": "cbc6f0566639e7cd45767dc244ad99d30b440b008ffafe09856b18fb4adccf4c"
+        },
+        {
+          "name": "dol-011625.pdf",
+          "url": "https://oui.doleta.gov/press/2025/011625.pdf",
+          "bytes": 627146,
+          "hash_algorithm": "sha256",
+          "sha256": "ffc0c82813c64dc82b5648fd736ddf29c208cf0529c8e45b292b60300137cf47"
+        },
+        {
+          "name": "dol-011824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/011824.pdf",
+          "bytes": 594269,
+          "hash_algorithm": "sha256",
+          "sha256": "f6e15592aa3e7b4b4f0ff81840d4eb4ba6abecad12070684e895a065da1fd8c3"
+        },
+        {
+          "name": "dol-011923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/011923.pdf",
+          "bytes": 579278,
+          "hash_algorithm": "sha256",
+          "sha256": "4afd42be06f3a97d773cdc2820848657bc59c8b97e320b628679bd6602875458"
+        },
+        {
+          "name": "dol-012325.pdf",
+          "url": "https://oui.doleta.gov/press/2025/012325.pdf",
+          "bytes": 332184,
+          "hash_algorithm": "sha256",
+          "sha256": "ab4c637c46147a996dccf45005ab427f20b5696054af2c45aa77b7eefb9fd9ae"
+        },
+        {
+          "name": "dol-012524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/012524.pdf",
+          "bytes": 595040,
+          "hash_algorithm": "sha256",
+          "sha256": "b3723bcce83943415fecad0ba261168ade693983f3f630a5524ac498951e6b9b"
+        },
+        {
+          "name": "dol-012623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/012623.pdf",
+          "bytes": 586310,
+          "hash_algorithm": "sha256",
+          "sha256": "1dfdb5d5249df93d5ee94d3165e81808dc54fa42794513250fe6e735fd2b2a55"
+        },
+        {
+          "name": "dol-013025.pdf",
+          "url": "https://oui.doleta.gov/press/2025/013025.pdf",
+          "bytes": 600763,
+          "hash_algorithm": "sha256",
+          "sha256": "3e4d459040e4593189348b2a55c800c028c4d0c5eee4bd741f9d6ebd9e93d0a0"
+        },
+        {
+          "name": "dol-020124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/020124.pdf",
+          "bytes": 640013,
+          "hash_algorithm": "sha256",
+          "sha256": "e5d0eb599df7bfb76e4d3430ad1e8bc33e77bbb4a02bb58c321be746c202c7be"
+        },
+        {
+          "name": "dol-020223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/020223.pdf",
+          "bytes": 704688,
+          "hash_algorithm": "sha256",
+          "sha256": "14523f27b93ab91faa17edc9e6e5393e535f1940511629ab12f2cf8be35a7064"
+        },
+        {
+          "name": "dol-020625.pdf",
+          "url": "https://oui.doleta.gov/press/2025/020625.pdf",
+          "bytes": 598072,
+          "hash_algorithm": "sha256",
+          "sha256": "3d65658482035b4005dba2ad1360237b2a6f1cd54a3231b794df15f59278c5ec"
+        },
+        {
+          "name": "dol-020824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/020824.pdf",
+          "bytes": 594649,
+          "hash_algorithm": "sha256",
+          "sha256": "43bc5b84dfcad192ef1fe992afaa766bac33562fbfcfa703934829072efcfdb4"
+        },
+        {
+          "name": "dol-020923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/020923.pdf",
+          "bytes": 525166,
+          "hash_algorithm": "sha256",
+          "sha256": "a9d936c1da8b2f11f7db81e147d7596183c655a19b7fd3ca247fed98ae7e79d2"
+        },
+        {
+          "name": "dol-021325.pdf",
+          "url": "https://oui.doleta.gov/press/2025/021325.pdf",
+          "bytes": 590428,
+          "hash_algorithm": "sha256",
+          "sha256": "482903a5b3fe7fe7b471e1a7f1f796c29ab13a9f4cf38c2037b666c2955fa8d2"
+        },
+        {
+          "name": "dol-021524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/021524.pdf",
+          "bytes": 602742,
+          "hash_algorithm": "sha256",
+          "sha256": "9ce66e2ef6345c54614502022d0071126524b3106b7d73345c5d46b452972dc1"
+        },
+        {
+          "name": "dol-021623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/021623.pdf",
+          "bytes": 511565,
+          "hash_algorithm": "sha256",
+          "sha256": "4db239856771fe8a178e04d5007aa81eb334ecb6d6e13e6af4e29441fb19994d"
+        },
+        {
+          "name": "dol-022025.pdf",
+          "url": "https://oui.doleta.gov/press/2025/022025.pdf",
+          "bytes": 609088,
+          "hash_algorithm": "sha256",
+          "sha256": "39bb43edf3e8451cd5642587f3757974611233106dfac3ad373e544dac1fec4c"
+        },
+        {
+          "name": "dol-022224.pdf",
+          "url": "https://oui.doleta.gov/press/2024/022224.pdf",
+          "bytes": 667733,
+          "hash_algorithm": "sha256",
+          "sha256": "3f63a9bda309b01200e08455271058409150160df991eabb39018b98d89749d6"
+        },
+        {
+          "name": "dol-022323.pdf",
+          "url": "https://oui.doleta.gov/press/2023/022323.pdf",
+          "bytes": 527619,
+          "hash_algorithm": "sha256",
+          "sha256": "44dd16d4b43e905c8085245fd66f2e25437bb617466a22d4768a4b8eb12c5b6e"
+        },
+        {
+          "name": "dol-022725.pdf",
+          "url": "https://oui.doleta.gov/press/2025/022725.pdf",
+          "bytes": 329825,
+          "hash_algorithm": "sha256",
+          "sha256": "61cdac19347e8f2d6a2923da8204eaf70e37b60abfcec3a77fe35428241ab438"
+        },
+        {
+          "name": "dol-022924.pdf",
+          "url": "https://oui.doleta.gov/press/2024/022924.pdf",
+          "bytes": 509401,
+          "hash_algorithm": "sha256",
+          "sha256": "f8af27f3c21e257cd25e3f30e318eebbb0f80d5e649b7f0f173d743db7e88686"
+        },
+        {
+          "name": "dol-030223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/030223.pdf",
+          "bytes": 471898,
+          "hash_algorithm": "sha256",
+          "sha256": "8f6f7a10259783979ef978abe01fd413717a0437830818292484cd16f31ebfe7"
+        },
+        {
+          "name": "dol-030625.pdf",
+          "url": "https://oui.doleta.gov/press/2025/030625.pdf",
+          "bytes": 593899,
+          "hash_algorithm": "sha256",
+          "sha256": "30ce1440655e127931d249ec7b65b6c94da139913b5b40038cce78ec1f1fba34"
+        },
+        {
+          "name": "dol-030724.pdf",
+          "url": "https://oui.doleta.gov/press/2024/030724.pdf",
+          "bytes": 536784,
+          "hash_algorithm": "sha256",
+          "sha256": "2759aeb9fc6ef115d865012745d82e7ee024b5c1be0f5b73a37016fcd8d2cb5e"
+        },
+        {
+          "name": "dol-030923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/030923.pdf",
+          "bytes": 509559,
+          "hash_algorithm": "sha256",
+          "sha256": "f8a4554528f1794ef3c9535b95560dd78dfb1d342b0b26a860d3caafd6f21f7d"
+        },
+        {
+          "name": "dol-031325.pdf",
+          "url": "https://oui.doleta.gov/press/2025/031325.pdf",
+          "bytes": 599041,
+          "hash_algorithm": "sha256",
+          "sha256": "af8c594abd5e4167670d6eb5ccca0a3a3fe445ed0cff6777ec2f79f5e7383427"
+        },
+        {
+          "name": "dol-031424.pdf",
+          "url": "https://oui.doleta.gov/press/2024/031424.pdf",
+          "bytes": 660777,
+          "hash_algorithm": "sha256",
+          "sha256": "314084cfb6bba80f30b36c9b6755563d3090e0669c94bd540f11b1ce33f517d7"
+        },
+        {
+          "name": "dol-031623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/031623.pdf",
+          "bytes": 531376,
+          "hash_algorithm": "sha256",
+          "sha256": "c4a236106aa3d19749f8edd3723606531b78f57c5db28635add212c88422486e"
+        },
+        {
+          "name": "dol-032025.pdf",
+          "url": "https://oui.doleta.gov/press/2025/032025.pdf",
+          "bytes": 595317,
+          "hash_algorithm": "sha256",
+          "sha256": "6be534bb4b83e4c6d002e2e6419f81a193c063a0c1c63d395f2656072c17316b"
+        },
+        {
+          "name": "dol-032124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/032124.pdf",
+          "bytes": 655583,
+          "hash_algorithm": "sha256",
+          "sha256": "5d31986be03c38d1a615b1d2f73cd370f7fff7fc66b9de6098855fa72a75640d"
+        },
+        {
+          "name": "dol-032323.pdf",
+          "url": "https://oui.doleta.gov/press/2023/032323.pdf",
+          "bytes": 560095,
+          "hash_algorithm": "sha256",
+          "sha256": "76e8de05e37cca6776915a2c45bc2e892dfdd4875ddd4862fd21bad486cbef92"
+        },
+        {
+          "name": "dol-032725.pdf",
+          "url": "https://oui.doleta.gov/press/2025/032725.pdf",
+          "bytes": 477384,
+          "hash_algorithm": "sha256",
+          "sha256": "5b6d56e5ed362673c599d9cba44e2621a4609570b9d1c870e3be11258609fa52"
+        },
+        {
+          "name": "dol-032824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/032824.pdf",
+          "bytes": 590167,
+          "hash_algorithm": "sha256",
+          "sha256": "29c5bdd45bb638ebfcf08d319cfd898ce4a9adcd36aaec508bdddd30015dc84d"
+        },
+        {
+          "name": "dol-033023.pdf",
+          "url": "https://oui.doleta.gov/press/2023/033023.pdf",
+          "bytes": 451655,
+          "hash_algorithm": "sha256",
+          "sha256": "91af7069910ba7e517e16673cb8251c35fa808ac275d3c64f6894af86569b3d8"
+        },
+        {
+          "name": "dol-040325.pdf",
+          "url": "https://oui.doleta.gov/press/2025/040325.pdf",
+          "bytes": 590718,
+          "hash_algorithm": "sha256",
+          "sha256": "16d2fdc62b9e48829fc726446510f45ffa561ee0882b1a6c7ee4f348a55834e9"
+        },
+        {
+          "name": "dol-040424.pdf",
+          "url": "https://oui.doleta.gov/press/2024/040424.pdf",
+          "bytes": 609876,
+          "hash_algorithm": "sha256",
+          "sha256": "49ff1216fff27e8a4427d1f09fcbaf3f748966639349bab05a2988ce44e329e1"
+        },
+        {
+          "name": "dol-040623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/040623.pdf",
+          "bytes": 429447,
+          "hash_algorithm": "sha256",
+          "sha256": "d13a29ec1173cb24f82a9fb9e561af8c7aab7d20695d825aaf838ddba5b02517"
+        },
+        {
+          "name": "dol-041025.pdf",
+          "url": "https://oui.doleta.gov/press/2025/041025.pdf",
+          "bytes": 601542,
+          "hash_algorithm": "sha256",
+          "sha256": "c04aa493464c4dbcb0d7e88287380ba753097b68797398b9e4ca6922ee7624f6"
+        },
+        {
+          "name": "dol-041124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/041124.pdf",
+          "bytes": 589866,
+          "hash_algorithm": "sha256",
+          "sha256": "d7a9147e5e9c92bd2d27447a37b566359c30c908b266bf5fe5a946325234cd3d"
+        },
+        {
+          "name": "dol-041323.pdf",
+          "url": "https://oui.doleta.gov/press/2023/041323.pdf",
+          "bytes": 259054,
+          "hash_algorithm": "sha256",
+          "sha256": "409048f4418657cdde6dbf111073b6047062c46fc3c2bcc82a3d73266eff3542"
+        },
+        {
+          "name": "dol-041725.pdf",
+          "url": "https://oui.doleta.gov/press/2025/041725.pdf",
+          "bytes": 476447,
+          "hash_algorithm": "sha256",
+          "sha256": "89168144daca51aad104820685cd5923b73fc8c10293cf2392d60c91d39d5f40"
+        },
+        {
+          "name": "dol-041824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/041824.pdf",
+          "bytes": 607666,
+          "hash_algorithm": "sha256",
+          "sha256": "d460f0383ba2be93111f213679d6c6b477cd43ae7f0359768805a1fbb4c49c12"
+        },
+        {
+          "name": "dol-042023.pdf",
+          "url": "https://oui.doleta.gov/press/2023/042023.pdf",
+          "bytes": 562840,
+          "hash_algorithm": "sha256",
+          "sha256": "2ef5ea851801842f0677beb30b81a2883ccec09b354061d661f2ff6dccdf3082"
+        },
+        {
+          "name": "dol-042425.pdf",
+          "url": "https://oui.doleta.gov/press/2025/042425.pdf",
+          "bytes": 354157,
+          "hash_algorithm": "sha256",
+          "sha256": "f2fd120745105b98b6bfd9a876f8cc8d8501e3c68f227a909ce522534c7ca0b3"
+        },
+        {
+          "name": "dol-042524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/042524.pdf",
+          "bytes": 751656,
+          "hash_algorithm": "sha256",
+          "sha256": "509672b1719e6557ebcf82ef93b9d6c31f3ffb0a161edc035f1dba52e54069cb"
+        },
+        {
+          "name": "dol-042723.pdf",
+          "url": "https://oui.doleta.gov/press/2023/042723.pdf",
+          "bytes": 565313,
+          "hash_algorithm": "sha256",
+          "sha256": "ea239897caf732e85475fbc095e1b86429faab22ec4d40ce4a09cf41e84b5bad"
+        },
+        {
+          "name": "dol-050125.pdf",
+          "url": "https://oui.doleta.gov/press/2025/050125.pdf",
+          "bytes": 597768,
+          "hash_algorithm": "sha256",
+          "sha256": "42dc4b6c76d68c0613437f716b432d51702cf510e922fd618783d2ead8ce1b0c"
+        },
+        {
+          "name": "dol-050224.pdf",
+          "url": "https://oui.doleta.gov/press/2024/050224.pdf",
+          "bytes": 596882,
+          "hash_algorithm": "sha256",
+          "sha256": "c8d4ae94c05587df87863d3de00ef75d5866589fb941f77356038bb35a4a1f9c"
+        },
+        {
+          "name": "dol-050423.pdf",
+          "url": "https://oui.doleta.gov/press/2023/050423.pdf",
+          "bytes": 554286,
+          "hash_algorithm": "sha256",
+          "sha256": "6138c2d215bf771639c152a75de2a0f12edbe8d29d4d26c09646d1216751939f"
+        },
+        {
+          "name": "dol-050825.pdf",
+          "url": "https://oui.doleta.gov/press/2025/050825.pdf",
+          "bytes": 585404,
+          "hash_algorithm": "sha256",
+          "sha256": "42d2a04ab04c532849c3ecbc3ebe9e335770a96af72e914f3dd6250dfbd9eaee"
+        },
+        {
+          "name": "dol-050924.pdf",
+          "url": "https://oui.doleta.gov/press/2024/050924.pdf",
+          "bytes": 588072,
+          "hash_algorithm": "sha256",
+          "sha256": "c5dd8e420b5f7a3681782dd4d5f9bb4434864a26f29a2b20c23421303d085998"
+        },
+        {
+          "name": "dol-051123.pdf",
+          "url": "https://oui.doleta.gov/press/2023/051123.pdf",
+          "bytes": 590467,
+          "hash_algorithm": "sha256",
+          "sha256": "4f113c685b1521b144dd56d0f0e0207012c20972dbf7277a730b32fd19b17de4"
+        },
+        {
+          "name": "dol-051525.pdf",
+          "url": "https://oui.doleta.gov/press/2025/051525.pdf",
+          "bytes": 587744,
+          "hash_algorithm": "sha256",
+          "sha256": "c6ad10027181774afe4a5186b644aa0b61c1bc3593070f1bbcbe0f37bf2e42fb"
+        },
+        {
+          "name": "dol-051624.pdf",
+          "url": "https://oui.doleta.gov/press/2024/051624.pdf",
+          "bytes": 620609,
+          "hash_algorithm": "sha256",
+          "sha256": "1b5c7f5a89416c017d70302c633b1cd1ece32da5bb934d9fe02b1d4ca4a6d1b7"
+        },
+        {
+          "name": "dol-051823.pdf",
+          "url": "https://oui.doleta.gov/press/2023/051823.pdf",
+          "bytes": 510411,
+          "hash_algorithm": "sha256",
+          "sha256": "143cc511c89b01d8a0cab4285065ad544d2140be12926b71ca3feee9a1f19629"
+        },
+        {
+          "name": "dol-052225.pdf",
+          "url": "https://oui.doleta.gov/press/2025/052225.pdf",
+          "bytes": 584752,
+          "hash_algorithm": "sha256",
+          "sha256": "446a6628a1a22e8448680a9a78b210bb0609a0dee9c381401ce86486cc4ba3a9"
+        },
+        {
+          "name": "dol-052324.pdf",
+          "url": "https://oui.doleta.gov/press/2024/052324.pdf",
+          "bytes": 515327,
+          "hash_algorithm": "sha256",
+          "sha256": "1841a7b358e61c3b8f93c8bb1cd126266266ebcd90321d18b9a69ed0a2452592"
+        },
+        {
+          "name": "dol-052523.pdf",
+          "url": "https://oui.doleta.gov/press/2023/052523.pdf",
+          "bytes": 639745,
+          "hash_algorithm": "sha256",
+          "sha256": "6f1b46762fbc69b9ad45561e3e79ebdcb1bc44ecabdff657a1b561a25cf7f6d6"
+        },
+        {
+          "name": "dol-052925.pdf",
+          "url": "https://oui.doleta.gov/press/2025/052925.pdf",
+          "bytes": 585143,
+          "hash_algorithm": "sha256",
+          "sha256": "4abd07e9f7c7766b35c203873caaed2115de0964f6d720a022588e77acfa1ba6"
+        },
+        {
+          "name": "dol-053024.pdf",
+          "url": "https://oui.doleta.gov/press/2024/053024.pdf",
+          "bytes": 600245,
+          "hash_algorithm": "sha256",
+          "sha256": "433178cdd610242fca7440d9472f170c48e4aba85c233cdee7fc18aa4ce76db4"
+        },
+        {
+          "name": "dol-060123.pdf",
+          "url": "https://oui.doleta.gov/press/2023/060123.pdf",
+          "bytes": 508223,
+          "hash_algorithm": "sha256",
+          "sha256": "01a89611b2dba5f08f3cd8f278ea9c8d0455a19dfd9c3709b82bd1f2ee953f46"
+        },
+        {
+          "name": "dol-060525.pdf",
+          "url": "https://oui.doleta.gov/press/2025/060525.pdf",
+          "bytes": 583422,
+          "hash_algorithm": "sha256",
+          "sha256": "1c0ba54160efa6b7e638cdf88f30eb993b7d26adce9d3d6cdb3acddeb9f85941"
+        },
+        {
+          "name": "dol-060624.pdf",
+          "url": "https://oui.doleta.gov/press/2024/060624.pdf",
+          "bytes": 583257,
+          "hash_algorithm": "sha256",
+          "sha256": "75e37fe391d4d85434a82298a41f2161dda162d333fca305de5266b52ef99194"
+        },
+        {
+          "name": "dol-060823.pdf",
+          "url": "https://oui.doleta.gov/press/2023/060823.pdf",
+          "bytes": 696506,
+          "hash_algorithm": "sha256",
+          "sha256": "23870b88a096e368dcdbf09e1f4f6c54d96dc774a91fafd8e00306118bec1eea"
+        },
+        {
+          "name": "dol-061225.pdf",
+          "url": "https://oui.doleta.gov/press/2025/061225.pdf",
+          "bytes": 587872,
+          "hash_algorithm": "sha256",
+          "sha256": "08028ce637c411404d911b62901571aefd9b86f51640fce8209d1cc3374fc18b"
+        },
+        {
+          "name": "dol-061324.pdf",
+          "url": "https://oui.doleta.gov/press/2024/061324.pdf",
+          "bytes": 391268,
+          "hash_algorithm": "sha256",
+          "sha256": "8d10b54ee0440fb4104dbc62426a354e46ef6e853ee2ad013786de20c853c4c1"
+        },
+        {
+          "name": "dol-061523.pdf",
+          "url": "https://oui.doleta.gov/press/2023/061523.pdf",
+          "bytes": 508594,
+          "hash_algorithm": "sha256",
+          "sha256": "4f19f58879d1295c2c956ffd086192403bcb14708b5489b4da50ca4962fee30a"
+        },
+        {
+          "name": "dol-061825.pdf",
+          "url": "https://oui.doleta.gov/press/2025/061825.pdf",
+          "bytes": 637271,
+          "hash_algorithm": "sha256",
+          "sha256": "8edb2696737b1838f8a0f59e12a60f85c035e009880ea033205a3a355da94442"
+        },
+        {
+          "name": "dol-062024.pdf",
+          "url": "https://oui.doleta.gov/press/2024/062024.pdf",
+          "bytes": 561924,
+          "hash_algorithm": "sha256",
+          "sha256": "45853bd0478850a5f96ac7f6c30f0d81ffa8eddc64292cc51585374965304fdc"
+        },
+        {
+          "name": "dol-062223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/062223.pdf",
+          "bytes": 511586,
+          "hash_algorithm": "sha256",
+          "sha256": "7fe14cea81cc8960184c4ae42661f39d8d188a6527792b2b57513ba4d5fa2878"
+        },
+        {
+          "name": "dol-062625.pdf",
+          "url": "https://oui.doleta.gov/press/2025/062625.pdf",
+          "bytes": 592941,
+          "hash_algorithm": "sha256",
+          "sha256": "e2ac871ddda7ac7c587254e19e4dddab7a556ecbc43260792f39c0fdbcdf15a0"
+        },
+        {
+          "name": "dol-062724.pdf",
+          "url": "https://oui.doleta.gov/press/2024/062724.pdf",
+          "bytes": 594561,
+          "hash_algorithm": "sha256",
+          "sha256": "367e7f03766c4c728d193258d857a3e9d91297eda4086d8c70b5a42b0b935d49"
+        },
+        {
+          "name": "dol-062923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/062923.pdf",
+          "bytes": 514853,
+          "hash_algorithm": "sha256",
+          "sha256": "2f7a6d4e7db9f5e1466d41ff078eece531bed5502a7357e0402b4064b4679ce7"
+        },
+        {
+          "name": "dol-070324.pdf",
+          "url": "https://oui.doleta.gov/press/2024/070324.pdf",
+          "bytes": 907285,
+          "hash_algorithm": "sha256",
+          "sha256": "0d7dea1e8ae212d894c361d0803503f9dc1fa3541f0d840fe023cb893aa81fff"
+        },
+        {
+          "name": "dol-070325.pdf",
+          "url": "https://oui.doleta.gov/press/2025/070325.pdf",
+          "bytes": 632960,
+          "hash_algorithm": "sha256",
+          "sha256": "42f93aff03d17a37811ff827353107f5066ed6957f672f47d73d430bf236b655"
+        },
+        {
+          "name": "dol-070623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/070623.pdf",
+          "bytes": 509800,
+          "hash_algorithm": "sha256",
+          "sha256": "ba749bd25d1db4d60f548119a7c011349123e7751a1984d94394fc621401999e"
+        },
+        {
+          "name": "dol-071025.pdf",
+          "url": "https://oui.doleta.gov/press/2025/071025.pdf",
+          "bytes": 703230,
+          "hash_algorithm": "sha256",
+          "sha256": "5eb1fe5eb9988d6c83b93d8d48ddaf97abcd19d16dfd5836903c3e75d61cb5af"
+        },
+        {
+          "name": "dol-071124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/071124.pdf",
+          "bytes": 638700,
+          "hash_algorithm": "sha256",
+          "sha256": "59ce5472b91fffaa5f3c885ce0a7f0ac457bbca73e6740cc35096691d7aeac81"
+        },
+        {
+          "name": "dol-071323.pdf",
+          "url": "https://oui.doleta.gov/press/2023/071323.pdf",
+          "bytes": 510535,
+          "hash_algorithm": "sha256",
+          "sha256": "9eb4cbe9ec5edebe76d1bb75a88d20ea314ef422b1a2d62290f4b9de89adcf19"
+        },
+        {
+          "name": "dol-071725.pdf",
+          "url": "https://oui.doleta.gov/press/2025/071725.pdf",
+          "bytes": 586314,
+          "hash_algorithm": "sha256",
+          "sha256": "c6d2a16fcdcc542fa2e6c0f543e086efe68ec4ad7402a83e744cad2652d44c43"
+        },
+        {
+          "name": "dol-071824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/071824.pdf",
+          "bytes": 475628,
+          "hash_algorithm": "sha256",
+          "sha256": "b6243a553936932b94fdd4588d633314fb73ed92ab7deacff2e78f7150485713"
+        },
+        {
+          "name": "dol-072023.pdf",
+          "url": "https://oui.doleta.gov/press/2023/072023.pdf",
+          "bytes": 554730,
+          "hash_algorithm": "sha256",
+          "sha256": "5bda770f4f622a720818108a9d33dbcfe276628723c877d8b175a372c69dc7c0"
+        },
+        {
+          "name": "dol-072425.pdf",
+          "url": "https://oui.doleta.gov/press/2025/072425.pdf",
+          "bytes": 557288,
+          "hash_algorithm": "sha256",
+          "sha256": "29fbf4b05e21fea426e30818b81a4248d69cf6c4d0213fe5f6751851a32ac739"
+        },
+        {
+          "name": "dol-072524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/072524.pdf",
+          "bytes": 516453,
+          "hash_algorithm": "sha256",
+          "sha256": "571ea8eb2c1cd4a0488612a54280c78054349554a6688a2d6908209659208ce6"
+        },
+        {
+          "name": "dol-072723.pdf",
+          "url": "https://oui.doleta.gov/press/2023/072723.pdf",
+          "bytes": 513432,
+          "hash_algorithm": "sha256",
+          "sha256": "19fc1d69b5d5694a4b4663a770e6978c49fbf303bb498b02633194de1fa37477"
+        },
+        {
+          "name": "dol-073125.pdf",
+          "url": "https://oui.doleta.gov/press/2025/073125.pdf",
+          "bytes": 523055,
+          "hash_algorithm": "sha256",
+          "sha256": "a140889fcc365603a8e88832ac0aca9a071daffad2e1e45ad221c5781590379d"
+        },
+        {
+          "name": "dol-080124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/080124.pdf",
+          "bytes": 606774,
+          "hash_algorithm": "sha256",
+          "sha256": "cf4a1ec31ccd042faa7bb9a6292bbd761f691051c025b991bc5babe8420eb392"
+        },
+        {
+          "name": "dol-080323.pdf",
+          "url": "https://oui.doleta.gov/press/2023/080323.pdf",
+          "bytes": 443630,
+          "hash_algorithm": "sha256",
+          "sha256": "451cd51f840fd40d77cc56371c5b99c07c403797227d592b0a24db1c1a38136b"
+        },
+        {
+          "name": "dol-080725.pdf",
+          "url": "https://oui.doleta.gov/press/2025/080725.pdf",
+          "bytes": 512081,
+          "hash_algorithm": "sha256",
+          "sha256": "fbab58965afa335f24f8b48af9723b85027bc748e222bb15f118b1d755ce390a"
+        },
+        {
+          "name": "dol-080824.pdf",
+          "url": "https://oui.doleta.gov/press/2024/080824.pdf",
+          "bytes": 492497,
+          "hash_algorithm": "sha256",
+          "sha256": "11327bbaa2da9f8047fcbc88e1cd2ec4bb9cc75489c0e7f2aec8d485d6975c19"
+        },
+        {
+          "name": "dol-081023.pdf",
+          "url": "https://oui.doleta.gov/press/2023/081023.pdf",
+          "bytes": 508652,
+          "hash_algorithm": "sha256",
+          "sha256": "98c8dcf330722a2576c7825b9e1e2b2d4239d49239869ec11b193b2d9f8b1de0"
+        },
+        {
+          "name": "dol-081425.pdf",
+          "url": "https://oui.doleta.gov/press/2025/081425.pdf",
+          "bytes": 521166,
+          "hash_algorithm": "sha256",
+          "sha256": "9a14288d4f136ce711c6f65f05a7b421228848e03028339a586f572ff1c0307c"
+        },
+        {
+          "name": "dol-081524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/081524.pdf",
+          "bytes": 587494,
+          "hash_algorithm": "sha256",
+          "sha256": "b53660a87f71e9c8d21336cbc7bbeae88e1e697d6258f7865d22c5a57c4ed493"
+        },
+        {
+          "name": "dol-081723.pdf",
+          "url": "https://oui.doleta.gov/press/2023/081723.pdf",
+          "bytes": 342798,
+          "hash_algorithm": "sha256",
+          "sha256": "ffea253e263471e8ee83197057260572d8e0de25f002104f609ed37601d6dbee"
+        },
+        {
+          "name": "dol-082125.pdf",
+          "url": "https://oui.doleta.gov/press/2025/082125.pdf",
+          "bytes": 517995,
+          "hash_algorithm": "sha256",
+          "sha256": "ed30e5658ea292e548ccd0358443172b152fc45e60fba2e0c8ce1989a0bb1f31"
+        },
+        {
+          "name": "dol-082224.pdf",
+          "url": "https://oui.doleta.gov/press/2024/082224.pdf",
+          "bytes": 588574,
+          "hash_algorithm": "sha256",
+          "sha256": "d36517cd6f0203bff98a004162c3f6609e59c8dc2c3455bab5f1b32c9d40b544"
+        },
+        {
+          "name": "dol-082423.pdf",
+          "url": "https://oui.doleta.gov/press/2023/082423.pdf",
+          "bytes": 509379,
+          "hash_algorithm": "sha256",
+          "sha256": "445def7acd52375446a1688977e78a7f5472d4d55dcff1de58daa19ebc1ecdee"
+        },
+        {
+          "name": "dol-082825.pdf",
+          "url": "https://oui.doleta.gov/press/2025/082825.pdf",
+          "bytes": 518868,
+          "hash_algorithm": "sha256",
+          "sha256": "346880c13cd26c19aadfd169fba071188b775c06dbd905aa01dfc5a8503587a9"
+        },
+        {
+          "name": "dol-082924.pdf",
+          "url": "https://oui.doleta.gov/press/2024/082924.pdf",
+          "bytes": 385765,
+          "hash_algorithm": "sha256",
+          "sha256": "c43caea526822787f07e2023173eb9ba5f420996434b06b379653a4c791c03c8"
+        },
+        {
+          "name": "dol-083123.pdf",
+          "url": "https://oui.doleta.gov/press/2023/083123.pdf",
+          "bytes": 510191,
+          "hash_algorithm": "sha256",
+          "sha256": "63c5dbbec782aa62956215d48e95530054cc8657e1faa5f86b92edc885179bac"
+        },
+        {
+          "name": "dol-090425.pdf",
+          "url": "https://oui.doleta.gov/press/2025/090425.pdf",
+          "bytes": 517412,
+          "hash_algorithm": "sha256",
+          "sha256": "e4818569964b7f6b7d51ce30d81c581dc5984873a430d428b7589745dd97a5ed"
+        },
+        {
+          "name": "dol-090524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/090524.pdf",
+          "bytes": 591065,
+          "hash_algorithm": "sha256",
+          "sha256": "9c881258b527055567a060a0024d2e31b04ca03fbe91dc8d5dcf2a488e1f8e07"
+        },
+        {
+          "name": "dol-090723.pdf",
+          "url": "https://oui.doleta.gov/press/2023/090723.pdf",
+          "bytes": 634237,
+          "hash_algorithm": "sha256",
+          "sha256": "f510a6f45903ccebead6a4541812bf332895a8a058c9a2fe525a514bb8ef5696"
+        },
+        {
+          "name": "dol-091125.pdf",
+          "url": "https://oui.doleta.gov/press/2025/091125.pdf",
+          "bytes": 472491,
+          "hash_algorithm": "sha256",
+          "sha256": "f4ba1484bf28e725205ef24c3ddb0c25e279c25349fe07d3db0e6e8571f53f1a"
+        },
+        {
+          "name": "dol-091224.pdf",
+          "url": "https://oui.doleta.gov/press/2024/091224.pdf",
+          "bytes": 591191,
+          "hash_algorithm": "sha256",
+          "sha256": "ff1a77a9cd69e63def21c9967aecf0adde1ae5079dbb12ba854eb803c44b510a"
+        },
+        {
+          "name": "dol-091423.pdf",
+          "url": "https://oui.doleta.gov/press/2023/091423.pdf",
+          "bytes": 509105,
+          "hash_algorithm": "sha256",
+          "sha256": "e5b37d76b285a1e4d38ad63860167d664758b27d6b4f2a83afca40910c3edcdc"
+        },
+        {
+          "name": "dol-091825.pdf",
+          "url": "https://oui.doleta.gov/press/2025/091825.pdf",
+          "bytes": 844175,
+          "hash_algorithm": "sha256",
+          "sha256": "9c44685ad08a5f2c9759c929a7f027266d7140d782c3e4fa48aa5a596542af81"
+        },
+        {
+          "name": "dol-091924.pdf",
+          "url": "https://oui.doleta.gov/press/2024/091924.pdf",
+          "bytes": 657534,
+          "hash_algorithm": "sha256",
+          "sha256": "d6e7b563fd0b8c64ce22729a10d8f360d669b6b61dfa2f0aa533e60d46f55d31"
+        },
+        {
+          "name": "dol-092123.pdf",
+          "url": "https://oui.doleta.gov/press/2023/092123.pdf",
+          "bytes": 510793,
+          "hash_algorithm": "sha256",
+          "sha256": "e2f1923310b0d7bbd4158b09432380aead9eb0d5832afd0f504c78bb9483f6b4"
+        },
+        {
+          "name": "dol-092525.pdf",
+          "url": "https://oui.doleta.gov/press/2025/092525.pdf",
+          "bytes": 521304,
+          "hash_algorithm": "sha256",
+          "sha256": "a5ee3eb9712e480a09307f00fa2a818ba2b30f119b93bfa4f74d948782244558"
+        },
+        {
+          "name": "dol-092624.pdf",
+          "url": "https://oui.doleta.gov/press/2024/092624.pdf",
+          "bytes": 872041,
+          "hash_algorithm": "sha256",
+          "sha256": "4e2d3bdaaa642c8cc3bef69b0e3027362ea993cf42b9be033baed5db85955cba"
+        },
+        {
+          "name": "dol-092823.pdf",
+          "url": "https://oui.doleta.gov/press/2023/092823.pdf",
+          "bytes": 564165,
+          "hash_algorithm": "sha256",
+          "sha256": "2f2df9c7fa1b8117073aaee53b6ccffbf3f91619dc6f081f56463c98cb1af242"
+        },
+        {
+          "name": "dol-100324.pdf",
+          "url": "https://oui.doleta.gov/press/2024/100324.pdf",
+          "bytes": 589024,
+          "hash_algorithm": "sha256",
+          "sha256": "bfc0e1cd6d1e80a18306c4120ebca5a4f21da9524d60977a807653292353ecff"
+        },
+        {
+          "name": "dol-100523.pdf",
+          "url": "https://oui.doleta.gov/press/2023/100523.pdf",
+          "bytes": 241167,
+          "hash_algorithm": "sha256",
+          "sha256": "d1f7c2be3ea9428fa48bc6727d2ab0e35d3151d9d382f75ce57fed11db5e2c86"
+        },
+        {
+          "name": "dol-101024.pdf",
+          "url": "https://oui.doleta.gov/press/2024/101024.pdf",
+          "bytes": 698188,
+          "hash_algorithm": "sha256",
+          "sha256": "035807eaa5142c929af838aa423465cf6f267f4e0489edd49d05151e2d6ab1cb"
+        },
+        {
+          "name": "dol-101223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/101223.pdf",
+          "bytes": 501538,
+          "hash_algorithm": "sha256",
+          "sha256": "e9a7d0c966dec23882480d3ec95479a4651a6cf7f88c083dbcb4c4f98b3a01d5"
+        },
+        {
+          "name": "dol-101724.pdf",
+          "url": "https://oui.doleta.gov/press/2024/101724.pdf",
+          "bytes": 508510,
+          "hash_algorithm": "sha256",
+          "sha256": "75696d0a6adcf185a8bc9abb5f90ec974fb5b19945fec0de1d80081c47b031cb"
+        },
+        {
+          "name": "dol-101923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/101923.pdf",
+          "bytes": 242695,
+          "hash_algorithm": "sha256",
+          "sha256": "185dde3bcf46d6efb9d76a237e332fdf9ef3c9a2b991ef9582e1b523da8ba7cc"
+        },
+        {
+          "name": "dol-102424.pdf",
+          "url": "https://oui.doleta.gov/press/2024/102424.pdf",
+          "bytes": 596507,
+          "hash_algorithm": "sha256",
+          "sha256": "d45b9d75c6a2d0c1664639b4525f81134e634cdd08c43fc4da8179c6978b0592"
+        },
+        {
+          "name": "dol-102623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/102623.pdf",
+          "bytes": 699877,
+          "hash_algorithm": "sha256",
+          "sha256": "7b3f0e7139f95952a86e6d8cebcc173ec04b74d6935fd08427a6ee06d2a1eeea"
+        },
+        {
+          "name": "dol-103124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/103124.pdf",
+          "bytes": 990554,
+          "hash_algorithm": "sha256",
+          "sha256": "b639c517e652ce216de94e1547eb39395301aa854abe00f54a9c71fb9e6263d1"
+        },
+        {
+          "name": "dol-110223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/110223.pdf",
+          "bytes": 506692,
+          "hash_algorithm": "sha256",
+          "sha256": "cddf6dfb8ffc467b35726204bfe4a755400fcdffec9a22ac0df9f634a71dbb28"
+        },
+        {
+          "name": "dol-110724.pdf",
+          "url": "https://oui.doleta.gov/press/2024/110724.pdf",
+          "bytes": 1002625,
+          "hash_algorithm": "sha256",
+          "sha256": "46ca10ebb0b6cf9f444e087d8998f309abb7af20204d607326c68263464a27e7"
+        },
+        {
+          "name": "dol-110923.pdf",
+          "url": "https://oui.doleta.gov/press/2023/110923.pdf",
+          "bytes": 502104,
+          "hash_algorithm": "sha256",
+          "sha256": "e6715d038af95e271e374631162da1e01c3cb44cda4dc43394e7db30a83f9015"
+        },
+        {
+          "name": "dol-111424.pdf",
+          "url": "https://oui.doleta.gov/press/2024/111424.pdf",
+          "bytes": 591538,
+          "hash_algorithm": "sha256",
+          "sha256": "96ea4c1a880bd36e9eb7778c7c9e0bf5b17e58f9a11dc3e1d839de6271baefd0"
+        },
+        {
+          "name": "dol-111623.pdf",
+          "url": "https://oui.doleta.gov/press/2023/111623.pdf",
+          "bytes": 518184,
+          "hash_algorithm": "sha256",
+          "sha256": "a641351c27bcd1941c70563e9f7ec4033008e6e136c1f66f2833d5646ddb32ac"
+        },
+        {
+          "name": "dol-112124.pdf",
+          "url": "https://oui.doleta.gov/press/2024/112124.pdf",
+          "bytes": 326130,
+          "hash_algorithm": "sha256",
+          "sha256": "b9735f724b20cd102f45872acfaabd7cebda3b3426994175ab39b53e53ca85dd"
+        },
+        {
+          "name": "dol-112223.pdf",
+          "url": "https://oui.doleta.gov/press/2023/112223.pdf",
+          "bytes": 601771,
+          "hash_algorithm": "sha256",
+          "sha256": "7fa7f7e0308b469a15e86201f19d3cf6bff00752ca5de3a7d618147cd53e2d99"
+        },
+        {
+          "name": "dol-112724.pdf",
+          "url": "https://oui.doleta.gov/press/2024/112724.pdf",
+          "bytes": 327323,
+          "hash_algorithm": "sha256",
+          "sha256": "b1c43206122d75dc75fe08d167da471c544e645b95c79326977b798be4103f9c"
+        },
+        {
+          "name": "dol-113023.pdf",
+          "url": "https://oui.doleta.gov/press/2023/113023.pdf",
+          "bytes": 691258,
+          "hash_algorithm": "sha256",
+          "sha256": "42ebdafdd5a1e9cb65dc26b37f3bd7f51813e104d3dda5311adf1e06179fd572"
+        },
+        {
+          "name": "dol-120524.pdf",
+          "url": "https://oui.doleta.gov/press/2024/120524.pdf",
+          "bytes": 597275,
+          "hash_algorithm": "sha256",
+          "sha256": "8654d4a73e8571b3949b6148cb32f17241d44cc64a69272941f3d7108d12e5f4"
+        },
+        {
+          "name": "dol-120723.pdf",
+          "url": "https://oui.doleta.gov/press/2023/120723.pdf",
+          "bytes": 509199,
+          "hash_algorithm": "sha256",
+          "sha256": "6a1ee1992cd305be0c1ce86699fa8abb5efb91b39fa0f5dcb24d105662af6f53"
+        },
+        {
+          "name": "dol-121224.pdf",
+          "url": "https://oui.doleta.gov/press/2024/121224.pdf",
+          "bytes": 630698,
+          "hash_algorithm": "sha256",
+          "sha256": "8aea4cb57922db3a4bda2da0e2e5ab8a400c97e18ed748f36b9a70583f760c72"
+        },
+        {
+          "name": "dol-121423.pdf",
+          "url": "https://oui.doleta.gov/press/2023/121423.pdf",
+          "bytes": 693043,
+          "hash_algorithm": "sha256",
+          "sha256": "9266314735742e586e92274f8bdac17d938f126aacdcd20e480cb1d3a9c3cd2a"
+        },
+        {
+          "name": "dol-121924.pdf",
+          "url": "https://oui.doleta.gov/press/2024/121924.pdf",
+          "bytes": 598072,
+          "hash_algorithm": "sha256",
+          "sha256": "3b280918dea3c02bb11f28614db327352752626ed193327c9809d35c2e7a8795"
+        },
+        {
+          "name": "dol-122123.pdf",
+          "url": "https://oui.doleta.gov/press/2023/122123.pdf",
+          "bytes": 598336,
+          "hash_algorithm": "sha256",
+          "sha256": "3d92e544e1ea455010a6d5b221f4beb1ad4e50a7e10fe8673bb88691388519a7"
+        },
+        {
+          "name": "dol-122624.pdf",
+          "url": "https://oui.doleta.gov/press/2024/122624.pdf",
+          "bytes": 597755,
+          "hash_algorithm": "sha256",
+          "sha256": "3dd9e489ad878fa60ff4192cb65fee74056d8b77863e5a64fffbdce3fe41829e"
+        },
+        {
+          "name": "dol-122823.pdf",
+          "url": "https://oui.doleta.gov/press/2023/122823.pdf",
+          "bytes": 479854,
+          "hash_algorithm": "sha256",
+          "sha256": "671ca151cf7fd23acf04532eaac838a90ffbfc69ab9d271d86b58eef1c64c4e5"
+        },
+        {
+          "name": "dol-122922.pdf",
+          "url": "https://oui.doleta.gov/press/2022/122922.pdf",
+          "bytes": 612278,
+          "hash_algorithm": "sha256",
+          "sha256": "61da98648579838b546deb8e5b7b22c8243d6a879b2974e876878adb07289dba"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "42dfbf703a53b9d94bea32be138b07d9f49c7183489f8abd3a263ed598a3a2fd",
+      "bytes": 100269,
+      "uncompressed_sha256": "fd3ca6f0387e935dcb8bf8444d5ed8a7ed50acd812f8abc098265dc44bdd7f85"
+    }
+  ]
+}

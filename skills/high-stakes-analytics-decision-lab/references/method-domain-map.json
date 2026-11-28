@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "purpose": "Machine-readable routing from transferable method domains to the fifteen real-data projects.",
+  "purpose": "Machine-readable routing from transferable method domains to the thirty real-data projects.",
   "domains": [
     {
       "id": "statistical-inference",
@@ -9,7 +9,11 @@
         "population-health-survival",
         "behavioral-reading-experiment",
         "social-norm-field-experiment",
-        "nhanes-population-transportability"
+        "nhanes-population-transportability",
+        "blood-pressure-protocol-bridge",
+        "food-inspection-exploration",
+        "programming-hint-design",
+        "overlapping-forecast-comparisons"
       ]
     },
     {
@@ -20,7 +24,14 @@
         "bank-marketing-response",
         "cfpb-fintech-complaint-operations",
         "cross-city-311-shift",
-        "population-health-survival"
+        "population-health-survival",
+        "wearable-heart-rate-abstention",
+        "unemployment-claims-release-revisions",
+        "online-edit-review-capacity",
+        "marketplace-delivery-intervention",
+        "drive-failure-policy-fallback",
+        "overlapping-forecast-comparisons",
+        "earnings-cash-collection"
       ]
     },
     {
@@ -29,7 +40,13 @@
       "project_ids": [
         "bike-demand-operations",
         "spatial-equity-planning",
-        "wildfire-mitigation-under-uncertainty"
+        "wildfire-mitigation-under-uncertainty",
+        "call-centre-flexible-dispatch",
+        "transit-timetable-repair",
+        "online-edit-review-capacity",
+        "marketplace-delivery-intervention",
+        "last-mile-departure-slack",
+        "versioned-road-geometry"
       ]
     },
     {
@@ -38,7 +55,9 @@
       "project_ids": [
         "treasury-risk-engineering",
         "sec-nport-filing-review",
-        "commercial-real-estate-risk"
+        "commercial-real-estate-risk",
+        "credit-drawdown-rates-hedge",
+        "earnings-cash-collection"
       ]
     },
     {
@@ -50,7 +69,9 @@
         "spatial-equity-planning",
         "cross-city-311-shift",
         "wildfire-mitigation-under-uncertainty",
-        "opportunity-zone-policy-evaluation"
+        "opportunity-zone-policy-evaluation",
+        "unemployment-claims-release-revisions",
+        "food-inspection-exploration"
       ]
     },
     {
@@ -58,7 +79,10 @@
       "label": "Responsible AI and sociotechnical boundaries",
       "project_ids": [
         "census-income-ai",
-        "cfpb-fintech-complaint-operations"
+        "cfpb-fintech-complaint-operations",
+        "wearable-heart-rate-abstention",
+        "drive-failure-policy-fallback",
+        "programming-hint-design"
       ]
     }
   ]

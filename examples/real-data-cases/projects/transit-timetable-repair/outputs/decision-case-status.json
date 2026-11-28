@@ -1,0 +1,7 @@
+{
+  "status": "routing_update_review",
+  "owner": "Transit-routing systems engineer",
+  "evidence": "Across 10 timetable versions, all 300 route-query results matched a full scan. Revisions changed 4,223 destination arrival labels; checkpoint repair visited 1,969,278 connections versus 8,903,454 for full recomputation.",
+  "next_decision": "Retain prefix checkpoints only while their input prefix is unchanged. Early-in-day edits can erase the savings; invariance against full routing remains the release criterion.",
+  "boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links."
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "rows": 88863,
+  "columns": 11,
+  "column_names": [
+    "id",
+    "placed",
+    "month",
+    "seller",
+    "origin",
+    "destination",
+    "status",
+    "handoff_late",
+    "late",
+    "known_month",
+    "category"
+  ],
+  "missing_count_by_column": {
+    "id": 0,
+    "placed": 0,
+    "month": 0,
+    "seller": 0,
+    "origin": 0,
+    "destination": 0,
+    "status": 0,
+    "handoff_late": 904,
+    "late": 2023,
+    "known_month": 903,
+    "category": 0
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "handoff_late",
+        "known_month",
+        "late"
+      ],
+      "count": 3830,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 88863,
+  "row_count_matches_manifest": true
+}

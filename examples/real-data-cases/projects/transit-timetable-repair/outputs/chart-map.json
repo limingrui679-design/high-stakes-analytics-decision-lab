@@ -1,0 +1,26 @@
+{
+  "project_id": "transit-timetable-repair",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Post-initialization work",
+      "supported_finding": "All algorithms answer the same station/time queries to every reachable destination.",
+      "interpretation_boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links.",
+      "source_id": "mbta-gtfs"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Publisher timetable changes",
+      "supported_finding": "A changed departure time is compared within the same published trip and stop sequence.",
+      "interpretation_boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links.",
+      "source_id": "mbta-gtfs"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "After-midnight scheduled connections",
+      "supported_finding": "GTFS times beyond 24:00 stay attached to the preceding service date.",
+      "interpretation_boundary": "The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links.",
+      "source_id": "mbta-gtfs"
+    }
+  ]
+}

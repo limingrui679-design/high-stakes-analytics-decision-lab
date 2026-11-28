@@ -1,0 +1,86 @@
+{
+  "number": 26,
+  "slug": "programming-hint-design",
+  "title": "Counterexamples or Direct Corrections for Novice Programmers?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "Either an author-published learner/problem summary or an independently published anonymized source-code attempt",
+  "dataset": "CSEDM 2019 published ITAP cross-validation rows and the Refactory novice programming corpus",
+  "question": "Should a beginner receive an elicited counterexample or a direct correction after a repeatable misconception?",
+  "owner": "Learning designer and educational researcher",
+  "design": "Use the 2019 challenge authors' public predictions and real first-correct, any-hint and attempt records. Hold out entire learners and mature earlier learners before fitting. Independently inspect real duplicate-removal attempts in the Refactory corpus. Build two runnable feedback designs and specify equal exposure, a new transfer item and a prospective learner-randomized evaluation.",
+  "boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort.",
+  "route": [
+    "diagnostic",
+    "predictive"
+  ],
+  "redistribution": "Only derived features and public author example labels are included; no raw student programs are redistributed. Source teams and distribution terms are identified.",
+  "fields": {
+    "key": "Source-specific record key",
+    "source": "CSEDM or Refactory",
+    "student": "CSEDM published pseudonym",
+    "problem": "Exercise identifier",
+    "order": "Source chronological first attempt order",
+    "first": "First attempt correct",
+    "hint": "Any hint requested",
+    "attempts": "Attempt count",
+    "prior_rate": "Previously correct fraction supplied by CSEDM",
+    "prior_attempts": "Earlier attempts summary supplied by authors",
+    "official": "Published cross-validated classifier prediction",
+    "fold": "Released learner-held-out fold",
+    "file": "Public Refactory submission filename",
+    "correct": "Archive classification",
+    "mutates": "Static iteration/removal pattern; empty if Python syntax could not be parsed"
+  },
+  "sources": [
+    {
+      "source_id": "csedm-itap",
+      "publisher": "Thomas Price and CSEDM 2019 organizers",
+      "url": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+      "version": "Public challenge demonstration and predictions, revision 6e7a1f6463d6343bd0c063fdeacf9cf9147e5073",
+      "license": "Publicly released example; full DataShop records have separate terms",
+      "license_url": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+      "prefixes": [
+        "CSEDM"
+      ],
+      "output_fields": [
+        "first",
+        "hint",
+        "official",
+        "fold",
+        "student"
+      ]
+    },
+    {
+      "source_id": "refactory",
+      "publisher": "Yang Hu and coauthors",
+      "url": "https://github.com/githubhuyang/refactory",
+      "version": "ASE 2019 public artifact, f05583a56c2e3c50aa8cc0327645283f27df3a68",
+      "license": "Repository LGPL-3.0; derived observation summaries and source attribution",
+      "license_url": "https://github.com/githubhuyang/refactory/blob/master/LICENSE",
+      "prefixes": [
+        "refactory"
+      ],
+      "output_fields": [
+        "file",
+        "correct",
+        "mutates"
+      ]
+    }
+  ],
+  "landing_page": "https://github.com/thomaswp/CSEDM2019-Data-Challenge",
+  "publisher": "Thomas Price and CSEDM 2019 organizers and Yang Hu and coauthors",
+  "version": "Public challenge demonstration and predictions, revision 6e7a1f6463d6343bd0c063fdeacf9cf9147e5073 / ASE 2019 public artifact, f05583a56c2e3c50aa8cc0327645283f27df3a68",
+  "endpoint": "prospective_experiment",
+  "domains": [
+    "learning design",
+    "educational technology",
+    "transfer assessment"
+  ],
+  "methods": [
+    "learner-held-out prediction",
+    "observed misconception",
+    "two runnable feedback designs",
+    "independently scored transfer"
+  ]
+}

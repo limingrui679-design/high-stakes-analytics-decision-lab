@@ -1,0 +1,200 @@
+{
+  "conclusion": "Across 4,614 paired adults, the survey-weighted automatic-minus-manual mean was -1.50 mmHg. At 130 mmHg, 5.32% moved above and 8.15% moved below the cutoff.",
+  "headline_metrics": [
+    "Paired adults: 4614",
+    "Held-out PSUs: 30",
+    "Weighted paired difference: -1.50 mmHg"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Prediction of the manual protocol in held-out PSUs",
+      "unit": "Weighted mean absolute error (mmHg)",
+      "values": {
+        "Unadjusted": 7.20911971,
+        "Pooled offset": 7.15153111,
+        "Age shrinkage": 7.15201567
+      },
+      "note": "Every calibration excludes the complete test sampling unit."
+    },
+    "slice": {
+      "title": "Which participants cross the analysis threshold?",
+      "unit": "Weighted percent of paired adults",
+      "values": {
+        "125 up": 6.81821982,
+        "125 down": 8.65836291,
+        "130 up": 5.32022669,
+        "130 down": 8.14543087,
+        "135 up": 4.18734196,
+        "135 down": 6.12165113,
+        "140 up": 3.1642673,
+        "140 down": 4.82149942
+      },
+      "note": "Movement up and down can cancel in a prevalence difference."
+    },
+    "sensitivity": {
+      "title": "Protocol difference by measurement sequence",
+      "unit": "Automatic minus manual (mmHg)",
+      "values": {
+        "Manual first": -1.443764,
+        "Automatic first": -1.56730757,
+        "Within 2 hours": -1.46940207
+      },
+      "note": "Signed elapsed time orders examinations. The within-two-hour subset tests time separation."
+    }
+  },
+  "audit": {
+    "age_group_crossings_at_130_pct": {
+      "18–39": {
+        "up": {
+          "estimate": 3.66016006,
+          "se": 0.68199918,
+          "normal_95": [
+            2.32344166,
+            4.99687846
+          ]
+        },
+        "down": {
+          "estimate": 5.23376881,
+          "se": 0.62875243,
+          "normal_95": [
+            4.00141405,
+            6.46612356
+          ]
+        }
+      },
+      "40–59": {
+        "up": {
+          "estimate": 5.29035163,
+          "se": 0.98762023,
+          "normal_95": [
+            3.35461597,
+            7.22608729
+          ]
+        },
+        "down": {
+          "estimate": 10.50949565,
+          "se": 1.46834176,
+          "normal_95": [
+            7.63154579,
+            13.38744551
+          ]
+        }
+      },
+      "60+": {
+        "up": {
+          "estimate": 7.48336462,
+          "se": 0.87902743,
+          "normal_95": [
+            5.76047086,
+            9.20625837
+          ]
+        },
+        "down": {
+          "estimate": 9.09007699,
+          "se": 0.79837583,
+          "normal_95": [
+            7.52526037,
+            10.65489361
+          ]
+        }
+      }
+    },
+    "bias": {
+      "estimate": -1.50439348,
+      "se": 0.30995675,
+      "normal_95": [
+        -2.11190871,
+        -0.89687825
+      ]
+    },
+    "thresholds": {
+      "125": {
+        "up": 6.81821982,
+        "down": 8.65836291,
+        "manual": 38.71649016,
+        "automatic": 36.87634706,
+        "net_pp": {
+          "estimate": -1.84014309,
+          "se": 1.07358532,
+          "normal_95": [
+            -3.94437032,
+            0.26408414
+          ]
+        }
+      },
+      "130": {
+        "up": 5.32022669,
+        "down": 8.14543087,
+        "manual": 29.24527776,
+        "automatic": 26.42007357,
+        "net_pp": {
+          "estimate": -2.82520419,
+          "se": 1.01757438,
+          "normal_95": [
+            -4.81964997,
+            -0.83075841
+          ]
+        }
+      },
+      "135": {
+        "up": 4.18734196,
+        "down": 6.12165113,
+        "manual": 21.17148111,
+        "automatic": 19.23717194,
+        "net_pp": {
+          "estimate": -1.93430917,
+          "se": 0.99592919,
+          "normal_95": [
+            -3.88633038,
+            0.01771205
+          ]
+        }
+      },
+      "140": {
+        "up": 3.1642673,
+        "down": 4.82149942,
+        "manual": 15.60843181,
+        "automatic": 13.95119968,
+        "net_pp": {
+          "estimate": -1.65723212,
+          "se": 0.79064057,
+          "normal_95": [
+            -3.20688764,
+            -0.1075766
+          ]
+        }
+      }
+    },
+    "calibration": {
+      "Unadjusted": 7.20911971,
+      "Pooled offset": 7.15153111,
+      "Age shrinkage": 7.15201567
+    },
+    "order": {
+      "Manual first": -1.443764,
+      "Automatic first": -1.56730757,
+      "Within 2 hours": -1.46940207
+    },
+    "n": 4614,
+    "strata": 15,
+    "psus": 30,
+    "at_least_two": true
+  },
+  "next_decision": "For a surveillance trend crossing the protocol change, publish weighted directional switches and uncertainty alongside the series; use held-out error to choose any bridge.",
+  "project_id": "blood-pressure-protocol-bridge",
+  "study_design": {
+    "route": [
+      "descriptive",
+      "diagnostic"
+    ],
+    "protocol": "Pair each adult's first three available-position readings (at least two per protocol). Compare the signed differences and both threshold directions using MEC weights and stratified PSU linearization. Fit pooled and partially pooled age-band offsets on other PSUs only."
+  },
+  "data": {
+    "rows": 4614,
+    "grain": "One examined adult with at least two valid systolic readings in each protocol",
+    "snapshot_sha256": "947a1ab11da5537f29b18127c581e939eb17f040bdca3dc07b2f3be1dd8b72fe"
+  },
+  "decision_support": {
+    "status": "measurement_protocol_review"
+  }
+}

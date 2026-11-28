@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.1",
+  "rows": 1583,
+  "columns": 15,
+  "column_names": [
+    "key",
+    "source",
+    "student",
+    "problem",
+    "order",
+    "first",
+    "hint",
+    "attempts",
+    "prior_rate",
+    "prior_attempts",
+    "official",
+    "fold",
+    "file",
+    "correct",
+    "mutates"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "source": 0,
+    "student": 854,
+    "problem": 0,
+    "order": 854,
+    "first": 854,
+    "hint": 854,
+    "attempts": 854,
+    "prior_rate": 854,
+    "prior_attempts": 854,
+    "official": 854,
+    "fold": 854,
+    "file": 729,
+    "correct": 729,
+    "mutates": 729
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "attempts",
+        "correct",
+        "file",
+        "first",
+        "fold",
+        "hint",
+        "mutates",
+        "official",
+        "order",
+        "prior_attempts",
+        "prior_rate",
+        "student"
+      ],
+      "count": 9873,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 1583,
+  "row_count_matches_manifest": true
+}

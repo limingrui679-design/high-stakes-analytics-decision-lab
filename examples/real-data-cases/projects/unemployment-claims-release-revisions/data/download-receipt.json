@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "dol-ui",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "42dfbf703a53b9d94bea32be138b07d9f49c7183489f8abd3a263ed598a3a2fd",
+      "bytes": 100269
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

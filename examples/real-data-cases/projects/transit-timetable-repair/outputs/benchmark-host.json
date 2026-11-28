@@ -1,0 +1,38 @@
+{
+  "environment": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "python": "3.13.5",
+    "sqlite": "3.45.3"
+  },
+  "input_sha256": "865382d1400eb7ffb45ea3d4759650b6e78ff10b9c0640198d79140d996a662b",
+  "unmeasured_warmups": 1,
+  "measured_full_replays": 3,
+  "protocol": "Single process, perf_counter_ns, warm filesystem, no network. p95 is the empirical nearest-rank statistic. Timetable cache sizes use protocol-5 serialized bytes. Full road storage retains only the current snapshot, while incremental storage also retains history and reverse dependencies. Durations vary by host.",
+  "measurements": {
+    "full_query_ms": {
+      "samples": 900,
+      "median": 8.76894,
+      "p95": 25.01446,
+      "maximum": 57.78704
+    },
+    "repair_query_ms": {
+      "samples": 900,
+      "median": 0.00683,
+      "p95": 20.30671,
+      "maximum": 148.76325
+    },
+    "serialized_checkpoints_MiB": {
+      "samples": 30,
+      "median": 5.81951,
+      "p95": 6.0304,
+      "maximum": 6.0304
+    },
+    "serialized_labels_MiB": {
+      "samples": 30,
+      "median": 0.48363,
+      "p95": 0.52013,
+      "maximum": 0.52013
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.1",
+  "project_id": "last-mile-departure-slack",
+  "source_id": "amazon-routes",
+  "title": "Amazon Last Mile Routing Research Challenge, public model-build inputs",
+  "publisher": "Amazon / MIT Last Mile Routing Research Challenge",
+  "landing_page": "https://registry.opendata.aws/amazon-last-mile-challenges/",
+  "version": "2021 model-build inputs, observations from 2018",
+  "accessed_at": "2026-11-28",
+  "license": "CC BY-NC 4.0",
+  "redistribution": "Derived numerical extracts from Amazon under the research challenge CC BY-NC 4.0 data license, with attribution; see upstream license.",
+  "grain": "One stop in a complete route, including its row of the fixed travel-time matrix",
+  "expected_rows": 3072,
+  "sources": [
+    {
+      "source_id": "amazon-routes",
+      "publisher": "Amazon / MIT Last Mile Routing Research Challenge",
+      "url": "https://registry.opendata.aws/amazon-last-mile-challenges/",
+      "version": "2021 model-build inputs, observations from 2018",
+      "license": "CC BY-NC 4.0",
+      "license_url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/License.txt",
+      "output_fields": [
+        "route",
+        "station",
+        "packages",
+        "service",
+        "sequence",
+        "travel",
+        "close"
+      ],
+      "artifacts": [
+        {
+          "name": "amazon-actual_sequences.json",
+          "url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/almrrc2021-data-training/model_build_inputs/actual_sequences.json?download=1",
+          "bytes": 9665078,
+          "hash_algorithm": "sha256",
+          "sha256": "3de44067242e8fa841d4b852db8809afaa23fe852e452ee4a2f54f0f0fb77e3c"
+        },
+        {
+          "name": "amazon-package_data.json",
+          "url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/almrrc2021-data-training/model_build_inputs/package_data.json",
+          "bytes": 375437806,
+          "hash_algorithm": "sha256",
+          "sha256": "9ac858358e9f43d34cb65198c03601c814328a06dec9b71ee88b40aaec7f0966"
+        },
+        {
+          "name": "amazon-route_data.json",
+          "url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/almrrc2021-data-training/model_build_inputs/route_data.json",
+          "bytes": 78972162,
+          "hash_algorithm": "sha256",
+          "sha256": "da3a5d4e73b683d756111f0d9e6d3f20eb8e82adf7c89ee6ee0cb2239abd2f38"
+        },
+        {
+          "name": "amazon-travel_times.json",
+          "url": "https://amazon-last-mile-challenges.s3.amazonaws.com/almrrc2021/almrrc2021-data-training/model_build_inputs/travel_times.json?download=1",
+          "bytes": 1817146363,
+          "hash_algorithm": "sha256",
+          "sha256": "0023d7517380f15b611d77bc0f8a41a1b89459c7c12c37e88981ea16a2b99e2d"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "b889cb157e210dc5965d10658f9fbd9eef29b9fbea80566420585c97e11d8d65",
+      "bytes": 697744,
+      "uncompressed_sha256": "c698201eecf4d91c213782870a57e4e6b690a6026e15aa14f99255b20f8fee0f"
+    }
+  ]
+}

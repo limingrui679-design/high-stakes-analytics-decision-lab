@@ -1,0 +1,24 @@
+{
+  "project_id": "online-edit-review-capacity",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "slots_per_day": 3,
+    "holdout_start": "2024-01-01"
+  },
+  "parameter_register": [
+    {
+      "parameter": "slots_per_day",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits."
+    },
+    {
+      "parameter": "holdout_start",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits."
+    }
+  ]
+}

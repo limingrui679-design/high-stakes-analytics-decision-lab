@@ -1,0 +1,40 @@
+{
+  "project_id": "credit-drawdown-rates-hedge",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "lookback_weeks": 52,
+    "one_way_cost_bps": 5,
+    "trailing_loss_trigger": 0.02,
+    "credit_cut": 0.5
+  },
+  "parameter_register": [
+    {
+      "parameter": "lookback_weeks",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    },
+    {
+      "parameter": "one_way_cost_bps",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    },
+    {
+      "parameter": "trailing_loss_trigger",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    },
+    {
+      "parameter": "credit_cut",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk."
+    }
+  ]
+}

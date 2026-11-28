@@ -1,0 +1,66 @@
+{
+  "number": 22,
+  "slug": "marketplace-delivery-intervention",
+  "title": "Where Should a Marketplace Spend Its Delivery Improvement Budget?",
+  "accessed_at": "2026-11-28",
+  "key": "id",
+  "grain": "One order with exactly one recorded item from one seller; incomplete outcomes are retained",
+  "dataset": "Olist Brazilian E-Commerce Public Dataset",
+  "question": "Should a marketplace direct an equal number of review slots to seller handoffs or to post-handoff delivery?",
+  "owner": "Marketplace strategy and logistics team",
+  "design": "Separate final lateness by whether handoff met the seller timestamp. Adjust for destination and within-state delivery, shrink seller rates, and freeze priorities before each future quarter. Use only outcomes known at that decision date. Compare identical numbers of review slots, with explicit cost and effectiveness break-even.",
+  "boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness.",
+  "route": [
+    "diagnostic",
+    "prescriptive"
+  ],
+  "redistribution": "Derived deidentified non-commercial research extract credited to Olist under CC BY-NC-SA 4.0.",
+  "fields": {
+    "id": "Pseudonymous order identifier",
+    "placed": "Purchase date",
+    "month": "Purchase month",
+    "seller": "Pseudonymous seller identifier",
+    "origin": "Seller state",
+    "destination": "Buyer state",
+    "status": "Recorded order status",
+    "handoff_late": "Handoff after seller deadline; empty if missing",
+    "late": "Delivery after promised calendar date; empty if missing",
+    "known_month": "Latest actual handoff or delivery month",
+    "category": "Original Olist product-category code"
+  },
+  "sources": [
+    {
+      "source_id": "olist",
+      "publisher": "Olist",
+      "url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+      "version": "Publisher version 2",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "prefixes": [
+        "olist.zip"
+      ],
+      "output_fields": [
+        "seller",
+        "origin",
+        "destination",
+        "handoff_late",
+        "late"
+      ]
+    }
+  ],
+  "landing_page": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+  "publisher": "Olist",
+  "version": "Publisher version 2",
+  "endpoint": "intervention_budget_review",
+  "domains": [
+    "business analytics",
+    "marketplace operations",
+    "intervention design"
+  ],
+  "methods": [
+    "handoff vs last-mile delay",
+    "product and geography adjustment",
+    "matured quarterly evaluations",
+    "cost–effectiveness crossover"
+  ]
+}

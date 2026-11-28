@@ -1,0 +1,61 @@
+{
+  "number": 19,
+  "slug": "unemployment-claims-release-revisions",
+  "title": "Which State Unemployment Claims Alerts Survive the Next Release?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One US state or covered territory and initial-claims week, with two actual release dates",
+  "dataset": "Unemployment Insurance Weekly Claims, advance state tables",
+  "question": "Which state-level claims alerts survive the switch from first publication to claimant-residence reporting?",
+  "owner": "Labor-market monitoring analyst",
+  "design": "Extract consecutive dated weekly releases and verify each printed state change. Rank anomalies after state-specific scale and seasonality adjustment. Compare a seasonal prior, the raw release and a shrunk historical revision adjustment against the residence-based top-K in the next publication. Hold out late dates and respect label publication.",
+  "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock.",
+  "route": [
+    "diagnostic",
+    "predictive"
+  ],
+  "redistribution": "Derived government counts. Consecutive publication dates are retained for audit.",
+  "fields": {
+    "key": "Week-ending date and jurisdiction",
+    "week": "Saturday at end of claims week",
+    "state": "State or territory as published",
+    "released": "First publication date",
+    "next_release": "Following publication date",
+    "advance": "Advance claims under liable-state reporting",
+    "residence": "Prior-week claims printed in following release"
+  },
+  "sources": [
+    {
+      "source_id": "dol-ui",
+      "publisher": "US Department of Labor",
+      "url": "https://oui.doleta.gov/unemploy/claims_arch.asp",
+      "version": "Dated weekly releases, December 2022–2025",
+      "license": "US government public data",
+      "license_url": "https://www.dol.gov/general/aboutdol/website-policies",
+      "prefixes": [
+        "dol-"
+      ],
+      "output_fields": [
+        "advance",
+        "residence",
+        "released",
+        "next_release"
+      ]
+    }
+  ],
+  "landing_page": "https://oui.doleta.gov/unemploy/claims_arch.asp",
+  "publisher": "US Department of Labor",
+  "version": "Dated weekly releases, December 2022–2025",
+  "endpoint": "vintage_sensitive_alerting",
+  "domains": [
+    "applied machine learning",
+    "administrative data",
+    "temporal evaluation"
+  ],
+  "methods": [
+    "advance and residence-based vintages",
+    "publication as-of join",
+    "statewise partial pooling",
+    "fixed alert capacity"
+  ]
+}

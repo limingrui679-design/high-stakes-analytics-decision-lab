@@ -1,0 +1,17 @@
+{
+  "grain": "One active retail-food license with a previously identified restaurant at the start of a quarter",
+  "primary_key": "key",
+  "fields": {
+    "key": "Quarter/license key",
+    "quarter": "Decision date",
+    "license": "Public license number",
+    "area": "Pre-specified latitude band from a prior visit",
+    "risk": "Risk category at prior visit",
+    "days_since": "Days since most recent prior observation",
+    "prior_visits": "Earlier canvass visit count",
+    "critical_history": "Earlier visits with a critical finding",
+    "last_critical": "Critical finding on last observed past visit",
+    "outcome": "Critical finding at next inspected date this quarter; empty if unlabeled",
+    "inspection_day": "Observed days from quarter start to first published restaurant inspection, when available"
+  }
+}

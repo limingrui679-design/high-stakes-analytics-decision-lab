@@ -1,0 +1,7 @@
+{
+  "status": "measurement_protocol_review",
+  "owner": "Population health surveillance team",
+  "evidence": "Across 4,614 paired adults, the survey-weighted automatic-minus-manual mean was -1.50 mmHg. At 130 mmHg, 5.32% moved above and 8.15% moved below the cutoff.",
+  "next_decision": "For a surveillance trend crossing the protocol change, publish weighted directional switches and uncertainty alongside the series; use held-out error to choose any bridge.",
+  "boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses."
+}

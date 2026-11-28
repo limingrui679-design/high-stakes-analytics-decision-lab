@@ -19,7 +19,7 @@ high-stakes-analytics-decision-lab/
 ├── references/                     # runtime quality, method, provenance, and report contracts
 ├── assets/                         # templates and canonical README visuals
 ├── scripts/                        # profiling, preparation, analysis, generation, verification
-├── examples/real-data-cases/       # fifteen complete reproducible evidence projects
+├── examples/real-data-cases/       # thirty complete reproducible evidence projects
 ├── tests/                          # standalone contract and regression suite
 ├── .github/                        # CI, security, issue, and pull-request workflows
 ├── Makefile                        # memorable maintainer commands

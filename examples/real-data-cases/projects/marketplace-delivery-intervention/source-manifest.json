@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.1",
+  "project_id": "marketplace-delivery-intervention",
+  "source_id": "olist",
+  "title": "Olist Brazilian E-Commerce Public Dataset",
+  "publisher": "Olist",
+  "landing_page": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+  "version": "Publisher version 2",
+  "accessed_at": "2026-11-28",
+  "license": "CC BY-NC-SA 4.0",
+  "redistribution": "Derived deidentified non-commercial research extract credited to Olist under CC BY-NC-SA 4.0.",
+  "grain": "One order with exactly one recorded item from one seller; incomplete outcomes are retained",
+  "expected_rows": 88863,
+  "sources": [
+    {
+      "source_id": "olist",
+      "publisher": "Olist",
+      "url": "https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce",
+      "version": "Publisher version 2",
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "output_fields": [
+        "seller",
+        "origin",
+        "destination",
+        "handoff_late",
+        "late"
+      ],
+      "artifacts": [
+        {
+          "name": "olist.zip",
+          "url": "https://www.kaggle.com/api/v1/datasets/download/olistbr/brazilian-ecommerce?datasetVersionNumber=2",
+          "bytes": 44717580,
+          "hash_algorithm": "sha256",
+          "sha256": "967e41e04fc306fe604e2a693f488995a8b41e5047418f8a5c8e4abd6deca784"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "5e3c79530f605961e4c56c33747d353ae1f1d08f33547686e8e8cad1ef366c68",
+      "bytes": 3708496,
+      "uncompressed_sha256": "6146a1a60bc634f95e69d36969d3c93136f23581948cdcb2d33838ec918d6fdd"
+    }
+  ]
+}

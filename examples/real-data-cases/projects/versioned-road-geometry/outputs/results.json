@@ -1,0 +1,272 @@
+{
+  "conclusion": "Across 29 consecutive real map releases, dependency-aware repair matched every full rebuild and the next independent snapshot (3,655 highway geometries). Updating only revised ways missed 1 geometry-version discrepancy.",
+  "headline_metrics": [
+    "Checked sequences: 29",
+    "Final highway geometries: 3655",
+    "Interrupted transaction reopens: 2"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Geometry materializations over all versions",
+      "unit": "Highway-way evaluations",
+      "values": {
+        "Full rebuild": 105997,
+        "Dependency closure": 48
+      },
+      "note": "Counts use the same highway scope and oracle per version."
+    },
+    "slice": {
+      "title": "Consequences of indexing only edited ways",
+      "unit": "Incorrect geometry-version pairs",
+      "values": {
+        "Direct edits only": 1,
+        "Reverse dependency closure": 0
+      },
+      "note": "A moved node can change its referencing road even without a new way version."
+    },
+    "sensitivity": {
+      "title": "Commit and interruption checks",
+      "unit": "Completed checks",
+      "values": {
+        "Pinned readers": 29,
+        "Duplicate replays": 29,
+        "Rollback and reopen": 2,
+        "Writer process exits": 1
+      },
+      "note": "Reader snapshot checks span the commit. The writer-exit trial deliberately leaves a transaction uncommitted."
+    }
+  },
+  "audit": {
+    "per_sequence": {
+      "4898": {
+        "roads": 3656,
+        "indirect_only": 0,
+        "affected": 13,
+        "changes": 20,
+        "written_geometries": 0
+      },
+      "4899": {
+        "roads": 3656,
+        "indirect_only": 0,
+        "affected": 4,
+        "changes": 10,
+        "written_geometries": 0
+      },
+      "4900": {
+        "roads": 3655,
+        "indirect_only": 1,
+        "affected": 4,
+        "changes": 6,
+        "written_geometries": 4
+      },
+      "4901": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 3,
+        "written_geometries": 0
+      },
+      "4902": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4903": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4904": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 1,
+        "written_geometries": 0
+      },
+      "4905": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4906": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 1,
+        "changes": 4,
+        "written_geometries": 0
+      },
+      "4907": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4908": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 7,
+        "written_geometries": 0
+      },
+      "4909": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4910": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 4,
+        "written_geometries": 0
+      },
+      "4911": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 2,
+        "changes": 8,
+        "written_geometries": 0
+      },
+      "4912": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 1,
+        "written_geometries": 0
+      },
+      "4913": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 5,
+        "written_geometries": 0
+      },
+      "4914": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 23,
+        "changes": 50,
+        "written_geometries": 0
+      },
+      "4915": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4916": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4917": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 12,
+        "changes": 13,
+        "written_geometries": 0
+      },
+      "4918": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4919": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4920": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4921": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 1,
+        "changes": 8,
+        "written_geometries": 0
+      },
+      "4922": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4923": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      },
+      "4924": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 1,
+        "written_geometries": 0
+      },
+      "4925": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 1,
+        "written_geometries": 0
+      },
+      "4926": {
+        "roads": 3655,
+        "indirect_only": 0,
+        "affected": 0,
+        "changes": 0,
+        "written_geometries": 0
+      }
+    },
+    "initial_road_ways": 3656,
+    "oracle_mismatches": 0,
+    "full_recomputes": 105997,
+    "indexed_recomputes": 48,
+    "geometry_row_writes": 4,
+    "direct_only_misses": 1,
+    "crash_reopens": 2,
+    "writer_process_crash_checks": 1,
+    "pinned_reader_checks": 29
+  },
+  "next_decision": "Publish a version after reverse dependencies, updated geometries and the sequence have committed together. Keep an indexed historical lookup and periodically verify the source snapshot.",
+  "project_id": "versioned-road-geometry",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "prescriptive"
+    ],
+    "protocol": "Start at snapshot sequence 4897, replay sequences 4898–4926, and compare geometry at every version with a full rebuild. Track backward node-to-way dependencies and publish versioned geometry through an atomic SQLite transaction. Independently verify the terminal state against the 1 October publisher extract. Exercise replay, skipped sequence, interrupted commit and reopening."
+  },
+  "data": {
+    "rows": 96081,
+    "grain": "One base/oracle OSM element or one ordered node/way edit or sequence marker",
+    "snapshot_sha256": "45a55d15680c55fca482ff446b221e4e1b0f26b55e84fb7889fa9f5b17c7f8e9"
+  },
+  "decision_support": {
+    "status": "transactional_release"
+  }
+}

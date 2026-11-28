@@ -1,0 +1,29 @@
+{
+  "project_id": "blood-pressure-protocol-bridge",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "prior_people": 100,
+    "thresholds_mmHg": [
+      125,
+      130,
+      135,
+      140
+    ]
+  },
+  "parameter_register": [
+    {
+      "parameter": "prior_people",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses."
+    },
+    {
+      "parameter": "thresholds_mmHg",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses."
+    }
+  ]
+}

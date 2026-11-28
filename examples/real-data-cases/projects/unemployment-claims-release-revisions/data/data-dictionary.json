@@ -1,0 +1,13 @@
+{
+  "grain": "One US state or covered territory and initial-claims week, with two actual release dates",
+  "primary_key": "key",
+  "fields": {
+    "key": "Week-ending date and jurisdiction",
+    "week": "Saturday at end of claims week",
+    "state": "State or territory as published",
+    "released": "First publication date",
+    "next_release": "Following publication date",
+    "advance": "Advance claims under liable-state reporting",
+    "residence": "Prior-week claims printed in following release"
+  }
+}

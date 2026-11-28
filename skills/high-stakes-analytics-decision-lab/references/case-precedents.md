@@ -1,4 +1,4 @@
-# Fifteen case precedents
+# Thirty case precedents
 
 These school-neutral precedents are navigation aids. Reuse a method contract, not a saved empirical result, threshold, subgroup, weight, causal claim, or recommendation. Follow the linked report for full sources and limitations.
 
@@ -19,6 +19,21 @@ These school-neutral precedents are navigation aids. Reuse a method contract, no
 | 13 | [Small-Sample Repeated-Measures Inference](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/13-behavioral-reading-experiment.md) | descriptive / inferential | Statistical research → Behavior and policy evidence | claim-bounded decision review |
 | 14 | [NHANES Mortality Transportability and Population Inequality](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/14-nhanes-population-transportability.md) | descriptive / diagnostic / decision | Population health and informatics → Statistical research → AI and model validation | population research only |
 | 15 | [Spatial Equity Planning with Transit and Site-Evidence Gates](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/15-spatial-equity-planning.md) | descriptive / prescriptive | Spatial equity and planning → Behavior and policy evidence → Analytics to action | claim-bounded decision review |
+| 16 | [When a Blood Pressure Survey Changes Its Measurement Protocol](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/16-blood-pressure-protocol-bridge.md) | descriptive / diagnostic | Population health and informatics → Statistical research → Risk and decision analysis | measurement protocol review |
+| 17 | [When Should a Wrist Monitor Withhold a Heart Rate Reading?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/17-wearable-heart-rate-abstention.md) | diagnostic / predictive | Population health and informatics → AI and model validation → Statistical research | selective measurement review |
+| 18 | [When Should a Call Centre Reallocate Staff After a Demand Shock?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/18-call-centre-flexible-dispatch.md) | diagnostic / predictive / prescriptive | Analytics to action → Risk and decision analysis → Statistical research | staffing policy review |
+| 19 | [Which State Unemployment Claims Alerts Survive the Next Release?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/19-unemployment-claims-release-revisions.md) | diagnostic / predictive | AI and model validation → Data systems and governance → Statistical research | vintage sensitive alerting |
+| 20 | [Maintaining Earliest Arrival Routes Across Timetable Revisions](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/20-transit-timetable-repair.md) | diagnostic / prescriptive | Data systems and governance → Spatial equity and planning → Analytics to action | routing update review |
+| 21 | [The Last Review Slot in an Online Queue](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/21-online-edit-review-capacity.md) | predictive / prescriptive | Risk and decision analysis → Analytics to action → AI and model validation | finite inventory policy |
+| 22 | [Where Should a Marketplace Spend Its Delivery Improvement Budget?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/22-marketplace-delivery-intervention.md) | diagnostic / prescriptive | Analytics to action → Risk and decision analysis → Statistical research | intervention budget review |
+| 23 | [Knowing When to Fall Back After a Drive Fleet Changes](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/23-drive-failure-policy-fallback.md) | predictive / prescriptive | AI and model validation → Data systems and governance → Risk and decision analysis | reliability handoff |
+| 24 | [How Much Departure Delay Can a Last-Mile Route Absorb?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/24-last-mile-departure-slack.md) | diagnostic / prescriptive | Risk and decision analysis → Analytics to action → Spatial equity and planning | dispatch feasibility review |
+| 25 | [How Much Inspection Capacity Should a City Reserve for Random Audits?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/25-food-inspection-exploration.md) | diagnostic / prescriptive | Behavior and policy evidence → Statistical research → Analytics to action | inspection audit design |
+| 26 | [Counterexamples or Direct Corrections for Novice Programmers?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/26-programming-hint-design.md) | diagnostic / predictive | Behavior and policy evidence → AI and model validation → Statistical research | prospective experiment |
+| 27 | [Cut Credit Exposure or Hedge Rates During a Corporate Bond Drawdown?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/27-credit-drawdown-rates-hedge.md) | diagnostic / prescriptive | Risk and decision analysis → Statistical research → Analytics to action | investment risk review |
+| 28 | [How Reliable Are Model Comparisons With Overlapping Evaluation Windows?](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/28-overlapping-forecast-comparisons.md) | diagnostic / predictive | Statistical research → AI and model validation → Risk and decision analysis | dependence aware comparison |
+| 29 | [When Reported Earnings Outrun Cash Collections](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/29-earnings-cash-collection.md) | diagnostic / predictive | Risk and decision analysis → Data systems and governance → Statistical research | valuation review |
+| 30 | [Consistent Road Geometry During Interrupted Map Updates](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/blob/main/examples/real-data-cases/cases/30-versioned-road-geometry.md) | diagnostic / prescriptive | Data systems and governance → AI and model validation → Spatial equity and planning | transactional release |
 
 ## Selection notes
 
@@ -126,3 +141,108 @@ These school-neutral precedents are navigation aids. Reuse a method contract, no
 - Reviewer signals: complete-case route; missingness sensitivity; observed transit proximity; site evidence gate.
 - Boundary: No site recommendation until parcel, zoning, network, cost, and community evidence is supplied.
 - Full reproducible project: [spatial-equity-planning](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/spatial-equity-planning)
+
+### 16 · When a Blood Pressure Survey Changes Its Measurement Protocol
+
+- Question: How much does replacing a blood-pressure measurement protocol change a survey threshold count?
+- Reviewer signals: paired protocol crossover; stratified PSU linearization; directional threshold crossings; leave-PSU-out agreement.
+- Boundary: The device and examiner change together. Weighted results describe adults with paired examination records; threshold crossings are survey classifications, not new clinical diagnoses.
+- Full reproducible project: [blood-pressure-protocol-bridge](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/blood-pressure-protocol-bridge)
+
+### 17 · When Should a Wrist Monitor Withhold a Heart Rate Reading?
+
+- Question: When can a wrist monitor's quality gate reduce error without leaving users without readings for too long?
+- Reviewer signals: frozen external acceptance rule; paired ECG reference; risk by activity; uninterrupted readout gaps.
+- Boundary: The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions.
+- Full reproducible project: [wearable-heart-rate-abstention](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/wearable-heart-rate-abstention)
+
+### 18 · When Should a Call Centre Reallocate Staff After a Demand Shock?
+
+- Question: When, within a fixed staffing budget, should a manager release temporary service capacity?
+- Reviewer signals: censored patience distribution; held-out staffing calibration; matched reserve hours; switching cost.
+- Boundary: Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue.
+- Full reproducible project: [call-centre-flexible-dispatch](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/call-centre-flexible-dispatch)
+
+### 19 · Which State Unemployment Claims Alerts Survive the Next Release?
+
+- Question: Which state-level claims alerts survive the switch from first publication to claimant-residence reporting?
+- Reviewer signals: advance and residence-based vintages; publication as-of join; statewise partial pooling; fixed alert capacity.
+- Boundary: The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock.
+- Full reproducible project: [unemployment-claims-release-revisions](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/unemployment-claims-release-revisions)
+
+### 20 · Maintaining Earliest Arrival Routes Across Timetable Revisions
+
+- Question: Can a router repair a revised timetable and still return exactly the same earliest arrivals as rebuilding?
+- Reviewer signals: exact timetable oracle; query checkpoints; off-path added connection; transfer-aware replay.
+- Boundary: The archive assigns each download a non-overlapping archive interval. This is a comparison of overlapping planned calendar service inside those files. Results concern scheduled travel in a selected network, with a stated same-station transfer buffer and no street-walking links.
+- Full reproducible project: [transit-timetable-repair](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/transit-timetable-repair)
+
+### 21 · The Last Review Slot in an Online Queue
+
+- Question: When should an online reviewer spend the last daily slot on the current edit?
+- Reviewer signals: finite-horizon slot value; expiring daily inventory; score-only oracle; realized-event oracle.
+- Boundary: An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits.
+- Full reproducible project: [online-edit-review-capacity](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/online-edit-review-capacity)
+
+### 22 · Where Should a Marketplace Spend Its Delivery Improvement Budget?
+
+- Question: Should a marketplace direct an equal number of review slots to seller handoffs or to post-handoff delivery?
+- Reviewer signals: handoff vs last-mile delay; product and geography adjustment; matured quarterly evaluations; cost–effectiveness crossover.
+- Boundary: An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness.
+- Full reproducible project: [marketplace-delivery-intervention](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/marketplace-delivery-intervention)
+
+### 23 · Knowing When to Fall Back After a Drive Fleet Changes
+
+- Question: When monitoring signals disappear after a fleet change, is switching to an interpretable rule worth the lost warnings?
+- Reviewer signals: serial and hardware-family holdout; right-censored device days; episode-level false alerts; delayed-label fallback.
+- Boundary: A recorded hardware failure is a proxy for replacement need. A late and an absent failure are distinguishable only while the drive remains observed. Alternative dispatch rules are replayed on logged outcomes.
+- Full reproducible project: [drive-failure-policy-fallback](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/drive-failure-policy-fallback)
+
+### 24 · How Much Departure Delay Can a Last-Mile Route Absorb?
+
+- Question: How late can a dispatcher release a route while still honoring its published windows and a stated end of shift?
+- Reviewer signals: package time windows; verified departure witnesses; independent upper bounds; depot holdout.
+- Boundary: Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.
+- Full reproducible project: [last-mile-departure-slack](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/last-mile-departure-slack)
+
+### 25 · How Much Inspection Capacity Should a City Reserve for Random Audits?
+
+- Question: How much of a city's finite inspection capacity should be reserved for random exploration?
+- Reviewer signals: licensed eligibility roster; selective outcomes; stratified exploration; design probabilities.
+- Boundary: In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier.
+- Full reproducible project: [food-inspection-exploration](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/food-inspection-exploration)
+
+### 26 · Counterexamples or Direct Corrections for Novice Programmers?
+
+- Question: Should a beginner receive an elicited counterexample or a direct correction after a repeatable misconception?
+- Reviewer signals: learner-held-out prediction; observed misconception; two runnable feedback designs; independently scored transfer.
+- Boundary: The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort.
+- Full reproducible project: [programming-hint-design](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/programming-hint-design)
+
+### 27 · Cut Credit Exposure or Hedge Rates During a Corporate Bond Drawdown?
+
+- Question: During a credit drawdown, how does reducing corporate exposure compare with matching its expected rate sensitivity using a Treasury hedge?
+- Reviewer signals: lagged Treasury beta match; self-financing overlay; distribution-adjusted NAV; turnover break-even.
+- Boundary: A backtest using fund NAVs is a modeled portfolio. Shorting and funding spreads beyond the stated transaction cost can change the comparison. The non-rate residual includes liquidity and issuer-specific risk.
+- Full reproducible project: [credit-drawdown-rates-hedge](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/credit-drawdown-rates-hedge)
+
+### 28 · How Reliable Are Model Comparisons With Overlapping Evaluation Windows?
+
+- Question: How wide should a forecast-comparison interval be when adjacent scores reuse six days of observations?
+- Reviewer signals: paired calendar dates; overlapping forecast losses; HAC and moving blocks; known-truth coverage.
+- Boundary: The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas.
+- Full reproducible project: [overlapping-forecast-comparisons](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/overlapping-forecast-comparisons)
+
+### 29 · When Reported Earnings Outrun Cash Collections
+
+- Question: When earnings outrun collections, do receivables and inventory changes improve next-year cash-flow forecasts?
+- Reviewer signals: as-filed accessions; mature competing forecasts; issuer footnote; cash-collection valuation sensitivity.
+- Boundary: Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity.
+- Full reproducible project: [earnings-cash-collection](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/earnings-cash-collection)
+
+### 30 · Consistent Road Geometry During Interrupted Map Updates
+
+- Question: Can an interrupted map update publish mutually consistent node positions and road geometry?
+- Reviewer signals: node-to-road reverse dependencies; SQLite WAL snapshot; replay after rollback; independent source oracle.
+- Boundary: This is a reproducible experiment on a single regional OSM extract and a local SQLite store. Work counts measure recomputation. System latency and production availability require separate measurement.
+- Full reproducible project: [versioned-road-geometry](https://github.com/limingrui679-design/high-stakes-analytics-decision-lab/tree/main/examples/real-data-cases/projects/versioned-road-geometry)

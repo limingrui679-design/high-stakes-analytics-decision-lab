@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 158" role="img" aria-labelledby="t d">
+<title id="t">Independent time-budget comparison</title><desc id="d">Wall-clock budget per method and route is fixed; each returned order is replayed offline.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Independent time-budget comparison</text>
+<text x="16" y="47" font-size="13">Witnessed nonnegative routes</text>
+<path d="M 237.00 55 V 139" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">OR-Tools VRPTW</text>
+<rect x="237.00" y="62" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">10.000</text>
+<text x="16" y="111" font-size="13">Timed relocation</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">10.000</text>
+</g></svg>

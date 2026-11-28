@@ -1,0 +1,80 @@
+{
+  "number": 17,
+  "slug": "wearable-heart-rate-abstention",
+  "title": "When Should a Wrist Monitor Withhold a Heart Rate Reading?",
+  "accessed_at": "2026-11-28",
+  "key": "key",
+  "grain": "One non-overlapping eight-second activity window from an anonymized participant",
+  "dataset": "PPG-DaLiA daily activities and WESAD laboratory sessions",
+  "question": "When can a wrist monitor's quality gate reduce error without leaving users without readings for too long?",
+  "owner": "Biomedical signal-informatics researcher",
+  "design": "Estimate wrist rate from the strongest physiological-frequency spectral peak. Compare movement-only gating to spectral concentration penalized by movement. Tune on complete DaLiA participants, freeze a threshold and test on unseen DaLiA people and the separate WESAD cohort. Check equivalent coverage, per-person and per-activity error, rejected ECG windows, and sustained gaps.",
+  "boundary": "The ECG reference is algorithm-derived. The external cohort changes the activity setting; both studies use Empatica wrist hardware. Reported accuracy applies only to the activity and ECG eligibility definitions.",
+  "route": [
+    "diagnostic",
+    "predictive"
+  ],
+  "redistribution": "Derived window summaries only. No source waveforms, questionnaires or direct participant identifiers are included. Users of the data must observe the respective research-use terms.",
+  "fields": {
+    "key": "Cohort/participant/window",
+    "cohort": "Source study",
+    "person": "Study-specific participant ID",
+    "sec": "Aligned window start in seconds",
+    "activity": "Source-defined activity ID",
+    "wrist_bpm": "Spectral wrist HR estimate",
+    "ecg_bpm": "Chest ECG-derived reference; blank when unsuitable",
+    "peak_share": "Fraction of in-band power around largest peak",
+    "motion": "Acceleration variability relative to median vector magnitude"
+  },
+  "sources": [
+    {
+      "source_id": "dalia",
+      "publisher": "Attila Reiss et al. / UCI",
+      "url": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
+      "version": "PPG-DaLiA field study",
+      "license": "CC BY 4.0, see UCI record",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "prefixes": [
+        "dalia"
+      ],
+      "output_fields": [
+        "activity",
+        "wrist_bpm",
+        "ecg_bpm",
+        "motion"
+      ]
+    },
+    {
+      "source_id": "wesad",
+      "publisher": "Philip Schmidt et al. / Universität Siegen",
+      "url": "https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html",
+      "version": "WESAD ICMI 2018",
+      "license": "Scientific research use, credit original authors",
+      "license_url": "https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html",
+      "prefixes": [
+        "wesad"
+      ],
+      "output_fields": [
+        "activity",
+        "wrist_bpm",
+        "ecg_bpm",
+        "motion"
+      ]
+    }
+  ],
+  "landing_page": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
+  "publisher": "Attila Reiss et al. / UCI and Philip Schmidt et al. / Universität Siegen",
+  "version": "PPG-DaLiA field study / WESAD ICMI 2018",
+  "endpoint": "selective_measurement_review",
+  "domains": [
+    "wearable biomedical informatics",
+    "selective prediction",
+    "signal processing"
+  ],
+  "methods": [
+    "frozen external acceptance rule",
+    "paired ECG reference",
+    "risk by activity",
+    "uninterrupted readout gaps"
+  ]
+}

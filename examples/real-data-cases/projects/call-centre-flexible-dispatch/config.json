@@ -1,0 +1,16 @@
+{
+  "project_id": "call-centre-flexible-dispatch",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "flex_slots": 4
+  },
+  "parameter_register": [
+    {
+      "parameter": "flex_slots",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "Historical outcomes describe observed calls. Staffing schedules, patience past the censoring point, operator flexibility and policy-dependent waits are simulated. The five-hour morning replay begins with an empty queue."
+    }
+  ]
+}

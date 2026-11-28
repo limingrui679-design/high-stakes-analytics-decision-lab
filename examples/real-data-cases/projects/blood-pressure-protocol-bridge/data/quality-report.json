@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1",
+  "rows": 4614,
+  "columns": 10,
+  "column_names": [
+    "person",
+    "age",
+    "stratum",
+    "psu",
+    "weight",
+    "minutes",
+    "n_manual",
+    "n_automatic",
+    "manual",
+    "automatic"
+  ],
+  "missing_count_by_column": {
+    "person": 0,
+    "age": 0,
+    "stratum": 0,
+    "psu": 0,
+    "weight": 0,
+    "minutes": 0,
+    "n_manual": 0,
+    "n_automatic": 0,
+    "manual": 0,
+    "automatic": 0
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "quality_status": "ready",
+  "expected_rows": 4614,
+  "row_count_matches_manifest": true
+}

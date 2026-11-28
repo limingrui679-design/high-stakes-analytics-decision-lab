@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 192" role="img" aria-labelledby="t d">
+<title id="t">Waiting among answered calls</title><desc id="d">The simulation runs common arrivals, latent patience draws and service durations.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Waiting among answered calls</text>
+<text x="16" y="47" font-size="13">Mean seconds over held-out days</text>
+<path d="M 237.00 55 V 173" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">fixed</text>
+<rect x="237.00" y="62" width="369.42" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">81.196</text>
+<text x="16" y="111" font-size="13">queue</text>
+<rect x="237.00" y="96" width="384.25" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">84.456</text>
+<text x="16" y="145" font-size="13">horizon</text>
+<rect x="237.00" y="130" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">92.313</text>
+</g></svg>

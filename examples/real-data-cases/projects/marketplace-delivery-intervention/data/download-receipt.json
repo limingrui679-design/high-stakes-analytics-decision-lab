@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "olist",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "5e3c79530f605961e4c56c33747d353ae1f1d08f33547686e8e8cad1ef366c68",
+      "bytes": 3708496
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "nhanes-bridge",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "77d9302589452ee4dcd3c2395a61fc6d9d6bbf0b7f315ee6aaab73f4b98a927b",
+      "bytes": 84853
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

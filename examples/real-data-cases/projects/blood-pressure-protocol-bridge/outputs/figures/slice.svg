@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 825 362" role="img" aria-labelledby="t d">
+<title id="t">Which participants cross the analysis threshold?</title><desc id="d">Movement up and down can cancel in a prevalence difference.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<g font-family="sans-serif" fill="#172d43">
+<text x="16" y="25" font-size="18" font-weight="bold">Which participants cross the analysis threshold?</text>
+<text x="16" y="47" font-size="13">Weighted percent of paired adults</text>
+<path d="M 237.00 55 V 343" stroke="#8495a3"/>
+<text x="16" y="77" font-size="13">125 up</text>
+<rect x="237.00" y="62" width="330.74" height="18" fill="#166c77"/>
+<text x="683" y="77" font-size="14">6.818</text>
+<text x="16" y="111" font-size="13">125 down</text>
+<rect x="237.00" y="96" width="420.00" height="18" fill="#166c77"/>
+<text x="683" y="111" font-size="14">8.658</text>
+<text x="16" y="145" font-size="13">130 up</text>
+<rect x="237.00" y="130" width="258.07" height="18" fill="#166c77"/>
+<text x="683" y="145" font-size="14">5.320</text>
+<text x="16" y="179" font-size="13">130 down</text>
+<rect x="237.00" y="164" width="395.12" height="18" fill="#166c77"/>
+<text x="683" y="179" font-size="14">8.145</text>
+<text x="16" y="213" font-size="13">135 up</text>
+<rect x="237.00" y="198" width="203.12" height="18" fill="#166c77"/>
+<text x="683" y="213" font-size="14">4.187</text>
+<text x="16" y="247" font-size="13">135 down</text>
+<rect x="237.00" y="232" width="296.95" height="18" fill="#166c77"/>
+<text x="683" y="247" font-size="14">6.122</text>
+<text x="16" y="281" font-size="13">140 up</text>
+<rect x="237.00" y="266" width="153.49" height="18" fill="#166c77"/>
+<text x="683" y="281" font-size="14">3.164</text>
+<text x="16" y="315" font-size="13">140 down</text>
+<rect x="237.00" y="300" width="233.88" height="18" fill="#166c77"/>
+<text x="683" y="315" font-size="14">4.821</text>
+</g></svg>

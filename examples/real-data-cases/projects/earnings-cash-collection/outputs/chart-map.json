@@ -1,0 +1,26 @@
+{
+  "project_id": "earnings-cash-collection",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "One-year-ahead cash-flow forecasts",
+      "supported_finding": "Each fitted model sees only labels publicly filed before the forecast.",
+      "interpretation_boundary": "Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity.",
+      "source_id": "sec-edgar-companyfacts"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Does the cash advantage persist by year?",
+      "supported_finding": "Negative values mean the accrual model lost to cash persistence.",
+      "interpretation_boundary": "Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity.",
+      "source_id": "sec-edgar-companyfacts"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Apple residual-income sensitivity",
+      "supported_finding": "Scenario valuation holds book fixed under full payout. The cost of equity and persistence are assumptions.",
+      "interpretation_boundary": "Predictive associations in a selected panel do not establish manipulation or causality. Vendor non-trade receivables are distinct from customer trade balances. Scenario valuations depend on payout, opening book, abnormal-return persistence and cost of equity.",
+      "source_id": "sec-edgar-companyfacts"
+    }
+  ]
+}

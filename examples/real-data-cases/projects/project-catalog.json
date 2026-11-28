@@ -1,8 +1,8 @@
 {
-  "portfolio_version": "9.0.0",
-  "verified_on": "2026-08-10",
+  "portfolio_version": "10.0.0",
+  "verified_on": "2026-11-28",
   "public_project_type": "real_world_research_project",
-  "project_count": 15,
+  "project_count": 30,
   "projects": [
     {
       "id": "bike-demand-operations",
@@ -249,6 +249,232 @@
         "urban planning",
         "spatial analytics",
         "transit equity"
+      ]
+    },
+    {
+      "id": "blood-pressure-protocol-bridge",
+      "code": "R16",
+      "title": "When a Blood Pressure Survey Changes Its Measurement Protocol",
+      "analytics": [
+        "descriptive",
+        "diagnostic"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "population health surveillance",
+        "measurement error",
+        "survey inference"
+      ]
+    },
+    {
+      "id": "wearable-heart-rate-abstention",
+      "code": "R17",
+      "title": "When Should a Wrist Monitor Withhold a Heart Rate Reading?",
+      "analytics": [
+        "diagnostic",
+        "predictive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "wearable biomedical informatics",
+        "selective prediction",
+        "signal processing"
+      ]
+    },
+    {
+      "id": "call-centre-flexible-dispatch",
+      "code": "R18",
+      "title": "When Should a Call Centre Reallocate Staff After a Demand Shock?",
+      "analytics": [
+        "diagnostic",
+        "predictive",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "systems engineering",
+        "queueing simulation",
+        "workforce control"
+      ]
+    },
+    {
+      "id": "unemployment-claims-release-revisions",
+      "code": "R19",
+      "title": "Which State Unemployment Claims Alerts Survive the Next Release?",
+      "analytics": [
+        "diagnostic",
+        "predictive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "applied machine learning",
+        "administrative data",
+        "temporal evaluation"
+      ]
+    },
+    {
+      "id": "transit-timetable-repair",
+      "code": "R20",
+      "title": "Maintaining Earliest Arrival Routes Across Timetable Revisions",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "computer science algorithms",
+        "transit routing",
+        "incremental computation"
+      ]
+    },
+    {
+      "id": "online-edit-review-capacity",
+      "code": "R21",
+      "title": "The Last Review Slot in an Online Queue",
+      "analytics": [
+        "predictive",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "operations research",
+        "stochastic control",
+        "online allocation"
+      ]
+    },
+    {
+      "id": "marketplace-delivery-intervention",
+      "code": "R22",
+      "title": "Where Should a Marketplace Spend Its Delivery Improvement Budget?",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "business analytics",
+        "marketplace operations",
+        "intervention design"
+      ]
+    },
+    {
+      "id": "drive-failure-policy-fallback",
+      "code": "R23",
+      "title": "Knowing When to Fall Back After a Drive Fleet Changes",
+      "analytics": [
+        "predictive",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "machine learning engineering",
+        "time-to-event validation",
+        "reliability monitoring"
+      ]
+    },
+    {
+      "id": "last-mile-departure-slack",
+      "code": "R24",
+      "title": "How Much Departure Delay Can a Last-Mile Route Absorb?",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "freight transportation",
+        "vehicle routing",
+        "feasibility certificates"
+      ]
+    },
+    {
+      "id": "food-inspection-exploration",
+      "code": "R25",
+      "title": "How Much Inspection Capacity Should a City Reserve for Random Audits?",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "technology policy",
+        "public-sector inspection",
+        "randomized exploration"
+      ]
+    },
+    {
+      "id": "programming-hint-design",
+      "code": "R26",
+      "title": "Counterexamples or Direct Corrections for Novice Programmers?",
+      "analytics": [
+        "diagnostic",
+        "predictive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "learning design",
+        "educational technology",
+        "transfer assessment"
+      ]
+    },
+    {
+      "id": "credit-drawdown-rates-hedge",
+      "code": "R27",
+      "title": "Cut Credit Exposure or Hedge Rates During a Corporate Bond Drawdown?",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "investment risk",
+        "fixed income",
+        "transaction costs"
+      ]
+    },
+    {
+      "id": "overlapping-forecast-comparisons",
+      "code": "R28",
+      "title": "How Reliable Are Model Comparisons With Overlapping Evaluation Windows?",
+      "analytics": [
+        "diagnostic",
+        "predictive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "applied statistics",
+        "dependent inference",
+        "forecast evaluation"
+      ]
+    },
+    {
+      "id": "earnings-cash-collection",
+      "code": "R29",
+      "title": "When Reported Earnings Outrun Cash Collections",
+      "analytics": [
+        "diagnostic",
+        "predictive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "fundamental analysis",
+        "accounting forecasts",
+        "residual income valuation"
+      ]
+    },
+    {
+      "id": "versioned-road-geometry",
+      "code": "R30",
+      "title": "Consistent Road Geometry During Interrupted Map Updates",
+      "analytics": [
+        "diagnostic",
+        "prescriptive"
+      ],
+      "decision_analysis": "claim_bounded_case_specific",
+      "method_domains": [
+        "computer systems",
+        "incremental databases",
+        "versioned geospatial data"
       ]
     }
   ],

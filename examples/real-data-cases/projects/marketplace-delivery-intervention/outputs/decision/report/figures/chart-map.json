@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Historical stages of delivery delay",
+      "supported_finding": "Carrier handoff deadline and promised delivery date define the four cells.",
+      "interpretation_boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Where the reviewed late orders occurred",
+      "supported_finding": "These are retrospectively covered late orders; intervention efficacy is a separate quantity.",
+      "interpretation_boundary": "An on-time handoff followed by a late delivery locates delay in the observed sequence. It does not establish fault or show that an intervention prevented lateness."
+    }
+  ]
+}

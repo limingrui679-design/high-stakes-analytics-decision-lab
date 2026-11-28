@@ -47,6 +47,12 @@ PROJECT_FIGURES = {
 }
 
 
+PROJECT_FIGURES.update({
+    path.parent.name: "comparison.svg"
+    for path in (CASE_ROOT / "projects").glob("*/study-design.json")
+})
+
+
 def sync_representative_figures() -> None:
     payload = json.loads(CASE_INDEX.read_text(encoding="utf-8"))
     FIGURE_DIR.mkdir(parents=True, exist_ok=True)
@@ -105,15 +111,15 @@ def load_capabilities() -> tuple[dict[str, dict], dict[str, dict]]:
 def load_cases() -> list[dict]:
     payload = json.loads(CASE_INDEX.read_text(encoding="utf-8"))
     cases = payload.get("cases", [])
-    if payload.get("case_count") != 15 or len(cases) != 15:
-        raise ValueError("The bundled real-data gallery must contain exactly fifteen cases.")
+    if payload.get("case_count") != 30 or len(cases) != 30:
+        raise ValueError("The bundled real-data gallery must contain exactly thirty cases.")
     ids = [case.get("id") for case in cases]
     numbers = [case.get("number") for case in cases]
-    if len(set(ids)) != 15 or len(set(numbers)) != 15:
+    if len(set(ids)) != 30 or len(set(numbers)) != 30:
         raise ValueError("Case identifiers and display numbers must be unique.")
     capability_by_id, capability_case_map = load_capabilities()
     if set(capability_case_map) != set(ids):
-        raise ValueError("The capability map must cover exactly the fifteen case IDs.")
+        raise ValueError("The capability map must cover exactly the thirty case IDs.")
     for case in cases:
         required = {
             "number",
@@ -462,12 +468,12 @@ def gallery_svg(cases: list[dict]) -> str:
             )
         )
     return svg_document(
-        "Fifteen complete real-data projects, fifteen evidence-matched paths",
+        "Thirty complete real-data projects, thirty evidence-matched paths",
         "Complete projects span health, behavior, AI, operations, business, finance, policy, and spatial planning.",
         "\n".join(body),
-        height=1380,
+        height=top + ((len(cases) + 1) // 2) * (card_height + row_gap) + 90,
         description=(
-            "Fifteen numbered cards show each case domain, adaptive analytical route, "
+            "Thirty numbered cards show each case domain, adaptive analytical route, "
             "one headline metric, and the evidence-matched terminal output."
         ),
         accent=CATEGORY_PALETTE[0],
@@ -546,11 +552,11 @@ def gallery_readme(cases: list[dict]) -> str:
         capability_rows.append(
             f"| **{capability['label']}** | {capability['description']} | {links} |"
         )
-    return f"""# Fifteen Complete Real-Data Projects
+    return f"""# Thirty Complete Real-Data Projects
 
 ## Technical summary
 
-The fifteen projects share one evidence spine but do not share one report template.
+The thirty projects share one evidence spine but do not share one report template.
 Each route changes the methods, validation, figures, and valid endpoint.
 
 | Fixed across projects | Adapted to the case | Valid endpoints |
@@ -561,7 +567,7 @@ The **Evidence Intelligence Report** remains the primary product. A separate
 Decision Intelligence Brief appears only when a decision layer is justified.
 
 <p align="center">
-  <img src="figures/case-landscape.svg" alt="Fifteen real-data cases and their evidence-matched analytical paths" width="92%">
+  <img src="figures/case-landscape.svg" alt="Thirty real-data cases and their evidence-matched analytical paths" width="92%">
 </p>
 
 The overview should be read as a routing map. It shows why some cases end in a
@@ -574,7 +580,7 @@ request, or an evidence request.
 ```text
 projects/
 ├── _shared/                 # shared standard-library analytical runtime
-├── project-catalog.json     # fifteen-project machine-readable index
+├── project-catalog.json     # thirty-project machine-readable index
 └── <project-id>/
     ├── PROJECT.md
     ├── source-manifest.json
@@ -608,10 +614,10 @@ competency or that a public-data prototype had real-world impact.
 ## Optional visual gallery
 
 The index above is the default reading path. Open the gallery only when a
-visual comparison across all fifteen projects is useful.
+visual comparison across all thirty projects is useful.
 
 <details>
-<summary><strong>Open fifteen representative visuals and claim boundaries</strong></summary>
+<summary><strong>Open thirty representative visuals and claim boundaries</strong></summary>
 
 <table>
 {chr(10).join(gallery_cells)}

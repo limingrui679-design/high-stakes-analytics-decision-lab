@@ -8,7 +8,7 @@ contracts.
 |---|---|
 | Repository release | The installable Skill, public documentation, tests, and bundled portfolio |
 | `engine_version` | Decision-engine input, simulation, and output behavior |
-| `portfolio_version` | The fifteen-project catalog and evidence-package contract |
+| `portfolio_version` | The thirty-project catalog and evidence-package contract |
 | `router_version` | Question-routing schema and method-selection behavior |
 
 Component versions are not expected to match one another. A component version

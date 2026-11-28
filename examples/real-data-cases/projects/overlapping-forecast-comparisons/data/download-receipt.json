@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "eia930",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "479a4167a706c14016364bdefe593bf478a99744bb5d1c94a924487fc72b9271",
+      "bytes": 208378
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

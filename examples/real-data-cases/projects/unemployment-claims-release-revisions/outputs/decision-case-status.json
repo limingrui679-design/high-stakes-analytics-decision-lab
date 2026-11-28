@@ -1,0 +1,7 @@
+{
+  "status": "vintage_sensitive_alerting",
+  "owner": "Labor-market monitoring analyst",
+  "evidence": "Across 68 held-out weekly releases at 5 review slots, 83.2% of first-release alerts and 89.7% of revision-adjusted alerts appeared in the next release's residence-based list.",
+  "next_decision": "Keep first-publication alerts provisional. Actual review budgets and the observed cost of a one-release delay determine whether an adjusted list is useful.",
+  "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock."
+}

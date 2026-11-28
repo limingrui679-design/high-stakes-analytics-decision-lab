@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "chicago-inspections",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "2bd55b80faaee367f7dae730514a56c8c816f892bbe2fd6fce73e306a3eb1287",
+      "bytes": 551935
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

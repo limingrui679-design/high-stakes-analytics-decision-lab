@@ -1,0 +1,237 @@
+{
+  "conclusion": "Across 4 future quarters and 2,000 equal review slots per policy, adjusted seller targeting found 86 late deliveries following a missed handoff deadline. Carrier-focused targeting found 225 late deliveries after on-time handoff.",
+  "headline_metrics": [
+    "Single-item orders: 88863",
+    "Complete handoff and delivery: 86839",
+    "Policy slots: 2000"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Late deliveries with late handoff",
+      "unit": "Per 100 review slots",
+      "values": {
+        "Order volume": 0.7,
+        "Overall lateness": 4.5,
+        "Case-adjusted handoff": 4.3,
+        "Post-handoff delay": 2.45
+      },
+      "note": "Groups are prioritized using only matured prior-quarter outcomes."
+    },
+    "slice": {
+      "title": "Late deliveries after on-time handoff",
+      "unit": "Per 100 review slots",
+      "values": {
+        "Order volume": 6.35,
+        "Overall lateness": 5.55,
+        "Case-adjusted handoff": 5.85,
+        "Post-handoff delay": 11.25
+      },
+      "note": "This decomposition identifies the timing of a delay, not the responsible party."
+    },
+    "sensitivity": {
+      "title": "Equal-effectiveness scenario at different carrier costs",
+      "unit": "Modeled relative benefit per unit cost",
+      "values": {
+        "0.5× carrier cost": 5.23255814,
+        "1× carrier cost": 2.61627907,
+        "2× carrier cost": 1.30813953
+      },
+      "note": "Compare against 1.0. Relative intervention effectiveness and unit cost are assumptions."
+    }
+  },
+  "audit": {
+    "quadrants": {
+      "handoff 0, delivery 0": 74726,
+      "handoff 0, delivery 1": 4405,
+      "handoff 1, delivery 0": 6089,
+      "handoff 1, delivery 1": 1619
+    },
+    "unknown_hand_or_delivery": 2024,
+    "quarter_splits": [
+      {
+        "quarter": "2017Q3",
+        "priority_sellers": [
+          "1352e06ae67b410cdae0b2a22361167b",
+          "89bc797e2e29667aa035d4368f9b7f92",
+          "ab3e0c171fe84a7ba7de130f19cfb485",
+          "6ee85be3693ed79a8e80718743d80655",
+          "b499c00f28f4b7069ff6550af8c1348a"
+        ],
+        "priority_lanes": [
+          [
+            "SP",
+            "AL"
+          ],
+          [
+            "BA",
+            "BA"
+          ],
+          [
+            "PR",
+            "AL"
+          ],
+          [
+            "MG",
+            "AL"
+          ],
+          [
+            "SP",
+            "SE"
+          ]
+        ],
+        "mature_training_orders": 11834,
+        "held_out_orders": 10982,
+        "slots": 500
+      },
+      {
+        "quarter": "2017Q4",
+        "priority_sellers": [
+          "b1b3948701c5c72445495bd161b83a4c",
+          "538caafddff204241cecbf3a02e6b3cf",
+          "1352e06ae67b410cdae0b2a22361167b",
+          "89bc797e2e29667aa035d4368f9b7f92",
+          "2a1348e9addc1af5aaa619b1a3679d6b"
+        ],
+        "priority_lanes": [
+          [
+            "SP",
+            "AL"
+          ],
+          [
+            "MG",
+            "AL"
+          ],
+          [
+            "PR",
+            "CE"
+          ],
+          [
+            "PR",
+            "AL"
+          ],
+          [
+            "SP",
+            "RN"
+          ]
+        ],
+        "mature_training_orders": 22397,
+        "held_out_orders": 15491,
+        "slots": 500
+      },
+      {
+        "quarter": "2018Q1",
+        "priority_sellers": [
+          "b1b3948701c5c72445495bd161b83a4c",
+          "ad781527c93d00d89a11eecd9dcad7c1",
+          "633ecdf879b94b5337cca303328e4a25",
+          "6219ba2359cfb97f2e38fd4c321eb309",
+          "538caafddff204241cecbf3a02e6b3cf"
+        ],
+        "priority_lanes": [
+          [
+            "SP",
+            "AL"
+          ],
+          [
+            "PR",
+            "AL"
+          ],
+          [
+            "PR",
+            "SE"
+          ],
+          [
+            "SP",
+            "SE"
+          ],
+          [
+            "MG",
+            "AL"
+          ]
+        ],
+        "mature_training_orders": 36765,
+        "held_out_orders": 18571,
+        "slots": 500
+      },
+      {
+        "quarter": "2018Q2",
+        "priority_sellers": [
+          "54965bbe3e4f07ae045b90b0b8541f52",
+          "b1b3948701c5c72445495bd161b83a4c",
+          "ad781527c93d00d89a11eecd9dcad7c1",
+          "b19f3ca2ea475913750f25a5c37c8d8f",
+          "835f0f7810c76831d6c7d24c7a646d4d"
+        ],
+        "priority_lanes": [
+          [
+            "SP",
+            "AL"
+          ],
+          [
+            "PR",
+            "AL"
+          ],
+          [
+            "PR",
+            "SE"
+          ],
+          [
+            "RJ",
+            "PI"
+          ],
+          [
+            "PR",
+            "MA"
+          ]
+        ],
+        "mature_training_orders": 49684,
+        "held_out_orders": 17579,
+        "slots": 500
+      }
+    ],
+    "policies": {
+      "Order volume": {
+        "up": 14,
+        "down": 127,
+        "end": 141,
+        "count": 2000
+      },
+      "Overall lateness": {
+        "up": 90,
+        "down": 111,
+        "end": 201,
+        "count": 2000
+      },
+      "Case-adjusted handoff": {
+        "up": 86,
+        "down": 117,
+        "end": 203,
+        "count": 2000
+      },
+      "Post-handoff delay": {
+        "up": 49,
+        "down": 225,
+        "end": 274,
+        "count": 2000
+      }
+    },
+    "carrier_to_seller_effectiveness_break_even_at_equal_cost": 0.38222222
+  },
+  "next_decision": "Match proposed seller coaching or carrier service review to the observed stage. With equal per-order costs, choose carrier review only above the reported relative-effectiveness crossover; estimate effects prospectively.",
+  "project_id": "marketplace-delivery-intervention",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "prescriptive"
+    ],
+    "protocol": "Separate final lateness by whether handoff met the seller timestamp. Adjust for destination and within-state delivery, shrink seller rates, and freeze priorities before each future quarter. Use only outcomes known at that decision date. Compare identical numbers of review slots, with explicit cost and effectiveness break-even."
+  },
+  "data": {
+    "rows": 88863,
+    "grain": "One order with exactly one recorded item from one seller; incomplete outcomes are retained",
+    "snapshot_sha256": "6146a1a60bc634f95e69d36969d3c93136f23581948cdcb2d33838ec918d6fdd"
+  },
+  "decision_support": {
+    "status": "intervention_budget_review"
+  }
+}

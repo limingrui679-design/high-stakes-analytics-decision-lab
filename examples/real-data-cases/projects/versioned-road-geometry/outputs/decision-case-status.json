@@ -1,0 +1,7 @@
+{
+  "status": "transactional_release",
+  "owner": "Spatial systems engineer",
+  "evidence": "Across 29 consecutive real map releases, dependency-aware repair matched every full rebuild and the next independent snapshot (3,655 highway geometries). Updating only revised ways missed 1 geometry-version discrepancy.",
+  "next_decision": "Publish a version after reverse dependencies, updated geometries and the sequence have committed together. Keep an indexed historical lookup and periodically verify the source snapshot.",
+  "boundary": "This is a reproducible experiment on a single regional OSM extract and a local SQLite store. Work counts measure recomputation. System latency and production availability require separate measurement."
+}

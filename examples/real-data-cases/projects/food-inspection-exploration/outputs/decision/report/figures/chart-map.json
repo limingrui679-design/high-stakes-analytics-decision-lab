@@ -1,0 +1,16 @@
+{
+  "charts": [
+    {
+      "path": "figures/decision-1.svg",
+      "question": "Finding critical violations earlier on the logged subset",
+      "supported_finding": "Historical time slots and outcomes are held fixed in this comparison.",
+      "interpretation_boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier."
+    },
+    {
+      "path": "figures/decision-2.svg",
+      "question": "Minimum possible full-roster critical yield",
+      "supported_finding": "Treat all unobserved outcomes as negative for the lower bound. The accompanying evidence report provides upper bounds.",
+      "interpretation_boundary": "In the archival data only inspected restaurants reveal violations. The roster requires a known prior restaurant classification; never-classified premises are outside the target. Later inspections do not identify the causal effect of scheduling earlier."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.1",
+  "project_id": "wearable-heart-rate-abstention",
+  "source_id": "dalia",
+  "title": "PPG-DaLiA daily activities and WESAD laboratory sessions",
+  "publisher": "Attila Reiss et al. / UCI and Philip Schmidt et al. / Universität Siegen",
+  "landing_page": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
+  "version": "PPG-DaLiA field study / WESAD ICMI 2018",
+  "accessed_at": "2026-11-28",
+  "license": "CC BY 4.0, see UCI record",
+  "redistribution": "Derived window summaries only. No source waveforms, questionnaires or direct participant identifiers are included. Users of the data must observe the respective research-use terms.",
+  "grain": "One non-overlapping eight-second activity window from an anonymized participant",
+  "expected_rows": 17237,
+  "sources": [
+    {
+      "source_id": "dalia",
+      "publisher": "Attila Reiss et al. / UCI",
+      "url": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
+      "version": "PPG-DaLiA field study",
+      "license": "CC BY 4.0, see UCI record",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "output_fields": [
+        "activity",
+        "wrist_bpm",
+        "ecg_bpm",
+        "motion"
+      ],
+      "artifacts": [
+        {
+          "name": "dalia.zip",
+          "url": "https://archive.ics.uci.edu/static/public/495/ppg+dalia.zip",
+          "bytes": 2865111320,
+          "hash_algorithm": "sha256",
+          "sha256": "5772387956e34e2e2dc4c2ddbeb98cb70569d5112fa4c13ee98a17680b84a1f3"
+        }
+      ]
+    },
+    {
+      "source_id": "wesad",
+      "publisher": "Philip Schmidt et al. / Universität Siegen",
+      "url": "https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html",
+      "version": "WESAD ICMI 2018",
+      "license": "Scientific research use, credit original authors",
+      "license_url": "https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html",
+      "output_fields": [
+        "activity",
+        "wrist_bpm",
+        "ecg_bpm",
+        "motion"
+      ],
+      "artifacts": [
+        {
+          "name": "wesad.zip",
+          "url": "https://uni-siegen.sciebo.de/s/HGdUkoNlW1Ub0Gx/download",
+          "bytes": 2249444501,
+          "hash_algorithm": "sha256",
+          "sha256": "5e15d2606adf16d819ba535c1786d92e94bae5ff5392f7ae01fb63f9938fd71c"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "95047a43c3620eb337d79c3ecb88777c76dcbfebfa7f30dba3d4304d43e3168f",
+      "bytes": 329228,
+      "uncompressed_sha256": "927a2d0bb6a28264993cc5e56f26ee7652f12e9ad128b33df4993c868cfe779c"
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "conclusion": "Across 10 timetable versions, all 300 route-query results matched a full scan. Revisions changed 4,223 destination arrival labels; checkpoint repair visited 1,969,278 connections versus 8,903,454 for full recomputation.",
+  "headline_metrics": [
+    "Version-query checks: 300",
+    "Mismatched queries: 0",
+    "Held service date: 2024-11-22"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Post-initialization work",
+      "unit": "Scheduled connections visited",
+      "values": {
+        "Full scan": 8903454,
+        "Invalidate and scan": 1969278,
+        "Prefix repair": 1969278,
+        "Touched-trip shortest path": 1708838
+      },
+      "note": "All algorithms answer the same station/time queries to every reachable destination."
+    },
+    "slice": {
+      "title": "Publisher timetable changes",
+      "unit": "Connection operations",
+      "values": {
+        "Added": 80387,
+        "Removed": 6261
+      },
+      "note": "A changed departure time is compared within the same published trip and stop sequence."
+    },
+    "sensitivity": {
+      "title": "After-midnight scheduled connections",
+      "unit": "Connections in selected timetable snapshots",
+      "values": {
+        "20241021": 2667,
+        "20241025": 2667,
+        "20241031": 2667,
+        "20241107": 2783,
+        "20241113": 2783
+      },
+      "note": "GTFS times beyond 24:00 stay attached to the preceding service date."
+    }
+  },
+  "audit": {
+    "versions": {
+      "20241021": {
+        "edges": 67982,
+        "work": {},
+        "earliest_affected_second": 15900,
+        "changed_arrival_times": 0,
+        "edits": {
+          "Added": 67982
+        },
+        "after_midnight": 2667
+      },
+      "20241024": {
+        "edges": 67982,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 942936,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2667
+      },
+      "20241025": {
+        "edges": 67982,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 942936,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2667
+      },
+      "20241027": {
+        "edges": 67982,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 942936,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2667
+      },
+      "20241031": {
+        "edges": 67982,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 942936,
+          "Invalidate and scan": 942936,
+          "Prefix repair": 942936
+        },
+        "earliest_affected_second": 18720,
+        "changed_arrival_times": 0,
+        "edits": {
+          "Removed": 25,
+          "Added": 25
+        },
+        "after_midnight": 2667
+      },
+      "20241101": {
+        "edges": 74126,
+        "work": {
+          "Touched-trip shortest path": 1708838,
+          "Full scan": 1026342,
+          "Invalidate and scan": 1026342,
+          "Prefix repair": 1026342
+        },
+        "earliest_affected_second": 18300,
+        "changed_arrival_times": 4223,
+        "edits": {
+          "Removed": 6236,
+          "Added": 12380
+        },
+        "after_midnight": 2783
+      },
+      "20241107": {
+        "edges": 74126,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 1026342,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2783
+      },
+      "20241112": {
+        "edges": 74126,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 1026342,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2783
+      },
+      "20241113": {
+        "edges": 74126,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 1026342,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2783
+      },
+      "20241115": {
+        "edges": 74126,
+        "work": {
+          "Touched-trip shortest path": 0,
+          "Full scan": 1026342,
+          "Invalidate and scan": 0,
+          "Prefix repair": 0
+        },
+        "earliest_affected_second": null,
+        "changed_arrival_times": 0,
+        "edits": {},
+        "after_midnight": 2783
+      }
+    },
+    "queries": [
+      [
+        "place-pktrm",
+        5.25
+      ],
+      [
+        "place-pktrm",
+        8
+      ],
+      [
+        "place-pktrm",
+        16.75
+      ],
+      [
+        "place-pktrm",
+        23.75
+      ],
+      [
+        "place-pktrm",
+        24.1
+      ],
+      [
+        "place-dwnxg",
+        5.25
+      ],
+      [
+        "place-dwnxg",
+        8
+      ],
+      [
+        "place-dwnxg",
+        16.75
+      ],
+      [
+        "place-dwnxg",
+        23.75
+      ],
+      [
+        "place-dwnxg",
+        24.1
+      ],
+      [
+        "place-harsq",
+        5.25
+      ],
+      [
+        "place-harsq",
+        8
+      ],
+      [
+        "place-harsq",
+        16.75
+      ],
+      [
+        "place-harsq",
+        23.75
+      ],
+      [
+        "place-harsq",
+        24.1
+      ],
+      [
+        "place-north",
+        5.25
+      ],
+      [
+        "place-north",
+        8
+      ],
+      [
+        "place-north",
+        16.75
+      ],
+      [
+        "place-north",
+        23.75
+      ],
+      [
+        "place-north",
+        24.1
+      ],
+      [
+        "place-kencl",
+        5.25
+      ],
+      [
+        "place-kencl",
+        8
+      ],
+      [
+        "place-kencl",
+        16.75
+      ],
+      [
+        "place-kencl",
+        23.75
+      ],
+      [
+        "place-kencl",
+        24.1
+      ],
+      [
+        "place-welln",
+        5.25
+      ],
+      [
+        "place-welln",
+        8
+      ],
+      [
+        "place-welln",
+        16.75
+      ],
+      [
+        "place-welln",
+        23.75
+      ],
+      [
+        "place-welln",
+        24.1
+      ]
+    ],
+    "verified_full_oracle": 300,
+    "work": {
+      "Full scan": 8903454,
+      "Invalidate and scan": 1969278,
+      "Prefix repair": 1969278,
+      "Touched-trip shortest path": 1708838
+    },
+    "airport_or_walking_edges": "No invented footpaths. Platforms are canonicalized to parent station."
+  },
+  "next_decision": "Retain prefix checkpoints only while their input prefix is unchanged. Early-in-day edits can erase the savings; invariance against full routing remains the release criterion.",
+  "project_id": "transit-timetable-repair",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "prescriptive"
+    ],
+    "protocol": "Apply calendar and date exceptions for one Friday to ten consecutive archived feeds. Extract trunk rail, selected bus lines and shuttles. A timetable connection scan handles remaining on board, boarding restrictions, transfer waiting, and times beyond midnight. Retain unaltered time prefixes and compare with full invalidation and a fresh oracle for all reachable stops."
+  },
+  "data": {
+    "rows": 86658,
+    "grain": "One changed scheduled connection or version marker in ordered MBTA archive copies",
+    "snapshot_sha256": "865382d1400eb7ffb45ea3d4759650b6e78ff10b9c0640198d79140d996a662b"
+  },
+  "decision_support": {
+    "status": "routing_update_review"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "owner": "Freight and last-mile dispatch planner",
+  "decision_status": "dispatch_feasibility_review",
+  "observed_evidence": "On 24 complete published routes, window-focused relocation produced 10 nonnegative departure-delay witnesses; the recorded sequences produced 10. 14 routes remained inconclusive under the search budget.",
+  "conditional_action": "Offer delay only up to a recomputed feasible route witness. If the search and upper bounds disagree, retain the interval and use more solver time before making a dispatch promise.",
+  "claim_boundary": "Package time windows and driver sequences are observed. Travel times are a provided static matrix, service durations are planned, and the depot-return deadline is an eight-hour scenario. Unsolved routes remain undetermined.",
+  "analytical_results_sha256": "dadd0ecbcb78b0bdd83d30054f4fdbef6e0c812d8191f8277b3d6ebfee5c72c8"
+}

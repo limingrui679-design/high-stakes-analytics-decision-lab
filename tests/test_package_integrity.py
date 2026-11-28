@@ -152,13 +152,13 @@ class PackageIntegrityTests(unittest.TestCase):
         self.assertEqual(
             _portfolio_metrics(),
             {
-                "real_data_projects": 15,
-                "primary_reports": 15,
-                "conditional_briefs": 10,
-                "intelligence_products": 25,
-                "evidence_figures": 50,
-                "decision_figures": 69,
-                "accessible_figures": 119,
+                "real_data_projects": 30,
+                "primary_reports": 30,
+                "conditional_briefs": 16,
+                "intelligence_products": 46,
+                "evidence_figures": 95,
+                "decision_figures": 81,
+                "accessible_figures": 176,
                 "adaptive_routes": 4,
             },
         )

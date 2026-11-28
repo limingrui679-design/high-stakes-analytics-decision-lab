@@ -1,0 +1,44 @@
+{
+  "project_id": "unemployment-claims-release-revisions",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "top_k": [
+      3,
+      5,
+      10
+    ],
+    "review_slots": 5,
+    "shrink_weeks": 6,
+    "holdout_start": "2024-06-01"
+  },
+  "parameter_register": [
+    {
+      "parameter": "top_k",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock."
+    },
+    {
+      "parameter": "review_slots",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock."
+    },
+    {
+      "parameter": "shrink_weeks",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock."
+    },
+    {
+      "parameter": "holdout_start",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The advance column is reported by liable state and includes a workshare proxy. The next release uses state of residence. The ranked target is a later published measure, not a directly observed employment shock."
+    }
+  ]
+}

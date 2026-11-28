@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "ishares-nav",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "de8453acb76924b9e94d35cd425798d9c4c3eb040ac23b324f8cbe0487ef5701",
+      "bytes": 31550
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "osm-monaco",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "629703c7cee57c1173c2050278df08e58f6abeb597a4f7b794cb33d19f5b1589",
+      "bytes": 1534309
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

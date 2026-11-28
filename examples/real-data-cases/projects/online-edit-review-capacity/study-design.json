@@ -1,0 +1,62 @@
+{
+  "number": 21,
+  "slug": "online-edit-review-capacity",
+  "title": "The Last Review Slot in an Online Queue",
+  "accessed_at": "2026-11-28",
+  "key": "revision",
+  "grain": "One timestamped main-namespace English Wikivoyage revision, with complete future label horizon",
+  "dataset": "Wikimedia MediaWiki history, English Wikivoyage",
+  "question": "When should an online reviewer spend the last daily slot on the current edit?",
+  "owner": "Operations research queue designer",
+  "design": "Replay real UTC arrivals in order. Use anonymized arrival-visible edit properties to estimate seven-day identity-revert risk on matured history. Compare a fixed threshold, time quota and marginal inventory-value policy with two hindsight bounds. Use the same finite daily capacity and examine burst days separately.",
+  "boundary": "An identity revert indicates that previously observed page content returned within seven days. It is a behavioral proxy. The replay assumes no effect of the simulated review on subsequent edits.",
+  "route": [
+    "predictive",
+    "prescriptive"
+  ],
+  "redistribution": "Released extract omits names, IP addresses, page text and comments; attribution to Wikimedia contributors and the public release.",
+  "fields": {
+    "revision": "Public revision ID",
+    "ts": "UTC event timestamp",
+    "anonymous": "Publisher anonymous flag at event",
+    "change": "Signed text-byte difference",
+    "minor": "Revision marked minor",
+    "reverted": "Subsequent identity revert within seven days"
+  },
+  "sources": [
+    {
+      "source_id": "mediawiki-history",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://wikitech.wikimedia.org/wiki/Data_Platform/Data_Lake/Edits/MediaWiki_history_dumps",
+      "version": "2026-10 English Wikivoyage history; evaluation years 2022–2024",
+      "license": "Wikimedia historical dumps; attribution and terms of use",
+      "license_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "prefixes": [
+        "wiki-voyages"
+      ],
+      "output_fields": [
+        "ts",
+        "revision",
+        "change",
+        "anonymous",
+        "minor",
+        "reverted"
+      ]
+    }
+  ],
+  "landing_page": "https://wikitech.wikimedia.org/wiki/Data_Platform/Data_Lake/Edits/MediaWiki_history_dumps",
+  "publisher": "Wikimedia Foundation",
+  "version": "2026-10 English Wikivoyage history; evaluation years 2022–2024",
+  "endpoint": "finite_inventory_policy",
+  "domains": [
+    "operations research",
+    "stochastic control",
+    "online allocation"
+  ],
+  "methods": [
+    "finite-horizon slot value",
+    "expiring daily inventory",
+    "score-only oracle",
+    "realized-event oracle"
+  ]
+}

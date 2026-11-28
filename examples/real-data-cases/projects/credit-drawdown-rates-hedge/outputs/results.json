@@ -1,0 +1,139 @@
+{
+  "conclusion": "Over 1097 held-out weeks, the rule triggered 143 times. The modeled net maximum drawdown was -17.02% after cutting credit and -19.21% under the matched-rate hedge.",
+  "headline_metrics": [
+    "Backtest weeks: 1097",
+    "Triggered weeks: 143",
+    "One-way costs: 5 bp"
+  ],
+  "figures": {
+    "comparison": {
+      "title": "Compounded total return after trading costs",
+      "unit": "Annualized percent",
+      "values": {
+        "Hold credit": 4.06624626,
+        "Cut credit": 4.19992592,
+        "Hedge rates": 4.10764633
+      },
+      "note": "Fund inputs are weekly NAV total returns with ex-date distributions reinvested."
+    },
+    "slice": {
+      "title": "Peak-to-trough drawdown",
+      "unit": "Percent",
+      "values": {
+        "Hold credit": -24.90608256,
+        "Cut credit": -17.01534979,
+        "Hedge rates": -19.20753013
+      },
+      "note": "The same lagged signal and transaction cost convention apply to every strategy."
+    },
+    "sensitivity": {
+      "title": "Crisis-window portfolio returns",
+      "unit": "Net percent in the 2022 rate repricing",
+      "values": {
+        "Hold credit": -18.01202575,
+        "Cut credit": -12.36982047,
+        "Hedge rates": -13.39002055
+      },
+      "note": "Named historical windows are descriptive stress checks."
+    }
+  },
+  "audit": {
+    "monthly_regime_returns": {
+      "Spread widens at least 25 bp": {
+        "Hold credit": {
+          "weeks": 82,
+          "mean_net_weekly_bps": -22.5221378
+        },
+        "Cut credit": {
+          "weeks": 82,
+          "mean_net_weekly_bps": -16.40394189
+        },
+        "Hedge rates": {
+          "weeks": 82,
+          "mean_net_weekly_bps": -26.25183894
+        }
+      },
+      "Treasury rises at least 25 bp": {
+        "Hold credit": {
+          "weeks": 104,
+          "mean_net_weekly_bps": -38.17202342
+        },
+        "Cut credit": {
+          "weeks": 104,
+          "mean_net_weekly_bps": -34.20793801
+        },
+        "Hedge rates": {
+          "weeks": 104,
+          "mean_net_weekly_bps": -34.44870736
+        }
+      },
+      "Both widen/rise by 25 bp": {
+        "Hold credit": {
+          "weeks": 4,
+          "mean_net_weekly_bps": -59.842384
+        },
+        "Cut credit": {
+          "weeks": 4,
+          "mean_net_weekly_bps": -59.842384
+        },
+        "Hedge rates": {
+          "weeks": 4,
+          "mean_net_weekly_bps": -59.842384
+        }
+      }
+    },
+    "annualized_return_pct": {
+      "Hold credit": 4.06624626,
+      "Cut credit": 4.19992592,
+      "Hedge rates": 4.10764633
+    },
+    "drawdown_pct": {
+      "Hold credit": -24.90608256,
+      "Cut credit": -17.01534979,
+      "Hedge rates": -19.20753013
+    },
+    "annualized_one_way_turnover": {
+      "Hold credit": 0.0,
+      "Cut credit": 3.4347049,
+      "Hedge rates": 1.41386973
+    },
+    "regimes": {
+      "Credit crisis": {
+        "Hold credit": 2.85752385,
+        "Cut credit": 4.9047841,
+        "Hedge rates": 0.32632442
+      },
+      "COVID shock": {
+        "Hold credit": -0.42415935,
+        "Cut credit": -1.62928885,
+        "Hedge rates": -1.32870564
+      },
+      "Rate repricing": {
+        "Hold credit": -18.01202575,
+        "Cut credit": -12.36982047,
+        "Hedge rates": -13.39002055
+      }
+    },
+    "mean_abs_ex_ante_beta_mismatch": 0.0,
+    "gross_linear_pnl_break_even_bps": 6.57823903,
+    "assumed_cost_bps": 5,
+    "duration_proxy": "52-week Treasury factor sensitivity"
+  },
+  "next_decision": "Use the matched-rate comparison and stress-period outcomes to distinguish spread/liquidity exposure from rate sensitivity. The turnover threshold identifies when modeled trading costs reverse the gross comparison.",
+  "project_id": "credit-drawdown-rates-hedge",
+  "study_design": {
+    "route": [
+      "diagnostic",
+      "prescriptive"
+    ],
+    "protocol": "Form weekly total returns from NAV plus distributions on ex-dates. At each week, use prior returns to estimate rate-factor betas and a lagged drawdown trigger. Compare static credit, a partial move to bills, and a self-financing Treasury overlay at similar expected rate sensitivity. Include costs, turnover, peak-to-trough loss and crisis subperiods."
+  },
+  "data": {
+    "rows": 1149,
+    "grain": "One common trading week for four iShares funds",
+    "snapshot_sha256": "7b92cdb238d8612cfdbef33a131a069ec4db3d7f1d70f8f692cf0caee9ccccac"
+  },
+  "decision_support": {
+    "status": "investment_risk_review"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "grain": "One base/oracle OSM element or one ordered node/way edit or sequence marker",
+  "primary_key": "key",
+  "fields": {
+    "key": "Unique stage/sequence/event key",
+    "stage": "Base, delta, or independent oracle",
+    "seq": "Regional replication sequence",
+    "kind": "Node, way or sequence marker",
+    "id": "OSM element ID",
+    "version": "Publisher element version",
+    "op": "Put, delete or sequence commit marker",
+    "x": "Longitude at 10^-7 degree resolution",
+    "y": "Latitude at 10^-7 degree resolution",
+    "road": "Highway tag is present for a way",
+    "refs": "Ordered node references of a way"
+  }
+}

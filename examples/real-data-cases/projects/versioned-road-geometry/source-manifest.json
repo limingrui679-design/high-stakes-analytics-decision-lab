@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.1",
+  "project_id": "versioned-road-geometry",
+  "source_id": "osm-monaco",
+  "title": "Geofabrik OpenStreetMap Monaco extracts and regional daily replication diffs",
+  "publisher": "OpenStreetMap contributors / Geofabrik",
+  "landing_page": "https://download.geofabrik.de/europe/monaco.html",
+  "version": "September 2026, sequences 4897–4926",
+  "accessed_at": "2026-11-28",
+  "license": "Open Database License 1.0",
+  "redistribution": "Contains derived OpenStreetMap data © OpenStreetMap contributors under ODbL 1.0; extracts from Geofabrik.",
+  "grain": "One base/oracle OSM element or one ordered node/way edit or sequence marker",
+  "expected_rows": 96081,
+  "sources": [
+    {
+      "source_id": "osm-monaco",
+      "publisher": "OpenStreetMap contributors / Geofabrik",
+      "url": "https://download.geofabrik.de/europe/monaco.html",
+      "version": "September 2026, sequences 4897–4926",
+      "license": "Open Database License 1.0",
+      "license_url": "https://www.openstreetmap.org/copyright",
+      "output_fields": [
+        "seq",
+        "id",
+        "version",
+        "refs",
+        "road",
+        "x",
+        "y"
+      ],
+      "artifacts": [
+        {
+          "name": "monaco-260901.osm.pbf",
+          "url": "https://download.geofabrik.de/europe/monaco/monaco-260901.osm.pbf",
+          "bytes": 690567,
+          "hash_algorithm": "sha256",
+          "sha256": "f2d904ee0aa156a2252c39c0ab80ca7b3fafb28da6a84b909084a26f068ac962"
+        },
+        {
+          "name": "monaco-261001.osm.pbf",
+          "url": "https://download.geofabrik.de/europe/monaco/monaco-261001.osm.pbf",
+          "bytes": 691511,
+          "hash_algorithm": "sha256",
+          "sha256": "ac4571f3d6750327deb38388dd312640e8f44c9388d34040e3c28f713e7fd632"
+        },
+        {
+          "name": "monaco-4898.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/898.osc.gz",
+          "bytes": 2028,
+          "hash_algorithm": "sha256",
+          "sha256": "c14405c3b790073f67c6af4e972c8f6c9493b4ab65f7843562221c2bf6ffcefc"
+        },
+        {
+          "name": "monaco-4899.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/899.osc.gz",
+          "bytes": 43930,
+          "hash_algorithm": "sha256",
+          "sha256": "684c3bc222059928ae8fd7d5edb0f1dd57cb5d8e73b7df6e4aaf25832ccebb37"
+        },
+        {
+          "name": "monaco-4900.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/900.osc.gz",
+          "bytes": 540,
+          "hash_algorithm": "sha256",
+          "sha256": "b6f43ecbeaba944960ebac81a10601953133309c6b9d3e1113136a0c7270e87f"
+        },
+        {
+          "name": "monaco-4901.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/901.osc.gz",
+          "bytes": 650,
+          "hash_algorithm": "sha256",
+          "sha256": "bafec749eb9368076d1bd339998f026ab625b711665095806e59e4664a43fc66"
+        },
+        {
+          "name": "monaco-4902.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/902.osc.gz",
+          "bytes": 2523,
+          "hash_algorithm": "sha256",
+          "sha256": "5d514de102305146a7d0d33653cd6b6f18e39b92dd3782ca07280588aedc0ec1"
+        },
+        {
+          "name": "monaco-4903.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/903.osc.gz",
+          "bytes": 12756,
+          "hash_algorithm": "sha256",
+          "sha256": "656480f4a04a71178df74580a008b3c90be33d84a9388c56d0a07a785f00329b"
+        },
+        {
+          "name": "monaco-4904.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/904.osc.gz",
+          "bytes": 5279,
+          "hash_algorithm": "sha256",
+          "sha256": "90e623cde1eae7fc7fcace275b6305a859968d2803d6fc0b9abdc54636adae94"
+        },
+        {
+          "name": "monaco-4905.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/905.osc.gz",
+          "bytes": 108,
+          "hash_algorithm": "sha256",
+          "sha256": "8658466f48068bc44fec33cb64f32255ff7e3fcf0469c1fa4d1e6b82e7ff570c"
+        },
+        {
+          "name": "monaco-4906.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/906.osc.gz",
+          "bytes": 955,
+          "hash_algorithm": "sha256",
+          "sha256": "840e59cd8abcea38f04b0a079e49d8f27e0fe7f3fabf6cebce1816194ab29cdf"
+        },
+        {
+          "name": "monaco-4907.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/907.osc.gz",
+          "bytes": 108,
+          "hash_algorithm": "sha256",
+          "sha256": "8658466f48068bc44fec33cb64f32255ff7e3fcf0469c1fa4d1e6b82e7ff570c"
+        },
+        {
+          "name": "monaco-4908.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/908.osc.gz",
+          "bytes": 55837,
+          "hash_algorithm": "sha256",
+          "sha256": "5a8e1aa6b3ce27066fdd05c1b1f561343eb74dfd10ac22cfd8d2f22ed0426dbb"
+        },
+        {
+          "name": "monaco-4909.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/909.osc.gz",
+          "bytes": 113800,
+          "hash_algorithm": "sha256",
+          "sha256": "63a58c3053ecab70b3f736def5a771bddc1e6703e6eef86b3ee6f0f053ea014d"
+        },
+        {
+          "name": "monaco-4910.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/910.osc.gz",
+          "bytes": 56319,
+          "hash_algorithm": "sha256",
+          "sha256": "27ae8950a827a4778801d65773f1dcea6d8ff374f9eaf70ab7d1d6d50efa021b"
+        },
+        {
+          "name": "monaco-4911.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/911.osc.gz",
+          "bytes": 1649,
+          "hash_algorithm": "sha256",
+          "sha256": "c6dac4148e1ee7c23527a315b7599f82b09d441a2e63f4ecd590f0db9c9aabb9"
+        },
+        {
+          "name": "monaco-4912.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/912.osc.gz",
+          "bytes": 76844,
+          "hash_algorithm": "sha256",
+          "sha256": "a87609ed73942e05026f1d75894141a75789264620dd90ff2b6d853eac3ac07e"
+        },
+        {
+          "name": "monaco-4913.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/913.osc.gz",
+          "bytes": 111595,
+          "hash_algorithm": "sha256",
+          "sha256": "0382038acc9f52aa5a28a0756fd24094188e2b0e1907d5340d215355408049c5"
+        },
+        {
+          "name": "monaco-4914.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/914.osc.gz",
+          "bytes": 66533,
+          "hash_algorithm": "sha256",
+          "sha256": "cfbfe63c84738a372b608f11ba196fafdfa472f5557f9155ebeeef17ef721669"
+        },
+        {
+          "name": "monaco-4915.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/915.osc.gz",
+          "bytes": 108,
+          "hash_algorithm": "sha256",
+          "sha256": "8658466f48068bc44fec33cb64f32255ff7e3fcf0469c1fa4d1e6b82e7ff570c"
+        },
+        {
+          "name": "monaco-4916.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/916.osc.gz",
+          "bytes": 3624,
+          "hash_algorithm": "sha256",
+          "sha256": "eb719ca919b3cc0b234ed9200e0233bd0cb971d269cbe55eed9b1367a798f250"
+        },
+        {
+          "name": "monaco-4917.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/917.osc.gz",
+          "bytes": 3829,
+          "hash_algorithm": "sha256",
+          "sha256": "b13cfcb135dbad79e36b470ee6ab665c5758a287930ee42ae31ac994cc5ae9a1"
+        },
+        {
+          "name": "monaco-4918.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/918.osc.gz",
+          "bytes": 40675,
+          "hash_algorithm": "sha256",
+          "sha256": "004f8303a298e33f740eabd39e38fa5944e717d06eb0851588060c30e3d452e6"
+        },
+        {
+          "name": "monaco-4919.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/919.osc.gz",
+          "bytes": 55731,
+          "hash_algorithm": "sha256",
+          "sha256": "7fa6e8499370940b6211c904de6bfefa402ab7b3318f72609b699005e1164d46"
+        },
+        {
+          "name": "monaco-4920.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/920.osc.gz",
+          "bytes": 108,
+          "hash_algorithm": "sha256",
+          "sha256": "8658466f48068bc44fec33cb64f32255ff7e3fcf0469c1fa4d1e6b82e7ff570c"
+        },
+        {
+          "name": "monaco-4921.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/921.osc.gz",
+          "bytes": 3072,
+          "hash_algorithm": "sha256",
+          "sha256": "511be8c1d226a2ab1dd1a3b1c2b2733daf17f776b997b5afab5b23d3375a5407"
+        },
+        {
+          "name": "monaco-4922.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/922.osc.gz",
+          "bytes": 63094,
+          "hash_algorithm": "sha256",
+          "sha256": "4e64a3a8c38fb0941860c96b8ed36a3b42707caeb0325d6d73b999bccaab9b83"
+        },
+        {
+          "name": "monaco-4923.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/923.osc.gz",
+          "bytes": 64116,
+          "hash_algorithm": "sha256",
+          "sha256": "7f9386b9ff9077e64ba39ab0b66608ae8066dd717b56323a12c640933bb3dfb5"
+        },
+        {
+          "name": "monaco-4924.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/924.osc.gz",
+          "bytes": 33230,
+          "hash_algorithm": "sha256",
+          "sha256": "7dd3a650a59ab2edc3167595feaf702959b255e14e0d08132b46cec7c5b63600"
+        },
+        {
+          "name": "monaco-4925.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/925.osc.gz",
+          "bytes": 33095,
+          "hash_algorithm": "sha256",
+          "sha256": "74fda357e593f1700ebf44fa043960cb8605a33b7a764ca4cfac81e262d88696"
+        },
+        {
+          "name": "monaco-4926.osc.gz",
+          "url": "https://download.geofabrik.de/europe/monaco/updates/000/004/926.osc.gz",
+          "bytes": 108,
+          "hash_algorithm": "sha256",
+          "sha256": "8658466f48068bc44fec33cb64f32255ff7e3fcf0469c1fa4d1e6b82e7ff570c"
+        }
+      ]
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "629703c7cee57c1173c2050278df08e58f6abeb597a4f7b794cb33d19f5b1589",
+      "bytes": 1534309,
+      "uncompressed_sha256": "45a55d15680c55fca482ff446b221e4e1b0f26b55e84fb7889fa9f5b17c7f8e9"
+    }
+  ]
+}

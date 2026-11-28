@@ -1,0 +1,7 @@
+{
+  "status": "dependence_aware_comparison",
+  "owner": "Forecast evaluation lead",
+  "evidence": "Across 1,520 shared dates after the source-quality screen and 6 balancing authorities, the day-ahead minus seasonal-naive score averaged -5.14 percentage points. The 95% HAC interval spanned 0.943 points versus 0.304 under independence.",
+  "next_decision": "Publish uncertainty for paired calendar dates and sensitivity to block length. Treat published historical forecast errors as observations and the simulation as a coverage experiment.",
+  "boundary": "The public extract contains historical reported observations, including revisions. Known-truth coverage is a simulation estimate with Monte Carlo uncertainty. Estimates concern the six reported balancing areas."
+}

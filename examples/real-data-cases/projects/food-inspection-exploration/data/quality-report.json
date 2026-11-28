@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.1",
+  "rows": 55823,
+  "columns": 11,
+  "column_names": [
+    "key",
+    "quarter",
+    "license",
+    "area",
+    "risk",
+    "days_since",
+    "prior_visits",
+    "critical_history",
+    "last_critical",
+    "outcome",
+    "inspection_day"
+  ],
+  "missing_count_by_column": {
+    "key": 0,
+    "quarter": 0,
+    "license": 0,
+    "area": 0,
+    "risk": 0,
+    "days_since": 0,
+    "prior_visits": 0,
+    "critical_history": 0,
+    "last_critical": 0,
+    "outcome": 45190,
+    "inspection_day": 45190
+  },
+  "sentinel_count_by_column": {},
+  "source_annotation_count_by_column": {},
+  "invalid_numeric_count_by_column": {},
+  "outside_range_count_by_column": {},
+  "duplicate_key_count": 0,
+  "findings": [
+    {
+      "code": "missing_values_present",
+      "severity": "medium",
+      "columns": [
+        "inspection_day",
+        "outcome"
+      ],
+      "count": 90380,
+      "message": "Missing values require a documented route-specific treatment."
+    }
+  ],
+  "severity_counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "quality_status": "ready_with_documented_limitations",
+  "expected_rows": 55823,
+  "row_count_matches_manifest": true
+}

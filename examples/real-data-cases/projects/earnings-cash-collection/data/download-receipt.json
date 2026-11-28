@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "source_id": "sec-edgar-companyfacts",
+  "files": [
+    {
+      "path": "data/raw/observations.csv.gz",
+      "sha256": "3133841cf09a4acd70637c643e92d7f6a5a00567a163438fa39996fa34ad904c",
+      "bytes": 18580
+    }
+  ],
+  "basis": "Bundled source hashes checked before preparation"
+}

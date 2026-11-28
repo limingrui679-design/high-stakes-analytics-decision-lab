@@ -1,0 +1,26 @@
+{
+  "project_id": "versioned-road-geometry",
+  "charts": [
+    {
+      "path": "figures/comparison.svg",
+      "question": "Geometry materializations over all versions",
+      "supported_finding": "Counts use the same highway scope and oracle per version.",
+      "interpretation_boundary": "This is a reproducible experiment on a single regional OSM extract and a local SQLite store. Work counts measure recomputation. System latency and production availability require separate measurement.",
+      "source_id": "osm-monaco"
+    },
+    {
+      "path": "figures/slice.svg",
+      "question": "Consequences of indexing only edited ways",
+      "supported_finding": "A moved node can change its referencing road even without a new way version.",
+      "interpretation_boundary": "This is a reproducible experiment on a single regional OSM extract and a local SQLite store. Work counts measure recomputation. System latency and production availability require separate measurement.",
+      "source_id": "osm-monaco"
+    },
+    {
+      "path": "figures/sensitivity.svg",
+      "question": "Commit and interruption checks",
+      "supported_finding": "Reader snapshot checks span the commit. The writer-exit trial deliberately leaves a transaction uncommitted.",
+      "interpretation_boundary": "This is a reproducible experiment on a single regional OSM extract and a local SQLite store. Work counts measure recomputation. System latency and production availability require separate measurement.",
+      "source_id": "osm-monaco"
+    }
+  ]
+}

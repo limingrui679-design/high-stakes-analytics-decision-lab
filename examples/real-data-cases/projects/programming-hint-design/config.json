@@ -1,0 +1,16 @@
+{
+  "project_id": "programming-hint-design",
+  "analysis_seed": 20261128,
+  "parameters": {
+    "planned_effect": 0.15
+  },
+  "parameter_register": [
+    {
+      "parameter": "planned_effect",
+      "source_id": "predeclared-analysis-protocol",
+      "status": "analyst-defined comparison setting",
+      "approved_by": "repository author",
+      "boundary": "The public CSEDM example describes a subset of the 89-learner, 38-task source cohort. It contains aggregated learner/problem outcomes. Actual code examples are from the independent Refactory study. No newly delivered hint or transfer improvement is attributed to either cohort."
+    }
+  ]
+}
